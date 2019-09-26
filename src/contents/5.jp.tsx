@@ -409,25 +409,7 @@ export default () => (
                       </P>
                     </>
                   )
-                }
-              ]}
-            />
-            <EmojiSeparator
-              nodes={[
-                <EmojiForLetter letter="b" />,
-                <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />,
-                <EmojiForLetter letter="b" />
-              ]}
-              description={
-                <>
-                  下段の真ん中には{' '}
-                  <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />{' '}
-                  をつける
-                </>
-              }
-            />
-            <BubbleQuotes
-              quotes={[
+                },
                 {
                   type: 'devil',
                   children: (
@@ -459,7 +441,25 @@ export default () => (
                       </P>
                     </>
                   )
-                },
+                }
+              ]}
+            />
+            <EmojiSeparator
+              nodes={[
+                <EmojiForLetter letter="b" />,
+                <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />,
+                <EmojiForLetter letter="b" />
+              ]}
+              description={
+                <>
+                  下段の真ん中には{' '}
+                  <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />{' '}
+                  をつける
+                </>
+              }
+            />
+            <BubbleQuotes
+              quotes={[
                 {
                   type: 'thinking',
                   children: (

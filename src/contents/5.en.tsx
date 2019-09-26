@@ -386,20 +386,14 @@ export default () => (
           <>
             <BottomRightBadge inline bottomRightBadgeType="callArg" />{' '}
             <BottomRightBadge inline bottomRightBadgeType="funcArg" />{' '}
-            <BottomRightBadge inline bottomRightBadgeType="funcBound" />
-            、そして
+            <BottomRightBadge inline bottomRightBadgeType="funcBound" /> and{' '}
             <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />
           </>
         ),
         content: (
           <>
             <P>
-              次に、<InlinePrioritiesLabel revert>1</InlinePrioritiesLabel>{' '}
-              のペアの部分に{' '}
-              <BottomRightBadge inline bottomRightBadgeType="callArg" />{' '}
-              <BottomRightBadge inline bottomRightBadgeType="funcArg" />{' '}
-              <BottomRightBadge inline bottomRightBadgeType="funcBound" />{' '}
-              などの印をつけます。
+              Next, <Highlight>we add the labels.</Highlight>{' '}
               <H args={{ name: 'pressNext' }} />
             </P>
             <R.Qxob />
@@ -410,13 +404,71 @@ export default () => (
                   children: (
                     <>
                       <P>
+                        <Bold>Wait a minute:</Bold> In addition to{' '}
+                        <BottomRightBadge
+                          inline
+                          bottomRightBadgeType="callArg"
+                        />{' '}
+                        <BottomRightBadge
+                          inline
+                          bottomRightBadgeType="funcArg"
+                        />
+                        , and{' '}
+                        <BottomRightBadge
+                          inline
+                          bottomRightBadgeType="funcBound"
+                        />
+                        …
+                      </P>
+                      <P>
                         <Highlight>
-                          下段真ん中の <EmojiWithText letter="b" /> には、
+                          <Italic>
+                            There’s a new label{' '}
+                            <BottomRightBadge
+                              inline
+                              bottomRightBadgeType="funcUnbound"
+                            />{' '}
+                            for the <EmojiWithText letter="b" />!
+                          </Italic>
+                        </Highlight>
+                      </P>
+                    </>
+                  )
+                },
+                {
+                  type: 'devil',
+                  children: (
+                    <>
+                      <P>
+                        <Bold>Yes, this is new:</Bold>{' '}
+                        <Highlight>
+                          None of{' '}
+                          <BottomRightBadge
+                            inline
+                            bottomRightBadgeType="callArg"
+                          />
+                          ,{' '}
+                          <BottomRightBadge
+                            inline
+                            bottomRightBadgeType="funcArg"
+                          />
+                          , or{' '}
+                          <BottomRightBadge
+                            inline
+                            bottomRightBadgeType="funcBound"
+                          />{' '}
+                          apply to the <Bold>middle item</Bold> on the bottom
+                          row.
+                        </Highlight>
+                      </P>
+                      <P>
+                        <Highlight>
+                          In that case, we add the label{' '}
                           <BottomRightBadge
                             inline
                             bottomRightBadgeType="funcUnbound"
                           />{' '}
-                          の印がついた！
+                          (for “<Bold>M</Bold>iddle”) to it.
                         </Highlight>
                       </P>
                     </>
@@ -432,57 +484,27 @@ export default () => (
               ]}
               description={
                 <>
-                  下段の真ん中には{' '}
+                  Add{' '}
                   <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />{' '}
-                  をつける
+                  to the middle item
+                  <br />
+                  on the bottom row
                 </>
               }
             />
             <BubbleQuotes
               quotes={[
                 {
-                  type: 'devil',
-                  children: (
-                    <>
-                      <P>
-                        そう、前回では登場しなかったが、
-                        <Highlight>
-                          <BottomRightBadge
-                            inline
-                            bottomRightBadgeType="callArg"
-                          />{' '}
-                          <BottomRightBadge
-                            inline
-                            bottomRightBadgeType="funcArg"
-                          />{' '}
-                          <BottomRightBadge
-                            inline
-                            bottomRightBadgeType="funcBound"
-                          />{' '}
-                          のどれにも該当しない、
-                          <HighlightBold>下段の真ん中にある料理</HighlightBold>
-                          には{' '}
-                          <BottomRightBadge
-                            inline
-                            bottomRightBadgeType="funcUnbound"
-                          />{' '}
-                          をつけるんだ。
-                        </Highlight>
-                      </P>
-                    </>
-                  )
-                },
-                {
                   type: 'thinking',
                   children: (
                     <>
                       <P>
-                        なるほど。じゃあ、
+                        I see. Then what do we do with the{' '}
                         <BottomRightBadge
                           inline
                           bottomRightBadgeType="funcUnbound"
-                        />{' '}
-                        がついた料理はどうなるんだ？
+                        />
+                        ’s?
                       </P>
                     </>
                   )
@@ -495,16 +517,20 @@ export default () => (
       {
         title: (
           <>
-            <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />{' '}
-            は無視していい
+            Ignore{' '}
+            <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />
+            ’s
           </>
         ),
         content: (
           <>
             <P>
-              <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />{' '}
-              の印がついた料理は、
-              <HighlightBold>いったん無視してください</HighlightBold>。
+              <Bold>Important:</Bold>{' '}
+              <Highlight>
+                You can ignore{' '}
+                <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />
+                ’s for now.
+              </Highlight>
             </P>
             <EmojiSeparator
               nodes={[
@@ -514,8 +540,9 @@ export default () => (
               ]}
               description={
                 <>
-                  <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />{' '}
-                  はいったん無視する
+                  Ignore{' '}
+                  <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />
+                  ’s for now
                 </>
               }
             />
