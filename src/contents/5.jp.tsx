@@ -352,12 +352,12 @@ export default () => (
                       <P>
                         そう。これは、
                         <Highlight>
-                          暗い色 <InlineBackground bgColor={'indigo50'} />{' '}
-                          の部分は無視して、
                           <InlinePrioritiesLabel revert>
                             1
                           </InlinePrioritiesLabel>{' '}
-                          のペアの部分、すなわち下の2つの段に注目する
+                          のペアの部分、すなわち下の2つの段に注目し、上の段{' '}
+                          <InlineBackground bgColor={'indigo50'} />{' '}
+                          の部分は無視する
                         </Highlight>
                         ということだ。
                       </P>

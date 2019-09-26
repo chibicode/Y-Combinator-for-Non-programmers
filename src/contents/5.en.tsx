@@ -344,11 +344,15 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        <InlinePrioritiesLabel>1</InlinePrioritiesLabel>{' '}
-                        のペアがピンク色の{' '}
-                        <InlinePrioritiesLabel revert>1</InlinePrioritiesLabel>{' '}
-                        になり、一番上の背景が暗い色{' '}
-                        <InlineBackground bgColor={'indigo50'} /> になった！
+                        The pair of{' '}
+                        <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
+                        ’s became pink{' '}
+                        <InlinePrioritiesLabel revert>1</InlinePrioritiesLabel>
+                        ’s!
+                      </P>
+                      <P>
+                        Also, the top row now has a darker color{' '}
+                        <InlineBackground bgColor={'indigo50'} />.
                       </P>
                     </>
                   )
@@ -358,16 +362,16 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        そう。これは、
+                        Right. This means{' '}
                         <Highlight>
-                          暗い色 <InlineBackground bgColor={'indigo50'} />{' '}
-                          の部分は無視して、
+                          focus on <Italic>the bottom 2 rows</Italic>, which
+                          correspond to the pair of{' '}
                           <InlinePrioritiesLabel revert>
                             1
-                          </InlinePrioritiesLabel>{' '}
-                          のペアの部分に注目する
+                          </InlinePrioritiesLabel>
+                          ’s, and <Italic>ignore</Italic> the top row{' '}
+                          <InlineBackground bgColor={'indigo50'} /> for now.
                         </Highlight>
-                        ということだ。
                       </P>
                     </>
                   )
