@@ -607,15 +607,15 @@ export default () => (
       {
         title: (
           <>
-            <InlinePrioritiesLabel revert>1</InlinePrioritiesLabel>
-            のペア部分を終わらせる
+            Finish the pair of{' '}
+            <InlinePrioritiesLabel revert>1</InlinePrioritiesLabel>’s
           </>
         ),
         content: (
           <>
             <P>
-              では、<InlinePrioritiesLabel revert>1</InlinePrioritiesLabel>
-              のペア部分を終わらせましょう。やり方は前回と同じです。
+              <Bold>Next:</Bold> We’ll finish the section that belongs to the
+              pair of <InlinePrioritiesLabel revert>1</InlinePrioritiesLabel>’s.
             </P>
             <EmojiSeparator
               nodes={[
@@ -625,8 +625,8 @@ export default () => (
               ]}
               description={
                 <>
-                  <InlinePrioritiesLabel revert>1</InlinePrioritiesLabel>{' '}
-                  のペア部分を終わらせる
+                  Finish the pair of{' '}
+                  <InlinePrioritiesLabel revert>1</InlinePrioritiesLabel>’s
                 </>
               }
             />
