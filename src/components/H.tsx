@@ -750,7 +750,15 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
   }
   if (args.name === 'whatHappensAtTheEndQuestion') {
     if (locale === 'en') {
-      return <>…</>
+      return (
+        <>
+          <Bold>Question:</Bold>{' '}
+          <Highlight>
+            If we <H args={{ name: 'play', lowerCase: true }} /> the above
+            lunchbox, will it eventually be like the following lunchbox?
+          </Highlight>
+        </>
+      )
     } else {
       return (
         <>
@@ -763,7 +771,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
   }
   if (args.name === 'lookAtThisBentoBox') {
     if (locale === 'en') {
-      return <>…</>
+      return <>Take a look at this lunchbox</>
     } else {
       return <>こちらの弁当箱をご覧ください</>
     }
