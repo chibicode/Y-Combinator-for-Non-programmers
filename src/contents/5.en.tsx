@@ -34,33 +34,29 @@ import {
 
 export const ThreeRowRules = () => (
   <>
-    <P>
-      <Bold>Here’s how to solve a lunchbox puzzle with at least 3 rows.</Bold>
-    </P>
     <Ol>
       <OlLi>
         <Highlight>
-          First, start with the pair of{' '}
+          Start with the pair of{' '}
           <InlinePrioritiesLabel>1</InlinePrioritiesLabel>’s.
         </Highlight>
       </OlLi>
       <OlLi>
         <Highlight>
-          Label the center item on the bottom row as{' '}
+          Label the middle item on the bottom row as{' '}
           <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />, and
-          you can ignore this for the rest of the iteration.
+          ignore it.
         </Highlight>
       </OlLi>
       <OlLi>
         <Highlight>
           After finishing the pair of{' '}
-          <InlinePrioritiesLabel>1</InlinePrioritiesLabel>’s,
-          <InlinePrioritiesLabel>2</InlinePrioritiesLabel> will become{' '}
-          <InlinePrioritiesLabel>1</InlinePrioritiesLabel>. Then, repeat.
+          <InlinePrioritiesLabel>1</InlinePrioritiesLabel>’s, the pair of{' '}
+          <InlinePrioritiesLabel>2</InlinePrioritiesLabel>’s becomes{' '}
+          <InlinePrioritiesLabel>1</InlinePrioritiesLabel>’s. Then, repeat.
         </Highlight>
       </OlLi>
     </Ol>
-    <R.Vdhd>Lunchbox with 3 rows</R.Vdhd>
   </>
 )
 
@@ -876,34 +872,7 @@ export default () => (
                       <P>
                         <Bold>To summarize:</Bold>
                       </P>
-                      <Ol>
-                        <OlLi>
-                          <Highlight>
-                            Start with the pair of{' '}
-                            <InlinePrioritiesLabel>1</InlinePrioritiesLabel>’s.
-                          </Highlight>
-                        </OlLi>
-                        <OlLi>
-                          <Highlight>
-                            Label the middle item on the bottom row as{' '}
-                            <BottomRightBadge
-                              inline
-                              bottomRightBadgeType="funcUnbound"
-                            />
-                            , and ignore it.
-                          </Highlight>
-                        </OlLi>
-                        <OlLi>
-                          <Highlight>
-                            After finishing the pair of{' '}
-                            <InlinePrioritiesLabel>1</InlinePrioritiesLabel>’s,
-                            the pair of{' '}
-                            <InlinePrioritiesLabel>2</InlinePrioritiesLabel>’s
-                            becomes{' '}
-                            <InlinePrioritiesLabel>1</InlinePrioritiesLabel>’s.
-                          </Highlight>
-                        </OlLi>
-                      </Ol>
+                      <ThreeRowRules />
                       <P>Is this right?</P>
                     </>
                   )
@@ -1629,9 +1598,8 @@ export default () => (
       {
         title: (
           <>
-            細かい法則その2: <InlinePrioritiesLabel>1</InlinePrioritiesLabel>{' '}
-            のペアのからはじめられない場合、
-            <InlinePrioritiesLabel>2</InlinePrioritiesLabel> のペアからはじめる
+            Additional Rule 2: Start with the pair of{' '}
+            <InlinePrioritiesLabel>2</InlinePrioritiesLabel>’s if necessary
           </>
         ),
         content: (
@@ -1984,7 +1952,13 @@ export default () => (
         ),
         content: (
           <>
+            <P>
+              <Bold>
+                Here’s how to solve a lunchbox puzzle with at least 3 rows.
+              </Bold>
+            </P>
             <ThreeRowRules />
+            <R.Vdhd>Lunchbox with 3 rows</R.Vdhd>
             <Hr />
             <Beginner5Rules />
             <BubbleQuotes

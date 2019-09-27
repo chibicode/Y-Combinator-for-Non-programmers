@@ -1,5 +1,11 @@
 import React from 'react'
-import { P, Hr, HighlightBold, CenteredCode } from 'src/components/ContentTags'
+import {
+  P,
+  Hr,
+  Bold,
+  HighlightBold,
+  CenteredCode
+} from 'src/components/ContentTags'
 import EpisodeCardList from 'src/components/EpisodeCardList'
 import ExpressionRunnerSeparator from 'src/components/ExpressionRunnerSeparator'
 import EmojiSeparator from 'src/components/EmojiSeparator'
@@ -108,7 +114,13 @@ const DemoCardList = () => (
         title: <>Rules for Lunchboxes with 3+ Rows</>,
         content: (
           <>
+            <P>
+              <Bold>
+                Here’s how to solve a lunchbox puzzle with at least 3 rows.
+              </Bold>
+            </P>
             <ThreeRowRules />
+            <R.Vdhd>Lunchbox with 3 rows</R.Vdhd>
             <Hr />
             <Beginner5Rules />
           </>
