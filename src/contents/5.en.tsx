@@ -906,8 +906,11 @@ export default () => (
                       <P>
                         Perfect!{' '}
                         <Highlight>
-                          Let’s do a <H args={{ name: 'yesNoQuiz' }} /> to check
-                          your understanding!
+                          Let’s do a{' '}
+                          <Bold>
+                            <H args={{ name: 'yesNoQuiz' }} />
+                          </Bold>{' '}
+                          to check your understanding!
                         </Highlight>
                       </P>
                     </>
@@ -962,16 +965,20 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        <HighlightBold>
-                          <H args={{ name: 'theAnswerIs', isYes: true }} />{' '}
-                          だと思う！
-                        </HighlightBold>
-                        最後には
-                        <EmojiWithText letter="h" />
-                        が残るはずだ。
+                        <H
+                          args={{
+                            name: 'theAnswerIs',
+                            isYes: true,
+                            sentence: true
+                          }}
+                        />
+                        . We should be left with a bowl of{' '}
+                        <EmojiWithText letter="h" /> at the end.
                       </P>
                       <P>
-                        <H args={{ name: 'fastForward' }} /> で見てみよう！
+                        Let’s{' '}
+                        <H args={{ name: 'fastForward', lowerCase: true }} /> it
+                        to check!
                       </P>
                     </>
                   )
@@ -979,7 +986,6 @@ export default () => (
               ]}
             />
             <P>
-              では、
               <H args={{ name: 'pressFastForward', mentionRightArrow: true }} />
             </P>
             <R.Hdxc />
@@ -990,9 +996,16 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        やった！最後に
-                        <EmojiWithText letter="h" />
-                        が残ったので、<Emoji>⭕️</Emoji> が正解だ！
+                        Yes! We’re left with the <EmojiWithText letter="h" />.
+                        So{' '}
+                        <H
+                          args={{
+                            name: 'theAnswerIs',
+                            isYes: true,
+                            lowerCase: true
+                          }}
+                        />
+                        !
                       </P>
                     </>
                   )
@@ -1001,7 +1014,7 @@ export default () => (
                   type: 'devil',
                   children: (
                     <>
-                      <P>ぐぬぬ…やるじゃないか！</P>
+                      <P>Hmm… good job!</P>
                     </>
                   )
                 }

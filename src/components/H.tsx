@@ -78,7 +78,7 @@ interface HProps {
     | { name: 'play'; lowerCase?: true }
     | { name: 'fastForwarding' }
     | { name: 'pause' }
-    | { name: 'fastForward' }
+    | { name: 'fastForward'; lowerCase?: true }
     | { name: 'reset' }
     | { name: 'previous' }
     | { name: 'done' }
@@ -110,7 +110,7 @@ interface HProps {
       }
     | { name: 'copy' }
     | { name: 'summary' }
-    | { name: 'theAnswerIs'; isYes: boolean; sentence?: boolean }
+    | { name: 'theAnswerIs'; isYes: boolean; sentence?: true; lowerCase?: true }
     | { name: 'shareContent' }
     | { name: 'shareTitle' }
     | { name: 'privacyPolicy' }
@@ -431,7 +431,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
       return (
         <>
           <HighlightBold highlightType={highlightType}>
-            Play <Emoji>▶️</Emoji>
+            {args.lowerCase ? 'p' : 'P'}lay <Emoji>▶️</Emoji>
           </HighlightBold>
         </>
       )
@@ -802,7 +802,8 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
     if (locale === 'en') {
       return (
         <>
-          The answer is{' '}
+          {args.sentence ? 'I think ' : ''}
+          {args.lowerCase || args.sentence ? 'the' : 'The'} answer is{' '}
           {args.isYes ? (
             <H args={{ name: 'yesNoQuizYes' }} />
           ) : (
