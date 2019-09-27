@@ -1545,11 +1545,8 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        やった！最後に
-                        <EmojiWithText letter="a" />
-                        ではなく
-                        <EmojiWithText letter="d" />
-                        が残ったので、<Emoji>❌</Emoji> が正解だ！So{' '}
+                        We’re left with <EmojiWithText letter="d" /> instead of{' '}
+                        <EmojiWithText letter="a" />. So{' '}
                         <H
                           args={{
                             name: 'theAnswerIs',
@@ -1571,53 +1568,60 @@ export default () => (
         type: 'sideNote',
         title: (
           <>
-            補足: 左端に <InlinePrioritiesLabel>1</InlinePrioritiesLabel>{' '}
-            のペアがない場合
+            Side Note: What if there’s no pair of{' '}
+            <InlinePrioritiesLabel>1</InlinePrioritiesLabel>’s on the left edge?
           </>
         ),
         content: (
           <>
             <P>
-              ここで補足です。まず、下の弁当箱をご覧ください。先ほどの{' '}
-              <H args={{ name: 'yesNoQuiz' }} />
-              で登場した弁当箱とほとんど同じですが、
-              <Highlight>
-                <InlinePrioritiesLabel>1</InlinePrioritiesLabel>{' '}
-                のペアが弁当箱の左端になく、内側だけにあります。
-              </Highlight>
+              <Bold>Side Note:</Bold> Take a look at the following lunchbox.
             </P>
+            <Ul>
+              <UlLi>
+                It’s similar to the one that was used for the quiz, except…
+              </UlLi>
+              <UlLi>
+                <Italic>
+                  There’s no pair of{' '}
+                  <InlinePrioritiesLabel>1</InlinePrioritiesLabel>’s on the left
+                  edge.
+                </Italic>
+              </UlLi>
+              <UlLi>
+                So there’s only one inner pair of{' '}
+                <InlinePrioritiesLabel>1</InlinePrioritiesLabel>’s.
+              </UlLi>
+            </Ul>
             <R.Dhzf>
-              <InlinePrioritiesLabel>1</InlinePrioritiesLabel>{' '}
-              のペアが弁当箱の左端になく、
+              There’s no pair of{' '}
+              <InlinePrioritiesLabel>1</InlinePrioritiesLabel>’s
               <br />
-              内側だけにある
+              on the left edge
             </R.Dhzf>
             <P>
-              このような場合、
+              <Bold>In this case:</Bold>{' '}
               <Highlight>
-                内側の <InlinePrioritiesLabel>1</InlinePrioritiesLabel>{' '}
-                のペアの部分からはじめます。
+                We just start with the inner pair of{' '}
+                <InlinePrioritiesLabel>1</InlinePrioritiesLabel>’s.
               </Highlight>
             </P>
             <R.Mhyv>
-              内側の <InlinePrioritiesLabel>1</InlinePrioritiesLabel>{' '}
-              のペアからはじめる
+              Start with the inner pair of{' '}
+              <InlinePrioritiesLabel>1</InlinePrioritiesLabel>’s
             </R.Mhyv>
             <P>
-              残りは
-              <H args={{ name: 'fastForward' }} /> で見てみましょう。
-              <H args={{ name: 'pressFastForward' }} />
+              The rest is simple. <H args={{ name: 'pressFastForward' }} />
             </P>
             <R.Ayok />
             <P>
-              まとめると、
+              <Bold>Summary:</Bold>{' '}
               <Highlight>
-                <InlinePrioritiesLabel>1</InlinePrioritiesLabel>{' '}
-                のペアが弁当箱の左端にない場合は、内側の{' '}
-                <InlinePrioritiesLabel>1</InlinePrioritiesLabel>{' '}
-                のペアからはじめればいい
+                If there’s no pair of{' '}
+                <InlinePrioritiesLabel>1</InlinePrioritiesLabel>’s on the left
+                edge, start with the inner pair of{' '}
+                <InlinePrioritiesLabel>1</InlinePrioritiesLabel>’s.
               </Highlight>
-              のです。
             </P>
           </>
         )
