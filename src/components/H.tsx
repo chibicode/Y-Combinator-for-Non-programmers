@@ -1377,14 +1377,14 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
   }
   if (args.name === 'skipToTheEnd') {
     if (locale === 'en') {
-      return <>?</>
+      return <>Skip to the end</>
     } else {
       return <>最後までスキップ</>
     }
   }
   if (args.name === 'skipToTheStoppingPoint') {
     if (locale === 'en') {
-      return <>?</>
+      return <>Skip to the next stopping point</>
     } else {
       return <>途中までスキップ</>
     }
@@ -1430,7 +1430,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
   }
   if (args.name === 'testimonialsContent') {
     if (locale === 'en') {
-      return <></>
+      return <>?</>
     } else {
       return (
         <>
@@ -1504,7 +1504,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
   }
   if (args.name === 'conditionFeature') {
     if (locale === 'en') {
-      return <></>
+      return <>?</>
     } else {
       return (
         <>
