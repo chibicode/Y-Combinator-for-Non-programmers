@@ -1024,7 +1024,7 @@ export default () => (
         )
       },
       {
-        title: <>ふたつの細かい法則</>,
+        title: <>Two Additional Rules</>,
         content: (
           <>
             <BubbleQuotes
@@ -1033,7 +1033,10 @@ export default () => (
                   type: 'wink',
                   children: (
                     <>
-                      <P>どうだ、そろそろ計算箱を返す気になったか？</P>
+                      <P>
+                        So… <Italic>did we win?</Italic> Can you return
+                        mathboxes to us now? <CustomEmoji type="mathBox" />
+                      </P>
                     </>
                   )
                 },
@@ -1042,9 +1045,10 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        まだドヤ顔をするような時間じゃないぞ。弁当箱の「
-                        <HighlightBold>細かい法則</HighlightBold>
-                        」に関する問題を出していないからな。
+                        <Italic>Not yet.</Italic> I still haven’t given you
+                        questions regarding the{' '}
+                        <HighlightBold>additional rules</HighlightBold> of a
+                        lunchbox.
                       </P>
                     </>
                   )
@@ -1053,13 +1057,7 @@ export default () => (
             />
             <EmojiSeparator
               emojis={['❓', '🍱', '❓']}
-              description={
-                <>
-                  弁当箱の「
-                  <HighlightBold>細かい法則</HighlightBold>
-                  」？
-                </>
-              }
+              description={<>The additional rules…?</>}
             />
             <BubbleQuotes
               quotes={[
@@ -1068,9 +1066,8 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        弁当箱の「
-                        <HighlightBold>細かい法則</HighlightBold>
-                        」だって？何のことだ？
+                        <Bold>The additional rules?</Bold> What are you talking
+                        about?
                       </P>
                     </>
                   )
@@ -1079,19 +1076,15 @@ export default () => (
                   type: 'devil',
                   children: (
                     <>
-                      <P>
-                        まず、こちらの
-                        <H args={{ name: 'bentoBoxPuzzle' }} />
-                        を見てみな。
-                      </P>
+                      <P>Well, take a look at the following lunchbox:</P>
                     </>
                   )
                 }
               ]}
             />
             <R.Laea>
-              <InlinePrioritiesLabel>1</InlinePrioritiesLabel>{' '}
-              のペアが左右ふたつある
+              There are two pairs of{' '}
+              <InlinePrioritiesLabel>1</InlinePrioritiesLabel>’s
             </R.Laea>
             <BubbleQuotes
               quotes={[
@@ -1100,12 +1093,12 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        今まで見たことない形のパズルだ。
-                        <HighlightBold>
-                          <InlinePrioritiesLabel>1</InlinePrioritiesLabel>{' '}
-                          のペアが左右ふたつある
-                        </HighlightBold>
-                        なあ…
+                        Hmm… this is new.{' '}
+                        <Italic>
+                          There are two pairs of{' '}
+                          <InlinePrioritiesLabel>1</InlinePrioritiesLabel>’s
+                        </Italic>
+                        .
                       </P>
                     </>
                   )
@@ -1114,20 +1107,15 @@ export default () => (
                   type: 'devil',
                   children: (
                     <>
-                      <P>
-                        続いて、こちらの
-                        <H args={{ name: 'bentoBoxPuzzle' }} />
-                        を見てみな。
-                      </P>
+                      <P>Next, how about this one?</P>
                     </>
                   )
                 }
               ]}
             />
             <R.Gtdu>
-              一番下の料理が
-              <EmojiWithText letter="b" />
-              ひとつだけ
+              There’s only item (a <EmojiWithText letter="b" />)<br />
+              on the bottom row
             </R.Gtdu>
             <BubbleQuotes
               quotes={[
@@ -1136,12 +1124,11 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        これも見たことない形だなあ…
-                        <HighlightBold>
-                          一番下に入っている料理が
-                          <EmojiWithText letter="b" />
-                          ひとつだけだ。
-                        </HighlightBold>
+                        This one looks new too.{' '}
+                        <Italic>
+                          There’s only one item (a <EmojiWithText letter="b" />)
+                          on the bottom row.
+                        </Italic>
                       </P>
                     </>
                   )
