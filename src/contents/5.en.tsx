@@ -619,8 +619,12 @@ export default () => (
         content: (
           <>
             <P>
-              <Bold>Next:</Bold> We’ll finish the section that belongs to the
-              pair of <InlinePrioritiesLabel revert>1</InlinePrioritiesLabel>’s.
+              <Bold>Next:</Bold>{' '}
+              <Highlight>
+                We’ll finish the section that belongs to the pair of{' '}
+                <InlinePrioritiesLabel revert>1</InlinePrioritiesLabel>’s
+              </Highlight>
+              .
             </P>
             <EmojiSeparator
               nodes={[
@@ -691,28 +695,36 @@ export default () => (
       {
         title: (
           <>
-            <InlinePrioritiesLabel revert>1</InlinePrioritiesLabel> が消え、
-            <InlinePrioritiesLabel>2</InlinePrioritiesLabel> が{' '}
-            <InlinePrioritiesLabel>1</InlinePrioritiesLabel> に
+            <InlinePrioritiesLabel revert>1</InlinePrioritiesLabel>’s disappear,
+            and <InlinePrioritiesLabel>2</InlinePrioritiesLabel>’s become{' '}
+            <InlinePrioritiesLabel>1</InlinePrioritiesLabel>’s
           </>
         ),
         content: (
           <>
             <P>
-              さらに続きを見ていきましょう。
-              <H args={{ name: 'pressNext' }} />
+              Let’s keep going! <H args={{ name: 'pressNext' }} />
             </P>
             <R.Uwma />
             <Ul>
               <UlLi>
-                <BottomRightBadge inline bottomRightBadgeType="callArg" /> と{' '}
-                <BottomRightBadge inline bottomRightBadgeType="funcArg" />{' '}
-                が消えると同時に、
+                <BottomRightBadge inline bottomRightBadgeType="callArg" /> and{' '}
+                <BottomRightBadge inline bottomRightBadgeType="funcArg" /> are
+                removed,
               </UlLi>
               <UlLi>
-                <InlinePrioritiesLabel revert>1</InlinePrioritiesLabel> が消え、
-                <InlinePrioritiesLabel>2</InlinePrioritiesLabel> が{' '}
-                <InlinePrioritiesLabel>1</InlinePrioritiesLabel> になりました。
+                <Highlight>
+                  The pair of{' '}
+                  <InlinePrioritiesLabel revert>1</InlinePrioritiesLabel>’s are
+                  also removed, and…
+                </Highlight>
+              </UlLi>
+              <UlLi>
+                <Highlight>
+                  The pair of <InlinePrioritiesLabel>2</InlinePrioritiesLabel>’s
+                  became the <Italic>new</Italic> pair of{' '}
+                  <InlinePrioritiesLabel>1</InlinePrioritiesLabel>’s.
+                </Highlight>
               </UlLi>
             </Ul>
             <EmojiSeparator
@@ -726,12 +738,7 @@ export default () => (
         )
       },
       {
-        title: (
-          <>
-            残った<InlinePrioritiesLabel>1</InlinePrioritiesLabel>
-            のペアを終わらせる
-          </>
-        ),
+        title: <>Finish the remaining part</>,
         content: (
           <>
             <BubbleQuotes
@@ -741,42 +748,50 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        残った弁当箱は、前のページで見たのと同じようなやつだ！
+                        This now looks like lunchboxes from the previous page!
                       </P>
                     </>
                   )
                 }
               ]}
             />
-            <R.Jwue>残った弁当箱はシンプルな2段</R.Jwue>
+            <R.Jwue>We now have a simpler lunchbox</R.Jwue>
             <BubbleQuotes
               quotes={[
                 {
                   type: 'devil',
                   children: (
                     <>
-                      <P>
-                        そうだ。そして、先ほど{' '}
-                        <BottomRightBadge
-                          inline
-                          bottomRightBadgeType="funcUnbound"
-                        />{' '}
-                        だった
-                        <EmojiWithText letter="b" /> に、
-                        <BottomRightBadge
-                          inline
-                          bottomRightBadgeType="funcArg"
-                        />{' '}
-                        の印がついているのに注目だ。
-                      </P>
+                      <P>Yes. Also, notice that:</P>
+                      <Ul>
+                        <UlLi>
+                          The <EmojiWithText letter="b" /> was labeled as{' '}
+                          <BottomRightBadge
+                            inline
+                            bottomRightBadgeType="funcUnbound"
+                          />{' '}
+                          earlier…
+                        </UlLi>
+                        <UlLi>
+                          But{' '}
+                          <Italic>
+                            it will now be labeled as{' '}
+                            <BottomRightBadge
+                              inline
+                              bottomRightBadgeType="funcArg"
+                            />
+                          </Italic>
+                          , because it’s on the “<Bold>L</Bold>eft” now.
+                        </UlLi>
+                      </Ul>
                     </>
                   )
                 }
               ]}
             />
             <R.Sgnp>
-              <EmojiWithText letter="b" /> が{' '}
-              <BottomRightBadge inline bottomRightBadgeType="funcArg" /> に
+              The <EmojiWithText letter="b" /> is now labeled as{' '}
+              <BottomRightBadge inline bottomRightBadgeType="funcArg" />
             </R.Sgnp>
             <BubbleQuotes
               quotes={[
@@ -785,9 +800,8 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        あとは前回とやり方は変わらない。
-                        <H args={{ name: 'fastForward' }} />{' '}
-                        で最後まで見てみよう。
+                        Let’s keep going to the end.{' '}
+                        <H args={{ name: 'pressFastForward' }} />
                       </P>
                     </>
                   )
@@ -805,7 +819,7 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        最後に <EmojiWithText letter="c" /> が残った！
+                        We’re left with a <EmojiWithText letter="c" />!
                       </P>
                     </>
                   )
@@ -814,7 +828,7 @@ export default () => (
                   type: 'devil',
                   children: (
                     <>
-                      <P>これで終了だ！どうだ、理解できたかな？</P>
+                      <P>That’s it! Were you able to follow?</P>
                     </>
                   )
                 },
@@ -822,7 +836,7 @@ export default () => (
                   type: 'thinking',
                   children: (
                     <>
-                      <P>うーん、なんとなく…</P>
+                      <P>I think so?</P>
                     </>
                   )
                 },
@@ -830,9 +844,10 @@ export default () => (
                   type: 'devil',
                   children: (
                     <>
+                      <P>Ok, let’s do a review just in case.</P>
                       <P>
-                        では復習のために、最初から最後まで
-                        <H args={{ name: 'fastForward' }} /> で見てみよう。
+                        We’ll run it from the beginning to the end using the{' '}
+                        <H args={{ name: 'fastForward' }} /> button.
                       </P>
                     </>
                   )
@@ -849,43 +864,38 @@ export default () => (
                   type: 'thinking',
                   children: (
                     <>
-                      <P>まとめると、</P>
+                      <P>
+                        <Bold>To summarize:</Bold>
+                      </P>
                       <Ol>
                         <OlLi>
                           <Highlight>
-                            まず先に{' '}
-                            <InlinePrioritiesLabel>1</InlinePrioritiesLabel>{' '}
-                            のペアからはじめる。
+                            Start with the pair of{' '}
+                            <InlinePrioritiesLabel>1</InlinePrioritiesLabel>’s.
                           </Highlight>
                         </OlLi>
                         <OlLi>
                           <Highlight>
-                            下段の真ん中にある料理には{' '}
+                            Label the middle item on the bottom row as{' '}
                             <BottomRightBadge
                               inline
                               bottomRightBadgeType="funcUnbound"
-                            />{' '}
-                            をつける。
-                            <BottomRightBadge
-                              inline
-                              bottomRightBadgeType="funcUnbound"
-                            />{' '}
-                            は、いったん無視して構わない。
+                            />
+                            , and ignore it.
                           </Highlight>
                         </OlLi>
                         <OlLi>
                           <Highlight>
-                            <InlinePrioritiesLabel>1</InlinePrioritiesLabel>{' '}
-                            のペアが終わると、
-                            <InlinePrioritiesLabel>
-                              2
-                            </InlinePrioritiesLabel> が{' '}
-                            <InlinePrioritiesLabel>1</InlinePrioritiesLabel>{' '}
-                            になるので、また繰り返す。
+                            After finishing the pair of{' '}
+                            <InlinePrioritiesLabel>1</InlinePrioritiesLabel>’s,
+                            the pair of{' '}
+                            <InlinePrioritiesLabel>2</InlinePrioritiesLabel>’s
+                            becomes{' '}
+                            <InlinePrioritiesLabel>1</InlinePrioritiesLabel>’s.
                           </Highlight>
                         </OlLi>
                       </Ol>
-                      <P>こんなところかな？</P>
+                      <P>Is this right?</P>
                     </>
                   )
                 },
@@ -894,20 +904,20 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        その通り。では、
-                        <HighlightBold>
-                          そろそろ <H args={{ name: 'yesNoQuiz' }} />
-                          の時間だ！
-                        </HighlightBold>
+                        Perfect!{' '}
+                        <Highlight>
+                          Let’s do a <H args={{ name: 'yesNoQuiz' }} /> to check
+                          your understanding!
+                        </Highlight>
                       </P>
                     </>
                   )
                 },
                 {
-                  type: 'crying',
+                  type: 'brave',
                   children: (
                     <>
-                      <P>えー、ちゃんと解けるか、不安だなあ…</P>
+                      <P>Alright, bring it on!</P>
                     </>
                   )
                 }
