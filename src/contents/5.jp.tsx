@@ -1227,6 +1227,7 @@ export default () => (
               <InlinePrioritiesLabel revert>1</InlinePrioritiesLabel>{' '}
               のペアからはじめる
             </R.Aezk>
+            <Hr />
             <P>
               では、
               <BottomRightBadge inline bottomRightBadgeType="callArg" />{' '}
@@ -1338,19 +1339,14 @@ export default () => (
                 }
               ]}
             />
+            <Hr />
             <P>
               そして、
-              <BottomRightBadge inline bottomRightBadgeType="funcArg" /> と{' '}
-              <BottomRightBadge inline bottomRightBadgeType="funcBound" />{' '}
-              にある
               <EmojiWithText letter="b" /> が一致するので…
             </P>
             <R.Dtzu />
             <P>
-              <BottomRightBadge inline bottomRightBadgeType="callArg" /> にある
-              <EmojiWithText letter="a" /> が、
-              <BottomRightBadge inline bottomRightBadgeType="funcBound" /> の
-              <EmojiWithText letter="b" /> のところにコピーされます。
+              <EmojiWithText letter="a" /> がコピーされます。
             </P>
             <R.Vilr />
             <BubbleQuotes

@@ -404,7 +404,7 @@ export default () => (
               <InlineBorder>
                 <EmojiNumber number={8} />
               </InlineBorder>{' '}
-              on the bottom left, next to <CustomEmoji type="minusOne" />.
+              on the bottom-left, next to <CustomEmoji type="minusOne" />.
             </P>
           </>
         )

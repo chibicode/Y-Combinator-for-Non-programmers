@@ -113,9 +113,12 @@ const WillReturn = () => (
       noBottomMargin
       description={
         <>
-          次の中級編で難しい問題を出題する。
+          On the upcoming intermediate levels,
+          <br />I will give you a <Italic>difficult</Italic> question.
           <br />
-          このページで学んだ内容で解けるはず！
+          It can be solved by applying the rules
+          <br />
+          we cover on this page.
         </>
       }
     />
@@ -126,7 +129,13 @@ const WillReturn = () => (
         <CustomEmoji type="mathBox" />,
         <Emoji>✨</Emoji>
       ]}
-      description={<>解けたら計算箱を返してやろう！</>}
+      description={
+        <>
+          If you can solve it,
+          <br />
+          you’ll get your mathboxes back!
+        </>
+      }
     />
   </>
 )
@@ -1139,7 +1148,7 @@ export default () => (
         )
       },
       {
-        title: <>細かい法則を知らないと解けない</>,
+        title: <>You need to know about the additional rules</>,
         content: (
           <>
             <BubbleQuotes
@@ -1149,9 +1158,9 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        上で紹介したようなパズルを解くには、これから紹介する弁当箱の「
-                        <HighlightBold>細かい法則</HighlightBold>
-                        」を知っておかないといけない。
+                        In order to solve puzzles like the above, you need to
+                        know about the <Bold>additional rules</Bold> of a
+                        lunchbox.
                       </P>
                     </>
                   )
@@ -1162,11 +1171,9 @@ export default () => (
               emojis={['❓', '🍱', '❓']}
               description={
                 <>
-                  弁当箱の「
-                  <HighlightBold>細かい法則</HighlightBold>
-                  」を
+                  You need the <Bold>additional rules</Bold> to
                   <br />
-                  知らないと解けない
+                  solve puzzles like the above
                 </>
               }
             />
@@ -1177,10 +1184,12 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        <Highlight>その法則はふたつある。</Highlight>
-                        順番に紹介していこう！もちろん、
-                        <H args={{ name: 'yesNoQuiz' }} />
-                        もやるからな！
+                        There are <Italic>two additional rules</Italic> you need
+                        to know.
+                      </P>
+                      <P>
+                        After explaining them, I’ll give you more{' '}
+                        <H args={{ name: 'yesNoQuiz', postfix: 'zes' }} />!
                       </P>
                     </>
                   )
@@ -1190,8 +1199,9 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        えー、また <H args={{ name: 'yesNoQuiz' }} />
-                        か！いつになったら計算箱を返してくれるんだ！
+                        What, <Italic>more quizzes</Italic>? When will you
+                        return the mathboxes to us?{' '}
+                        <CustomEmoji type="mathBox" />
                       </P>
                     </>
                   )
@@ -1200,13 +1210,24 @@ export default () => (
                   type: 'devil',
                   children: (
                     <>
+                      <P>Well: </P>
+                      <Ul>
+                        <UlLi>
+                          <Highlight>
+                            On the <Bold>intermediate levels</Bold>, which start
+                            from the next page, I’ll give you a{' '}
+                            <Italic>very difficult question</Italic>.
+                          </Highlight>
+                        </UlLi>
+                        <UlLi>
+                          You’ll be able to solve it by applying the rules we
+                          cover on this page.
+                        </UlLi>
+                      </Ul>
                       <P>
-                        まあそう焦るな。
                         <Highlight>
-                          <HighlightBold>
-                            次からはじまる中級編で、とても難しい問題を出題する。
-                          </HighlightBold>
-                          このページで紹介した法則を応用すれば解ける問題だ。それに答えることができたら、計算箱を返してやろう！
+                          I’ll give you the mathboxes back if you solve it!{' '}
+                          <CustomEmoji type="mathBox" />
                         </Highlight>
                       </P>
                     </>
@@ -1222,7 +1243,31 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        え、ということはもうすぐ計算箱を返してもらえるのか！じゃあ、あと少し頑張ろう！
+                        Really? So we’re pretty close to getting our mathboxes
+                        back!
+                      </P>
+                    </>
+                  )
+                },
+                {
+                  type: 'brave',
+                  children: (
+                    <>
+                      <P>
+                        <Bold>In that case:</Bold> Let’s finish the rest of this
+                        page quickly so we can move on to the intermediate
+                        levels!
+                      </P>
+                    </>
+                  )
+                },
+                {
+                  type: 'devil',
+                  children: (
+                    <>
+                      <P>
+                        Alright, I will explain the{' '}
+                        <Bold>additional rules</Bold> then.
                       </P>
                     </>
                   )
@@ -1235,43 +1280,39 @@ export default () => (
       {
         title: (
           <>
-            細かい法則その1: 一番左の{' '}
-            <InlinePrioritiesLabel>1</InlinePrioritiesLabel> のペアからはじめる
+            Additional Rule 1: Start with the leftmost pair of{' '}
+            <InlinePrioritiesLabel>1</InlinePrioritiesLabel>’s
           </>
         ),
         content: (
           <>
             <P>
-              まずは、こちらの
-              <H args={{ name: 'bentoBoxPuzzle' }} />
-              から見ていきましょう。
+              Take a look at this <H args={{ name: 'bentoBoxPuzzle' }} />, which
+              has two pairs of <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
+              ’s:
             </P>
             <R.Laea>
-              <InlinePrioritiesLabel>1</InlinePrioritiesLabel>{' '}
-              のペアが左右ふたつある
+              There are two pairs of{' '}
+              <InlinePrioritiesLabel>1</InlinePrioritiesLabel>’s
             </R.Laea>
             <P>
-              <Bold>細かい法則その1:</Bold>{' '}
+              <Bold>Additional Rule 1:</Bold>{' '}
               <Highlight>
-                <InlinePrioritiesLabel>1</InlinePrioritiesLabel>{' '}
-                のペアが左右ふたつ以上ある場合は、
-                <HighlightBold>一番左側にある</HighlightBold>{' '}
-                <InlinePrioritiesLabel revert>1</InlinePrioritiesLabel>{' '}
-                のペアからはじめます。
+                If there are more than one pair of{' '}
+                <InlinePrioritiesLabel>1</InlinePrioritiesLabel>’s,{' '}
+                <Italic>start with the leftmost</Italic> pair.
               </Highlight>
             </P>
             <R.Aezk>
-              <HighlightBold>一番左側にある</HighlightBold>{' '}
-              <InlinePrioritiesLabel revert>1</InlinePrioritiesLabel>{' '}
-              のペアからはじめる
+              Start with the <Italic>leftmost</Italic> pair
             </R.Aezk>
+            <Hr />
             <P>
-              では、
-              <BottomRightBadge inline bottomRightBadgeType="callArg" />{' '}
+              <Bold>Then, here’s a question:</Bold> What will happen to the
+              labels? <BottomRightBadge inline bottomRightBadgeType="callArg" />{' '}
               <BottomRightBadge inline bottomRightBadgeType="funcArg" />{' '}
               <BottomRightBadge inline bottomRightBadgeType="funcBound" />{' '}
               <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />
-              はどうなるのか見ていきましょう。
             </P>
             <EmojiSeparator
               nodes={[
@@ -1282,26 +1323,19 @@ export default () => (
               ]}
             />
             <P>
-              まず、上の <EmojiWithText letter="a" /> には{' '}
-              <BottomRightBadge inline bottomRightBadgeType="callArg" />{' '}
-              の印がつきます。
+              First, the top <EmojiWithText letter="a" /> will be labeled as{' '}
+              <BottomRightBadge inline bottomRightBadgeType="callArg" />.
             </P>
             <R.Igrl />
             <P>
-              次に、左の
-              <EmojiWithText letter="b" />
-              には <BottomRightBadge
-                inline
-                bottomRightBadgeType="funcArg"
-              />{' '}
-              の印がつきます。
+              Next, the bottom-left <EmojiWithText letter="b" /> will be labeled
+              as <BottomRightBadge inline bottomRightBadgeType="funcArg" />.
             </P>
             <R.Uppk />
             <P>
-              そして、右の
-              <EmojiWithText letter="b" /> と<EmojiWithText letter="c" /> には{' '}
-              <BottomRightBadge inline bottomRightBadgeType="funcBound" />{' '}
-              の印がつきます。
+              Next, the right <EmojiWithText letter="b" /> and the right{' '}
+              <EmojiWithText letter="c" /> will be labeled as{' '}
+              <BottomRightBadge inline bottomRightBadgeType="funcBound" />.
             </P>
             <R.Qfbk />
             <BubbleQuotes
@@ -1311,24 +1345,27 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        ここでは、
-                        <EmojiWithText letter="b" /> にも{' '}
-                        <BottomRightBadge
-                          inline
-                          bottomRightBadgeType="funcBound"
-                        />{' '}
-                        がついたのに注目だ。
-                      </P>
-                      <P>
-                        <HighlightBold>
-                          弁当箱の右端に接している料理にはすべて{' '}
+                        <Bold>Note:</Bold>{' '}
+                        <Highlight>
+                          Any item that <Italic>touches</Italic> the{' '}
+                          <Bold>right edge</Bold> of the lunchbox will be
+                          labeled as{' '}
                           <BottomRightBadge
                             inline
                             bottomRightBadgeType="funcBound"
-                          />{' '}
-                          の印がつく
-                        </HighlightBold>
-                        んだ。
+                          />
+                          .
+                        </Highlight>
+                      </P>
+                      <P>
+                        <Bold>Therefore:</Bold> The right{' '}
+                        <EmojiWithText letter="b" /> will be labeled as{' '}
+                        <BottomRightBadge
+                          inline
+                          bottomRightBadgeType="funcBound"
+                        />
+                        , even though it <Italic>looks like</Italic> it’s in the
+                        middle.
                       </P>
                     </>
                   )
@@ -1336,59 +1373,54 @@ export default () => (
               ]}
             />
             <P>
-              最後に、残った
-              <EmojiWithText letter="c" /> には{' '}
-              <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />{' '}
-              の印がつきます。
+              Finally, the remaining <EmojiWithText letter="c" /> will be
+              labeled as{' '}
+              <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />.
             </P>
             <R.Yfwd />
             <BubbleQuotes
               quotes={[
                 {
-                  type: 'thinking',
+                  type: 'devil',
                   children: (
                     <>
                       <P>
-                        <HighlightBold>
+                        <Highlight>
+                          If none of{' '}
                           <BottomRightBadge
                             inline
                             bottomRightBadgeType="callArg"
-                          />{' '}
+                          />
+                          ,{' '}
                           <BottomRightBadge
                             inline
                             bottomRightBadgeType="funcArg"
-                          />{' '}
+                          />
+                          , or{' '}
                           <BottomRightBadge
                             inline
                             bottomRightBadgeType="funcBound"
                           />{' '}
-                          のどれにも該当しない場合には{' '}
+                          applies, then we use{' '}
                           <BottomRightBadge
                             inline
                             bottomRightBadgeType="funcUnbound"
                           />{' '}
-                          の印がつく
-                        </HighlightBold>
-                        んだな。
+                          for those items.
+                        </Highlight>
                       </P>
                     </>
                   )
                 }
               ]}
             />
+            <Hr />
             <P>
-              そして、
-              <BottomRightBadge inline bottomRightBadgeType="funcArg" /> と{' '}
-              <BottomRightBadge inline bottomRightBadgeType="funcBound" />{' '}
-              にある
-              <EmojiWithText letter="b" /> が一致するので…
+              Now, the <EmojiWithText letter="b" postfix="es" /> match:
             </P>
             <R.Dtzu />
             <P>
-              <BottomRightBadge inline bottomRightBadgeType="callArg" /> にある
-              <EmojiWithText letter="a" /> が、
-              <BottomRightBadge inline bottomRightBadgeType="funcBound" /> の
-              <EmojiWithText letter="b" /> のところにコピーされます。
+              And the <EmojiWithText letter="a" /> gets copied:
             </P>
             <R.Vilr />
             <BubbleQuotes
@@ -1397,15 +1429,26 @@ export default () => (
                   type: 'thinking',
                   children: (
                     <>
-                      <P>なるほど、けっこう難しいなあ。</P>
+                      <P>Hmm… it’s pretty difficult.</P>
+                    </>
+                  )
+                },
+                {
+                  type: 'devil',
+                  children: (
+                    <>
+                      <P>
+                        The rest is simple though. Let’s{' '}
+                        <H args={{ name: 'fastForward', lowerCase: true }} /> it
+                        from here.
+                      </P>
                     </>
                   )
                 }
               ]}
             />
             <P>
-              では、ここからは
-              <H args={{ name: 'fastForward' }} /> で見ていきましょう！
+              <H args={{ name: 'pressFastForward' }} />
             </P>
             <R.Izgz />
             <BubbleQuotes
@@ -1415,8 +1458,7 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        最後は
-                        <EmojiWithText letter="a" /> だけが残った！
+                        We’re left with <EmojiWithText letter="a" />!
                       </P>
                     </>
                   )
@@ -1426,9 +1468,7 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        そうだ。理解できたかな？では、ここで{' '}
-                        <H args={{ name: 'yesNoQuiz' }} />
-                        の時間だ！
+                        Yes. Let’s do a <H args={{ name: 'yesNoQuiz' }} /> now!
                       </P>
                     </>
                   )

@@ -97,8 +97,8 @@ const Explanation = ({
         if (showAllShowSteps) {
           return (
             <>
-              <BottomRightBadge bottomRightBadgeType="funcBound" inline />{' '}
-              Rightmost on bottom row
+              Bottom-right itmes:{' '}
+              <BottomRightBadge bottomRightBadgeType="funcBound" inline />
             </>
           )
         } else {
@@ -122,8 +122,8 @@ const Explanation = ({
         if (showAllShowSteps) {
           return (
             <>
+              All other items:{' '}
               <BottomRightBadge bottomRightBadgeType="funcUnbound" inline />{' '}
-              Middle items on bottom row
             </>
           )
         } else {
@@ -146,8 +146,8 @@ const Explanation = ({
       if (locale === 'en') {
         return (
           <>
-            <BottomRightBadge bottomRightBadgeType="funcArg" inline /> Leftmost
-            on bottom row
+            Bottom-left items:{' '}
+            <BottomRightBadge bottomRightBadgeType="funcArg" inline />
           </>
         )
       } else {
@@ -163,7 +163,8 @@ const Explanation = ({
       if (locale === 'en') {
         return (
           <>
-            <BottomRightBadge bottomRightBadgeType="callArg" inline /> Top row
+            Top items:{' '}
+            <BottomRightBadge bottomRightBadgeType="callArg" inline />
           </>
         )
       } else {

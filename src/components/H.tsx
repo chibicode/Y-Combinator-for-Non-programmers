@@ -1334,9 +1334,9 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
           <br />
           There needs to be one <Emoji>🅱️</Emoji>
           <br />
-          on the top right and some <Emoji>🅰️</Emoji>’s
+          on the top-right and some <Emoji>🅰️</Emoji>’s
           <br />
-          on the bottom right
+          on the bottom-right
         </>
       )
     } else {
