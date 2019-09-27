@@ -755,7 +755,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
           <Bold>Question:</Bold>{' '}
           <Highlight>
             If we <H args={{ name: 'play', lowerCase: true }} /> the above
-            lunchbox, will it eventually be like the following lunchbox?
+            lunchbox, will it eventually become the following?
           </Highlight>
         </>
       )

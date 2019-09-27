@@ -1005,8 +1005,7 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        Yes! We’re left with the <EmojiWithText letter="h" />.
-                        So{' '}
+                        We’re left with the <EmojiWithText letter="h" />. So{' '}
                         <H
                           args={{
                             name: 'theAnswerIs',
@@ -1467,8 +1466,9 @@ export default () => (
                   type: 'devil',
                   children: (
                     <>
+                      <P>Yes. Hope you were following along!</P>
                       <P>
-                        Yes. Let’s do a <H args={{ name: 'yesNoQuiz' }} /> now!
+                        Let’s do a <H args={{ name: 'yesNoQuiz' }} /> now.
                       </P>
                     </>
                   )
@@ -1514,16 +1514,20 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        <HighlightBold>
-                          <H args={{ name: 'theAnswerIs', isYes: false }} />{' '}
-                          だと思う！
-                        </HighlightBold>
-                        最後には
-                        <EmojiWithText letter="a" /> ではなく、
-                        <EmojiWithText letter="d" /> が残るはずだ。
+                        <H
+                          args={{
+                            name: 'theAnswerIs',
+                            isYes: false,
+                            sentence: true
+                          }}
+                        />
+                        . We should be left with <EmojiWithText letter="d" />{' '}
+                        instead of <EmojiWithText letter="a" />.
                       </P>
                       <P>
-                        <H args={{ name: 'fastForward' }} /> で見てみよう！
+                        Let’s{' '}
+                        <H args={{ name: 'fastForward', lowerCase: true }} /> it
+                        to check!
                       </P>
                     </>
                   )
@@ -1531,7 +1535,6 @@ export default () => (
               ]}
             />
             <P>
-              では、
               <H args={{ name: 'pressFastForward', mentionRightArrow: true }} />
             </P>
             <R.Thkn />
@@ -1546,7 +1549,15 @@ export default () => (
                         <EmojiWithText letter="a" />
                         ではなく
                         <EmojiWithText letter="d" />
-                        が残ったので、<Emoji>❌</Emoji> が正解だ！
+                        が残ったので、<Emoji>❌</Emoji> が正解だ！So{' '}
+                        <H
+                          args={{
+                            name: 'theAnswerIs',
+                            isYes: false,
+                            lowerCase: true
+                          }}
+                        />
+                        !
                       </P>
                     </>
                   )
@@ -1909,17 +1920,21 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        <HighlightBold>
-                          <H args={{ name: 'theAnswerIs', isYes: true }} />{' '}
-                          だと思う！
-                        </HighlightBold>
-                        最後には
-                        <EmojiWithText letter="d" />と
-                        <EmojiWithText letter="b" />
-                        が残るはずだ。
+                        <H
+                          args={{
+                            name: 'theAnswerIs',
+                            isYes: true,
+                            sentence: true
+                          }}
+                        />
+                        . I think we should be left with{' '}
+                        <EmojiWithText letter="d" /> and a{' '}
+                        <EmojiWithText letter="b" />.
                       </P>
                       <P>
-                        <H args={{ name: 'fastForward' }} /> で見てみよう！
+                        Let’s{' '}
+                        <H args={{ name: 'fastForward', lowerCase: true }} /> it
+                        to check!
                       </P>
                     </>
                   )
@@ -1927,7 +1942,6 @@ export default () => (
               ]}
             />
             <P>
-              では、
               <H args={{ name: 'pressFastForward', mentionRightArrow: true }} />
             </P>
             <R.Cuwg />
@@ -1938,10 +1952,16 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        やった！最後に
-                        <EmojiWithText letter="d" />と
-                        <EmojiWithText letter="b" />
-                        が残ったので、<Emoji>⭕️</Emoji> が正解だ！
+                        We’re left with <EmojiWithText letter="d" /> and a{' '}
+                        <EmojiWithText letter="b" />. So{' '}
+                        <H
+                          args={{
+                            name: 'theAnswerIs',
+                            isYes: true,
+                            lowerCase: true
+                          }}
+                        />
+                        !
                       </P>
                     </>
                   )
