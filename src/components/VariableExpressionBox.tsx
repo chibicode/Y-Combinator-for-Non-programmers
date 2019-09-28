@@ -8,6 +8,7 @@ import BottomRightBadge from 'src/components/BottomRightBadge'
 import ExpressionPrioritiesLabel from 'src/components/ExpressionPrioritiesLabel'
 import ExpressionRunnerContext from 'src/components/ExpressionRunnerContext'
 import ConditionalContext from 'src/components/ConditionalContext'
+import BinaryContext from 'src/components/BinaryContext'
 import TopLeftBadge from 'src/components/TopLeftBadge'
 import { fontSizes, spaces, zIndices, colors } from 'src/lib/theme'
 import letterEmojiMapping from 'src/lib/letterEmojiMapping'
@@ -351,6 +352,7 @@ const VariableEmoji = ({ expression }: VariableExpressionBoxProps) => {
 const VariableExpressionBox = ({ expression }: VariableExpressionBoxProps) => {
   const { hidePriorities, variableSize } = useContext(ExpressionRunnerContext)
   const { conditionalState } = useContext(ConditionalContext)
+  const { binaryState } = useContext(BinaryContext)
   return (
     <>
       {!hidePriorities && (
@@ -359,7 +361,8 @@ const VariableExpressionBox = ({ expression }: VariableExpressionBoxProps) => {
           position="topleft"
           emphasize={
             expression.emphasizePriority ||
-            !!(conditionalState && conditionalState !== 'default')
+            !!(conditionalState && conditionalState !== 'default') ||
+            !!(binaryState && binaryState !== 'default')
           }
         />
       )}
@@ -379,7 +382,8 @@ const VariableExpressionBox = ({ expression }: VariableExpressionBoxProps) => {
           position="bottomleft"
           emphasize={
             expression.emphasizePriority ||
-            !!(conditionalState && conditionalState !== 'default')
+            !!(conditionalState && conditionalState !== 'default') ||
+            !!(binaryState && binaryState !== 'default')
           }
         />
       )}
