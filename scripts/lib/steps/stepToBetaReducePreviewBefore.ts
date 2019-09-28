@@ -2,7 +2,8 @@ import {
   isFunction,
   isVariable,
   isCall,
-  isConditional
+  isConditional,
+  isBinary
 } from 'src/lib/expressionTypeGuards'
 import {
   CallExpression,
@@ -15,6 +16,8 @@ import {
   StepFunction,
   StepVariable,
   VariableExpression,
+  BinaryExpression,
+  StepBinary,
   VariableWithState,
   ConditionalExpression,
   StepConditional
@@ -43,6 +46,14 @@ export function toBetaReducePreviewBefore(
   funcSide: boolean
 ): {
   nextExpression: StepConditional<'betaReducePreviewBefore'>
+  matchExists: boolean
+}
+export function toBetaReducePreviewBefore(
+  e: BinaryExpression,
+  fromName: VariableNames,
+  funcSide: boolean
+): {
+  nextExpression: StepBinary<'betaReducePreviewBefore'>
   matchExists: boolean
 }
 export function toBetaReducePreviewBefore(
@@ -164,6 +175,18 @@ export function toBetaReducePreviewBefore(
       },
       matchExists:
         condition.matchExists || trueCase.matchExists || falseCase.matchExists
+    }
+  } else if (isBinary(e)) {
+    const first = toBetaReducePreviewBefore(e.first, fromName, funcSide)
+    const second = toBetaReducePreviewBefore(e.second, fromName, funcSide)
+    return {
+      nextExpression: {
+        ...e,
+        state: 'default',
+        first: first.nextExpression,
+        second: second.nextExpression
+      },
+      matchExists: first.matchExists || second.matchExists
     }
   } else {
     throw new Error()

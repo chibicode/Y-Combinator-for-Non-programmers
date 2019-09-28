@@ -3,6 +3,7 @@ import {
   isVariable,
   isCall,
   isConditional,
+  isBinary,
   isExecutableCallShorthand
 } from 'src/lib/expressionTypeGuards'
 import {
@@ -18,6 +19,8 @@ import {
   VariableExpression,
   VariableWithEmphasizePriorityAndState,
   ConditionalExpression,
+  BinaryExpression,
+  StepBinary,
   StepConditional,
   ExecutableCallShorthand,
   ExecutableStepCallShorthand,
@@ -29,6 +32,7 @@ function toActive(e: VariableShorthandFunc): StepVariableShorthandFunc<'active'>
 function toActive(e: VariableExpression): StepVariable<'active'>
 function toActive(e: FunctionExpression): StepFunction<'active'>
 function toActive(e: ConditionalExpression): StepConditional<'active'>
+function toActive(e: BinaryExpression): StepBinary<'active'>
 function toActive(e: CallExpression): NonExecutableStepCall<'active'>
 function toActive(
   e: VariableExpression | FunctionExpression
@@ -62,6 +66,13 @@ function toActive(e: Expression): StepChild<'active'> {
       condition: toActive(e.condition),
       trueCase: toActive(e.trueCase),
       falseCase: toActive(e.falseCase)
+    }
+  } else if (isBinary(e)) {
+    return {
+      ...e,
+      state: 'default',
+      first: toActive(e.first),
+      second: toActive(e.second)
     }
   } else {
     throw new Error()

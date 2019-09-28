@@ -2,7 +2,8 @@ import {
   isFunction,
   isVariable,
   isCall,
-  isConditional
+  isConditional,
+  isBinary
 } from 'src/lib/expressionTypeGuards'
 import {
   CallExpression,
@@ -17,6 +18,8 @@ import {
   VariableExpression,
   VariableWithState,
   ConditionalExpression,
+  BinaryExpression,
+  StepBinary,
   StepConditional
 } from 'src/types/ExpressionTypes'
 
@@ -32,6 +35,10 @@ function toCrossed(
   e: ConditionalExpression,
   isCallArg: boolean
 ): StepConditional<'betaReducePreviewCrossed'>
+function toCrossed(
+  e: BinaryExpression,
+  isCallArg: boolean
+): StepBinary<'betaReducePreviewCrossed'>
 function toCrossed(
   e: CallExpression,
   isCallArg: boolean
@@ -86,6 +93,13 @@ function toCrossed(
       condition: toCrossed(e.condition, isCallArg),
       trueCase: toCrossed(e.trueCase, isCallArg),
       falseCase: toCrossed(e.falseCase, isCallArg)
+    }
+  } else if (isBinary(e)) {
+    return {
+      ...e,
+      state: 'default',
+      first: toCrossed(e.first, isCallArg),
+      second: toCrossed(e.second, isCallArg)
     }
   } else {
     throw new Error()
