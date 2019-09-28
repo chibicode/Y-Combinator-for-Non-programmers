@@ -308,6 +308,13 @@ export const gtdu: ExpressionRunnerShorthandConfig = {
   showPriorities: true
 }
 
+export const roko: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.hrdv,
+  showPriorities: true,
+  crossed: true
+}
+
 export const guhy: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   initialExpressionContainer: initialExpressionContainers.pslb,

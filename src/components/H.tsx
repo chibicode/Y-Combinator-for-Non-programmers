@@ -1282,11 +1282,9 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
           <br />
           there’s only one item on the bottom row,
           <br />
-          <HighlightBold>
-            start with the pair of{' '}
-            <InlinePrioritiesLabel>2</InlinePrioritiesLabel>
-            ’s.
-          </HighlightBold>
+          start with the pair of{' '}
+          <InlinePrioritiesLabel>2</InlinePrioritiesLabel>
+          ’s.
         </>
       )
     } else {
@@ -1309,7 +1307,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
           If there are multiple pairs of{' '}
           <InlinePrioritiesLabel>1</InlinePrioritiesLabel>’s,
           <br />
-          <HighlightBold>start with the leftmost pair</HighlightBold>.
+          start with the leftmost pair.
         </>
       )
     } else {

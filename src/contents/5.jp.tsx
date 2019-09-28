@@ -1644,19 +1644,10 @@ export default () => (
               </Highlight>
               、ということになります。
             </P>
-            <EmojiSeparator
-              nodes={[
-                <Emoji>❌</Emoji>,
-                <InlinePrioritiesLabel>1</InlinePrioritiesLabel>,
-                <Emoji>❌</Emoji>
-              ]}
-              description={
-                <>
-                  <InlinePrioritiesLabel>1</InlinePrioritiesLabel>{' '}
-                  のペアからはじめられない
-                </>
-              }
-            />
+            <R.Roko>
+              <InlinePrioritiesLabel>1</InlinePrioritiesLabel>{' '}
+              のペアからはじめられない
+            </R.Roko>
             <BubbleQuotes
               quotes={[
                 {

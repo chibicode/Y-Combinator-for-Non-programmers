@@ -1,36 +1,81 @@
 import React from 'react'
-import EpisodeCardList from 'src/components/EpisodeCardList'
+import BottomRightBadge from 'src/components/BottomRightBadge'
+import BubbleQuotes from 'src/components/BubbleQuotes'
 import {
-  P,
+  Bold,
   Highlight,
   HighlightBold,
-  Ul,
-  UlLi,
+  Hr,
+  Italic,
   Ol,
   OlLi,
-  Bold,
-  Hr,
-  Italic
+  P,
+  Ul,
+  UlLi
 } from 'src/components/ContentTags'
-import BubbleQuotes from 'src/components/BubbleQuotes'
-import H from 'src/components/H'
-import EmojiWithText from 'src/components/EmojiWithText'
-import TopLeftBadgeWrapper from 'src/components/TopLeftBadgeWrapper'
-import EmojiForLetter from 'src/components/EmojiForLetter'
-import EmojiSeparator from 'src/components/EmojiSeparator'
 import CustomEmoji from 'src/components/CustomEmoji'
 import Emoji from 'src/components/Emoji'
-import InlinePrioritiesLabel from 'src/components/InlinePrioritiesLabel'
+import EmojiForLetter from 'src/components/EmojiForLetter'
+import EmojiSeparator from 'src/components/EmojiSeparator'
+import EmojiWithText from 'src/components/EmojiWithText'
+import EpisodeCardList from 'src/components/EpisodeCardList'
+import H from 'src/components/H'
 import InlineBackground from 'src/components/InlineBackground'
-import BottomRightBadge from 'src/components/BottomRightBadge'
-import YesNoButtons from 'src/components/YesNoButtons'
-import * as R from 'src/components/Runners'
+import InlinePrioritiesLabel from 'src/components/InlinePrioritiesLabel'
 import NextLessonButton from 'src/components/NextLessonButton'
+import * as R from 'src/components/Runners'
+import TopLeftBadgeWrapper from 'src/components/TopLeftBadgeWrapper'
+import YesNoButtons from 'src/components/YesNoButtons'
 import {
-  InstructionTwo,
+  InstructionFour,
   InstructionThree,
-  InstructionFour
+  InstructionTwo
 } from 'src/contents/4.en'
+
+const WillReturnQuote = () => (
+  <>
+    <Ul>
+      <UlLi>
+        <Highlight>
+          On the <Bold>intermediate levels</Bold>, which start from the next
+          page, I’ll give you a <Italic>very difficult question</Italic>.
+        </Highlight>
+      </UlLi>
+      <UlLi>
+        You’ll be able to solve it by applying the rules we cover on this page.
+      </UlLi>
+    </Ul>
+    <P>
+      <Highlight>
+        I’ll give you the mathboxes back if you solve it!{' '}
+        <CustomEmoji type="mathBox" />
+      </Highlight>
+    </P>
+  </>
+)
+
+const AdditionalRule1Summary = () => (
+  <>
+    <Highlight>
+      If there are multiple pairs of{' '}
+      <InlinePrioritiesLabel>1</InlinePrioritiesLabel>’s,{' '}
+      <Italic>start with the leftmost</Italic> pair.
+    </Highlight>
+  </>
+)
+
+const AdditionalRule1NotesSummary = () => (
+  <>
+    <Highlight>
+      If there’s no pair of <InlinePrioritiesLabel>1</InlinePrioritiesLabel>’s
+      on the left edge,{' '}
+      <Italic>
+        start with the inner pair of{' '}
+        <InlinePrioritiesLabel>1</InlinePrioritiesLabel>’s.
+      </Italic>
+    </Highlight>
+  </>
+)
 
 export const ThreeRowRules = () => (
   <>
@@ -63,38 +108,33 @@ export const ThreeRowRules = () => (
 export const Beginner5Rules = () => (
   <>
     <P>
-      <Bold>Additional Rule 1:</Bold> If there are multiple pairs of{' '}
-      <InlinePrioritiesLabel>1</InlinePrioritiesLabel>’s,{' '}
-      <HighlightBold>start with the leftmost pair</HighlightBold>.
+      <Bold>Additional Rule 1:</Bold> <AdditionalRule1Summary />
     </P>
     <R.Hykj>
       <H args={{ name: 'startWithLeftMostOneCaption' }} />
     </R.Hykj>
     <P>
-      <Bold>Note:</Bold>{' '}
-      <Highlight>
-        If there’s no <InlinePrioritiesLabel>1</InlinePrioritiesLabel>’s on the
-        leftmost edge of a lunchbox, then start with the inner pair of{' '}
-        <InlinePrioritiesLabel>1</InlinePrioritiesLabel>’s.
-      </Highlight>
+      <Bold>Note:</Bold> <AdditionalRule1NotesSummary />
     </P>
     <R.Myjz>
-      If there’s no <InlinePrioritiesLabel>1</InlinePrioritiesLabel> on the
+      If there’s no pair of <InlinePrioritiesLabel>1</InlinePrioritiesLabel>’s
+      on the left edge,
       <br />
-      leftmost edge of a lunchbox, then start with
-      <br />
-      the inner pair of
-      <InlinePrioritiesLabel>1</InlinePrioritiesLabel>’s
+      start with the inner pair of{' '}
+      <InlinePrioritiesLabel>1</InlinePrioritiesLabel>’s.
     </R.Myjz>
     <Hr />
     <P>
-      <Bold>Additional Rule 2:</Bold> If you can’t start with{' '}
-      <InlinePrioritiesLabel>1</InlinePrioritiesLabel>’s because there’s only
-      one item on the bottom row,{' '}
-      <HighlightBold>
-        start with the pair of <InlinePrioritiesLabel>2</InlinePrioritiesLabel>
-        ’s.
-      </HighlightBold>
+      <Bold>Additional Rule 2:</Bold>{' '}
+      <Highlight>
+        If you can’t start with <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
+        ’s because there’s only one item on the bottom row,{' '}
+        <Italic>
+          start with the pair of{' '}
+          <InlinePrioritiesLabel>2</InlinePrioritiesLabel>
+          ’s.
+        </Italic>
+      </Highlight>
     </P>
     <R.Zemy>
       <H args={{ name: 'startWithTwoCaption' }} />
@@ -1179,25 +1219,7 @@ export default () => (
                   children: (
                     <>
                       <P>Well: </P>
-                      <Ul>
-                        <UlLi>
-                          <Highlight>
-                            On the <Bold>intermediate levels</Bold>, which start
-                            from the next page, I’ll give you a{' '}
-                            <Italic>very difficult question</Italic>.
-                          </Highlight>
-                        </UlLi>
-                        <UlLi>
-                          You’ll be able to solve it by applying the rules we
-                          cover on this page.
-                        </UlLi>
-                      </Ul>
-                      <P>
-                        <Highlight>
-                          I’ll give you the mathboxes back if you solve it!{' '}
-                          <CustomEmoji type="mathBox" />
-                        </Highlight>
-                      </P>
+                      <WillReturnQuote />
                     </>
                   )
                 }
@@ -1266,7 +1288,7 @@ export default () => (
             <P>
               <Bold>Additional Rule 1:</Bold>{' '}
               <Highlight>
-                If there are more than one pair of{' '}
+                If there are multiple pairs of{' '}
                 <InlinePrioritiesLabel>1</InlinePrioritiesLabel>’s,{' '}
                 <Italic>start with the leftmost</Italic> pair.
               </Highlight>
@@ -1584,13 +1606,7 @@ export default () => (
             </P>
             <R.Ayok />
             <P>
-              <Bold>Summary:</Bold>{' '}
-              <Highlight>
-                If there’s no pair of{' '}
-                <InlinePrioritiesLabel>1</InlinePrioritiesLabel>’s on the left
-                edge, start with the inner pair of{' '}
-                <InlinePrioritiesLabel>1</InlinePrioritiesLabel>’s.
-              </Highlight>
+              <Bold>Summary:</Bold> <AdditionalRule1NotesSummary />
             </P>
           </>
         )
@@ -1605,13 +1621,11 @@ export default () => (
         content: (
           <>
             <P>
-              続いて、こちらの
-              <H args={{ name: 'bentoBoxPuzzle' }} />
-              をご覧ください。
+              Next, take a look at this <H args={{ name: 'bentoBoxPuzzle' }} />
             </P>
             <R.Gtdu>
-              一番下の料理が
-              <EmojiWithText letter="b" /> ひとつだけ
+              There’s only one item (a <EmojiWithText letter="b" />)<br />
+              on the bottom row
             </R.Gtdu>
             <BubbleQuotes
               quotes={[
@@ -1620,12 +1634,8 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        この弁当箱は、
-                        <HighlightBold>
-                          一番下の段の料理が
-                          <EmojiWithText letter="b" /> だけ
-                        </HighlightBold>
-                        なのに注目だ。
+                        Notice that there’s only one item (a{' '}
+                        <EmojiWithText letter="b" />) on the bottom row.
                       </P>
                     </>
                   )
@@ -1635,29 +1645,48 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        たしかに…仮に{' '}
-                        <InlinePrioritiesLabel>1</InlinePrioritiesLabel>{' '}
-                        のペアからはじめるとしたら、
+                        Okay… let’s assume that we start with the pair of{' '}
+                        <InlinePrioritiesLabel>1</InlinePrioritiesLabel>’s.
                       </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <EmojiSeparator
+              nodes={[
+                <InlinePrioritiesLabel>1</InlinePrioritiesLabel>,
+                <Emoji>🤔</Emoji>,
+                <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
+              ]}
+              description={
+                <>
+                  Suppose that we start with the pair of{' '}
+                  <InlinePrioritiesLabel>1</InlinePrioritiesLabel>’s…
+                </>
+              }
+            />
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'thinking',
+                  children: (
+                    <>
                       <P>
-                        この
-                        <EmojiWithText letter="b" />
-                        には、
-                        <HighlightBold>
-                          <BottomRightBadge
-                            inline
-                            bottomRightBadgeType="funcArg"
-                          />{' '}
-                          <BottomRightBadge
-                            inline
-                            bottomRightBadgeType="funcBound"
-                          />{' '}
-                          <BottomRightBadge
-                            inline
-                            bottomRightBadgeType="funcUnbound"
-                          />{' '}
-                          のうち、どの印をつければいいのだろう？
-                        </HighlightBold>
+                        Then, <Italic>which label</Italic> (out of{' '}
+                        <BottomRightBadge
+                          inline
+                          bottomRightBadgeType="funcArg"
+                        />{' '}
+                        <BottomRightBadge
+                          inline
+                          bottomRightBadgeType="funcBound"
+                        />{' '}
+                        <BottomRightBadge
+                          inline
+                          bottomRightBadgeType="funcUnbound"
+                        />
+                        ) should we use for the <EmojiWithText letter="b" />?
                       </P>
                     </>
                   )
@@ -1665,21 +1694,19 @@ export default () => (
               ]}
             />
             <R.Jmmp>
-              <EmojiWithText letter="b" /> には、
-              <br />
+              Which label (out of{' '}
               <BottomRightBadge inline bottomRightBadgeType="funcArg" />{' '}
               <BottomRightBadge inline bottomRightBadgeType="funcBound" />{' '}
-              <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />{' '}
-              のうちどの印をつければいい？
+              <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />)
+              <br />
+              should we use for the <EmojiWithText letter="b" />?
             </R.Jmmp>
             <P>
-              答えは、「
-              <HighlightBold>どの印もつけることができない</HighlightBold>
-              」です。
+              <Bold>Answer:</Bold> <Italic>None of them would work</Italic>.{' '}
               <Highlight>
-                一番下の段にひとつしか料理がない場合、どの印をつけることもできないのです
+                If there’s only one item on the bottom row, you can’t use any of
+                the labels.
               </Highlight>
-              。
             </P>
             <EmojiSeparator
               nodes={[
@@ -1689,63 +1716,49 @@ export default () => (
               ]}
               description={
                 <>
-                  <EmojiWithText letter="b" /> には、
+                  Can’t use any of the labels for the
                   <br />
-                  <BottomRightBadge
-                    inline
-                    bottomRightBadgeType="funcArg"
-                  />{' '}
-                  <BottomRightBadge inline bottomRightBadgeType="funcBound" />{' '}
-                  <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />{' '}
-                  のどれもつけられない
+                  <EmojiWithText letter="b" />
                 </>
               }
             />
             <P>
-              ということはつまり、
-              <Highlight>
-                <InlinePrioritiesLabel>1</InlinePrioritiesLabel>{' '}
-                のペアからはじめることができない
-              </Highlight>
-              、ということになります。
+              <Bold>Therefore:</Bold> In this scenario,{' '}
+              <Italic>
+                you can’t start with the pair of{' '}
+                <InlinePrioritiesLabel>1</InlinePrioritiesLabel>’s.
+              </Italic>
             </P>
-            <EmojiSeparator
-              nodes={[
-                <Emoji>❌</Emoji>,
-                <InlinePrioritiesLabel>1</InlinePrioritiesLabel>,
-                <Emoji>❌</Emoji>
-              ]}
-              description={
-                <>
-                  <InlinePrioritiesLabel>1</InlinePrioritiesLabel>{' '}
-                  のペアからはじめられない
-                </>
-              }
-            />
+            <R.Roko>
+              Can’t start with the pair of{' '}
+              <InlinePrioritiesLabel>1</InlinePrioritiesLabel>’s
+            </R.Roko>
             <BubbleQuotes
               quotes={[
                 {
                   type: 'thinking',
                   children: (
                     <>
-                      <P>じゃあ、どうすればいいんだ？</P>
+                      <P>Then what should we do?</P>
                     </>
                   )
                 }
               ]}
             />
             <P>
-              <Bold>答え:</Bold> 上記のように{' '}
-              <InlinePrioritiesLabel>1</InlinePrioritiesLabel>{' '}
-              のペアからはじめられない場合は、
-              <HighlightBold>
-                <InlinePrioritiesLabel>2</InlinePrioritiesLabel>{' '}
-                のペアからはじめます。
-              </HighlightBold>
+              <Bold>Answer:</Bold>{' '}
+              <Highlight>
+                If you can’t start with the pair of{' '}
+                <InlinePrioritiesLabel>1</InlinePrioritiesLabel>’s,{' '}
+                <Italic>
+                  start with the pair of{' '}
+                  <InlinePrioritiesLabel>2</InlinePrioritiesLabel>’s.
+                </Italic>
+              </Highlight>
             </P>
             <R.Dqey>
-              <InlinePrioritiesLabel>2</InlinePrioritiesLabel>{' '}
-              のペアからはじめる
+              Start with the pair of{' '}
+              <InlinePrioritiesLabel>2</InlinePrioritiesLabel>’s.
             </R.Dqey>
             <BubbleQuotes
               quotes={[
@@ -1753,26 +1766,31 @@ export default () => (
                   type: 'thinking',
                   children: (
                     <>
-                      <P>
-                        なるほど、
-                        <InlinePrioritiesLabel>2</InlinePrioritiesLabel>{' '}
-                        のペアからはじめれば、
-                        <Highlight>
-                          下の段に
-                          <EmojiWithText letter="a" />
-                          がふたつあるから、
+                      <P>I see…</P>
+                      <Ul>
+                        <UlLi>
+                          If you start with the pair of{' '}
+                          <InlinePrioritiesLabel>2</InlinePrioritiesLabel>’s,
+                        </UlLi>
+                        <UlLi>
+                          You’ll be looking at{' '}
+                          <Italic>just the top two rows</Italic>, and…
+                        </UlLi>
+                        <UlLi>
+                          There are two items (<EmojiWithText letter="a" />) on
+                          the bottom, which can be labeled as{' '}
                           <BottomRightBadge
                             inline
                             bottomRightBadgeType="funcArg"
                           />{' '}
-                          と{' '}
+                          and{' '}
                           <BottomRightBadge
                             inline
                             bottomRightBadgeType="funcBound"
-                          />{' '}
-                          の印をつけられるね。
-                        </Highlight>
-                      </P>
+                          />
+                          .
+                        </UlLi>
+                      </Ul>
                     </>
                   )
                 },
@@ -1780,36 +1798,20 @@ export default () => (
                   type: 'devil',
                   children: (
                     <>
-                      <P>
-                        その通り。
-                        <BottomRightBadge
-                          inline
-                          bottomRightBadgeType="callArg"
-                        />{' '}
-                        <BottomRightBadge
-                          inline
-                          bottomRightBadgeType="funcArg"
-                        />{' '}
-                        <BottomRightBadge
-                          inline
-                          bottomRightBadgeType="funcBound"
-                        />
-                        は以下の通りになるぞ。
-                      </P>
+                      <P>Exactly. Here are the labels for each item:</P>
                     </>
                   )
                 }
               ]}
             />
             <R.Oork>
+              Adding labels:{' '}
               <BottomRightBadge inline bottomRightBadgeType="callArg" />{' '}
               <BottomRightBadge inline bottomRightBadgeType="funcArg" />{' '}
-              <BottomRightBadge inline bottomRightBadgeType="funcBound" />{' '}
-              はこうなる
+              <BottomRightBadge inline bottomRightBadgeType="funcBound" />
             </R.Oork>
             <P>
-              残りは
-              <H args={{ name: 'fastForward' }} /> で見ていきましょう:
+              The rest is simple. <H args={{ name: 'pressFastForward' }} />
             </P>
             <R.Diis />
             <BubbleQuotes
@@ -1819,16 +1821,8 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        最終的に
-                        <EmojiWithText letter="c" />と
-                        <EmojiWithText letter="b" />
-                        が残った！
-                      </P>
-                      <P>
-                        <Highlight>
-                          このふたつが残った時点で、もうこれ以上進められないから、そこで終了する
-                        </Highlight>
-                        というわけか。
+                        We’re left with a <EmojiWithText letter="c" /> and a{' '}
+                        <EmojiWithText letter="b" />!
                       </P>
                     </>
                   )
@@ -1838,16 +1832,29 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        その通りだ。では、ここで{' '}
-                        <H args={{ name: 'yesNoQuiz' }} />
-                        の時間だ。
+                        Yes - we can’t take any more steps, so that’s where we
+                        stop.
                       </P>
+                    </>
+                  )
+                },
+                {
+                  type: 'thinking',
+                  children: (
+                    <>
+                      <P>I see…</P>
+                    </>
+                  )
+                },
+                {
+                  type: 'devil',
+                  children: (
+                    <>
                       <P>
-                        <Highlight>
-                          これが初級最後の <H args={{ name: 'yesNoQuiz' }} />
-                          になるぞ！
-                        </Highlight>
+                        <Bold>Alright:</Bold> It’s time for another{' '}
+                        <H args={{ name: 'yesNoQuiz' }} />!
                       </P>
+                      <P>This will be the last quiz for this page.</P>
                     </>
                   )
                 }
@@ -1967,7 +1974,7 @@ export default () => (
                   type: 'thinking',
                   children: (
                     <>
-                      <P>これらの法則を覚えきれるか、不安だなあ…</P>
+                      <P>Hmm… I don’t think I can memorize them all…</P>
                     </>
                   )
                 },
@@ -1976,12 +1983,14 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        <HighlightBold>
-                          安心しろ、これらの法則を暗記する必要はない。
-                        </HighlightBold>
-                        なんとなく「
-                        <Highlight>こういう法則があるんだな</Highlight>
-                        」と頭に入れておけば大丈夫だ。
+                        <Bold>Don’t worry:</Bold> You don’t need to memorize
+                        them.
+                      </P>
+                      <P>
+                        <Highlight>
+                          You just need to know that these rules exist, and you
+                          should be fine.
+                        </Highlight>
                       </P>
                     </>
                   )
@@ -1992,7 +2001,7 @@ export default () => (
         )
       },
       {
-        title: <>初級はここまで！</>,
+        title: <>That’s it for the beginner levels!</>,
         content: (
           <>
             <EmojiSeparator emojis={['🎉', '🤗', '🎉']} />
@@ -2003,9 +2012,9 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        どうだ、
-                        <H args={{ name: 'yesNoQuiz' }} />
-                        をすべて解いたぞ！
+                        I solved all of the{' '}
+                        <H args={{ name: 'yesNoQuiz', postfix: 'zes' }} /> so
+                        far!
                       </P>
                     </>
                   )
@@ -2015,20 +2024,14 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        やるじゃないか。
-                        <Highlight>
-                          というわけで、初級編はここで終わりだ。次からは中級編に入る。
-                        </Highlight>
+                        <Bold>Good for you!</Bold> And you’ve just completed the
+                        beginner levels.
                       </P>
                       <P>
-                        さきほど約束した通り、
-                        <Highlight>
-                          <HighlightBold>
-                            次からはじまる中級編で、とても難しい問題を出題する。
-                          </HighlightBold>
-                          このページで紹介した法則を応用すれば解ける問題だ。それに答えることができたら、計算箱を返してやろう！
-                        </Highlight>
+                        <Bold>Next up: Intermediate levels.</Bold> As I
+                        mentionred earlier:
                       </P>
+                      <WillReturnQuote />
                     </>
                   )
                 }
@@ -2042,7 +2045,9 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        その難しい問題とやらを解けば、本当に計算箱を返してもらえるのか？
+                        If we solve this difficult question, will you really
+                        give us our mathboxes back?{' '}
+                        <CustomEmoji type="mathBox" />
                       </P>
                     </>
                   )
@@ -2051,7 +2056,7 @@ export default () => (
                   type: 'devil',
                   children: (
                     <>
-                      <P>ああ、悪魔に二言はないからな。</P>
+                      <P>Of course I will.</P>
                     </>
                   )
                 },
@@ -2059,7 +2064,7 @@ export default () => (
                   type: 'brave',
                   children: (
                     <>
-                      <P>よーし、やってやるぞ！中級編に進もう！</P>
+                      <P>Alright then! Let’s proceed to the next page!</P>
                     </>
                   )
                 }
