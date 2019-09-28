@@ -2281,3 +2281,43 @@ export const xfso = initializeExpressionContainer([
     shorthandNumberAfterConvert: 'binaryFirst'
   }
 ])
+
+export const krin = initializeExpressionContainer({
+  binaryType: 'multiply',
+  first: {
+    binaryType: 'multiply',
+    first: {
+      shorthandNumber: 2
+    },
+    second: {
+      shorthandNumber: 3
+    }
+  },
+  second: {
+    shorthandNumber: 4
+  }
+})
+
+export const jvmi = initializeExpressionContainer([
+  yCombinator,
+  {
+    arg: 'a',
+    body: {
+      arg: 'f',
+      body: {
+        checkType: 'isZero',
+        condition: [{ shorthandFunc: 'pred' }, 'f'],
+        trueCase: { shorthandNumber: 1 },
+        falseCase: {
+          binaryType: 'multiply',
+          first: ['a', [{ shorthandFunc: 'pred' }, 'f']],
+          second: 'f'
+        }
+      }
+    }
+  },
+  {
+    shorthandNumber: 4,
+    initialHighlight: true
+  }
+])
