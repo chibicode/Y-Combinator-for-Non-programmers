@@ -8,7 +8,8 @@ import {
   ConditionalExpressionParams,
   VariableShorthandFuncParams,
   QuestionPlusOrMinusOneParams,
-  QuestionShorthandNumberAfterConvertParams
+  QuestionShorthandNumberAfterConvertParams,
+  RepeatExpressionParams
 } from 'src/types/ExpressionParamTypes'
 
 export function isHighlightedVariableExpressionParams(
@@ -84,4 +85,10 @@ export function isQuestionShorthandNumberAfterConvertParams(
 ): expressionParams is QuestionShorthandNumberAfterConvertParams {
   return !!(expressionParams as QuestionShorthandNumberAfterConvertParams)
     .shorthandNumberAfterConvert
+}
+
+export function isRepeatExpressionParams(
+  expressionParams: ExpressionParams
+): expressionParams is RepeatExpressionParams {
+  return !!(expressionParams as RepeatExpressionParams).child
 }

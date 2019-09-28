@@ -15,6 +15,12 @@ export {
   default as stepToNeedsAlphaConvert
 } from 'scripts/lib/steps/stepToNeedsAlphaConvert'
 export {
+  default as stepToBinaryActive
+} from 'scripts/lib/steps/stepToBinaryActive'
+export {
+  default as stepToBinaryProcessed
+} from 'scripts/lib/steps/stepToBinaryProcessed'
+export {
   default as stepToShowCallArg
 } from 'scripts/lib/steps/stepToShowCallArg'
 export {

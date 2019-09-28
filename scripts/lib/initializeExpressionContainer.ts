@@ -7,14 +7,16 @@ import {
   FunctionExpressionParams,
   VariableExpressionParams,
   VariableShorthandNumberParams,
-  ConditionalExpressionParams
+  ConditionalExpressionParams,
+  BinaryExpressionParams
 } from 'src/types/ExpressionParamTypes'
 import {
   CallExpression,
   Expression,
   FunctionExpression,
   VariableExpression,
-  ConditionalExpression
+  ConditionalExpression,
+  BinaryExpression
 } from 'src/types/ExpressionTypes'
 
 export default function initializeExpressionContainer(
@@ -29,6 +31,9 @@ export default function initializeExpressionContainer(
 export default function initializeExpressionContainer(
   expressionParams: ConditionalExpressionParams
 ): ContainerWithState<'ready', ConditionalExpression>
+export default function initializeExpressionContainer(
+  expressionParams: BinaryExpressionParams
+): ContainerWithState<'ready', BinaryExpression>
 export default function initializeExpressionContainer(
   expressionParams: VariableShorthandNumberParams
 ): ContainerWithState<'ready', VariableExpression>

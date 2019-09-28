@@ -5,13 +5,15 @@ import {
   ExpressionParams,
   FunctionExpressionParams,
   ConditionalExpressionParams,
-  VariableExpressionParams
+  VariableExpressionParams,
+  BinaryExpressionParams
 } from 'src/types/ExpressionParamTypes'
 import {
   NonExecutableStepCall,
   StepChild,
   StepFunction,
   StepConditional,
+  StepBinary,
   StepVariable
 } from 'src/types/ExpressionTypes'
 
@@ -27,6 +29,9 @@ export default function buildExpressionContainer(
 export default function buildExpressionContainer(
   expressionParams: ConditionalExpressionParams
 ): ContainerWithState<'needsPrioritize', StepConditional>
+export default function buildExpressionContainer(
+  expressionParams: BinaryExpressionParams
+): ContainerWithState<'needsPrioritize', StepBinary>
 export default function buildExpressionContainer(
   expressionParams: ExpressionParams
 ): ContainerWithState<'needsPrioritize', StepChild>

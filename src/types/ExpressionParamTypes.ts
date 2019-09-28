@@ -3,6 +3,7 @@ import {
   VariableShorthandNumber,
   VariableShorthandFunc,
   ConditionalExpression,
+  BinaryExpression,
   FunctionExpression
 } from 'src/types/ExpressionTypes'
 
@@ -52,6 +53,12 @@ export interface ConditionalExpressionParams {
   readonly checkType: ConditionalExpression['checkType']
 }
 
+export interface BinaryExpressionParams {
+  readonly first: ExpressionParams
+  readonly second: ExpressionParams
+  readonly binaryType: BinaryExpression['binaryType']
+}
+
 export interface RepeatExpressionParams {
   readonly child: ExpressionParams
   readonly count?: number
@@ -69,3 +76,4 @@ export type ExpressionParams =
   | VariableShorthandFuncParams
   | QuestionPlusOrMinusOneParams
   | QuestionShorthandNumberAfterConvertParams
+  | BinaryExpressionParams

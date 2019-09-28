@@ -3,7 +3,8 @@ import {
   isCall,
   isVariable,
   isFunction,
-  isConditional
+  isConditional,
+  isBinary
 } from 'src/lib/expressionTypeGuards'
 import { Expression } from 'src/types/ExpressionTypes'
 import { VariableNames } from 'src/types/VariableNames'
@@ -35,6 +36,10 @@ function getAllVariableNamesWithDuplicates(
     return getAllVariableNames(expression.condition, { filter })
       .concat(getAllVariableNames(expression.trueCase, { filter }))
       .concat(getAllVariableNames(expression.falseCase, { filter }))
+  } else if (isBinary(expression)) {
+    return getAllVariableNames(expression.first, { filter }).concat(
+      getAllVariableNames(expression.second, { filter })
+    )
   } else {
     throw new Error()
   }
