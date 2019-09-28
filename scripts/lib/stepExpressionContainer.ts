@@ -333,7 +333,13 @@ const runStep = (
     ? stepConditional(expression)
     : stepBinary(expression)
 
-  if (!callParent && !callParentKey && !funcParent && !conditionalParent) {
+  if (
+    !callParent &&
+    !callParentKey &&
+    !funcParent &&
+    !conditionalParent &&
+    !binaryParent
+  ) {
     const newContainer = {
       expression:
         previouslyChangedExpressionState === 'betaReducePreviewAfter'

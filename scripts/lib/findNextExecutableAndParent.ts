@@ -177,7 +177,11 @@ export default function findNextExecutableAndParent(
       const helperResult = helper({
         expression: currentExpression
       })
-      if (helperResult.callParent || helperResult.conditionalParent) {
+      if (
+        helperResult.callParent ||
+        helperResult.conditionalParent ||
+        helperResult.binaryParent
+      ) {
         return helperResult
       } else if (previousExpression) {
         return {
