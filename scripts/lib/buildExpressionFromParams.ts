@@ -210,7 +210,7 @@ export default function buildExpressionFromParams(
       type: 'binary',
       binaryType: expressionParams.binaryType,
       first: buildExpressionFromParams(expressionParams.first),
-      second: buildExpressionFromParams(expressionParams.first),
+      second: buildExpressionFromParams(expressionParams.second),
       state: 'default',
       priority: 0
     }
