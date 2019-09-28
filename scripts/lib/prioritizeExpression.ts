@@ -108,8 +108,8 @@ function prioritizeBinaryExpressionHelper<E extends BinaryExpression>({
   expression: E
   maxDescendantPriority: number
 } {
-  let newArg: Expression
-  let newFunc: Expression
+  let newSecond: Expression
+  let newFirst: Expression
   let currentPriority = priority
   let maxDescendantPriority = priority
 
@@ -136,11 +136,11 @@ function prioritizeBinaryExpressionHelper<E extends BinaryExpression>({
       })
     }
 
-    newFunc = funcResult.expression
+    newFirst = funcResult.expression
     currentPriority = funcResult.maxDescendantPriority + 1
     maxDescendantPriority = currentPriority
   } else {
-    newFunc = prioritizeExpressionHelper(expression.first)
+    newFirst = prioritizeExpressionHelper(expression.first)
   }
 
   if (
@@ -166,17 +166,17 @@ function prioritizeBinaryExpressionHelper<E extends BinaryExpression>({
       })
     }
 
-    newArg = argResult.expression
+    newSecond = argResult.expression
     maxDescendantPriority = argResult.maxDescendantPriority
   } else {
-    newArg = prioritizeExpressionHelper(expression.second)
+    newSecond = prioritizeExpressionHelper(expression.second)
   }
 
   return {
     expression: {
       ...expression,
-      func: newFunc,
-      arg: newArg,
+      first: newFirst,
+      second: newSecond,
       priority: currentPriority
     },
     maxDescendantPriority
