@@ -22,19 +22,7 @@ interface VariableExpressionBoxProps {
   expression: VariableExpression
 }
 
-export const variableExpressionBoxPaddingTop = (
-  size: ExpressionRunnerContextProps['variableSize']
-) =>
-  ({
-    lg: spaces(0.375),
-    md: spaces(0.25),
-    sm: spaces(0.2),
-    xs: spaces(0.2),
-    xxs: spaces(0.2),
-    xxxs: spaces(0.2)
-  }[size])
-
-export const variableExpressionBoxPaddingBottom = (
+export const variableExpressionBoxPadding = (
   size: ExpressionRunnerContextProps['variableSize']
 ) =>
   ({
@@ -370,8 +358,8 @@ const VariableExpressionBox = ({ expression }: VariableExpressionBoxProps) => {
         css={css`
           flex: 1;
           font-size: ${variableExpressionBoxFontSize(variableSize)};
-          padding: ${variableExpressionBoxPaddingTop(variableSize)}
-            ${spaces(0.5)} ${variableExpressionBoxPaddingBottom(variableSize)};
+          padding: ${variableExpressionBoxPadding(variableSize)} ${spaces(0.5)}
+            ${variableExpressionBoxPadding(variableSize)};
         `}
       >
         <VariableEmoji expression={expression} />
