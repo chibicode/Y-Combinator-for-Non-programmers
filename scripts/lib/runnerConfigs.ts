@@ -2837,10 +2837,10 @@ export const lgiv: ExpressionRunnerShorthandConfig = {
 export const xbki: ExpressionRunnerShorthandConfig = {
   runner: 'playButtonOnly',
   skipToTheEnd: false,
-  skipActive: true,
   initialExpressionContainer: initialExpressionContainers.jvmi,
   showPriorities: true,
   variableSize: 'xxxs',
   containerSize: 'xs',
   speed: 4,
+  showDefaultAndActiveOnly: true
 }

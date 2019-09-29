@@ -13,6 +13,7 @@ const buildExpressionContainers = ({
   showAllShowSteps,
   skipAlphaConvert,
   skipActive,
+  showDefaultAndActiveOnly,
   skipToTheEnd,
   hideControls,
   lastAllowedExpressionState,
@@ -116,7 +117,16 @@ const buildExpressionContainers = ({
       }
     }
 
-    return results
+    if (showDefaultAndActiveOnly) {
+      return results.filter(
+        x =>
+          x.previouslyChangedExpressionState === 'conditionActive' ||
+          x.previouslyChangedExpressionState === 'default' ||
+          x.previouslyChangedExpressionState === 'active'
+      )
+    } else {
+      return results
+    }
   } else if (initialExpressionContainers) {
     return initialExpressionContainers
   } else {

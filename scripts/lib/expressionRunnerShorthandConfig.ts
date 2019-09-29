@@ -18,6 +18,7 @@ interface ExpressionRunnerSimpleConfig {
   isDone?: boolean
   skipAlphaConvert?: boolean
   skipActive?: boolean
+  showDefaultAndActiveOnly?: boolean
   nextIterations?: number
   showPriorities?: boolean
   showAllShowSteps?: ExpressionRunnerProps['showAllShowSteps']
@@ -69,6 +70,7 @@ interface ExpressionRunnerPlayButtonOnlyConfig {
   speed?: number
   skipAlphaConvert?: boolean
   skipActive?: boolean
+  showDefaultAndActiveOnly?: boolean
   variableSize?: ExpressionRunnerProps['variableSize']
   containerSize?: ExpressionRunnerProps['containerSize']
   highlightOverrides?: ExpressionRunnerProps['highlightOverrides']
@@ -96,6 +98,7 @@ interface ExpressionRunnerSingleStepConfig {
   hideFuncUnboundBadgeOnExplanation?: boolean
   showPriorities?: boolean
   skipActive?: boolean
+  showDefaultAndActiveOnly?: boolean
   nextIterations?: number
   variableSize?: ExpressionRunnerProps['variableSize']
   containerSize?: ExpressionRunnerProps['containerSize']

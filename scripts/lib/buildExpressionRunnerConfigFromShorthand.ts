@@ -35,6 +35,7 @@ export interface ExpressionRunnerConfig {
   showAllShowSteps?: boolean
   skipAlphaConvert?: boolean
   skipActive?: boolean
+  showDefaultAndActiveOnly?: boolean
   skipToTheEnd: boolean
   hideFuncUnboundBadgeOnExplanation: boolean
   highlightOverridesCallArgAndFuncUnboundOnly: boolean
@@ -119,6 +120,7 @@ const buildExpressionRunnerConfigFromShorthand = (
       isDone,
       skipAlphaConvert,
       skipActive,
+      showDefaultAndActiveOnly,
       nextIterations,
       showPriorities,
       showAllShowSteps,
@@ -147,6 +149,7 @@ const buildExpressionRunnerConfigFromShorthand = (
       containerSize,
       skipAlphaConvert,
       skipActive,
+      showDefaultAndActiveOnly,
       bottomRightBadgeOverrides,
       highlightOverrides,
       highlightFunctions,
@@ -172,6 +175,7 @@ const buildExpressionRunnerConfigFromShorthand = (
       speed,
       skipAlphaConvert,
       skipActive,
+      showDefaultAndActiveOnly,
       variableSize,
       containerSize,
       highlightOverrides,
@@ -193,6 +197,7 @@ const buildExpressionRunnerConfigFromShorthand = (
       containerSize,
       skipAlphaConvert,
       skipActive,
+      showDefaultAndActiveOnly,
       explanationsVisibility:
         explanationsVisibility || 'hiddenInitialPausedOnly',
       lastAllowedExpressionState,
@@ -214,7 +219,8 @@ const buildExpressionRunnerConfigFromShorthand = (
       variableSize,
       containerSize,
       nextIterations,
-      skipActive
+      skipActive,
+      showDefaultAndActiveOnly
     } = mergeWithDefault<
       typeof config,
       typeof expressionRunnerSingleStepConfigDefault
@@ -232,6 +238,7 @@ const buildExpressionRunnerConfigFromShorthand = (
       lastAllowedExpressionStateAfterIterations: nextIterations,
       showAllShowSteps,
       skipActive,
+      showDefaultAndActiveOnly,
       initializeInstructions: buildInitializeInstructions({
         nextIterations,
         initialState
