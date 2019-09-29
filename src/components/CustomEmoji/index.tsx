@@ -11,6 +11,7 @@ import DoubleArrowSvg from 'src/components/CustomEmoji/DoubleArrowSvg'
 import HorizontalDotDotDotRedSvg from 'src/components/CustomEmoji/HorizontalDotDotDotRedSvg'
 import HorizontalDotDotDotSvg from 'src/components/CustomEmoji/HorizontalDotDotDotSvg'
 import IndexSvg from 'src/components/CustomEmoji/IndexSvg'
+import OneTwentySvg from 'src/components/CustomEmoji/OneTwentySvg'
 import LambdaSvg from 'src/components/CustomEmoji/LambdaSvg'
 import LetterCSvg from 'src/components/CustomEmoji/LetterCSvg'
 import LetterDSvg from 'src/components/CustomEmoji/LetterDSvg'
@@ -24,6 +25,8 @@ import PlusOneSvg from 'src/components/CustomEmoji/PlusOneSvg'
 import QuestionFoodGreySvg from 'src/components/CustomEmoji/QuestionFoodGreySvg'
 import SingleArrowSvg from 'src/components/CustomEmoji/SingleArrowSvg'
 import SingleArrowReverseSvg from 'src/components/CustomEmoji/SingleArrowReverseSvg'
+import MultiplySvg from 'src/components/CustomEmoji/MultiplySvg'
+import MultiplyWhiteSvg from 'src/components/CustomEmoji/MultiplyWhiteSvg'
 import TwentyFourSvg from 'src/components/CustomEmoji/TwentyFourSvg'
 import TwentySvg from 'src/components/CustomEmoji/TwentySvg'
 import Emoji, { EmojiProps } from 'src/components/Emoji'
@@ -55,7 +58,10 @@ export const customEmojiToComponent = {
   singleArrowReverse: SingleArrowReverseSvg,
   lambda: LambdaSvg,
   index: IndexSvg,
-  condition: ConditionSvg
+  condition: ConditionSvg,
+  oneTwenty: OneTwentySvg,
+  multiply: MultiplySvg,
+  multiplyWhite: MultiplyWhiteSvg
 }
 
 const CustomEmoji = ({

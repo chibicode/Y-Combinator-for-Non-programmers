@@ -18,6 +18,8 @@ const EmojiNumber = ({ number, size }: EmojiNumberProps) => {
     return <CustomEmoji size={size} type="twenty" />
   } else if (number === 24) {
     return <CustomEmoji size={size} type="twentyFour" />
+  } else if (number === 120) {
+    return <CustomEmoji size={size} type="oneTwenty" />
   } else {
     return (
       <span
