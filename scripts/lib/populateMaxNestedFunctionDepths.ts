@@ -12,12 +12,16 @@ export default function populateMaxNestedFunctionDepths<E extends Expression>(
   expression: E
 ): E {
   if (isVariable(expression)) {
-    return expression
+    return {
+      ...expression,
+      maxNestedFunctionDepth: maxNestedFunctionDepth(expression)
+    }
   } else if (isCall(expression)) {
     return {
       ...expression,
       arg: populateMaxNestedFunctionDepths(expression.arg),
-      func: populateMaxNestedFunctionDepths(expression.func)
+      func: populateMaxNestedFunctionDepths(expression.func),
+      maxNestedFunctionDepth: maxNestedFunctionDepth(expression)
     }
   } else if (isFunction(expression)) {
     return {
@@ -31,15 +35,17 @@ export default function populateMaxNestedFunctionDepths<E extends Expression>(
       ...expression,
       condition: populateMaxNestedFunctionDepths(expression.condition),
       trueCase: populateMaxNestedFunctionDepths(expression.trueCase),
-      falseCase: populateMaxNestedFunctionDepths(expression.falseCase)
+      falseCase: populateMaxNestedFunctionDepths(expression.falseCase),
+      maxNestedFunctionDepth: maxNestedFunctionDepth(expression)
     }
   } else if (isBinary(expression)) {
     return {
       ...expression,
       first: populateMaxNestedFunctionDepths(expression.first),
-      second: populateMaxNestedFunctionDepths(expression.second)
+      second: populateMaxNestedFunctionDepths(expression.second),
+      maxNestedFunctionDepth: maxNestedFunctionDepth(expression)
     }
   } else {
-    throw new Error()
+    return expression
   }
 }
