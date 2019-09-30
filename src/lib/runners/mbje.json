@@ -11,7 +11,8 @@
         "funcPriorityAgg": [],
         "emphasizePriority": false,
         "bound": true,
-        "shorthandNumber": 10
+        "shorthandNumber": 10,
+        "maxNestedFunctionDepth": 0
       },
       "numLeafNodes": 1,
       "containerState": "done",

@@ -13,7 +13,8 @@
           ],
           "funcPriorityAgg": [],
           "emphasizePriority": true,
-          "bound": true
+          "bound": true,
+          "maxNestedFunctionDepth": 0
         },
         "func": {
           "arg": {
@@ -27,7 +28,8 @@
               1
             ],
             "emphasizePriority": true,
-            "bound": false
+            "bound": false,
+            "maxNestedFunctionDepth": 0
           },
           "body": {
             "name": "d",
@@ -38,13 +40,16 @@
             "argPriorityAgg": [],
             "funcPriorityAgg": [],
             "emphasizePriority": false,
-            "bound": true
+            "bound": true,
+            "maxNestedFunctionDepth": 0
           },
-          "type": "function"
+          "type": "function",
+          "maxNestedFunctionDepth": 1
         },
         "state": "betaReducePreviewCrossed",
         "type": "call",
-        "priority": 1
+        "priority": 1,
+        "maxNestedFunctionDepth": 1
       },
       "previouslyChangedExpressionState": "betaReducePreviewCrossed",
       "activePriority": 1,

@@ -21,6 +21,7 @@ export interface VariableExpression {
     | 'binaryFirst'
     | 'binarySecond'
   readonly shorthandNumberPlusOrMinusOne?: 'plus' | 'minus'
+  readonly maxNestedFunctionDepth?: number
 }
 
 export interface VariableShorthandNumber extends VariableExpression {
@@ -277,6 +278,7 @@ export interface CallExpression {
   readonly arg: Expression
   readonly func: Expression
   readonly priority: number
+  readonly maxNestedFunctionDepth?: number
 }
 
 export interface FunctionExpression {
@@ -295,6 +297,7 @@ export interface ConditionalExpression {
   readonly falseCase: Expression
   readonly priority: number
   readonly state: ConditionalStates
+  readonly maxNestedFunctionDepth?: number
 }
 
 export interface BinaryExpression {
@@ -304,6 +307,7 @@ export interface BinaryExpression {
   readonly second: Expression
   readonly priority: number
   readonly state: BinaryStates
+  readonly maxNestedFunctionDepth?: number
 }
 
 export interface RepeatExpression {
@@ -311,6 +315,7 @@ export interface RepeatExpression {
   readonly child: Expression
   readonly count?: number
   readonly countVariable?: VariableNames
+  readonly maxNestedFunctionDepth?: number
 }
 
 export type Expression =

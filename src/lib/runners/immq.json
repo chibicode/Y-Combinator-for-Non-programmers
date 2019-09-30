@@ -14,7 +14,8 @@
             ],
             "funcPriorityAgg": [],
             "emphasizePriority": false,
-            "bound": false
+            "bound": false,
+            "maxNestedFunctionDepth": 0
           },
           "body": {
             "name": "p",
@@ -25,9 +26,11 @@
             "argPriorityAgg": [],
             "funcPriorityAgg": [],
             "emphasizePriority": false,
-            "bound": true
+            "bound": true,
+            "maxNestedFunctionDepth": 0
           },
-          "type": "function"
+          "type": "function",
+          "maxNestedFunctionDepth": 1
         },
         "func": {
           "arg": {
@@ -41,7 +44,8 @@
               1
             ],
             "emphasizePriority": false,
-            "bound": false
+            "bound": false,
+            "maxNestedFunctionDepth": 0
           },
           "body": {
             "name": "i",
@@ -52,13 +56,16 @@
             "argPriorityAgg": [],
             "funcPriorityAgg": [],
             "emphasizePriority": false,
-            "bound": true
+            "bound": true,
+            "maxNestedFunctionDepth": 0
           },
-          "type": "function"
+          "type": "function",
+          "maxNestedFunctionDepth": 1
         },
         "state": "default",
         "type": "call",
-        "priority": 1
+        "priority": 1,
+        "maxNestedFunctionDepth": 1
       },
       "numLeafNodes": 2,
       "containerState": "ready",

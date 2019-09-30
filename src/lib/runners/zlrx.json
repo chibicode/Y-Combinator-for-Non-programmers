@@ -13,7 +13,8 @@
           ],
           "funcPriorityAgg": [],
           "emphasizePriority": true,
-          "bound": true
+          "bound": true,
+          "maxNestedFunctionDepth": 0
         },
         "func": {
           "arg": {
@@ -27,7 +28,8 @@
               1
             ],
             "emphasizePriority": true,
-            "bound": false
+            "bound": false,
+            "maxNestedFunctionDepth": 0
           },
           "body": {
             "arg": {
@@ -39,7 +41,8 @@
               "argPriorityAgg": [],
               "funcPriorityAgg": [],
               "emphasizePriority": false,
-              "bound": false
+              "bound": false,
+              "maxNestedFunctionDepth": 0
             },
             "body": {
               "arg": {
@@ -51,7 +54,8 @@
                 "argPriorityAgg": [],
                 "funcPriorityAgg": [],
                 "emphasizePriority": false,
-                "bound": false
+                "bound": false,
+                "maxNestedFunctionDepth": 0
               },
               "body": {
                 "name": "b",
@@ -62,17 +66,22 @@
                 "argPriorityAgg": [],
                 "funcPriorityAgg": [],
                 "emphasizePriority": false,
-                "bound": true
+                "bound": true,
+                "maxNestedFunctionDepth": 0
               },
-              "type": "function"
+              "type": "function",
+              "maxNestedFunctionDepth": 1
             },
-            "type": "function"
+            "type": "function",
+            "maxNestedFunctionDepth": 2
           },
-          "type": "function"
+          "type": "function",
+          "maxNestedFunctionDepth": 3
         },
         "state": "active",
         "type": "call",
-        "priority": 1
+        "priority": 1,
+        "maxNestedFunctionDepth": 3
       },
       "previouslyChangedExpressionState": "active",
       "activePriority": 1,
@@ -92,7 +101,8 @@
           ],
           "funcPriorityAgg": [],
           "emphasizePriority": true,
-          "bound": true
+          "bound": true,
+          "maxNestedFunctionDepth": 0
         },
         "func": {
           "arg": {
@@ -106,7 +116,8 @@
               1
             ],
             "emphasizePriority": true,
-            "bound": false
+            "bound": false,
+            "maxNestedFunctionDepth": 0
           },
           "body": {
             "arg": {
@@ -118,7 +129,8 @@
               "argPriorityAgg": [],
               "funcPriorityAgg": [],
               "emphasizePriority": false,
-              "bound": false
+              "bound": false,
+              "maxNestedFunctionDepth": 0
             },
             "body": {
               "arg": {
@@ -130,7 +142,8 @@
                 "argPriorityAgg": [],
                 "funcPriorityAgg": [],
                 "emphasizePriority": false,
-                "bound": false
+                "bound": false,
+                "maxNestedFunctionDepth": 0
               },
               "body": {
                 "name": "b",
@@ -141,17 +154,22 @@
                 "argPriorityAgg": [],
                 "funcPriorityAgg": [],
                 "emphasizePriority": false,
-                "bound": true
+                "bound": true,
+                "maxNestedFunctionDepth": 0
               },
-              "type": "function"
+              "type": "function",
+              "maxNestedFunctionDepth": 1
             },
-            "type": "function"
+            "type": "function",
+            "maxNestedFunctionDepth": 2
           },
-          "type": "function"
+          "type": "function",
+          "maxNestedFunctionDepth": 3
         },
         "state": "showFuncUnbound",
         "type": "call",
-        "priority": 1
+        "priority": 1,
+        "maxNestedFunctionDepth": 3
       },
       "previouslyChangedExpressionState": "showFuncUnbound",
       "activePriority": 1,
@@ -171,7 +189,8 @@
           ],
           "funcPriorityAgg": [],
           "emphasizePriority": true,
-          "bound": true
+          "bound": true,
+          "maxNestedFunctionDepth": 0
         },
         "func": {
           "arg": {
@@ -185,7 +204,8 @@
               1
             ],
             "emphasizePriority": true,
-            "bound": false
+            "bound": false,
+            "maxNestedFunctionDepth": 0
           },
           "body": {
             "arg": {
@@ -197,7 +217,8 @@
               "argPriorityAgg": [],
               "funcPriorityAgg": [],
               "emphasizePriority": false,
-              "bound": false
+              "bound": false,
+              "maxNestedFunctionDepth": 0
             },
             "body": {
               "arg": {
@@ -209,7 +230,8 @@
                 "argPriorityAgg": [],
                 "funcPriorityAgg": [],
                 "emphasizePriority": false,
-                "bound": false
+                "bound": false,
+                "maxNestedFunctionDepth": 0
               },
               "body": {
                 "name": "b",
@@ -220,17 +242,22 @@
                 "argPriorityAgg": [],
                 "funcPriorityAgg": [],
                 "emphasizePriority": false,
-                "bound": true
+                "bound": true,
+                "maxNestedFunctionDepth": 0
               },
-              "type": "function"
+              "type": "function",
+              "maxNestedFunctionDepth": 1
             },
-            "type": "function"
+            "type": "function",
+            "maxNestedFunctionDepth": 2
           },
-          "type": "function"
+          "type": "function",
+          "maxNestedFunctionDepth": 3
         },
         "state": "betaReducePreviewBefore",
         "type": "call",
-        "priority": 1
+        "priority": 1,
+        "maxNestedFunctionDepth": 3
       },
       "previouslyChangedExpressionState": "betaReducePreviewBefore",
       "matchExists": false,
@@ -251,7 +278,8 @@
           ],
           "funcPriorityAgg": [],
           "emphasizePriority": true,
-          "bound": true
+          "bound": true,
+          "maxNestedFunctionDepth": 0
         },
         "func": {
           "arg": {
@@ -265,7 +293,8 @@
               1
             ],
             "emphasizePriority": true,
-            "bound": false
+            "bound": false,
+            "maxNestedFunctionDepth": 0
           },
           "body": {
             "arg": {
@@ -277,7 +306,8 @@
               "argPriorityAgg": [],
               "funcPriorityAgg": [],
               "emphasizePriority": false,
-              "bound": false
+              "bound": false,
+              "maxNestedFunctionDepth": 0
             },
             "body": {
               "arg": {
@@ -289,7 +319,8 @@
                 "argPriorityAgg": [],
                 "funcPriorityAgg": [],
                 "emphasizePriority": false,
-                "bound": false
+                "bound": false,
+                "maxNestedFunctionDepth": 0
               },
               "body": {
                 "name": "b",
@@ -300,17 +331,22 @@
                 "argPriorityAgg": [],
                 "funcPriorityAgg": [],
                 "emphasizePriority": false,
-                "bound": true
+                "bound": true,
+                "maxNestedFunctionDepth": 0
               },
-              "type": "function"
+              "type": "function",
+              "maxNestedFunctionDepth": 1
             },
-            "type": "function"
+            "type": "function",
+            "maxNestedFunctionDepth": 2
           },
-          "type": "function"
+          "type": "function",
+          "maxNestedFunctionDepth": 3
         },
         "state": "betaReducePreviewCrossed",
         "type": "call",
-        "priority": 1
+        "priority": 1,
+        "maxNestedFunctionDepth": 3
       },
       "previouslyChangedExpressionState": "betaReducePreviewCrossed",
       "activePriority": 1,
@@ -328,7 +364,8 @@
           "argPriorityAgg": [],
           "funcPriorityAgg": [],
           "emphasizePriority": false,
-          "bound": false
+          "bound": false,
+          "maxNestedFunctionDepth": 0
         },
         "body": {
           "arg": {
@@ -340,7 +377,8 @@
             "argPriorityAgg": [],
             "funcPriorityAgg": [],
             "emphasizePriority": false,
-            "bound": false
+            "bound": false,
+            "maxNestedFunctionDepth": 0
           },
           "body": {
             "name": "b",
@@ -351,11 +389,14 @@
             "argPriorityAgg": [],
             "funcPriorityAgg": [],
             "emphasizePriority": false,
-            "bound": true
+            "bound": true,
+            "maxNestedFunctionDepth": 0
           },
-          "type": "function"
+          "type": "function",
+          "maxNestedFunctionDepth": 1
         },
-        "type": "function"
+        "type": "function",
+        "maxNestedFunctionDepth": 2
       },
       "previouslyChangedExpressionState": "default",
       "activePriority": 1,

@@ -14,7 +14,8 @@
           "funcPriorityAgg": [],
           "emphasizePriority": false,
           "bound": true,
-          "shorthandNumberAfterConvert": "blank"
+          "shorthandNumberAfterConvert": "blank",
+          "maxNestedFunctionDepth": 0
         },
         "func": {
           "arg": {
@@ -28,7 +29,8 @@
               1
             ],
             "emphasizePriority": false,
-            "bound": false
+            "bound": false,
+            "maxNestedFunctionDepth": 0
           },
           "body": {
             "arg": {
@@ -40,7 +42,8 @@
               "argPriorityAgg": [],
               "funcPriorityAgg": [],
               "emphasizePriority": false,
-              "bound": false
+              "bound": false,
+              "maxNestedFunctionDepth": 0
             },
             "body": {
               "arg": {
@@ -52,7 +55,8 @@
                 "argPriorityAgg": [],
                 "funcPriorityAgg": [],
                 "emphasizePriority": false,
-                "bound": false
+                "bound": false,
+                "maxNestedFunctionDepth": 0
               },
               "body": {
                 "arg": {
@@ -68,7 +72,8 @@
                     ],
                     "funcPriorityAgg": [],
                     "emphasizePriority": false,
-                    "bound": true
+                    "bound": true,
+                    "maxNestedFunctionDepth": 0
                   },
                   "func": {
                     "arg": {
@@ -82,7 +87,8 @@
                       ],
                       "funcPriorityAgg": [],
                       "emphasizePriority": false,
-                      "bound": true
+                      "bound": true,
+                      "maxNestedFunctionDepth": 0
                     },
                     "func": {
                       "name": "questionFoodGrey",
@@ -96,15 +102,18 @@
                         3
                       ],
                       "emphasizePriority": false,
-                      "bound": true
+                      "bound": true,
+                      "maxNestedFunctionDepth": 0
                     },
                     "state": "default",
                     "type": "call",
-                    "priority": 2
+                    "priority": 2,
+                    "maxNestedFunctionDepth": 0
                   },
                   "state": "default",
                   "type": "call",
-                  "priority": 3
+                  "priority": 3,
+                  "maxNestedFunctionDepth": 0
                 },
                 "func": {
                   "name": "questionFoodGrey",
@@ -117,22 +126,28 @@
                     1
                   ],
                   "emphasizePriority": false,
-                  "bound": true
+                  "bound": true,
+                  "maxNestedFunctionDepth": 0
                 },
                 "state": "default",
                 "type": "call",
-                "priority": 1
+                "priority": 1,
+                "maxNestedFunctionDepth": 0
               },
-              "type": "function"
+              "type": "function",
+              "maxNestedFunctionDepth": 1
             },
-            "type": "function"
+            "type": "function",
+            "maxNestedFunctionDepth": 2
           },
           "type": "function",
-          "meta": "plusOneEffect"
+          "meta": "plusOneEffect",
+          "maxNestedFunctionDepth": 3
         },
         "state": "default",
         "type": "call",
-        "priority": 1
+        "priority": 1,
+        "maxNestedFunctionDepth": 3
       },
       "numLeafNodes": 6,
       "containerState": "ready",

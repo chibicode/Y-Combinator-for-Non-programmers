@@ -12,7 +12,8 @@
         "emphasizePriority": false,
         "bound": true,
         "shorthandNumber": 5,
-        "shorthandNumberAfterConvert": "number"
+        "shorthandNumberAfterConvert": "number",
+        "maxNestedFunctionDepth": 0
       },
       "numLeafNodes": 2,
       "containerState": "ready",

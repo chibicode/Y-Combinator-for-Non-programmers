@@ -15,7 +15,8 @@
           "funcPriorityAgg": [],
           "emphasizePriority": false,
           "bound": true,
-          "shorthandNumber": 0
+          "shorthandNumber": 0,
+          "maxNestedFunctionDepth": 0
         },
         "trueCase": {
           "name": "shorthandNumber",
@@ -29,7 +30,8 @@
           ],
           "emphasizePriority": false,
           "bound": true,
-          "shorthandNumber": 1
+          "shorthandNumber": 1,
+          "maxNestedFunctionDepth": 0
         },
         "falseCase": {
           "name": "shorthandNumber",
@@ -43,9 +45,11 @@
           "funcPriorityAgg": [],
           "emphasizePriority": false,
           "bound": true,
-          "shorthandNumber": 2
+          "shorthandNumber": 2,
+          "maxNestedFunctionDepth": 0
         },
-        "priority": 1
+        "priority": 1,
+        "maxNestedFunctionDepth": 0
       },
       "previouslyChangedExpressionState": "conditionActive",
       "activePriority": 1,

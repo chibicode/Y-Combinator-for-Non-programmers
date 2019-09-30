@@ -10,7 +10,8 @@
         "argPriorityAgg": [],
         "funcPriorityAgg": [],
         "emphasizePriority": false,
-        "bound": true
+        "bound": true,
+        "maxNestedFunctionDepth": 0
       },
       "previouslyChangedExpressionState": "default",
       "activePriority": 1,

@@ -13,7 +13,8 @@
           ],
           "funcPriorityAgg": [],
           "emphasizePriority": false,
-          "bound": true
+          "bound": true,
+          "maxNestedFunctionDepth": 0
         },
         "func": {
           "name": "shorthandFunc",
@@ -27,11 +28,13 @@
           ],
           "emphasizePriority": false,
           "bound": true,
-          "shorthandFunc": "add"
+          "shorthandFunc": "add",
+          "maxNestedFunctionDepth": 0
         },
         "state": "default",
         "type": "call",
-        "priority": 1
+        "priority": 1,
+        "maxNestedFunctionDepth": 0
       },
       "numLeafNodes": 2,
       "containerState": "ready",

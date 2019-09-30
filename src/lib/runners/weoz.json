@@ -11,7 +11,8 @@
           "argPriorityAgg": [],
           "funcPriorityAgg": [],
           "emphasizePriority": false,
-          "bound": false
+          "bound": false,
+          "maxNestedFunctionDepth": 0
         },
         "body": {
           "name": "o",
@@ -22,9 +23,11 @@
           "argPriorityAgg": [],
           "funcPriorityAgg": [],
           "emphasizePriority": false,
-          "bound": true
+          "bound": true,
+          "maxNestedFunctionDepth": 0
         },
-        "type": "function"
+        "type": "function",
+        "maxNestedFunctionDepth": 1
       },
       "previouslyChangedExpressionState": "default",
       "activePriority": 1,

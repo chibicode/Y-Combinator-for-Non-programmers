@@ -24,7 +24,8 @@
                     "funcPriorityAgg": [],
                     "emphasizePriority": false,
                     "bound": true,
-                    "shorthandNumber": 4
+                    "shorthandNumber": 4,
+                    "maxNestedFunctionDepth": 0
                   },
                   "func": {
                     "name": "shorthandFunc",
@@ -38,11 +39,13 @@
                     ],
                     "emphasizePriority": false,
                     "bound": true,
-                    "shorthandFunc": "add"
+                    "shorthandFunc": "add",
+                    "maxNestedFunctionDepth": 0
                   },
                   "state": "default",
                   "type": "call",
-                  "priority": 6
+                  "priority": 6,
+                  "maxNestedFunctionDepth": 0
                 },
                 "func": {
                   "name": "shorthandFunc",
@@ -56,11 +59,13 @@
                   ],
                   "emphasizePriority": false,
                   "bound": true,
-                  "shorthandFunc": "add"
+                  "shorthandFunc": "add",
+                  "maxNestedFunctionDepth": 0
                 },
                 "state": "default",
                 "type": "call",
-                "priority": 5
+                "priority": 5,
+                "maxNestedFunctionDepth": 0
               },
               "func": {
                 "name": "shorthandFunc",
@@ -74,11 +79,13 @@
                 ],
                 "emphasizePriority": false,
                 "bound": true,
-                "shorthandFunc": "add"
+                "shorthandFunc": "add",
+                "maxNestedFunctionDepth": 0
               },
               "state": "default",
               "type": "call",
-              "priority": 4
+              "priority": 4,
+              "maxNestedFunctionDepth": 0
             },
             "func": {
               "name": "shorthandFunc",
@@ -92,11 +99,13 @@
               ],
               "emphasizePriority": false,
               "bound": true,
-              "shorthandFunc": "add"
+              "shorthandFunc": "add",
+              "maxNestedFunctionDepth": 0
             },
             "state": "default",
             "type": "call",
-            "priority": 3
+            "priority": 3,
+            "maxNestedFunctionDepth": 0
           },
           "func": {
             "name": "shorthandFunc",
@@ -110,11 +119,13 @@
             ],
             "emphasizePriority": false,
             "bound": true,
-            "shorthandFunc": "add"
+            "shorthandFunc": "add",
+            "maxNestedFunctionDepth": 0
           },
           "state": "default",
           "type": "call",
-          "priority": 2
+          "priority": 2,
+          "maxNestedFunctionDepth": 0
         },
         "func": {
           "name": "shorthandFunc",
@@ -128,11 +139,13 @@
           ],
           "emphasizePriority": false,
           "bound": true,
-          "shorthandFunc": "add"
+          "shorthandFunc": "add",
+          "maxNestedFunctionDepth": 0
         },
         "state": "default",
         "type": "call",
-        "priority": 1
+        "priority": 1,
+        "maxNestedFunctionDepth": 0
       },
       "numLeafNodes": 7,
       "containerState": "ready",
