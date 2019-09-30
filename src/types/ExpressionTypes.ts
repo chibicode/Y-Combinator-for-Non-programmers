@@ -284,6 +284,7 @@ export interface FunctionExpression {
   readonly arg: VariableExpression
   readonly body: Expression
   readonly meta?: 'focused' | 'plusOneEffect' | 'minusOneEffect'
+  readonly maxNestedFunctionDepth?: number
 }
 
 export interface ConditionalExpression {

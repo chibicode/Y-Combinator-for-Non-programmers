@@ -12,6 +12,7 @@ import {
   ConditionalExpression,
   BinaryExpression
 } from 'src/types/ExpressionTypes'
+import populateMaxNestedFunctionDepths from 'scripts/lib/populateMaxNestedFunctionDepths'
 
 function prioritizeCallExpressionHelper<E extends CallExpression>({
   expression,
@@ -428,7 +429,9 @@ export default function prioritizeExpression<E extends Expression = Expression>(
   expression: E
 ): E {
   return populatePriorityAggs({
-    expression: prioritizeExpressionHelper(expression),
+    expression: populateMaxNestedFunctionDepths(
+      prioritizeExpressionHelper(expression)
+    ),
     argPriorityAgg: [] as number[],
     funcPriorityAgg: [] as number[]
   })
