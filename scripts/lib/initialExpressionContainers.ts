@@ -2288,6 +2288,16 @@ export const ygum = initializeExpressionContainer({
   second: 'blankNumberPink'
 })
 
+export const babw = initializeExpressionContainer({
+  binaryType: 'multiply',
+  first: {
+    shorthandNumber: 2
+  },
+  second: {
+    shorthandNumber: 3
+  }
+})
+
 export const krin = initializeExpressionContainer({
   binaryType: 'multiply',
   first: {

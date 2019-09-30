@@ -967,8 +967,11 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        真ん中にある <MultiplyIcon />{' '}
-                        のアイコンが、掛け算を示すということか。
+                        <HighlightBold>
+                          真ん中にある <MultiplyIcon />{' '}
+                          のアイコンが、掛け算を示す
+                        </HighlightBold>
+                        ということか。
                       </P>
                     </>
                   )
