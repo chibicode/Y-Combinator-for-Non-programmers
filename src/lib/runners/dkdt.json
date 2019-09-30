@@ -78,8 +78,6 @@
   "hideControls": true,
   "explanationsVisibility": "visible",
   "hidePriorities": true,
-  "variableSize": "lg",
-  "containerSize": "xxs",
   "hidePlayButton": false,
   "hideBottomRightBadges": false,
   "skipToTheEnd": false,

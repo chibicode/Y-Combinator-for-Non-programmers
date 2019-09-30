@@ -79,8 +79,6 @@
   "hideControls": false,
   "explanationsVisibility": "hiddenInitialPausedOnly",
   "hidePriorities": true,
-  "variableSize": "lg",
-  "containerSize": "xxs",
   "hidePlayButton": true,
   "hideBottomRightBadges": false,
   "skipToTheEnd": false,
