@@ -48,7 +48,7 @@ const FunctionExpressionBox = ({ expression }: FunctionExpressionBoxProps) => {
       >
         <FlexCenter
           css={css`
-            flex-grow: ${(expression.maxNestedFunctionDepth || 0) + 1};
+            flex-grow: ${(expression.body.maxNestedFunctionDepth || 0) + 1};
             flex-basis: 0;
           `}
         >
