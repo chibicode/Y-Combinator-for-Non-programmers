@@ -9,7 +9,11 @@ import { Expression } from 'src/types/ExpressionTypes'
 
 export default function calculateNumLeafNodes(expression: Expression): number {
   if (isVariable(expression)) {
-    return 1
+    if (expression.shorthandNumberAfterConvert !== undefined) {
+      return 2
+    } else {
+      return 1
+    }
   } else if (isCall(expression)) {
     return (
       calculateNumLeafNodes(expression.arg) +

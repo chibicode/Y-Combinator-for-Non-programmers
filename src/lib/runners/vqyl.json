@@ -167,7 +167,7 @@
         "type": "call",
         "priority": 2
       },
-      "numLeafNodes": 6,
+      "numLeafNodes": 8,
       "containerState": "ready",
       "previouslyChangedExpressionState": "default"
     }

@@ -135,7 +135,7 @@
         "type": "call",
         "priority": 1
       },
-      "numLeafNodes": 5,
+      "numLeafNodes": 6,
       "containerState": "ready",
       "previouslyChangedExpressionState": "default"
     }
