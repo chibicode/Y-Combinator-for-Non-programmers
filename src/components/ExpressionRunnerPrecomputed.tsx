@@ -17,6 +17,7 @@ import { expressionRunnerContextDefault } from 'src/types/ExpressionRunnerTypes'
 import { ExpressionRunnerConfig } from 'scripts/lib/buildExpressionRunnerConfigFromShorthand'
 import { SteppedExpressionContainer } from 'src/types/ExpressionContainerTypes'
 import useInterval from 'src/hooks/useInterval'
+import numLeafNodesToVariableSize from 'src/lib/numLeafNodesToVariableSize'
 import CrossSvg from 'src/components/CrossSvg'
 import { LinkButton } from 'src/components/ContentTags/LinkButton'
 
@@ -168,7 +169,9 @@ const ExpressionRunnerPrecomputed = ({
         highlightOverrides,
         highlightOverrideActiveAfterStart,
         highlightOverridesCallArgAndFuncUnboundOnly,
-        variableSize,
+        variableSize: numLeafNodesToVariableSize(
+          expressionContainers[currentIndex].numLeafNodes
+        ),
         started: atLeastOneStepTaken,
         isDoneOrReady: isDone || isReady,
         highlightFunctions,
