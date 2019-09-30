@@ -752,6 +752,189 @@ export default () => (
         )
       },
       {
+        title: <>階乗</>,
+        content: (
+          <>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'devil',
+                  children: (
+                    <>
+                      <P>
+                        ちなみに弁当箱は四則演算だけじゃなく、さらに複雑な計算をすることもできるぞ。
+                      </P>
+                    </>
+                  )
+                },
+                {
+                  type: 'thinking',
+                  children: (
+                    <>
+                      <P>へえ、たとえば何ができるの？</P>
+                    </>
+                  )
+                },
+                {
+                  type: 'devil',
+                  children: (
+                    <>
+                      <P>
+                        たとえば、「<HighlightBold>階乗</HighlightBold>
+                        」という計算がある。これは「
+                        <HighlightBold>
+                          ある数からはじめて、1を引いていき、
+                          <EmojiNumber number={1} />{' '}
+                          になるまで繰り返し掛け算をする
+                        </HighlightBold>
+                        」という計算だ。
+                      </P>
+                      <EmojiSeparator
+                        size="sm"
+                        nodes={[
+                          <CustomEmoji type="blankNumber" />,
+                          <Emoji>✖️</Emoji>,
+                          <CustomEmoji type="questionMinusOne" />,
+                          <Emoji>✖️</Emoji>,
+                          <CustomEmoji type="horizontalDotDotDot" />,
+                          <Emoji>✖️</Emoji>,
+                          <EmojiNumber number={1} />
+                        ]}
+                        description={
+                          <>
+                            ある数からはじめて、1を引いていき、
+                            <br />
+                            <EmojiNumber number={1} />{' '}
+                            になるまで繰り返し掛け算をする
+                          </>
+                        }
+                      />
+                    </>
+                  )
+                },
+                {
+                  type: 'thinking',
+                  children: (
+                    <>
+                      <P>うーん、具体的に説明してくれる？</P>
+                    </>
+                  )
+                },
+                {
+                  type: 'devil',
+                  children: (
+                    <>
+                      <P>
+                        たとえば、「
+                        <Highlight>
+                          <EmojiNumber number={3} /> の階乗
+                        </Highlight>
+                        」は、以下のようになる。実際に計算すると{' '}
+                        <EmojiNumber number={6} /> になるぞ。
+                      </P>
+                      <EmojiSeparator
+                        size="sm"
+                        nodes={[
+                          <EmojiNumber number={3} />,
+                          <Emoji>✖️</Emoji>,
+                          <EmojiNumber number={2} />,
+                          <Emoji>✖️</Emoji>,
+                          <EmojiNumber number={1} />
+                        ]}
+                        description={
+                          <>
+                            <EmojiNumber number={3} /> の階乗。
+                            <br />
+                            実際に計算すると <EmojiNumber number={6} /> になる
+                          </>
+                        }
+                      />
+                      <P>
+                        同じように、「
+                        <Highlight>
+                          <EmojiNumber number={4} /> の階乗
+                        </Highlight>
+                        」は、以下のようになる。実際に計算すると{' '}
+                        <EmojiNumber number={24} /> になるぞ。
+                      </P>
+                      <EmojiSeparator
+                        size="sm"
+                        nodes={[
+                          <EmojiNumber number={4} />,
+                          <Emoji>✖️</Emoji>,
+                          <EmojiNumber number={3} />,
+                          <Emoji>✖️</Emoji>,
+                          <EmojiNumber number={2} />,
+                          <Emoji>✖️</Emoji>,
+                          <EmojiNumber number={1} />
+                        ]}
+                        description={
+                          <>
+                            <EmojiNumber number={4} /> の階乗。
+                            <br />
+                            実際に計算すると <EmojiNumber number={24} /> になる
+                          </>
+                        }
+                      />
+                      <P>
+                        最後に、「
+                        <Highlight>
+                          <EmojiNumber number={5} /> の階乗
+                        </Highlight>
+                        」は、以下のようになる。実際に計算すると{' '}
+                        <EmojiNumber number={120} /> になるぞ。
+                      </P>
+                      <EmojiSeparator
+                        size="xs"
+                        nodes={[
+                          <EmojiNumber number={5} />,
+                          <Emoji>✖️</Emoji>,
+                          <EmojiNumber number={4} />,
+                          <Emoji>✖️</Emoji>,
+                          <EmojiNumber number={3} />,
+                          <Emoji>✖️</Emoji>,
+                          <EmojiNumber number={2} />,
+                          <Emoji>✖️</Emoji>,
+                          <EmojiNumber number={1} />
+                        ]}
+                        description={
+                          <>
+                            <EmojiNumber number={5} /> の階乗。
+                            <br />
+                            実際に計算すると <EmojiNumber number={120} /> になる
+                          </>
+                        }
+                      />
+                      <P>
+                        <HighlightBold>階段</HighlightBold>
+                        みたいに1ずつ数字が減っていくから「階」乗、と覚えておけばいい。
+                      </P>
+                    </>
+                  )
+                },
+                {
+                  type: 'thinking',
+                  children: (
+                    <>
+                      <P>ふむふむ…</P>
+                    </>
+                  )
+                },
+                {
+                  type: 'devil',
+                  children: (
+                    <>
+                      <P>こういった計算も、弁当箱で行うことができるんだ。</P>
+                      <P>どうやったらできるか説明しよう！</P>
+                    </>
+                  )
+                }
+              ]}
+            />
+          </>
+        )
+      },
+      {
         title: <>Yコンビネータと組み合わせると</>,
         content: (
           <>
