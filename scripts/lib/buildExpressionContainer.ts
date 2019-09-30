@@ -16,6 +16,7 @@ import {
   StepBinary,
   StepVariable
 } from 'src/types/ExpressionTypes'
+import calculateNumLeafNodes from 'scripts/lib/calculateNumLeafNodes'
 
 export default function buildExpressionContainer(
   expressionParams: VariableExpressionParams
@@ -38,8 +39,10 @@ export default function buildExpressionContainer(
 export default function buildExpressionContainer(
   expressionParams: ExpressionParams
 ): ContainerWithState<'needsPrioritize', StepChild> {
+  const expression = buildExpressionFromParams(expressionParams)
   return {
-    expression: buildExpressionFromParams(expressionParams),
+    expression,
+    numLeafNodes: calculateNumLeafNodes(expression),
     containerState: 'needsPrioritize',
     previouslyChangedExpressionState: 'default'
   }
