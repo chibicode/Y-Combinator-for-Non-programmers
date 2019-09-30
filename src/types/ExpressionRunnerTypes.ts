@@ -4,12 +4,11 @@ import {
 } from 'src/types/ExpressionContainerTypes'
 import { VariableExpression } from 'src/types/ExpressionTypes'
 import { VariableNames } from 'src/types/VariableNames'
-import { allMaxWidths } from 'src/lib/theme/maxWidths'
+import { VariableSizes } from 'src/types/VariableSizes'
 
 export interface ExpressionRunnerContextProps {
   hidePriorities: boolean
   hideBottomRightBadges: boolean
-  variableSize: 'sm' | 'md' | 'lg' | 'xs' | 'xxs' | 'xxxs'
   isDoneOrReady: boolean
   bottomRightBadgeOverrides: { [key in VariableNames]?: string }
   highlightOverrides: {
@@ -20,6 +19,7 @@ export interface ExpressionRunnerContextProps {
   highlightOverridesCallArgAndFuncUnboundOnly: boolean
   highlightFunctions: boolean
   highlightAllChildren: boolean
+  variableSize: VariableSizes
 }
 
 export type InitializeInstruction =
@@ -40,11 +40,9 @@ export interface ExpressionRunnerProps {
   hideBottomRightBadges: ExpressionRunnerContextProps['hideBottomRightBadges']
   hideControls: boolean
   explanationsVisibility: 'visible' | 'hidden' | 'hiddenInitialPausedOnly'
-  variableSize: ExpressionRunnerContextProps['variableSize']
   initializeInstructions: readonly InitializeInstruction[]
   lastAllowedExpressionState?: ExpressionContainer['previouslyChangedExpressionState']
   lastAllowedExpressionStateAfterIterations?: number
-  containerSize: keyof typeof allMaxWidths
   hidePlayButton?: boolean
   speed: number
   showAllShowSteps?: boolean
@@ -62,7 +60,6 @@ export interface ExpressionRunnerProps {
 export const expressionRunnerContextDefault: ExpressionRunnerContextProps = {
   hidePriorities: false,
   hideBottomRightBadges: false,
-  variableSize: 'sm',
   isDoneOrReady: false,
   started: false,
   bottomRightBadgeOverrides: {},
@@ -70,5 +67,6 @@ export const expressionRunnerContextDefault: ExpressionRunnerContextProps = {
   highlightOverrideActiveAfterStart: false,
   highlightOverridesCallArgAndFuncUnboundOnly: false,
   highlightFunctions: false,
-  highlightAllChildren: false
+  highlightAllChildren: false,
+  variableSize: 'lg'
 }

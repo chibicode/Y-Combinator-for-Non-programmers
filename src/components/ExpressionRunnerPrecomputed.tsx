@@ -29,8 +29,6 @@ export interface ExpressionRunnerPrecomputedProps {
   hideControls: ExpressionRunnerConfig['hideControls']
   explanationsVisibility: ExpressionRunnerConfig['explanationsVisibility']
   hidePriorities: ExpressionRunnerConfig['hidePriorities']
-  variableSize: ExpressionRunnerConfig['variableSize']
-  containerSize: ExpressionRunnerConfig['containerSize']
   hidePlayButton: ExpressionRunnerConfig['hidePlayButton']
   hideBottomRightBadges: ExpressionRunnerConfig['hideBottomRightBadges']
   skipToTheEnd: ExpressionRunnerConfig['skipToTheEnd']
@@ -59,7 +57,6 @@ const ExpressionRunnerPrecomputed = ({
   hideControls,
   explanationsVisibility,
   hidePriorities,
-  variableSize,
   hidePlayButton,
   hideBottomRightBadges,
   skipToTheEnd,
@@ -162,6 +159,9 @@ const ExpressionRunnerPrecomputed = ({
   const containerSize = functionDepthsToContainerSize(
     expressionContainers[currentIndex].expression.maxNestedFunctionDepth || 0
   )
+  const variableSize = numLeafNodesToVariableSize(
+    expressionContainers[currentIndex].numLeafNodes
+  )
 
   return (
     <ExpressionRunnerContext.Provider
@@ -172,9 +172,7 @@ const ExpressionRunnerPrecomputed = ({
         highlightOverrides,
         highlightOverrideActiveAfterStart,
         highlightOverridesCallArgAndFuncUnboundOnly,
-        variableSize: numLeafNodesToVariableSize(
-          expressionContainers[currentIndex].numLeafNodes
-        ),
+        variableSize,
         started: atLeastOneStepTaken,
         isDoneOrReady: isDone || isReady,
         highlightFunctions,

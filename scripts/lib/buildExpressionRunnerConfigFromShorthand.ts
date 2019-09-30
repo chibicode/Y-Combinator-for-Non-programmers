@@ -9,7 +9,6 @@ import {
   isExpressionRunnerSingleStepConfig
 } from 'scripts/lib/expressionRunnerShorthandConfig'
 import { ExpressionContainer } from 'src/types/ExpressionContainerTypes'
-import { allMaxWidths } from 'src/lib/theme/maxWidths'
 import {
   InitializeInstruction,
   ExpressionRunnerContextProps,
@@ -25,11 +24,9 @@ export interface ExpressionRunnerConfig {
   hideBottomRightBadges: ExpressionRunnerContextProps['hideBottomRightBadges']
   hideControls: boolean
   explanationsVisibility: 'visible' | 'hidden' | 'hiddenInitialPausedOnly'
-  variableSize: ExpressionRunnerContextProps['variableSize']
   initializeInstructions: readonly InitializeInstruction[]
   lastAllowedExpressionState?: ExpressionContainer['previouslyChangedExpressionState']
   lastAllowedExpressionStateAfterIterations?: number
-  containerSize: keyof typeof allMaxWidths
   hidePlayButton?: boolean
   speed: number
   showAllShowSteps?: boolean
@@ -52,9 +49,7 @@ const expressionRunnerDefaults = {
   hideBottomRightBadges: expressionRunnerContextDefault.hideBottomRightBadges,
   hideControls: false,
   explanationsVisibility: 'visible',
-  variableSize: expressionRunnerContextDefault.variableSize,
   initializeInstructions: [],
-  containerSize: 'xxs',
   skipToTheEnd: false,
   hidePlayButton: false,
   speed: 1,
@@ -126,8 +121,6 @@ const buildExpressionRunnerConfigFromShorthand = (
       showAllShowSteps,
       explanationsVisibility,
       bottomRightBadgeOverrides,
-      variableSize,
-      containerSize,
       highlightOverrides,
       highlightOverrideActiveAfterStart,
       highlightOverridesCallArgAndFuncUnboundOnly,
@@ -144,9 +137,7 @@ const buildExpressionRunnerConfigFromShorthand = (
       hidePriorities: !showPriorities,
       explanationsVisibility,
       showAllShowSteps,
-      variableSize,
       highlightOverridesCallArgAndFuncUnboundOnly,
-      containerSize,
       skipAlphaConvert,
       skipActive,
       showDefaultAndActiveOnly,
@@ -176,8 +167,6 @@ const buildExpressionRunnerConfigFromShorthand = (
       skipAlphaConvert,
       skipActive,
       showDefaultAndActiveOnly,
-      variableSize,
-      containerSize,
       highlightOverrides,
       explanationsVisibility
     } = mergeWithDefault<
@@ -193,8 +182,6 @@ const buildExpressionRunnerConfigFromShorthand = (
       showAllShowSteps,
       hideFuncUnboundBadgeOnExplanation,
       skipToTheEnd,
-      variableSize,
-      containerSize,
       skipAlphaConvert,
       skipActive,
       showDefaultAndActiveOnly,
@@ -216,8 +203,6 @@ const buildExpressionRunnerConfigFromShorthand = (
       showPriorities,
       explanationsVisibility,
       showAllShowSteps,
-      variableSize,
-      containerSize,
       nextIterations,
       skipActive,
       showDefaultAndActiveOnly
@@ -227,8 +212,6 @@ const buildExpressionRunnerConfigFromShorthand = (
     >(config, expressionRunnerSingleStepConfigDefault)
 
     runnerProps = {
-      variableSize,
-      containerSize,
       initialExpressionContainer,
       hidePriorities: !showPriorities,
       hideFuncUnboundBadgeOnExplanation,
@@ -251,8 +234,6 @@ const buildExpressionRunnerConfigFromShorthand = (
       showPriorities,
       explanationsVisibility,
       showAllShowSteps,
-      variableSize,
-      containerSize,
       nextIterations,
       skipToTheEnd,
       convert
@@ -263,8 +244,6 @@ const buildExpressionRunnerConfigFromShorthand = (
 
     runnerProps = {
       initialExpressionContainers,
-      variableSize,
-      containerSize,
       hidePriorities: !showPriorities,
       hideFuncUnboundBadgeOnExplanation,
       hidePlayButton: false,

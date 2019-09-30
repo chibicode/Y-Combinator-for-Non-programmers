@@ -1,8 +1,6 @@
-import { ExpressionRunnerProps } from 'src/types/ExpressionRunnerTypes'
+import { VariableSizes } from 'src/types/VariableSizes'
 
-const numLeafNodesToVariableSize = (
-  numLeafNodes: number
-): ExpressionRunnerProps['variableSize'] => {
+const numLeafNodesToVariableSize = (numLeafNodes: number): VariableSizes => {
   if (numLeafNodes <= 5) {
     return 'lg'
   } else if (numLeafNodes <= 8) {

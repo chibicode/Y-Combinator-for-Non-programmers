@@ -1,8 +1,8 @@
-import { ExpressionRunnerProps } from 'src/types/ExpressionRunnerTypes'
+import { allMaxWidths } from 'src/lib/theme/maxWidths'
 
 const functionDepthsToContainerSize = (
   maxNestedFunctionDepth: number
-): ExpressionRunnerProps['containerSize'] => {
+): keyof typeof allMaxWidths => {
   if (maxNestedFunctionDepth >= 5) {
     return 'xs'
   } else if (maxNestedFunctionDepth >= 3) {

@@ -9,14 +9,14 @@ import { BinaryExpression } from 'src/types/ExpressionTypes'
 import BinaryContext from 'src/components/BinaryContext'
 import MultiplyIcon from 'src/components/MultiplyIcon'
 import ExpressionRunnerContext from 'src/components/ExpressionRunnerContext'
-import { ExpressionRunnerContextProps } from 'src/types/ExpressionRunnerTypes'
 import { fontSizes, zIndices } from 'src/lib/theme'
+import { VariableSizes } from 'src/types/VariableSizes'
 
 interface BinaryExpressionBoxProps {
   expression: BinaryExpression
 }
 
-const multiplyIconSize = (size: ExpressionRunnerContextProps['variableSize']) =>
+const multiplyIconSize = (size: VariableSizes) =>
   ({
     lg: fontSizes(1.2),
     md: fontSizes(1),
