@@ -18,6 +18,7 @@ import { ExpressionRunnerConfig } from 'scripts/lib/buildExpressionRunnerConfigF
 import { SteppedExpressionContainer } from 'src/types/ExpressionContainerTypes'
 import useInterval from 'src/hooks/useInterval'
 import numLeafNodesToVariableSize from 'src/lib/numLeafNodesToVariableSize'
+import functionDepthsToContainerSize from 'src/lib/functionDepthsToContainerSize'
 import CrossSvg from 'src/components/CrossSvg'
 import { LinkButton } from 'src/components/ContentTags/LinkButton'
 
@@ -59,7 +60,6 @@ const ExpressionRunnerPrecomputed = ({
   explanationsVisibility,
   hidePriorities,
   variableSize,
-  containerSize,
   hidePlayButton,
   hideBottomRightBadges,
   skipToTheEnd,
@@ -159,6 +159,9 @@ const ExpressionRunnerPrecomputed = ({
       currentIndex > 0)
   const progessBarVisible =
     !hidePlayButton && !skipToTheEnd && (isPlaying || atLeastOneStepTaken)
+  const containerSize = functionDepthsToContainerSize(
+    expressionContainers[currentIndex].expression.maxNestedFunctionDepth || 0
+  )
 
   return (
     <ExpressionRunnerContext.Provider
