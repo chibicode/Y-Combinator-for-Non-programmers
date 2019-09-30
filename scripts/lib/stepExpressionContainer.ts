@@ -7,6 +7,7 @@ import resetExpressionContainer from 'scripts/lib/resetExpressionContainer'
 import replaceCallParentKey from 'scripts/lib/replaceCallParentKey'
 import replaceConditionalParentKey from 'scripts/lib/replaceConditionalParentKey'
 import replaceBinaryParentKey from 'scripts/lib/replaceBinaryParentKey'
+import calculateNumLeafNodes from 'scripts/lib/calculateNumLeafNodes'
 import {
   isCall,
   isConditional,
@@ -349,14 +350,17 @@ const runStep = (
       matchExists,
       activePriority
     }
+    const numLeafNodes = calculateNumLeafNodes(nextExpression)
     return previouslyChangedExpressionState === 'default'
       ? {
           ...newContainer,
-          containerState: 'needsReset'
+          containerState: 'needsReset',
+          numLeafNodes
         }
       : {
           ...newContainer,
-          containerState: 'stepped'
+          containerState: 'stepped',
+          numLeafNodes
         }
   }
 
@@ -392,6 +396,8 @@ const runStep = (
     throw new Error()
   }
 
+  const numLeafNodes = calculateNumLeafNodes(newExpression)
+
   if (previouslyChangedExpressionState === 'default') {
     return {
       ...e,
@@ -399,7 +405,8 @@ const runStep = (
       containerState: 'needsReset',
       matchExists,
       activePriority,
-      previouslyChangedExpressionState
+      previouslyChangedExpressionState,
+      numLeafNodes
     }
   } else {
     return {
@@ -411,7 +418,8 @@ const runStep = (
       containerState: 'stepped',
       matchExists,
       activePriority,
-      previouslyChangedExpressionState
+      previouslyChangedExpressionState,
+      numLeafNodes
     }
   }
 }

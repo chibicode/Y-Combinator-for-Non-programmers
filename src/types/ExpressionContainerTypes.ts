@@ -21,6 +21,7 @@ export interface ExpressionContainer<E extends Expression = Expression> {
     | BinaryStates
   readonly matchExists?: boolean
   readonly activePriority?: number
+  readonly numLeafNodes: number
 }
 
 export type ContainerWithState<
