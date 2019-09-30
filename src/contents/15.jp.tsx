@@ -878,35 +878,6 @@ export default () => (
                         }
                       />
                       <P>
-                        最後に、「
-                        <Highlight>
-                          <EmojiNumber number={5} /> の階乗
-                        </Highlight>
-                        」は、以下のようになる。実際に計算すると{' '}
-                        <EmojiNumber number={120} /> になるぞ。
-                      </P>
-                      <EmojiSeparator
-                        size="xs"
-                        nodes={[
-                          <EmojiNumber number={5} />,
-                          <Emoji>✖️</Emoji>,
-                          <EmojiNumber number={4} />,
-                          <Emoji>✖️</Emoji>,
-                          <EmojiNumber number={3} />,
-                          <Emoji>✖️</Emoji>,
-                          <EmojiNumber number={2} />,
-                          <Emoji>✖️</Emoji>,
-                          <EmojiNumber number={1} />
-                        ]}
-                        description={
-                          <>
-                            <EmojiNumber number={5} /> の階乗。
-                            <br />
-                            実際に計算すると <EmojiNumber number={120} /> になる
-                          </>
-                        }
-                      />
-                      <P>
                         <HighlightBold>階段</HighlightBold>
                         みたいに1ずつ数字が減っていくから「階」乗、と覚えておけばいい。
                       </P>
@@ -982,7 +953,24 @@ export default () => (
                     <>
                       <P>
                         そうだ。試しに、こちらを
-                        <H args={{ name: 'fastForward' }} /> してみるといい:
+                        <H args={{ name: 'play' }} /> してみるといい:
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Potg></R.Potg>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'thinking',
+                  children: (
+                    <>
+                      <P>
+                        なるほど、これで <EmojiNumber number={2} />{' '}
+                        <Emoji>✖️</Emoji> <EmojiNumber number={3} />{' '}
+                        を計算できるんだな。
                       </P>
                     </>
                   )
@@ -1004,29 +992,15 @@ export default () => (
                     <>
                       <P>それでは、階乗を計算する弁当箱をお見せしよう。</P>
                       <P>
-                        こちらの弁当箱は、<Highlight>黄色の部分</Highlight>に、
-                        <Highlight>
-                          先ほど紹介した掛け算の弁当箱(
-                          <Emoji>✖️</Emoji>
-                          印)と、Yコンビネータの弁当箱が入っている
-                        </Highlight>
-                        。
-                      </P>
-                      <P>
-                        この弁当箱を実行すると、
-                        <HighlightBold>
-                          <EmojiNumber number={3} /> の階乗、すなわち{' '}
-                          <EmojiNumber number={3} /> <Emoji>✖️</Emoji>{' '}
-                          <EmojiNumber number={2} /> <Emoji>✖️</Emoji>{' '}
-                          <EmojiNumber number={1} /> を計算してくれる
-                        </HighlightBold>
-                        んだ。
+                        まず、こちらの弁当箱を見てみよう。右側に掛け算のアイコン{' '}
+                        <MultiplyIcon /> が使われているのに注目だ。
                       </P>
                     </>
                   )
                 }
               ]}
             />
+            <R.Zick></R.Zick>
             <R.Qaoa>
               <HighlightBold>掛け算ができる弁当箱</HighlightBold>(
               <Emoji>✖️</Emoji>印)と

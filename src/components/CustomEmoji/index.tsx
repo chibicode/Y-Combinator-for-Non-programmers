@@ -11,7 +11,6 @@ import DoubleArrowSvg from 'src/components/CustomEmoji/DoubleArrowSvg'
 import HorizontalDotDotDotRedSvg from 'src/components/CustomEmoji/HorizontalDotDotDotRedSvg'
 import HorizontalDotDotDotSvg from 'src/components/CustomEmoji/HorizontalDotDotDotSvg'
 import IndexSvg from 'src/components/CustomEmoji/IndexSvg'
-import OneTwentySvg from 'src/components/CustomEmoji/OneTwentySvg'
 import LambdaSvg from 'src/components/CustomEmoji/LambdaSvg'
 import LetterCSvg from 'src/components/CustomEmoji/LetterCSvg'
 import LetterDSvg from 'src/components/CustomEmoji/LetterDSvg'
@@ -60,7 +59,6 @@ export const customEmojiToComponent = {
   lambda: LambdaSvg,
   index: IndexSvg,
   condition: ConditionSvg,
-  oneTwenty: OneTwentySvg,
   multiply: MultiplySvg,
   multiplyWhite: MultiplyWhiteSvg,
   questionMinusOne: QuestionMinusOne

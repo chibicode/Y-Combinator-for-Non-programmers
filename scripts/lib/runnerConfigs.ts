@@ -2576,7 +2576,7 @@ export const trwj: ExpressionRunnerShorthandConfig = {
 }
 
 export const potg: ExpressionRunnerShorthandConfig = {
-  runner: 'simple',
+  runner: 'playButtonOnly',
   initialExpressionContainer: initialExpressionContainers.babw,
   showPriorities: true
 }
@@ -2605,6 +2605,12 @@ export const unxf: ExpressionRunnerShorthandConfig = {
 export const ddrg: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   initialExpressionContainer: initialExpressionContainers.uiwq,
+  showPriorities: true
+}
+
+export const zick: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.hbzd,
   showPriorities: true
 }
 
