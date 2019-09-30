@@ -2282,6 +2282,12 @@ export const xfso = initializeExpressionContainer([
   }
 ])
 
+export const ygum = initializeExpressionContainer({
+  binaryType: 'multiply',
+  first: 'blankNumberPurple',
+  second: 'blankNumberPink'
+})
+
 export const krin = initializeExpressionContainer({
   binaryType: 'multiply',
   first: {

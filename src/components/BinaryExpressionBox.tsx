@@ -18,12 +18,12 @@ interface BinaryExpressionBoxProps {
 
 const multiplyIconSize = (size: VariableSizes) =>
   ({
-    lg: fontSizes(1.2),
-    md: fontSizes(1),
-    sm: fontSizes(0.85),
-    xs: fontSizes(0.8),
-    xxs: fontSizes(0.75),
-    xxxs: fontSizes(0.7)
+    lg: fontSizes(1.4),
+    md: fontSizes(1.2),
+    sm: fontSizes(1),
+    xs: fontSizes(0.85),
+    xxs: fontSizes(0.8),
+    xxxs: fontSizes(0.75)
   }[size])
 
 const BinaryExpressionBox = ({ expression }: BinaryExpressionBoxProps) => {

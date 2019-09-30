@@ -18,6 +18,7 @@ import CustomEmoji from 'src/components/CustomEmoji'
 import TwoColGrid from 'src/components/TwoColGrid'
 import * as R from 'src/components/Runners'
 import NextLessonButton from 'src/components/NextLessonButton'
+import MultiplyIcon from 'src/components/MultiplyIcon'
 import ExpressionRunnerCaptionOnly from 'src/components/ExpressionRunnerCaptionOnly'
 
 export default () => (
@@ -925,174 +926,7 @@ export default () => (
                   children: (
                     <>
                       <P>こういった計算も、弁当箱で行うことができるんだ。</P>
-                      <P>どうやったらできるか説明しよう！</P>
-                    </>
-                  )
-                }
-              ]}
-            />
-          </>
-        )
-      },
-      {
-        title: <>Yコンビネータと組み合わせると</>,
-        content: (
-          <>
-            <BubbleQuotes
-              quotes={[
-                {
-                  type: 'devil',
-                  children: (
-                    <>
-                      <P>
-                        また、前回「
-                        <H args={{ name: 'repeatFeature' }} />
-                        」を再現するのに使った「
-                        <HighlightBold>Yコンビネータ</HighlightBold>
-                        」の弁当箱と組み合わせることで、さらに複雑な計算をすることもできる。
-                      </P>
-                      <R.Xjzx>
-                        前回「
-                        <H args={{ name: 'repeatFeature' }} />
-                        」を
-                        <br />
-                        再現するのに使った「
-                        <HighlightBold>Yコンビネータ</HighlightBold>」
-                      </R.Xjzx>
-                    </>
-                  )
-                },
-                {
-                  type: 'thinking',
-                  children: (
-                    <>
-                      <P>どういうこと？</P>
-                    </>
-                  )
-                },
-                {
-                  type: 'devil',
-                  children: (
-                    <>
-                      <P>
-                        たとえば、「<HighlightBold>階乗</HighlightBold>
-                        」という計算がある。これは「
-                        <HighlightBold>
-                          ある数からはじめて、1を引いていき、
-                          <EmojiNumber number={1} />{' '}
-                          になるまで繰り返し掛け算をする
-                        </HighlightBold>
-                        」という計算だ。
-                      </P>
-                      <P>
-                        たとえば、「
-                        <EmojiNumber number={3} />{' '}
-                        の階乗」は、以下のようになる。実際に計算すると{' '}
-                        <EmojiNumber number={6} /> になるぞ。
-                      </P>
-                      <EmojiSeparator
-                        size="sm"
-                        nodes={[
-                          <EmojiNumber number={3} />,
-                          <Emoji>✖️</Emoji>,
-                          <EmojiNumber number={2} />,
-                          <Emoji>✖️</Emoji>,
-                          <EmojiNumber number={1} />
-                        ]}
-                        description={
-                          <>
-                            <EmojiNumber number={3} /> の階乗。
-                            <br />
-                            実際に計算すると <EmojiNumber number={6} /> になる
-                          </>
-                        }
-                      />
-                      <P>
-                        同じように、「
-                        <EmojiNumber number={4} />{' '}
-                        の階乗」は、以下のようになる。実際に計算すると{' '}
-                        <EmojiNumber number={24} /> になるぞ。
-                      </P>
-                      <EmojiSeparator
-                        size="sm"
-                        nodes={[
-                          <EmojiNumber number={4} />,
-                          <Emoji>✖️</Emoji>,
-                          <EmojiNumber number={3} />,
-                          <Emoji>✖️</Emoji>,
-                          <EmojiNumber number={2} />,
-                          <Emoji>✖️</Emoji>,
-                          <EmojiNumber number={1} />
-                        ]}
-                        description={
-                          <>
-                            <EmojiNumber number={4} /> の階乗。
-                            <br />
-                            実際に計算すると <EmojiNumber number={24} /> になる
-                          </>
-                        }
-                      />
-                      <P>
-                        <HighlightBold>階段</HighlightBold>
-                        みたいに1ずつ数字が減っていくから「階」乗、と覚えておけばいい。
-                      </P>
-                    </>
-                  )
-                },
-                {
-                  type: 'thinking',
-                  children: (
-                    <>
-                      <P>ふむふむ…</P>
-                    </>
-                  )
-                },
-                {
-                  type: 'devil',
-                  children: (
-                    <>
-                      <P>
-                        この「<HighlightBold>階乗</HighlightBold>」は、先ほどの
-                        <HighlightBold>掛け算ができる弁当箱</HighlightBold>と、
-                        <HighlightBold>Yコンビネータ</HighlightBold>
-                        の弁当箱を組み合わせて計算することができるんだ。
-                      </P>
-                    </>
-                  )
-                }
-              ]}
-            />
-            <R.Vqyl>
-              <CustomEmoji type="blankNumberPurple" /> と{' '}
-              <CustomEmoji type="blankNumberPink" /> の<br />
-              掛け算を計算できる弁当箱と…
-            </R.Vqyl>
-            <R.Xjzx>
-              「<HighlightBold>Yコンビネータ</HighlightBold>」の
-              <br />
-              弁当箱を組み合わせることで…
-            </R.Xjzx>
-            <ExpressionRunnerSeparator />
-            <EmojiSeparator
-              size="sm"
-              nodes={[
-                <EmojiNumber number={4} />,
-                <Emoji>✖️</Emoji>,
-                <EmojiNumber number={3} />,
-                <Emoji>✖️</Emoji>,
-                <EmojiNumber number={2} />,
-                <Emoji>✖️</Emoji>,
-                <EmojiNumber number={1} />
-              ]}
-              description={<>階乗を計算することができる！</>}
-            />
-            <BubbleQuotes
-              quotes={[
-                {
-                  type: 'surprised',
-                  children: (
-                    <>
-                      <P>へー、そうなの！</P>
+                      <P>どういうことか説明しよう！</P>
                     </>
                   )
                 }
@@ -1114,8 +948,7 @@ export default () => (
                       <P>
                         まず、
                         <HighlightBold>
-                          掛け算を計算できる弁当箱を、以下のように{' '}
-                          <Emoji>✖️</Emoji>印で省略してみる。
+                          掛け算を計算できる弁当箱を、以下のように省略表記してみる。
                         </HighlightBold>
                         こうしたほうがひと目で見て分かりやすいからな。
                       </P>
@@ -1126,9 +959,7 @@ export default () => (
             />
             <R.Vqyl>掛け算を計算できる弁当箱を…</R.Vqyl>
             <ExpressionRunnerSeparator />
-            <R.Jtxf>
-              <Emoji>✖️</Emoji>印で省略してみる
-            </R.Jtxf>
+            <R.Trwj>省略表記してみる</R.Trwj>
             <BubbleQuotes
               quotes={[
                 {
@@ -1136,8 +967,19 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        <Emoji>✖️</Emoji>
-                        印を使うことで、見た目がシンプルになった！
+                        真ん中にある <MultiplyIcon />{' '}
+                        のアイコンが、掛け算を示すということか。
+                      </P>
+                    </>
+                  )
+                },
+                {
+                  type: 'devil',
+                  children: (
+                    <>
+                      <P>
+                        そうだ。試しに、こちらを
+                        <H args={{ name: 'fastForward' }} /> してみるといい:
                       </P>
                     </>
                   )

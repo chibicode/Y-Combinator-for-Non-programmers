@@ -9,11 +9,11 @@ const MultiplyIcon = ({ revert }: { revert?: boolean }) => (
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      width: 1.8em;
-      height: 1.8em;
+      width: 1.6em;
+      height: 1.6em;
       border-radius: ${radii(0.25)};
       color: ${colors(revert ? 'white' : 'indigo300')};
-      font-size: 0.55em;
+      font-size: 0.7em;
       font-weight: bold;
       line-height: ${lineHeights(1.3, { ignoreLocale: true })};
       border: 2px solid ${colors('indigo300')};

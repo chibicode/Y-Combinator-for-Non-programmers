@@ -2569,6 +2569,12 @@ export const jtxf: ExpressionRunnerShorthandConfig = {
   showPriorities: true
 }
 
+export const trwj: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.ygum,
+  showPriorities: true
+}
+
 export const aklf: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   initialExpressionContainer: initialExpressionContainers.nuoh,
