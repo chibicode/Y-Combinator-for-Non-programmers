@@ -1,8 +1,6 @@
 {
   "expressionContainers": [
     {
-      "containerState": "ready",
-      "previouslyChangedExpressionState": "default",
       "expression": {
         "arg": {
           "arg": {
@@ -552,7 +550,11 @@
         "state": "default",
         "type": "call",
         "priority": 1
-      }
+      },
+      "previouslyChangedExpressionState": "default",
+      "activePriority": 3,
+      "containerState": "ready",
+      "numLeafNodes": 25
     }
   ],
   "speed": 1,

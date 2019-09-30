@@ -1,8 +1,6 @@
 {
   "expressionContainers": [
     {
-      "containerState": "ready",
-      "previouslyChangedExpressionState": "default",
       "expression": {
         "arg": {
           "name": "questionFoodGrey",
@@ -113,7 +111,10 @@
           "type": "function"
         },
         "type": "function"
-      }
+      },
+      "numLeafNodes": 4,
+      "containerState": "ready",
+      "previouslyChangedExpressionState": "default"
     }
   ],
   "speed": 1,

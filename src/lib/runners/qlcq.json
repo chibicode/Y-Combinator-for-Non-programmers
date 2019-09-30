@@ -182,7 +182,8 @@
       },
       "previouslyChangedExpressionState": "showFuncUnbound",
       "activePriority": 1,
-      "containerState": "stepped"
+      "containerState": "stepped",
+      "numLeafNodes": 6
     }
   ],
   "speed": 1,

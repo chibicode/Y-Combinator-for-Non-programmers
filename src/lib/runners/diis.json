@@ -1,8 +1,6 @@
 {
   "expressionContainers": [
     {
-      "containerState": "stepped",
-      "previouslyChangedExpressionState": "showFuncBound",
       "expression": {
         "arg": {
           "arg": {
@@ -67,11 +65,12 @@
         "type": "call",
         "priority": 1
       },
+      "numLeafNodes": 3,
+      "containerState": "stepped",
+      "previouslyChangedExpressionState": "showFuncBound",
       "activePriority": 2
     },
     {
-      "containerState": "stepped",
-      "previouslyChangedExpressionState": "betaReducePreviewBefore",
       "expression": {
         "arg": {
           "arg": {
@@ -136,12 +135,13 @@
         "type": "call",
         "priority": 1
       },
+      "numLeafNodes": 3,
+      "containerState": "stepped",
+      "previouslyChangedExpressionState": "betaReducePreviewBefore",
       "matchExists": true,
       "activePriority": 2
     },
     {
-      "containerState": "stepped",
-      "previouslyChangedExpressionState": "betaReducePreviewAfter",
       "expression": {
         "arg": {
           "arg": {
@@ -206,11 +206,12 @@
         "type": "call",
         "priority": 1
       },
+      "numLeafNodes": 3,
+      "containerState": "stepped",
+      "previouslyChangedExpressionState": "betaReducePreviewAfter",
       "activePriority": 2
     },
     {
-      "containerState": "stepped",
-      "previouslyChangedExpressionState": "betaReducePreviewCrossed",
       "expression": {
         "arg": {
           "arg": {
@@ -275,11 +276,12 @@
         "type": "call",
         "priority": 1
       },
+      "numLeafNodes": 3,
+      "containerState": "stepped",
+      "previouslyChangedExpressionState": "betaReducePreviewCrossed",
       "activePriority": 2
     },
     {
-      "containerState": "done",
-      "previouslyChangedExpressionState": "default",
       "expression": {
         "arg": {
           "name": "c",
@@ -310,7 +312,11 @@
         "state": "default",
         "type": "call",
         "priority": 1
-      }
+      },
+      "numLeafNodes": 2,
+      "containerState": "done",
+      "previouslyChangedExpressionState": "default",
+      "activePriority": 2
     }
   ],
   "speed": 1,

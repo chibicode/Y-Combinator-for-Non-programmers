@@ -1,8 +1,6 @@
 {
   "expressionContainers": [
     {
-      "containerState": "done",
-      "previouslyChangedExpressionState": "default",
       "expression": {
         "arg": {
           "name": "g",
@@ -27,7 +25,11 @@
           "bound": true
         },
         "type": "function"
-      }
+      },
+      "previouslyChangedExpressionState": "default",
+      "activePriority": 1,
+      "containerState": "done",
+      "numLeafNodes": 1
     }
   ],
   "speed": 1,

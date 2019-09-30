@@ -1,8 +1,6 @@
 {
   "expressionContainers": [
     {
-      "containerState": "ready",
-      "previouslyChangedExpressionState": "default",
       "expression": {
         "arg": {
           "arg": {
@@ -552,11 +550,13 @@
         "state": "default",
         "type": "call",
         "priority": 1
-      }
+      },
+      "previouslyChangedExpressionState": "default",
+      "activePriority": 3,
+      "containerState": "ready",
+      "numLeafNodes": 25
     },
     {
-      "containerState": "stepped",
-      "previouslyChangedExpressionState": "conditionActive",
       "expression": {
         "arg": {
           "arg": {
@@ -1107,11 +1107,12 @@
         "type": "call",
         "priority": 1
       },
-      "activePriority": 3
+      "previouslyChangedExpressionState": "conditionActive",
+      "activePriority": 3,
+      "containerState": "stepped",
+      "numLeafNodes": 25
     },
     {
-      "containerState": "stepped",
-      "previouslyChangedExpressionState": "falseCaseActive",
       "expression": {
         "arg": {
           "arg": {
@@ -1662,11 +1663,12 @@
         "type": "call",
         "priority": 1
       },
-      "activePriority": 3
+      "previouslyChangedExpressionState": "falseCaseActive",
+      "activePriority": 3,
+      "containerState": "stepped",
+      "numLeafNodes": 25
     },
     {
-      "containerState": "ready",
-      "previouslyChangedExpressionState": "default",
       "expression": {
         "arg": {
           "arg": {
@@ -2183,11 +2185,13 @@
         "state": "default",
         "type": "call",
         "priority": 1
-      }
+      },
+      "previouslyChangedExpressionState": "default",
+      "activePriority": 3,
+      "containerState": "ready",
+      "numLeafNodes": 23
     },
     {
-      "containerState": "stepped",
-      "previouslyChangedExpressionState": "showFuncUnbound",
       "expression": {
         "arg": {
           "arg": {
@@ -2705,11 +2709,12 @@
         "type": "call",
         "priority": 1
       },
-      "activePriority": 4
+      "previouslyChangedExpressionState": "showFuncUnbound",
+      "activePriority": 4,
+      "containerState": "stepped",
+      "numLeafNodes": 23
     },
     {
-      "containerState": "stepped",
-      "previouslyChangedExpressionState": "needsAlphaConvert",
       "expression": {
         "arg": {
           "arg": {
@@ -3227,11 +3232,12 @@
         "type": "call",
         "priority": 1
       },
-      "activePriority": 4
+      "previouslyChangedExpressionState": "needsAlphaConvert",
+      "activePriority": 4,
+      "containerState": "stepped",
+      "numLeafNodes": 23
     },
     {
-      "containerState": "stepped",
-      "previouslyChangedExpressionState": "alphaConvertDone",
       "expression": {
         "arg": {
           "arg": {
@@ -3749,11 +3755,12 @@
         "type": "call",
         "priority": 1
       },
-      "activePriority": 4
+      "previouslyChangedExpressionState": "alphaConvertDone",
+      "activePriority": 4,
+      "containerState": "stepped",
+      "numLeafNodes": 23
     },
     {
-      "containerState": "stepped",
-      "previouslyChangedExpressionState": "betaReducePreviewBefore",
       "expression": {
         "arg": {
           "arg": {
@@ -4271,12 +4278,13 @@
         "type": "call",
         "priority": 1
       },
+      "previouslyChangedExpressionState": "betaReducePreviewBefore",
       "matchExists": true,
-      "activePriority": 4
+      "activePriority": 4,
+      "containerState": "stepped",
+      "numLeafNodes": 23
     },
     {
-      "containerState": "stepped",
-      "previouslyChangedExpressionState": "betaReducePreviewAfter",
       "expression": {
         "arg": {
           "arg": {
@@ -5140,11 +5148,12 @@
         "type": "call",
         "priority": 1
       },
-      "activePriority": 4
+      "previouslyChangedExpressionState": "betaReducePreviewAfter",
+      "activePriority": 4,
+      "containerState": "stepped",
+      "numLeafNodes": 37
     },
     {
-      "containerState": "stepped",
-      "previouslyChangedExpressionState": "betaReducePreviewCrossed",
       "expression": {
         "arg": {
           "arg": {
@@ -6008,11 +6017,12 @@
         "type": "call",
         "priority": 1
       },
-      "activePriority": 4
+      "previouslyChangedExpressionState": "betaReducePreviewCrossed",
+      "activePriority": 4,
+      "containerState": "stepped",
+      "numLeafNodes": 37
     },
     {
-      "containerState": "ready",
-      "previouslyChangedExpressionState": "default",
       "expression": {
         "arg": {
           "arg": {
@@ -6668,11 +6678,13 @@
         "state": "default",
         "type": "call",
         "priority": 1
-      }
+      },
+      "previouslyChangedExpressionState": "default",
+      "activePriority": 4,
+      "containerState": "ready",
+      "numLeafNodes": 29
     },
     {
-      "containerState": "stepped",
-      "previouslyChangedExpressionState": "showFuncUnbound",
       "expression": {
         "arg": {
           "arg": {
@@ -7329,11 +7341,12 @@
         "type": "call",
         "priority": 1
       },
-      "activePriority": 4
+      "previouslyChangedExpressionState": "showFuncUnbound",
+      "activePriority": 4,
+      "containerState": "stepped",
+      "numLeafNodes": 29
     },
     {
-      "containerState": "stepped",
-      "previouslyChangedExpressionState": "betaReducePreviewBefore",
       "expression": {
         "arg": {
           "arg": {
@@ -7990,12 +8003,13 @@
         "type": "call",
         "priority": 1
       },
+      "previouslyChangedExpressionState": "betaReducePreviewBefore",
       "matchExists": true,
-      "activePriority": 4
+      "activePriority": 4,
+      "containerState": "stepped",
+      "numLeafNodes": 29
     },
     {
-      "containerState": "stepped",
-      "previouslyChangedExpressionState": "betaReducePreviewAfter",
       "expression": {
         "arg": {
           "arg": {
@@ -9017,11 +9031,12 @@
         "type": "call",
         "priority": 1
       },
-      "activePriority": 4
+      "previouslyChangedExpressionState": "betaReducePreviewAfter",
+      "activePriority": 4,
+      "containerState": "stepped",
+      "numLeafNodes": 44
     },
     {
-      "containerState": "stepped",
-      "previouslyChangedExpressionState": "betaReducePreviewCrossed",
       "expression": {
         "arg": {
           "arg": {
@@ -10043,11 +10058,12 @@
         "type": "call",
         "priority": 1
       },
-      "activePriority": 4
+      "previouslyChangedExpressionState": "betaReducePreviewCrossed",
+      "activePriority": 4,
+      "containerState": "stepped",
+      "numLeafNodes": 44
     },
     {
-      "containerState": "ready",
-      "previouslyChangedExpressionState": "default",
       "expression": {
         "arg": {
           "arg": {
@@ -10670,11 +10686,13 @@
         "state": "default",
         "type": "call",
         "priority": 1
-      }
+      },
+      "previouslyChangedExpressionState": "default",
+      "activePriority": 4,
+      "containerState": "ready",
+      "numLeafNodes": 28
     },
     {
-      "containerState": "stepped",
-      "previouslyChangedExpressionState": "showFuncUnbound",
       "expression": {
         "arg": {
           "arg": {
@@ -11298,11 +11316,12 @@
         "type": "call",
         "priority": 1
       },
-      "activePriority": 4
+      "previouslyChangedExpressionState": "showFuncUnbound",
+      "activePriority": 4,
+      "containerState": "stepped",
+      "numLeafNodes": 28
     },
     {
-      "containerState": "stepped",
-      "previouslyChangedExpressionState": "betaReducePreviewBefore",
       "expression": {
         "arg": {
           "arg": {
@@ -11926,12 +11945,13 @@
         "type": "call",
         "priority": 1
       },
+      "previouslyChangedExpressionState": "betaReducePreviewBefore",
       "matchExists": true,
-      "activePriority": 4
+      "activePriority": 4,
+      "containerState": "stepped",
+      "numLeafNodes": 28
     },
     {
-      "containerState": "stepped",
-      "previouslyChangedExpressionState": "betaReducePreviewAfter",
       "expression": {
         "arg": {
           "arg": {
@@ -12678,11 +12698,12 @@
         "type": "call",
         "priority": 1
       },
-      "activePriority": 4
+      "previouslyChangedExpressionState": "betaReducePreviewAfter",
+      "activePriority": 4,
+      "containerState": "stepped",
+      "numLeafNodes": 34
     },
     {
-      "containerState": "stepped",
-      "previouslyChangedExpressionState": "betaReducePreviewCrossed",
       "expression": {
         "arg": {
           "arg": {
@@ -13429,11 +13450,12 @@
         "type": "call",
         "priority": 1
       },
-      "activePriority": 4
+      "previouslyChangedExpressionState": "betaReducePreviewCrossed",
+      "activePriority": 4,
+      "containerState": "stepped",
+      "numLeafNodes": 34
     },
     {
-      "containerState": "ready",
-      "previouslyChangedExpressionState": "default",
       "expression": {
         "arg": {
           "arg": {
@@ -14084,11 +14106,13 @@
         "state": "default",
         "type": "call",
         "priority": 1
-      }
+      },
+      "previouslyChangedExpressionState": "default",
+      "activePriority": 4,
+      "containerState": "ready",
+      "numLeafNodes": 30
     },
     {
-      "containerState": "stepped",
-      "previouslyChangedExpressionState": "active",
       "expression": {
         "arg": {
           "arg": {
@@ -14740,11 +14764,12 @@
         "type": "call",
         "priority": 1
       },
-      "activePriority": 6
+      "previouslyChangedExpressionState": "active",
+      "activePriority": 6,
+      "containerState": "stepped",
+      "numLeafNodes": 30
     },
     {
-      "containerState": "ready",
-      "previouslyChangedExpressionState": "default",
       "expression": {
         "arg": {
           "arg": {
@@ -15375,11 +15400,13 @@
         "state": "default",
         "type": "call",
         "priority": 1
-      }
+      },
+      "previouslyChangedExpressionState": "default",
+      "activePriority": 6,
+      "containerState": "ready",
+      "numLeafNodes": 29
     },
     {
-      "containerState": "stepped",
-      "previouslyChangedExpressionState": "active",
       "expression": {
         "arg": {
           "arg": {
@@ -16011,11 +16038,12 @@
         "type": "call",
         "priority": 1
       },
-      "activePriority": 5
+      "previouslyChangedExpressionState": "active",
+      "activePriority": 5,
+      "containerState": "stepped",
+      "numLeafNodes": 29
     },
     {
-      "containerState": "ready",
-      "previouslyChangedExpressionState": "default",
       "expression": {
         "arg": {
           "arg": {
@@ -16626,11 +16654,13 @@
         "state": "default",
         "type": "call",
         "priority": 1
-      }
+      },
+      "previouslyChangedExpressionState": "default",
+      "activePriority": 5,
+      "containerState": "ready",
+      "numLeafNodes": 28
     },
     {
-      "containerState": "stepped",
-      "previouslyChangedExpressionState": "active",
       "expression": {
         "arg": {
           "arg": {
@@ -17242,11 +17272,12 @@
         "type": "call",
         "priority": 1
       },
-      "activePriority": 4
+      "previouslyChangedExpressionState": "active",
+      "activePriority": 4,
+      "containerState": "stepped",
+      "numLeafNodes": 28
     },
     {
-      "containerState": "ready",
-      "previouslyChangedExpressionState": "default",
       "expression": {
         "arg": {
           "arg": {
@@ -17836,7 +17867,11 @@
         "state": "default",
         "type": "call",
         "priority": 1
-      }
+      },
+      "previouslyChangedExpressionState": "default",
+      "activePriority": 4,
+      "containerState": "ready",
+      "numLeafNodes": 27
     }
   ],
   "speed": 1.75,

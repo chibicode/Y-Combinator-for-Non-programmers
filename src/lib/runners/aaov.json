@@ -1,8 +1,6 @@
 {
   "expressionContainers": [
     {
-      "containerState": "ready",
-      "previouslyChangedExpressionState": "default",
       "expression": {
         "arg": {
           "name": "d",
@@ -80,11 +78,12 @@
         "state": "default",
         "type": "call",
         "priority": 2
-      }
+      },
+      "numLeafNodes": 3,
+      "containerState": "ready",
+      "previouslyChangedExpressionState": "default"
     },
     {
-      "containerState": "stepped",
-      "previouslyChangedExpressionState": "active",
       "expression": {
         "arg": {
           "name": "d",
@@ -163,6 +162,9 @@
         "type": "call",
         "priority": 2
       },
+      "numLeafNodes": 3,
+      "containerState": "stepped",
+      "previouslyChangedExpressionState": "active",
       "activePriority": 1
     }
   ],

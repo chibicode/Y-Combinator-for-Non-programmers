@@ -1,8 +1,6 @@
 {
   "expressionContainers": [
     {
-      "containerState": "stepped",
-      "previouslyChangedExpressionState": "active",
       "expression": {
         "arg": {
           "name": "b",
@@ -62,11 +60,12 @@
         },
         "type": "function"
       },
+      "numLeafNodes": 2,
+      "containerState": "stepped",
+      "previouslyChangedExpressionState": "active",
       "activePriority": 1
     },
     {
-      "containerState": "stepped",
-      "previouslyChangedExpressionState": "showFuncBound",
       "expression": {
         "arg": {
           "name": "b",
@@ -126,11 +125,12 @@
         },
         "type": "function"
       },
+      "numLeafNodes": 2,
+      "containerState": "stepped",
+      "previouslyChangedExpressionState": "showFuncBound",
       "activePriority": 1
     },
     {
-      "containerState": "stepped",
-      "previouslyChangedExpressionState": "betaReducePreviewBefore",
       "expression": {
         "arg": {
           "name": "b",
@@ -190,12 +190,13 @@
         },
         "type": "function"
       },
+      "numLeafNodes": 2,
+      "containerState": "stepped",
+      "previouslyChangedExpressionState": "betaReducePreviewBefore",
       "matchExists": false,
       "activePriority": 1
     },
     {
-      "containerState": "stepped",
-      "previouslyChangedExpressionState": "betaReducePreviewCrossed",
       "expression": {
         "arg": {
           "name": "b",
@@ -255,11 +256,12 @@
         },
         "type": "function"
       },
+      "numLeafNodes": 2,
+      "containerState": "stepped",
+      "previouslyChangedExpressionState": "betaReducePreviewCrossed",
       "activePriority": 1
     },
     {
-      "containerState": "done",
-      "previouslyChangedExpressionState": "default",
       "expression": {
         "arg": {
           "name": "b",
@@ -284,7 +286,11 @@
           "bound": true
         },
         "type": "function"
-      }
+      },
+      "numLeafNodes": 1,
+      "containerState": "done",
+      "previouslyChangedExpressionState": "default",
+      "activePriority": 1
     }
   ],
   "speed": 1,

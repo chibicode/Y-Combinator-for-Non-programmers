@@ -48,11 +48,10 @@
       },
       "previouslyChangedExpressionState": "betaReducePreviewCrossed",
       "activePriority": 1,
-      "containerState": "stepped"
+      "containerState": "stepped",
+      "numLeafNodes": 2
     },
     {
-      "containerState": "done",
-      "previouslyChangedExpressionState": "default",
       "expression": {
         "name": "d",
         "highlightType": "default",
@@ -63,7 +62,11 @@
         "funcPriorityAgg": [],
         "emphasizePriority": false,
         "bound": true
-      }
+      },
+      "previouslyChangedExpressionState": "default",
+      "activePriority": 1,
+      "containerState": "done",
+      "numLeafNodes": 1
     }
   ],
   "speed": 1,

@@ -1,8 +1,6 @@
 {
   "expressionContainers": [
     {
-      "containerState": "stepped",
-      "previouslyChangedExpressionState": "betaReducePreviewCrossed",
       "expression": {
         "arg": {
           "name": "d",
@@ -81,11 +79,12 @@
         "type": "call",
         "priority": 2
       },
+      "numLeafNodes": 3,
+      "containerState": "stepped",
+      "previouslyChangedExpressionState": "betaReducePreviewCrossed",
       "activePriority": 1
     },
     {
-      "containerState": "ready",
-      "previouslyChangedExpressionState": "default",
       "expression": {
         "arg": {
           "name": "d",
@@ -130,7 +129,11 @@
         "state": "default",
         "type": "call",
         "priority": 1
-      }
+      },
+      "numLeafNodes": 2,
+      "containerState": "ready",
+      "previouslyChangedExpressionState": "default",
+      "activePriority": 1
     }
   ],
   "speed": 1,

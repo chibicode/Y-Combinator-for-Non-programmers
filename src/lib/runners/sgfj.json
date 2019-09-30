@@ -48,7 +48,8 @@
       },
       "previouslyChangedExpressionState": "showFuncBound",
       "activePriority": 1,
-      "containerState": "stepped"
+      "containerState": "stepped",
+      "numLeafNodes": 2
     },
     {
       "expression": {
@@ -99,7 +100,8 @@
       "previouslyChangedExpressionState": "betaReducePreviewBefore",
       "matchExists": false,
       "activePriority": 1,
-      "containerState": "stepped"
+      "containerState": "stepped",
+      "numLeafNodes": 2
     }
   ],
   "speed": 1,

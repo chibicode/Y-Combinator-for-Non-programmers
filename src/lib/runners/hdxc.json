@@ -1,8 +1,6 @@
 {
   "expressionContainers": [
     {
-      "containerState": "ready",
-      "previouslyChangedExpressionState": "default",
       "expression": {
         "arg": {
           "name": "h",
@@ -80,11 +78,12 @@
         "state": "default",
         "type": "call",
         "priority": 2
-      }
+      },
+      "numLeafNodes": 3,
+      "containerState": "ready",
+      "previouslyChangedExpressionState": "default"
     },
     {
-      "containerState": "stepped",
-      "previouslyChangedExpressionState": "active",
       "expression": {
         "arg": {
           "name": "h",
@@ -163,11 +162,12 @@
         "type": "call",
         "priority": 2
       },
+      "numLeafNodes": 3,
+      "containerState": "stepped",
+      "previouslyChangedExpressionState": "active",
       "activePriority": 1
     },
     {
-      "containerState": "stepped",
-      "previouslyChangedExpressionState": "showFuncUnbound",
       "expression": {
         "arg": {
           "name": "h",
@@ -246,11 +246,12 @@
         "type": "call",
         "priority": 2
       },
+      "numLeafNodes": 3,
+      "containerState": "stepped",
+      "previouslyChangedExpressionState": "showFuncUnbound",
       "activePriority": 1
     },
     {
-      "containerState": "stepped",
-      "previouslyChangedExpressionState": "betaReducePreviewBefore",
       "expression": {
         "arg": {
           "name": "h",
@@ -329,12 +330,13 @@
         "type": "call",
         "priority": 2
       },
+      "numLeafNodes": 3,
+      "containerState": "stepped",
+      "previouslyChangedExpressionState": "betaReducePreviewBefore",
       "matchExists": false,
       "activePriority": 1
     },
     {
-      "containerState": "stepped",
-      "previouslyChangedExpressionState": "betaReducePreviewCrossed",
       "expression": {
         "arg": {
           "name": "h",
@@ -413,11 +415,12 @@
         "type": "call",
         "priority": 2
       },
+      "numLeafNodes": 3,
+      "containerState": "stepped",
+      "previouslyChangedExpressionState": "betaReducePreviewCrossed",
       "activePriority": 1
     },
     {
-      "containerState": "ready",
-      "previouslyChangedExpressionState": "default",
       "expression": {
         "arg": {
           "name": "h",
@@ -462,7 +465,11 @@
         "state": "default",
         "type": "call",
         "priority": 1
-      }
+      },
+      "numLeafNodes": 2,
+      "containerState": "ready",
+      "previouslyChangedExpressionState": "default",
+      "activePriority": 1
     },
     {
       "expression": {
@@ -512,7 +519,8 @@
       },
       "previouslyChangedExpressionState": "active",
       "activePriority": 1,
-      "containerState": "stepped"
+      "containerState": "stepped",
+      "numLeafNodes": 2
     },
     {
       "expression": {
@@ -562,7 +570,8 @@
       },
       "previouslyChangedExpressionState": "showFuncBound",
       "activePriority": 1,
-      "containerState": "stepped"
+      "containerState": "stepped",
+      "numLeafNodes": 2
     },
     {
       "expression": {
@@ -613,7 +622,8 @@
       "previouslyChangedExpressionState": "betaReducePreviewBefore",
       "matchExists": true,
       "activePriority": 1,
-      "containerState": "stepped"
+      "containerState": "stepped",
+      "numLeafNodes": 2
     },
     {
       "expression": {
@@ -663,7 +673,8 @@
       },
       "previouslyChangedExpressionState": "betaReducePreviewAfter",
       "activePriority": 1,
-      "containerState": "stepped"
+      "containerState": "stepped",
+      "numLeafNodes": 2
     },
     {
       "expression": {
@@ -713,11 +724,10 @@
       },
       "previouslyChangedExpressionState": "betaReducePreviewCrossed",
       "activePriority": 1,
-      "containerState": "stepped"
+      "containerState": "stepped",
+      "numLeafNodes": 2
     },
     {
-      "containerState": "done",
-      "previouslyChangedExpressionState": "default",
       "expression": {
         "name": "h",
         "highlightType": "default",
@@ -728,7 +738,11 @@
         "funcPriorityAgg": [],
         "emphasizePriority": false,
         "bound": true
-      }
+      },
+      "previouslyChangedExpressionState": "default",
+      "activePriority": 1,
+      "containerState": "done",
+      "numLeafNodes": 1
     }
   ],
   "speed": 1,

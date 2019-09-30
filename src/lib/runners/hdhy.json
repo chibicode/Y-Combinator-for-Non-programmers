@@ -1,8 +1,6 @@
 {
   "expressionContainers": [
     {
-      "containerState": "stepped",
-      "previouslyChangedExpressionState": "active",
       "expression": {
         "arg": {
           "name": "b",
@@ -115,11 +113,12 @@
         },
         "type": "function"
       },
-      "activePriority": 2
+      "previouslyChangedExpressionState": "active",
+      "activePriority": 2,
+      "containerState": "stepped",
+      "numLeafNodes": 4
     },
     {
-      "containerState": "stepped",
-      "previouslyChangedExpressionState": "showFuncBound",
       "expression": {
         "arg": {
           "name": "b",
@@ -232,11 +231,12 @@
         },
         "type": "function"
       },
-      "activePriority": 2
+      "previouslyChangedExpressionState": "showFuncBound",
+      "activePriority": 2,
+      "containerState": "stepped",
+      "numLeafNodes": 4
     },
     {
-      "containerState": "stepped",
-      "previouslyChangedExpressionState": "betaReducePreviewBefore",
       "expression": {
         "arg": {
           "name": "b",
@@ -349,12 +349,13 @@
         },
         "type": "function"
       },
+      "previouslyChangedExpressionState": "betaReducePreviewBefore",
       "matchExists": true,
-      "activePriority": 2
+      "activePriority": 2,
+      "containerState": "stepped",
+      "numLeafNodes": 4
     },
     {
-      "containerState": "stepped",
-      "previouslyChangedExpressionState": "betaReducePreviewAfter",
       "expression": {
         "arg": {
           "name": "b",
@@ -467,11 +468,12 @@
         },
         "type": "function"
       },
-      "activePriority": 2
+      "previouslyChangedExpressionState": "betaReducePreviewAfter",
+      "activePriority": 2,
+      "containerState": "stepped",
+      "numLeafNodes": 4
     },
     {
-      "containerState": "stepped",
-      "previouslyChangedExpressionState": "betaReducePreviewCrossed",
       "expression": {
         "arg": {
           "name": "b",
@@ -584,11 +586,12 @@
         },
         "type": "function"
       },
-      "activePriority": 2
+      "previouslyChangedExpressionState": "betaReducePreviewCrossed",
+      "activePriority": 2,
+      "containerState": "stepped",
+      "numLeafNodes": 4
     },
     {
-      "containerState": "done",
-      "previouslyChangedExpressionState": "default",
       "expression": {
         "arg": {
           "name": "b",
@@ -666,7 +669,11 @@
           "type": "function"
         },
         "type": "function"
-      }
+      },
+      "previouslyChangedExpressionState": "default",
+      "activePriority": 2,
+      "containerState": "done",
+      "numLeafNodes": 3
     }
   ],
   "speed": 1,

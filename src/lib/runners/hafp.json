@@ -1,8 +1,6 @@
 {
   "expressionContainers": [
     {
-      "containerState": "ready",
-      "previouslyChangedExpressionState": "default",
       "expression": {
         "arg": {
           "name": "shorthandNumber",
@@ -313,7 +311,10 @@
         "state": "default",
         "type": "call",
         "priority": 2
-      }
+      },
+      "numLeafNodes": 13,
+      "containerState": "ready",
+      "previouslyChangedExpressionState": "default"
     }
   ],
   "speed": 1,

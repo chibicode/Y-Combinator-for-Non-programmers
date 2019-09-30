@@ -1,8 +1,6 @@
 {
   "expressionContainers": [
     {
-      "containerState": "ready",
-      "previouslyChangedExpressionState": "default",
       "expression": {
         "name": "a",
         "highlightType": "default",
@@ -13,7 +11,10 @@
         "funcPriorityAgg": [],
         "emphasizePriority": false,
         "bound": true
-      }
+      },
+      "numLeafNodes": 1,
+      "containerState": "ready",
+      "previouslyChangedExpressionState": "default"
     }
   ],
   "speed": 1,

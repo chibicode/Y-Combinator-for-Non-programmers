@@ -1,8 +1,6 @@
 {
   "expressionContainers": [
     {
-      "containerState": "stepped",
-      "previouslyChangedExpressionState": "trueCaseActive",
       "expression": {
         "arg": {
           "arg": {
@@ -228,6 +226,9 @@
         "type": "call",
         "priority": 1
       },
+      "numLeafNodes": 12,
+      "containerState": "stepped",
+      "previouslyChangedExpressionState": "trueCaseActive",
       "activePriority": 4
     }
   ],
