@@ -12,6 +12,7 @@ import H from 'src/components/H'
 import BubbleQuotes from 'src/components/BubbleQuotes'
 import Emoji from 'src/components/Emoji'
 import EmojiSeparator from 'src/components/EmojiSeparator'
+import EmojiForLetter from 'src/components/EmojiForLetter'
 import EmojiNumber from 'src/components/EmojiNumber'
 import ExpressionRunnerSeparator from 'src/components/ExpressionRunnerSeparator'
 import CustomEmoji from 'src/components/CustomEmoji'
@@ -990,9 +991,11 @@ export default () => (
                   type: 'devil',
                   children: (
                     <>
-                      <P>それでは、階乗を計算する弁当箱をお見せしよう。</P>
+                      <P>それでは、階乗を計算する方法をお見せしよう。</P>
                       <P>
-                        まず、こちらの弁当箱を見てみよう。右側に掛け算のアイコン{' '}
+                        まず、こちらの弁当箱を見てみよう。上の{' '}
+                        <EmojiForLetter letter="a" /> と{' '}
+                        <EmojiForLetter letter="f" /> の間に掛け算のアイコン{' '}
                         <MultiplyIcon /> が使われているのに注目だ。
                       </P>
                     </>
@@ -1000,7 +1003,35 @@ export default () => (
                 }
               ]}
             />
-            <R.Zick></R.Zick>
+            <R.Zick>
+              <EmojiForLetter letter="a" /> と <EmojiForLetter letter="f" />{' '}
+              の間に
+              <br />
+              掛け算のアイコン <MultiplyIcon /> が使われている
+            </R.Zick>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'devil',
+                  children: (
+                    <>
+                      <P>
+                        次に、上の弁当箱に、下の黄色の部分を追加してみよう。
+                      </P>
+                      <P>
+                        ちなみに下半分は、前回も紹介した
+                        <HighlightBold>Yコンビネータの弁当箱</HighlightBold>だ。
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Olqy>
+              黄色の部分を追加。
+              <br />
+              下半分は<HighlightBold>Yコンビネータの弁当箱</HighlightBold>
+            </R.Olqy>
             <R.Qaoa>
               <HighlightBold>掛け算ができる弁当箱</HighlightBold>(
               <Emoji>✖️</Emoji>印)と

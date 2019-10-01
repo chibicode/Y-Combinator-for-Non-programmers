@@ -2315,21 +2315,35 @@ export const krin = initializeExpressionContainer({
 })
 
 export const hbzd = initializeExpressionContainer({
-  arg: 'a',
-  body: {
-    arg: 'f',
+  checkType: 'isZero',
+  condition: [{ shorthandFunc: 'pred' }, 'f'],
+  trueCase: { shorthandNumber: 1 },
+  falseCase: {
+    binaryType: 'multiply',
+    first: ['a', [{ shorthandFunc: 'pred' }, 'f']],
+    second: 'f'
+  }
+})
+
+export const bgid = initializeExpressionContainer([
+  yCombinatorHighlighted,
+  {
+    arg: highlighted('a'),
     body: {
-      checkType: 'isZero',
-      condition: [{ shorthandFunc: 'pred' }, 'f'],
-      trueCase: { shorthandNumber: 1 },
-      falseCase: {
-        binaryType: 'multiply',
-        first: ['a', [{ shorthandFunc: 'pred' }, 'f']],
-        second: 'f'
+      arg: highlighted('f'),
+      body: {
+        checkType: 'isZero',
+        condition: [{ shorthandFunc: 'pred' }, 'f'],
+        trueCase: { shorthandNumber: 1 },
+        falseCase: {
+          binaryType: 'multiply',
+          first: ['a', [{ shorthandFunc: 'pred' }, 'f']],
+          second: 'f'
+        }
       }
     }
   }
-})
+])
 
 export const jvmi = initializeExpressionContainer([
   yCombinator,

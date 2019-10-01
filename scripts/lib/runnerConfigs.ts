@@ -2587,6 +2587,12 @@ export const aklf: ExpressionRunnerShorthandConfig = {
   showPriorities: true
 }
 
+export const olqy: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.bgid,
+  showPriorities: true
+}
+
 export const gemh: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   isDone: true,

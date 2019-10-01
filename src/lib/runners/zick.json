@@ -2,36 +2,64 @@
   "expressionContainers": [
     {
       "expression": {
-        "arg": {
-          "name": "a",
-          "highlightType": "default",
-          "topLeftBadgeType": "none",
-          "bottomRightBadgeType": "none",
-          "type": "variable",
-          "argPriorityAgg": [],
-          "funcPriorityAgg": [],
-          "emphasizePriority": false,
-          "bound": false,
-          "maxNestedFunctionDepth": 0
-        },
-        "body": {
+        "type": "conditional",
+        "state": "default",
+        "checkType": "isZero",
+        "condition": {
           "arg": {
             "name": "f",
             "highlightType": "default",
             "topLeftBadgeType": "none",
             "bottomRightBadgeType": "none",
             "type": "variable",
-            "argPriorityAgg": [],
+            "argPriorityAgg": [
+              1
+            ],
             "funcPriorityAgg": [],
             "emphasizePriority": false,
-            "bound": false,
+            "bound": true,
             "maxNestedFunctionDepth": 0
           },
-          "body": {
-            "type": "conditional",
-            "state": "default",
-            "checkType": "isZero",
-            "condition": {
+          "func": {
+            "name": "shorthandFunc",
+            "highlightType": "default",
+            "topLeftBadgeType": "none",
+            "bottomRightBadgeType": "none",
+            "type": "variable",
+            "argPriorityAgg": [],
+            "funcPriorityAgg": [
+              1
+            ],
+            "emphasizePriority": false,
+            "bound": true,
+            "shorthandFunc": "pred",
+            "maxNestedFunctionDepth": 0
+          },
+          "state": "default",
+          "type": "call",
+          "priority": 1,
+          "maxNestedFunctionDepth": 0
+        },
+        "trueCase": {
+          "name": "shorthandNumber",
+          "highlightType": "default",
+          "topLeftBadgeType": "none",
+          "bottomRightBadgeType": "none",
+          "type": "variable",
+          "argPriorityAgg": [],
+          "funcPriorityAgg": [
+            2
+          ],
+          "emphasizePriority": false,
+          "bound": true,
+          "shorthandNumber": 1,
+          "maxNestedFunctionDepth": 0
+        },
+        "falseCase": {
+          "type": "binary",
+          "binaryType": "multiply",
+          "first": {
+            "arg": {
               "arg": {
                 "name": "f",
                 "highlightType": "default",
@@ -39,7 +67,10 @@
                 "bottomRightBadgeType": "none",
                 "type": "variable",
                 "argPriorityAgg": [
-                  1
+                  2,
+                  5,
+                  3,
+                  4
                 ],
                 "funcPriorityAgg": [],
                 "emphasizePriority": false,
@@ -54,7 +85,7 @@
                 "type": "variable",
                 "argPriorityAgg": [],
                 "funcPriorityAgg": [
-                  1
+                  4
                 ],
                 "emphasizePriority": false,
                 "bound": true,
@@ -63,111 +94,48 @@
               },
               "state": "default",
               "type": "call",
-              "priority": 1,
+              "priority": 4,
               "maxNestedFunctionDepth": 0
             },
-            "trueCase": {
-              "name": "shorthandNumber",
+            "func": {
+              "name": "a",
               "highlightType": "default",
               "topLeftBadgeType": "none",
               "bottomRightBadgeType": "none",
               "type": "variable",
               "argPriorityAgg": [],
               "funcPriorityAgg": [
-                2
+                3
               ],
               "emphasizePriority": false,
               "bound": true,
-              "shorthandNumber": 1,
               "maxNestedFunctionDepth": 0
             },
-            "falseCase": {
-              "type": "binary",
-              "binaryType": "multiply",
-              "first": {
-                "arg": {
-                  "arg": {
-                    "name": "f",
-                    "highlightType": "default",
-                    "topLeftBadgeType": "none",
-                    "bottomRightBadgeType": "none",
-                    "type": "variable",
-                    "argPriorityAgg": [
-                      2,
-                      5,
-                      3,
-                      4
-                    ],
-                    "funcPriorityAgg": [],
-                    "emphasizePriority": false,
-                    "bound": true,
-                    "maxNestedFunctionDepth": 0
-                  },
-                  "func": {
-                    "name": "shorthandFunc",
-                    "highlightType": "default",
-                    "topLeftBadgeType": "none",
-                    "bottomRightBadgeType": "none",
-                    "type": "variable",
-                    "argPriorityAgg": [],
-                    "funcPriorityAgg": [
-                      4
-                    ],
-                    "emphasizePriority": false,
-                    "bound": true,
-                    "shorthandFunc": "pred",
-                    "maxNestedFunctionDepth": 0
-                  },
-                  "state": "default",
-                  "type": "call",
-                  "priority": 4,
-                  "maxNestedFunctionDepth": 0
-                },
-                "func": {
-                  "name": "a",
-                  "highlightType": "default",
-                  "topLeftBadgeType": "none",
-                  "bottomRightBadgeType": "none",
-                  "type": "variable",
-                  "argPriorityAgg": [],
-                  "funcPriorityAgg": [
-                    3
-                  ],
-                  "emphasizePriority": false,
-                  "bound": true,
-                  "maxNestedFunctionDepth": 0
-                },
-                "state": "default",
-                "type": "call",
-                "priority": 3,
-                "maxNestedFunctionDepth": 0
-              },
-              "second": {
-                "name": "f",
-                "highlightType": "default",
-                "topLeftBadgeType": "none",
-                "bottomRightBadgeType": "none",
-                "type": "variable",
-                "argPriorityAgg": [],
-                "funcPriorityAgg": [
-                  5
-                ],
-                "emphasizePriority": false,
-                "bound": true,
-                "maxNestedFunctionDepth": 0
-              },
-              "state": "default",
-              "priority": 5,
-              "maxNestedFunctionDepth": 0
-            },
-            "priority": 2,
+            "state": "default",
+            "type": "call",
+            "priority": 3,
             "maxNestedFunctionDepth": 0
           },
-          "type": "function",
-          "maxNestedFunctionDepth": 1
+          "second": {
+            "name": "f",
+            "highlightType": "default",
+            "topLeftBadgeType": "none",
+            "bottomRightBadgeType": "none",
+            "type": "variable",
+            "argPriorityAgg": [],
+            "funcPriorityAgg": [
+              5
+            ],
+            "emphasizePriority": false,
+            "bound": true,
+            "maxNestedFunctionDepth": 0
+          },
+          "state": "default",
+          "priority": 5,
+          "maxNestedFunctionDepth": 0
         },
-        "type": "function",
-        "maxNestedFunctionDepth": 2
+        "priority": 2,
+        "maxNestedFunctionDepth": 0
       },
       "numLeafNodes": 7,
       "containerState": "ready",
