@@ -2608,12 +2608,6 @@ export const unxf: ExpressionRunnerShorthandConfig = {
   showPriorities: true
 }
 
-export const ddrg: ExpressionRunnerShorthandConfig = {
-  runner: 'simple',
-  initialExpressionContainer: initialExpressionContainers.uiwq,
-  showPriorities: true
-}
-
 export const zick: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   initialExpressionContainer: initialExpressionContainers.hbzd,

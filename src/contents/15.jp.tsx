@@ -1507,35 +1507,6 @@ export default () => (
       //           }
       //         ]}
       //       />
-      //       <TwoColGrid
-      //         left={
-      //           <>
-      //             <R.Spki>
-      //               <Bold>
-      //                 前回の弁当箱
-      //                 <br />(<Emoji>🅰️</Emoji>
-      //                 <Emoji>➕</Emoji>
-      //                 <Emoji>🅱️</Emoji> を計算)
-      //                 <br />
-      //                 の右上部分:
-      //               </Bold>
-      //             </R.Spki>
-      //           </>
-      //         }
-      //         right={
-      //           <>
-      //             <R.Ddrg>
-      //               <Bold>
-      //                 今回の弁当箱
-      //                 <br />
-      //                 (階乗を計算)
-      //                 <br />
-      //                 の右上部分:
-      //               </Bold>
-      //             </R.Ddrg>
-      //           </>
-      //         }
-      //       />
       //       <BubbleQuotes
       //         quotes={[
       //           {
