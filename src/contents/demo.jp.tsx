@@ -311,6 +311,43 @@ const DemoCardList = () => (
             <R.Gemh></R.Gemh>
           </>
         )
+      },
+      {
+        title: <>パート5: 階乗</>,
+        type: 'sideNote',
+        content: (
+          <>
+            <EmojiSeparator
+              size="sm"
+              nodes={[
+                <CustomEmoji type="blankNumber" />,
+                <Emoji>✖️</Emoji>,
+                <CustomEmoji type="questionMinusOne" />,
+                <Emoji>✖️</Emoji>,
+                <CustomEmoji type="horizontalDotDotDot" />,
+                <Emoji>✖️</Emoji>,
+                <EmojiNumber number={1} />
+              ]}
+            />
+          </>
+        )
+      },
+      {
+        title: (
+          <>
+            <EmojiNumber number={4} /> の階乗
+          </>
+        ),
+        content: (
+          <>
+            <R.Xbki>
+              <EmojiNumber number={4} /> <Emoji>✖️</Emoji>{' '}
+              <EmojiNumber number={3} /> <Emoji>✖️</Emoji>{' '}
+              <EmojiNumber number={2} /> <Emoji>✖️</Emoji>{' '}
+              <EmojiNumber number={1} /> を計算
+            </R.Xbki>
+          </>
+        )
       }
     ]}
   />
