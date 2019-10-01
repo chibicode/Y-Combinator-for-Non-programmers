@@ -987,16 +987,43 @@ export default () => (
                   type: 'devil',
                   children: (
                     <>
+                      <P>ここで具体例を見てみよう。</P>
                       <P>
-                        この省略表記がちゃんと機能するかどうか試すために、こちらを
-                        <H args={{ name: 'play' }} /> してみるといい:
+                        たとえば、こちらの <EmojiNumber number={2} />{' '}
+                        <Emoji>✖️</Emoji> <EmojiNumber number={3} />{' '}
+                        を計算できる弁当箱は…
                       </P>
                     </>
                   )
                 }
               ]}
             />
-            <R.Potg></R.Potg>
+            <R.Ochk>
+              <EmojiNumber number={2} /> <Emoji>✖️</Emoji>{' '}
+              <EmojiNumber number={3} /> を計算できる弁当箱
+            </R.Ochk>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'devil',
+                  children: (
+                    <>
+                      <P>
+                        以下のように <MultiplyIcon /> を使って省略表記できる。
+                      </P>
+                      <P>
+                        <H args={{ name: 'play' }} /> を押してみると、ちゃんと{' '}
+                        <EmojiNumber number={2} /> <Emoji>✖️</Emoji>{' '}
+                        <EmojiNumber number={3} /> が計算できるぞ。
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Potg>
+              上の弁当箱を <MultiplyIcon /> で省略表記してみた
+            </R.Potg>
             <BubbleQuotes
               quotes={[
                 {
@@ -1004,9 +1031,7 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        なるほど、これで <EmojiNumber number={2} />{' '}
-                        <Emoji>✖️</Emoji> <EmojiNumber number={3} />{' '}
-                        を計算できるんだな。
+                        なるほど。で、この省略表記をどう使って階乗を計算するんだい？
                       </P>
                     </>
                   )

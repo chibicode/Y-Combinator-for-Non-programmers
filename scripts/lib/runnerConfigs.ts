@@ -2514,6 +2514,12 @@ export const mlnt: ExpressionRunnerShorthandConfig = {
   showPriorities: true
 }
 
+export const ochk: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.crxl,
+  showPriorities: true
+}
+
 export const ryqp: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   initialExpressionContainer: initialExpressionContainers.bgiy

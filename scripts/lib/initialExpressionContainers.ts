@@ -2099,6 +2099,20 @@ export const ibfr = initializeExpressionContainer([
   }
 ])
 
+export const crxl = initializeExpressionContainer([
+  [
+    addParams('a', 'b', 'c', 'd'),
+    {
+      shorthandNumberAfterConvert: 'number',
+      shorthandNumber: 3
+    }
+  ],
+  {
+    shorthandNumberAfterConvert: 'number',
+    shorthandNumber: 2
+  }
+])
+
 export const bgiy = initializeExpressionContainer({
   shorthandNumberAfterConvert: 'number',
   shorthandNumber: 5
