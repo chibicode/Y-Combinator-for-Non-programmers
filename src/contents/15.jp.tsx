@@ -915,6 +915,11 @@ export default () => (
                   children: (
                     <>
                       <P>
+                        階乗を計算するためには、先ほど紹介した
+                        <Highlight>掛け算を計算できる弁当箱</Highlight>
+                        を使う必要があるわけだが…
+                      </P>
+                      <P>
                         まず、
                         <HighlightBold>
                           掛け算を計算できる弁当箱を、以下のように省略表記してみる。
@@ -950,10 +955,7 @@ export default () => (
                         ]}
                         description={
                           <>
-                            <CustomEmoji type="blankNumberPurple" />{' '}
-                            <Emoji>✖️</Emoji>{' '}
-                            <CustomEmoji type="blankNumberPink" /> の<br />
-                            掛け算ができる弁当箱の省略表記
+                            <MultiplyIcon /> のアイコンが掛け算を示す
                           </>
                         }
                       />
@@ -967,10 +969,12 @@ export default () => (
                       <P>
                         そうだ。
                         <Highlight>
-                          次に紹介する弁当箱は複雑なので、先ほどの掛け算ができる弁当箱をそのまま表示するとスペースが足りなくなる。だから、
-                          <MultiplyIcon /> のアイコンで省略することにした
+                          次に紹介する、階乗を計算できる弁当箱は複雑なので、こういった省略表記を使わないとスペースが足りなくなる。
                         </Highlight>
-                        というわけだ。
+                      </P>
+                      <P>
+                        だから、 掛け算を <MultiplyIcon />{' '}
+                        のアイコンで省略表記することにしたというわけだ。
                       </P>
                     </>
                   )
