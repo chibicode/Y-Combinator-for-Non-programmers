@@ -2626,11 +2626,54 @@ export const spki: ExpressionRunnerShorthandConfig = {
   showPriorities: true
 }
 
-export const lgiv: ExpressionRunnerShorthandConfig = {
+export const zlfx: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.jypn,
+  showPriorities: true
+}
+
+export const rrmc: ExpressionRunnerShorthandConfig = {
   runner: 'playButtonOnly',
   skipToTheEnd: false,
-  skipActive: true,
-  initialExpressionContainer: initialExpressionContainers.krin,
+  initialExpressionContainer: initialExpressionContainers.jypn,
+  showPriorities: true,
+  speed: 4,
+  showDefaultAndActiveOnly: true,
+  lastAllowedExpressionState: 'default',
+  lastAllowedExpressionStateAfterIterations: 19
+}
+
+export const qurt: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.jypn,
+  showPriorities: true,
+  nextIterations: 20
+}
+
+export const gzuj: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.jypn,
+  showPriorities: true,
+  isDone: true
+}
+
+export const ancc: ExpressionRunnerShorthandConfig = {
+  runner: 'playButtonOnly',
+  skipToTheEnd: false,
+  initialExpressionContainer: initialExpressionContainers.jypn,
+  showPriorities: true,
+  nextIterations: 20
+}
+
+export const txxw: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.jvmi,
+  showPriorities: true
+}
+
+export const eijx: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.bzpj,
   showPriorities: true
 }
 

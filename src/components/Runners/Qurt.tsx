@@ -1,12 +1,12 @@
 import React from 'react'
 import ExpressionRunnerPrecomputed from 'src/components/ExpressionRunnerPrecomputed'
-import config from 'src/lib/runners/lgiv.json'
+import config from 'src/lib/runners/qurt.json'
 
-const Lgiv = ({ children }: { children?: React.ReactNode }) => (
+const Qurt = ({ children }: { children?: React.ReactNode }) => (
   // @ts-ignore
   <ExpressionRunnerPrecomputed {...config}>
     {children}
   </ExpressionRunnerPrecomputed>
 )
 
-export default Lgiv
+export default Qurt

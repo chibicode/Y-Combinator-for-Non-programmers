@@ -2,7 +2,6 @@ import React from 'react'
 import EpisodeCardList from 'src/components/EpisodeCardList'
 import {
   P,
-  Bold,
   HighlightBold,
   Highlight,
   Ul,
@@ -20,7 +19,6 @@ import TwoColGrid from 'src/components/TwoColGrid'
 import * as R from 'src/components/Runners'
 import NextLessonButton from 'src/components/NextLessonButton'
 import MultiplyIcon from 'src/components/MultiplyIcon'
-import ExpressionRunnerCaptionOnly from 'src/components/ExpressionRunnerCaptionOnly'
 
 export default () => (
   <EpisodeCardList
@@ -1032,28 +1030,273 @@ export default () => (
               <br />
               下半分は<HighlightBold>Yコンビネータの弁当箱</HighlightBold>
             </R.Olqy>
-            <R.Qaoa>
-              <HighlightBold>掛け算ができる弁当箱</HighlightBold>(
-              <Emoji>✖️</Emoji>印)と
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'devil',
+                  children: (
+                    <>
+                      <P>
+                        この弁当箱を使うと、どんな数字の階乗も計算できるんだ。
+                      </P>
+                    </>
+                  )
+                },
+                {
+                  type: 'thinking',
+                  children: (
+                    <>
+                      <P>えー、本当かなあ？</P>
+                    </>
+                  )
+                }
+              ]}
+            />
+          </>
+        )
+      },
+      {
+        title: (
+          <>
+            <EmojiNumber number={3} /> の階乗
+          </>
+        ),
+        content: (
+          <>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'devil',
+                  children: (
+                    <>
+                      <P>
+                        では、先ほどの弁当箱を使って <EmojiNumber number={3} />{' '}
+                        の階乗を計算してみよう。
+                      </P>
+                      <EmojiSeparator
+                        size="sm"
+                        nodes={[
+                          <EmojiNumber number={3} />,
+                          <Emoji>✖️</Emoji>,
+                          <EmojiNumber number={2} />,
+                          <Emoji>✖️</Emoji>,
+                          <EmojiNumber number={1} />
+                        ]}
+                        description={
+                          <>
+                            <EmojiNumber number={3} /> の階乗。
+                            <br />
+                            実際に計算すると <EmojiNumber number={6} /> になる
+                          </>
+                        }
+                      />
+                      <P>
+                        先ほどの弁当箱の上の部分に <EmojiNumber number={3} />{' '}
+                        を追加した。
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Zlfx>
+              上の部分に <EmojiNumber number={3} /> を追加
+            </R.Zlfx>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'devil',
+                  children: (
+                    <>
+                      <P>
+                        これを
+                        <H args={{ name: 'fastForward' }} /> してみよう！
+                      </P>
+                      <Ul>
+                        <UlLi>
+                          ステップが非常に多いので、
+                          <Highlight>3倍速で早送りするぞ。</Highlight>{' '}
+                          <Emoji>⏩</Emoji> <Emoji>⏩</Emoji> <Emoji>⏩</Emoji>
+                        </UlLi>
+                        <UlLi>
+                          早送り中は、目に優しくなるように弁当箱を半透明にしている。
+                        </UlLi>
+                        <UlLi>
+                          待てない場合は、「
+                          <H args={{ name: 'skipToTheStoppingPoint' }} /> →
+                          」を押してもいいぞ。
+                        </UlLi>
+                      </Ul>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Rrmc></R.Rrmc>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'devil',
+                  children: (
+                    <>
+                      <P>まだ最後まで終わっていないが…気づいたかな？</P>
+                    </>
+                  )
+                },
+                {
+                  type: 'surprised',
+                  children: (
+                    <>
+                      <P>
+                        <EmojiNumber number={3} /> <Emoji>✖️</Emoji>{' '}
+                        <EmojiNumber number={2} /> <Emoji>✖️</Emoji>{' '}
+                        <EmojiNumber number={1} /> になった！
+                      </P>
+                    </>
+                  )
+                },
+                {
+                  type: 'devil',
+                  children: (
+                    <>
+                      <P>
+                        そう。こうやって <EmojiNumber number={3} />{' '}
+                        の階乗を自動で計算してくれるんだ。
+                      </P>
+                      <P>
+                        というわけで、最後まで
+                        <H args={{ name: 'fastForward' }} /> してみよう！
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Ancc></R.Ancc>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'devil',
+                  children: (
+                    <>
+                      <P>
+                        というわけで、先ほどの弁当箱は
+                        <H args={{ name: 'fastForward' }} />{' '}
+                        すると以下のように変化することで、
+                        <EmojiNumber number={3} />{' '}
+                        の階乗を自動で計算してくれるんだ。
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Zlfx>
+              上の部分に <EmojiNumber number={3} /> を追加
               <br />
-              <HighlightBold>Yコンビネータ</HighlightBold>
-              の弁当箱を使うことで…
-            </R.Qaoa>
+              して
+              <H args={{ name: 'fastForward' }} /> すると…
+            </R.Zlfx>
             <ExpressionRunnerSeparator />
-            <ExpressionRunnerCaptionOnly>
-              <EmojiNumber number={3} /> の階乗、すなわち
+            <R.Qurt>
+              以下のように変化することで、
               <br />
-              <EmojiNumber number={3} /> <Emoji>✖️</Emoji>{' '}
-              <EmojiNumber number={2} /> <Emoji>✖️</Emoji>{' '}
-              <EmojiNumber number={1} /> を計算できる！
-            </ExpressionRunnerCaptionOnly>
+              <EmojiNumber number={3} /> の階乗を計算してくれる
+            </R.Qurt>
+            <ExpressionRunnerSeparator />
+            <R.Gzuj></R.Gzuj>
+          </>
+        )
+      },
+      {
+        title: (
+          <>
+            <EmojiNumber number={4} /> の階乗
+          </>
+        ),
+        content: (
+          <>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'devil',
+                  children: (
+                    <>
+                      <P>
+                        では最後に、先ほどの弁当箱を使って{' '}
+                        <EmojiNumber number={4} /> の階乗を計算してみよう。
+                      </P>
+                      <EmojiSeparator
+                        size="sm"
+                        nodes={[
+                          <EmojiNumber number={4} />,
+                          <Emoji>✖️</Emoji>,
+                          <EmojiNumber number={3} />,
+                          <Emoji>✖️</Emoji>,
+                          <EmojiNumber number={2} />,
+                          <Emoji>✖️</Emoji>,
+                          <EmojiNumber number={1} />
+                        ]}
+                        description={
+                          <>
+                            <EmojiNumber number={4} /> の階乗。
+                            <br />
+                            実際に計算すると <EmojiNumber number={24} /> になる
+                          </>
+                        }
+                      />
+                      <P>
+                        先ほどの弁当箱の上の部分に <EmojiNumber number={4} />{' '}
+                        を追加した。
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Txxw>
+              上の部分に <EmojiNumber number={4} /> を追加
+            </R.Txxw>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'devil',
+                  children: (
+                    <>
+                      <P>
+                        これを
+                        <H args={{ name: 'fastForward' }} /> してみよう！
+                      </P>
+                      <Ul>
+                        <UlLi>
+                          ステップが非常に多いので、
+                          <Highlight>3倍速で早送りするぞ。</Highlight>{' '}
+                          <Emoji>⏩</Emoji> <Emoji>⏩</Emoji> <Emoji>⏩</Emoji>
+                        </UlLi>
+                        <UlLi>
+                          早送り中は、目に優しくなるように弁当箱を半透明にしている。
+                        </UlLi>
+                        <UlLi>
+                          待てない場合は、「
+                          <H args={{ name: 'skipToTheStoppingPoint' }} /> →
+                          」を押してもいいぞ。
+                        </UlLi>
+                      </Ul>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Xbki></R.Xbki>
             <BubbleQuotes
               quotes={[
                 {
                   type: 'surprised',
                   children: (
                     <>
-                      <P>へー、すごい！</P>
+                      <P>
+                        <EmojiNumber number={24} /> になった！
+                      </P>
                     </>
                   )
                 },
@@ -1062,127 +1305,92 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        <Highlight>
-                          前のページで登場した弁当箱と、右上の部分が微妙に違う
-                        </Highlight>
-                        のが分かるかな？
+                        どうだ、
+                        <EmojiNumber number={4} /> の階乗を計算できただろう？
                       </P>
+                      <EmojiSeparator
+                        size="sm"
+                        nodes={[
+                          <EmojiNumber number={4} />,
+                          <Emoji>✖️</Emoji>,
+                          <EmojiNumber number={3} />,
+                          <Emoji>✖️</Emoji>,
+                          <EmojiNumber number={2} />,
+                          <Emoji>✖️</Emoji>,
+                          <EmojiNumber number={1} />
+                        ]}
+                        description={
+                          <>
+                            <EmojiNumber number={4} /> の階乗。
+                            <br />
+                            実際に計算すると <EmojiNumber number={24} /> になる
+                          </>
+                        }
+                      />
                     </>
                   )
                 }
               ]}
             />
-            <TwoColGrid
-              left={
-                <>
-                  <R.Spki>
-                    <Bold>
-                      前回の弁当箱
-                      <br />(<Emoji>🅰️</Emoji>
-                      <Emoji>➕</Emoji>
-                      <Emoji>🅱️</Emoji> を計算)
-                      <br />
-                      の右上部分:
-                    </Bold>
-                  </R.Spki>
-                </>
-              }
-              right={
-                <>
-                  <R.Ddrg>
-                    <Bold>
-                      今回の弁当箱
-                      <br />
-                      (階乗を計算)
-                      <br />
-                      の右上部分:
-                    </Bold>
-                  </R.Ddrg>
-                </>
-              }
-            />
+          </>
+        )
+      },
+      {
+        title: <>Yコンビネータのおかげ</>,
+        content: (
+          <>
             <BubbleQuotes
               quotes={[
                 {
                   type: 'devil',
                   children: (
                     <>
-                      <P>完全には理解できなくていいが…</P>
                       <P>
-                        この
-                        <Highlight>
-                          右上部分の違いが、前回のように足し算を計算するか、今回のように階乗を計算するかの違いを生んでいる
-                        </Highlight>
-                        んだな。
-                      </P>
-                    </>
-                  )
-                },
-                {
-                  type: 'thinking',
-                  children: (
-                    <>
-                      <P>なるほど…</P>
-                    </>
-                  )
-                },
-                {
-                  type: 'devil',
-                  children: (
-                    <>
-                      <P>
-                        そして、先ほどの弁当箱の
-                        <HighlightBold>
-                          一番上の <EmojiNumber number={3} />{' '}
-                          を他の数字に変えれば、その数字の階乗を計算できるというわけだ。
-                        </HighlightBold>
+                        このように、先ほどの弁当箱は一番上の部分に入れた数字の階乗を計算できるんだ。
                       </P>
                       <P>
-                        たとえば <EmojiNumber number={4} /> に変えると、
-                        <EmojiNumber number={4} /> の階乗を計算できる。
+                        たとえば <EmojiNumber number={5} /> を入れると、
+                        <EmojiNumber number={5} />{' '}
+                        の階乗を計算してくれるというわけだ。
                       </P>
                     </>
                   )
                 }
               ]}
             />
-            <R.Rwuw>
-              上の数字を <EmojiNumber number={4} /> に変えると…
-            </R.Rwuw>
-            <ExpressionRunnerSeparator />
-            <ExpressionRunnerCaptionOnly>
-              <EmojiNumber number={4} /> の階乗、すなわち
+
+            <R.Eijx>
+              一番上に <EmojiNumber number={5} /> を入れて
               <br />
-              <EmojiNumber number={4} /> <Emoji>✖️</Emoji>{' '}
-              <EmojiNumber number={3} /> <Emoji>✖️</Emoji>{' '}
-              <EmojiNumber number={2} /> <Emoji>✖️</Emoji>{' '}
-              <EmojiNumber number={1} /> を計算できる！
-            </ExpressionRunnerCaptionOnly>
+              <H args={{ name: 'play' }} /> すると…
+            </R.Eijx>
+            <ExpressionRunnerSeparator />
+            <EmojiSeparator
+              size="xs"
+              nodes={[
+                <EmojiNumber number={5} />,
+                <Emoji>✖️</Emoji>,
+                <EmojiNumber number={4} />,
+                <Emoji>✖️</Emoji>,
+                <EmojiNumber number={3} />,
+                <Emoji>✖️</Emoji>,
+                <EmojiNumber number={2} />,
+                <Emoji>✖️</Emoji>,
+                <EmojiNumber number={1} />
+              ]}
+              description={
+                <>
+                  <EmojiNumber number={5} /> の階乗を計算してくれる
+                </>
+              }
+            />
             <BubbleQuotes
               quotes={[
                 {
                   type: 'thinking',
                   children: (
                     <>
-                      <P>へー、すごいなあ。完璧には理解できていないけど…</P>
-                      <Ul>
-                        <UlLi>
-                          「<HighlightBold>階乗</HighlightBold>」は、「
-                          <Highlight>
-                            <EmojiNumber number={1} /> になるまで掛け算を『
-                            <HighlightBold>繰り返す</HighlightBold>』
-                          </Highlight>
-                          」ということだから、
-                        </UlLi>
-                        <UlLi>
-                          <Highlight>
-                            「繰り返す」のを可能にする「
-                            <HighlightBold>Yコンビネータ</HighlightBold>
-                            」の弁当箱が必要
-                          </Highlight>
-                          というわけかな…？
-                        </UlLi>
-                      </Ul>
+                      <P>なるほど、すごいなあ…</P>
                     </>
                   )
                 },
@@ -1191,9 +1399,10 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        その通りだ！上の弁当箱を完璧に理解するには、やはり早送りしてみないといけないが、今回は時間の都合上省略する。
+                        もちろん、こういった複雑な計算ができるのも、
+                        <HighlightBold>Yコンビネータ</HighlightBold>
+                        の弁当箱のおかげだ。
                       </P>
-                      <P>それでもわたしが伝えたかったのは、</P>
                       <Ul>
                         <UlLi>
                           <Highlight>
@@ -1254,6 +1463,199 @@ export default () => (
           </>
         )
       },
+      // {
+      //   title: <>階乗の計算</>,
+      //   content: (
+      //     <>
+      //       <R.Qaoa>
+      //         <HighlightBold>掛け算ができる弁当箱</HighlightBold>(
+      //         <Emoji>✖️</Emoji>印)と
+      //         <br />
+      //         <HighlightBold>Yコンビネータ</HighlightBold>
+      //         の弁当箱を使うことで…
+      //       </R.Qaoa>
+      //       <ExpressionRunnerSeparator />
+      //       <ExpressionRunnerCaptionOnly>
+      //         <EmojiNumber number={3} /> の階乗、すなわち
+      //         <br />
+      //         <EmojiNumber number={3} /> <Emoji>✖️</Emoji>{' '}
+      //         <EmojiNumber number={2} /> <Emoji>✖️</Emoji>{' '}
+      //         <EmojiNumber number={1} /> を計算できる！
+      //       </ExpressionRunnerCaptionOnly>
+      //       <BubbleQuotes
+      //         quotes={[
+      //           {
+      //             type: 'surprised',
+      //             children: (
+      //               <>
+      //                 <P>へー、すごい！</P>
+      //               </>
+      //             )
+      //           },
+      //           {
+      //             type: 'devil',
+      //             children: (
+      //               <>
+      //                 <P>
+      //                   <Highlight>
+      //                     前のページで登場した弁当箱と、右上の部分が微妙に違う
+      //                   </Highlight>
+      //                   のが分かるかな？
+      //                 </P>
+      //               </>
+      //             )
+      //           }
+      //         ]}
+      //       />
+      //       <TwoColGrid
+      //         left={
+      //           <>
+      //             <R.Spki>
+      //               <Bold>
+      //                 前回の弁当箱
+      //                 <br />(<Emoji>🅰️</Emoji>
+      //                 <Emoji>➕</Emoji>
+      //                 <Emoji>🅱️</Emoji> を計算)
+      //                 <br />
+      //                 の右上部分:
+      //               </Bold>
+      //             </R.Spki>
+      //           </>
+      //         }
+      //         right={
+      //           <>
+      //             <R.Ddrg>
+      //               <Bold>
+      //                 今回の弁当箱
+      //                 <br />
+      //                 (階乗を計算)
+      //                 <br />
+      //                 の右上部分:
+      //               </Bold>
+      //             </R.Ddrg>
+      //           </>
+      //         }
+      //       />
+      //       <BubbleQuotes
+      //         quotes={[
+      //           {
+      //             type: 'devil',
+      //             children: (
+      //               <>
+      //                 <P>完全には理解できなくていいが…</P>
+      //                 <P>
+      //                   この
+      //                   <Highlight>
+      //                     右上部分の違いが、前回のように足し算を計算するか、今回のように階乗を計算するかの違いを生んでいる
+      //                   </Highlight>
+      //                   んだな。
+      //                 </P>
+      //               </>
+      //             )
+      //           },
+      //           {
+      //             type: 'thinking',
+      //             children: (
+      //               <>
+      //                 <P>なるほど…</P>
+      //               </>
+      //             )
+      //           },
+      //           {
+      //             type: 'devil',
+      //             children: (
+      //               <>
+      //                 <P>
+      //                   そして、先ほどの弁当箱の
+      //                   <HighlightBold>
+      //                     一番上の <EmojiNumber number={3} />{' '}
+      //                     を他の数字に変えれば、その数字の階乗を計算できるというわけだ。
+      //                   </HighlightBold>
+      //                 </P>
+      //                 <P>
+      //                   たとえば <EmojiNumber number={4} /> に変えると、
+      //                   <EmojiNumber number={4} /> の階乗を計算できる。
+      //                 </P>
+      //               </>
+      //             )
+      //           }
+      //         ]}
+      //       />
+      //       <R.Rwuw>
+      //         上の数字を <EmojiNumber number={4} /> に変えると…
+      //       </R.Rwuw>
+      //       <ExpressionRunnerSeparator />
+      //       <ExpressionRunnerCaptionOnly>
+      //         <EmojiNumber number={4} /> の階乗、すなわち
+      //         <br />
+      //         <EmojiNumber number={4} /> <Emoji>✖️</Emoji>{' '}
+      //         <EmojiNumber number={3} /> <Emoji>✖️</Emoji>{' '}
+      //         <EmojiNumber number={2} /> <Emoji>✖️</Emoji>{' '}
+      //         <EmojiNumber number={1} /> を計算できる！
+      //       </ExpressionRunnerCaptionOnly>
+      //       <BubbleQuotes
+      //         quotes={[
+      //           {
+      //             type: 'thinking',
+      //             children: (
+      //               <>
+      //                 <P>へー、すごいなあ。完璧には理解できていないけど…</P>
+      //                 <Ul>
+      //                   <UlLi>
+      //                     「<HighlightBold>階乗</HighlightBold>」は、「
+      //                     <Highlight>
+      //                       <EmojiNumber number={1} /> になるまで掛け算を『
+      //                       <HighlightBold>繰り返す</HighlightBold>』
+      //                     </Highlight>
+      //                     」ということだから、
+      //                   </UlLi>
+      //                   <UlLi>
+      //                     <Highlight>
+      //                       「繰り返す」のを可能にする「
+      //                       <HighlightBold>Yコンビネータ</HighlightBold>
+      //                       」の弁当箱が必要
+      //                     </Highlight>
+      //                     というわけかな…？
+      //                   </UlLi>
+      //                 </Ul>
+      //               </>
+      //             )
+      //           },
+      //           {
+      //             type: 'devil',
+      //             children: (
+      //               <>
+      //                 <P>
+      //                   その通りだ！上の弁当箱を完璧に理解するには、やはり早送りしてみないといけないが、今回は時間の都合上省略する。
+      //                 </P>
+      //                 <P>それでもわたしが伝えたかったのは、</P>
+      //                 <Ul>
+      //                   <UlLi>
+      //                     <Highlight>
+      //                       <HighlightBold>Yコンビネータ</HighlightBold>
+      //                       の弁当箱は、
+      //                     </Highlight>
+      //                   </UlLi>
+      //                   <UlLi>
+      //                     <Highlight>
+      //                       掛け算を計算できる弁当箱と組み合わせることによって、
+      //                     </Highlight>
+      //                   </UlLi>
+      //                   <UlLi>
+      //                     <Highlight>
+      //                       階乗のように複雑な計算を行うこともできる
+      //                     </Highlight>
+      //                   </UlLi>
+      //                 </Ul>
+      //                 <P>ということだ。</P>
+      //               </>
+      //             )
+      //           }
+      //         ]}
+      //       />
+      //     </>
+      //   )
+      // },
       {
         title: <>弁当箱にできない計算はあるの？</>,
         content: (

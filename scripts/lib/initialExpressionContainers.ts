@@ -2345,6 +2345,30 @@ export const bgid = initializeExpressionContainer([
   }
 ])
 
+export const jypn = initializeExpressionContainer([
+  yCombinator,
+  {
+    arg: 'a',
+    body: {
+      arg: 'f',
+      body: {
+        checkType: 'isZero',
+        condition: [{ shorthandFunc: 'pred' }, 'f'],
+        trueCase: { shorthandNumber: 1 },
+        falseCase: {
+          binaryType: 'multiply',
+          first: ['a', [{ shorthandFunc: 'pred' }, 'f']],
+          second: 'f'
+        }
+      }
+    }
+  },
+  {
+    shorthandNumber: 3,
+    initialHighlight: true
+  }
+])
+
 export const jvmi = initializeExpressionContainer([
   yCombinator,
   {
@@ -2365,6 +2389,30 @@ export const jvmi = initializeExpressionContainer([
   },
   {
     shorthandNumber: 4,
+    initialHighlight: true
+  }
+])
+
+export const bzpj = initializeExpressionContainer([
+  yCombinator,
+  {
+    arg: 'a',
+    body: {
+      arg: 'f',
+      body: {
+        checkType: 'isZero',
+        condition: [{ shorthandFunc: 'pred' }, 'f'],
+        trueCase: { shorthandNumber: 1 },
+        falseCase: {
+          binaryType: 'multiply',
+          first: ['a', [{ shorthandFunc: 'pred' }, 'f']],
+          second: 'f'
+        }
+      }
+    }
+  },
+  {
+    shorthandNumber: 5,
     initialHighlight: true
   }
 ])

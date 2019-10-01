@@ -1,0 +1,83 @@
+{
+  "expressionContainers": [
+    {
+      "expression": {
+        "type": "binary",
+        "binaryType": "multiply",
+        "first": {
+          "type": "binary",
+          "binaryType": "multiply",
+          "first": {
+            "name": "shorthandNumber",
+            "highlightType": "default",
+            "topLeftBadgeType": "none",
+            "bottomRightBadgeType": "none",
+            "type": "variable",
+            "argPriorityAgg": [
+              2,
+              1
+            ],
+            "funcPriorityAgg": [],
+            "emphasizePriority": false,
+            "bound": true,
+            "shorthandNumber": 1,
+            "maxNestedFunctionDepth": 0
+          },
+          "second": {
+            "name": "shorthandNumber",
+            "highlightType": "default",
+            "topLeftBadgeType": "none",
+            "bottomRightBadgeType": "none",
+            "type": "variable",
+            "argPriorityAgg": [],
+            "funcPriorityAgg": [
+              1
+            ],
+            "emphasizePriority": false,
+            "bound": true,
+            "shorthandNumber": 2,
+            "maxNestedFunctionDepth": 0
+          },
+          "state": "default",
+          "priority": 1,
+          "maxNestedFunctionDepth": 0
+        },
+        "second": {
+          "name": "shorthandNumber",
+          "highlightType": "default",
+          "topLeftBadgeType": "none",
+          "bottomRightBadgeType": "none",
+          "type": "variable",
+          "argPriorityAgg": [],
+          "funcPriorityAgg": [
+            2
+          ],
+          "emphasizePriority": false,
+          "bound": true,
+          "shorthandNumber": 3,
+          "maxNestedFunctionDepth": 0
+        },
+        "state": "default",
+        "priority": 2,
+        "maxNestedFunctionDepth": 0
+      },
+      "previouslyChangedExpressionState": "default",
+      "activePriority": 2,
+      "containerState": "ready",
+      "numLeafNodes": 3
+    }
+  ],
+  "speed": 1,
+  "hideControls": true,
+  "explanationsVisibility": "hidden",
+  "hidePriorities": false,
+  "hidePlayButton": false,
+  "hideBottomRightBadges": false,
+  "skipToTheEnd": false,
+  "hideFuncUnboundBadgeOnExplanation": false,
+  "highlightOverridesCallArgAndFuncUnboundOnly": false,
+  "bottomRightBadgeOverrides": {},
+  "highlightOverrides": {},
+  "highlightOverrideActiveAfterStart": false,
+  "highlightFunctions": false
+}

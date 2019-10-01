@@ -311,15 +311,6 @@ const DemoCardList = () => (
             <R.Gemh></R.Gemh>
           </>
         )
-      },
-      {
-        title: <></>,
-        content: (
-          <>
-            <R.Lgiv />
-            <R.Xbki />
-          </>
-        )
       }
     ]}
   />

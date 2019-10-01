@@ -235,7 +235,7 @@ const ExpressionRunnerPrecomputed = ({
               css={[
                 css`
                   line-height: ${lineHeights(1.3, { ignoreLocale: true })};
-                  opacity: ${isFastForwarding ? 0.6 : 1};
+                  opacity: ${isFastForwarding ? 0.5 : 1};
                   position: relative;
                   background-color: ${colors('white')};
                 `
