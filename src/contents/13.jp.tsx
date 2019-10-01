@@ -635,7 +635,7 @@ export default () => (
                       </P>
                       <Ul>
                         <UlLi>
-                          ステップが非常に多いので、
+                          ステップ数が非常に多いので、
                           <HighlightBold>
                             3倍速で早送りします！
                           </HighlightBold>{' '}

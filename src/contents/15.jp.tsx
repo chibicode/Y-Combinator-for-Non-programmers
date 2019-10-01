@@ -1182,9 +1182,10 @@ export default () => (
                         これを
                         <H args={{ name: 'fastForward' }} /> してみよう！
                       </P>
+                      {/* TODO: NOTE - we skip a lot of steps */}
                       <Ul>
                         <UlLi>
-                          ステップが非常に多いので、
+                          ステップ数が非常に多いので、途中のいくつかのステップを省略した上で、
                           <Highlight>3倍速で早送りするぞ。</Highlight>{' '}
                           <Emoji>⏩</Emoji> <Emoji>⏩</Emoji> <Emoji>⏩</Emoji>
                         </UlLi>
