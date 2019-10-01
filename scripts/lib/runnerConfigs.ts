@@ -2545,27 +2545,9 @@ export const uhqo: ExpressionRunnerShorthandConfig = {
   initialExpressionContainer: initialExpressionContainers.tjcx
 }
 
-export const rwuw: ExpressionRunnerShorthandConfig = {
-  runner: 'simple',
-  initialExpressionContainer: initialExpressionContainers.kjff,
-  showPriorities: true
-}
-
-export const qaoa: ExpressionRunnerShorthandConfig = {
-  runner: 'simple',
-  initialExpressionContainer: initialExpressionContainers.zxdz,
-  showPriorities: true
-}
-
 export const kzkg: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   initialExpressionContainer: initialExpressionContainers.glvb,
-  showPriorities: true
-}
-
-export const jtxf: ExpressionRunnerShorthandConfig = {
-  runner: 'simple',
-  initialExpressionContainer: initialExpressionContainers.xfso,
   showPriorities: true
 }
 

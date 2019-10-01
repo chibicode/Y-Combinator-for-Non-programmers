@@ -2143,50 +2143,6 @@ export const rovo = initializeExpressionContainer([
   }
 ])
 
-export const kjff = initializeExpressionContainer([
-  yCombinator,
-  {
-    arg: 'a',
-    body: {
-      arg: 'f',
-      body: {
-        checkType: 'isZero',
-        condition: 'f',
-        trueCase: { shorthandNumber: 1 },
-        falseCase: ['mult', 'f', ['a', [{ shorthandFunc: 'pred' }, 'f']]]
-      }
-    }
-  },
-  {
-    shorthandNumber: 4,
-    initialHighlight: true
-  }
-])
-
-export const zxdz = initializeExpressionContainer([
-  yCombinatorHighlighted,
-  {
-    arg: 'a',
-    body: {
-      arg: 'f',
-      body: {
-        checkType: 'isZero',
-        condition: 'f',
-        trueCase: { shorthandNumber: 1 },
-        falseCase: [
-          { name: 'mult', highlighted: true },
-          'f',
-          ['a', [{ shorthandFunc: 'pred' }, 'f']]
-        ]
-      }
-    }
-  },
-  {
-    shorthandNumber: 3,
-    initialHighlight: true
-  }
-])
-
 export const glvb = initializeExpressionContainer([
   {
     arg: 'A',
@@ -2249,17 +2205,6 @@ export const nndd = initializeDoneExpressionContainer({
   shorthandFunc: 'add'
 })
 
-export const uiwq = initializeExpressionContainer({
-  checkType: 'isZero',
-  condition: 'f',
-  trueCase: { shorthandNumber: 1, initialHighlight: true },
-  falseCase: [
-    { name: 'mult', highlighted: true },
-    { name: 'f', highlighted: true },
-    ['a', [{ shorthandFunc: 'pred' }, 'f']]
-  ]
-})
-
 export const roso = initializeExpressionContainer({
   checkType: 'isZero',
   condition: 'f',
@@ -2269,18 +2214,6 @@ export const roso = initializeExpressionContainer({
     ['a', [{ shorthandFunc: 'pred' }, 'f']]
   ]
 })
-
-export const xfso = initializeExpressionContainer([
-  [
-    { name: 'mult', highlighted: true },
-    {
-      shorthandNumberAfterConvert: 'binarySecond'
-    }
-  ],
-  {
-    shorthandNumberAfterConvert: 'binaryFirst'
-  }
-])
 
 export const ygum = initializeExpressionContainer({
   binaryType: 'multiply',

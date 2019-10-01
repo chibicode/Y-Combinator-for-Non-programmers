@@ -46,7 +46,6 @@ export type VariableNames =
   | 'blankNumberGreen'
   | 'bentoBox'
   | 'mathBox'
-  | 'mult'
 
 export interface VariableNamesWithAlphaConvertCount {
   name: VariableNames
