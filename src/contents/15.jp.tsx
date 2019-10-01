@@ -928,7 +928,7 @@ export default () => (
             />
             <R.Vqyl>掛け算を計算できる弁当箱を…</R.Vqyl>
             <ExpressionRunnerSeparator />
-            <R.Trwj>省略表記してみる</R.Trwj>
+            <R.Trwj>以下のように省略表記してみる</R.Trwj>
             <BubbleQuotes
               quotes={[
                 {
@@ -952,8 +952,8 @@ export default () => (
                           <>
                             <CustomEmoji type="blankNumberPurple" />{' '}
                             <Emoji>✖️</Emoji>{' '}
-                            <CustomEmoji type="blankNumberPink" />{' '}
-                            を掛け算してくれる
+                            <CustomEmoji type="blankNumberPink" /> の<br />
+                            掛け算ができる弁当箱の省略表記
                           </>
                         }
                       />
@@ -965,7 +965,30 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        そうだ。試しに、こちらを
+                        そうだ。
+                        <Highlight>
+                          次に紹介する弁当箱は複雑なので、先ほどの掛け算ができる弁当箱をそのまま表示するとスペースが足りなくなる。だから、
+                          <MultiplyIcon /> のアイコンで省略することにした
+                        </Highlight>
+                        というわけだ。
+                      </P>
+                    </>
+                  )
+                },
+                {
+                  type: 'thinking',
+                  children: (
+                    <>
+                      <P>そうか、了解！</P>
+                    </>
+                  )
+                },
+                {
+                  type: 'devil',
+                  children: (
+                    <>
+                      <P>
+                        この省略表記がちゃんと機能するかどうか試すために、こちらを
                         <H args={{ name: 'play' }} /> してみるといい:
                       </P>
                     </>
@@ -1508,6 +1531,30 @@ export default () => (
                 <>
                   <HighlightBold>階乗</HighlightBold>
                   のような複雑な計算もできる！
+                </>
+              }
+            />
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'smile',
+                  children: (
+                    <>
+                      <P>
+                        まさに、「
+                        <HighlightBold>魔法のYコンビネータ</HighlightBold>
+                        」だな！
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <EmojiSeparator
+              emojis={['✨', '🧙‍♀️', '✨']}
+              description={
+                <>
+                  <HighlightBold>魔法のYコンビネータ</HighlightBold>
                 </>
               }
             />
