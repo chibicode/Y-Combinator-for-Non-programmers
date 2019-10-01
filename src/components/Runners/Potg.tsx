@@ -1,12 +1,12 @@
 import React from 'react'
 import ExpressionRunnerPrecomputed from 'src/components/ExpressionRunnerPrecomputed'
-import config from 'src/lib/runners/ddrg.json'
+import config from 'src/lib/runners/potg.json'
 
-const Ddrg = ({ children }: { children?: React.ReactNode }) => (
+const Potg = ({ children }: { children?: React.ReactNode }) => (
   // @ts-ignore
   <ExpressionRunnerPrecomputed {...config}>
     {children}
   </ExpressionRunnerPrecomputed>
 )
 
-export default Ddrg
+export default Potg

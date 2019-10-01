@@ -13,8 +13,6 @@ const precomputeFile = (key: string) => {
     hideControls,
     explanationsVisibility,
     hidePriorities,
-    variableSize,
-    containerSize,
     hidePlayButton,
     showAllShowSteps,
     hideBottomRightBadges,
@@ -27,7 +25,8 @@ const precomputeFile = (key: string) => {
     highlightFunctions,
     convert,
     crossed,
-    skipActive
+    skipActive,
+    showDefaultAndActiveOnly
   } = config
 
   const expressionContainersContents = `${JSON.stringify(
@@ -37,8 +36,6 @@ const precomputeFile = (key: string) => {
       hideControls,
       explanationsVisibility,
       hidePriorities,
-      variableSize,
-      containerSize,
       hidePlayButton,
       hideBottomRightBadges,
       skipToTheEnd,
@@ -51,7 +48,8 @@ const precomputeFile = (key: string) => {
       showAllShowSteps,
       convert,
       crossed,
-      skipActive
+      skipActive,
+      showDefaultAndActiveOnly
     },
     null,
     2

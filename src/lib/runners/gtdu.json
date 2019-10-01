@@ -1,8 +1,6 @@
 {
   "expressionContainers": [
     {
-      "containerState": "ready",
-      "previouslyChangedExpressionState": "default",
       "expression": {
         "arg": {
           "arg": {
@@ -17,7 +15,8 @@
             ],
             "funcPriorityAgg": [],
             "emphasizePriority": false,
-            "bound": true
+            "bound": true,
+            "maxNestedFunctionDepth": 0
           },
           "func": {
             "arg": {
@@ -31,7 +30,8 @@
                 2
               ],
               "emphasizePriority": false,
-              "bound": false
+              "bound": false,
+              "maxNestedFunctionDepth": 0
             },
             "body": {
               "name": "a",
@@ -42,13 +42,16 @@
               "argPriorityAgg": [],
               "funcPriorityAgg": [],
               "emphasizePriority": false,
-              "bound": true
+              "bound": true,
+              "maxNestedFunctionDepth": 0
             },
-            "type": "function"
+            "type": "function",
+            "maxNestedFunctionDepth": 1
           },
           "state": "default",
           "type": "call",
-          "priority": 2
+          "priority": 2,
+          "maxNestedFunctionDepth": 1
         },
         "func": {
           "name": "b",
@@ -61,20 +64,23 @@
             1
           ],
           "emphasizePriority": false,
-          "bound": true
+          "bound": true,
+          "maxNestedFunctionDepth": 0
         },
         "state": "default",
         "type": "call",
-        "priority": 1
-      }
+        "priority": 1,
+        "maxNestedFunctionDepth": 1
+      },
+      "numLeafNodes": 3,
+      "containerState": "ready",
+      "previouslyChangedExpressionState": "default"
     }
   ],
   "speed": 1,
   "hideControls": true,
   "explanationsVisibility": "hidden",
   "hidePriorities": false,
-  "variableSize": "lg",
-  "containerSize": "xxs",
   "hidePlayButton": false,
   "hideBottomRightBadges": false,
   "skipToTheEnd": false,

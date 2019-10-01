@@ -10,7 +10,9 @@ import {
   ExecutableConditional,
   RepeatExpression,
   ExecutableCallShorthand,
-  VariableShorthandFunc
+  VariableShorthandFunc,
+  BinaryExpression,
+  ExecutableBinary
 } from 'src/types/ExpressionTypes'
 
 export function isVariable<V extends VariableExpression = VariableExpression>(
@@ -35,6 +37,12 @@ export function isConditional<
   E extends ConditionalExpression = ConditionalExpression
 >(expression: Expression): expression is E {
   return expression.type === 'conditional'
+}
+
+export function isBinary<E extends BinaryExpression = BinaryExpression>(
+  expression: Expression
+): expression is E {
+  return expression.type === 'binary'
 }
 
 export function isVariableShorthandNumber<
@@ -76,6 +84,15 @@ export function isExecutableConditional<E extends ExecutableConditional>(
   expression: ConditionalExpression
 ): expression is E {
   return isVariableShorthandNumber(expression.condition)
+}
+
+export function isExecutableBinary<E extends ExecutableBinary>(
+  expression: BinaryExpression
+): expression is E {
+  return (
+    isVariableShorthandNumber(expression.first) &&
+    isVariableShorthandNumber(expression.second)
+  )
 }
 
 export function isRepeat<E extends RepeatExpression = RepeatExpression>(

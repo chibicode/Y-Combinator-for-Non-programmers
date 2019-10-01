@@ -24,7 +24,10 @@ import PlusOneSvg from 'src/components/CustomEmoji/PlusOneSvg'
 import QuestionFoodGreySvg from 'src/components/CustomEmoji/QuestionFoodGreySvg'
 import SingleArrowSvg from 'src/components/CustomEmoji/SingleArrowSvg'
 import SingleArrowReverseSvg from 'src/components/CustomEmoji/SingleArrowReverseSvg'
+import MultiplySvg from 'src/components/CustomEmoji/MultiplySvg'
+import MultiplyWhiteSvg from 'src/components/CustomEmoji/MultiplyWhiteSvg'
 import TwentyFourSvg from 'src/components/CustomEmoji/TwentyFourSvg'
+import QuestionMinusOne from 'src/components/CustomEmoji/QuestionMinusOne'
 import TwentySvg from 'src/components/CustomEmoji/TwentySvg'
 import Emoji, { EmojiProps } from 'src/components/Emoji'
 
@@ -55,7 +58,10 @@ export const customEmojiToComponent = {
   singleArrowReverse: SingleArrowReverseSvg,
   lambda: LambdaSvg,
   index: IndexSvg,
-  condition: ConditionSvg
+  condition: ConditionSvg,
+  multiply: MultiplySvg,
+  multiplyWhite: MultiplyWhiteSvg,
+  questionMinusOne: QuestionMinusOne
 }
 
 const CustomEmoji = ({

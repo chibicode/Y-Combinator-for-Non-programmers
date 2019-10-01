@@ -1,8 +1,6 @@
 {
   "expressionContainers": [
     {
-      "containerState": "ready",
-      "previouslyChangedExpressionState": "default",
       "expression": {
         "type": "conditional",
         "state": "default",
@@ -17,7 +15,8 @@
           "funcPriorityAgg": [],
           "emphasizePriority": false,
           "bound": true,
-          "shorthandNumber": 3
+          "shorthandNumber": 3,
+          "maxNestedFunctionDepth": 0
         },
         "trueCase": {
           "name": "shorthandNumber",
@@ -31,7 +30,8 @@
           ],
           "emphasizePriority": false,
           "bound": true,
-          "shorthandNumber": 2
+          "shorthandNumber": 2,
+          "maxNestedFunctionDepth": 0
         },
         "falseCase": {
           "arg": {
@@ -47,7 +47,8 @@
             "funcPriorityAgg": [],
             "emphasizePriority": false,
             "bound": true,
-            "shorthandNumber": 3
+            "shorthandNumber": 3,
+            "maxNestedFunctionDepth": 0
           },
           "func": {
             "name": "shorthandFunc",
@@ -61,14 +62,21 @@
             ],
             "emphasizePriority": false,
             "bound": true,
-            "shorthandFunc": "add"
+            "shorthandFunc": "add",
+            "maxNestedFunctionDepth": 0
           },
           "state": "default",
           "type": "call",
-          "priority": 2
+          "priority": 2,
+          "maxNestedFunctionDepth": 0
         },
-        "priority": 1
-      }
+        "priority": 1,
+        "maxNestedFunctionDepth": 0
+      },
+      "previouslyChangedExpressionState": "default",
+      "activePriority": 1,
+      "containerState": "ready",
+      "numLeafNodes": 4
     },
     {
       "expression": {
@@ -85,7 +93,8 @@
           "funcPriorityAgg": [],
           "emphasizePriority": false,
           "bound": true,
-          "shorthandNumber": 3
+          "shorthandNumber": 3,
+          "maxNestedFunctionDepth": 0
         },
         "trueCase": {
           "name": "shorthandNumber",
@@ -99,7 +108,8 @@
           ],
           "emphasizePriority": false,
           "bound": true,
-          "shorthandNumber": 2
+          "shorthandNumber": 2,
+          "maxNestedFunctionDepth": 0
         },
         "falseCase": {
           "arg": {
@@ -115,7 +125,8 @@
             "funcPriorityAgg": [],
             "emphasizePriority": false,
             "bound": true,
-            "shorthandNumber": 3
+            "shorthandNumber": 3,
+            "maxNestedFunctionDepth": 0
           },
           "func": {
             "name": "shorthandFunc",
@@ -129,17 +140,21 @@
             ],
             "emphasizePriority": false,
             "bound": true,
-            "shorthandFunc": "add"
+            "shorthandFunc": "add",
+            "maxNestedFunctionDepth": 0
           },
           "state": "default",
           "type": "call",
-          "priority": 2
+          "priority": 2,
+          "maxNestedFunctionDepth": 0
         },
-        "priority": 1
+        "priority": 1,
+        "maxNestedFunctionDepth": 0
       },
       "previouslyChangedExpressionState": "conditionActive",
       "activePriority": 1,
-      "containerState": "stepped"
+      "containerState": "stepped",
+      "numLeafNodes": 4
     },
     {
       "expression": {
@@ -156,7 +171,8 @@
           "funcPriorityAgg": [],
           "emphasizePriority": false,
           "bound": true,
-          "shorthandNumber": 3
+          "shorthandNumber": 3,
+          "maxNestedFunctionDepth": 0
         },
         "trueCase": {
           "name": "shorthandNumber",
@@ -170,7 +186,8 @@
           ],
           "emphasizePriority": false,
           "bound": true,
-          "shorthandNumber": 2
+          "shorthandNumber": 2,
+          "maxNestedFunctionDepth": 0
         },
         "falseCase": {
           "arg": {
@@ -186,7 +203,8 @@
             "funcPriorityAgg": [],
             "emphasizePriority": false,
             "bound": true,
-            "shorthandNumber": 3
+            "shorthandNumber": 3,
+            "maxNestedFunctionDepth": 0
           },
           "func": {
             "name": "shorthandFunc",
@@ -200,21 +218,23 @@
             ],
             "emphasizePriority": false,
             "bound": true,
-            "shorthandFunc": "add"
+            "shorthandFunc": "add",
+            "maxNestedFunctionDepth": 0
           },
           "state": "default",
           "type": "call",
-          "priority": 2
+          "priority": 2,
+          "maxNestedFunctionDepth": 0
         },
-        "priority": 1
+        "priority": 1,
+        "maxNestedFunctionDepth": 0
       },
       "previouslyChangedExpressionState": "falseCaseActive",
       "activePriority": 1,
-      "containerState": "stepped"
+      "containerState": "stepped",
+      "numLeafNodes": 4
     },
     {
-      "containerState": "ready",
-      "previouslyChangedExpressionState": "default",
       "expression": {
         "arg": {
           "name": "shorthandNumber",
@@ -228,7 +248,8 @@
           "funcPriorityAgg": [],
           "emphasizePriority": false,
           "bound": true,
-          "shorthandNumber": 3
+          "shorthandNumber": 3,
+          "maxNestedFunctionDepth": 0
         },
         "func": {
           "name": "shorthandFunc",
@@ -242,12 +263,18 @@
           ],
           "emphasizePriority": false,
           "bound": true,
-          "shorthandFunc": "add"
+          "shorthandFunc": "add",
+          "maxNestedFunctionDepth": 0
         },
         "state": "default",
         "type": "call",
-        "priority": 1
-      }
+        "priority": 1,
+        "maxNestedFunctionDepth": 0
+      },
+      "previouslyChangedExpressionState": "default",
+      "activePriority": 1,
+      "containerState": "ready",
+      "numLeafNodes": 2
     },
     {
       "expression": {
@@ -263,7 +290,8 @@
           "funcPriorityAgg": [],
           "emphasizePriority": true,
           "bound": true,
-          "shorthandNumber": 3
+          "shorthandNumber": 3,
+          "maxNestedFunctionDepth": 0
         },
         "func": {
           "name": "shorthandFunc",
@@ -277,19 +305,20 @@
           ],
           "emphasizePriority": true,
           "bound": true,
-          "shorthandFunc": "add"
+          "shorthandFunc": "add",
+          "maxNestedFunctionDepth": 0
         },
         "state": "active",
         "type": "call",
-        "priority": 1
+        "priority": 1,
+        "maxNestedFunctionDepth": 0
       },
       "previouslyChangedExpressionState": "active",
       "activePriority": 1,
-      "containerState": "stepped"
+      "containerState": "stepped",
+      "numLeafNodes": 2
     },
     {
-      "containerState": "done",
-      "previouslyChangedExpressionState": "default",
       "expression": {
         "name": "shorthandNumber",
         "highlightType": "default",
@@ -300,16 +329,19 @@
         "funcPriorityAgg": [],
         "emphasizePriority": false,
         "bound": true,
-        "shorthandNumber": 4
-      }
+        "shorthandNumber": 4,
+        "maxNestedFunctionDepth": 0
+      },
+      "previouslyChangedExpressionState": "default",
+      "activePriority": 1,
+      "containerState": "done",
+      "numLeafNodes": 1
     }
   ],
   "speed": 1,
   "hideControls": false,
   "explanationsVisibility": "hiddenInitialPausedOnly",
   "hidePriorities": false,
-  "variableSize": "md",
-  "containerSize": "xxs",
   "hidePlayButton": false,
   "hideBottomRightBadges": false,
   "skipToTheEnd": false,

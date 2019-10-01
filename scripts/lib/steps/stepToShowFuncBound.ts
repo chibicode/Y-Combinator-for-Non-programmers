@@ -2,7 +2,8 @@ import {
   isFunction,
   isVariable,
   isCall,
-  isConditional
+  isConditional,
+  isBinary
 } from 'src/lib/expressionTypeGuards'
 import { activeFuncArg } from 'scripts/lib/steps/stepToShowFuncUnbound'
 import {
@@ -13,6 +14,8 @@ import {
   FunctionExpression,
   StepConditional,
   ConditionalExpression,
+  BinaryExpression,
+  StepBinary,
   NonExecutableStepCall,
   StepChild,
   StepFunction,
@@ -35,6 +38,11 @@ export function toShowFuncBound(
   funcSide: boolean,
   highlight: boolean
 ): StepConditional<'showFuncBound'>
+export function toShowFuncBound(
+  e: BinaryExpression,
+  funcSide: boolean,
+  highlight: boolean
+): StepBinary<'showFuncBound'>
 export function toShowFuncBound(
   e: CallExpression,
   funcSide: boolean,
@@ -109,6 +117,13 @@ export function toShowFuncBound(
       condition: toShowFuncBound(e.condition, funcSide, highlight),
       trueCase: toShowFuncBound(e.trueCase, funcSide, highlight),
       falseCase: toShowFuncBound(e.falseCase, funcSide, highlight)
+    }
+  } else if (isBinary(e)) {
+    return {
+      ...e,
+      state: 'default',
+      first: toShowFuncBound(e.first, funcSide, highlight),
+      second: toShowFuncBound(e.second, funcSide, highlight)
     }
   } else {
     throw new Error()

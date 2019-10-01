@@ -7,7 +7,6 @@ export const expressionRunnerSimpleConfigDefault = {
   initialState: 'default',
   showPriorities: false,
   explanationsVisibility: 'hidden',
-  variableSize: 'lg',
   skipAlphaConvert: false
 }
 
@@ -18,13 +17,12 @@ interface ExpressionRunnerSimpleConfig {
   isDone?: boolean
   skipAlphaConvert?: boolean
   skipActive?: boolean
+  showDefaultAndActiveOnly?: boolean
   nextIterations?: number
   showPriorities?: boolean
   showAllShowSteps?: ExpressionRunnerProps['showAllShowSteps']
   explanationsVisibility?: ExpressionRunnerProps['explanationsVisibility']
   bottomRightBadgeOverrides?: ExpressionRunnerProps['bottomRightBadgeOverrides']
-  variableSize?: ExpressionRunnerProps['variableSize']
-  containerSize?: ExpressionRunnerProps['containerSize']
   highlightOverrides?: ExpressionRunnerProps['highlightOverrides']
   highlightOverrideActiveAfterStart?: ExpressionRunnerProps['highlightOverrideActiveAfterStart']
   highlightOverridesCallArgAndFuncUnboundOnly?: ExpressionRunnerProps['highlightOverridesCallArgAndFuncUnboundOnly']
@@ -45,7 +43,6 @@ export const expressionRunnerPlayButtonOnlyConfigDefault = {
   showPriorities: false,
   speed: 1,
   skipAlphaConvert: false,
-  variableSize: 'lg',
   explanationsVisibility: 'hiddenInitialPausedOnly'
 }
 
@@ -69,8 +66,7 @@ interface ExpressionRunnerPlayButtonOnlyConfig {
   speed?: number
   skipAlphaConvert?: boolean
   skipActive?: boolean
-  variableSize?: ExpressionRunnerProps['variableSize']
-  containerSize?: ExpressionRunnerProps['containerSize']
+  showDefaultAndActiveOnly?: boolean
   highlightOverrides?: ExpressionRunnerProps['highlightOverrides']
   explanationsVisibility?: ExpressionRunnerProps['explanationsVisibility']
 }
@@ -78,8 +74,7 @@ interface ExpressionRunnerPlayButtonOnlyConfig {
 export const expressionRunnerSingleStepConfigDefault = {
   hideFuncUnboundBadgeOnExplanation: false,
   showPriorities: false,
-  explanationsVisibility: 'hiddenInitialPausedOnly',
-  variableSize: 'lg'
+  explanationsVisibility: 'hiddenInitialPausedOnly'
 }
 
 export function isExpressionRunnerSingleStepConfig(
@@ -96,9 +91,8 @@ interface ExpressionRunnerSingleStepConfig {
   hideFuncUnboundBadgeOnExplanation?: boolean
   showPriorities?: boolean
   skipActive?: boolean
+  showDefaultAndActiveOnly?: boolean
   nextIterations?: number
-  variableSize?: ExpressionRunnerProps['variableSize']
-  containerSize?: ExpressionRunnerProps['containerSize']
   explanationsVisibility?: ExpressionRunnerProps['explanationsVisibility']
   showAllShowSteps?: ExpressionRunnerProps['showAllShowSteps']
 }
@@ -113,7 +107,6 @@ export const expressionRunnerPredefinedConfigDefault = {
   hideFuncUnboundBadgeOnExplanation: false,
   showPriorities: false,
   explanationsVisibility: 'hiddenInitialPausedOnly',
-  variableSize: 'lg',
   skipToTheEnd: true
 }
 
@@ -123,8 +116,6 @@ interface ExpressionRunnerPredefinedConfig {
   hideFuncUnboundBadgeOnExplanation?: boolean
   showPriorities?: boolean
   nextIterations?: number
-  variableSize?: ExpressionRunnerProps['variableSize']
-  containerSize?: ExpressionRunnerProps['containerSize']
   explanationsVisibility?: ExpressionRunnerProps['explanationsVisibility']
   showAllShowSteps?: ExpressionRunnerProps['showAllShowSteps']
   skipToTheEnd?: boolean

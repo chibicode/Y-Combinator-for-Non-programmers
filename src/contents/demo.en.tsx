@@ -325,6 +325,43 @@ const DemoCardList = () => (
             <R.Gemh></R.Gemh>
           </>
         )
+      },
+      {
+        title: <>Part 5: Factorials</>,
+        type: 'sideNote',
+        content: (
+          <>
+            <EmojiSeparator
+              size="sm"
+              nodes={[
+                <CustomEmoji type="blankNumber" />,
+                <Emoji>✖️</Emoji>,
+                <CustomEmoji type="questionMinusOne" />,
+                <Emoji>✖️</Emoji>,
+                <CustomEmoji type="horizontalDotDotDot" />,
+                <Emoji>✖️</Emoji>,
+                <EmojiNumber number={1} />
+              ]}
+            />
+          </>
+        )
+      },
+      {
+        title: (
+          <>
+            Factorial of <EmojiNumber number={4} />
+          </>
+        ),
+        content: (
+          <>
+            <R.Xbki>
+              Calculates <EmojiNumber number={4} /> <Emoji>✖️</Emoji>{' '}
+              <EmojiNumber number={3} /> <Emoji>✖️</Emoji>{' '}
+              <EmojiNumber number={2} /> <Emoji>✖️</Emoji>{' '}
+              <EmojiNumber number={1} />
+            </R.Xbki>
+          </>
+        )
       }
     ]}
   />

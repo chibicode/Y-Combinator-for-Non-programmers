@@ -1,8 +1,6 @@
 {
   "expressionContainers": [
     {
-      "containerState": "stepped",
-      "previouslyChangedExpressionState": "active",
       "expression": {
         "arg": {
           "name": "b",
@@ -13,7 +11,8 @@
           "argPriorityAgg": [],
           "funcPriorityAgg": [],
           "emphasizePriority": false,
-          "bound": false
+          "bound": false,
+          "maxNestedFunctionDepth": 0
         },
         "body": {
           "arg": {
@@ -27,7 +26,8 @@
             ],
             "funcPriorityAgg": [],
             "emphasizePriority": true,
-            "bound": true
+            "bound": true,
+            "maxNestedFunctionDepth": 0
           },
           "func": {
             "arg": {
@@ -41,7 +41,8 @@
                 1
               ],
               "emphasizePriority": true,
-              "bound": false
+              "bound": false,
+              "maxNestedFunctionDepth": 0
             },
             "body": {
               "name": "d",
@@ -52,16 +53,23 @@
               "argPriorityAgg": [],
               "funcPriorityAgg": [],
               "emphasizePriority": false,
-              "bound": true
+              "bound": true,
+              "maxNestedFunctionDepth": 0
             },
-            "type": "function"
+            "type": "function",
+            "maxNestedFunctionDepth": 1
           },
           "state": "active",
           "type": "call",
-          "priority": 1
+          "priority": 1,
+          "maxNestedFunctionDepth": 1
         },
-        "type": "function"
+        "type": "function",
+        "maxNestedFunctionDepth": 2
       },
+      "numLeafNodes": 2,
+      "containerState": "stepped",
+      "previouslyChangedExpressionState": "active",
       "activePriority": 1
     }
   ],
@@ -69,8 +77,6 @@
   "hideControls": true,
   "explanationsVisibility": "hidden",
   "hidePriorities": false,
-  "variableSize": "lg",
-  "containerSize": "xxs",
   "hidePlayButton": false,
   "hideBottomRightBadges": false,
   "skipToTheEnd": false,

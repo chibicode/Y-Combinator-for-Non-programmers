@@ -2,7 +2,8 @@ import {
   isCall,
   isVariable,
   isFunction,
-  isConditional
+  isConditional,
+  isBinary
 } from 'src/lib/expressionTypeGuards'
 import {
   CallExpression,
@@ -14,7 +15,9 @@ import {
   StepVariable,
   ConditionalExpression,
   VariableExpression,
-  StepConditional
+  StepConditional,
+  StepBinary,
+  BinaryExpression
 } from 'src/types/ExpressionTypes'
 
 export default function resetExpression(
@@ -26,6 +29,9 @@ export default function resetExpression(
 export default function resetExpression(
   expression: ConditionalExpression
 ): StepConditional<'default'>
+export default function resetExpression(
+  expression: BinaryExpression
+): StepBinary<'default'>
 export default function resetExpression(
   expression: CallExpression
 ): NonExecutableStepCall<'default'>
@@ -70,6 +76,14 @@ export default function resetExpression(
       condition: resetExpression(expression.condition),
       trueCase: resetExpression(expression.trueCase),
       falseCase: resetExpression(expression.falseCase)
+    }
+  } else if (isBinary(expression)) {
+    return {
+      ...expression,
+      state: 'default',
+      priority: 0,
+      first: resetExpression(expression.first),
+      second: resetExpression(expression.second)
     }
   } else {
     throw new Error()

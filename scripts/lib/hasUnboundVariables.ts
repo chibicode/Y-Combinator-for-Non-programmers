@@ -2,7 +2,8 @@ import {
   isCall,
   isVariable,
   isFunction,
-  isConditional
+  isConditional,
+  isBinary
 } from 'src/lib/expressionTypeGuards'
 import { Expression } from 'src/types/ExpressionTypes'
 
@@ -24,6 +25,11 @@ export default function hasUnboundVariables(expression: Expression): boolean {
       hasUnboundVariables(expression.condition) ||
       hasUnboundVariables(expression.trueCase) ||
       hasUnboundVariables(expression.falseCase)
+    )
+  } else if (isBinary(expression)) {
+    return (
+      hasUnboundVariables(expression.first) ||
+      hasUnboundVariables(expression.second)
     )
   } else {
     throw new Error()

@@ -1,7 +1,8 @@
 import {
   CallStates,
   ConditionalStates,
-  Expression
+  Expression,
+  BinaryStates
 } from 'src/types/ExpressionTypes'
 
 export type ExpressionContainerStates =
@@ -14,9 +15,13 @@ export type ExpressionContainerStates =
 export interface ExpressionContainer<E extends Expression = Expression> {
   readonly expression: E
   readonly containerState: ExpressionContainerStates
-  readonly previouslyChangedExpressionState: CallStates | ConditionalStates
+  readonly previouslyChangedExpressionState:
+    | CallStates
+    | ConditionalStates
+    | BinaryStates
   readonly matchExists?: boolean
   readonly activePriority?: number
+  readonly numLeafNodes: number
 }
 
 export type ContainerWithState<

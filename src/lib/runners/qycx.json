@@ -1,8 +1,6 @@
 {
   "expressionContainers": [
     {
-      "containerState": "ready",
-      "previouslyChangedExpressionState": "default",
       "expression": {
         "arg": {
           "name": "shorthandNumber",
@@ -16,7 +14,8 @@
           "funcPriorityAgg": [],
           "emphasizePriority": false,
           "bound": true,
-          "shorthandNumber": 2
+          "shorthandNumber": 2,
+          "maxNestedFunctionDepth": 0
         },
         "func": {
           "type": "repeat",
@@ -38,16 +37,18 @@
         },
         "state": "default",
         "type": "call",
-        "priority": 1
-      }
+        "priority": 1,
+        "maxNestedFunctionDepth": 0
+      },
+      "numLeafNodes": 2,
+      "containerState": "ready",
+      "previouslyChangedExpressionState": "default"
     }
   ],
   "speed": 1,
   "hideControls": true,
   "explanationsVisibility": "hidden",
   "hidePriorities": true,
-  "variableSize": "lg",
-  "containerSize": "xxs",
   "hidePlayButton": false,
   "hideBottomRightBadges": false,
   "skipToTheEnd": false,

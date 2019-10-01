@@ -1,12 +1,12 @@
 import React from 'react'
 import ExpressionRunnerPrecomputed from 'src/components/ExpressionRunnerPrecomputed'
-import config from 'src/lib/runners/spki.json'
+import config from 'src/lib/runners/qurt.json'
 
-const Spki = ({ children }: { children?: React.ReactNode }) => (
+const Qurt = ({ children }: { children?: React.ReactNode }) => (
   // @ts-ignore
   <ExpressionRunnerPrecomputed {...config}>
     {children}
   </ExpressionRunnerPrecomputed>
 )
 
-export default Spki
+export default Qurt

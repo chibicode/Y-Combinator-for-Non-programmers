@@ -1,8 +1,6 @@
 {
   "expressionContainers": [
     {
-      "containerState": "ready",
-      "previouslyChangedExpressionState": "default",
       "expression": {
         "name": "blankNumberRed",
         "highlightType": "default",
@@ -12,16 +10,18 @@
         "argPriorityAgg": [],
         "funcPriorityAgg": [],
         "emphasizePriority": false,
-        "bound": true
-      }
+        "bound": true,
+        "maxNestedFunctionDepth": 0
+      },
+      "numLeafNodes": 1,
+      "containerState": "ready",
+      "previouslyChangedExpressionState": "default"
     }
   ],
   "speed": 1,
   "hideControls": true,
   "explanationsVisibility": "hidden",
   "hidePriorities": true,
-  "variableSize": "lg",
-  "containerSize": "xxs",
   "hidePlayButton": false,
   "hideBottomRightBadges": false,
   "skipToTheEnd": false,

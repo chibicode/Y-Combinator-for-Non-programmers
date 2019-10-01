@@ -1,12 +1,18 @@
 import getConflictsToUnused from 'scripts/lib/getConflictsToUnused'
 import { isContainerWithState } from 'src/lib/expressionContainerGuards'
-import findNextCallExpressionAndParent from 'scripts/lib/findNextCallExpressionAndParent'
+import findNextExecutableAndParent from 'scripts/lib/findNextExecutableAndParent'
 import hasUnboundVariables from 'scripts/lib/hasUnboundVariables'
 import prioritizeExpressionContainer from 'scripts/lib/prioritizeExpressionContainer'
 import resetExpressionContainer from 'scripts/lib/resetExpressionContainer'
 import replaceCallParentKey from 'scripts/lib/replaceCallParentKey'
 import replaceConditionalParentKey from 'scripts/lib/replaceConditionalParentKey'
-import { isCall, isExecutableCallRegular } from 'src/lib/expressionTypeGuards'
+import replaceBinaryParentKey from 'scripts/lib/replaceBinaryParentKey'
+import calculateNumLeafNodes from 'scripts/lib/calculateNumLeafNodes'
+import {
+  isCall,
+  isConditional,
+  isExecutableCallRegular
+} from 'src/lib/expressionTypeGuards'
 import replaceFuncParentKey from 'scripts/lib/replaceFuncParentKey'
 import {
   removeCrossed,
@@ -23,7 +29,9 @@ import {
   stepToConditionActive,
   stepToCaseProcessed,
   stepToShorthandComputed,
-  stepToAlphaConvertCallArg
+  stepToAlphaConvertCallArg,
+  stepToBinaryProcessed,
+  stepToBinaryActive
 } from 'scripts/lib/steps'
 import {
   ContainerWithState,
@@ -33,6 +41,7 @@ import {
   ExecutableCallRegular,
   StepChild,
   ExecutableConditionalStatesDistributed,
+  ExecutableBinaryStatesDistributed,
   ExecutableCall,
   ExecutableCallShorthand
 } from 'src/types/ExpressionTypes'
@@ -50,7 +59,7 @@ const stepExpressionContainerReset = (
   const newContainer = prioritizeExpressionContainer(
     resetExpressionContainer(e)
   )
-  const nextCallExpressionAndParent = findNextCallExpressionAndParent(
+  const nextCallExpressionAndParent = findNextExecutableAndParent(
     newContainer.expression
   )
   if (nextCallExpressionAndParent.expression) {
@@ -93,6 +102,30 @@ const stepConditional = (
     case 'falseCaseActive': {
       return {
         nextExpression: stepToCaseProcessed(e, false),
+        previouslyChangedExpressionState: 'default'
+      }
+    }
+  }
+  throw new Error()
+}
+
+const stepBinary = (
+  e: ExecutableBinaryStatesDistributed
+): {
+  nextExpression: ExecutableBinaryStatesDistributed | StepChild<'default'>
+  matchExists?: boolean
+  previouslyChangedExpressionState: ExpressionContainer['previouslyChangedExpressionState']
+} => {
+  switch (e.state) {
+    case 'default': {
+      return {
+        nextExpression: stepToBinaryActive(e),
+        previouslyChangedExpressionState: 'active'
+      }
+    }
+    case 'active': {
+      return {
+        nextExpression: stepToBinaryProcessed(e),
         previouslyChangedExpressionState: 'default'
       }
     }
@@ -276,8 +309,10 @@ const runStep = (
     callParent,
     funcParent,
     conditionalParent,
-    callParentKey
-  } = findNextCallExpressionAndParent(e.expression)
+    callParentKey,
+    binaryParentKey,
+    binaryParent
+  } = findNextExecutableAndParent(e.expression)
   if (!expression) {
     // Special case - already done to begin with
     return {
@@ -295,9 +330,17 @@ const runStep = (
     ? isExecutableCallRegular(expression)
       ? stepRegular(expression, stepOptions, e.matchExists)
       : stepShorthand(expression)
-    : stepConditional(expression)
+    : isConditional(expression)
+    ? stepConditional(expression)
+    : stepBinary(expression)
 
-  if (!callParent && !callParentKey && !funcParent && !conditionalParent) {
+  if (
+    !callParent &&
+    !callParentKey &&
+    !funcParent &&
+    !conditionalParent &&
+    !binaryParent
+  ) {
     const newContainer = {
       expression:
         previouslyChangedExpressionState === 'betaReducePreviewAfter'
@@ -307,14 +350,17 @@ const runStep = (
       matchExists,
       activePriority
     }
+    const numLeafNodes = calculateNumLeafNodes(nextExpression)
     return previouslyChangedExpressionState === 'default'
       ? {
           ...newContainer,
-          containerState: 'needsReset'
+          containerState: 'needsReset',
+          numLeafNodes
         }
       : {
           ...newContainer,
-          containerState: 'stepped'
+          containerState: 'stepped',
+          numLeafNodes
         }
   }
 
@@ -339,9 +385,18 @@ const runStep = (
       conditionalParent,
       nextExpression
     )
+  } else if (binaryParent && binaryParentKey) {
+    newExpression = replaceBinaryParentKey(
+      e.expression,
+      binaryParentKey,
+      binaryParent,
+      nextExpression
+    )
   } else {
     throw new Error()
   }
+
+  const numLeafNodes = calculateNumLeafNodes(newExpression)
 
   if (previouslyChangedExpressionState === 'default') {
     return {
@@ -350,7 +405,8 @@ const runStep = (
       containerState: 'needsReset',
       matchExists,
       activePriority,
-      previouslyChangedExpressionState
+      previouslyChangedExpressionState,
+      numLeafNodes
     }
   } else {
     return {
@@ -362,7 +418,8 @@ const runStep = (
       containerState: 'stepped',
       matchExists,
       activePriority,
-      previouslyChangedExpressionState
+      previouslyChangedExpressionState,
+      numLeafNodes
     }
   }
 }

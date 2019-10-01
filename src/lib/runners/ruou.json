@@ -1,8 +1,6 @@
 {
   "expressionContainers": [
     {
-      "containerState": "ready",
-      "previouslyChangedExpressionState": "default",
       "expression": {
         "type": "conditional",
         "state": "default",
@@ -16,7 +14,8 @@
           "argPriorityAgg": [],
           "funcPriorityAgg": [],
           "emphasizePriority": false,
-          "bound": true
+          "bound": true,
+          "maxNestedFunctionDepth": 0
         },
         "trueCase": {
           "name": "blankNumberYellow",
@@ -29,7 +28,8 @@
             1
           ],
           "emphasizePriority": false,
-          "bound": true
+          "bound": true,
+          "maxNestedFunctionDepth": 0
         },
         "falseCase": {
           "name": "blankNumberRed",
@@ -42,18 +42,21 @@
           ],
           "funcPriorityAgg": [],
           "emphasizePriority": false,
-          "bound": true
+          "bound": true,
+          "maxNestedFunctionDepth": 0
         },
-        "priority": 1
-      }
+        "priority": 1,
+        "maxNestedFunctionDepth": 0
+      },
+      "numLeafNodes": 3,
+      "containerState": "ready",
+      "previouslyChangedExpressionState": "default"
     }
   ],
   "speed": 1,
   "hideControls": true,
   "explanationsVisibility": "hidden",
   "hidePriorities": true,
-  "variableSize": "md",
-  "containerSize": "xxs",
   "hidePlayButton": false,
   "hideBottomRightBadges": false,
   "skipToTheEnd": false,

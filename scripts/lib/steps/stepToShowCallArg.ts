@@ -2,6 +2,7 @@ import {
   isFunction,
   isVariable,
   isCall,
+  isBinary,
   isConditional
 } from 'src/lib/expressionTypeGuards'
 import {
@@ -14,6 +15,8 @@ import {
   StepChild,
   StepConditional,
   ConditionalExpression,
+  BinaryExpression,
+  StepBinary,
   StepFunction,
   StepVariable,
   VariableExpression
@@ -31,6 +34,10 @@ export function toShowCallArg(
   e: ConditionalExpression,
   funcSide: boolean
 ): StepConditional<'showCallArg'>
+export function toShowCallArg(
+  e: BinaryExpression,
+  funcSide: boolean
+): StepBinary<'showCallArg'>
 export function toShowCallArg(
   e: CallExpression,
   funcSide: boolean
@@ -83,6 +90,13 @@ export function toShowCallArg(
       condition: toShowCallArg(e.condition, funcSide),
       trueCase: toShowCallArg(e.trueCase, funcSide),
       falseCase: toShowCallArg(e.falseCase, funcSide)
+    }
+  } else if (isBinary(e)) {
+    return {
+      ...e,
+      state: 'default',
+      first: toShowCallArg(e.first, funcSide),
+      second: toShowCallArg(e.second, funcSide)
     }
   } else {
     throw new Error()

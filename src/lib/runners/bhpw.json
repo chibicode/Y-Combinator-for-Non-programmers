@@ -1,8 +1,6 @@
 {
   "expressionContainers": [
     {
-      "containerState": "done",
-      "previouslyChangedExpressionState": "default",
       "expression": {
         "name": "shorthandFunc",
         "highlightType": "default",
@@ -13,16 +11,18 @@
         "funcPriorityAgg": [],
         "emphasizePriority": false,
         "bound": true,
-        "shorthandFunc": "add"
-      }
+        "shorthandFunc": "add",
+        "maxNestedFunctionDepth": 0
+      },
+      "numLeafNodes": 1,
+      "containerState": "done",
+      "previouslyChangedExpressionState": "default"
     }
   ],
   "speed": 1,
   "hideControls": true,
   "explanationsVisibility": "hidden",
   "hidePriorities": true,
-  "variableSize": "lg",
-  "containerSize": "xxs",
   "hidePlayButton": false,
   "hideBottomRightBadges": false,
   "skipToTheEnd": false,

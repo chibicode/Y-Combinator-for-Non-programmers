@@ -16,7 +16,7 @@ interface EmojiSeparatorProps {
   emojis: string[]
   letters?: VariableNames[]
   nodes?: React.ReactNode[]
-  size: 'sm' | 'md' | 'lg' | 'mdsm'
+  size: 'xs' | 'sm' | 'md' | 'lg' | 'mdsm'
   alignCenter: boolean
   Component: React.ComponentType | string
   cssOverrides?: SerializedStyles
@@ -27,6 +27,7 @@ interface EmojiSeparatorProps {
 
 const fontSize = (size: EmojiSeparatorProps['size']) =>
   ({
+    xs: [fontSizes(1.2), fontSizes(1.4)],
     sm: [fontSizes(1.4), fontSizes(1.6)],
     mdsm: [fontSizes(1.6), fontSizes(2)],
     md: [fontSizes(2), fontSizes(2.5)],
@@ -35,6 +36,7 @@ const fontSize = (size: EmojiSeparatorProps['size']) =>
 
 const margins = (size: EmojiSeparatorProps['size']) =>
   ({
+    xs: [spaces(1.75), spaces(2)],
     sm: [spaces(1.75), spaces(2)],
     mdsm: [spaces(1.5), spaces(1.75)],
     md: [spaces(1.25), spaces(1.5)],

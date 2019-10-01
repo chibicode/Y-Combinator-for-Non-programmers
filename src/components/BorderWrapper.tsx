@@ -6,6 +6,7 @@ import ExpressionRunnerContext from 'src/components/ExpressionRunnerContext'
 import { zIndices, colors } from 'src/lib/theme'
 import { VariableExpression } from 'src/types/ExpressionTypes'
 import ConditionalContext from 'src/components/ConditionalContext'
+import BinaryContext from 'src/components/BinaryContext'
 
 export interface BorderWrapperProps {
   bottomRightBadgeType: VariableExpression['bottomRightBadgeType']
@@ -23,7 +24,8 @@ const background = ({
   topLeftBadgeType,
   isQuestion,
   started,
-  conditionalActive
+  conditionalActive,
+  binaryActive
 }: {
   highlightType: BorderWrapperProps['highlightType']
   isDoneOrReady: boolean
@@ -31,6 +33,7 @@ const background = ({
   isQuestion: boolean
   started: boolean
   conditionalActive?: boolean
+  binaryActive?: boolean
 }): SerializedStyles | undefined => {
   if (isQuestion) {
     if (highlightType === 'highlighted') {
@@ -44,6 +47,11 @@ const background = ({
     }
   }
   if (conditionalActive) {
+    return css`
+      background: ${colors('transparent')};
+    `
+  }
+  if (binaryActive) {
     return css`
       background: ${colors('transparent')};
     `
@@ -129,6 +137,7 @@ const BorderWrapper = ({
     ExpressionRunnerContext
   )
   const { conditionalOutermostState } = useContext(ConditionalContext)
+  const { inBinaryActive } = useContext(BinaryContext)
   return (
     <Flex
       css={[
@@ -144,7 +153,9 @@ const BorderWrapper = ({
           isQuestion,
           started,
           conditionalActive:
-            conditionalOutermostState && conditionalOutermostState !== 'default'
+            conditionalOutermostState &&
+            conditionalOutermostState !== 'default',
+          binaryActive: inBinaryActive
         })
       ]}
     >

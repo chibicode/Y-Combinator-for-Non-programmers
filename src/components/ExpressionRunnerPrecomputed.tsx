@@ -17,6 +17,8 @@ import { expressionRunnerContextDefault } from 'src/types/ExpressionRunnerTypes'
 import { ExpressionRunnerConfig } from 'scripts/lib/buildExpressionRunnerConfigFromShorthand'
 import { SteppedExpressionContainer } from 'src/types/ExpressionContainerTypes'
 import useInterval from 'src/hooks/useInterval'
+import numLeafNodesToVariableSize from 'src/lib/numLeafNodesToVariableSize'
+import functionDepthsToContainerSize from 'src/lib/functionDepthsToContainerSize'
 import CrossSvg from 'src/components/CrossSvg'
 import { LinkButton } from 'src/components/ContentTags/LinkButton'
 
@@ -27,8 +29,6 @@ export interface ExpressionRunnerPrecomputedProps {
   hideControls: ExpressionRunnerConfig['hideControls']
   explanationsVisibility: ExpressionRunnerConfig['explanationsVisibility']
   hidePriorities: ExpressionRunnerConfig['hidePriorities']
-  variableSize: ExpressionRunnerConfig['variableSize']
-  containerSize: ExpressionRunnerConfig['containerSize']
   hidePlayButton: ExpressionRunnerConfig['hidePlayButton']
   hideBottomRightBadges: ExpressionRunnerConfig['hideBottomRightBadges']
   skipToTheEnd: ExpressionRunnerConfig['skipToTheEnd']
@@ -57,8 +57,6 @@ const ExpressionRunnerPrecomputed = ({
   hideControls,
   explanationsVisibility,
   hidePriorities,
-  variableSize,
-  containerSize,
   hidePlayButton,
   hideBottomRightBadges,
   skipToTheEnd,
@@ -158,6 +156,12 @@ const ExpressionRunnerPrecomputed = ({
       currentIndex > 0)
   const progessBarVisible =
     !hidePlayButton && !skipToTheEnd && (isPlaying || atLeastOneStepTaken)
+  const containerSize = functionDepthsToContainerSize(
+    expressionContainers[currentIndex].expression.maxNestedFunctionDepth || 0
+  )
+  const variableSize = numLeafNodesToVariableSize(
+    expressionContainers[currentIndex].numLeafNodes
+  )
 
   return (
     <ExpressionRunnerContext.Provider
@@ -231,7 +235,7 @@ const ExpressionRunnerPrecomputed = ({
               css={[
                 css`
                   line-height: ${lineHeights(1.3, { ignoreLocale: true })};
-                  opacity: ${isFastForwarding ? 0.6 : 1};
+                  opacity: ${isFastForwarding ? 0.5 : 1};
                   position: relative;
                   background-color: ${colors('white')};
                 `

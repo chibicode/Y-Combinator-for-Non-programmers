@@ -1,8 +1,6 @@
 {
   "expressionContainers": [
     {
-      "containerState": "ready",
-      "previouslyChangedExpressionState": "default",
       "expression": {
         "arg": {
           "name": "h",
@@ -15,7 +13,8 @@
           ],
           "funcPriorityAgg": [],
           "emphasizePriority": false,
-          "bound": true
+          "bound": true,
+          "maxNestedFunctionDepth": 0
         },
         "func": {
           "arg": {
@@ -29,7 +28,8 @@
               1
             ],
             "emphasizePriority": false,
-            "bound": false
+            "bound": false,
+            "maxNestedFunctionDepth": 0
           },
           "body": {
             "arg": {
@@ -41,7 +41,8 @@
               "argPriorityAgg": [],
               "funcPriorityAgg": [],
               "emphasizePriority": false,
-              "bound": false
+              "bound": false,
+              "maxNestedFunctionDepth": 0
             },
             "body": {
               "arg": {
@@ -53,7 +54,8 @@
                 "argPriorityAgg": [],
                 "funcPriorityAgg": [],
                 "emphasizePriority": false,
-                "bound": false
+                "bound": false,
+                "maxNestedFunctionDepth": 0
               },
               "body": {
                 "arg": {
@@ -67,7 +69,8 @@
                   ],
                   "funcPriorityAgg": [],
                   "emphasizePriority": false,
-                  "bound": true
+                  "bound": true,
+                  "maxNestedFunctionDepth": 0
                 },
                 "func": {
                   "name": "e",
@@ -80,26 +83,33 @@
                     1
                   ],
                   "emphasizePriority": false,
-                  "bound": true
+                  "bound": true,
+                  "maxNestedFunctionDepth": 0
                 },
                 "state": "default",
                 "type": "call",
-                "priority": 1
+                "priority": 1,
+                "maxNestedFunctionDepth": 0
               },
-              "type": "function"
+              "type": "function",
+              "maxNestedFunctionDepth": 1
             },
-            "type": "function"
+            "type": "function",
+            "maxNestedFunctionDepth": 2
           },
-          "type": "function"
+          "type": "function",
+          "maxNestedFunctionDepth": 3
         },
         "state": "default",
         "type": "call",
-        "priority": 1
-      }
+        "priority": 1,
+        "maxNestedFunctionDepth": 3
+      },
+      "numLeafNodes": 3,
+      "containerState": "ready",
+      "previouslyChangedExpressionState": "default"
     },
     {
-      "containerState": "done",
-      "previouslyChangedExpressionState": "default",
       "expression": {
         "name": "shorthandNumber",
         "highlightType": "default",
@@ -110,16 +120,18 @@
         "funcPriorityAgg": [],
         "emphasizePriority": false,
         "bound": true,
-        "shorthandNumber": 1
-      }
+        "shorthandNumber": 1,
+        "maxNestedFunctionDepth": 0
+      },
+      "numLeafNodes": 1,
+      "containerState": "done",
+      "previouslyChangedExpressionState": "default"
     }
   ],
   "speed": 1,
   "hideControls": false,
   "explanationsVisibility": "hiddenInitialPausedOnly",
   "hidePriorities": false,
-  "variableSize": "lg",
-  "containerSize": "xxs",
   "hidePlayButton": false,
   "hideBottomRightBadges": false,
   "skipToTheEnd": true,

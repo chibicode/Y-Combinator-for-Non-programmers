@@ -4,7 +4,6 @@ import ExpressionPriorityContext from 'src/components/ExpressionPriorityContext'
 import Flex from 'src/components/Flex'
 import FlexCenter from 'src/components/FlexCenter'
 import ExpressionBox from 'src/components/ExpressionBox'
-import maxNestedFunctionDepth from 'scripts/lib/maxNestedFunctionDepth'
 import { FunctionExpression } from 'src/types/ExpressionTypes'
 import plusOneSvg from 'src/images/plusOne.url.svg'
 import minusOneSvg from 'src/images/minusOne.url.svg'
@@ -49,7 +48,7 @@ const FunctionExpressionBox = ({ expression }: FunctionExpressionBoxProps) => {
       >
         <FlexCenter
           css={css`
-            flex-grow: ${maxNestedFunctionDepth(expression.body) + 1};
+            flex-grow: ${(expression.body.maxNestedFunctionDepth || 0) + 1};
             flex-basis: 0;
           `}
         >

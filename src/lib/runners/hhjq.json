@@ -1,8 +1,6 @@
 {
   "expressionContainers": [
     {
-      "containerState": "ready",
-      "previouslyChangedExpressionState": "default",
       "expression": {
         "arg": {
           "name": "blankNumber",
@@ -16,7 +14,8 @@
           "funcPriorityAgg": [],
           "emphasizePriority": false,
           "bound": true,
-          "shorthandNumberAfterConvert": "falseCase"
+          "shorthandNumberAfterConvert": "falseCase",
+          "maxNestedFunctionDepth": 0
         },
         "func": {
           "arg": {
@@ -31,7 +30,8 @@
             "funcPriorityAgg": [],
             "emphasizePriority": false,
             "bound": true,
-            "shorthandNumberAfterConvert": "trueCase"
+            "shorthandNumberAfterConvert": "trueCase",
+            "maxNestedFunctionDepth": 0
           },
           "func": {
             "arg": {
@@ -46,7 +46,8 @@
                 ],
                 "funcPriorityAgg": [],
                 "emphasizePriority": false,
-                "bound": false
+                "bound": false,
+                "maxNestedFunctionDepth": 0
               },
               "body": {
                 "arg": {
@@ -58,7 +59,8 @@
                   "argPriorityAgg": [],
                   "funcPriorityAgg": [],
                   "emphasizePriority": false,
-                  "bound": false
+                  "bound": false,
+                  "maxNestedFunctionDepth": 0
                 },
                 "body": {
                   "name": "c",
@@ -69,11 +71,14 @@
                   "argPriorityAgg": [],
                   "funcPriorityAgg": [],
                   "emphasizePriority": false,
-                  "bound": true
+                  "bound": true,
+                  "maxNestedFunctionDepth": 0
                 },
-                "type": "function"
+                "type": "function",
+                "maxNestedFunctionDepth": 1
               },
-              "type": "function"
+              "type": "function",
+              "maxNestedFunctionDepth": 2
             },
             "func": {
               "arg": {
@@ -88,7 +93,8 @@
                   ],
                   "funcPriorityAgg": [],
                   "emphasizePriority": false,
-                  "bound": false
+                  "bound": false,
+                  "maxNestedFunctionDepth": 0
                 },
                 "body": {
                   "arg": {
@@ -100,7 +106,8 @@
                     "argPriorityAgg": [],
                     "funcPriorityAgg": [],
                     "emphasizePriority": false,
-                    "bound": false
+                    "bound": false,
+                    "maxNestedFunctionDepth": 0
                   },
                   "body": {
                     "arg": {
@@ -112,7 +119,8 @@
                       "argPriorityAgg": [],
                       "funcPriorityAgg": [],
                       "emphasizePriority": false,
-                      "bound": false
+                      "bound": false,
+                      "maxNestedFunctionDepth": 0
                     },
                     "body": {
                       "name": "b",
@@ -123,13 +131,17 @@
                       "argPriorityAgg": [],
                       "funcPriorityAgg": [],
                       "emphasizePriority": false,
-                      "bound": true
+                      "bound": true,
+                      "maxNestedFunctionDepth": 0
                     },
-                    "type": "function"
+                    "type": "function",
+                    "maxNestedFunctionDepth": 1
                   },
-                  "type": "function"
+                  "type": "function",
+                  "maxNestedFunctionDepth": 2
                 },
-                "type": "function"
+                "type": "function",
+                "maxNestedFunctionDepth": 3
               },
               "func": {
                 "name": "blankNumber",
@@ -146,32 +158,38 @@
                 ],
                 "emphasizePriority": false,
                 "bound": true,
-                "shorthandNumberAfterConvert": "condition"
+                "shorthandNumberAfterConvert": "condition",
+                "maxNestedFunctionDepth": 0
               },
               "state": "default",
               "type": "call",
-              "priority": 1
+              "priority": 1,
+              "maxNestedFunctionDepth": 3
             },
             "state": "default",
             "type": "call",
-            "priority": 2
+            "priority": 2,
+            "maxNestedFunctionDepth": 3
           },
           "state": "default",
           "type": "call",
-          "priority": 3
+          "priority": 3,
+          "maxNestedFunctionDepth": 3
         },
         "state": "default",
         "type": "call",
-        "priority": 4
-      }
+        "priority": 4,
+        "maxNestedFunctionDepth": 3
+      },
+      "numLeafNodes": 8,
+      "containerState": "ready",
+      "previouslyChangedExpressionState": "default"
     }
   ],
   "speed": 1,
   "hideControls": true,
   "explanationsVisibility": "hidden",
   "hidePriorities": false,
-  "variableSize": "md",
-  "containerSize": "xs",
   "hidePlayButton": false,
   "hideBottomRightBadges": false,
   "skipToTheEnd": false,

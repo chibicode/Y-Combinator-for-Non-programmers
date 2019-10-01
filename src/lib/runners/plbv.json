@@ -1,8 +1,6 @@
 {
   "expressionContainers": [
     {
-      "containerState": "ready",
-      "previouslyChangedExpressionState": "default",
       "expression": {
         "type": "conditional",
         "state": "default",
@@ -17,7 +15,8 @@
           "funcPriorityAgg": [],
           "emphasizePriority": false,
           "bound": true,
-          "shorthandNumber": 3
+          "shorthandNumber": 3,
+          "maxNestedFunctionDepth": 0
         },
         "trueCase": {
           "name": "shorthandNumber",
@@ -31,7 +30,8 @@
           ],
           "emphasizePriority": false,
           "bound": true,
-          "shorthandNumber": 4
+          "shorthandNumber": 4,
+          "maxNestedFunctionDepth": 0
         },
         "falseCase": {
           "name": "shorthandNumber",
@@ -45,18 +45,21 @@
           "funcPriorityAgg": [],
           "emphasizePriority": false,
           "bound": true,
-          "shorthandNumber": 5
+          "shorthandNumber": 5,
+          "maxNestedFunctionDepth": 0
         },
-        "priority": 1
-      }
+        "priority": 1,
+        "maxNestedFunctionDepth": 0
+      },
+      "numLeafNodes": 3,
+      "containerState": "ready",
+      "previouslyChangedExpressionState": "default"
     }
   ],
   "speed": 1,
   "hideControls": true,
   "explanationsVisibility": "hidden",
   "hidePriorities": true,
-  "variableSize": "lg",
-  "containerSize": "xxs",
   "hidePlayButton": false,
   "hideBottomRightBadges": false,
   "skipToTheEnd": false,

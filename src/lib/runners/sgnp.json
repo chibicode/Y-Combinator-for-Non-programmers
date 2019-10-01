@@ -13,7 +13,8 @@
           ],
           "funcPriorityAgg": [],
           "emphasizePriority": true,
-          "bound": true
+          "bound": true,
+          "maxNestedFunctionDepth": 0
         },
         "func": {
           "arg": {
@@ -27,7 +28,8 @@
               1
             ],
             "emphasizePriority": true,
-            "bound": false
+            "bound": false,
+            "maxNestedFunctionDepth": 0
           },
           "body": {
             "name": "c",
@@ -38,25 +40,27 @@
             "argPriorityAgg": [],
             "funcPriorityAgg": [],
             "emphasizePriority": false,
-            "bound": true
+            "bound": true,
+            "maxNestedFunctionDepth": 0
           },
-          "type": "function"
+          "type": "function",
+          "maxNestedFunctionDepth": 1
         },
         "state": "showFuncBound",
         "type": "call",
-        "priority": 1
+        "priority": 1,
+        "maxNestedFunctionDepth": 1
       },
       "previouslyChangedExpressionState": "showFuncBound",
       "activePriority": 1,
-      "containerState": "stepped"
+      "containerState": "stepped",
+      "numLeafNodes": 2
     }
   ],
   "speed": 1,
   "hideControls": true,
   "explanationsVisibility": "hidden",
   "hidePriorities": false,
-  "variableSize": "lg",
-  "containerSize": "xxs",
   "hidePlayButton": false,
   "hideBottomRightBadges": false,
   "skipToTheEnd": false,

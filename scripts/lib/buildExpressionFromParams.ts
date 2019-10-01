@@ -7,7 +7,8 @@ import {
   isConditionalParams,
   isVariableShorthandFuncParams,
   isQuestionPlusOrMinusOneParams,
-  isQuestionShorthandNumberAfterConvertParams
+  isQuestionShorthandNumberAfterConvertParams,
+  isRepeatExpressionParams
 } from 'scripts/lib/expressionParamGuards'
 import {
   CallExpressionParams,
@@ -20,7 +21,8 @@ import {
   RepeatExpressionParams,
   QuestionPlusOrMinusOneParams,
   QuestionShorthandNumberAfterConvertParams,
-  VariableShorthandFuncParams
+  VariableShorthandFuncParams,
+  BinaryExpressionParams
 } from 'src/types/ExpressionParamTypes'
 import {
   NonExecutableStepCall,
@@ -29,6 +31,7 @@ import {
   StepVariable,
   StepVariableShorthandNumber,
   StepConditional,
+  StepBinary,
   RepeatExpression
 } from 'src/types/ExpressionTypes'
 import { VariableNames } from 'src/types/VariableNames'
@@ -89,6 +92,9 @@ export default function buildExpressionFromParams(
 export default function buildExpressionFromParams(
   expressionParams: ConditionalExpressionParams
 ): StepConditional
+export default function buildExpressionFromParams(
+  expressionParams: BinaryExpressionParams
+): StepBinary
 export default function buildExpressionFromParams(
   expressionParams: RepeatExpressionParams
 ): RepeatExpression
@@ -192,12 +198,21 @@ export default function buildExpressionFromParams(
       ),
       shorthandNumberAfterConvert: expressionParams.shorthandNumberAfterConvert
     }
-  } else {
+  } else if (isRepeatExpressionParams(expressionParams)) {
     return {
       type: 'repeat',
       count: expressionParams.count,
       countVariable: expressionParams.countVariable,
       child: buildExpressionFromParams(expressionParams.child)
+    }
+  } else {
+    return {
+      type: 'binary',
+      binaryType: expressionParams.binaryType,
+      first: buildExpressionFromParams(expressionParams.first),
+      second: buildExpressionFromParams(expressionParams.second),
+      state: 'default',
+      priority: 0
     }
   }
 }

@@ -2,7 +2,8 @@ import {
   isFunction,
   isVariable,
   isCall,
-  isConditional
+  isConditional,
+  isBinary
 } from 'src/lib/expressionTypeGuards'
 import { activeFuncArg } from 'scripts/lib/steps/stepToShowFuncUnbound'
 import {
@@ -17,6 +18,8 @@ import {
   StepChild,
   StepFunction,
   StepVariable,
+  BinaryExpression,
+  StepBinary,
   VariableExpression
 } from 'src/types/ExpressionTypes'
 import { VariableNames } from 'src/types/VariableNames'
@@ -30,6 +33,9 @@ function matchBetaReduced(
 function matchBetaReduced(
   e: ConditionalExpression
 ): StepConditional<'betaReducePreviewAfter'>
+function matchBetaReduced(
+  e: BinaryExpression
+): StepBinary<'betaReducePreviewAfter'>
 function matchBetaReduced(
   e: CallExpression
 ): NonExecutableStepCall<'betaReducePreviewAfter'>
@@ -71,6 +77,15 @@ function matchBetaReduced(e: Expression): StepChild<'betaReducePreviewAfter'> {
       trueCase: trueCase,
       falseCase: falseCase
     }
+  } else if (isBinary(e)) {
+    const first = matchBetaReduced(e.first)
+    const second = matchBetaReduced(e.second)
+    return {
+      ...e,
+      state: 'default',
+      first: first,
+      second: second
+    }
   } else {
     throw new Error()
   }
@@ -94,6 +109,12 @@ export function toBetaReducePreviewAfter(
   to: Expression,
   funcSide: boolean
 ): StepConditional<'betaReducePreviewAfter'>
+export function toBetaReducePreviewAfter(
+  e: BinaryExpression,
+  fromName: VariableNames,
+  to: Expression,
+  funcSide: boolean
+): StepBinary<'betaReducePreviewAfter'>
 export function toBetaReducePreviewAfter(
   e: CallExpression,
   fromName: VariableNames,
@@ -189,6 +210,15 @@ export function toBetaReducePreviewAfter(
       condition: condition,
       trueCase: trueCase,
       falseCase: falseCase
+    }
+  } else if (isBinary(e)) {
+    const first = toBetaReducePreviewAfter(e.first, fromName, to, funcSide)
+    const second = toBetaReducePreviewAfter(e.second, fromName, to, funcSide)
+    return {
+      ...e,
+      state: 'default',
+      first: first,
+      second: second
     }
   } else {
     throw new Error()

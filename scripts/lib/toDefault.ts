@@ -2,7 +2,8 @@ import {
   isFunction,
   isVariable,
   isCall,
-  isConditional
+  isConditional,
+  isBinary
 } from 'src/lib/expressionTypeGuards'
 import {
   CallExpression,
@@ -14,7 +15,11 @@ import {
   StepVariable,
   VariableExpression,
   VariableShorthandNumber,
-  StepVariableShorthandNumber
+  StepVariableShorthandNumber,
+  ConditionalExpression,
+  StepConditional,
+  BinaryExpression,
+  StepBinary
 } from 'src/types/ExpressionTypes'
 
 export default function toDefault(
@@ -26,6 +31,13 @@ export default function toDefault(
 export default function toDefault(
   e: FunctionExpression
 ): StepFunction<'default'>
+export default function toDefault(
+  e: FunctionExpression
+): StepFunction<'default'>
+export default function toDefault(e: BinaryExpression): StepBinary<'default'>
+export default function toDefault(
+  e: ConditionalExpression
+): StepConditional<'default'>
 export default function toDefault(
   e: CallExpression
 ): NonExecutableStepCall<'default'>
@@ -61,6 +73,13 @@ export default function toDefault(e: Expression): StepChild<'default'> {
       condition: toDefault(e.condition),
       trueCase: toDefault(e.trueCase),
       falseCase: toDefault(e.falseCase)
+    }
+  } else if (isBinary(e)) {
+    return {
+      ...e,
+      state: 'default',
+      first: toDefault(e.first),
+      second: toDefault(e.second)
     }
   } else {
     throw new Error()

@@ -1,8 +1,6 @@
 {
   "expressionContainers": [
     {
-      "containerState": "ready",
-      "previouslyChangedExpressionState": "default",
       "expression": {
         "type": "conditional",
         "state": "default",
@@ -17,7 +15,8 @@
           "funcPriorityAgg": [],
           "emphasizePriority": false,
           "bound": true,
-          "shorthandNumber": 0
+          "shorthandNumber": 0,
+          "maxNestedFunctionDepth": 0
         },
         "trueCase": {
           "name": "shorthandNumber",
@@ -31,7 +30,8 @@
           ],
           "emphasizePriority": false,
           "bound": true,
-          "shorthandNumber": 1
+          "shorthandNumber": 1,
+          "maxNestedFunctionDepth": 0
         },
         "falseCase": {
           "name": "shorthandNumber",
@@ -45,14 +45,17 @@
           "funcPriorityAgg": [],
           "emphasizePriority": false,
           "bound": true,
-          "shorthandNumber": 2
+          "shorthandNumber": 2,
+          "maxNestedFunctionDepth": 0
         },
-        "priority": 1
-      }
+        "priority": 1,
+        "maxNestedFunctionDepth": 0
+      },
+      "numLeafNodes": 3,
+      "containerState": "ready",
+      "previouslyChangedExpressionState": "default"
     },
     {
-      "containerState": "done",
-      "previouslyChangedExpressionState": "default",
       "expression": {
         "name": "shorthandNumber",
         "highlightType": "default",
@@ -63,16 +66,18 @@
         "funcPriorityAgg": [],
         "emphasizePriority": false,
         "bound": true,
-        "shorthandNumber": 1
-      }
+        "shorthandNumber": 1,
+        "maxNestedFunctionDepth": 0
+      },
+      "numLeafNodes": 1,
+      "containerState": "done",
+      "previouslyChangedExpressionState": "default"
     }
   ],
   "speed": 1,
   "hideControls": false,
   "explanationsVisibility": "hiddenInitialPausedOnly",
   "hidePriorities": true,
-  "variableSize": "lg",
-  "containerSize": "xxs",
   "hidePlayButton": false,
   "hideBottomRightBadges": false,
   "skipToTheEnd": true,

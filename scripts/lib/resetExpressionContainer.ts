@@ -6,6 +6,7 @@ export default function resetExpressionContainer(
   expressionContainer: ContainerWithState<'needsReset'>
 ): ContainerWithState<'needsPrioritize', StepChild<'default'>> {
   return {
+    ...expressionContainer,
     containerState: 'needsPrioritize',
     expression: resetExpression(expressionContainer.expression),
     previouslyChangedExpressionState: 'default'

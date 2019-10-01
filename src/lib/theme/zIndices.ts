@@ -1,6 +1,7 @@
 export const allZIndices = {
   border: 100,
   conditionalBorder: 101,
+  multiplySign: 101,
   borderToplevel: 102,
   badge: 102,
   expressionPriorityNumber: 101,

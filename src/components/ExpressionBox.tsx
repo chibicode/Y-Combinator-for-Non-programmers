@@ -6,13 +6,15 @@ import BorderWrapper, { BorderWrapperProps } from 'src/components/BorderWrapper'
 import CallExpressionBox from 'src/components/CallExpressionBox'
 import RepeatExpressionBox from 'src/components/RepeatExpressionBox'
 import FunctionExpressionBox from 'src/components/FunctionExpressionBox'
+import BinaryExpressionBox from 'src/components/BinaryExpressionBox'
 import VariableExpressionBox from 'src/components/VariableExpressionBox'
 import ConditionalExpressionBox from 'src/components/ConditionalExpressionBox'
 import {
   isCall,
   isVariable,
   isFunction,
-  isConditional
+  isConditional,
+  isBinary
 } from 'src/lib/expressionTypeGuards'
 import { Expression } from 'src/types/ExpressionTypes'
 import ExpressionRunnerContext from 'src/components/ExpressionRunnerContext'
@@ -93,6 +95,8 @@ const ExpressionBox = ({ expression, topLevel }: ExpressionBoxProps) => {
               return <FunctionExpressionBox expression={expression} />
             } else if (isConditional(expression)) {
               return <ConditionalExpressionBox expression={expression} />
+            } else if (isBinary(expression)) {
+              return <BinaryExpressionBox expression={expression} />
             } else {
               return <RepeatExpressionBox expression={expression} />
             }

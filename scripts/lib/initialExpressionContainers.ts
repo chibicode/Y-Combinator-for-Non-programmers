@@ -2143,50 +2143,6 @@ export const rovo = initializeExpressionContainer([
   }
 ])
 
-export const kjff = initializeExpressionContainer([
-  yCombinator,
-  {
-    arg: 'a',
-    body: {
-      arg: 'f',
-      body: {
-        checkType: 'isZero',
-        condition: 'f',
-        trueCase: { shorthandNumber: 1 },
-        falseCase: ['mult', 'f', ['a', [{ shorthandFunc: 'pred' }, 'f']]]
-      }
-    }
-  },
-  {
-    shorthandNumber: 4,
-    initialHighlight: true
-  }
-])
-
-export const zxdz = initializeExpressionContainer([
-  yCombinatorHighlighted,
-  {
-    arg: 'a',
-    body: {
-      arg: 'f',
-      body: {
-        checkType: 'isZero',
-        condition: 'f',
-        trueCase: { shorthandNumber: 1 },
-        falseCase: [
-          { name: 'mult', highlighted: true },
-          'f',
-          ['a', [{ shorthandFunc: 'pred' }, 'f']]
-        ]
-      }
-    }
-  },
-  {
-    shorthandNumber: 3,
-    initialHighlight: true
-  }
-])
-
 export const glvb = initializeExpressionContainer([
   {
     arg: 'A',
@@ -2249,17 +2205,6 @@ export const nndd = initializeDoneExpressionContainer({
   shorthandFunc: 'add'
 })
 
-export const uiwq = initializeExpressionContainer({
-  checkType: 'isZero',
-  condition: 'f',
-  trueCase: { shorthandNumber: 1, initialHighlight: true },
-  falseCase: [
-    { name: 'mult', highlighted: true },
-    { name: 'f', highlighted: true },
-    ['a', [{ shorthandFunc: 'pred' }, 'f']]
-  ]
-})
-
 export const roso = initializeExpressionContainer({
   checkType: 'isZero',
   condition: 'f',
@@ -2270,14 +2215,158 @@ export const roso = initializeExpressionContainer({
   ]
 })
 
-export const xfso = initializeExpressionContainer([
-  [
-    { name: 'mult', highlighted: true },
-    {
-      shorthandNumberAfterConvert: 'binarySecond'
-    }
-  ],
-  {
-    shorthandNumberAfterConvert: 'binaryFirst'
+export const ygum = initializeExpressionContainer({
+  binaryType: 'multiply',
+  first: 'blankNumberPurple',
+  second: 'blankNumberPink'
+})
+
+export const babw = initializeExpressionContainer({
+  binaryType: 'multiply',
+  first: {
+    shorthandNumber: 2
+  },
+  second: {
+    shorthandNumber: 3
   }
+})
+
+export const krin = initializeExpressionContainer({
+  binaryType: 'multiply',
+  first: {
+    binaryType: 'multiply',
+    first: {
+      shorthandNumber: 2
+    },
+    second: {
+      shorthandNumber: 3
+    }
+  },
+  second: {
+    shorthandNumber: 4
+  }
+})
+
+export const hbzd = initializeExpressionContainer({
+  checkType: 'isZero',
+  condition: [{ shorthandFunc: 'pred' }, 'f'],
+  trueCase: { shorthandNumber: 1 },
+  falseCase: {
+    binaryType: 'multiply',
+    first: ['a', [{ shorthandFunc: 'pred' }, 'f']],
+    second: 'f'
+  }
+})
+
+export const bgid = initializeExpressionContainer([
+  yCombinatorHighlighted,
+  {
+    arg: highlighted('a'),
+    body: {
+      arg: highlighted('f'),
+      body: {
+        checkType: 'isZero',
+        condition: [{ shorthandFunc: 'pred' }, 'f'],
+        trueCase: { shorthandNumber: 1 },
+        falseCase: {
+          binaryType: 'multiply',
+          first: ['a', [{ shorthandFunc: 'pred' }, 'f']],
+          second: 'f'
+        }
+      }
+    }
+  }
+])
+
+export const jypn = initializeExpressionContainer([
+  yCombinator,
+  {
+    arg: 'a',
+    body: {
+      arg: 'f',
+      body: {
+        checkType: 'isZero',
+        condition: [{ shorthandFunc: 'pred' }, 'f'],
+        trueCase: { shorthandNumber: 1 },
+        falseCase: {
+          binaryType: 'multiply',
+          first: ['a', [{ shorthandFunc: 'pred' }, 'f']],
+          second: 'f'
+        }
+      }
+    }
+  },
+  {
+    shorthandNumber: 3,
+    initialHighlight: true
+  }
+])
+
+export const jvmi = initializeExpressionContainer([
+  yCombinator,
+  {
+    arg: 'a',
+    body: {
+      arg: 'f',
+      body: {
+        checkType: 'isZero',
+        condition: [{ shorthandFunc: 'pred' }, 'f'],
+        trueCase: { shorthandNumber: 1 },
+        falseCase: {
+          binaryType: 'multiply',
+          first: ['a', [{ shorthandFunc: 'pred' }, 'f']],
+          second: 'f'
+        }
+      }
+    }
+  },
+  {
+    shorthandNumber: 4,
+    initialHighlight: true
+  }
+])
+
+export const bzpj = initializeExpressionContainer([
+  yCombinator,
+  {
+    arg: 'a',
+    body: {
+      arg: 'f',
+      body: {
+        checkType: 'isZero',
+        condition: [{ shorthandFunc: 'pred' }, 'f'],
+        trueCase: { shorthandNumber: 1 },
+        falseCase: {
+          binaryType: 'multiply',
+          first: ['a', [{ shorthandFunc: 'pred' }, 'f']],
+          second: 'f'
+        }
+      }
+    }
+  },
+  {
+    shorthandNumber: 5,
+    initialHighlight: true
+  }
+])
+
+export const abhd = initializeExpressionContainer([
+  yCombinator,
+  {
+    arg: 'a',
+    body: {
+      arg: 'f',
+      body: {
+        checkType: 'isZero',
+        condition: [{ shorthandFunc: 'pred' }, 'f'],
+        trueCase: { shorthandNumber: 1 },
+        falseCase: {
+          binaryType: 'multiply',
+          first: ['a', [{ shorthandFunc: 'pred' }, 'f']],
+          second: 'f'
+        }
+      }
+    }
+  },
+  { name: 'blankNumber', highlighted: true }
 ])

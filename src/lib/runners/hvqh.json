@@ -1,8 +1,6 @@
 {
   "expressionContainers": [
     {
-      "containerState": "ready",
-      "previouslyChangedExpressionState": "default",
       "expression": {
         "arg": {
           "name": "l",
@@ -13,7 +11,8 @@
           "argPriorityAgg": [],
           "funcPriorityAgg": [],
           "emphasizePriority": false,
-          "bound": false
+          "bound": false,
+          "maxNestedFunctionDepth": 0
         },
         "body": {
           "name": "n",
@@ -24,18 +23,21 @@
           "argPriorityAgg": [],
           "funcPriorityAgg": [],
           "emphasizePriority": false,
-          "bound": true
+          "bound": true,
+          "maxNestedFunctionDepth": 0
         },
-        "type": "function"
-      }
+        "type": "function",
+        "maxNestedFunctionDepth": 1
+      },
+      "numLeafNodes": 1,
+      "containerState": "ready",
+      "previouslyChangedExpressionState": "default"
     }
   ],
   "speed": 1,
   "hideControls": true,
   "explanationsVisibility": "hidden",
   "hidePriorities": true,
-  "variableSize": "lg",
-  "containerSize": "xxs",
   "hidePlayButton": false,
   "hideBottomRightBadges": false,
   "skipToTheEnd": false,

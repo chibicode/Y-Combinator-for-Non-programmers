@@ -2,14 +2,16 @@ import {
   isCall,
   isVariable,
   isFunction,
-  isConditional
+  isConditional,
+  isBinary
 } from 'src/lib/expressionTypeGuards'
 import {
   CallExpression,
   Expression,
   FunctionExpression,
   VariableExpression,
-  ConditionalExpression
+  ConditionalExpression,
+  BinaryExpression
 } from 'src/types/ExpressionTypes'
 
 export default function replaceCallParentKey(
@@ -36,6 +38,12 @@ export default function replaceCallParentKey(
   key: 'func' | 'arg',
   replaceWith: Expression
 ): ConditionalExpression
+export default function replaceCallParentKey(
+  expression: BinaryExpression,
+  target: CallExpression,
+  key: 'func' | 'arg',
+  replaceWith: Expression
+): BinaryExpression
 export default function replaceCallParentKey(
   expression: VariableExpression | FunctionExpression,
   target: CallExpression,
@@ -95,6 +103,12 @@ export default function replaceCallParentKey(
         key,
         replaceWith
       )
+    }
+  } else if (isBinary(expression)) {
+    return {
+      ...expression,
+      first: replaceCallParentKey(expression.first, target, key, replaceWith),
+      second: replaceCallParentKey(expression.second, target, key, replaceWith)
     }
   } else {
     throw new Error()

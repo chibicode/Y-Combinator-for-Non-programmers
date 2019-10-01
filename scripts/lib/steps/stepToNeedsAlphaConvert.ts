@@ -2,7 +2,8 @@ import {
   isFunction,
   isVariable,
   isCall,
-  isConditional
+  isConditional,
+  isBinary
 } from 'src/lib/expressionTypeGuards'
 import { activeFuncArg } from 'scripts/lib/steps/stepToShowFuncUnbound'
 import {
@@ -17,6 +18,8 @@ import {
   StepChild,
   StepFunction,
   StepVariable,
+  BinaryExpression,
+  StepBinary,
   VariableExpression
 } from 'src/types/ExpressionTypes'
 import { ConflictingNamesToUnusedNames } from 'scripts/lib/getConflictsToUnused'
@@ -36,6 +39,11 @@ export function toNeedsAlphaConvert(
   conflicts: ConflictingNamesToUnusedNames,
   funcSide: boolean
 ): StepConditional<'needsAlphaConvert'>
+export function toNeedsAlphaConvert(
+  e: BinaryExpression,
+  conflicts: ConflictingNamesToUnusedNames,
+  funcSide: boolean
+): StepBinary<'needsAlphaConvert'>
 export function toNeedsAlphaConvert(
   e: CallExpression,
   conflicts: ConflictingNamesToUnusedNames,
@@ -117,6 +125,13 @@ export function toNeedsAlphaConvert(
       condition: toNeedsAlphaConvert(e.condition, conflicts, funcSide),
       trueCase: toNeedsAlphaConvert(e.trueCase, conflicts, funcSide),
       falseCase: toNeedsAlphaConvert(e.falseCase, conflicts, funcSide)
+    }
+  } else if (isBinary(e)) {
+    return {
+      ...e,
+      state: 'default',
+      first: toNeedsAlphaConvert(e.first, conflicts, funcSide),
+      second: toNeedsAlphaConvert(e.second, conflicts, funcSide)
     }
   } else {
     throw new Error()

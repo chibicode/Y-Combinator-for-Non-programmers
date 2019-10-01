@@ -21,6 +21,7 @@ export interface VariableExpression {
     | 'binaryFirst'
     | 'binarySecond'
   readonly shorthandNumberPlusOrMinusOne?: 'plus' | 'minus'
+  readonly maxNestedFunctionDepth?: number
 }
 
 export interface VariableShorthandNumber extends VariableExpression {
@@ -204,6 +205,8 @@ export type ConditionalStates =
   | 'trueCaseActive'
   | 'falseCaseActive'
 
+export type BinaryStates = 'default' | 'active'
+
 // Call state to possible variable state
 export type CallStateToVariableState<C extends CallStates> = C extends 'default'
   ? 'default'
@@ -275,6 +278,7 @@ export interface CallExpression {
   readonly arg: Expression
   readonly func: Expression
   readonly priority: number
+  readonly maxNestedFunctionDepth?: number
 }
 
 export interface FunctionExpression {
@@ -282,6 +286,7 @@ export interface FunctionExpression {
   readonly arg: VariableExpression
   readonly body: Expression
   readonly meta?: 'focused' | 'plusOneEffect' | 'minusOneEffect'
+  readonly maxNestedFunctionDepth?: number
 }
 
 export interface ConditionalExpression {
@@ -292,6 +297,17 @@ export interface ConditionalExpression {
   readonly falseCase: Expression
   readonly priority: number
   readonly state: ConditionalStates
+  readonly maxNestedFunctionDepth?: number
+}
+
+export interface BinaryExpression {
+  readonly type: 'binary'
+  readonly binaryType: 'multiply'
+  readonly first: Expression
+  readonly second: Expression
+  readonly priority: number
+  readonly state: BinaryStates
+  readonly maxNestedFunctionDepth?: number
 }
 
 export interface RepeatExpression {
@@ -299,6 +315,7 @@ export interface RepeatExpression {
   readonly child: Expression
   readonly count?: number
   readonly countVariable?: VariableNames
+  readonly maxNestedFunctionDepth?: number
 }
 
 export type Expression =
@@ -307,6 +324,7 @@ export type Expression =
   | FunctionExpression
   | ConditionalExpression
   | RepeatExpression
+  | BinaryExpression
 
 type FunctionWithArgBody<
   A extends VariableExpression,
@@ -325,6 +343,15 @@ type NonExecutableConditional<
   readonly condition: C
   readonly trueCase: T
   readonly falseCase: F
+}
+
+type NonExecutableBinary<
+  A extends Expression,
+  B extends Expression
+> = BinaryExpression & {
+  readonly state: 'default'
+  readonly first: A
+  readonly second: B
 }
 
 type NonExecutable<E extends Expression> = CallExpression & {
@@ -368,6 +395,17 @@ type ExecutableConditionalNumber<
     readonly state: S
   })
 
+type ExecutableBinaryNumber<
+  A extends VariableShorthandNumber,
+  B extends VariableShorthandNumber,
+  S extends BinaryStates
+> = BinaryExpression &
+  ({
+    readonly first: A
+    readonly second: B
+    readonly state: S
+  })
+
 export type StepVariable<C extends CallStates = 'default'> = VariableWithState<
   CallStateToVariableState<C>
 >
@@ -379,6 +417,8 @@ export type StepVariableShorthandFunc<
 > = VariableWithStateShorthandFunc<CallStateToVariableState<C>>
 export interface StepConditional<C extends CallStates = 'default'>
   extends NonExecutableConditional<StepChild<C>, StepChild<C>, StepChild<C>> {}
+export interface StepBinary<C extends CallStates = 'default'>
+  extends NonExecutableBinary<StepChild<C>, StepChild<C>> {}
 export interface StepFunction<C extends CallStates = 'default'>
   extends FunctionWithArgBody<StepVariable<C>, StepChild<C>> {}
 
@@ -402,12 +442,22 @@ export interface ExecutableStepConditional<
     StepChild<C>,
     S
   > {}
+export interface ExecutableStepBinary<
+  C extends CallStates = 'default',
+  S extends BinaryStates = 'default'
+>
+  extends ExecutableBinaryNumber<
+    VariableWithStateShorthandNumber<CallStateToVariableState<C>>,
+    VariableWithStateShorthandNumber<CallStateToVariableState<C>>,
+    S
+  > {}
 export type StepChild<C extends CallStates = 'default'> =
   | StepVariable<C>
   | StepFunction<C>
   | StepConditional<C>
   | NonExecutableStepCall<C>
   | RepeatExpression
+  | StepBinary<C>
 
 // Map from a union type to another union type
 // https://stackoverflow.com/a/51691257/114157
@@ -438,4 +488,20 @@ type DistributeExecutableConditionalStates<S> = S extends ConditionalStates
 
 export type ExecutableConditionalStatesDistributed = DistributeExecutableConditionalStates<
   ConditionalStates
+>
+
+type DistributeStepBinary<U, S extends BinaryStates> = U extends CallStates
+  ? ExecutableStepBinary<U, S>
+  : never
+
+export type ExecutableBinary<
+  S extends BinaryStates = 'default'
+> = DistributeStepBinary<CallStates, S>
+
+type DistributeExecutableBinaryStates<S> = S extends BinaryStates
+  ? ExecutableBinary<S>
+  : never
+
+export type ExecutableBinaryStatesDistributed = DistributeExecutableBinaryStates<
+  BinaryStates
 >

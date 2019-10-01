@@ -3,7 +3,9 @@ import {
   isExecutableCall,
   isFunction,
   isConditional,
-  isExecutableConditional
+  isExecutableConditional,
+  isBinary,
+  isExecutableBinary
 } from 'src/lib/expressionTypeGuards'
 import {
   CallExpression,
@@ -11,15 +13,22 @@ import {
   Expression,
   FunctionExpression,
   ExecutableConditional,
-  ConditionalExpression
+  ConditionalExpression,
+  BinaryExpression,
+  ExecutableBinary
 } from 'src/types/ExpressionTypes'
 
 export interface FindResult {
-  readonly expression?: ExecutableCall | ExecutableConditional
+  readonly expression?:
+    | ExecutableCall
+    | ExecutableConditional
+    | ExecutableBinary
   readonly callParent?: CallExpression
   readonly funcParent?: FunctionExpression
   readonly conditionalParent?: ConditionalExpression
+  readonly binaryParent?: BinaryExpression
   readonly callParentKey?: 'func' | 'arg'
+  readonly binaryParentKey?: 'first' | 'second'
 }
 
 /**
@@ -31,12 +40,16 @@ function helper({
   expression,
   conditionalParent,
   callParent,
-  callParentKey
+  callParentKey,
+  binaryParent,
+  binaryParentKey
 }: {
-  expression: CallExpression | ConditionalExpression
+  expression: CallExpression | ConditionalExpression | BinaryExpression
   conditionalParent?: ConditionalExpression
+  binaryParent?: BinaryExpression
   callParent?: CallExpression
   callParentKey?: 'func' | 'arg'
+  binaryParentKey?: 'first' | 'second'
 }): FindResult {
   if (isCall(expression)) {
     if (isExecutableCall(expression)) {
@@ -44,7 +57,9 @@ function helper({
         expression,
         callParent,
         callParentKey,
-        conditionalParent
+        binaryParentKey,
+        conditionalParent,
+        binaryParent
       }
     }
 
@@ -69,20 +84,67 @@ function helper({
         return result
       }
     }
-  } else {
+  } else if (isConditional(expression)) {
     if (isExecutableConditional(expression)) {
       return {
         expression,
         callParent,
         callParentKey,
-        conditionalParent
+        binaryParentKey,
+        conditionalParent,
+        binaryParent
       }
     }
 
-    if (isCall(expression.condition) || isConditional(expression.condition)) {
+    if (
+      isCall(expression.condition) ||
+      isConditional(expression.condition) ||
+      isBinary(expression.condition)
+    ) {
       const result: FindResult = helper({
         expression: expression.condition,
         conditionalParent: expression
+      })
+      if (result.expression) {
+        return result
+      }
+    }
+  } else {
+    if (isExecutableBinary(expression)) {
+      return {
+        expression,
+        callParent,
+        callParentKey,
+        binaryParentKey,
+        conditionalParent,
+        binaryParent
+      }
+    }
+
+    if (
+      isCall(expression.first) ||
+      isConditional(expression.first) ||
+      isBinary(expression.first)
+    ) {
+      const result: FindResult = helper({
+        expression: expression.first,
+        binaryParent: expression,
+        binaryParentKey: 'first'
+      })
+      if (result.expression) {
+        return result
+      }
+    }
+
+    if (
+      isCall(expression.second) ||
+      isConditional(expression.second) ||
+      isBinary(expression.second)
+    ) {
+      const result: FindResult = helper({
+        expression: expression.second,
+        binaryParent: expression,
+        binaryParentKey: 'second'
       })
       if (result.expression) {
         return result
@@ -94,11 +156,11 @@ function helper({
   return notFound
 }
 
-export default function findNextCallExpressionAndParent(
+export default function findNextExecutableAndParent(
   expression: Expression
 ): FindResult {
   const notFound: FindResult = {}
-  if (isCall(expression) || isConditional(expression)) {
+  if (isCall(expression) || isConditional(expression) || isBinary(expression)) {
     return helper({ expression })
   } else if (isFunction(expression)) {
     let currentExpression: Expression = expression
@@ -107,11 +169,19 @@ export default function findNextCallExpressionAndParent(
       previousExpression = currentExpression
       currentExpression = currentExpression.body
     }
-    if (isCall(currentExpression) || isConditional(currentExpression)) {
+    if (
+      isCall(currentExpression) ||
+      isConditional(currentExpression) ||
+      isBinary(currentExpression)
+    ) {
       const helperResult = helper({
         expression: currentExpression
       })
-      if (helperResult.callParent || helperResult.conditionalParent) {
+      if (
+        helperResult.callParent ||
+        helperResult.conditionalParent ||
+        helperResult.binaryParent
+      ) {
         return helperResult
       } else if (previousExpression) {
         return {

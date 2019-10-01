@@ -946,32 +946,27 @@ export const yjur: ExpressionRunnerShorthandConfig = {
 
 export const amoq: ExpressionRunnerShorthandConfig = {
   runner: 'playButtonOnly',
-  initialExpressionContainer: initialExpressionContainers.rnth,
-  variableSize: 'md'
+  initialExpressionContainer: initialExpressionContainers.rnth
 }
 
 export const dfjp: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
-  initialExpressionContainer: initialExpressionContainers.bwig,
-  variableSize: 'md'
+  initialExpressionContainer: initialExpressionContainers.bwig
 }
 
 export const lxrk: ExpressionRunnerShorthandConfig = {
   runner: 'playButtonOnly',
-  initialExpressionContainer: initialExpressionContainers.bwig,
-  variableSize: 'md'
+  initialExpressionContainer: initialExpressionContainers.bwig
 }
 
 export const sucz: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
-  initialExpressionContainer: initialExpressionContainers.bmar,
-  variableSize: 'md'
+  initialExpressionContainer: initialExpressionContainers.bmar
 }
 
 export const xlgb: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
-  initialExpressionContainer: initialExpressionContainers.dacg,
-  variableSize: 'md'
+  initialExpressionContainer: initialExpressionContainers.dacg
 }
 
 export const pgxb: ExpressionRunnerShorthandConfig = {
@@ -992,13 +987,11 @@ export const ednv: ExpressionRunnerShorthandConfig = {
 
 export const xpks: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
-  variableSize: 'md',
   initialExpressionContainer: initialExpressionContainers.dams
 }
 
 export const dgpx: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
-  variableSize: 'md',
   initialExpressionContainer: initialExpressionContainers.yvfc
 }
 
@@ -1100,8 +1093,7 @@ export const jguj: ExpressionRunnerShorthandConfig = {
 export const fljg: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   initialExpressionContainer: initialExpressionContainers.szos,
-  showPriorities: true,
-  variableSize: 'md'
+  showPriorities: true
 }
 
 export const ezmz: ExpressionRunnerShorthandConfig = {
@@ -1111,7 +1103,6 @@ export const ezmz: ExpressionRunnerShorthandConfig = {
     initialExpressionContainers.hdpc
   ],
   showPriorities: true,
-  variableSize: 'md',
   convert: 'toMathBoxPlay'
 }
 
@@ -1124,9 +1115,7 @@ export const biit: ExpressionRunnerShorthandConfig = {
 export const pbop: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   initialExpressionContainer: initialExpressionContainers.vemg,
-  showPriorities: true,
-  containerSize: 'xs',
-  variableSize: 'md'
+  showPriorities: true
 }
 
 export const fxde: ExpressionRunnerShorthandConfig = {
@@ -1165,8 +1154,7 @@ export const spga: ExpressionRunnerShorthandConfig = {
 export const akug: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   initialExpressionContainer: initialExpressionContainers.pxae,
-  showPriorities: true,
-  variableSize: 'md'
+  showPriorities: true
 }
 
 export const vfdw: ExpressionRunnerShorthandConfig = {
@@ -1176,22 +1164,19 @@ export const vfdw: ExpressionRunnerShorthandConfig = {
     initialExpressionContainers.qjcv
   ],
   showPriorities: true,
-  variableSize: 'md',
   convert: 'toMathBoxPlay'
 }
 
 export const jiua: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   initialExpressionContainer: initialExpressionContainers.glmd,
-  showPriorities: true,
-  variableSize: 'md'
+  showPriorities: true
 }
 
 export const aone: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   initialExpressionContainer: initialExpressionContainers.kgoi,
-  showPriorities: true,
-  variableSize: 'md'
+  showPriorities: true
 }
 
 export const qsoa: ExpressionRunnerShorthandConfig = {
@@ -1203,8 +1188,7 @@ export const qsoa: ExpressionRunnerShorthandConfig = {
 export const qrgc: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   initialExpressionContainer: initialExpressionContainers.cyhx,
-  showPriorities: true,
-  variableSize: 'md'
+  showPriorities: true
 }
 
 export const jxvy: ExpressionRunnerShorthandConfig = {
@@ -1229,50 +1213,43 @@ export const olyw: ExpressionRunnerShorthandConfig = {
 export const tjaf: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   initialExpressionContainer: initialExpressionContainers.bjzr,
-  showPriorities: true,
-  variableSize: 'md'
+  showPriorities: true
 }
 
 export const avcu: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   initialExpressionContainer: initialExpressionContainers.wgtz,
-  showPriorities: true,
-  variableSize: 'md'
+  showPriorities: true
 }
 
 export const dewi: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   initialExpressionContainer: initialExpressionContainers.jrur,
-  showPriorities: true,
-  variableSize: 'md'
+  showPriorities: true
 }
 
 export const xxan: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   initialExpressionContainer: initialExpressionContainers.utur,
-  showPriorities: true,
-  variableSize: 'md'
+  showPriorities: true
 }
 
 export const omwd: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   initialExpressionContainer: initialExpressionContainers.drbs,
-  showPriorities: true,
-  variableSize: 'md'
+  showPriorities: true
 }
 
 export const nuco: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   initialExpressionContainer: initialExpressionContainers.kwqc,
-  showPriorities: true,
-  variableSize: 'md'
+  showPriorities: true
 }
 
 export const dhiu: ExpressionRunnerShorthandConfig = {
   runner: 'playButtonOnly',
   initialExpressionContainer: initialExpressionContainers.kwqc,
   skipToTheEnd: false,
-  variableSize: 'md',
   showPriorities: true,
   initialState: 'active',
   lastAllowedExpressionState: 'default'
@@ -1282,7 +1259,6 @@ export const akjy: ExpressionRunnerShorthandConfig = {
   runner: 'playButtonOnly',
   initialExpressionContainer: initialExpressionContainers.kwqc,
   skipToTheEnd: false,
-  variableSize: 'md',
   showPriorities: true,
   initialState: 'active',
   lastAllowedExpressionState: 'default',
@@ -1293,7 +1269,6 @@ export const hnyn: ExpressionRunnerShorthandConfig = {
   runner: 'playButtonOnly',
   initialExpressionContainer: initialExpressionContainers.kwqc,
   skipToTheEnd: false,
-  variableSize: 'md',
   showPriorities: true,
   initialState: 'active',
   nextIterations: 2
@@ -1337,15 +1312,13 @@ export const qrfw: ExpressionRunnerShorthandConfig = {
 export const plde: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   initialExpressionContainer: initialExpressionContainers.uqth,
-  showPriorities: true,
-  variableSize: 'md'
+  showPriorities: true
 }
 
 export const rjzw: ExpressionRunnerShorthandConfig = {
   runner: 'playButtonOnly',
   initialExpressionContainer: initialExpressionContainers.uqth,
   showPriorities: true,
-  variableSize: 'md',
   skipToTheEnd: false
 }
 
@@ -1353,7 +1326,6 @@ export const jsvg: ExpressionRunnerShorthandConfig = {
   runner: 'playButtonOnly',
   initialExpressionContainer: initialExpressionContainers.uqth,
   showPriorities: true,
-  variableSize: 'md',
   skipToTheEnd: false,
   initialState: 'active',
   lastAllowedExpressionState: 'default'
@@ -1363,7 +1335,6 @@ export const uexo: ExpressionRunnerShorthandConfig = {
   runner: 'playButtonOnly',
   initialExpressionContainer: initialExpressionContainers.uqth,
   showPriorities: true,
-  variableSize: 'md',
   skipToTheEnd: false,
   initialState: 'active',
   lastAllowedExpressionState: 'default',
@@ -1374,7 +1345,6 @@ export const hdhy: ExpressionRunnerShorthandConfig = {
   runner: 'playButtonOnly',
   initialExpressionContainer: initialExpressionContainers.uqth,
   showPriorities: true,
-  variableSize: 'md',
   skipToTheEnd: false,
   initialState: 'active',
   lastAllowedExpressionState: 'default',
@@ -1398,15 +1368,13 @@ export const rico: ExpressionRunnerShorthandConfig = {
 export const awwn: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   initialExpressionContainer: initialExpressionContainers.ngth,
-  showPriorities: true,
-  variableSize: 'md'
+  showPriorities: true
 }
 
 export const nlbn: ExpressionRunnerShorthandConfig = {
   runner: 'playButtonOnly',
   initialExpressionContainer: initialExpressionContainers.ngth,
   showPriorities: true,
-  variableSize: 'md',
   skipToTheEnd: false
 }
 
@@ -1468,7 +1436,6 @@ export const oqpi: ExpressionRunnerShorthandConfig = {
   runner: 'playButtonOnly',
   initialExpressionContainer: initialExpressionContainers.mtyb,
   showPriorities: true,
-  variableSize: 'md',
   skipToTheEnd: false,
   skipActive: true,
   speed: 1.25
@@ -1478,7 +1445,6 @@ export const zxkq: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   initialExpressionContainer: initialExpressionContainers.wwii,
   showPriorities: true,
-  variableSize: 'md',
   bottomRightBadgeOverrides: { j: '🅱️', i: '🅰️' }
 }
 
@@ -1489,7 +1455,6 @@ export const dyoq: ExpressionRunnerShorthandConfig = {
     initialExpressionContainers.hdpc
   ],
   showPriorities: true,
-  variableSize: 'md',
   convert: 'toMathBoxPlay'
 }
 
@@ -1500,29 +1465,25 @@ export const xhdq: ExpressionRunnerShorthandConfig = {
     initialExpressionContainers.uarl
   ],
   showPriorities: true,
-  variableSize: 'sm',
   convert: 'toMathBoxPlay'
 }
 
 export const nhqo: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   initialExpressionContainer: initialExpressionContainers.orfr,
-  showPriorities: true,
-  variableSize: 'md'
+  showPriorities: true
 }
 
 export const ybne: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   initialExpressionContainer: initialExpressionContainers.qdoh,
-  showPriorities: true,
-  variableSize: 'md'
+  showPriorities: true
 }
 
 export const akik: ExpressionRunnerShorthandConfig = {
   runner: 'playButtonOnly',
   initialExpressionContainer: initialExpressionContainers.qdoh,
   showPriorities: true,
-  variableSize: 'md',
   skipToTheEnd: false,
   skipAlphaConvert: true,
   skipActive: true,
@@ -1547,7 +1508,6 @@ export const exbn: ExpressionRunnerShorthandConfig = {
   runner: 'playButtonOnly',
   initialExpressionContainer: initialExpressionContainers.henz,
   showPriorities: true,
-  variableSize: 'md',
   skipToTheEnd: false,
   skipActive: true,
   speed: 1.25
@@ -1557,7 +1517,6 @@ export const qlcq: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   initialExpressionContainer: initialExpressionContainers.qdoh,
   showPriorities: true,
-  variableSize: 'md',
   initialState: 'showFuncUnbound',
   explanationsVisibility: 'visible'
 }
@@ -1567,7 +1526,6 @@ export const kwyy: ExpressionRunnerShorthandConfig = {
   initialExpressionContainer: initialExpressionContainers.qdoh,
   showPriorities: true,
   initialState: 'showFuncUnbound',
-  variableSize: 'md',
   highlightOverrides: { b: 'highlighted' },
   highlightOverridesCallArgAndFuncUnboundOnly: true,
   highlightOverrideActiveAfterStart: true
@@ -1575,7 +1533,6 @@ export const kwyy: ExpressionRunnerShorthandConfig = {
 
 export const oukl: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
-  variableSize: 'sm',
   initialExpressionContainer: initialExpressionContainers.ycof,
   showPriorities: true,
   initialState: 'showFuncUnbound',
@@ -1585,7 +1542,6 @@ export const oukl: ExpressionRunnerShorthandConfig = {
 
 export const rypq: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
-  variableSize: 'sm',
   initialExpressionContainer: initialExpressionContainers.kipz,
   showPriorities: true,
   initialState: 'showFuncUnbound',
@@ -1595,7 +1551,6 @@ export const rypq: ExpressionRunnerShorthandConfig = {
 
 export const etae: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
-  variableSize: 'sm',
   initialExpressionContainer: initialExpressionContainers.ycof,
   showPriorities: true,
   initialState: 'betaReducePreviewBefore',
@@ -1604,7 +1559,6 @@ export const etae: ExpressionRunnerShorthandConfig = {
 
 export const wqml: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
-  variableSize: 'sm',
   initialExpressionContainer: initialExpressionContainers.kipz,
   showPriorities: true,
   initialState: 'betaReducePreviewBefore',
@@ -1614,7 +1568,6 @@ export const wqml: ExpressionRunnerShorthandConfig = {
 
 export const jwdn: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
-  variableSize: 'sm',
   initialExpressionContainer: initialExpressionContainers.ycof,
   showPriorities: true,
   initialState: 'betaReducePreviewAfter',
@@ -1623,7 +1576,6 @@ export const jwdn: ExpressionRunnerShorthandConfig = {
 
 export const abnp: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
-  variableSize: 'sm',
   initialExpressionContainer: initialExpressionContainers.kipz,
   showPriorities: true,
   initialState: 'betaReducePreviewAfter',
@@ -1632,7 +1584,6 @@ export const abnp: ExpressionRunnerShorthandConfig = {
 
 export const yabb: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
-  variableSize: 'sm',
   initialExpressionContainer: initialExpressionContainers.ycof,
   showPriorities: true,
   initialState: 'betaReducePreviewCrossed',
@@ -1641,7 +1592,6 @@ export const yabb: ExpressionRunnerShorthandConfig = {
 
 export const osff: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
-  variableSize: 'sm',
   initialExpressionContainer: initialExpressionContainers.kipz,
   showPriorities: true,
   initialState: 'betaReducePreviewCrossed',
@@ -1650,7 +1600,6 @@ export const osff: ExpressionRunnerShorthandConfig = {
 
 export const hbbv: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
-  variableSize: 'sm',
   initialExpressionContainer: initialExpressionContainers.ycof,
   showPriorities: true,
   nextIterations: 1,
@@ -1659,7 +1608,6 @@ export const hbbv: ExpressionRunnerShorthandConfig = {
 
 export const fxok: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
-  variableSize: 'sm',
   initialExpressionContainer: initialExpressionContainers.kipz,
   showPriorities: true,
   nextIterations: 1,
@@ -1668,7 +1616,6 @@ export const fxok: ExpressionRunnerShorthandConfig = {
 
 export const lxhc: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
-  variableSize: 'sm',
   initialExpressionContainer: initialExpressionContainers.ycof,
   showPriorities: true,
   nextIterations: 1,
@@ -1678,7 +1625,6 @@ export const lxhc: ExpressionRunnerShorthandConfig = {
 
 export const hvqy: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
-  variableSize: 'sm',
   initialExpressionContainer: initialExpressionContainers.kipz,
   showPriorities: true,
   nextIterations: 1,
@@ -1688,7 +1634,6 @@ export const hvqy: ExpressionRunnerShorthandConfig = {
 
 export const nntn: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
-  variableSize: 'sm',
   initialExpressionContainer: initialExpressionContainers.ycof,
   showPriorities: true,
   nextIterations: 1,
@@ -1698,7 +1643,6 @@ export const nntn: ExpressionRunnerShorthandConfig = {
 
 export const veft: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
-  variableSize: 'sm',
   initialExpressionContainer: initialExpressionContainers.kipz,
   showPriorities: true,
   nextIterations: 1,
@@ -1708,7 +1652,6 @@ export const veft: ExpressionRunnerShorthandConfig = {
 
 export const bdme: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
-  variableSize: 'sm',
   initialExpressionContainer: initialExpressionContainers.kipz,
   showPriorities: true,
   nextIterations: 1,
@@ -1718,7 +1661,6 @@ export const bdme: ExpressionRunnerShorthandConfig = {
 
 export const yxel: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
-  variableSize: 'sm',
   initialExpressionContainer: initialExpressionContainers.ycof,
   showPriorities: true,
   skipAlphaConvert: true,
@@ -1727,7 +1669,6 @@ export const yxel: ExpressionRunnerShorthandConfig = {
 
 export const ivol: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
-  variableSize: 'sm',
   initialExpressionContainer: initialExpressionContainers.kipz,
   showPriorities: true,
   skipAlphaConvert: true,
@@ -1739,7 +1680,6 @@ export const smdm: ExpressionRunnerShorthandConfig = {
   initialExpressionContainer: initialExpressionContainers.qdoh,
   showPriorities: true,
   initialState: 'needsAlphaConvert',
-  variableSize: 'md',
   explanationsVisibility: 'visible'
 }
 
@@ -1748,7 +1688,6 @@ export const niwv: ExpressionRunnerShorthandConfig = {
   initialExpressionContainer: initialExpressionContainers.qdoh,
   showPriorities: true,
   initialState: 'alphaConvertDone',
-  variableSize: 'md',
   explanationsVisibility: 'visible'
 }
 
@@ -1757,7 +1696,6 @@ export const fsgq: ExpressionRunnerShorthandConfig = {
   initialExpressionContainer: initialExpressionContainers.qdoh,
   showPriorities: true,
   initialState: 'alphaConvertDone',
-  variableSize: 'md',
   skipToTheEnd: false,
   skipActive: true,
   speed: 1.25
@@ -1766,9 +1704,7 @@ export const fsgq: ExpressionRunnerShorthandConfig = {
 export const skoo: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   initialExpressionContainer: initialExpressionContainers.guql,
-  showPriorities: true,
-  containerSize: 'xs',
-  variableSize: 'md'
+  showPriorities: true
 }
 
 export const gvxz: ExpressionRunnerShorthandConfig = {
@@ -1780,17 +1716,13 @@ export const gvxz: ExpressionRunnerShorthandConfig = {
 export const xqjd: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   initialExpressionContainer: initialExpressionContainers.xwlj,
-  showPriorities: true,
-  containerSize: 'xs',
-  variableSize: 'md'
+  showPriorities: true
 }
 
 export const cldb: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   initialExpressionContainer: initialExpressionContainers.smxz,
-  showPriorities: true,
-  containerSize: 'xs',
-  variableSize: 'md'
+  showPriorities: true
 }
 
 export const dqdv: ExpressionRunnerShorthandConfig = {
@@ -1803,18 +1735,14 @@ export const dqdv: ExpressionRunnerShorthandConfig = {
 export const ylav: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   initialExpressionContainer: initialExpressionContainers.udaf,
-  showPriorities: true,
-  containerSize: 'xs',
-  variableSize: 'md'
+  showPriorities: true
 }
 
 export const zwut: ExpressionRunnerShorthandConfig = {
   runner: 'playButtonOnly',
   initialExpressionContainer: initialExpressionContainers.udaf,
   showPriorities: true,
-  variableSize: 'md',
   skipToTheEnd: false,
-  containerSize: 'xs',
   lastAllowedExpressionState: 'needsAlphaConvert',
   skipActive: true,
   speed: 1.25
@@ -1824,8 +1752,6 @@ export const xusi: ExpressionRunnerShorthandConfig = {
   runner: 'singleStep',
   initialExpressionContainer: initialExpressionContainers.udaf,
   showPriorities: true,
-  variableSize: 'md',
-  containerSize: 'xs',
   initialState: 'needsAlphaConvert',
   finalState: 'alphaConvertDone',
   explanationsVisibility: 'visible'
@@ -1835,9 +1761,7 @@ export const lipt: ExpressionRunnerShorthandConfig = {
   runner: 'playButtonOnly',
   initialExpressionContainer: initialExpressionContainers.udaf,
   showPriorities: true,
-  variableSize: 'md',
   skipToTheEnd: false,
-  containerSize: 'xs',
   initialState: 'alphaConvertDone',
   skipActive: true,
   speed: 1.25
@@ -1860,18 +1784,14 @@ export const mzys: ExpressionRunnerShorthandConfig = {
 export const zwvj: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   initialExpressionContainer: initialExpressionContainers.lwpw,
-  showPriorities: true,
-  containerSize: 'xs',
-  variableSize: 'sm'
+  showPriorities: true
 }
 
 export const ifiq: ExpressionRunnerShorthandConfig = {
   runner: 'playButtonOnly',
   initialExpressionContainer: initialExpressionContainers.lwpw,
   showPriorities: true,
-  variableSize: 'sm',
   skipToTheEnd: false,
-  containerSize: 'xs',
   skipActive: true,
   speed: 1.75
 }
@@ -1886,17 +1806,13 @@ export const joaq: ExpressionRunnerShorthandConfig = {
 export const rdae: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   initialExpressionContainer: initialExpressionContainers.wosn,
-  showPriorities: true,
-  containerSize: 'xs',
-  variableSize: 'md'
+  showPriorities: true
 }
 
 export const cbmn: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   initialExpressionContainer: initialExpressionContainers.vfwt,
-  showPriorities: true,
-  containerSize: 'xs',
-  variableSize: 'md'
+  showPriorities: true
 }
 
 export const fhkl: ExpressionRunnerShorthandConfig = {
@@ -1906,24 +1822,19 @@ export const fhkl: ExpressionRunnerShorthandConfig = {
     initialExpressionContainers.hdpc
   ],
   showPriorities: true,
-  variableSize: 'sm',
-  containerSize: 'xs',
   convert: 'toMathBoxPlay'
 }
 
 export const eweo: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   initialExpressionContainer: initialExpressionContainers.yvkr,
-  showPriorities: true,
-  variableSize: 'md'
+  showPriorities: true
 }
 
 export const bgko: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   initialExpressionContainer: initialExpressionContainers.whey,
-  showPriorities: true,
-  variableSize: 'sm',
-  containerSize: 'xs'
+  showPriorities: true
 }
 
 export const jehv: ExpressionRunnerShorthandConfig = {
@@ -1931,8 +1842,7 @@ export const jehv: ExpressionRunnerShorthandConfig = {
   initialExpressionContainers: [
     initialExpressionContainers.ptsa,
     initialExpressionContainers.qefa
-  ],
-  variableSize: 'md'
+  ]
 }
 
 export const rhoa: ExpressionRunnerShorthandConfig = {
@@ -1943,17 +1853,13 @@ export const rhoa: ExpressionRunnerShorthandConfig = {
 export const sdta: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   initialExpressionContainer: initialExpressionContainers.cmay,
-  showPriorities: true,
-  variableSize: 'md',
-  containerSize: 'xs'
+  showPriorities: true
 }
 
 export const hhjq: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   initialExpressionContainer: initialExpressionContainers.rpcm,
-  showPriorities: true,
-  variableSize: 'md',
-  containerSize: 'xs'
+  showPriorities: true
 }
 
 export const dqwh: ExpressionRunnerShorthandConfig = {
@@ -1988,8 +1894,6 @@ export const nmrp: ExpressionRunnerShorthandConfig = {
   skipToTheEnd: false,
   initialExpressionContainer: initialExpressionContainers.psdd,
   showPriorities: true,
-  variableSize: 'md',
-  containerSize: 'xs',
   skipActive: true,
   speed: 1.25
 }
@@ -1997,17 +1901,13 @@ export const nmrp: ExpressionRunnerShorthandConfig = {
 export const ycpk: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   initialExpressionContainer: initialExpressionContainers.zcia,
-  showPriorities: true,
-  variableSize: 'md',
-  containerSize: 'xs'
+  showPriorities: true
 }
 
 export const bndi: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   initialExpressionContainer: initialExpressionContainers.qrvj,
-  showPriorities: true,
-  variableSize: 'md',
-  containerSize: 'xs'
+  showPriorities: true
 }
 
 export const ooya: ExpressionRunnerShorthandConfig = {
@@ -2022,8 +1922,6 @@ export const gpat: ExpressionRunnerShorthandConfig = {
   skipToTheEnd: false,
   initialExpressionContainer: initialExpressionContainers.nnqw,
   showPriorities: true,
-  variableSize: 'md',
-  containerSize: 'xs',
   skipActive: true,
   speed: 1.25
 }
@@ -2031,17 +1929,13 @@ export const gpat: ExpressionRunnerShorthandConfig = {
 export const psyv: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   initialExpressionContainer: initialExpressionContainers.vwpl,
-  showPriorities: true,
-  variableSize: 'md',
-  containerSize: 'xs'
+  showPriorities: true
 }
 
 export const kiiq: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   initialExpressionContainer: initialExpressionContainers.xgur,
-  showPriorities: true,
-  variableSize: 'md',
-  containerSize: 'xs'
+  showPriorities: true
 }
 
 export const zdpf: ExpressionRunnerShorthandConfig = {
@@ -2052,9 +1946,7 @@ export const zdpf: ExpressionRunnerShorthandConfig = {
 export const jbqw: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   initialExpressionContainer: initialExpressionContainers.eryp,
-  showPriorities: true,
-  variableSize: 'md',
-  containerSize: 'xs'
+  showPriorities: true
 }
 
 export const svbd: ExpressionRunnerShorthandConfig = {
@@ -2062,8 +1954,6 @@ export const svbd: ExpressionRunnerShorthandConfig = {
   skipToTheEnd: false,
   initialExpressionContainer: initialExpressionContainers.zmua,
   showPriorities: true,
-  variableSize: 'sm',
-  containerSize: 'xs',
   skipActive: true,
   speed: 1.5
 }
@@ -2078,25 +1968,19 @@ export const oclg: ExpressionRunnerShorthandConfig = {
 export const fton: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   initialExpressionContainer: initialExpressionContainers.lcce,
-  showPriorities: true,
-  variableSize: 'md',
-  containerSize: 'xs'
+  showPriorities: true
 }
 
 export const bnyo: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   initialExpressionContainer: initialExpressionContainers.gbbo,
-  showPriorities: true,
-  variableSize: 'xxs',
-  containerSize: 'xs'
+  showPriorities: true
 }
 
 export const dpaw: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   initialExpressionContainer: initialExpressionContainers.gbbo,
   showPriorities: true,
-  variableSize: 'xxs',
-  containerSize: 'xs',
   highlightOverrides: {
     l: 'highlighted',
     m: 'highlighted',
@@ -2122,17 +2006,13 @@ export const vhte: ExpressionRunnerShorthandConfig = {
 export const wgby: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   initialExpressionContainer: initialExpressionContainers.aqul,
-  showPriorities: true,
-  variableSize: 'xs',
-  containerSize: 'xs'
+  showPriorities: true
 }
 
 export const poha: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   initialExpressionContainer: initialExpressionContainers.snye,
   showPriorities: true,
-  variableSize: 'xs',
-  containerSize: 'xs',
   highlightOverrides: {
     i: 'highlighted',
     j: 'highlighted',
@@ -2143,24 +2023,19 @@ export const poha: ExpressionRunnerShorthandConfig = {
 export const vcqp: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   initialExpressionContainer: initialExpressionContainers.aqvq,
-  showPriorities: true,
-  variableSize: 'md'
+  showPriorities: true
 }
 
 export const cpdy: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   initialExpressionContainer: initialExpressionContainers.abrk,
-  showPriorities: true,
-  variableSize: 'sm',
-  containerSize: 'xs'
+  showPriorities: true
 }
 
 export const lxgj: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   initialExpressionContainer: initialExpressionContainers.xskc,
   showPriorities: true,
-  variableSize: 'sm',
-  containerSize: 'xs',
   highlightOverrides: {
     a: 'highlighted',
     b: 'highlighted',
@@ -2173,44 +2048,36 @@ export const lxgj: ExpressionRunnerShorthandConfig = {
 export const wenx: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   initialExpressionContainer: initialExpressionContainers.gxhl,
-  showPriorities: true,
-  variableSize: 'sm',
-  containerSize: 'xs'
+  showPriorities: true
 }
 
 export const vlhb: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   initialExpressionContainer: initialExpressionContainers.cmay,
-  showPriorities: true,
-  variableSize: 'sm',
-  containerSize: 'xs'
+  showPriorities: true
 }
 
 export const ruou: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
-  initialExpressionContainer: initialExpressionContainers.anme,
-  variableSize: 'md'
+  initialExpressionContainer: initialExpressionContainers.anme
 }
 
 export const awbq: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   initialExpressionContainer: initialExpressionContainers.exoq,
-  showPriorities: true,
-  variableSize: 'md'
+  showPriorities: true
 }
 
 export const crvj: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   initialExpressionContainer: initialExpressionContainers.oyzh,
-  showPriorities: true,
-  variableSize: 'md'
+  showPriorities: true
 }
 
 export const ghwe: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   initialExpressionContainer: initialExpressionContainers.aiyb,
-  showPriorities: true,
-  variableSize: 'md'
+  showPriorities: true
 }
 
 export const gmzn: ExpressionRunnerShorthandConfig = {
@@ -2219,7 +2086,6 @@ export const gmzn: ExpressionRunnerShorthandConfig = {
   skipActive: true,
   initialExpressionContainer: initialExpressionContainers.aiyb,
   showPriorities: true,
-  variableSize: 'md',
   lastAllowedExpressionState: 'default'
 }
 
@@ -2229,7 +2095,6 @@ export const uiwl: ExpressionRunnerShorthandConfig = {
   skipActive: true,
   initialExpressionContainer: initialExpressionContainers.aiyb,
   showPriorities: true,
-  variableSize: 'md',
   nextIterations: 1
 }
 
@@ -2239,17 +2104,14 @@ export const ynoy: ExpressionRunnerShorthandConfig = {
   speed: 4,
   skipActive: true,
   initialExpressionContainer: initialExpressionContainers.gbbo,
-  showPriorities: true,
-  variableSize: 'xxs',
-  containerSize: 'xs'
+  showPriorities: true
 }
 
 export const gmgs: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   initialExpressionContainer: initialExpressionContainers.teba,
   showPriorities: true,
-  bottomRightBadgeOverrides: { j: '🅰️', k: '🅱️' },
-  variableSize: 'md'
+  bottomRightBadgeOverrides: { j: '🅰️', k: '🅱️' }
 }
 
 export const ykqf: ExpressionRunnerShorthandConfig = {
@@ -2268,51 +2130,40 @@ export const cefx: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   initialExpressionContainer: initialExpressionContainers.xlrf,
   showPriorities: true,
-  variableSize: 'xs',
-  containerSize: 'xs',
   highlightOverrides: { a: 'highlighted', b: 'highlighted' }
 }
 
 export const kjba: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   initialExpressionContainer: initialExpressionContainers.jrfk,
-  showPriorities: true,
-  variableSize: 'xs',
-  containerSize: 'xs'
+  showPriorities: true
 }
 
 export const htir: ExpressionRunnerShorthandConfig = {
   runner: 'playButtonOnly',
   initialExpressionContainer: initialExpressionContainers.jrfk,
-  showPriorities: true,
-  variableSize: 'xs',
-  containerSize: 'xs'
+  showPriorities: true
 }
 
 export const peiy: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   initialExpressionContainer: initialExpressionContainers.aqni,
-  showPriorities: true,
-  variableSize: 'xs',
-  containerSize: 'xs'
+  showPriorities: true
 }
 
 export const voeb: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
-  initialExpressionContainer: initialExpressionContainers.guxy,
-  variableSize: 'md'
+  initialExpressionContainer: initialExpressionContainers.guxy
 }
 
 export const deay: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
-  initialExpressionContainer: initialExpressionContainers.uqte,
-  variableSize: 'md'
+  initialExpressionContainer: initialExpressionContainers.uqte
 }
 
 export const mbje: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
-  initialExpressionContainer: initialExpressionContainers.uxvq,
-  variableSize: 'md'
+  initialExpressionContainer: initialExpressionContainers.uxvq
 }
 
 export const ovua: ExpressionRunnerShorthandConfig = {
@@ -2321,8 +2172,6 @@ export const ovua: ExpressionRunnerShorthandConfig = {
   skipActive: true,
   initialExpressionContainer: initialExpressionContainers.jrfk,
   showPriorities: true,
-  variableSize: 'xxxs',
-  containerSize: 'xs',
   lastAllowedExpressionState: 'default',
   lastAllowedExpressionStateAfterIterations: 3,
   speed: 1.75
@@ -2333,8 +2182,6 @@ export const bras: ExpressionRunnerShorthandConfig = {
   skipActive: true,
   initialExpressionContainer: initialExpressionContainers.jrfk,
   showPriorities: true,
-  variableSize: 'xxxs',
-  containerSize: 'xs',
   nextIterations: 4,
   highlightFunctions: true
 }
@@ -2344,7 +2191,6 @@ export const yyfi: ExpressionRunnerShorthandConfig = {
   skipActive: true,
   initialExpressionContainer: initialExpressionContainers.reak,
   showPriorities: true,
-  variableSize: 'sm',
   highlightOverrides: { bentoBox: 'highlighted' }
 }
 
@@ -2352,8 +2198,7 @@ export const amjx: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   skipActive: true,
   initialExpressionContainer: initialExpressionContainers.edye,
-  showPriorities: true,
-  variableSize: 'sm'
+  showPriorities: true
 }
 
 export const avsl: ExpressionRunnerShorthandConfig = {
@@ -2361,7 +2206,6 @@ export const avsl: ExpressionRunnerShorthandConfig = {
   skipActive: true,
   initialExpressionContainer: initialExpressionContainers.reak,
   showPriorities: true,
-  variableSize: 'sm',
   initialState: 'conditionActive',
   explanationsVisibility: 'visible'
 }
@@ -2371,7 +2215,6 @@ export const fkqu: ExpressionRunnerShorthandConfig = {
   skipActive: true,
   initialExpressionContainer: initialExpressionContainers.reak,
   showPriorities: true,
-  variableSize: 'sm',
   initialState: 'falseCaseActive',
   explanationsVisibility: 'visible'
 }
@@ -2381,7 +2224,6 @@ export const wjwu: ExpressionRunnerShorthandConfig = {
   skipActive: true,
   initialExpressionContainer: initialExpressionContainers.reak,
   showPriorities: true,
-  variableSize: 'sm',
   nextIterations: 1
 }
 
@@ -2390,7 +2232,6 @@ export const ngxc: ExpressionRunnerShorthandConfig = {
   skipActive: true,
   initialExpressionContainer: initialExpressionContainers.reak,
   showPriorities: true,
-  variableSize: 'sm',
   initialState: 'default',
   nextIterations: 1,
   highlightOverrides: { bentoBox: 'highlighted' },
@@ -2402,8 +2243,6 @@ export const fkvy: ExpressionRunnerShorthandConfig = {
   skipActive: true,
   initialExpressionContainer: initialExpressionContainers.jrfk,
   showPriorities: true,
-  variableSize: 'xxxs',
-  containerSize: 'xs',
   nextIterations: 5,
   highlightFunctions: true
 }
@@ -2414,8 +2253,6 @@ export const dwmc: ExpressionRunnerShorthandConfig = {
   skipActive: true,
   initialExpressionContainer: initialExpressionContainers.jrfk,
   showPriorities: true,
-  variableSize: 'xxxs',
-  containerSize: 'xs',
   nextIterations: 5,
   lastAllowedExpressionState: 'default',
   lastAllowedExpressionStateAfterIterations: 3,
@@ -2427,8 +2264,6 @@ export const tfsi: ExpressionRunnerShorthandConfig = {
   skipActive: true,
   initialExpressionContainer: initialExpressionContainers.jrfk,
   showPriorities: true,
-  variableSize: 'xxxs',
-  containerSize: 'xs',
   nextIterations: 9,
   highlightFunctions: true
 }
@@ -2438,7 +2273,6 @@ export const fkat: ExpressionRunnerShorthandConfig = {
   skipActive: true,
   initialExpressionContainer: initialExpressionContainers.nrff,
   showPriorities: true,
-  variableSize: 'sm',
   highlightOverrides: { bentoBox: 'highlighted' },
   explanationsVisibility: 'hidden'
 }
@@ -2448,7 +2282,6 @@ export const qgau: ExpressionRunnerShorthandConfig = {
   skipActive: true,
   initialExpressionContainer: initialExpressionContainers.twpb,
   showPriorities: true,
-  variableSize: 'sm',
   explanationsVisibility: 'hidden'
 }
 
@@ -2458,8 +2291,6 @@ export const uwyn: ExpressionRunnerShorthandConfig = {
   skipActive: true,
   initialExpressionContainer: initialExpressionContainers.jrfk,
   showPriorities: true,
-  variableSize: 'xxxs',
-  containerSize: 'xs',
   nextIterations: 9,
   lastAllowedExpressionState: 'default',
   lastAllowedExpressionStateAfterIterations: 5,
@@ -2471,8 +2302,6 @@ export const jjet: ExpressionRunnerShorthandConfig = {
   skipActive: true,
   initialExpressionContainer: initialExpressionContainers.jrfk,
   showPriorities: true,
-  variableSize: 'xxxs',
-  containerSize: 'xs',
   nextIterations: 15,
   highlightFunctions: true
 }
@@ -2482,7 +2311,6 @@ export const cyyp: ExpressionRunnerShorthandConfig = {
   skipActive: true,
   initialExpressionContainer: initialExpressionContainers.tsjd,
   showPriorities: true,
-  variableSize: 'sm',
   explanationsVisibility: 'hidden',
   highlightOverrides: { bentoBox: 'highlighted' }
 }
@@ -2492,7 +2320,6 @@ export const kosw: ExpressionRunnerShorthandConfig = {
   skipActive: true,
   initialExpressionContainer: initialExpressionContainers.qojl,
   showPriorities: true,
-  variableSize: 'sm',
   explanationsVisibility: 'hidden'
 }
 
@@ -2501,7 +2328,6 @@ export const ysxf: ExpressionRunnerShorthandConfig = {
   skipActive: true,
   initialExpressionContainer: initialExpressionContainers.zxhp,
   showPriorities: true,
-  variableSize: 'sm',
   explanationsVisibility: 'hidden'
 }
 
@@ -2511,8 +2337,6 @@ export const snlf: ExpressionRunnerShorthandConfig = {
   skipActive: true,
   initialExpressionContainer: initialExpressionContainers.jrfk,
   showPriorities: true,
-  variableSize: 'xxxs',
-  containerSize: 'xs',
   nextIterations: 15,
   lastAllowedExpressionState: 'default',
   lastAllowedExpressionStateAfterIterations: 6,
@@ -2524,8 +2348,6 @@ export const gngw: ExpressionRunnerShorthandConfig = {
   skipActive: true,
   initialExpressionContainer: initialExpressionContainers.jrfk,
   showPriorities: true,
-  variableSize: 'xxxs',
-  containerSize: 'xs',
   nextIterations: 22,
   highlightFunctions: true
 }
@@ -2535,7 +2357,6 @@ export const toem: ExpressionRunnerShorthandConfig = {
   skipActive: true,
   initialExpressionContainer: initialExpressionContainers.ihdu,
   showPriorities: true,
-  variableSize: 'xs',
   explanationsVisibility: 'hidden',
   highlightOverrides: { bentoBox: 'highlighted' }
 }
@@ -2545,7 +2366,6 @@ export const kdgv: ExpressionRunnerShorthandConfig = {
   skipActive: true,
   initialExpressionContainer: initialExpressionContainers.npmi,
   showPriorities: true,
-  variableSize: 'xs',
   explanationsVisibility: 'hidden'
 }
 
@@ -2554,7 +2374,6 @@ export const mibj: ExpressionRunnerShorthandConfig = {
   skipActive: true,
   initialExpressionContainer: initialExpressionContainers.znga,
   showPriorities: true,
-  variableSize: 'xs',
   explanationsVisibility: 'hidden'
 }
 
@@ -2563,7 +2382,6 @@ export const afoh: ExpressionRunnerShorthandConfig = {
   skipActive: true,
   initialExpressionContainer: initialExpressionContainers.ihdu,
   showPriorities: true,
-  variableSize: 'xs',
   initialState: 'conditionActive',
   explanationsVisibility: 'visible'
 }
@@ -2573,7 +2391,6 @@ export const msrk: ExpressionRunnerShorthandConfig = {
   skipActive: true,
   initialExpressionContainer: initialExpressionContainers.ihdu,
   showPriorities: true,
-  variableSize: 'xs',
   initialState: 'trueCaseActive'
 }
 
@@ -2581,16 +2398,14 @@ export const jwce: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   skipActive: true,
   initialExpressionContainer: initialExpressionContainers.ohhf,
-  showPriorities: true,
-  variableSize: 'md'
+  showPriorities: true
 }
 
 export const sskt: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   skipActive: true,
   initialExpressionContainer: initialExpressionContainers.rzkp,
-  showPriorities: true,
-  variableSize: 'md'
+  showPriorities: true
 }
 
 export const qycx: ExpressionRunnerShorthandConfig = {
@@ -2606,65 +2421,49 @@ export const owpg: ExpressionRunnerShorthandConfig = {
 export const hafp: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   initialExpressionContainer: initialExpressionContainers.pqsi,
-  showPriorities: true,
-  variableSize: 'xs',
-  containerSize: 'xs'
+  showPriorities: true
 }
 
 export const bxuv: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   initialExpressionContainer: initialExpressionContainers.brri,
-  showPriorities: true,
-  variableSize: 'xs',
-  containerSize: 'xs'
+  showPriorities: true
 }
 
 export const xhul: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   initialExpressionContainer: initialExpressionContainers.dmgj,
-  showPriorities: true,
-  variableSize: 'xs',
-  containerSize: 'xs'
+  showPriorities: true
 }
 
 export const anzh: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   initialExpressionContainer: initialExpressionContainers.jtfj,
-  showPriorities: true,
-  variableSize: 'xs',
-  containerSize: 'xs'
+  showPriorities: true
 }
 
 export const zkon: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   initialExpressionContainer: initialExpressionContainers.ykbi,
-  showPriorities: true,
-  variableSize: 'xs',
-  containerSize: 'xs'
+  showPriorities: true
 }
 
 export const xjzx: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   initialExpressionContainer: initialExpressionContainers.vazr,
-  showPriorities: true,
-  variableSize: 'sm',
-  containerSize: 'xs'
+  showPriorities: true
 }
 
 export const rjho: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   initialExpressionContainer: initialExpressionContainers.psxr,
-  showPriorities: true,
-  variableSize: 'sm',
-  containerSize: 'xs'
+  showPriorities: true
 }
 
 export const hvfb: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   initialExpressionContainer: initialExpressionContainers.silw,
-  showPriorities: true,
-  variableSize: 'sm',
-  containerSize: 'xs'
+  showPriorities: true
 }
 
 export const dmrz: ExpressionRunnerShorthandConfig = {
@@ -2678,8 +2477,6 @@ export const tpyg: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   initialExpressionContainer: initialExpressionContainers.yknu,
   showPriorities: true,
-  variableSize: 'xs',
-  containerSize: 'xs',
   highlightOverrides: {
     e: 'highlighted',
     f: 'highlighted',
@@ -2694,16 +2491,13 @@ export const ugvz: ExpressionRunnerShorthandConfig = {
   skipActive: true,
   speed: 1.75,
   initialExpressionContainer: initialExpressionContainers.yknu,
-  showPriorities: true,
-  variableSize: 'xs',
-  containerSize: 'xs'
+  showPriorities: true
 }
 
 export const xkcm: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   initialExpressionContainer: initialExpressionContainers.ajfq,
   showPriorities: true,
-  variableSize: 'md',
   bottomRightBadgeOverrides: { d: '🅱️', c: '🅰️' }
 }
 
@@ -2711,30 +2505,24 @@ export const edzu: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   initialExpressionContainer: initialExpressionContainers.hnzs,
   showPriorities: true,
-  variableSize: 'sm',
   bottomRightBadgeOverrides: { d: '🅱️', c: '🅰️' }
 }
 
 export const mlnt: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   initialExpressionContainer: initialExpressionContainers.ibfr,
-  showPriorities: true,
-  variableSize: 'sm',
-  containerSize: 'xs'
+  showPriorities: true
 }
 
 export const ryqp: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
-  initialExpressionContainer: initialExpressionContainers.bgiy,
-  variableSize: 'md'
+  initialExpressionContainer: initialExpressionContainers.bgiy
 }
 
 export const vqyl: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   initialExpressionContainer: initialExpressionContainers.yuov,
-  showPriorities: true,
-  variableSize: 'sm',
-  containerSize: 'xs'
+  showPriorities: true
 }
 
 export const wzqv: ExpressionRunnerShorthandConfig = {
@@ -2743,39 +2531,18 @@ export const wzqv: ExpressionRunnerShorthandConfig = {
   skipActive: true,
   speed: 1.75,
   initialExpressionContainer: initialExpressionContainers.ndtm,
-  showPriorities: true,
-  variableSize: 'xs',
-  containerSize: 'xs'
+  showPriorities: true
 }
 
 export const nvdn: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   initialExpressionContainer: initialExpressionContainers.rovo,
-  showPriorities: true,
-  variableSize: 'sm',
-  containerSize: 'xs'
+  showPriorities: true
 }
 
 export const uhqo: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
-  initialExpressionContainer: initialExpressionContainers.tjcx,
-  variableSize: 'md'
-}
-
-export const rwuw: ExpressionRunnerShorthandConfig = {
-  runner: 'simple',
-  initialExpressionContainer: initialExpressionContainers.kjff,
-  showPriorities: true,
-  variableSize: 'xs',
-  containerSize: 'xs'
-}
-
-export const qaoa: ExpressionRunnerShorthandConfig = {
-  runner: 'simple',
-  initialExpressionContainer: initialExpressionContainers.zxdz,
-  showPriorities: true,
-  variableSize: 'xs',
-  containerSize: 'xs'
+  initialExpressionContainer: initialExpressionContainers.tjcx
 }
 
 export const kzkg: ExpressionRunnerShorthandConfig = {
@@ -2784,16 +2551,27 @@ export const kzkg: ExpressionRunnerShorthandConfig = {
   showPriorities: true
 }
 
-export const jtxf: ExpressionRunnerShorthandConfig = {
+export const trwj: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
-  initialExpressionContainer: initialExpressionContainers.xfso,
-  showPriorities: true,
-  variableSize: 'md'
+  initialExpressionContainer: initialExpressionContainers.ygum,
+  showPriorities: true
+}
+
+export const potg: ExpressionRunnerShorthandConfig = {
+  runner: 'playButtonOnly',
+  initialExpressionContainer: initialExpressionContainers.babw,
+  showPriorities: true
 }
 
 export const aklf: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   initialExpressionContainer: initialExpressionContainers.nuoh,
+  showPriorities: true
+}
+
+export const olqy: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.bgid,
   showPriorities: true
 }
 
@@ -2812,16 +2590,74 @@ export const unxf: ExpressionRunnerShorthandConfig = {
   showPriorities: true
 }
 
-export const ddrg: ExpressionRunnerShorthandConfig = {
+export const zick: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
-  initialExpressionContainer: initialExpressionContainers.uiwq,
-  showPriorities: true,
-  variableSize: 'sm'
+  initialExpressionContainer: initialExpressionContainers.hbzd,
+  showPriorities: true
 }
 
-export const spki: ExpressionRunnerShorthandConfig = {
+export const zlfx: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
-  initialExpressionContainer: initialExpressionContainers.roso,
+  initialExpressionContainer: initialExpressionContainers.jypn,
+  showPriorities: true
+}
+
+export const rrmc: ExpressionRunnerShorthandConfig = {
+  runner: 'playButtonOnly',
+  skipToTheEnd: false,
+  initialExpressionContainer: initialExpressionContainers.jypn,
   showPriorities: true,
-  variableSize: 'sm'
+  speed: 4,
+  showDefaultAndActiveOnly: true,
+  lastAllowedExpressionState: 'default',
+  lastAllowedExpressionStateAfterIterations: 19
+}
+
+export const qurt: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.jypn,
+  showPriorities: true,
+  nextIterations: 20
+}
+
+export const gzuj: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.jypn,
+  showPriorities: true,
+  isDone: true
+}
+
+export const ancc: ExpressionRunnerShorthandConfig = {
+  runner: 'playButtonOnly',
+  skipToTheEnd: false,
+  initialExpressionContainer: initialExpressionContainers.jypn,
+  showPriorities: true,
+  nextIterations: 20
+}
+
+export const txxw: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.jvmi,
+  showPriorities: true
+}
+
+export const eijx: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.bzpj,
+  showPriorities: true
+}
+
+export const kmgw: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.abhd,
+  showPriorities: true
+}
+
+export const xbki: ExpressionRunnerShorthandConfig = {
+  runner: 'playButtonOnly',
+  skipToTheEnd: false,
+  initialExpressionContainer: initialExpressionContainers.jvmi,
+  showPriorities: true,
+  speed: 4,
+  showDefaultAndActiveOnly: true
 }
