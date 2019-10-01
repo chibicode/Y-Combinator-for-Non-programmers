@@ -915,6 +915,11 @@ export default () => (
                   children: (
                     <>
                       <P>
+                        階乗を計算するためには、先ほど紹介した
+                        <Highlight>掛け算を計算できる弁当箱</Highlight>
+                        を使う必要があるわけだが…
+                      </P>
+                      <P>
                         まず、
                         <HighlightBold>
                           掛け算を計算できる弁当箱を、以下のように省略表記してみる。
@@ -928,7 +933,7 @@ export default () => (
             />
             <R.Vqyl>掛け算を計算できる弁当箱を…</R.Vqyl>
             <ExpressionRunnerSeparator />
-            <R.Trwj>省略表記してみる</R.Trwj>
+            <R.Trwj>以下のように省略表記してみる</R.Trwj>
             <BubbleQuotes
               quotes={[
                 {
@@ -950,10 +955,7 @@ export default () => (
                         ]}
                         description={
                           <>
-                            <CustomEmoji type="blankNumberPurple" />{' '}
-                            <Emoji>✖️</Emoji>{' '}
-                            <CustomEmoji type="blankNumberPink" />{' '}
-                            を掛け算してくれる
+                            <MultiplyIcon /> のアイコンが掛け算を示す
                           </>
                         }
                       />
@@ -965,15 +967,67 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        そうだ。試しに、こちらを
-                        <H args={{ name: 'play' }} /> してみるといい:
+                        そうだ。
+                        <Highlight>
+                          次に紹介する、階乗を計算できる弁当箱は複雑なので、こういった省略表記を使わないとスペースが足りなくなる。
+                        </Highlight>
+                      </P>
+                      <P>
+                        だから、 掛け算を <MultiplyIcon />{' '}
+                        のアイコンで省略表記することにしたというわけだ。
+                      </P>
+                    </>
+                  )
+                },
+                {
+                  type: 'thinking',
+                  children: (
+                    <>
+                      <P>そうか、了解！</P>
+                    </>
+                  )
+                },
+                {
+                  type: 'devil',
+                  children: (
+                    <>
+                      <P>ここで具体例を見てみよう。</P>
+                      <P>
+                        たとえば、こちらの <EmojiNumber number={2} />{' '}
+                        <Emoji>✖️</Emoji> <EmojiNumber number={3} />{' '}
+                        を計算できる弁当箱は…
                       </P>
                     </>
                   )
                 }
               ]}
             />
-            <R.Potg></R.Potg>
+            <R.Ochk>
+              <EmojiNumber number={2} /> <Emoji>✖️</Emoji>{' '}
+              <EmojiNumber number={3} /> を計算できる弁当箱
+            </R.Ochk>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'devil',
+                  children: (
+                    <>
+                      <P>
+                        以下のように <MultiplyIcon /> を使って省略表記できる。
+                      </P>
+                      <P>
+                        <H args={{ name: 'play' }} /> を押してみると、ちゃんと{' '}
+                        <EmojiNumber number={2} /> <Emoji>✖️</Emoji>{' '}
+                        <EmojiNumber number={3} /> が計算できるぞ。
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Potg>
+              上の弁当箱を <MultiplyIcon /> で省略表記してみた
+            </R.Potg>
             <BubbleQuotes
               quotes={[
                 {
@@ -981,9 +1035,7 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        なるほど、これで <EmojiNumber number={2} />{' '}
-                        <Emoji>✖️</Emoji> <EmojiNumber number={3} />{' '}
-                        を計算できるんだな。
+                        なるほど。で、この省略表記をどう使って階乗を計算するんだい？
                       </P>
                     </>
                   )
@@ -1508,6 +1560,30 @@ export default () => (
                 <>
                   <HighlightBold>階乗</HighlightBold>
                   のような複雑な計算もできる！
+                </>
+              }
+            />
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'smile',
+                  children: (
+                    <>
+                      <P>
+                        まさに、「
+                        <HighlightBold>魔法のYコンビネータ</HighlightBold>
+                        」だな！
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <EmojiSeparator
+              emojis={['✨', '🧙‍♀️', '✨']}
+              description={
+                <>
+                  <HighlightBold>魔法のYコンビネータ</HighlightBold>
                 </>
               }
             />
