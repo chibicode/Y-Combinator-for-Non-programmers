@@ -2647,6 +2647,12 @@ export const eijx: ExpressionRunnerShorthandConfig = {
   showPriorities: true
 }
 
+export const kmgw: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.abhd,
+  showPriorities: true
+}
+
 export const xbki: ExpressionRunnerShorthandConfig = {
   runner: 'playButtonOnly',
   skipToTheEnd: false,

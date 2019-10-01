@@ -800,6 +800,7 @@ export default () => (
                         ]}
                         description={
                           <>
+                            <HighlightBold>階乗</HighlightBold>:<br />
                             ある数からはじめて、1を引いていき、
                             <br />
                             <EmojiNumber number={1} />{' '}
@@ -941,6 +942,21 @@ export default () => (
                         </HighlightBold>
                         ということか。
                       </P>
+                      <EmojiSeparator
+                        nodes={[
+                          <CustomEmoji type="blankNumberPurple" />,
+                          <MultiplyIcon />,
+                          <CustomEmoji type="blankNumberPink" />
+                        ]}
+                        description={
+                          <>
+                            <CustomEmoji type="blankNumberPurple" />{' '}
+                            <Emoji>✖️</Emoji>{' '}
+                            <CustomEmoji type="blankNumberPink" />{' '}
+                            を掛け算してくれる
+                          </>
+                        }
+                      />
                     </>
                   )
                 },
@@ -989,10 +1005,13 @@ export default () => (
                     <>
                       <P>それでは、階乗を計算する方法をお見せしよう。</P>
                       <P>
-                        まず、こちらの弁当箱を見てみよう。上の{' '}
-                        <EmojiForLetter letter="a" /> と{' '}
-                        <EmojiForLetter letter="f" /> の間に掛け算のアイコン{' '}
-                        <MultiplyIcon /> が使われているのに注目だ。
+                        まず、こちらの弁当箱を見てみよう。
+                        <Highlight>
+                          上の <EmojiForLetter letter="a" /> と{' '}
+                          <EmojiForLetter letter="f" /> の間に掛け算のアイコン{' '}
+                          <MultiplyIcon /> が使われている
+                        </Highlight>
+                        のに注目だ。
                       </P>
                     </>
                   )
@@ -1090,7 +1109,7 @@ export default () => (
                       />
                       <P>
                         先ほどの弁当箱の上の部分に <EmojiNumber number={3} />{' '}
-                        を追加した。
+                        を追加してみたぞ。
                       </P>
                     </>
                   )
@@ -1245,7 +1264,7 @@ export default () => (
                       />
                       <P>
                         先ほどの弁当箱の上の部分に <EmojiNumber number={4} />{' '}
-                        を追加した。
+                        を追加してみたぞ。
                       </P>
                     </>
                   )
@@ -1262,24 +1281,9 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        これを
+                        これも
                         <H args={{ name: 'fastForward' }} /> してみよう！
                       </P>
-                      <Ul>
-                        <UlLi>
-                          ステップが非常に多いので、
-                          <Highlight>3倍速で早送りするぞ。</Highlight>{' '}
-                          <Emoji>⏩</Emoji> <Emoji>⏩</Emoji> <Emoji>⏩</Emoji>
-                        </UlLi>
-                        <UlLi>
-                          早送り中は、目に優しくなるように弁当箱を半透明にしている。
-                        </UlLi>
-                        <UlLi>
-                          待てない場合は、「
-                          <H args={{ name: 'skipToTheStoppingPoint' }} /> →
-                          」を押してもいいぞ。
-                        </UlLi>
-                      </Ul>
                     </>
                   )
                 }
@@ -1325,6 +1329,14 @@ export default () => (
                           </>
                         }
                       />
+                    </>
+                  )
+                },
+                {
+                  type: 'thinking',
+                  children: (
+                    <>
+                      <P>確かに…！</P>
                     </>
                   )
                 }
@@ -1379,6 +1391,47 @@ export default () => (
               description={
                 <>
                   <EmojiNumber number={5} /> の階乗を計算してくれる
+                </>
+              }
+            />
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'devil',
+                  children: (
+                    <>
+                      <P>
+                        つまり、先ほどの弁当箱を使うことで、
+                        <HighlightBold>
+                          どんな大きな数字の階乗でも計算することができる
+                        </HighlightBold>
+                        んだ。
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Kmgw>
+              どんな大きな数字の階乗でも
+              <br />
+              計算することができる！
+            </R.Kmgw>
+            <ExpressionRunnerSeparator />
+            <EmojiSeparator
+              size="sm"
+              nodes={[
+                <CustomEmoji type="blankNumber" />,
+                <Emoji>✖️</Emoji>,
+                <CustomEmoji type="questionMinusOne" />,
+                <Emoji>✖️</Emoji>,
+                <CustomEmoji type="horizontalDotDotDot" />,
+                <Emoji>✖️</Emoji>,
+                <EmojiNumber number={1} />
+              ]}
+              description={
+                <>
+                  <CustomEmoji type="blankNumber" /> の階乗を計算してくれる
                 </>
               }
             />
@@ -1443,11 +1496,11 @@ export default () => (
             <EmojiSeparator
               size="sm"
               nodes={[
-                <EmojiNumber number={4} />,
+                <CustomEmoji type="blankNumber" />,
                 <Emoji>✖️</Emoji>,
-                <EmojiNumber number={3} />,
+                <CustomEmoji type="questionMinusOne" />,
                 <Emoji>✖️</Emoji>,
-                <EmojiNumber number={2} />,
+                <CustomEmoji type="horizontalDotDotDot" />,
                 <Emoji>✖️</Emoji>,
                 <EmojiNumber number={1} />
               ]}

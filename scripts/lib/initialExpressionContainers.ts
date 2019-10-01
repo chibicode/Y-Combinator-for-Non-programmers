@@ -2349,3 +2349,24 @@ export const bzpj = initializeExpressionContainer([
     initialHighlight: true
   }
 ])
+
+export const abhd = initializeExpressionContainer([
+  yCombinator,
+  {
+    arg: 'a',
+    body: {
+      arg: 'f',
+      body: {
+        checkType: 'isZero',
+        condition: [{ shorthandFunc: 'pred' }, 'f'],
+        trueCase: { shorthandNumber: 1 },
+        falseCase: {
+          binaryType: 'multiply',
+          first: ['a', [{ shorthandFunc: 'pred' }, 'f']],
+          second: 'f'
+        }
+      }
+    }
+  },
+  { name: 'blankNumber', highlighted: true }
+])
