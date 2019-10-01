@@ -1086,7 +1086,8 @@ export default () => (
                         次に、上の弁当箱に、下の黄色の部分を追加してみよう。
                       </P>
                       <P>
-                        ちなみに下半分は、前回も紹介した
+                        ちなみに下半分は、前回も紹介した、 「
+                        <H args={{ name: 'repeatFeature' }} />」 を再現できる
                         <HighlightBold>Yコンビネータの弁当箱</HighlightBold>だ。
                       </P>
                     </>
