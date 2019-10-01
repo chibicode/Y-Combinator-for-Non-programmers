@@ -2620,12 +2620,6 @@ export const zick: ExpressionRunnerShorthandConfig = {
   showPriorities: true
 }
 
-export const spki: ExpressionRunnerShorthandConfig = {
-  runner: 'simple',
-  initialExpressionContainer: initialExpressionContainers.roso,
-  showPriorities: true
-}
-
 export const zlfx: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   initialExpressionContainer: initialExpressionContainers.jypn,
