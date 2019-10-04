@@ -25,6 +25,63 @@ import * as R from 'src/components/Runners'
 import ExpressionRunnerCaptionOnly from 'src/components/ExpressionRunnerCaptionOnly'
 import CardContent from 'src/components/CardContent'
 
+export const WhatIsComputer = () => (
+  <>
+    <P>
+      この記事のタイトルは「
+      <Bold>
+        <Highlight>コンピュータ</Highlight>
+        サイエンスと魔法のYコンビネータ
+      </Bold>
+      」ですが、はじめに、「
+      <HighlightBold>そもそもコンピュータとは何か</HighlightBold>
+      」という質問について考えてみましょう。
+    </P>
+    <EmojiSeparator
+      emojis={['🤔', '💻', '❓']}
+      description={<>そもそもコンピュータとは何か？</>}
+    />
+    <P>
+      「コンピュータ」というとパソコンやタブレット、スマホ、ロボットを思い浮かべる方が多いかもしれません。
+    </P>
+    <EmojiSeparator emojis={['💻', '📱', '🤖']} />
+    <P>
+      しかし、コンピュータは本質的には「
+      <HighlightBold>計算機</HighlightBold>
+      」なのです。
+    </P>
+    <EmojiSeparator
+      emojis={['➕', '✖️', '💻', '➖', '➗']}
+      description={
+        <>
+          コンピュータは本質的には「
+          <HighlightBold>計算機</HighlightBold>」
+        </>
+      }
+    />
+    <P>
+      コンピュータを使えば情報を瞬時に検索できたり、美しいCGを描いたりすることができます。最近はAIを使って顔認証や会話ができるようになりました。
+    </P>
+    <P>
+      <Highlight>
+        こういった便利な機能は、
+        コンピュータが大量の計算を瞬時に行えるからこそ実現されているのです。
+      </Highlight>
+    </P>
+    <P>
+      たとえば、検索エンジンは膨大な数のデータをランク付けするために計算を行います。AIが顔認証をするときは、センサーが取り込んだ顔のデータを数値化し、それをもとに複雑な計算を行って本人かどうかを確かめているのです。
+    </P>
+    <EmojiSeparator
+      emojis={['🔢', '🔢', '💻', '🔢', '🔢']}
+      description={<>コンピュータは、大量の計算を行える計算機</>}
+    />
+    <P>
+      だから、コンピュータは「<HighlightBold>計算機</HighlightBold>
+      」なのですね。
+    </P>
+  </>
+)
+
 export default () => (
   <EpisodeCardList
     cards={[
@@ -121,58 +178,7 @@ export default () => (
         title: <>そもそもコンピュータとは何か</>,
         content: (
           <>
-            <P>
-              この記事のタイトルは「
-              <Bold>
-                <Highlight>コンピュータ</Highlight>
-                サイエンスと魔法のYコンビネータ
-              </Bold>
-              」ですが、はじめに、「
-              <HighlightBold>そもそもコンピュータとは何か</HighlightBold>
-              」という質問について考えてみましょう。
-            </P>
-            <EmojiSeparator
-              emojis={['🤔', '💻', '❓']}
-              description={<>そもそもコンピュータとは何か？</>}
-            />
-            <P>
-              「コンピュータ」というとパソコンやタブレット、スマホ、ロボットを思い浮かべる方が多いかもしれません。
-            </P>
-            <EmojiSeparator emojis={['💻', '📱', '🤖']} />
-            <P>
-              しかし、コンピュータは本質的には「
-              <HighlightBold>計算機</HighlightBold>
-              」なのです。
-            </P>
-            <EmojiSeparator
-              emojis={['➕', '✖️', '💻', '➖', '➗']}
-              description={
-                <>
-                  コンピュータは本質的には「
-                  <HighlightBold>計算機</HighlightBold>」
-                </>
-              }
-            />
-            <P>
-              コンピュータを使えば情報を瞬時に検索できたり、美しいCGを描いたりすることができます。最近はAIを使って顔認証や会話ができるようになりました。
-            </P>
-            <P>
-              <Highlight>
-                こういった便利な機能は、
-                コンピュータが大量の計算を瞬時に行えるからこそ実現されているのです。
-              </Highlight>
-            </P>
-            <P>
-              たとえば、検索エンジンは膨大な数のデータをランク付けするために計算を行います。AIが顔認証をするときは、センサーが取り込んだ顔のデータを数値化し、それをもとに複雑な計算を行って本人かどうかを確かめているのです。
-            </P>
-            <EmojiSeparator
-              emojis={['🔢', '🔢', '💻', '🔢', '🔢']}
-              description={<>コンピュータは、大量の計算を行える計算機</>}
-            />
-            <P>
-              だから、コンピュータは「<HighlightBold>計算機</HighlightBold>
-              」なのですね。
-            </P>
+            <WhatIsComputer />
           </>
         )
       },

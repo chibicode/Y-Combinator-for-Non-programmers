@@ -6,7 +6,8 @@ import {
   HighlightBold,
   Ul,
   UlLi,
-  Hr
+  Hr,
+  Bold
 } from 'src/components/ContentTags'
 import H from 'src/components/H'
 import BubbleQuotes from 'src/components/BubbleQuotes'
@@ -21,6 +22,7 @@ import ExpressionRunnerCaptionOnly from 'src/components/ExpressionRunnerCaptionO
 import TwoColGrid from 'src/components/TwoColGrid'
 import * as R from 'src/components/Runners'
 import NextLessonButton from 'src/components/NextLessonButton'
+import { WhatIsComputer } from 'src/contents/16.jp'
 
 export default () => (
   <EpisodeCardList
@@ -1276,6 +1278,136 @@ export default () => (
                 }
               ]}
             />
+          </>
+        )
+      },
+      {
+        type: 'sideNote',
+        title: <>余談: コンピュータサイエンスと何の繋がりがあるの？</>,
+        preview: {
+          content: (
+            <>
+              <P>
+                ここまで読んで、「パズルは何となく分かるけど、
+                <Highlight>
+                  これってコンピュータサイエンスと何の繋がりがあるの？
+                </Highlight>
+                」と思われた方も多いかもしれません。
+              </P>
+              <EmojiSeparator
+                emojis={['💻', '🤔', '💻']}
+                description={
+                  <>
+                    コンピュータサイエンスと
+                    <br />
+                    何の繋がりがあるの？
+                  </>
+                }
+              />
+              <P>
+                コンピュータサイエンスとの繋がりは、
+                <Highlight>
+                  次からはじまる上級編をすべて終えたあとに詳しく説明します
+                </Highlight>
+                が、「<HighlightBold>いま気になる！</HighlightBold>
+                」という方は、↓の「続きを読む」を押してください。「上級編が終わるまでまで待ちたい」という方は、読み飛ばしても大丈夫です。
+              </P>
+            </>
+          ),
+          text: <>続きを読む</>
+        },
+        content: (
+          <>
+            <Hr />
+            <WhatIsComputer />
+            <Hr />
+            <P>
+              <Bold>
+                <CustomEmoji type="mathBox" />{' '}
+                計算箱も計算機(コンピュータ)である:
+              </Bold>{' '}
+              今まで見てきた
+              <Highlight>
+                計算箱も、いちおう簡単な計算ができますから「計算機
+                (コンピュータ)」ではあるのです
+              </Highlight>
+              。足し算と引き算だけしかできませんが…
+            </P>
+            <EmojiSeparator
+              nodes={[
+                <Emoji>➕</Emoji>,
+                <CustomEmoji type="mathBox" />,
+                <Emoji>➖</Emoji>
+              ]}
+              description={
+                <>
+                  <CustomEmoji type="mathBox" /> 計算箱も計算機(コンピュータ)
+                </>
+              }
+            />
+            <P>
+              <Bold>
+                <Emoji>🍱</Emoji> 弁当箱も計算機(コンピュータ)かもしれない:
+              </Bold>{' '}
+              では、弁当箱はどうでしょう？ここまで見てきたところ、弁当箱は工夫することで、「1を足す」ことと「1を引く」ことができます。ということは、
+              <Highlight>弁当箱も「計算機(コンピュータ)」</Highlight>
+              なのかもしれません。
+            </P>
+            <EmojiSeparator
+              emojis={['❓', '🍱', '❓']}
+              description={
+                <>
+                  <Emoji>🍱</Emoji> 弁当箱も
+                  <br />
+                  計算機(コンピュータ)かもしれない
+                </>
+              }
+            />
+            <P>
+              ここで重要なポイントなのですが、
+              <Highlight>
+                実はこの弁当箱、今から80年以上も前に、
+                <Bold>とある研究の研究対象になっていた</Bold>のです。
+              </Highlight>
+              それは計算機にまつわる研究で、後のコンピュータサイエンスの発展に大きな影響を与えました。
+            </P>
+            <EmojiSeparator
+              emojis={['🧑🏻', '🍱', '👨🏻‍🦳']}
+              description={
+                <>
+                  弁当箱は、今から80年以上も前に
+                  <br />
+                  計算機にまつわる研究の研究対象になっていた
+                </>
+              }
+            />
+            <P>
+              <Bold>
+                これ以上のことは、上級編をすべて終えたときにお伝えします。
+              </Bold>
+              とりあえず今のところは、
+            </P>
+            <Ul>
+              <UlLi>
+                <Highlight>「コンピュータ＝計算機」であり、</Highlight>
+              </UlLi>
+              <UlLi>
+                <Highlight>計算箱も、弁当箱も計算機であり、</Highlight>
+              </UlLi>
+              <UlLi>
+                <Highlight>
+                  弁当箱は昔、計算機にまつわる研究の対象となっていた
+                </Highlight>
+              </UlLi>
+              <UlLi>
+                <Highlight>
+                  その研究が、後のコンピュータサイエンスの発展に大きな影響を与えた
+                </Highlight>
+              </UlLi>
+            </Ul>
+            <P>
+              ということだけ頭に入れておいてください！<Emoji>😉</Emoji>
+            </P>
           </>
         )
       },
