@@ -144,7 +144,7 @@ export default () => (
             <Beginner5Rules />
             <Hr />
             <P>
-              That’s what we’ve learned in the beginner levels.{' '}
+              <Bold>That’s what we’ve learned in the beginner levels:</Bold>{' '}
               <Italic>You don’t need to remember them.</Italic> You just need to
               know that these rules exist, and you should be fine.
             </P>
