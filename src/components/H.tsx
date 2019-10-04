@@ -273,13 +273,13 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
     if (locale === 'en') {
       return (
         <>
-          <Emoji size="mdlg">😄</Emoji> Correct!
+          <Emoji size="mdlg">🎉</Emoji> Correct!
         </>
       )
     } else {
       return (
         <>
-          <Emoji size="mdlg">😄</Emoji> 正解！
+          <Emoji size="mdlg">🎉</Emoji> 正解！
         </>
       )
     }
@@ -595,7 +595,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
     if (locale === 'en') {
       return (
         <>
-          <Emoji size="mdlg">😉</Emoji> It’s okay if you have no idea.
+          It’s okay if you have no idea.
           <br />
           Just guess!
         </>
@@ -603,7 +603,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
     } else {
       return (
         <>
-          <Emoji size="mdlg">😉</Emoji> 分からなくても大丈夫です！
+          分からなくても大丈夫です！
           <br />
           適当に勘で答えてみてください。
         </>
