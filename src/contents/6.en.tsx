@@ -157,7 +157,7 @@ export default () => (
         )
       },
       {
-        title: <>ミニオン登場</>,
+        title: <>Hello, Minion</>,
         content: (
           <>
             <BubbleQuotes
@@ -166,11 +166,11 @@ export default () => (
                   type: 'devil',
                   children: (
                     <>
+                      <P>We’ll start the intermediate levels.</P>
                       <P>
-                        ここからは中級編だ。
-                        <Highlight>
-                          約束した通り、この中級編で出題する難しい問題に答えることができたら、計算箱を返してやろう！
-                        </Highlight>
+                        <Bold>As promised:</Bold> I’ll give you a{' '}
+                        <Italic>very difficult question</Italic>. I’ll give you
+                        the mathboxes back if you solve it!
                       </P>
                     </>
                   )
@@ -185,9 +185,9 @@ export default () => (
               ]}
               description={
                 <>
-                  この中級編で出す難しい問題に
+                  If you can solve this very difficult question,
                   <br />
-                  答えられたら計算箱を返してやろう！
+                  I’ll give you the mathboxes back!
                 </>
               }
             />
@@ -197,7 +197,7 @@ export default () => (
                   type: 'brave',
                   children: (
                     <>
-                      <P>よーし、やってやる！</P>
+                      <P>Alright, let’s do it!</P>
                     </>
                   )
                 },
@@ -206,9 +206,8 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        問題を出す前に、わたしの
-                        <HighlightBold>助手</HighlightBold>
-                        をここに呼ばせてもらおう。
+                        But before I give you the question, let me introduce you{' '}
+                        <Italic>my partner</Italic>.
                       </P>
                     </>
                   )
@@ -217,7 +216,7 @@ export default () => (
                   type: 'thinking',
                   children: (
                     <>
-                      <P>なに、お前の助手だって？</P>
+                      <P>What? Your partner?</P>
                     </>
                   )
                 },
@@ -225,9 +224,9 @@ export default () => (
                   type: 'devil',
                   children: (
                     <>
-                      <P>いま呼ぶから、ちょっと待つんだな。</P>
+                      <P>I’ll call him now.</P>
                       <P>
-                        …いでよ、「<HighlightBold>ミニオン</HighlightBold>」！
+                        Come here, <HighlightBold>Minion</HighlightBold>!
                       </P>
                     </>
                   )
@@ -237,9 +236,9 @@ export default () => (
             <EmojiSeparator
               emojis={['✨', '🐶', '✨']}
               description={
-                <HighlightBold>
-                  悪魔の助手・ミニオン、ここに参上！
-                </HighlightBold>
+                <>
+                  Hello, I’m <Bold>Minion!</Bold>
+                </>
               }
             />
             <BubbleQuotes
@@ -249,8 +248,7 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        どうも、<HighlightBold>ミニオン</HighlightBold>
-                        です。お呼びですか、ご主人さま？
+                        Hello, I’m Minion. How may I help you today, Mr. Devil?
                       </P>
                     </>
                   )
@@ -260,8 +258,7 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        よく来てくれた！こいつがわたしの助手、
-                        <HighlightBold>ミニオン</HighlightBold>だ。
+                        Thanks for coming! Everyone, this is my partner, Minion.
                       </P>
                     </>
                   )
@@ -270,7 +267,7 @@ export default () => (
                   type: 'roll',
                   children: (
                     <>
-                      <P>なんだ、ただのわんこじゃないか。</P>
+                      <P>So…a dog?</P>
                     </>
                   )
                 },
@@ -279,11 +276,10 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        ミニオンはそんじょそこらの犬とは違う。
-                        <HighlightBold>とっておきの芸</HighlightBold>
-                        を持っているからな。
+                        Well, Minion is not a regular dog. He’s got some{' '}
+                        <Italic>special</Italic> tricks.
                       </P>
-                      <P>ミニオン、こいつらにお前の芸を見せてやるんだ！</P>
+                      <P>Minion, show these guys one of your tricks!</P>
                     </>
                   )
                 },
@@ -291,7 +287,7 @@ export default () => (
                   type: 'dog',
                   children: (
                     <>
-                      <P>おまかせください、ご主人さま！</P>
+                      <P>Sure thing, sir!</P>
                     </>
                   )
                 }
@@ -301,7 +297,7 @@ export default () => (
         )
       },
       {
-        title: <>ミニオンの芸</>,
+        title: <>Minion’s Trick</>,
         content: (
           <>
             <EmojiSeparator
@@ -310,7 +306,7 @@ export default () => (
                 <Emoji>🐶</Emoji>,
                 <CustomEmoji type="mathBox" />
               ]}
-              description={<>ぼくの芸をお見せします！</>}
+              description={<>I’ll show you a trick of mine!</>}
             />
             <BubbleQuotes
               quotes={[
