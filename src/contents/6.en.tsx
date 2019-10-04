@@ -314,11 +314,7 @@ export default () => (
                   type: 'dog',
                   children: (
                     <>
-                      <P>
-                        こちらの
-                        <H args={{ name: 'bentoBoxPuzzle' }} />
-                        をご覧ください！
-                      </P>
+                      <P>Take a look at this lunchbox!</P>
                     </>
                   )
                 }
@@ -331,7 +327,7 @@ export default () => (
                   type: 'thinking',
                   children: (
                     <>
-                      <P>一見、普通の弁当箱に見えるけれど…</P>
+                      <P>It looks like a regular lunchbox…</P>
                     </>
                   )
                 },
@@ -340,19 +336,18 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        ぼくは、
-                        <HighlightBold>
-                          この弁当箱を計算箱に変える
-                        </HighlightBold>
-                        ことができるんです！
+                        By using my trick,{' '}
+                        <Italic>
+                          I can convert this lunchbox into a mathbox
+                        </Italic>
+                        .
                       </P>
                       <P>
-                        下の
-                        <HighlightBold>
-                          「<H args={{ name: 'convertToMathbox' }} />
-                          」ボタン
-                        </HighlightBold>
-                        を押してみてください！
+                        <Highlight>
+                          Try pressing the{' '}
+                          <H args={{ name: 'convertToMathbox' }} /> button
+                          below!
+                        </Highlight>
                       </P>
                     </>
                   )
@@ -367,7 +362,8 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        すごい、計算箱の <EmojiNumber number={0} /> になった！
+                        Wow! It became a mathbox containing a{' '}
+                        <EmojiNumber number={0} />.
                       </P>
                     </>
                   )
@@ -377,14 +373,11 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        そうなんです。ぼくは、
-                        <HighlightBold>ある法則に基づいて</HighlightBold>
-                        、弁当箱を計算箱に変える芸を持っているんです。
+                        <Bold>Yes, and importantly:</Bold>{' '}
+                        <Italic>The conversion follows a specific rule.</Italic>
                       </P>
                       <P>
-                        <Highlight>
-                          その法則がどんなものか、当ててみてください！
-                        </Highlight>
+                        <Highlight>Try guessing what this rule is!</Highlight>
                       </P>
                     </>
                   )
@@ -400,9 +393,9 @@ export default () => (
               ]}
               description={
                 <>
-                  ある法則に基づいて、
+                  I convert a lunchbox into a mathbox, and
                   <br />
-                  弁当箱を計算箱に変える芸
+                  there’s a specific rule for the conversion
                 </>
               }
             />
@@ -413,7 +406,8 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        ふーむ、どんな法則なんだろう？ほかの例も見ないと分からないなあ。
+                        Hmm… I wonder what the rule is. Let’s take a look at
+                        more examples!
                       </P>
                     </>
                   )

@@ -1226,7 +1226,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
       return (
         <>
           <HighlightBold highlightType={highlightType}>
-            <CustomEmoji type="mathBox" /> Converted to Mathbox!{' '}
+            <CustomEmoji type="mathBox" /> Converted to a Mathbox!{' '}
             <Emoji>🐶</Emoji>
           </HighlightBold>
         </>
