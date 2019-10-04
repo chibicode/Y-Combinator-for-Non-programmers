@@ -542,11 +542,15 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        <HighlightBold>
-                          <H args={{ name: 'theAnswerIs', isYes: true }} />{' '}
-                          だと思う！
-                        </HighlightBold>
-                        変換すると <EmojiNumber number={4} /> になるはずだ。
+                        <H
+                          args={{
+                            name: 'theAnswerIs',
+                            isYes: true,
+                            sentence: true
+                          }}
+                        />
+                        . I think it becomes <EmojiNumber number={4} /> after
+                        conversion.
                       </P>
                     </>
                   )
@@ -556,9 +560,10 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        では、
-                        <H args={{ name: 'convertToMathbox' }} />{' '}
-                        を押してみてくだださい！
+                        Let’s try it!{' '}
+                        <Highlight>
+                          Press <H args={{ name: 'convertToMathbox' }} /> below.
+                        </Highlight>
                       </P>
                     </>
                   )
@@ -573,8 +578,15 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        やった！ <EmojiNumber number={4} /> になったので、
-                        <Emoji>⭕️</Emoji> が正解だ！
+                        It became <EmojiNumber number={4} />. So{' '}
+                        <H
+                          args={{
+                            name: 'theAnswerIs',
+                            isYes: true,
+                            lowerCase: true
+                          }}
+                        />
+                        !
                       </P>
                     </>
                   )
@@ -583,7 +595,7 @@ export default () => (
                   type: 'dog',
                   children: (
                     <>
-                      <P>では、法則を説明しましょう！</P>
+                      <P>Alright, so let me explain the rules!</P>
                     </>
                   )
                 }
@@ -594,7 +606,7 @@ export default () => (
       },
       {
         type: 'summary',
-        title: <>法則の説明</>,
+        title: <>The Conversion Rule</>,
         content: (
           <>
             <EmojiSeparator
