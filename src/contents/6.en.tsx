@@ -26,8 +26,8 @@ import EmojiWithText from 'src/components/EmojiWithText'
 import EmojiForLetter from 'src/components/EmojiForLetter'
 import ExpressionRunnerSeparator from 'src/components/ExpressionRunnerSeparator'
 import NextLessonButton from 'src/components/NextLessonButton'
-import { BasicRules, Unmatched } from 'src/contents/4.jp'
-import { ThreeRowRules, Beginner5Rules } from 'src/contents/5.jp'
+import { BasicRules, Unmatched } from 'src/contents/4.en'
+import { ThreeRowRules, Beginner5Rules } from 'src/contents/5.en'
 
 export default () => (
   <EpisodeCardList
@@ -35,13 +35,14 @@ export default () => (
     cards={[
       {
         type: 'summary',
-        title: <>Welcome to the intermediate level!</>,
+        title: <>Welcome to the intermediate levels!</>,
         preview: {
           content: (
             <>
               <P>
-                <Bold>Welcome to the intermediate level:</Bold> It’ll be harder
-                than the beginner levels, but you should be able to handle it!
+                <Bold>Welcome to the intermediate levels:</Bold> They’ll be
+                harder than the beginner levels, but you should be able to
+                handle them!
               </P>
               <Hr />
               <P>
@@ -78,20 +79,23 @@ export default () => (
           <>
             <Hr />
             <P>
-              まず、ラムダ村の村人たちは、悪魔に「
-              <HighlightBold>計算箱</HighlightBold>
-              」を奪われてしまいました。計算箱には「
-              <H args={{ name: 'plusOneFeature' }} />
-              」と「
-              <H args={{ name: 'minusOneFeature' }} />
-              」があります。
+              <Bold>First:</Bold> People in Lambda Village were using{' '}
+              <HighlightBold>mathboxes</HighlightBold>. A mathbox has{' '}
+              <Highlight>
+                <H args={{ name: 'plusOneFeature' }} />
+              </Highlight>{' '}
+              and{' '}
+              <Highlight>
+                <H args={{ name: 'minusOneFeature' }} />
+              </Highlight>
+              .
             </P>
             <TwoColGrid
               noTopNegativeMargin
               left={
                 <>
                   <R.Lizi>
-                    <H args={{ name: 'plusOneFeature' }} />
+                    <H args={{ name: 'plusOneFeature', capitalize: true }} />
                   </R.Lizi>
                   <ExpressionRunnerSeparator />
                   <R.Pmdm></R.Pmdm>
@@ -100,7 +104,7 @@ export default () => (
               right={
                 <>
                   <R.Fdig>
-                    <H args={{ name: 'minusOneFeature' }} />
+                    <H args={{ name: 'minusOneFeature', capitalize: true }} />
                   </R.Fdig>
                   <ExpressionRunnerSeparator />
                   <R.Pmdm></R.Pmdm>
@@ -109,46 +113,46 @@ export default () => (
             />
             <Hr />
             <P>
-              また計算箱は、「
-              <H args={{ name: 'repeatFeature' }} />
-              」と組み合わせることによって、足し算や引き算を行うことができます。
+              <Bold>Also:</Bold> By using{' '}
+              <Highlight>
+                <H args={{ name: 'repeatFeature' }} />
+              </Highlight>
+              , you can do additions and subtractions.
             </P>
             <R.Ednv>
-              「<H args={{ name: 'repeatFeature' }} />
-              」を使って
+              Use <H args={{ name: 'repeatFeature' }} />
               <br />
-              <EmojiNumber number={2} /> <Emoji>➕</Emoji>{' '}
-              <EmojiNumber number={4} /> を計算する
+              to calculate <EmojiNumber number={2} /> <Emoji>➕</Emoji>{' '}
+              <EmojiNumber number={4} />
             </R.Ednv>
             <Hr />
             <P>
-              奪われた計算箱を取り返すためには、悪魔が出題する
-              <H args={{ name: 'bentoBoxPuzzle' }} />
-              を解かないといけません。弁当箱には、以下のような法則があります。
+              <Bold>But:</Bold> The mathboxes were stolen by the devil{' '}
+              <Emoji>😈</Emoji>. To take them back, we must solve{' '}
+              <Highlight>
+                <H args={{ name: 'bentoBoxPuzzle', postfix: 's' }} />
+              </Highlight>
+              . A bentobox works as follows:
             </P>
             <BasicRules includeFuncUnbound />
             <Hr />
             <Unmatched />
             <Hr />
-            <P>
-              そして初級編の最後では、3段以上ある弁当箱の法則について解説しました。
-            </P>
+            <P>We also learned about the mathboxes with 3 or more rows:</P>
             <ThreeRowRules />
             <Hr />
             <Beginner5Rules />
             <Hr />
             <P>
-              以上が初級編で話したことでした。
-              <HighlightBold>
-                これらの法則を暗記する必要はありません。
-              </HighlightBold>
-              なんとなく、「こんな法則があるんだな」と思っていただければ十分です。
+              That’s what we’ve learned in the beginner levels.{' '}
+              <Italic>You don’t need to remember them.</Italic> You just need to
+              know that these rules exist, and you should be fine.
             </P>
             <EmojiSeparator
               emojis={['✨', '🤗', '✨']}
-              description={<>暗記する必要はありません！</>}
+              description={<>You don’t need to remember these rules!</>}
             />
-            <P>それでは、中級編に進みましょう！</P>
+            <P>Let’s start the intermediate levels!</P>
           </>
         )
       },
