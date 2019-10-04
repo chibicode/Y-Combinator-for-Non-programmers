@@ -418,7 +418,7 @@ export default () => (
         )
       },
       {
-        title: <>どんな法則？</>,
+        title: <>What’s the rule?</>,
         content: (
           <>
             <BubbleQuotes
@@ -428,9 +428,11 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        では、こちらに3つの弁当箱を用意しました。それぞれ{' '}
-                        <H args={{ name: 'convertToMathbox' }} />{' '}
-                        を押してみてください！
+                        Here are 3 more examples.{' '}
+                        <Highlight>
+                          Try pressing <H args={{ name: 'convertToMathbox' }} />{' '}
+                          on each lunchbox!
+                        </Highlight>
                       </P>
                     </>
                   )
@@ -447,7 +449,8 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        どれも、ある法則に基づいて計算箱に変えているんですが、分かりましたか？
+                        Each one is following the <Italic>same rule</Italic>.
+                        Can you figure out what this rule is?
                       </P>
                     </>
                   )
@@ -456,7 +459,7 @@ export default () => (
                   type: 'thinking',
                   children: (
                     <>
-                      <P>うーん、なんとなく分かったかもしれない…</P>
+                      <P>Hmm… I might have figured out the pattern!</P>
                     </>
                   )
                 },
@@ -465,9 +468,14 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        では、
-                        <H args={{ name: 'yesNoQuiz' }} />
-                        で確かめてみましょう！
+                        Alright!{' '}
+                        <Highlight>
+                          Let’s do a{' '}
+                          <Bold>
+                            <H args={{ name: 'yesNoQuiz' }} />
+                          </Bold>{' '}
+                          to check your understanding!
+                        </Highlight>
                       </P>
                     </>
                   )
@@ -492,7 +500,7 @@ export default () => (
                   type: 'dog',
                   children: (
                     <>
-                      <P>それでは、こちらの弁当箱を…</P>
+                      <P>Take a look at this lunchbox:</P>
                     </>
                   )
                 }
@@ -506,7 +514,8 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        ぼくが計算箱に変換すると、次のようになるでしょうか？
+                        If I convert this into a mathbox,{' '}
+                        <Italic>will it be like the following?</Italic>
                       </P>
                     </>
                   )
