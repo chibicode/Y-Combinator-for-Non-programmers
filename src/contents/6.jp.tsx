@@ -678,7 +678,9 @@ export default () => (
                   children: (
                     <>
                       <P>こちらの法則に従って印をつけてみます。</P>
-                      <R.Eozk></R.Eozk>
+                      <R.Mgku>
+                        <H args={{ name: 'convertiblePatternFirstCaption' }} />
+                      </R.Mgku>
                       <P>
                         まず、
                         <EmojiWithText letter="e" />{' '}
@@ -727,10 +729,24 @@ export default () => (
                   type: 'dog',
                   children: (
                     <>
-                      <P>上の弁当箱は、こちらの法則と一致していますね。</P>
-                      <R.Eozk>
-                        <H args={{ name: 'convertiblePatternCaption' }} />
-                      </R.Eozk>
+                      <P>
+                        上の弁当箱はつまり、こういう <Emoji>🅰️</Emoji> と{' '}
+                        <Emoji>🅱️</Emoji> の並びになっています。
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Whbu></R.Whbu>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>つまり、こちらの法則と一致していますね。</P>
+                      <R.Eozk></R.Eozk>
                       <P>つまり、ぼくが計算箱に変換できるということです。</P>
                     </>
                   )

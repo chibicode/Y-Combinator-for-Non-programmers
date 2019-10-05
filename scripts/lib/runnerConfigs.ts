@@ -312,6 +312,11 @@ export const mgku: ExpressionRunnerShorthandConfig = {
   }
 }
 
+export const whbu: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.qlfn
+}
+
 export const pirb: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   initialExpressionContainer: initialExpressionContainers.lbyq

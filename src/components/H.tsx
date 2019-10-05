@@ -1333,10 +1333,11 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
           <br />
           the <Bold>middle</Bold> item be <Emoji>🅱️</Emoji>.
           <br />
-          There needs to be <Bold>one</Bold> <Emoji>🅱️</Emoji> on the{' '}
-          <Bold>top-right</Bold>
+          There needs to be <Bold>one</Bold> <Emoji>🅱️</Emoji>
           <br />
-          and <Bold>some number of</Bold> <Emoji>🅰️</Emoji>
+          on the <Bold>top-right</Bold> and <Bold>some number of</Bold>
+          <br />
+          <Emoji>🅰️</Emoji>
           ’s on the <Bold>bottom-right</Bold>
         </>
       )

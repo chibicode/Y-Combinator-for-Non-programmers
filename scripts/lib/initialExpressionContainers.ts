@@ -296,6 +296,14 @@ export const iyee = initializeExpressionContainer({
   }
 })
 
+export const qlfn = initializeExpressionContainer({
+  arg: 'A',
+  body: {
+    arg: 'B',
+    body: ['A', ['A', 'B']]
+  }
+})
+
 export const lbyq = initializeExpressionContainer({
   arg: 'blank',
   body: {
