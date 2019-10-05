@@ -1575,7 +1575,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
         <>
           The number of <Emoji>🅰️</Emoji>’s on the
           <br />
-          bottom right is the number after conversion
+          bottom-right is the number after conversion
         </>
       )
     } else {

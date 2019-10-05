@@ -701,16 +701,17 @@ export default () => (
                   type: 'dog',
                   children: (
                     <>
-                      <P>こちらの法則に従って印をつけてみます。</P>
+                      <P>
+                        Let’s now add label each item as <Emoji>🅰️</Emoji> or{' '}
+                        <Emoji>🅱️</Emoji>’s using this rule:
+                      </P>
                       <R.Mgku>
                         <H args={{ name: 'convertiblePatternFirstCaption' }} />
                       </R.Mgku>
                       <P>
-                        まず、
-                        <EmojiWithText letter="e" />{' '}
-                        が一番左にあるので、すべての
-                        <EmojiWithText letter="e" /> に <Emoji>🅰️</Emoji>{' '}
-                        の印をつけてみます。
+                        First, because there’s <EmojiWithText letter="e" /> on
+                        the left, we label all <EmojiWithText letter="e" /> as{' '}
+                        <Emoji>🅰️</Emoji>.
                       </P>
                     </>
                   )
@@ -718,10 +719,9 @@ export default () => (
               ]}
             />
             <R.Alca>
-              <EmojiForLetter letter="e" /> が一番左にあるので、
+              There’s <EmojiForLetter letter="e" /> on the left, so
               <br />
-              すべての
-              <EmojiForLetter letter="e" /> に <Emoji>🅰️</Emoji> の印をつける
+              label all <EmojiForLetter letter="e" /> as <Emoji>🅰️</Emoji>
             </R.Alca>
             <BubbleQuotes
               quotes={[

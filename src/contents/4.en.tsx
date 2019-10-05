@@ -296,7 +296,7 @@ export default () => (
                         In this case, when you{' '}
                         <H args={{ name: 'play', lowerCase: true }} /> it,{' '}
                         <Highlight>
-                          we’re left with the <Italic>bottom right item</Italic>
+                          we’re left with the <Italic>bottom-right item</Italic>
                         </Highlight>{' '}
                         at the end.
                       </P>
@@ -313,7 +313,7 @@ export default () => (
             <ExpressionRunnerSeparator />
             <R.Bgfl>
               We’re left with the <EmojiWithText letter="d" />,<br />
-              which was in the bottom right
+              which was in the bottom-right
             </R.Bgfl>
             <Hr />
             <R.Immq>
@@ -323,7 +323,7 @@ export default () => (
             <ExpressionRunnerSeparator />
             <R.Cpkp>
               We’re left with the <EmojiWithText letter="i" />,<br />
-              which was in the bottom right
+              which was in the bottom-right
             </R.Cpkp>
             <BubbleQuotes
               quotes={[
@@ -347,7 +347,7 @@ export default () => (
             <ExpressionRunnerSeparator />
             <R.Ozxi>
               We’re left with the <EmojiWithText letter="m" />,<br />
-              which was in the bottom right
+              which was in the bottom-right
             </R.Ozxi>
             <BubbleQuotes
               quotes={[
@@ -458,7 +458,7 @@ export default () => (
                       <Ul>
                         <UlLi>Compare the bottom two items.</UlLi>
                         <UlLi>If they’re the same, the top item remains.</UlLi>
-                        <UlLi>Otherwise, the bottom right item remains.</UlLi>
+                        <UlLi>Otherwise, the bottom-right item remains.</UlLi>
                       </Ul>
                       <P>
                         This is <Italic>not wrong</Italic>, but also is{' '}
