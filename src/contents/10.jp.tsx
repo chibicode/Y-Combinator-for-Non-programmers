@@ -1328,7 +1328,7 @@ export default () => (
               </Bold>{' '}
               今まで見てきた
               <Highlight>
-                計算箱も、いちおう簡単な計算ができますから「計算機
+                計算箱も、簡単な計算ができますから、いちおう「計算機
                 (コンピュータ)」ではあるのです
               </Highlight>
               。足し算と引き算だけしかできませんが…
@@ -1392,11 +1392,8 @@ export default () => (
                 <Highlight>「コンピュータ＝計算機」であり、</Highlight>
               </UlLi>
               <UlLi>
-                <Highlight>計算箱も、弁当箱も計算機であり、</Highlight>
-              </UlLi>
-              <UlLi>
                 <Highlight>
-                  弁当箱は昔、計算機にまつわる研究の対象となっていた
+                  弁当箱は昔、計算機にまつわる研究の対象となっていて、
                 </Highlight>
               </UlLi>
               <UlLi>
