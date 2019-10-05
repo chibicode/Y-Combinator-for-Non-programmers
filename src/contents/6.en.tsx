@@ -730,11 +730,10 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        次に、
-                        <EmojiWithText letter="f" />{' '}
-                        が真ん中にあるので、すべての
-                        <EmojiWithText letter="f" /> に <Emoji>🅱️</Emoji>{' '}
-                        の印をつけてみます。
+                        Next, there’s a <EmojiWithText letter="f" /> in the
+                        middle, so we label all{' '}
+                        <EmojiWithText letter="f" postfix="s" /> as{' '}
+                        <Emoji>🅱️</Emoji>.
                       </P>
                     </>
                   )
@@ -742,10 +741,9 @@ export default () => (
               ]}
             />
             <R.Mepb>
-              <EmojiForLetter letter="f" /> が真ん中にあるので、
+              There’s <EmojiForLetter letter="f" /> in the middle, so
               <br />
-              すべての
-              <EmojiForLetter letter="f" /> に <Emoji>🅱️</Emoji> の印をつける
+              label all <EmojiForLetter letter="f" /> as <Emoji>🅱️</Emoji>
             </R.Mepb>
             <BubbleQuotes
               quotes={[
