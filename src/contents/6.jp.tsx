@@ -611,16 +611,20 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        ぼくが計算箱に変換できるのは、以下のような形の弁当箱なんです。
+                        ぼくが計算箱に変換できるのは、ある特定の法則に沿った弁当箱だけなんです。
+                      </P>
+                      <P>
+                        まず、<HighlightBold>横に3列ある弁当箱</HighlightBold>
+                        でなければいけません。
                       </P>
                     </>
                   )
                 }
               ]}
             />
-            <R.Eozk>
-              <H args={{ name: 'convertiblePatternCaption' }} />
-            </R.Eozk>
+            <R.Pirb>
+              <H args={{ name: 'convertiblePatternThreeColumnsCaption' }} />
+            </R.Pirb>
             <BubbleQuotes
               quotes={[
                 {
@@ -628,7 +632,38 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        たとえば、先ほど例に出したこちらの弁当箱をご覧ください。
+                        次に、
+                        <HighlightBold>
+                          以下の法則と一致していなければいけません。
+                        </HighlightBold>
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Mgku>
+              <H args={{ name: 'convertiblePatternFirstCaption' }} />
+            </R.Mgku>
+            <R.Xxas>
+              <H args={{ name: 'convertiblePatternSecondCaption' }} />
+            </R.Xxas>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'thinking',
+                  children: (
+                    <>
+                      <P>うーん、具体例で説明してくれる？</P>
+                    </>
+                  )
+                },
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>
+                        いいですよ。では、先ほど例に出したこちらの弁当箱をご覧ください。
                       </P>
                     </>
                   )

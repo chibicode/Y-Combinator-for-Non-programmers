@@ -1357,7 +1357,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
     if (locale === 'en') {
       return <>It must have three columns</>
     } else {
-      return <>3列でなければいけない</>
+      return <>横に3列ある弁当箱でなければいけない</>
     }
   }
   if (args.name === 'convertiblePatternFirstCaption') {
