@@ -872,7 +872,7 @@ export default () => (
                       AirBnBをはじめとする超有名ITベンチャーを多数輩出しており、
                       約2000社の卒業企業のうち、トップ100社の企業価値を合計すると
                       <ExternalLink href="https://www.ycombinator.com/topcompanies/">
-                        10兆円以上になります(2018年10月時点)
+                        17兆円以上になります(2019年10月時点)
                       </ExternalLink>
                       。
                     </P>
