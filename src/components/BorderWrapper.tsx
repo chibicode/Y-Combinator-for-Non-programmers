@@ -12,8 +12,7 @@ export interface BorderWrapperProps {
   bottomRightBadgeType: VariableExpression['bottomRightBadgeType']
   topLeftBadgeType: VariableExpression['topLeftBadgeType']
   children: React.ReactNode
-  isQuestion: boolean
-  highlightType: VariableExpression['highlightType'] | 'none' | 'pink' | 'blue'
+  highlightType: VariableExpression['highlightType'] | 'none'
   highlightOverridden: boolean
   topLevel: boolean
 }
@@ -22,7 +21,6 @@ const background = ({
   highlightType,
   isDoneOrReady,
   topLeftBadgeType,
-  isQuestion,
   started,
   conditionalActive,
   binaryActive
@@ -30,22 +28,10 @@ const background = ({
   highlightType: BorderWrapperProps['highlightType']
   isDoneOrReady: boolean
   topLeftBadgeType: BorderWrapperProps['topLeftBadgeType']
-  isQuestion: boolean
   started: boolean
   conditionalActive?: boolean
   binaryActive?: boolean
 }): SerializedStyles | undefined => {
-  if (isQuestion) {
-    if (highlightType === 'highlighted') {
-      return css`
-        background: ${colors('indigo400MixYellow')};
-      `
-    } else {
-      return css`
-        background: ${colors('indigo400')};
-      `
-    }
-  }
   if (conditionalActive) {
     return css`
       background: ${colors('transparent')};
@@ -64,11 +50,6 @@ const background = ({
         )};
       `
     }
-    case 'pink': {
-      return css`
-        background: ${colors('pink50')};
-      `
-    }
     case 'default': {
       return css`
         background: ${colors(isDoneOrReady ? 'transparent' : 'indigo50')};
@@ -84,7 +65,6 @@ const background = ({
         background: ${colors('transparent')};
       `
     }
-    case 'blue':
     case 'betaReduceCallArgHighlighted': {
       return css`
         background: ${colors('blue50')};
@@ -130,7 +110,6 @@ const BorderWrapper = ({
   bottomRightBadgeType,
   topLeftBadgeType,
   children,
-  isQuestion,
   topLevel
 }: BorderWrapperProps) => {
   const { isDoneOrReady, started, highlightAllChildren } = useContext(
@@ -150,7 +129,6 @@ const BorderWrapper = ({
           highlightType: highlightAllChildren ? 'highlighted' : highlightType,
           isDoneOrReady,
           topLeftBadgeType,
-          isQuestion,
           started,
           conditionalActive:
             conditionalOutermostState &&

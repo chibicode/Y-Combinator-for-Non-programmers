@@ -25,7 +25,6 @@
   "x": "🍫",
   "y": "🍩",
   "z": "🍬",
-  "question": "❔",
   "A": "🅰️",
   "B": "🅱️",
   "shorthandNumber": "❓",
@@ -46,5 +45,6 @@
   "blankNumberYellow": "❓",
   "bentoBox": "🍱",
   "mathBox": "❓",
-  "mult": "✖️"
+  "mult": "✖️",
+  "blank": "❓"
 }

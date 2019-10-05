@@ -31,10 +31,6 @@ export const allColors = {
   indigo100: indigo[100],
   indigo200: indigo[200],
   indigo300: indigo[300],
-  indigo400MixYellow: Color(indigo[400])
-    .mix(Color(yellow[100]), 0.25)
-    .hsl()
-    .string(),
   grey50033: Color(grey[500])
     .alpha(0.33)
     .hsl()

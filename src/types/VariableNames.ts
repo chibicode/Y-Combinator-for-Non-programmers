@@ -25,7 +25,6 @@ export type VariableNames =
   | 'x'
   | 'y'
   | 'z'
-  | 'question'
   | 'A'
   | 'B'
   | 'shorthandNumber'
@@ -46,6 +45,7 @@ export type VariableNames =
   | 'blankNumberGreen'
   | 'bentoBox'
   | 'mathBox'
+  | 'blank'
 
 export interface VariableNamesWithAlphaConvertCount {
   name: VariableNames
