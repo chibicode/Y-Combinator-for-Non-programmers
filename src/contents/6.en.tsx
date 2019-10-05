@@ -618,9 +618,8 @@ export default () => (
               ]}
               description={
                 <>
-                  どんな法則に基づいて、弁当箱を
-                  <br />
-                  計算箱に変えているのか説明します！
+                  I’ll show you exactly how to convert
+                  <br />a luncbox into a mathbox!
                 </>
               }
             />
@@ -631,7 +630,13 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        ぼくが計算箱に変換できるのは、以下のような形の弁当箱なんです。
+                        <Bold>First:</Bold> I can only convert{' '}
+                        <Italic>certain types</Italic> of lunchboxes into
+                        mathboxes.
+                      </P>
+                      <P>
+                        A lunchbox must match the following pattern to be
+                        convertible:
                       </P>
                     </>
                   )

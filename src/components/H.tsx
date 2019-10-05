@@ -1326,15 +1326,16 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
     if (locale === 'en') {
       return (
         <>
-          Let the leftmost item be <Emoji>🅰️</Emoji> and
+          Let the <Bold>leftmost</Bold> item be <Emoji>🅰️</Emoji> and
           <br />
-          the center item be <Emoji>🅱️</Emoji>.
+          the <Bold>center</Bold> item be <Emoji>🅱️</Emoji>.
           <br />
-          There needs to be one <Emoji>🅱️</Emoji>
+          There needs to be <Bold>one</Bold> <Emoji>🅱️</Emoji>
           <br />
-          on the top-right and some <Emoji>🅰️</Emoji>’s
+          on the <Bold>top-right</Bold> and <Bold>some</Bold> <Emoji>🅰️</Emoji>
+          ’s
           <br />
-          on the bottom-right
+          on the <Bold>bottom-right</Bold>.
         </>
       )
     } else {
