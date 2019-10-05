@@ -630,22 +630,25 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        <Bold>First:</Bold> I can only convert{' '}
+                        <Bold>Important:</Bold> I can only convert{' '}
                         <Italic>certain types</Italic> of lunchboxes into
-                        mathboxes.
+                        mathboxes. A lunchbox must match the following patterns
+                        to be convertible.
                       </P>
                       <P>
-                        A lunchbox must match the following pattern to be
-                        convertible:
+                        <Bold>First:</Bold>{' '}
+                        <Highlight>
+                          It must have <Italic>three columns</Italic>.
+                        </Highlight>
                       </P>
                     </>
                   )
                 }
               ]}
             />
-            <R.Eozk>
-              <H args={{ name: 'convertiblePatternCaption' }} />
-            </R.Eozk>
+            <R.Pirb>
+              <H args={{ name: 'convertiblePatternThreeColumnsCaption' }} />
+            </R.Pirb>
             <BubbleQuotes
               quotes={[
                 {
@@ -653,7 +656,38 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        たとえば、先ほど例に出したこちらの弁当箱をご覧ください。
+                        <Bold>Second:</Bold>{' '}
+                        <Highlight>
+                          It must match the following pattern.
+                        </Highlight>
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Mgku>
+              <H args={{ name: 'convertiblePatternFirstCaption' }} />
+            </R.Mgku>
+            <R.Xxas>
+              <H args={{ name: 'convertiblePatternSecondCaption' }} />
+            </R.Xxas>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'thinking',
+                  children: (
+                    <>
+                      <P>Hmm, can you give me a concrete example?</P>
+                    </>
+                  )
+                },
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>
+                        Sure, take a look at this lunchbox I showed you earlier:
                       </P>
                     </>
                   )

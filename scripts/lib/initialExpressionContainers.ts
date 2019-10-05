@@ -287,6 +287,23 @@ export const dupe = initializeExpressionContainer({
     body: ['Amult', 'Bsingle']
   }
 })
+
+export const iyee = initializeExpressionContainer({
+  arg: 'A',
+  body: {
+    arg: 'B',
+    body: 'blank'
+  }
+})
+
+export const lbyq = initializeExpressionContainer({
+  arg: 'blank',
+  body: {
+    arg: 'blank',
+    body: 'blank'
+  }
+})
+
 export const jpac = initializeExpressionContainer(
   numberParamsHighlightNumber('g', 'h', 3)
 )

@@ -1,0 +1,69 @@
+{
+  "expressionContainers": [
+    {
+      "expression": {
+        "arg": {
+          "name": "A",
+          "highlightType": "default",
+          "topLeftBadgeType": "none",
+          "bottomRightBadgeType": "none",
+          "type": "variable",
+          "argPriorityAgg": [],
+          "funcPriorityAgg": [],
+          "emphasizePriority": false,
+          "bound": false,
+          "maxNestedFunctionDepth": 0
+        },
+        "body": {
+          "arg": {
+            "name": "B",
+            "highlightType": "default",
+            "topLeftBadgeType": "none",
+            "bottomRightBadgeType": "none",
+            "type": "variable",
+            "argPriorityAgg": [],
+            "funcPriorityAgg": [],
+            "emphasizePriority": false,
+            "bound": false,
+            "maxNestedFunctionDepth": 0
+          },
+          "body": {
+            "name": "blank",
+            "highlightType": "default",
+            "topLeftBadgeType": "none",
+            "bottomRightBadgeType": "none",
+            "type": "variable",
+            "argPriorityAgg": [],
+            "funcPriorityAgg": [],
+            "emphasizePriority": false,
+            "bound": true,
+            "maxNestedFunctionDepth": 0
+          },
+          "type": "function",
+          "maxNestedFunctionDepth": 1
+        },
+        "type": "function",
+        "maxNestedFunctionDepth": 2
+      },
+      "numLeafNodes": 1,
+      "containerState": "ready",
+      "previouslyChangedExpressionState": "default"
+    }
+  ],
+  "speed": 1,
+  "hideControls": true,
+  "explanationsVisibility": "hidden",
+  "hidePriorities": true,
+  "hidePlayButton": false,
+  "hideBottomRightBadges": false,
+  "skipToTheEnd": false,
+  "hideFuncUnboundBadgeOnExplanation": false,
+  "highlightOverridesCallArgAndFuncUnboundOnly": false,
+  "bottomRightBadgeOverrides": {},
+  "highlightOverrides": {
+    "A": "highlighted",
+    "B": "highlighted"
+  },
+  "highlightOverrideActiveAfterStart": false,
+  "highlightFunctions": false
+}

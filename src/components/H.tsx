@@ -147,6 +147,9 @@ interface HProps {
     | { name: 'startWithTwoCaption' }
     | { name: 'startWithLeftMostOneCaption' }
     | { name: 'convertiblePatternCaption' }
+    | { name: 'convertiblePatternThreeColumnsCaption' }
+    | { name: 'convertiblePatternFirstCaption' }
+    | { name: 'convertiblePatternSecondCaption' }
     | { name: 'canBeConvertedCaption'; letter: VariableNames; number: number }
     | { name: 'skipToTheEnd' }
     | { name: 'skipToTheStoppingPoint' }
@@ -1328,14 +1331,13 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
         <>
           Let the <Bold>leftmost</Bold> item be <Emoji>🅰️</Emoji> and
           <br />
-          the <Bold>center</Bold> item be <Emoji>🅱️</Emoji>.
+          the <Bold>middle</Bold> item be <Emoji>🅱️</Emoji>.
           <br />
-          There needs to be <Bold>one</Bold> <Emoji>🅱️</Emoji>
+          There needs to be <Bold>one</Bold> <Emoji>🅱️</Emoji> on the{' '}
+          <Bold>top-right</Bold>
           <br />
-          on the <Bold>top-right</Bold> and <Bold>some</Bold> <Emoji>🅰️</Emoji>
-          ’s
-          <br />
-          on the <Bold>bottom-right</Bold>.
+          and <Bold>some number of</Bold> <Emoji>🅰️</Emoji>
+          ’s on the <Bold>bottom-right</Bold>
         </>
       )
     } else {
@@ -1344,6 +1346,52 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
           一番左の料理を <Emoji>🅰️</Emoji> 、<br />
           真ん中の料理を <Emoji>🅱️</Emoji> とした場合、
           <br />
+          右上に <Emoji>🅱️</Emoji> がひとつあり、
+          <br />
+          右下に <Emoji>🅰️</Emoji> がいくつかある
+        </>
+      )
+    }
+  }
+  if (args.name === 'convertiblePatternThreeColumnsCaption') {
+    if (locale === 'en') {
+      return <>It must have three columns</>
+    } else {
+      return <>3列でなければいけない</>
+    }
+  }
+  if (args.name === 'convertiblePatternFirstCaption') {
+    if (locale === 'en') {
+      return (
+        <>
+          Let the <Bold>leftmost</Bold> item be <Emoji>🅰️</Emoji> and
+          <br />
+          the <Bold>middle</Bold> item be <Emoji>🅱️</Emoji>…
+        </>
+      )
+    } else {
+      return (
+        <>
+          一番左の料理を <Emoji>🅰️</Emoji> 、<br />
+          真ん中の料理を <Emoji>🅱️</Emoji> とした場合…
+        </>
+      )
+    }
+  }
+  if (args.name === 'convertiblePatternSecondCaption') {
+    if (locale === 'en') {
+      return (
+        <>
+          There needs to be <Bold>one</Bold> <Emoji>🅱️</Emoji> on the{' '}
+          <Bold>top-right</Bold>
+          <br />
+          and <Bold>some number of</Bold> <Emoji>🅰️</Emoji>
+          ’s on the <Bold>bottom-right</Bold>
+        </>
+      )
+    } else {
+      return (
+        <>
           右上に <Emoji>🅱️</Emoji> がひとつあり、
           <br />
           右下に <Emoji>🅰️</Emoji> がいくつかある

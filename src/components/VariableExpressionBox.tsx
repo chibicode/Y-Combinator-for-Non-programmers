@@ -237,9 +237,15 @@ const VariableEmoji = ({ expression }: VariableExpressionBoxProps) => {
   } else {
     return (
       <span
-        css={css`
-          position: relative;
-        `}
+        css={[
+          css`
+            position: relative;
+          `,
+          expression.name === 'blank' &&
+            css`
+              opacity: 0;
+            `
+        ]}
       >
         {expression.shorthandNumber !== undefined &&
         expression.highlightType !== 'removed' ? (

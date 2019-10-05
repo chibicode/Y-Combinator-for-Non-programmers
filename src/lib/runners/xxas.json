@@ -1,0 +1,91 @@
+{
+  "expressionContainers": [
+    {
+      "expression": {
+        "arg": {
+          "name": "A",
+          "highlightType": "default",
+          "topLeftBadgeType": "none",
+          "bottomRightBadgeType": "none",
+          "type": "variable",
+          "argPriorityAgg": [],
+          "funcPriorityAgg": [],
+          "emphasizePriority": false,
+          "bound": false,
+          "maxNestedFunctionDepth": 0
+        },
+        "body": {
+          "arg": {
+            "name": "B",
+            "highlightType": "default",
+            "topLeftBadgeType": "none",
+            "bottomRightBadgeType": "none",
+            "type": "variable",
+            "argPriorityAgg": [],
+            "funcPriorityAgg": [],
+            "emphasizePriority": false,
+            "bound": false,
+            "maxNestedFunctionDepth": 0
+          },
+          "body": {
+            "arg": {
+              "name": "Bsingle",
+              "highlightType": "default",
+              "topLeftBadgeType": "none",
+              "bottomRightBadgeType": "none",
+              "type": "variable",
+              "argPriorityAgg": [
+                1
+              ],
+              "funcPriorityAgg": [],
+              "emphasizePriority": false,
+              "bound": true,
+              "maxNestedFunctionDepth": 0
+            },
+            "func": {
+              "name": "Amult",
+              "highlightType": "default",
+              "topLeftBadgeType": "none",
+              "bottomRightBadgeType": "none",
+              "type": "variable",
+              "argPriorityAgg": [],
+              "funcPriorityAgg": [
+                1
+              ],
+              "emphasizePriority": false,
+              "bound": true,
+              "maxNestedFunctionDepth": 0
+            },
+            "state": "default",
+            "type": "call",
+            "priority": 1,
+            "maxNestedFunctionDepth": 0
+          },
+          "type": "function",
+          "maxNestedFunctionDepth": 1
+        },
+        "type": "function",
+        "maxNestedFunctionDepth": 2
+      },
+      "numLeafNodes": 2,
+      "containerState": "ready",
+      "previouslyChangedExpressionState": "default"
+    }
+  ],
+  "speed": 1,
+  "hideControls": true,
+  "explanationsVisibility": "hidden",
+  "hidePriorities": true,
+  "hidePlayButton": false,
+  "hideBottomRightBadges": false,
+  "skipToTheEnd": false,
+  "hideFuncUnboundBadgeOnExplanation": false,
+  "highlightOverridesCallArgAndFuncUnboundOnly": false,
+  "bottomRightBadgeOverrides": {},
+  "highlightOverrides": {
+    "Amult": "highlighted",
+    "Bsingle": "highlighted"
+  },
+  "highlightOverrideActiveAfterStart": false,
+  "highlightFunctions": false
+}

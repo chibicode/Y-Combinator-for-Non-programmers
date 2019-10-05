@@ -294,6 +294,29 @@ export const eozk: ExpressionRunnerShorthandConfig = {
   initialExpressionContainer: initialExpressionContainers.dupe
 }
 
+export const xxas: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.dupe,
+  highlightOverrides: {
+    Amult: 'highlighted',
+    Bsingle: 'highlighted'
+  }
+}
+
+export const mgku: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.iyee,
+  highlightOverrides: {
+    A: 'highlighted',
+    B: 'highlighted'
+  }
+}
+
+export const pirb: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.lbyq
+}
+
 export const evqx: ExpressionRunnerShorthandConfig = {
   runner: 'singleStep',
   hideFuncUnboundBadgeOnExplanation: true,
