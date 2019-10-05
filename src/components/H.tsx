@@ -1404,9 +1404,9 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
     if (locale === 'en') {
       return (
         <>
-          There are <EmojiNumber number={args.number} />{' '}
+          <EmojiNumber number={args.number} />{' '}
           <EmojiForLetter letter={args.letter} />
-          ’s labeled as <Emoji>🅰️</Emoji>
+          ’s with <Emoji>🅰️</Emoji> on the bottom-right
           <br />
           → Can be converted to <EmojiNumber number={args.number} />
         </>
@@ -1573,9 +1573,9 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
     if (locale === 'en') {
       return (
         <>
-          The number of <Emoji>🅰️</Emoji>’s on the
+          The number of <Emoji>🅰️</Emoji>’s on the <Bold>bottom-right</Bold>
           <br />
-          bottom-right is the number after conversion
+          is the number after conversion
         </>
       )
     } else {

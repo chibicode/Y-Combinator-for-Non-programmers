@@ -719,9 +719,10 @@ export default () => (
               ]}
             />
             <R.Alca>
-              There’s <EmojiForLetter letter="e" /> on the left, so
+              There’s a <EmojiForLetter letter="e" /> on the left, so
               <br />
-              label all <EmojiForLetter letter="e" /> as <Emoji>🅰️</Emoji>
+              label all <EmojiForLetter letter="e" />
+              ’s as <Emoji>🅰️</Emoji>
             </R.Alca>
             <BubbleQuotes
               quotes={[
@@ -741,9 +742,10 @@ export default () => (
               ]}
             />
             <R.Mepb>
-              There’s <EmojiForLetter letter="f" /> in the middle, so
+              There’s a <EmojiForLetter letter="f" /> in the middle, so
               <br />
-              label all <EmojiForLetter letter="f" /> as <Emoji>🅱️</Emoji>
+              label all <EmojiForLetter letter="f" />
+              ’s as <Emoji>🅱️</Emoji>
             </R.Mepb>
             <BubbleQuotes
               quotes={[
@@ -752,8 +754,7 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        上の弁当箱はつまり、こういう <Emoji>🅰️</Emoji> と{' '}
-                        <Emoji>🅱️</Emoji> の並びになっています。
+                        Therefore, the above lunchbox has the following pattern:
                       </P>
                     </>
                   )
@@ -767,9 +768,12 @@ export default () => (
                   type: 'dog',
                   children: (
                     <>
-                      <P>つまり、こちらの法則と一致していますね。</P>
+                      <P>…which fits the rule I explained earlier.</P>
                       <R.Eozk></R.Eozk>
-                      <P>つまり、ぼくが計算箱に変換できるということです。</P>
+                      <P>
+                        <Bold>Therefore:</Bold> It <Italic>can</Italic> be
+                        converted to a mathbox!
+                      </P>
                     </>
                   )
                 },
@@ -777,7 +781,7 @@ export default () => (
                   type: 'thinking',
                   children: (
                     <>
-                      <P>なるほど。</P>
+                      <P>I see.</P>
                     </>
                   )
                 },
@@ -786,16 +790,15 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        <Highlight>
-                          では、計算箱に変換した場合、何の数字になるのでしょうか？
-                        </Highlight>
+                        <Bold>Now you might be wondering:</Bold> After the
+                        conversion, <Italic>what number does it become?</Italic>
                       </P>
                       <P>
-                        答えを言うと、
-                        <HighlightBold>
-                          右下にある <Emoji>🅰️</Emoji> がついた料理の数
-                        </HighlightBold>
-                        が、変換後の計算箱の数字になります。
+                        <Bold>Answer:</Bold> The resulting number will be{' '}
+                        <Highlight>
+                          equal to the number of <Emoji>🅰️</Emoji>’s on the
+                          bottom right.
+                        </Highlight>
                       </P>
                     </>
                   )
@@ -812,17 +815,13 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        先ほどの弁当箱の場合、
-                        <Highlight>
-                          右下には <Emoji>🅰️</Emoji> がついた
-                          <EmojiWithText letter="e" /> が「
-                          <HighlightBold>2個</HighlightBold>
-                          」あります。
-                        </Highlight>
+                        In the current example, there are <Italic>two</Italic>{' '}
+                        <EmojiWithText letter="e" /> labeled as{' '}
+                        <Emoji>🅰️</Emoji> on the bottom right.
                       </P>
                       <P>
-                        だから、これをぼくが計算箱に変換すると{' '}
-                        <EmojiNumber number={2} /> になります。
+                        <Bold>Therefore:</Bold> I can convert this into{' '}
+                        <EmojiNumber number={2} />.
                       </P>
                     </>
                   )
