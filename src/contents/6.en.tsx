@@ -1164,7 +1164,7 @@ export default () => (
                         <Bold>Here’s an example:</Bold> Try pressing the{' '}
                         <Highlight>
                           <H args={{ name: 'runAndConvertToMathbox' }} /> button
-                        </Highlight>
+                        </Highlight>{' '}
                         below.
                       </P>
                     </>
@@ -1190,8 +1190,10 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        では、理由を説明しますね。まず、もともとの弁当箱を実行するとどうなるか、
-                        <H args={{ name: 'fastForward' }} /> で見てみましょう。
+                        <Bold>Let me explain what happened:</Bold> First, let’s
+                        just see what happens if you run the original lunchbox.
+                      </P>
+                      <P>
                         <H args={{ name: 'pressFastForward' }} />
                       </P>
                     </>
@@ -1207,18 +1209,16 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        つまり、もともとの弁当箱を
-                        <H args={{ name: 'play' }} />{' '}
-                        すると、次のような弁当箱になります。
+                        <Bold>So:</Bold> If you{' '}
+                        <H args={{ name: 'play', lowerCase: true }} /> the
+                        original lunchbox, it becomes this:
                       </P>
                     </>
                   )
                 }
               ]}
             />
-            <R.Jarm>
-              <H args={{ name: 'play' }} /> した結果はこうなる
-            </R.Jarm>
+            <R.Jarm>The result</R.Jarm>
             <BubbleQuotes
               quotes={[
                 {
@@ -1226,10 +1226,8 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        <Highlight>
-                          これは先ほど説明した通り、計算箱に変換すると{' '}
-                          <EmojiNumber number={0} /> になります。
-                        </Highlight>
+                        <Bold>As we saw earlier:</Bold> This can be converted to{' '}
+                        <EmojiNumber number={0} />.
                       </P>
                     </>
                   )

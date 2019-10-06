@@ -1190,7 +1190,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
       return (
         <>
           <Bold>
-            Run <Emoji>▶️</Emoji>
+            Run <Emoji>⏭</Emoji>
           </Bold>{' '}
           and{args.addNewline ? <br /> : ' '}
           <H args={{ name: 'convertToMathbox' }} />
