@@ -97,7 +97,7 @@ const Explanation = ({
         if (showAllShowSteps) {
           return (
             <>
-              Bottom-right itmes:{' '}
+              Bottom-right items:{' '}
               <BottomRightBadge bottomRightBadgeType="funcBound" inline />
             </>
           )

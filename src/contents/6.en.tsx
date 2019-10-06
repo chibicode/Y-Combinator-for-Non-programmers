@@ -1394,12 +1394,15 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        <HighlightBold>
-                          <H args={{ name: 'theAnswerIs', isYes: false }} />{' '}
-                          だと思う！
-                        </HighlightBold>
-                        変換すると <EmojiNumber number={2} /> ではなく、
-                        <EmojiNumber number={1} /> になるはずだ。
+                        <H
+                          args={{
+                            name: 'theAnswerIs',
+                            isYes: false,
+                            sentence: true
+                          }}
+                        />
+                        . It should become <EmojiNumber number={1} /> after
+                        conversion, instead of <EmojiNumber number={2} />.
                       </P>
                     </>
                   )
@@ -1409,9 +1412,14 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        では、
-                        <H args={{ name: 'runAndConvertToMathbox' }} />
-                        を押してみてくだださい！
+                        Let’s{' '}
+                        <H
+                          args={{
+                            name: 'runAndConvertToMathbox',
+                            lowerCase: true
+                          }}
+                        />{' '}
+                        to check!
                       </P>
                     </>
                   )
@@ -1426,8 +1434,16 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        やった！ <EmojiNumber number={1} /> になったので、
-                        <Emoji>❌</Emoji> が正解だ！
+                        We’re left with <EmojiNumber number={1} /> instead of{' '}
+                        <EmojiNumber number={2} />. So{' '}
+                        <H
+                          args={{
+                            name: 'theAnswerIs',
+                            isYes: false,
+                            lowerCase: true
+                          }}
+                        />
+                        !
                       </P>
                     </>
                   )
@@ -1436,11 +1452,11 @@ export default () => (
                   type: 'dog',
                   children: (
                     <>
-                      <P>その通りです！</P>
+                      <P>Good job!</P>
                       <P>
-                        確認のために、もともとの弁当箱を
-                        <H args={{ name: 'fastForward' }} />
-                        してみましょう。
+                        <Bold>Just in double-check:</Bold> Let’s{' '}
+                        <H args={{ name: 'fastForward', lowerCase: true }} />{' '}
+                        the original lunchbox.{' '}
                         <H args={{ name: 'pressFastForward' }} />
                       </P>
                     </>
@@ -1456,18 +1472,16 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        つまり、もともとの弁当箱を
-                        <H args={{ name: 'play' }} />
-                        すると、次のような弁当箱になります。
+                        So, if you{' '}
+                        <H args={{ name: 'play', lowerCase: true }} /> the
+                        original lunchbox, it becomes this:
                       </P>
                     </>
                   )
                 }
               ]}
             />
-            <R.Igpn>
-              <H args={{ name: 'play' }} /> した結果はこうなる
-            </R.Igpn>
+            <R.Igpn>The result</R.Igpn>
             <BubbleQuotes
               quotes={[
                 {
@@ -1475,10 +1489,7 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        <Highlight>
-                          これは、計算箱に変換すると <EmojiNumber number={1} />{' '}
-                          になります。
-                        </Highlight>
+                        This can be converted to <EmojiNumber number={1} />.
                       </P>
                     </>
                   )
@@ -1499,12 +1510,8 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        というわけで、もともとの弁当箱を
-                        <H
-                          args={{ name: 'runAndConvertToMathbox' }}
-                        /> すると <EmojiNumber number={2} /> ではなく{' '}
-                        <EmojiNumber number={1} /> になるので、クイズの正解は{' '}
-                        <Emoji>❌</Emoji> でした！
+                        That’s why it becomes <EmojiNumber number={1} /> after
+                        doing <H args={{ name: 'runAndConvertToMathbox' }} />.
                       </P>
                     </>
                   )

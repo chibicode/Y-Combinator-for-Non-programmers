@@ -1494,9 +1494,7 @@ export default () => (
                         というわけで、もともとの弁当箱を
                         <H
                           args={{ name: 'runAndConvertToMathbox' }}
-                        /> すると <EmojiNumber number={2} /> ではなく{' '}
-                        <EmojiNumber number={1} /> になるので、クイズの正解は{' '}
-                        <Emoji>❌</Emoji> でした！
+                        /> すると <EmojiNumber number={1} /> になるのです！
                       </P>
                     </>
                   )

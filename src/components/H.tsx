@@ -132,8 +132,8 @@ interface HProps {
         type: 'condition' | 'trueCase' | 'falseCase'
       }
     | { name: 'lookAtThisBentoBoxPuzzle' }
-    | { name: 'convertToMathbox' }
-    | { name: 'runAndConvertToMathbox'; addNewline?: boolean }
+    | { name: 'convertToMathbox'; lowerCase?: true }
+    | { name: 'runAndConvertToMathbox'; addNewline?: boolean; lowerCase?: true }
     | { name: 'doneRunAndConvertToMathbox' }
     | { name: 'undoConvertToMathbox' }
     | { name: 'doneConvertToMathbox' }
@@ -453,7 +453,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
       return (
         <>
           <HighlightBold highlightType={highlightType}>
-            Playing… <Emoji>⏩</Emoji>
+            Playing… <Emoji>▶️</Emoji>
           </HighlightBold>
         </>
       )
@@ -1173,7 +1173,8 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
       return (
         <>
           <Bold>
-            <CustomEmoji type="mathBox" /> Convert to Mathbox <Emoji>🐶</Emoji>
+            <CustomEmoji type="mathBox" /> {args.lowerCase ? 'c' : 'C'}onvert to{' '}
+            {args.lowerCase ? 'm' : 'M'}athbox <Emoji>🐶</Emoji>
           </Bold>
         </>
       )
@@ -1190,10 +1191,10 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
       return (
         <>
           <Bold>
-            Run <Emoji>⏭</Emoji>
+            {args.lowerCase ? 'r' : 'R'}un <Emoji>⏭</Emoji>
           </Bold>{' '}
           and{args.addNewline ? <br /> : ' '}
-          <H args={{ name: 'convertToMathbox' }} />
+          <H args={{ name: 'convertToMathbox', lowerCase: args.lowerCase }} />
         </>
       )
     } else {
@@ -1210,7 +1211,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
     if (locale === 'en') {
       return (
         <>
-          Ran and Converted to a Mathbox! <Emoji>🏁</Emoji>
+          Ran and converted to a mathbox! <Emoji>🏁</Emoji>
         </>
       )
     } else {
