@@ -1349,7 +1349,11 @@ export default () => (
                   type: 'dog',
                   children: (
                     <>
-                      <P>こちらの弁当箱を…</P>
+                      <P>
+                        Suppose that you{' '}
+                        <H args={{ name: 'runAndConvertToMathbox' }} /> the
+                        lunchbox below:
+                      </P>
                     </>
                   )
                 }
@@ -1363,9 +1367,7 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        「
-                        <H args={{ name: 'runAndConvertToMathbox' }} />
-                        」すると、下のようになるでしょうか？
+                        <Bold>Question:</Bold> Will it become like this?
                       </P>
                     </>
                   )
