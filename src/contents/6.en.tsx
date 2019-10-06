@@ -969,7 +969,7 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        If you label each item with <Emoji>🅰️</Emoji>or{' '}
+                        If you label each item with <Emoji>🅰️</Emoji> or{' '}
                         <Emoji>🅱️</Emoji>, then there will be{' '}
                         <Italic>four</Italic>{' '}
                         <EmojiWithText letter="i" postfix="s" /> labeled as{' '}
@@ -1009,9 +1009,7 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        続いて
-                        <H args={{ name: 'lookAtThisBentoBox' }} />
-                        。このページの冒頭で紹介した弁当箱です。
+                        Next, here’s a lunchbox we showed earlier on this page:
                       </P>
                     </>
                   )
@@ -1026,24 +1024,40 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        上の弁当箱に、先ほどの法則にしたがって <Emoji>🅰️</Emoji>{' '}
-                        と <Emoji>🅱️</Emoji> の印をつけると、
-                        <Highlight>
-                          右下には <Emoji>🅰️</Emoji> がついた
-                          <EmojiWithText letter="a" /> が
-                          <Highlight>ひとつもありません</Highlight>。
-                        </Highlight>
+                        If you label each item with <Emoji>🅰️</Emoji> or{' '}
+                        <Emoji>🅱️</Emoji>…
                       </P>
                       <P>
-                        つまり、
-                        <HighlightBold>
-                          <Emoji>🅰️</Emoji> の数は「ゼロ個」
-                        </HighlightBold>
-                        というわけです。
+                        You’ll realize that{' '}
+                        <Italic>
+                          there’s no <EmojiWithText letter="a" /> with{' '}
+                          <Emoji>🅰️</Emoji> on the bottom-right
+                        </Italic>
+                        .
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Dwzy>
+              There’s no <EmojiWithText letter="a" /> with <Emoji>🅰️</Emoji>
+              <br />
+              on the bottom-right
+            </R.Dwzy>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>
+                        That means the number of <Emoji>🅰️</Emoji>’s on the
+                        bottom right is <Italic>zero</Italic>.
                       </P>
                       <P>
-                        だから、これをぼくが計算箱に変換すると{' '}
-                        <EmojiNumber number={0} /> になります。
+                        <Bold>So:</Bold> After converting to a mathbox, it
+                        becomes <EmojiNumber number={0} />.
                       </P>
                     </>
                   )
@@ -1064,11 +1078,8 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        なるほど、
-                        <Highlight>
-                          右下の <Emoji>🅰️</Emoji>{' '}
-                          の数がゼロになる場合もあるんだね。
-                        </Highlight>
+                        I see, so the number of <Emoji>🅰️</Emoji>’s on the
+                        bottom right <Italic>can be zero</Italic>.
                       </P>
                     </>
                   )
@@ -1078,16 +1089,12 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        はい。先ほど紹介した法則の「<Emoji>🅰️</Emoji> が
-                        <HighlightBold>いくつか</HighlightBold>」というのは、「
-                        <Emoji>🅰️</Emoji> が
-                        <HighlightBold>ゼロ個</HighlightBold>
-                        」である場合も含まれているわけです。
+                        <Bold>Right:</Bold> “Some <Emoji>🅰️</Emoji>’s” can mean
+                        “<Italic>Zero</Italic> <Emoji>🅰️</Emoji>’s”.
                       </P>
                       <R.Hehx>
-                        右下にある <Emoji>🅰️</Emoji> の数が
-                        <br />
-                        ゼロになる場合もある
+                        “Some <Emoji>🅰️</Emoji>’s” can mean “
+                        <Italic>Zero</Italic> <Emoji>🅰️</Emoji>’s”.
                       </R.Hehx>
                     </>
                   )
@@ -1098,7 +1105,7 @@ export default () => (
         )
       },
       {
-        title: <>実行してから変換</>,
+        title: <>Run and Convert</>,
         content: (
           <>
             <BubbleQuotes
@@ -1107,13 +1114,14 @@ export default () => (
                   type: 'dog',
                   children: (
                     <>
+                      <P>Also, there’s one more thing I can do.</P>
                       <P>
-                        さらにぼくは、
-                        <HighlightBold>
-                          弁当箱を
-                          <H args={{ name: 'play' }} /> してから計算箱に変換する
-                        </HighlightBold>
-                        こともできます。
+                        I can{' '}
+                        <Bold>
+                          <H args={{ name: 'play', lowerCase: true }} /> and
+                          convert
+                        </Bold>{' '}
+                        a lunchbox into mathbox.
                       </P>
                     </>
                   )
@@ -1123,8 +1131,10 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        <H args={{ name: 'play' }} />{' '}
-                        してから計算箱に変換？どういうこと？
+                        <Bold>
+                          <H args={{ name: 'play' }} /> and convert?
+                        </Bold>{' '}
+                        What does that mean?
                       </P>
                     </>
                   )
@@ -1133,16 +1143,14 @@ export default () => (
             />
             <EmojiSeparator
               nodes={[
-                <Emoji>🐶</Emoji>,
                 <Emoji>🍱</Emoji>,
                 <Emoji>▶️</Emoji>,
+                <CustomEmoji type="singleArrow" />,
                 <CustomEmoji type="mathBox" />
               ]}
               description={
                 <>
-                  <H args={{ name: 'play' }} /> してから
-                  <br />
-                  計算箱に変換する
+                  <H args={{ name: 'play' }} /> and convert
                 </>
               }
             />
@@ -1153,12 +1161,11 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        ためしに、
+                        <Bold>Here’s an example:</Bold> Try pressing the{' '}
                         <Highlight>
-                          次の弁当箱の下にある、「
-                          <H args={{ name: 'runAndConvertToMathbox' }} />
-                          」ボタンを押してみてください。
+                          <H args={{ name: 'runAndConvertToMathbox' }} /> button
                         </Highlight>
+                        below.
                       </P>
                     </>
                   )
@@ -1173,7 +1180,7 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        <EmojiNumber number={0} /> になった！
+                        It became <EmojiNumber number={0} />!
                       </P>
                     </>
                   )

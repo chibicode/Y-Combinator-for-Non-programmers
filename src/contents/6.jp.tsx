@@ -1034,7 +1034,7 @@ export default () => (
                       <P>
                         つまり、
                         <HighlightBold>
-                          <Emoji>🅰️</Emoji> の数は「ゼロ個」
+                          右下の <Emoji>🅰️</Emoji> の数は「ゼロ個」
                         </HighlightBold>
                         というわけです。
                       </P>
@@ -1130,9 +1130,9 @@ export default () => (
             />
             <EmojiSeparator
               nodes={[
-                <Emoji>🐶</Emoji>,
                 <Emoji>🍱</Emoji>,
                 <Emoji>▶️</Emoji>,
+                <CustomEmoji type="singleArrow" />,
                 <CustomEmoji type="mathBox" />
               ]}
               description={

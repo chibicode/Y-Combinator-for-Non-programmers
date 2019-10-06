@@ -1187,7 +1187,15 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
   }
   if (args.name === 'runAndConvertToMathbox') {
     if (locale === 'en') {
-      return <>?</>
+      return (
+        <>
+          <Bold>
+            Run <Emoji>▶️</Emoji>
+          </Bold>{' '}
+          and{args.addNewline ? <br /> : ' '}
+          <H args={{ name: 'convertToMathbox' }} />
+        </>
+      )
     } else {
       return (
         <Bold>
@@ -1200,7 +1208,11 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
   }
   if (args.name === 'doneRunAndConvertToMathbox') {
     if (locale === 'en') {
-      return <>?</>
+      return (
+        <>
+          Ran and Converted to a Mathbox! <Emoji>🏁</Emoji>
+        </>
+      )
     } else {
       return (
         <HighlightBold highlightType={highlightType}>
