@@ -1015,6 +1015,22 @@ export default () => (
                           <Highlight>ひとつもありません</Highlight>。
                         </Highlight>
                       </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Dwzy>
+              右下には <Emoji>🅰️</Emoji> がついた
+              <EmojiWithText letter="a" /> が<br />
+              ひとつもありません。
+            </R.Dwzy>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'dog',
+                  children: (
+                    <>
                       <P>
                         つまり、
                         <HighlightBold>
