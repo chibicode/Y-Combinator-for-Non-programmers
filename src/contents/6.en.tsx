@@ -896,7 +896,8 @@ export default () => (
                     <>
                       <P>
                         So, if we convert it to a mathbox, it’ll be{' '}
-                        <EmojiNumber number={2} />.
+                        <EmojiNumber number={2} />, just like the previous
+                        example.
                       </P>
                       <P>
                         This is because there are <Italic>two</Italic>{' '}
@@ -922,13 +923,10 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        つまり、
-                        <HighlightBold>
-                          弁当箱に入っているのがどんな料理だろうと、
-                          <Emoji>🅰️</Emoji> や <Emoji>🅱️</Emoji>{' '}
-                          の印をつけた際に、同じ法則に沿っていれば同じ数字に変換される
-                        </HighlightBold>
-                        というわけです。
+                        <Bold>Summary:</Bold> As long as the lunchbox has the
+                        same pattern of <Emoji>🅰️</Emoji>’s and{' '}
+                        <Emoji>🅱️</Emoji>’s, it will be converted to the same
+                        number.
                       </P>
                     </>
                   )
@@ -936,9 +934,7 @@ export default () => (
               ]}
             />
             <R.Hehx>
-              右下にある <Emoji>🅰️</Emoji> がついた料理の数が、
-              <br />
-              変換後の計算箱の数字
+              <H args={{ name: 'whatTheNumberIsCaption' }} />
             </R.Hehx>
           </>
         )

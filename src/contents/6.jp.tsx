@@ -914,9 +914,7 @@ export default () => (
               ]}
             />
             <R.Hehx>
-              右下にある <Emoji>🅰️</Emoji> がついた料理の数が、
-              <br />
-              変換後の計算箱の数字
+              <H args={{ name: 'whatTheNumberIsCaption' }} />
             </R.Hehx>
           </>
         )
