@@ -1522,7 +1522,7 @@ export default () => (
         )
       },
       {
-        title: <>次のページで、難しい問題を出します</>,
+        title: <>Next up: The Difficult Question</>,
         content: (
           <>
             <BubbleQuotes
@@ -1531,7 +1531,7 @@ export default () => (
                   type: 'devil',
                   children: (
                     <>
-                      <P>ミニオン、説明ご苦労だった！</P>
+                      <P>Thanks for explaining, Minion!</P>
                     </>
                   )
                 },
@@ -1539,7 +1539,7 @@ export default () => (
                   type: 'dog',
                   children: (
                     <>
-                      <P>お安い御用です、ご主人さま！</P>
+                      <P>No problem, sir!</P>
                     </>
                   )
                 },
@@ -1548,12 +1548,16 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        それでは以前約束した通り、
+                        <Bold>So, as I said earlier:</Bold>{' '}
                         <Highlight>
-                          <HighlightBold>
-                            次のページで難しい問題を出題する
-                          </HighlightBold>
-                          。それに答えることができたら、計算箱を返してやろう！
+                          I will give you a{' '}
+                          <Italic>very difficult question</Italic> on the next
+                          page.
+                        </Highlight>
+                      </P>
+                      <P>
+                        <Highlight>
+                          I’ll give you the mathboxes back if you solve it!
                         </Highlight>
                       </P>
                     </>
@@ -1569,9 +1573,11 @@ export default () => (
               ]}
               description={
                 <>
-                  次のページで出す難しい問題に
+                  If you can solve the difficult question
                   <br />
-                  答えられたら計算箱を返してやろう！
+                  on the next page,
+                  <br />
+                  you’ll get your mathboxes back!
                 </>
               }
             />
@@ -1582,7 +1588,8 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        やっと計算箱を賭けた問題にチャレンジできるということだな。よーし、次のページに進むぞ！
+                        Finally, we have a chance to get our mathboxes back.
+                        Let’s do it!
                       </P>
                     </>
                   )
