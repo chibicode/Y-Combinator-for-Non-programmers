@@ -1209,16 +1209,20 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        <Bold>So:</Bold> If you{' '}
+                        <Bold>So:</Bold> Here’s what happens when you{' '}
                         <H args={{ name: 'play', lowerCase: true }} /> the
-                        original lunchbox, it becomes this:
+                        original lunchbox:
                       </P>
                     </>
                   )
                 }
               ]}
             />
-            <R.Jarm>The result</R.Jarm>
+            <R.Qsnv>
+              When you <H args={{ name: 'play', lowerCase: true }} /> this…
+            </R.Qsnv>
+            <ExpressionRunnerSeparator />
+            <R.Jarm>It becomes this:</R.Jarm>
             <BubbleQuotes
               quotes={[
                 {
@@ -1226,8 +1230,8 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        <Bold>As we saw earlier:</Bold> This can be converted to{' '}
-                        <EmojiNumber number={0} />.
+                        <Bold>As we saw earlier:</Bold> This lunchbox can be
+                        converted to <EmojiNumber number={0} />.
                       </P>
                     </>
                   )
@@ -1244,26 +1248,20 @@ export default () => (
             <BubbleQuotes
               quotes={[
                 {
+                  type: 'thinking',
+                  children: (
+                    <>
+                      <P>
+                        I see, that’s why it became <EmojiNumber number={0} />.
+                      </P>
+                    </>
+                  )
+                },
+                {
                   type: 'dog',
                   children: (
                     <>
-                      <P>このような、</P>
-                      <Ol>
-                        <OlLi>
-                          <Highlight>
-                            まず弁当箱を
-                            <H args={{ name: 'play' }} />
-                            し、
-                          </Highlight>
-                        </OlLi>
-                        <OlLi>
-                          <Highlight>
-                            実行し終えたら、続いて{' '}
-                            <H args={{ name: 'convertToMathbox' }} /> する
-                          </Highlight>
-                        </OlLi>
-                      </Ol>
-                      <P>というふたつのステップを、</P>
+                      <P>Yes. By pressing this button:</P>
                       <P>
                         <ExpressionRunnerButton
                           css={css`
@@ -1280,7 +1278,21 @@ export default () => (
                           />
                         </ExpressionRunnerButton>
                       </P>
-                      <P>…を押すことで、一度に行うことができるのです。</P>
+                      <P>You can do the following steps at once:</P>
+                      <Ol>
+                        <OlLi>
+                          <Highlight>
+                            <H args={{ name: 'play' }} /> the lunchbox,
+                          </Highlight>{' '}
+                          and
+                        </OlLi>
+                        <OlLi>
+                          <Highlight>
+                            <Bold>Convert</Bold> <Emoji>🐶</Emoji> the result to
+                            a mathbox
+                          </Highlight>
+                        </OlLi>
+                      </Ol>
                     </>
                   )
                 }
@@ -1300,34 +1312,24 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        なるほど、「<Bold>実行</Bold>」と「
-                        <Bold>計算箱に変換</Bold>」を
-                        <HighlightBold>一括で行う</HighlightBold>
-                        こともできる、ということだな。
+                        I see. So you can do two steps (<Bold>run</Bold> and{' '}
+                        <Bold>convert</Bold>) at once!
+                      </P>
+                    </>
+                  )
+                },
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>
+                        Yes. Let’s do a <H args={{ name: 'yesNoQuiz' }} /> to
+                        make sure you understood this!
                       </P>
                     </>
                   )
                 }
               ]}
-            />
-            <EmojiSeparator
-              emojis={['🍱', '▶️']}
-              noBottomMargin
-              description={
-                <>
-                  まず弁当箱を
-                  <H args={{ name: 'play' }} /> し…
-                </>
-              }
-            />
-            <EmojiSeparator
-              nodes={[
-                <Emoji>🍱</Emoji>,
-                <CustomEmoji type="singleArrow" />,
-                <CustomEmoji type="mathBox" />
-              ]}
-              noTopMargin
-              description={<>計算箱に変換するのを一括で行える</>}
             />
           </>
         )
@@ -1347,10 +1349,6 @@ export default () => (
                   type: 'dog',
                   children: (
                     <>
-                      <P>
-                        では、ここで最後に <H args={{ name: 'yesNoQuiz' }} />
-                        をやってみましょう。
-                      </P>
                       <P>こちらの弁当箱を…</P>
                     </>
                   )
