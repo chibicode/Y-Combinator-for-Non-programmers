@@ -969,17 +969,15 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        上の弁当箱に、先ほどの法則にしたがって <Emoji>🅰️</Emoji>{' '}
-                        と <Emoji>🅱️</Emoji> の印をつけると、
-                        <Highlight>
-                          右下には <Emoji>🅰️</Emoji> がついた
-                          <EmojiWithText letter="i" />
-                          が「<HighlightBold>4個</HighlightBold>」あります。
-                        </Highlight>
+                        If you label each item with <Emoji>🅰️</Emoji>or{' '}
+                        <Emoji>🅱️</Emoji>, then there will be{' '}
+                        <Italic>four</Italic>{' '}
+                        <EmojiWithText letter="i" postfix="s" /> labeled as{' '}
+                        <Emoji>🅰️</Emoji> on the bottom-right.
                       </P>
                       <P>
-                        だから、これをぼくが計算箱に変換すると{' '}
-                        <EmojiNumber number={4} /> になります。
+                        <Bold>So:</Bold> It can be converted to{' '}
+                        <EmojiNumber number={4} />.
                       </P>
                     </>
                   )
@@ -999,7 +997,7 @@ export default () => (
       {
         title: (
           <>
-            <EmojiNumber number={0} /> になる場合
+            It can also be <EmojiNumber number={0} />
           </>
         ),
         content: (
