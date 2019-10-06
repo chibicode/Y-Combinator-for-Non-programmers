@@ -875,6 +875,12 @@ export default () => (
                         計算箱に変換したときに先ほどと同じく{' '}
                         <EmojiNumber number={2} /> になります。
                       </P>
+                      <P>
+                        右下には <Emoji>🅰️</Emoji> がついた
+                        <EmojiWithText letter="k" /> が「
+                        <HighlightBold>2個</HighlightBold>
+                        」あるからです。
+                      </P>
                     </>
                   )
                 }

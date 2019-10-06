@@ -841,7 +841,7 @@ export default () => (
                   type: 'thinking',
                   children: (
                     <>
-                      <P>なるほど。</P>
+                      <P>I see.</P>
                     </>
                   )
                 },
@@ -850,13 +850,15 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        <Highlight>
-                          他の料理でも、同じ法則に沿っていれば、計算箱に変換したときに同じ数字になります。
-                        </Highlight>
+                        <Italic>
+                          As long as it follows the same pattern, it doesn’t
+                          matter which items are used.
+                        </Italic>
                       </P>
                       <P>
-                        たとえば、 <EmojiWithText letter="k" /> と{' '}
-                        <EmojiWithText letter="l" /> を以下のように配置した場合…
+                        <Bold>Example:</Bold> Suppose that we have{' '}
+                        <EmojiWithText letter="k" postfix="s" /> and{' '}
+                        <EmojiWithText letter="l" />…
                       </P>
                     </>
                   )
@@ -871,8 +873,8 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        <Emoji>🅰️</Emoji> と <Emoji>🅱️</Emoji>{' '}
-                        は以下のようになるので…
+                        We’ll add <Emoji>🅰️</Emoji>’s and <Emoji>🅱️</Emoji>’s as
+                        follows…
                       </P>
                     </>
                   )
@@ -880,11 +882,11 @@ export default () => (
               ]}
             />
             <R.Mzqc>
-              <EmojiForLetter letter="k" /> は一番左にあるので <Emoji>🅰️</Emoji>{' '}
-              を、
+              <EmojiForLetter letter="k" /> is on the left, so use{' '}
+              <Emoji>🅰️</Emoji>.
               <br />
-              <EmojiForLetter letter="l" /> は真ん中にあるので <Emoji>🅱️</Emoji>{' '}
-              をつける
+              <EmojiForLetter letter="l" /> is in the middle, so use{' '}
+              <Emoji>🅱️</Emoji>.
             </R.Mzqc>
             <BubbleQuotes
               quotes={[
@@ -893,8 +895,13 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        計算箱に変換したときに先ほどと同じく{' '}
-                        <EmojiNumber number={2} /> になります。
+                        So, if we convert it to a mathbox, it’ll be{' '}
+                        <EmojiNumber number={2} />.
+                      </P>
+                      <P>
+                        This is because there are <Italic>two</Italic>{' '}
+                        <EmojiWithText letter="k" postfix="s" /> labeled as{' '}
+                        <Emoji>🅰️</Emoji> on the bottom-right.
                       </P>
                     </>
                   )
