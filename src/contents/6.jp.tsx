@@ -931,16 +931,16 @@ export default () => (
                     <>
                       <P>
                         <H args={{ name: 'yesNoQuiz' }} />
-                        で出した弁当箱にも、<Emoji>🅰️</Emoji> と{' '}
-                        <Emoji>🅱️</Emoji> の印をつけてみましょう。まずは
-                        <H args={{ name: 'lookAtThisBentoBox' }} />。
+                        に登場した弁当箱にも、<Emoji>🅰️</Emoji> と{' '}
+                        <Emoji>🅱️</Emoji> の印をつけてみましょう。
                       </P>
+                      <P>こちらをご覧ください。</P>
                     </>
                   )
                 }
               ]}
             />
-            <R.Dubm />
+            <R.Dubm>クイズに登場した弁当箱</R.Dubm>
             <BubbleQuotes
               quotes={[
                 {

@@ -940,7 +940,7 @@ export default () => (
         )
       },
       {
-        title: <>他の弁当箱の例</>,
+        title: <>Other Examples</>,
         content: (
           <>
             <BubbleQuotes
@@ -950,17 +950,18 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        <H args={{ name: 'yesNoQuiz' }} />
-                        で出した弁当箱にも、<Emoji>🅰️</Emoji> と{' '}
-                        <Emoji>🅱️</Emoji> の印をつけてみましょう。まずは
-                        <H args={{ name: 'lookAtThisBentoBox' }} />。
+                        Let’s try to apply the rules on the lunchbox from the
+                        previous <H args={{ name: 'yesNoQuiz' }} />.
+                      </P>
+                      <P>
+                        <H args={{ name: 'lookAtThisBentoBox' }} />:
                       </P>
                     </>
                   )
                 }
               ]}
             />
-            <R.Dubm />
+            <R.Dubm>The lunchbox from the previous quiz</R.Dubm>
             <BubbleQuotes
               quotes={[
                 {
