@@ -129,7 +129,7 @@ export default () => (
                       <P>
                         <Bold>Important:</Bold>{' '}
                         <Italic>
-                          Each <CustomEmoji type="questionFoodGrey" />{' '}
+                          Each <CustomEmoji type="questionFoodGrey" /> icon
                           represents some food item.
                         </Italic>
                       </P>
@@ -139,8 +139,8 @@ export default () => (
               ]}
             />
             <R.Envj>
-              Each <CustomEmoji type="questionFoodGrey" /> represents some food
-              item
+              Each <CustomEmoji type="questionFoodGrey" /> icon represents some
+              food item
             </R.Envj>
             <BubbleQuotes
               quotes={[
@@ -148,12 +148,10 @@ export default () => (
                   type: 'thinking',
                   children: (
                     <>
-                      <P>何だか複雑そうな弁当箱だなあ…</P>
+                      <P>It looks pretty complicated…</P>
                       <P>
-                        <HighlightBold>
-                          <CustomEmoji type="questionFoodGrey" />{' '}
-                          にはそれぞれ何の料理が入るの？
-                        </HighlightBold>
+                        <Bold>So:</Bold> Which food item goes into each{' '}
+                        <CustomEmoji type="questionFoodGrey" /> icon?
                       </P>
                     </>
                   )
@@ -163,12 +161,14 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        それが今回の問題です！
-                        <HighlightBold>
-                          村人のみなさんには、
-                          <CustomEmoji type="questionFoodGrey" />{' '}
-                          には何の料理が入るかを当ててもらいます。
-                        </HighlightBold>
+                        <Bold>That’s what you’ll need to figure out!</Bold>
+                      </P>
+                      <P>
+                        <Highlight>
+                          This question is about figuring out which food item
+                          goes into each <CustomEmoji type="questionFoodGrey" />{' '}
+                          icon.
+                        </Highlight>
                       </P>
                     </>
                   )
@@ -176,11 +176,10 @@ export default () => (
               ]}
             />
             <R.Envj>
-              <HighlightBold>
-                <CustomEmoji type="questionFoodGrey" /> に何が入るかを
-                <br />
-                当ててもらいます！<Emoji>🐶</Emoji>
-              </HighlightBold>
+              You need to figure out which food item
+              <br />
+              goes into each <CustomEmoji type="questionFoodGrey" /> icon!{' '}
+              <Emoji>🐶</Emoji>
             </R.Envj>
             <BubbleQuotes
               quotes={[
@@ -188,11 +187,7 @@ export default () => (
                   type: 'thinking',
                   children: (
                     <>
-                      <P>
-                        でも、まだ何の情報もないから…
-                        <CustomEmoji type="questionFoodGrey" />{' '}
-                        に何が入るかなんて分かんないよ。
-                      </P>
+                      <P>Hmm… ok, but how can we figure that out?</P>
                     </>
                   )
                 },
@@ -201,8 +196,24 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        その通りです。まだ説明することがありますから。では、続けますね！
+                        <Bold>I’m not done explaining yet!</Bold>
                       </P>
+                      <P>
+                        <Highlight>
+                          I’ll give you more information now, and your goal is
+                          to find out what goes into each{' '}
+                          <CustomEmoji type="questionFoodGrey" /> icon based on
+                          that information.
+                        </Highlight>
+                      </P>
+                    </>
+                  )
+                },
+                {
+                  type: 'thinking',
+                  children: (
+                    <>
+                      <P>Okay, keep explaining then!</P>
                     </>
                   )
                 }
