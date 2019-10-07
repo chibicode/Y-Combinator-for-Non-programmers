@@ -1,6 +1,4 @@
-/** @jsx jsx */
-import { css, jsx } from '@emotion/core'
-import { colors, spaces } from 'src/lib/theme'
+import React from 'react'
 import EpisodeCardList from 'src/components/EpisodeCardList'
 import {
   P,
@@ -20,7 +18,7 @@ import EmojiNumber from 'src/components/EmojiNumber'
 import Emoji from 'src/components/Emoji'
 import H from 'src/components/H'
 import YesNoButtons from 'src/components/YesNoButtons'
-import ExpressionRunnerButton from 'src/components/ExpressionRunnerButton'
+import InlineRunAndConvertToMathboxButton from 'src/components/InlineRunAndConvertToMathboxButton'
 import * as R from 'src/components/Runners'
 import EmojiWithText from 'src/components/EmojiWithText'
 import EmojiForLetter from 'src/components/EmojiForLetter'
@@ -1263,20 +1261,7 @@ export default () => (
                     <>
                       <P>Yes. By pressing this button:</P>
                       <P>
-                        <ExpressionRunnerButton
-                          css={css`
-                            padding-left: ${spaces(1)};
-                            padding-right: ${spaces(1)};
-                            background: ${colors('yellow100')};
-                          `}
-                        >
-                          <H
-                            args={{
-                              name: 'runAndConvertToMathbox',
-                              addNewline: true
-                            }}
-                          />
-                        </ExpressionRunnerButton>
+                        <InlineRunAndConvertToMathboxButton />
                       </P>
                       <P>You can do the following steps at once:</P>
                       <Ol>

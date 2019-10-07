@@ -1260,7 +1260,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
   }
   if (args.name === 'canBeConverted') {
     if (locale === 'en') {
-      return <>?</>
+      return <>Lunchbox that can be converted to</>
     } else {
       return <>に変換できる弁当箱</>
     }

@@ -59,6 +59,23 @@ const VariableEmoji = ({ expression }: VariableExpressionBoxProps) => {
           padding: 0.25em 0;
         `}
       >
+        {locale === 'en' && (
+          <span
+            css={css`
+              font-size: 0.5em;
+              font-weight: bold;
+              text-align: center;
+              display: block;
+              margin-bottom: 0.2em;
+            `}
+          >
+            <H
+              args={{
+                name: 'canBeConverted'
+              }}
+            />
+          </span>
+        )}
         <span
           css={css`
             font-weight: bold;
@@ -119,20 +136,22 @@ const VariableEmoji = ({ expression }: VariableExpressionBoxProps) => {
             )}
           </span>
         </span>
-        <span
-          css={css`
-            font-size: 0.6em;
-            font-weight: bold;
-            text-align: center;
-            display: block;
-          `}
-        >
-          <H
-            args={{
-              name: 'canBeConverted'
-            }}
-          />
-        </span>
+        {locale === 'jp' && (
+          <span
+            css={css`
+              font-size: 0.6em;
+              font-weight: bold;
+              text-align: center;
+              display: block;
+            `}
+          >
+            <H
+              args={{
+                name: 'canBeConverted'
+              }}
+            />
+          </span>
+        )}
       </div>
     )
   } else if (

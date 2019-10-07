@@ -316,7 +316,7 @@ export default () => (
       {
         title: (
           <>
-            <EmojiNumber number={1} /> が <EmojiNumber number={2} /> になる
+            <EmojiNumber number={1} /> becomes <EmojiNumber number={2} />
           </>
         ),
         content: (
