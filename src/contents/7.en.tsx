@@ -354,15 +354,11 @@ export default () => (
                   type: 'dog',
                   children: (
                     <>
-                      <P>この合体した弁当箱を、</P>
+                      <P>If you run the above lunchbox and convert it…</P>
                       <InlineRunAndConvertToMathboxButton />
                       <P>
-                        すると、
-                        <HighlightBold>
-                          結果は <CustomEmoji type="blankNumber" />{' '}
-                          <Emoji>➕</Emoji> <EmojiNumber number={1} />{' '}
-                        </HighlightBold>
-                        になるのです。
+                        It will become <CustomEmoji type="blankNumber" />{' '}
+                        <Emoji>➕</Emoji> <EmojiNumber number={1} />.
                       </P>
                     </>
                   )
@@ -370,10 +366,13 @@ export default () => (
               ]}
             />
             <R.Jxvy>
-              <H args={{ name: 'runAndConvertToMathbox' }} />
+              If you{' '}
+              <Highlight>
+                <H args={{ name: 'runAndConvertToMathbox', lowerCase: true }} />
+              </Highlight>
               <br />
-              すると、結果は <CustomEmoji type="blankNumber" />{' '}
-              <Emoji>➕</Emoji> <EmojiNumber number={1} /> になる
+              it will become <CustomEmoji type="blankNumber" />{' '}
+              <Emoji>➕</Emoji> <EmojiNumber number={1} />
             </R.Jxvy>
             <BubbleQuotes
               quotes={[
@@ -382,15 +381,14 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        これが
-                        <H args={{ name: 'plusOneEffect' }} />
-                        です。
+                        This is how <H args={{ name: 'plusOneEffect' }} />{' '}
+                        works.
                       </P>
                       <P>
-                        一言で言うと、
-                        <CustomEmoji type="blankNumber" /> に変換できる弁当箱を{' '}
+                        It can take a lunchbox that can be converted to{' '}
+                        <CustomEmoji type="blankNumber" />, and turn it into{' '}
                         <CustomEmoji type="blankNumber" /> <Emoji>➕</Emoji>{' '}
-                        <EmojiNumber number={1} /> にできるんです！
+                        <EmojiNumber number={1} />.
                       </P>
                     </>
                   )
@@ -407,10 +405,10 @@ export default () => (
               ]}
               description={
                 <>
-                  <CustomEmoji type="blankNumber" /> に変換できる弁当箱を
-                  <br />
-                  <CustomEmoji type="blankNumber" /> <Emoji>➕</Emoji>{' '}
-                  <EmojiNumber number={1} /> にできる
+                  Take a lunchbox that can be converted to{' '}
+                  <CustomEmoji type="blankNumber" />,<br />
+                  and turn it into <CustomEmoji type="blankNumber" />{' '}
+                  <Emoji>➕</Emoji> <EmojiNumber number={1} />.
                 </>
               }
             />
@@ -420,7 +418,8 @@ export default () => (
                   type: 'thinking',
                   children: (
                     <>
-                      <P>うーん、具体例で説明してくれる？</P>
+                      <P>Hmm… I’m still a bit confused.</P>
+                      <P>Can you explain with concrete examples?</P>
                     </>
                   )
                 }
