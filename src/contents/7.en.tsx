@@ -14,6 +14,7 @@ import BubbleQuotes from 'src/components/BubbleQuotes'
 import EmojiNumber from 'src/components/EmojiNumber'
 import Emoji from 'src/components/Emoji'
 import EmojiForLetter from 'src/components/EmojiForLetter'
+import InlineRunAndConvertToMathboxButton from 'src/components/InlineRunAndConvertToMathboxButton'
 import H from 'src/components/H'
 import ExpressionRunnerSeparator from 'src/components/ExpressionRunnerSeparator'
 import ExpressionRunnerCaptionOnly from 'src/components/ExpressionRunnerCaptionOnly'
@@ -305,6 +306,125 @@ export default () => (
                   children: (
                     <>
                       <P>Let me explain!</P>
+                    </>
+                  )
+                }
+              ]}
+            />
+          </>
+        )
+      },
+      {
+        title: (
+          <>
+            <H args={{ name: 'plusOneEffect' }} />
+            の説明
+          </>
+        ),
+        content: (
+          <>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>
+                        <H args={{ name: 'plusOneEffect' }} />
+                        とはどういう効果を説明しますね。
+                      </P>
+                      <P>
+                        まず、
+                        <Highlight>
+                          ある数字 <CustomEmoji type="blankNumber" />{' '}
+                          に変換できる弁当箱と合体させてみます。
+                        </Highlight>
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+
+            <R.Qrgc>
+              <CustomEmoji type="blankNumber" /> に変換できる弁当箱と、
+              <br />
+              <H args={{ name: 'plusOneEffect' }} />
+              がある弁当箱を合体
+            </R.Qrgc>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>この合体した弁当箱を、</P>
+                      <InlineRunAndConvertToMathboxButton />
+                      <P>
+                        すると、
+                        <HighlightBold>
+                          結果は <CustomEmoji type="blankNumber" />{' '}
+                          <Emoji>➕</Emoji> <EmojiNumber number={1} />{' '}
+                        </HighlightBold>
+                        になるのです。
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Jxvy>
+              <H args={{ name: 'runAndConvertToMathbox' }} />
+              <br />
+              すると、結果は <CustomEmoji type="blankNumber" />{' '}
+              <Emoji>➕</Emoji> <EmojiNumber number={1} /> になる
+            </R.Jxvy>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>
+                        これが
+                        <H args={{ name: 'plusOneEffect' }} />
+                        です。
+                      </P>
+                      <P>
+                        一言で言うと、
+                        <CustomEmoji type="blankNumber" /> に変換できる弁当箱を{' '}
+                        <CustomEmoji type="blankNumber" /> <Emoji>➕</Emoji>{' '}
+                        <EmojiNumber number={1} /> にできるんです！
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <EmojiSeparator
+              nodes={[
+                <CustomEmoji type="blankNumber" />,
+                <CustomEmoji type="singleArrow" />,
+                <CustomEmoji type="blankNumber" />,
+                <Emoji>➕</Emoji>,
+                <EmojiNumber number={1} />
+              ]}
+              description={
+                <>
+                  <CustomEmoji type="blankNumber" /> に変換できる弁当箱を
+                  <br />
+                  <CustomEmoji type="blankNumber" /> <Emoji>➕</Emoji>{' '}
+                  <EmojiNumber number={1} /> にできる
+                </>
+              }
+            />
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'thinking',
+                  children: (
+                    <>
+                      <P>うーん、具体例で説明してくれる？</P>
                     </>
                   )
                 }

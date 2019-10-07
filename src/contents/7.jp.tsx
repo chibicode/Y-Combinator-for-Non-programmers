@@ -281,7 +281,7 @@ export default () => (
                   type: 'dog',
                   children: (
                     <>
-                      <P>これから説明しますね！</P>
+                      <P>では、説明しますね！</P>
                     </>
                   )
                 }
@@ -294,6 +294,7 @@ export default () => (
         title: (
           <>
             <H args={{ name: 'plusOneEffect' }} />
+            の説明
           </>
         ),
         content: (
@@ -770,14 +771,10 @@ export default () => (
                             がある弁当箱を合体させ、
                           </Highlight>
                         </UlLi>
-                        <UlLi>
-                          <Highlight>
-                            <H args={{ name: 'runAndConvertToMathbox' }} />
-                            すると、
-                          </Highlight>
-                        </UlLi>
                       </Ul>
+                      <InlineRunAndConvertToMathboxButton />
                       <P>
+                        を押すと、
                         <Highlight>
                           結果は <CustomEmoji type="blankNumber" />{' '}
                           <Emoji>➕</Emoji> <EmojiNumber number={1} /> になる

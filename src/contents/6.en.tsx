@@ -1260,9 +1260,7 @@ export default () => (
                   children: (
                     <>
                       <P>Yes. By pressing this button:</P>
-                      <P>
-                        <InlineRunAndConvertToMathboxButton />
-                      </P>
+                      <InlineRunAndConvertToMathboxButton />
                       <P>You can do the following steps at once:</P>
                       <Ol>
                         <OlLi>
