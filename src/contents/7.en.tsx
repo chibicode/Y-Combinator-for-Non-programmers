@@ -318,8 +318,7 @@ export default () => (
         type: 'summary',
         title: (
           <>
-            <H args={{ name: 'plusOneEffect' }} />
-            の説明
+            How <H args={{ name: 'plusOneEffect' }} /> works
           </>
         ),
         content: (
@@ -331,27 +330,23 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        <H args={{ name: 'plusOneEffect' }} />
-                        とはどういう効果を説明しますね。
+                        Here’s how <H args={{ name: 'plusOneEffect' }} /> works.
                       </P>
                       <P>
-                        まず、
-                        <Highlight>
-                          ある数字 <CustomEmoji type="blankNumber" />{' '}
-                          に変換できる弁当箱と合体させてみます。
-                        </Highlight>
+                        <Bold>First:</Bold> Let’s combine it with a lunchbox
+                        that can be converted to{' '}
+                        <CustomEmoji type="blankNumber" />.
                       </P>
                     </>
                   )
                 }
               ]}
             />
-
             <R.Qrgc>
-              <CustomEmoji type="blankNumber" /> に変換できる弁当箱と、
+              Combine a lunchbox that can be converted to{' '}
+              <CustomEmoji type="blankNumber" />
               <br />
-              <H args={{ name: 'plusOneEffect' }} />
-              がある弁当箱を合体
+              with a lunchbox with <H args={{ name: 'plusOneEffect' }} />
             </R.Qrgc>
             <BubbleQuotes
               quotes={[
