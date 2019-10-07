@@ -291,6 +291,7 @@ export default () => (
         )
       },
       {
+        type: 'summary',
         title: (
           <>
             <H args={{ name: 'plusOneEffect' }} />
