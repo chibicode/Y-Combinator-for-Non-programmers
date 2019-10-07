@@ -100,7 +100,7 @@ interface HProps {
     | { name: 'pageUnderConstructionTitle' }
     | { name: 'question' }
     | { name: 'whatHappensAtTheEndQuestion' }
-    | { name: 'lookAtThisBentoBox' }
+    | { name: 'lookAtThisBentoBox'; lowerCase?: true }
     | {
         name: 'pressFastForward'
         skipColon?: boolean
@@ -774,7 +774,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
   }
   if (args.name === 'lookAtThisBentoBox') {
     if (locale === 'en') {
-      return <>Take a look at this lunchbox</>
+      return <>{args.lowerCase ? 't' : 'T'}ake a look at this lunchbox</>
     } else {
       return <>こちらの弁当箱をご覧ください</>
     }

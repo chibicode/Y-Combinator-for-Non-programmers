@@ -6,7 +6,8 @@ import {
   HighlightBold,
   Ul,
   UlLi,
-  Bold
+  Bold,
+  Italic
 } from 'src/components/ContentTags'
 import CustomEmoji from 'src/components/CustomEmoji'
 import BubbleQuotes from 'src/components/BubbleQuotes'
@@ -68,7 +69,7 @@ export default () => (
         )
       },
       {
-        title: <>問題の説明</>,
+        title: <>The problem</>,
         content: (
           <>
             <BubbleQuotes
@@ -78,10 +79,8 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        では約束通り、
-                        <Highlight>
-                          これから出す問題に答えることができたら、計算箱を返してやろう！
-                        </Highlight>
+                        <Bold>As promised:</Bold> If you can solve this problem,
+                        I’ll give you the mathboxes back!
                       </P>
                     </>
                   )
@@ -96,9 +95,9 @@ export default () => (
               ]}
               description={
                 <>
-                  これから出す難しい問題に
+                  If you can solve this problem,
                   <br />
-                  答えられたら計算箱を返してやろう！
+                  I’ll give you the mathboxes back!
                 </>
               }
             />
@@ -109,9 +108,10 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        <HighlightBold>この問題は非常に難しい</HighlightBold>
-                        から覚悟するんだな。ミニオン、問題を説明するんだ！
+                        This problem is <Italic>very difficult</Italic>, so you
+                        better think hard!
                       </P>
+                      <P>Minion, explain the problem!</P>
                     </>
                   )
                 },
@@ -120,16 +120,18 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        わかりました。まず、
-                        <H args={{ name: 'lookAtThisBentoBox' }} />。
+                        Sure. First,{' '}
+                        <H
+                          args={{ name: 'lookAtThisBentoBox', lowerCase: true }}
+                        />
+                        .
                       </P>
                       <P>
-                        <CustomEmoji type="questionFoodGrey" />{' '}
-                        がたくさんありますが、それぞれの{' '}
-                        <HighlightBold>
-                          <CustomEmoji type="questionFoodGrey" />{' '}
-                          には何らかの料理が入ります。
-                        </HighlightBold>
+                        <Bold>Important:</Bold>{' '}
+                        <Italic>
+                          Each <CustomEmoji type="questionFoodGrey" />{' '}
+                          represents some food item.
+                        </Italic>
                       </P>
                     </>
                   )
@@ -137,9 +139,8 @@ export default () => (
               ]}
             />
             <R.Envj>
-              それぞれの <CustomEmoji type="questionFoodGrey" /> には
-              <br />
-              何らかの料理が入る
+              Each <CustomEmoji type="questionFoodGrey" /> represents some food
+              item
             </R.Envj>
             <BubbleQuotes
               quotes={[
