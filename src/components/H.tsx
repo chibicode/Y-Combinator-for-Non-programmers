@@ -138,12 +138,12 @@ interface HProps {
     | { name: 'undoConvertToMathbox' }
     | { name: 'doneConvertToMathbox' }
     | { name: 'canBeConverted' }
-    | { name: 'plusOneEffect' }
+    | { name: 'plusOneEffect'; capitalize?: true }
     | { name: 'plusOneFeature'; capitalize?: true }
     | { name: 'minusOneFeature'; capitalize?: true }
     | { name: 'repeatFeature'; capitalize?: true }
-    | { name: 'conditionFeature' }
-    | { name: 'minusOneEffect' }
+    | { name: 'conditionFeature'; capitalize?: true }
+    | { name: 'minusOneEffect'; capitalize?: true }
     | { name: 'startWithTwoCaption' }
     | { name: 'startWithLeftMostOneCaption' }
     | { name: 'convertiblePatternCaption' }
@@ -1267,7 +1267,12 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
   }
   if (args.name === 'plusOneEffect') {
     if (locale === 'en') {
-      return <>?</>
+      return (
+        <>
+          {args.capitalize ? 'T' : 't'}he <Bold>“Plus 1”</Bold> effect{' '}
+          <CustomEmoji type="plusOneOrange" />
+        </>
+      )
     } else {
       return (
         <>
@@ -1279,7 +1284,12 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
   }
   if (args.name === 'minusOneEffect') {
     if (locale === 'en') {
-      return <>?</>
+      return (
+        <>
+          {args.capitalize ? 'T' : 't'}he <Bold>Minus 1”</Bold> effect{' '}
+          <CustomEmoji type="minusOnePink" />
+        </>
+      )
     } else {
       return (
         <>

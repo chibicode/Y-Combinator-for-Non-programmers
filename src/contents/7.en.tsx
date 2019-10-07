@@ -225,7 +225,7 @@ export default () => (
       {
         title: (
           <>
-            <H args={{ name: 'plusOneEffect' }} />
+            <H args={{ name: 'plusOneEffect', capitalize: true }} />
           </>
         ),
         content: (
@@ -237,17 +237,16 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        先ほどの弁当箱は、
-                        <HighlightBold>
-                          それぞれの <CustomEmoji type="questionFoodGrey" />{' '}
-                          に、ある法則に基づいて料理を入れると…
-                        </HighlightBold>
-                      </P>
-                      <P>
-                        <HighlightBold>
-                          <H args={{ name: 'plusOneEffect' }} />
-                          がある弁当箱になります。
-                        </HighlightBold>
+                        <Bold>Here’s the requirement:</Bold>{' '}
+                        <Highlight>
+                          You must fill each{' '}
+                          <CustomEmoji type="questionFoodGrey" /> in a way such
+                          that, the resulting lunchbox has{' '}
+                          <Bold>
+                            <H args={{ name: 'plusOneEffect' }} />
+                          </Bold>
+                          .
+                        </Highlight>
                       </P>
                     </>
                   )
@@ -255,12 +254,12 @@ export default () => (
               ]}
             />
             <R.Jguj>
-              それぞれの <CustomEmoji type="questionFoodGrey" /> に、
+              You must fill each <CustomEmoji type="questionFoodGrey" /> in a
+              way
               <br />
-              <HighlightBold>ある法則に基づいて</HighlightBold>料理を入れると、
+              such that, the resulting lunchbox has
               <br />
-              <H args={{ name: 'plusOneEffect' }} />
-              がある弁当箱になる
+              <H args={{ name: 'plusOneEffect' }} />.
             </R.Jguj>
             <BubbleQuotes
               quotes={[
@@ -268,10 +267,7 @@ export default () => (
                   type: 'surprised',
                   children: (
                     <>
-                      <P>
-                        背景に <CustomEmoji type="plusOneOrange" size="mdlg" />{' '}
-                        の模様がついた！
-                      </P>
+                      <P>The background image changed!</P>
                     </>
                   )
                 },
@@ -280,11 +276,12 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        そうですね。背景にある{' '}
-                        <CustomEmoji type="plusOneOrange" size="mdlg" />{' '}
-                        の模様は単に、
-                        <H args={{ name: 'plusOneEffect' }} />
-                        があるということを表しているだけです。
+                        Yes, this new background just means that the lunchbox
+                        has{' '}
+                        <Bold>
+                          <H args={{ name: 'plusOneEffect' }} />
+                        </Bold>
+                        .
                       </P>
                     </>
                   )
@@ -294,9 +291,11 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        その
-                        <H args={{ name: 'plusOneEffect' }} />
-                        ってどういう効果なの？
+                        But what does{' '}
+                        <Bold>
+                          <H args={{ name: 'plusOneEffect' }} />
+                        </Bold>{' '}
+                        mean?
                       </P>
                     </>
                   )
@@ -305,7 +304,7 @@ export default () => (
                   type: 'dog',
                   children: (
                     <>
-                      <P>これから説明しますね！</P>
+                      <P>Let me explain!</P>
                     </>
                   )
                 }
