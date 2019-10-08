@@ -847,7 +847,15 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
   }
   if (args.name === 'stoppedForExplanation') {
     if (locale === 'en') {
-      return <>?</>
+      return (
+        <>
+          <Highlight>
+            <Bold>We’re not done yet:</Bold>
+            <br />
+            Just pausing here for an explanation.
+          </Highlight>
+        </>
+      )
     } else {
       return (
         <HighlightBold>まだ途中ですが、解説のため一旦止めます！</HighlightBold>
@@ -1462,7 +1470,11 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
   }
   if (args.name === 'fastForwardSkippableToTheEnd') {
     if (locale === 'en') {
-      return <>?</>
+      return (
+        <Highlight highlightType="pink">
+          You can also skip until the end.
+        </Highlight>
+      )
     } else {
       return (
         <Highlight highlightType="pink">

@@ -25,6 +25,29 @@ import InlinePrioritiesLabel from 'src/components/InlinePrioritiesLabel'
 import NextLessonButton from 'src/components/NextLessonButton'
 import { Beginner5Rules } from 'src/contents/5.en'
 
+const OnePlusOneTest = () => (
+  <>
+    <R.Ufjx>
+      Combine with the “random” lunchbox
+      <br />
+      you came up with earlier, and then…
+    </R.Ufjx>
+    <ExpressionRunnerSeparator />
+    <ExpressionRunnerCaptionOnly>
+      <Highlight>
+        <H args={{ name: 'runAndConvertToMathbox' }} />
+      </Highlight>
+    </ExpressionRunnerCaptionOnly>
+    <ExpressionRunnerSeparator />
+    <ExpressionRunnerCaptionOnly>
+      If it becomes <EmojiNumber number={2} size="mdlg" />,{' '}
+      <Highlight>success</Highlight>. <Emoji>🎉</Emoji>
+      <br />
+      Otherwise, <Highlight>failure</Highlight> <Emoji>😭</Emoji>
+    </ExpressionRunnerCaptionOnly>
+  </>
+)
+
 export default () => (
   <EpisodeCardList
     underConstruction
@@ -1202,24 +1225,7 @@ export default () => (
                 }
               ]}
             />
-            <R.Ufjx>
-              Combine with the “random” lunchbox
-              <br />
-              you came up with earlier, and then…
-            </R.Ufjx>
-            <ExpressionRunnerSeparator />
-            <ExpressionRunnerCaptionOnly>
-              <Highlight>
-                <H args={{ name: 'runAndConvertToMathbox' }} />
-              </Highlight>
-            </ExpressionRunnerCaptionOnly>
-            <ExpressionRunnerSeparator />
-            <ExpressionRunnerCaptionOnly>
-              If it becomes <EmojiNumber number={2} size="mdlg" />,{' '}
-              <Highlight>success</Highlight>. <Emoji>🎉</Emoji>
-              <br />
-              Otherwise, <Highlight>failure</Highlight> <Emoji>😭</Emoji>
-            </ExpressionRunnerCaptionOnly>
+            <OnePlusOneTest />
             <BubbleQuotes
               quotes={[
                 {
@@ -1273,7 +1279,7 @@ export default () => (
       {
         title: (
           <>
-            Let’s <H args={{ name: 'fastForward' }} />
+            Let’s <H args={{ name: 'fastForward', lowerCase: true }} />
           </>
         ),
         content: (
@@ -1284,43 +1290,18 @@ export default () => (
                   type: 'brave',
                   children: (
                     <>
+                      <P>Ok, let’s get back on track!</P>
                       <P>
-                        初級編の復習もしたことだし、先ほど考えた弁当箱に、
-                        <H args={{ name: 'plusOneEffect' }} />
-                        があるかどうか見ていこう！
-                      </P>
-                      <P>
-                        以下のように、
-                        <HighlightBold>
-                          <EmojiNumber number={1} /> <Emoji>➕</Emoji>{' '}
-                          <EmojiNumber number={1} /> が計算できれば
-                          <HighlightBold>成功</HighlightBold> <Emoji>🎉</Emoji>
-                        </HighlightBold>{' '}
-                        なんだよな。
+                        We want to check if it can calculate{' '}
+                        <EmojiNumber number={1} /> <Emoji>➕</Emoji>{' '}
+                        <EmojiNumber number={1} />, right?
                       </P>
                     </>
                   )
                 }
               ]}
             />
-            <R.Nuco>
-              <EmojiNumber number={1} /> に変換できる弁当箱と、
-              <br />
-              先ほどの弁当箱を合体させ…
-            </R.Nuco>
-            <ExpressionRunnerSeparator />
-            <ExpressionRunnerCaptionOnly>
-              <Highlight>
-                <H args={{ name: 'runAndConvertToMathbox' }} />
-              </Highlight>
-            </ExpressionRunnerCaptionOnly>
-            <ExpressionRunnerSeparator />
-            <ExpressionRunnerCaptionOnly>
-              結果が <EmojiNumber number={2} size="mdlg" /> になれば
-              <HighlightBold>成功</HighlightBold> <Emoji>🎉</Emoji>
-              <br />
-              それ以外なら<HighlightBold>失敗</HighlightBold> <Emoji>😭</Emoji>
-            </ExpressionRunnerCaptionOnly>
+            <OnePlusOneTest />
             <BubbleQuotes
               quotes={[
                 {
@@ -1328,17 +1309,17 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        それでは、
-                        <H args={{ name: 'fastForward' }} /> していきましょう！
+                        Let’s{' '}
+                        <H args={{ name: 'fastForward', lowerCase: true }} />{' '}
+                        it!
                       </P>
                       <P>
-                        まず初級編で説明した通り、
-                        <HighlightBold>
-                          <InlinePrioritiesLabel>1</InlinePrioritiesLabel>{' '}
-                          のペアが左右ふたつ以上ある場合は、一番左の{' '}
-                          <InlinePrioritiesLabel>1</InlinePrioritiesLabel>{' '}
-                          のペアからはじめます。
-                        </HighlightBold>
+                        <Bold>First:</Bold>{' '}
+                        <Highlight>
+                          Because there are multiple pairs of{' '}
+                          <InlinePrioritiesLabel>1</InlinePrioritiesLabel>’s, we
+                          start from the leftmost pair.
+                        </Highlight>
                       </P>
                     </>
                   )
@@ -1362,23 +1343,17 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        続いて、また{' '}
-                        <Highlight>
-                          <InlinePrioritiesLabel>1</InlinePrioritiesLabel>{' '}
-                          のペアからはじめたいのですが、
-                          <InlinePrioritiesLabel>1</InlinePrioritiesLabel>{' '}
-                          のペアの一番下の段にひとつの料理(
-                          <EmojiWithText letter="b" />
-                          )しかないので不可能です。
-                        </Highlight>
+                        <Bold>Second:</Bold> We can’t start with the leftmost
+                        pair of <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
+                        ’s because there’s only one item on the bottom (a{' '}
+                        <EmojiWithText letter="b" />)
                       </P>
                       <P>
-                        というわけで、初級編で説明した通り、
-                        <HighlightBold>
-                          次は <InlinePrioritiesLabel>2</InlinePrioritiesLabel>{' '}
-                          のペアから
-                        </HighlightBold>
-                        はじめます。
+                        Therefore,{' '}
+                        <Highlight>
+                          we do the pair of{' '}
+                          <InlinePrioritiesLabel>2</InlinePrioritiesLabel>’s.
+                        </Highlight>
                       </P>
                     </>
                   )
@@ -1402,11 +1377,9 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        次も前回と同じく、
-                        <HighlightBold>
-                          <InlinePrioritiesLabel>2</InlinePrioritiesLabel>{' '}
-                          のペアからはじめます。
-                        </HighlightBold>
+                        <Bold>Third:</Bold> We’ll need to start with the pair of{' '}
+                        <InlinePrioritiesLabel>2</InlinePrioritiesLabel>’s
+                        again, just like the last time.
                       </P>
                     </>
                   )
@@ -1429,13 +1402,13 @@ export default () => (
                   type: 'dog',
                   children: (
                     <>
-                      <P>つまり、最終的に以下のようになりました！</P>
+                      <P>So this is the final result!</P>
                     </>
                   )
                 }
               ]}
             />
-            <R.Bwff>実行結果</R.Bwff>
+            <R.Bwff>Final result</R.Bwff>
           </>
         )
       },

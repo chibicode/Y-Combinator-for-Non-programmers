@@ -1379,10 +1379,10 @@ export default () => (
                         <H args={{ name: 'fastForward' }} /> していきましょう！
                       </P>
                       <P>
-                        まず初級編で説明した通り、
+                        まず、
                         <HighlightBold>
                           <InlinePrioritiesLabel>1</InlinePrioritiesLabel>{' '}
-                          のペアが左右ふたつ以上ある場合は、一番左の{' '}
+                          のペアが左右ふたつ以上あるので、一番左の{' '}
                           <InlinePrioritiesLabel>1</InlinePrioritiesLabel>{' '}
                           のペアからはじめます。
                         </HighlightBold>
@@ -1420,7 +1420,7 @@ export default () => (
                         </Highlight>
                       </P>
                       <P>
-                        というわけで、初級編で説明した通り、
+                        というわけで、
                         <HighlightBold>
                           次は <InlinePrioritiesLabel>2</InlinePrioritiesLabel>{' '}
                           のペアから
