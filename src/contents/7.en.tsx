@@ -1032,20 +1032,13 @@ export default () => (
                   type: 'sad',
                   children: (
                     <>
+                      <P>Ok, let me try…</P>
                       <P>
-                        わかった。じゃあとりあえず、
-                        <CustomEmoji type="questionFoodGrey" />{' '}
-                        に適当な料理を入れてみよう。
-                      </P>
-                      <P>
-                        <Highlight>
-                          <EmojiWithText letter="a" />、
-                          <EmojiWithText letter="b" />、
-                          <EmojiWithText letter="c" />
-                          を適当な組み合わせで{' '}
-                          <CustomEmoji type="questionFoodGrey" />{' '}
-                          に入れてみたよ。
-                        </Highlight>
+                        <Bold>Here it is:</Bold> I randomly filled each{' '}
+                        <CustomEmoji type="questionFoodGrey" /> icon with{' '}
+                        <EmojiWithText letter="a" />, a{' '}
+                        <EmojiWithText letter="b" />, or a{' '}
+                        <EmojiWithText letter="c" />.
                       </P>
                     </>
                   )
@@ -1053,9 +1046,8 @@ export default () => (
               ]}
             />
             <R.Lwoq>
-              <EmojiForLetter letter="a" /> <EmojiForLetter letter="b" />{' '}
-              <EmojiForLetter letter="c" /> を適当に{' '}
-              <CustomEmoji type="questionFoodGrey" /> に入れてみた
+              Randomly filled each with <EmojiForLetter letter="a" />{' '}
+              <EmojiForLetter letter="b" /> <EmojiForLetter letter="c" />
             </R.Lwoq>
             <BubbleQuotes
               quotes={[
@@ -1064,13 +1056,20 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        この弁当箱に、
-                        <H args={{ name: 'plusOneEffect' }} />
-                        があれば
-                        <HighlightBold>成功</HighlightBold> <Emoji>🎉</Emoji>
-                        、なければ<HighlightBold>失敗</HighlightBold>{' '}
-                        <Emoji>😭</Emoji> ということかな？
+                        <Bold>So you’re saying:</Bold>
                       </P>
+                      <Ul>
+                        <UlLi>
+                          If this lunchbox has{' '}
+                          <H args={{ name: 'plusOneEffect' }} />, it’s a{' '}
+                          <Highlight>success</Highlight> <Emoji>🎉</Emoji>.
+                        </UlLi>
+                        <UlLi>
+                          If not, then it’s a <Highlight>failure</Highlight>{' '}
+                          <Emoji>😭</Emoji>
+                        </UlLi>
+                      </Ul>
+                      <P>Is that right?</P>
                     </>
                   )
                 },
@@ -1079,12 +1078,15 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        そうですね。そして、
-                        <H args={{ name: 'plusOneEffect' }} />
-                        があるかどうかを確かめるには、まず{' '}
-                        <EmojiNumber number={1} /> <Emoji>➕</Emoji>{' '}
-                        <EmojiNumber number={1} />{' '}
-                        が計算できるかを確かめてみます。
+                        Yes! And to check if it has{' '}
+                        <H args={{ name: 'plusOneEffect' }} />…
+                      </P>
+                      <P>
+                        <Highlight>
+                          We need to first confirm that it can do{' '}
+                          <EmojiNumber number={1} /> <Emoji>➕</Emoji>{' '}
+                          <EmojiNumber number={1} />.
+                        </Highlight>
                       </P>
                     </>
                   )
@@ -1099,8 +1101,10 @@ export default () => (
               ]}
               description={
                 <>
+                  We need to first confirm that it can do
+                  <br />
                   <EmojiNumber number={1} /> <Emoji>➕</Emoji>{' '}
-                  <EmojiNumber number={1} /> が計算できるか確かめる
+                  <EmojiNumber number={1} />
                 </>
               }
             />
