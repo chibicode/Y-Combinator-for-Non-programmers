@@ -1566,6 +1566,7 @@ export default () => (
                           だったら、
                           <EmojiNumber number={2} /> に変換できていたのになあ。
                         </Highlight>
+                        あとちょっとだったのに！
                       </P>
                     </>
                   )
@@ -1573,7 +1574,7 @@ export default () => (
               ]}
             />
             <R.Bgxi>
-              も仮にし右上が
+              もし仮に右上が
               <EmojiWithText letter="c" />
               <br />
               だったら、

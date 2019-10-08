@@ -1413,7 +1413,7 @@ export default () => (
         )
       },
       {
-        title: <>計算箱に変換できない</>,
+        title: <>Can’t convert to a mathbox</>,
         content: (
           <>
             <BubbleQuotes
@@ -1422,16 +1422,12 @@ export default () => (
                   type: 'dog',
                   children: (
                     <>
+                      <P>Now, we want to convert this to a mathbox…</P>
                       <P>
-                        実行を終えたので、
-                        <H args={{ name: 'convertToMathbox' }} />{' '}
-                        したいところですが…
-                      </P>
-                      <P>
-                        残念ながら、
-                        <HighlightBold>
-                          この弁当箱はぼくが計算箱に変換することができません。
-                        </HighlightBold>
+                        <Bold>But unfortunately:</Bold>{' '}
+                        <Italic>
+                          I won’t be able to convert this to a mathbox.
+                        </Italic>
                       </P>
                     </>
                   )
@@ -1439,7 +1435,8 @@ export default () => (
               ]}
             />
             <R.Xwzc>
-              <Emoji>❌</Emoji> 計算箱に変換できない <Emoji>❌</Emoji>
+              <Emoji>❌</Emoji> Can’t convert this to a mathbox{' '}
+              <Emoji>❌</Emoji>
             </R.Xwzc>
             <BubbleQuotes
               quotes={[
@@ -1448,21 +1445,20 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        理由は、
-                        <Highlight>
-                          以下の法則に沿っていないからです。
-                        </Highlight>
+                        <Bold>Why?</Bold> Because it doesn’t follow this
+                        pattern:
                       </P>
                       <R.Eozk>
-                        <H args={{ name: 'convertiblePatternCaption' }} />
+                        <H
+                          args={{
+                            name: 'convertiblePatternCaption',
+                            skipFirst: true
+                          }}
+                        />
                       </R.Eozk>
                       <P>
-                        <Highlight>
-                          右上には <Emoji>🅱️</Emoji>{' '}
-                          の料理がひとつないといけませんが、ここでは{' '}
-                          <Emoji>🅰️</Emoji> になっている
-                        </Highlight>
-                        ので、計算箱に変換できないのです。
+                        There needs to be exactly one <Emoji>🅱️</Emoji> on the
+                        top-right, but that’s not the case here.
                       </P>
                     </>
                   )
@@ -1470,11 +1466,10 @@ export default () => (
               ]}
             />
             <R.Fhrd>
-              右上が <Emoji>🅱️</Emoji> の<EmojiWithText letter="c" /> ではなく、
+              What’s on the top-right is not <Emoji>🅱️</Emoji>.<br />
+              Instead, it’s <Emoji>🅰️</Emoji>. That’s why it cannot be
               <br />
-              <Emoji>🅰️</Emoji> の<EmojiWithText letter="b" /> なので
-              <br />
-              計算箱に変換できない
+              converted to a mathbox.
             </R.Fhrd>
             <BubbleQuotes
               quotes={[
@@ -1483,27 +1478,20 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        ダメか…
-                        <Highlight>
-                          もし仮に右上が
-                          <EmojiWithText letter="b" />
-                          ではなくて
-                          <EmojiWithText letter="c" />
-                          だったら、
-                          <EmojiNumber number={2} /> に変換できていたのになあ。
-                        </Highlight>
+                        Hmm… if the top-right was a <EmojiWithText letter="c" />{' '}
+                        instead of a <EmojiWithText letter="b" />, it could have
+                        been converted to <EmojiNumber number={2} />.
                       </P>
+                      <P>It was so close!</P>
                     </>
                   )
                 }
               ]}
             />
             <R.Bgxi>
-              も仮にし右上が
-              <EmojiWithText letter="c" />
+              If the top-right was a <EmojiWithText letter="c" />,
               <br />
-              だったら、
-              <EmojiNumber number={2} /> に変換できていた
+              it could have been converted to <EmojiNumber number={2} />
             </R.Bgxi>
             <ExpressionRunnerSeparator />
             <R.Pmdm />

@@ -146,7 +146,7 @@ interface HProps {
     | { name: 'minusOneEffect'; capitalize?: true }
     | { name: 'startWithTwoCaption' }
     | { name: 'startWithLeftMostOneCaption' }
-    | { name: 'convertiblePatternCaption' }
+    | { name: 'convertiblePatternCaption', skipFirst?: true }
     | { name: 'convertiblePatternThreeColumnsCaption' }
     | { name: 'convertiblePatternFirstCaption' }
     | { name: 'convertiblePatternSecondCaption' }
@@ -1360,10 +1360,14 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
     if (locale === 'en') {
       return (
         <>
-          Let the <Bold>leftmost</Bold> item be <Emoji>🅰️</Emoji> and
-          <br />
-          the <Bold>middle</Bold> item be <Emoji>🅱️</Emoji>.
-          <br />
+          {!args.skipFirst && (
+            <>
+              Let the <Bold>leftmost</Bold> item be <Emoji>🅰️</Emoji> and
+              <br />
+              the <Bold>middle</Bold> item be <Emoji>🅱️</Emoji>.
+              <br />
+            </>
+          )}
           There needs to be <Bold>one</Bold> <Emoji>🅱️</Emoji>
           <br />
           on the <Bold>top-right</Bold> and <Bold>some number of</Bold>
