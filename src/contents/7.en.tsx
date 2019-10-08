@@ -813,7 +813,7 @@ export default () => (
       {
         title: (
           <>
-            計算箱の <CustomEmoji type="plusOne" /> と同じようなもの
+            It’s like <CustomEmoji type="plusOne" /> from mathbox
           </>
         ),
         content: (
@@ -825,13 +825,10 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        ここで思い出してほしいのですが、
-                        <HighlightBold>
-                          計算箱では、
-                          <CustomEmoji type="plusOne" />{' '}
-                          を使えば、「1を足す」計算を行うことができましたよね
-                        </HighlightBold>
-                        。
+                        Now, remember that, a <CustomEmoji type="mathBox" />{' '}
+                        <Bold>mathbox</Bold> has{' '}
+                        <H args={{ name: 'plusOneFeature' }} />, which lets you
+                        add <EmojiNumber number={1} /> to a number.
                       </P>
                     </>
                   )
@@ -839,10 +836,10 @@ export default () => (
               ]}
             />
             <R.Rviy>
-              <CustomEmoji type="mathBox" /> 計算箱の場合、
-              <CustomEmoji type="plusOne" /> を使えば
+              When using a <CustomEmoji type="mathBox" /> mathbox, you can use
               <br />
-              「1を足す」計算ができる
+              <CustomEmoji type="plusOne" /> to add <EmojiNumber number={1} />{' '}
+              to a number
             </R.Rviy>
             <ExpressionRunnerSeparator />
             <R.Jxvy></R.Jxvy>
@@ -853,8 +850,12 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        すなわち、この <H args={{ name: 'plusOneEffect' }} />
-                        がある弁当箱は…
+                        So, we can say that a lunchbox with{' '}
+                        <H args={{ name: 'plusOneEffect' }} /> is…
+                      </P>
+                      <P>
+                        Very similar to mathboxes’{' '}
+                        <H args={{ name: 'plusOneFeature' }} />.
                       </P>
                     </>
                   )
@@ -862,32 +863,13 @@ export default () => (
               ]}
             />
             <R.Jguj>
-              この <H args={{ name: 'plusOneEffect' }} />
-              がある弁当箱は…
+              <Emoji>🍱</Emoji> A lunchbox with{' '}
+              <H args={{ name: 'plusOneEffect' }} /> is…
             </R.Jguj>
-            <BubbleQuotes
-              quotes={[
-                {
-                  type: 'dog',
-                  children: (
-                    <>
-                      <P>
-                        <HighlightBold>
-                          計算箱における <CustomEmoji type="plusOne" />{' '}
-                          と同じようなもの
-                        </HighlightBold>
-                        、と言えるでしょう。
-                      </P>
-                    </>
-                  )
-                }
-              ]}
-            />
+            <ExpressionRunnerSeparator />
             <R.Biit>
-              <HighlightBold>
-                <CustomEmoji type="mathBox" /> 計算箱における、
-                <CustomEmoji type="plusOne" /> と同じようなもの
-              </HighlightBold>
+              <CustomEmoji type="mathBox" /> Very similar to mathboxes’{' '}
+              <H args={{ name: 'plusOneFeature' }} />.
             </R.Biit>
           </>
         )

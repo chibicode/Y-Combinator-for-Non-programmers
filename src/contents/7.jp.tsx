@@ -820,7 +820,7 @@ export default () => (
                       <P>
                         ここで思い出してほしいのですが、
                         <HighlightBold>
-                          計算箱では、
+                          <CustomEmoji type="mathBox" /> 計算箱では、
                           <CustomEmoji type="plusOne" />{' '}
                           を使えば、「1を足す」計算を行うことができましたよね
                         </HighlightBold>
