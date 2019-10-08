@@ -509,6 +509,7 @@ export default () => (
                             lowerCase: true
                           }}
                         />
+                        :
                       </P>
                     </>
                   )
@@ -614,8 +615,8 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        続いて、
-                        <H args={{ name: 'lookAtThisBentoBox' }} />。
+                        Let’s try another example.{' '}
+                        <H args={{ name: 'lookAtThisBentoBox' }} />:
                       </P>
                     </>
                   )
@@ -630,8 +631,7 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        この弁当箱は、ぼくが計算箱に変換すると{' '}
-                        <EmojiNumber number={2} /> になります。
+                        This can be converted to <EmojiNumber number={2} />:
                       </P>
                     </>
                   )
@@ -652,12 +652,8 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        この弁当箱も、
-                        <Highlight>
-                          先ほどの
-                          <H args={{ name: 'plusOneEffect' }} />
-                          がある弁当箱と合体させてみました。
-                        </Highlight>
+                        Let’s combine it with a lunchbox that has{' '}
+                        <H args={{ name: 'plusOneEffect' }} />:
                       </P>
                     </>
                   )
@@ -665,8 +661,9 @@ export default () => (
               ]}
             />
             <R.Akug>
-              <H args={{ name: 'plusOneEffect' }} />
-              がある弁当箱と合体
+              Combine with a lunchbox
+              <br />
+              that has <H args={{ name: 'plusOneEffect' }} />
             </R.Akug>
             <BubbleQuotes
               quotes={[
@@ -675,11 +672,14 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        こちらを「
-                        <HighlightBold>
-                          <H args={{ name: 'runAndConvertToMathbox' }} />
-                        </HighlightBold>
-                        」するとどうなるか確かめてみてください！
+                        Now, let’s{' '}
+                        <H
+                          args={{
+                            name: 'runAndConvertToMathbox',
+                            lowerCase: true
+                          }}
+                        />
+                        :
                       </P>
                     </>
                   )
@@ -694,7 +694,7 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        <EmojiNumber number={3} /> になった！
+                        It became <EmojiNumber number={3} />!
                       </P>
                     </>
                   )
@@ -703,24 +703,24 @@ export default () => (
                   type: 'dog',
                   children: (
                     <>
-                      <P>そうなんです！まとめると、以下のようになります。</P>
+                      <P>Yes! Here’s the summary of what happened:</P>
                     </>
                   )
                 }
               ]}
             />
-
             <R.Aone>
-              <EmojiNumber number={2} /> に変換できる弁当箱と、
+              Combine a lunchbox that can be converted to{' '}
+              <EmojiNumber number={2} />
               <br />
-              <H args={{ name: 'plusOneEffect' }} />
-              がある弁当箱を合体させ…
+              with a lunchbox that has <H args={{ name: 'plusOneEffect' }} />
             </R.Aone>
             <ExpressionRunnerSeparator />
             <R.Qsoa>
-              <H args={{ name: 'runAndConvertToMathbox' }} />
+              If you{' '}
+              <H args={{ name: 'runAndConvertToMathbox', lowerCase: true }} />,
               <br />
-              すると、結果は <EmojiNumber number={3} /> になる
+              it will become <EmojiNumber number={3} />
             </R.Qsoa>
             <BubbleQuotes
               quotes={[
@@ -729,12 +729,8 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        ざっくり言うと、今度は{' '}
-                        <HighlightBold>
-                          <EmojiNumber number={2} /> が{' '}
-                          <EmojiNumber number={3} /> になった
-                        </HighlightBold>
-                        のです。
+                        This time, <EmojiNumber number={2} /> became{' '}
+                        <EmojiNumber number={3} />
                       </P>
                     </>
                   )
@@ -749,9 +745,7 @@ export default () => (
               ]}
               description={
                 <>
-                  ざっくり言うと、
-                  <EmojiNumber number={2} /> が <EmojiNumber number={3} />{' '}
-                  になった
+                  <EmojiNumber number={2} /> became <EmojiNumber number={3} />
                 </>
               }
             />
