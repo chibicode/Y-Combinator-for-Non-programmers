@@ -876,7 +876,7 @@ export default () => (
       },
       {
         type: 'yesNoQuiz',
-        title: <>計算箱を賭けた問題</>,
+        title: <>The Challenge</>,
         content: (
           <>
             <BubbleQuotes
@@ -886,37 +886,12 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        では、ここで問題です。
-                        <HighlightBold>
-                          この弁当箱に、どのような法則に基づいて{' '}
-                          <CustomEmoji type="questionFoodGrey" />{' '}
-                          に料理を入れると…
-                        </HighlightBold>
-                      </P>
-                    </>
-                  )
-                }
-              ]}
-            />
-            <R.Envj>
-              <HighlightBold>
-                どのような法則に基づいて
-                <br />
-                <CustomEmoji type="questionFoodGrey" /> に料理を入れると…
-              </HighlightBold>
-            </R.Envj>
-            <BubbleQuotes
-              quotes={[
-                {
-                  type: 'dog',
-                  children: (
-                    <>
-                      <P>
-                        先ほどのような、
-                        <HighlightBold>
-                          <H args={{ name: 'plusOneEffect' }} />
-                          がある弁当箱になるでしょう？
-                        </HighlightBold>
+                        <Bold>Now, here’s the challenge:</Bold>{' '}
+                        <Highlight>
+                          Fill each <CustomEmoji type="questionFoodGrey" /> icon
+                          in a way such that, the resulting lunchbox has{' '}
+                          <H args={{ name: 'plusOneEffect' }} />.
+                        </Highlight>
                       </P>
                     </>
                   )
@@ -924,10 +899,12 @@ export default () => (
               ]}
             />
             <R.Jguj>
-              <HighlightBold>
-                <H args={{ name: 'plusOneEffect' }} />
-                がある弁当箱になる？
-              </HighlightBold>
+              Fill each <CustomEmoji type="questionFoodGrey" /> icon in a way
+              such that,
+              <br />
+              the resulting lunchbox has
+              <br />
+              <H args={{ name: 'plusOneEffect' }} />.
             </R.Jguj>
             <BubbleQuotes
               quotes={[
@@ -936,13 +913,26 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        つまり、
-                        <HighlightBold>
-                          それぞれの <CustomEmoji type="questionFoodGrey" />{' '}
-                          に何を入れたら、
-                          <H args={{ name: 'plusOneEffect' }} />
-                          があるか当てろってこと？
-                        </HighlightBold>
+                        So,{' '}
+                        <Highlight>
+                          you’re asking what goes in each{' '}
+                          <CustomEmoji type="questionFoodGrey" /> icon?
+                        </Highlight>
+                      </P>
+                    </>
+                  )
+                },
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>
+                        <Bold>Yes!</Bold> If you fill each{' '}
+                        <CustomEmoji type="questionFoodGrey" /> icon correctly,
+                        it should be able to turn{' '}
+                        <CustomEmoji type="blankNumber" /> into{' '}
+                        <CustomEmoji type="blankNumber" /> <Emoji>➕</Emoji>{' '}
+                        <EmojiNumber number={1} />.
                       </P>
                     </>
                   )
@@ -950,46 +940,27 @@ export default () => (
               ]}
             />
             <R.Qrgc>
-              それぞれの <CustomEmoji type="questionFoodGrey" /> に何を入れたら
+              If you do it correctly,
               <br />
-              <H args={{ name: 'plusOneEffect' }} />
-              がある弁当箱になる？
+              it should be able to turn <CustomEmoji type="blankNumber" /> into{' '}
+              <CustomEmoji type="blankNumber" /> <Emoji>➕</Emoji>{' '}
+              <EmojiNumber number={1} />.
             </R.Qrgc>
             <ExpressionRunnerSeparator />
             <R.Jxvy></R.Jxvy>
             <BubbleQuotes
               quotes={[
                 {
-                  type: 'dog',
-                  children: (
-                    <>
-                      <P>
-                        <HighlightBold>はい、その通りです！</HighlightBold>
-                        <Highlight>
-                          ある法則に基づいて{' '}
-                          <CustomEmoji type="questionFoodGrey" />{' '}
-                          に料理を入れた時に限り
-                        </Highlight>
-                        、<H args={{ name: 'plusOneEffect' }} />
-                        がある弁当箱になります。
-                      </P>
-                      <P>
-                        <Highlight>
-                          それがどんな法則が、当ててみよう！
-                        </Highlight>
-                        という問題です。
-                      </P>
-                    </>
-                  )
-                },
-                {
                   type: 'devil',
                   children: (
                     <>
                       <P>
-                        この問題こそが、以前から話していた「難しい問題」だ。
+                        This is the very difficult question I’ve been talking
+                        about.
+                      </P>
+                      <P>
                         <Highlight>
-                          これを解けたら、約束通り計算箱を返してやろう！
+                          If you solve this, I’ll give you the mathboxes back!
                         </Highlight>
                       </P>
                     </>
@@ -1003,7 +974,13 @@ export default () => (
                 <Emoji>😈</Emoji>,
                 <CustomEmoji type="mathBox" />
               ]}
-              description={<>この問題が解けたら、計算箱を返してやろう！</>}
+              description={
+                <>
+                  If you solve this,
+                  <br />
+                  I’ll give you the mathboxes back!
+                </>
+              }
             />
           </>
         )
