@@ -23,6 +23,7 @@ import PlusOneOrangeSvg from 'src/components/CustomEmoji/PlusOneOrangeSvg'
 import PlusOneSvg from 'src/components/CustomEmoji/PlusOneSvg'
 import QuestionFoodGreySvg from 'src/components/CustomEmoji/QuestionFoodGreySvg'
 import SingleArrowSvg from 'src/components/CustomEmoji/SingleArrowSvg'
+import SingleArrowDownSvg from 'src/components/CustomEmoji/SingleArrowDownSvg'
 import SingleArrowReverseSvg from 'src/components/CustomEmoji/SingleArrowReverseSvg'
 import MultiplySvg from 'src/components/CustomEmoji/MultiplySvg'
 import MultiplyWhiteSvg from 'src/components/CustomEmoji/MultiplyWhiteSvg'
@@ -55,6 +56,7 @@ export const customEmojiToComponent = {
   blankNumberYellow: BlankNumberYellowSvg,
   mathBox: MathBoxSvg,
   singleArrow: SingleArrowSvg,
+  singleArrowDown: SingleArrowDownSvg,
   singleArrowReverse: SingleArrowReverseSvg,
   lambda: LambdaSvg,
   index: IndexSvg,

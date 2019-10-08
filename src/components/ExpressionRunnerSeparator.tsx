@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core'
 import { spaces } from 'src/lib/theme'
-import Emoji from 'src/components/Emoji'
+import CustomEmoji from 'src/components/CustomEmoji'
 
 const ExpressionRunnerSeparator = ({ blank }: { blank?: boolean }) => (
   <div
@@ -10,7 +10,7 @@ const ExpressionRunnerSeparator = ({ blank }: { blank?: boolean }) => (
       margin: ${spaces('-1.25')} 0 ${spaces('-1')};
     `}
   >
-    {!blank && <Emoji size="mdlg">⬇️</Emoji>}
+    {!blank && <CustomEmoji type="singleArrowDown" size="mdlg" />}
   </div>
 )
 

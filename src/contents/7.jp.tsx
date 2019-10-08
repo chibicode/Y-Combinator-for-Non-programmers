@@ -1152,14 +1152,8 @@ export default () => (
                         に変換できる弁当箱と合体させたときに…
                       </P>
                       <P>
-                        結果が <EmojiNumber number={2} /> になれば
-                        <H args={{ name: 'plusOneEffect' }} />
-                        があるので
-                        <HighlightBold>成功</HighlightBold> <Emoji>🎉</Emoji>、
-                        それ以外なら
-                        <HighlightBold>
-                          失敗
-                        </HighlightBold> <Emoji>😭</Emoji> というわけです。
+                        結果が <EmojiNumber number={2} />{' '}
+                        にならないといけないのです。
                       </P>
                     </>
                   )
@@ -1173,9 +1167,13 @@ export default () => (
             </R.Xxan>
             <ExpressionRunnerSeparator />
             <ExpressionRunnerCaptionOnly>
-              <H args={{ name: 'runAndConvertToMathbox' }} />
-              <br />
-              して、結果が <EmojiNumber number={2} size="mdlg" /> になれば
+              <Highlight>
+                <H args={{ name: 'runAndConvertToMathbox' }} /> して…
+              </Highlight>
+            </ExpressionRunnerCaptionOnly>
+            <ExpressionRunnerSeparator />
+            <ExpressionRunnerCaptionOnly>
+              結果が <EmojiNumber number={2} size="mdlg" /> になれば
               <br />
               <H args={{ name: 'plusOneEffect' }} />
               があるので
@@ -1257,9 +1255,13 @@ export default () => (
             </R.Nuco>
             <ExpressionRunnerSeparator />
             <ExpressionRunnerCaptionOnly>
-              <H args={{ name: 'runAndConvertToMathbox' }} />
-              <br />
-              して、結果が <EmojiNumber number={2} size="mdlg" /> になれば
+              <Highlight>
+                <H args={{ name: 'runAndConvertToMathbox' }} /> して…
+              </Highlight>
+            </ExpressionRunnerCaptionOnly>
+            <ExpressionRunnerSeparator />
+            <ExpressionRunnerCaptionOnly>
+              結果が <EmojiNumber number={2} size="mdlg" /> になれば
               <HighlightBold>成功</HighlightBold> <Emoji>🎉</Emoji>
               <br />
               それ以外なら<HighlightBold>失敗</HighlightBold> <Emoji>😭</Emoji>
@@ -1343,9 +1345,13 @@ export default () => (
             </R.Nuco>
             <ExpressionRunnerSeparator />
             <ExpressionRunnerCaptionOnly>
-              <H args={{ name: 'runAndConvertToMathbox' }} />
-              <br />
-              して、結果が <EmojiNumber number={2} size="mdlg" /> になれば
+              <Highlight>
+                <H args={{ name: 'runAndConvertToMathbox' }} /> して…
+              </Highlight>
+            </ExpressionRunnerCaptionOnly>
+            <ExpressionRunnerSeparator />
+            <ExpressionRunnerCaptionOnly>
+              結果が <EmojiNumber number={2} size="mdlg" /> になれば
               <HighlightBold>成功</HighlightBold> <Emoji>🎉</Emoji>
               <br />
               それ以外なら<HighlightBold>失敗</HighlightBold> <Emoji>😭</Emoji>

@@ -1062,7 +1062,7 @@ export default () => (
                         <UlLi>
                           If this lunchbox has{' '}
                           <H args={{ name: 'plusOneEffect' }} />, it’s a{' '}
-                          <Highlight>success</Highlight> <Emoji>🎉</Emoji>.
+                          <Highlight>success</Highlight>. <Emoji>🎉</Emoji>
                         </UlLi>
                         <UlLi>
                           If not, then it’s a <Highlight>failure</Highlight>{' '}
@@ -1115,18 +1115,16 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        つまり、以下のように <EmojiNumber number={1} />{' '}
-                        に変換できる弁当箱と合体させたときに…
+                        <Bold>Which means:</Bold>{' '}
+                        <Highlight>
+                          If you combine it with a lunchbox that can be
+                          converted with <EmojiNumber number={1} />…
+                        </Highlight>
                       </P>
                       <P>
-                        結果が <EmojiNumber number={2} /> になれば
-                        <H args={{ name: 'plusOneEffect' }} />
-                        があるので
-                        <HighlightBold>成功</HighlightBold> <Emoji>🎉</Emoji>、
-                        それ以外なら
-                        <HighlightBold>
-                          失敗
-                        </HighlightBold> <Emoji>😭</Emoji> というわけです。
+                        <Highlight>
+                          The result needs to be <EmojiNumber number={2} />.
+                        </Highlight>
                       </P>
                     </>
                   )
@@ -1134,21 +1132,22 @@ export default () => (
               ]}
             />
             <R.Xxan>
-              <EmojiNumber number={1} /> に変換できる弁当箱と、
+              Combine it with a lunchbox
               <br />
-              先ほどの弁当箱を合体させ…
+              that can be converted to <EmojiNumber number={1} />
             </R.Xxan>
             <ExpressionRunnerSeparator />
             <ExpressionRunnerCaptionOnly>
-              <H args={{ name: 'runAndConvertToMathbox' }} />
+              <Highlight>
+                <H args={{ name: 'runAndConvertToMathbox' }} />
+              </Highlight>
+            </ExpressionRunnerCaptionOnly>
+            <ExpressionRunnerSeparator />
+            <ExpressionRunnerCaptionOnly>
+              If it becomes <EmojiNumber number={2} size="mdlg" />,{' '}
+              <Highlight>success</Highlight>. <Emoji>🎉</Emoji>
               <br />
-              して、結果が <EmojiNumber number={2} size="mdlg" /> になれば
-              <br />
-              <H args={{ name: 'plusOneEffect' }} />
-              があるので
-              <HighlightBold>成功</HighlightBold> <Emoji>🎉</Emoji>
-              <br />
-              それ以外なら<HighlightBold>失敗</HighlightBold> <Emoji>😭</Emoji>
+              Otherwise, <Highlight>failure</Highlight> <Emoji>😭</Emoji>
             </ExpressionRunnerCaptionOnly>
           </>
         )
