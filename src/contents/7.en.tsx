@@ -854,8 +854,8 @@ export default () => (
                         <H args={{ name: 'plusOneEffect' }} /> is…
                       </P>
                       <P>
-                        Very similar to mathboxes’{' '}
-                        <H args={{ name: 'plusOneFeature' }} />.
+                        Very similar to <H args={{ name: 'plusOneFeature' }} />{' '}
+                        from a mathbox.
                       </P>
                     </>
                   )
@@ -868,14 +868,14 @@ export default () => (
             </R.Jguj>
             <ExpressionRunnerSeparator />
             <R.Biit>
-              <CustomEmoji type="mathBox" /> Very similar to mathboxes’{' '}
-              <H args={{ name: 'plusOneFeature' }} />.
+              <CustomEmoji type="mathBox" /> Very similar to
+              <br /> <H args={{ name: 'plusOneFeature' }} /> from a mathbox
             </R.Biit>
           </>
         )
       },
       {
-        type: 'summary',
+        type: 'yesNoQuiz',
         title: <>計算箱を賭けた問題</>,
         content: (
           <>

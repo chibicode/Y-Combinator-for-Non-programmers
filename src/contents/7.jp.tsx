@@ -886,7 +886,7 @@ export default () => (
         )
       },
       {
-        type: 'summary',
+        type: 'yesNoQuiz',
         title: <>計算箱を賭けた問題</>,
         content: (
           <>
