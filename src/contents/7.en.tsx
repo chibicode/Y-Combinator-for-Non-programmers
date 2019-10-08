@@ -23,7 +23,7 @@ import * as R from 'src/components/Runners'
 import EmojiWithText from 'src/components/EmojiWithText'
 import InlinePrioritiesLabel from 'src/components/InlinePrioritiesLabel'
 import NextLessonButton from 'src/components/NextLessonButton'
-import { Beginner5Rules } from 'src/contents/5.jp'
+import { Beginner5Rules } from 'src/contents/5.en'
 
 export default () => (
   <EpisodeCardList
@@ -1231,6 +1231,7 @@ export default () => (
                         <H args={{ name: 'play', lowerCase: true }} /> the above
                         lunchbox!
                       </P>
+                      <P>…but before we do that, let’s do a quick review.</P>
                     </>
                   )
                 }
@@ -1241,7 +1242,7 @@ export default () => (
       },
       {
         type: 'sideNote',
-        title: <>初級編の復習</>,
+        title: <>Review of Beginner 5</>,
         content: (
           <>
             <BubbleQuotes
@@ -1251,12 +1252,14 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        今回の弁当箱では、
-                        <Highlight>初級その5で学んだ法則が登場</Highlight>
-                        します。
+                        <Highlight>
+                          To solve the above lunchbox, we’ll need to use the
+                          rules from <Bold>Beginner 5</Bold>.
+                        </Highlight>
                       </P>
                       <P>
-                        覚えていなくても、早送りで勝手に進んでくれるので大丈夫ですが、いちおう復習をしておきましょう！
+                        You don’t need to memorize them, but let’s just do a
+                        quick review.
                       </P>
                     </>
                   )
@@ -1268,7 +1271,11 @@ export default () => (
         )
       },
       {
-        title: <>早送りしてみよう</>,
+        title: (
+          <>
+            Let’s <H args={{ name: 'fastForward' }} />
+          </>
+        ),
         content: (
           <>
             <BubbleQuotes
