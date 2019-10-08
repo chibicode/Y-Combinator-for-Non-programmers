@@ -354,7 +354,10 @@ export default () => (
                   type: 'dog',
                   children: (
                     <>
-                      <P>If you run the above lunchbox and convert it…</P>
+                      <P>
+                        If you run the above lunchbox and convert it using this
+                        button:
+                      </P>
                       <InlineRunAndConvertToMathboxButton />
                       <P>
                         It will become <CustomEmoji type="blankNumber" />{' '}
@@ -730,7 +733,7 @@ export default () => (
                     <>
                       <P>
                         This time, <EmojiNumber number={2} /> became{' '}
-                        <EmojiNumber number={3} />
+                        <EmojiNumber number={3} />.
                       </P>
                     </>
                   )
@@ -754,7 +757,7 @@ export default () => (
       },
       {
         type: 'summary',
-        title: <>まとめ</>,
+        title: <>Summary</>,
         content: (
           <>
             <BubbleQuotes
@@ -763,33 +766,27 @@ export default () => (
                   type: 'dog',
                   children: (
                     <>
-                      <P>まとめると、</P>
+                      <P>Therefore,</P>
                       <Ul>
                         <UlLi>
                           <Highlight>
-                            ある数字 <CustomEmoji type="blankNumber" />{' '}
-                            に変換できる弁当箱と、
+                            If you combine a lunchbox that can be converted to{' '}
+                            <CustomEmoji type="blankNumber" />…
                           </Highlight>
                         </UlLi>
                         <UlLi>
                           <Highlight>
-                            <H args={{ name: 'plusOneEffect' }} />
-                            がある弁当箱を合体させ、
-                          </Highlight>
-                        </UlLi>
-                        <UlLi>
-                          <Highlight>
-                            <H args={{ name: 'runAndConvertToMathbox' }} />
-                            すると、
+                            With a lunchbox that has{' '}
+                            <H args={{ name: 'plusOneEffect' }} />, and do:
                           </Highlight>
                         </UlLi>
                       </Ul>
+                      <InlineRunAndConvertToMathboxButton />
                       <P>
                         <Highlight>
-                          結果は <CustomEmoji type="blankNumber" />{' '}
-                          <Emoji>➕</Emoji> <EmojiNumber number={1} /> になる
+                          It will become <CustomEmoji type="blankNumber" />{' '}
+                          <Emoji>➕</Emoji> <EmojiNumber number={1} />.
                         </Highlight>
-                        のです。
                       </P>
                     </>
                   )
@@ -797,17 +794,18 @@ export default () => (
               ]}
             />
             <R.Qrgc>
-              <CustomEmoji type="blankNumber" /> に変換できる弁当箱と、
+              Combine a lunchbox that can be converted to{' '}
+              <CustomEmoji type="blankNumber" />
               <br />
-              <H args={{ name: 'plusOneEffect' }} />
-              がある弁当箱を合体させ…
+              with a lunchbox that has <H args={{ name: 'plusOneEffect' }} />
             </R.Qrgc>
             <ExpressionRunnerSeparator />
             <R.Jxvy>
-              <H args={{ name: 'runAndConvertToMathbox' }} />
+              If you{' '}
+              <H args={{ name: 'runAndConvertToMathbox', lowerCase: true }} />,
               <br />
-              すると、結果は <CustomEmoji type="blankNumber" />{' '}
-              <Emoji>➕</Emoji> <EmojiNumber number={1} /> になる
+              it will become <CustomEmoji type="blankNumber" />{' '}
+              <Emoji>➕</Emoji> <EmojiNumber number={1} />
             </R.Jxvy>
           </>
         )
