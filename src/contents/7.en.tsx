@@ -986,11 +986,7 @@ export default () => (
         )
       },
       {
-        title: (
-          <>
-            試しに<HighlightBold>適当な料理</HighlightBold>を入れてみる
-          </>
-        ),
+        title: <>Try filling with random items</>,
         content: (
           <>
             <BubbleQuotes
@@ -999,12 +995,8 @@ export default () => (
                   type: 'crying',
                   children: (
                     <>
-                      <P>
-                        うーん…
-                        <Highlight>
-                          問題を完全に理解できた自信がないし、どうやって解けばいいかさっぱり分からない！
-                        </Highlight>
-                      </P>
+                      <P>Hmm… I don’t know if I understood the problem.</P>
+                      <P>And I have no clue how to solve it!</P>
                     </>
                   )
                 },
@@ -1012,13 +1004,17 @@ export default () => (
                   type: 'dog',
                   children: (
                     <>
-                      <P>大丈夫、安心してください！</P>
                       <P>
-                        <HighlightBold>
-                          試しに、
-                          <CustomEmoji type="questionFoodGrey" />{' '}
-                          に適当な料理を入れてみると、問題を理解できると思います。
-                        </HighlightBold>
+                        <Bold>No problem!</Bold> First,{' '}
+                        <Highlight>
+                          try filling each{' '}
+                          <CustomEmoji type="questionFoodGrey" /> icon with a{' '}
+                          <Italic>random</Italic> food item.
+                        </Highlight>
+                      </P>
+                      <P>
+                        By doing so, you’ll be able to understand the problem
+                        better.
                       </P>
                     </>
                   )
@@ -1026,8 +1022,9 @@ export default () => (
               ]}
             />
             <R.Envj>
-              <CustomEmoji type="questionFoodGrey" />{' '}
-              に適当な料理を入れてみて下さい！<Emoji>🐶</Emoji>
+              Try filling each <CustomEmoji type="questionFoodGrey" /> icon
+              <br />
+              with a <Italic>random</Italic> food item! <Emoji>🐶</Emoji>
             </R.Envj>
             <BubbleQuotes
               quotes={[
