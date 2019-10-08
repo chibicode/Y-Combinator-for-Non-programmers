@@ -50,7 +50,6 @@ const OnePlusOneTest = () => (
 
 export default () => (
   <EpisodeCardList
-    underConstruction
     cards={[
       {
         type: 'summary',
@@ -1501,8 +1500,7 @@ export default () => (
       {
         title: (
           <>
-            <H args={{ name: 'plusOneEffect' }} />
-            は無い
+            There’s no <H args={{ name: 'plusOneEffect' }} />
           </>
         ),
         content: (
@@ -1514,9 +1512,8 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        つまり、実行しても{' '}
-                        <EmojiNumber number={2} size="mdlg" />{' '}
-                        に変換できる弁当箱になりませんでした。
+                        <Bold>So:</Bold> Because it didn’t become{' '}
+                        <EmojiNumber number={2} size="mdlg" /> at the end…
                       </P>
                     </>
                   )
@@ -1524,16 +1521,16 @@ export default () => (
               ]}
             />
             <R.Nuco>
-              <EmojiNumber number={1} /> に変換できる弁当箱と合体させ…
+              If you combine with the lunchbox that can be
+              <br />
+              converted to <EmojiNumber number={1} />, and{' '}
+              <H args={{ name: 'play', lowerCase: true }} /> it…
             </R.Nuco>
             <ExpressionRunnerSeparator />
             <R.Xwzc>
-              実行したところ、
+              It does not become a lunchbox that can be
               <br />
-              <HighlightBold>
-                <EmojiNumber number={2} size="mdlg" />{' '}
-                に変換できる弁当箱にならなかった
-              </HighlightBold>
+              converted to <EmojiNumber number={2} size="mdlg" />
             </R.Xwzc>
             <BubbleQuotes
               quotes={[
@@ -1542,14 +1539,11 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        だから、
-                        <Highlight>
-                          先ほどの弁当箱に、
-                          <H args={{ name: 'plusOneEffect' }} />
-                          は無い
-                        </Highlight>
-                        のです。つまり、
-                        <HighlightBold>不正解でした！</HighlightBold>
+                        <Bold>Therefore, you were incorrect!</Bold>
+                      </P>
+                      <P>
+                        The lunchbox you came up with <Italic>does not</Italic>{' '}
+                        have <H args={{ name: 'plusOneEffect' }} />.
                       </P>
                     </>
                   )
@@ -1557,8 +1551,9 @@ export default () => (
               ]}
             />
             <R.Olyw>
+              The lunchbox you came up with does not have
+              <br />
               <H args={{ name: 'plusOneEffect' }} />
-              は無い
             </R.Olyw>
             <BubbleQuotes
               quotes={[
@@ -1566,11 +1561,7 @@ export default () => (
                   type: 'crying',
                   children: (
                     <>
-                      <P>
-                        残念…やっぱり、適当に{' '}
-                        <CustomEmoji type="questionFoodGrey" />{' '}
-                        に料理を埋めても正解にはならないかあ…
-                      </P>
+                      <P>Hmm… sad!</P>
                     </>
                   )
                 }
@@ -1580,7 +1571,8 @@ export default () => (
         )
       },
       {
-        title: <>問題をもう一度</>,
+        type: 'yesNoQuiz',
+        title: <>Presenting the question one more time</>,
         content: (
           <>
             <BubbleQuotes
@@ -1590,7 +1582,8 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        問題の意味が分かったでしょうか？では、もう一度聞きますね。
+                        Hopefully you understand what the problem is asking. So
+                        let’s state it again:
                       </P>
                       <P>
                         <HighlightBold>
@@ -1604,34 +1597,13 @@ export default () => (
                 }
               ]}
             />
-            <R.Envj>
-              <HighlightBold>
-                どのような法則に基づいて <CustomEmoji type="questionFoodGrey" />{' '}
-                に料理を入れると…
-              </HighlightBold>
-            </R.Envj>
-            <BubbleQuotes
-              quotes={[
-                {
-                  type: 'dog',
-                  children: (
-                    <>
-                      <P>
-                        <HighlightBold>
-                          <H args={{ name: 'plusOneEffect' }} />
-                          がある弁当箱になるでしょう？
-                        </HighlightBold>
-                      </P>
-                    </>
-                  )
-                }
-              ]}
-            />
             <R.Jguj>
-              <HighlightBold>
-                <H args={{ name: 'plusOneEffect' }} />
-                がある弁当箱になる？
-              </HighlightBold>
+              Fill each <CustomEmoji type="questionFoodGrey" /> icon in a way
+              such that,
+              <br />
+              the resulting lunchbox has
+              <br />
+              <H args={{ name: 'plusOneEffect' }} />.
             </R.Jguj>
             <BubbleQuotes
               quotes={[
@@ -1640,14 +1612,21 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        繰り返しますが、先ほど適当に料理を入れた以下の弁当箱は、不正解でした！
+                        <Bold>Again:</Bold> The “random” lunchbox you came up
+                        with was incorrect.
+                      </P>
+                      <P>
+                        <Highlight>
+                          Try to see if you can come up with a different one
+                          that works!
+                        </Highlight>
                       </P>
                     </>
                   )
                 }
               ]}
             />
-            <R.Olyw>こちらは不正解だった</R.Olyw>
+            <R.Olyw>This was incorrect</R.Olyw>
             <BubbleQuotes
               quotes={[
                 {
@@ -1655,7 +1634,8 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        うーん…問題の意味は分かったけど、答え方が分からない！
+                        Hmm… I now understand the problem, but I don’t know how
+                        to solve it!
                       </P>
                     </>
                   )
@@ -1666,20 +1646,23 @@ export default () => (
         )
       },
       {
-        title: <>答えは次のページに</>,
+        title: <>The answer is on the next page</>,
         content: (
           <>
             <P>
-              せっかく計算箱を返してもらえるチャンスなのに、問題が難しくて村人は苦戦しているようですね。
+              The villagers are so close to getting their mathboxes back, but
+              they’re struggling with such a difficult problem.
             </P>
             <EmojiSeparator
               emojis={['❓', '😭', '❓']}
-              description={<>難しすぎて見当もつかない！</>}
+              description={<>This problem is too difficult!</>}
             />
             <P>
-              しかし、
-              <HighlightBold>次のページで答えが判明します。</HighlightBold>
-              ぜひ先に進んでみてください！
+              <Bold>But:</Bold>{' '}
+              <Highlight>
+                They’ll figure out the answer on the next page.
+              </Highlight>{' '}
+              Let’s keep reading!
             </P>
             <NextLessonButton />
           </>

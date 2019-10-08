@@ -1667,6 +1667,7 @@ export default () => (
         )
       },
       {
+        type: 'yesNoQuiz',
         title: <>問題をもう一度</>,
         content: (
           <>
