@@ -1178,47 +1178,35 @@ export default () => (
               ]}
             />
             <R.Fxde>
-              A lunchbox that can be converted to{' '}
-              <EmojiNumber number={1} size="mdlg" />
+              <H
+                args={{ name: 'canBeConvertedCaption', letter: 'd', number: 1 }}
+              />
             </R.Fxde>
             <BubbleQuotes
               quotes={[
                 {
-                  type: 'thinking',
+                  type: 'dog',
                   children: (
                     <>
                       <P>
-                        これを先ほどの弁当箱と組み合わせて、
-                        <H args={{ name: 'runAndConvertToMathbox' }} />
-                        し、
-                        <Highlight>
-                          <EmojiNumber number={1} /> <Emoji>➕</Emoji>{' '}
-                          <EmojiNumber number={1} /> を計算できればいい
-                        </Highlight>
-                        んだな。
+                        Let’s combine this with the “random” lunchbox you came
+                        up with earlier…
                       </P>
                       <P>
-                        すなわち、
-                        <Highlight>
-                          結果が <EmojiNumber number={2} /> になれば
-                          <HighlightBold>成功</HighlightBold> <Emoji>🎉</Emoji>
-                          、それ以外なら
-                          <HighlightBold>
-                            失敗
-                          </HighlightBold> <Emoji>😭</Emoji>{' '}
-                        </Highlight>
-                        というわけか。
+                        And check to see if it can calculate{' '}
+                        <EmojiNumber number={1} /> <Emoji>➕</Emoji>{' '}
+                        <EmojiNumber number={1} />.
                       </P>
                     </>
                   )
                 }
               ]}
             />
-            <R.Nuco>
-              <EmojiNumber number={1} /> に変換できる弁当箱と、
+            <R.Ufjx>
+              Combine with the “random” lunchbox
               <br />
-              先ほどの弁当箱を合体させ…
-            </R.Nuco>
+              you came up with earlier, and then…
+            </R.Ufjx>
             <ExpressionRunnerSeparator />
             <ExpressionRunnerCaptionOnly>
               <Highlight>
@@ -1227,18 +1215,22 @@ export default () => (
             </ExpressionRunnerCaptionOnly>
             <ExpressionRunnerSeparator />
             <ExpressionRunnerCaptionOnly>
-              結果が <EmojiNumber number={2} size="mdlg" /> になれば
-              <HighlightBold>成功</HighlightBold> <Emoji>🎉</Emoji>
+              If it becomes <EmojiNumber number={2} size="mdlg" />,{' '}
+              <Highlight>success</Highlight>. <Emoji>🎉</Emoji>
               <br />
-              それ以外なら<HighlightBold>失敗</HighlightBold> <Emoji>😭</Emoji>
+              Otherwise, <Highlight>failure</Highlight> <Emoji>😭</Emoji>
             </ExpressionRunnerCaptionOnly>
             <BubbleQuotes
               quotes={[
                 {
-                  type: 'brave',
+                  type: 'dog',
                   children: (
                     <>
-                      <P>では、上の弁当箱を実行したらどうなるか見ていこう！</P>
+                      <P>
+                        Let’s first see what happens when you{' '}
+                        <H args={{ name: 'play', lowerCase: true }} /> the above
+                        lunchbox!
+                      </P>
                     </>
                   )
                 }

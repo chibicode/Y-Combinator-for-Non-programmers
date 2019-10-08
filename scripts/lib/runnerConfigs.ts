@@ -1274,6 +1274,17 @@ export const nuco: ExpressionRunnerShorthandConfig = {
   showPriorities: true
 }
 
+export const ufjx: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.kwqc,
+  showPriorities: true,
+  highlightOverrides: {
+    a: 'highlighted',
+    b: 'highlighted',
+    c: 'highlighted'
+  }
+}
+
 export const dhiu: ExpressionRunnerShorthandConfig = {
   runner: 'playButtonOnly',
   initialExpressionContainer: initialExpressionContainers.kwqc,

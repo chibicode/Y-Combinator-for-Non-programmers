@@ -1213,7 +1213,9 @@ export default () => (
               ]}
             />
             <R.Fxde>
-              <EmojiNumber number={1} size="mdlg" /> に変換できる弁当箱
+              <H
+                args={{ name: 'canBeConvertedCaption', letter: 'd', number: 1 }}
+              />
             </R.Fxde>
             <BubbleQuotes
               quotes={[
