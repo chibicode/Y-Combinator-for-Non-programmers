@@ -8,7 +8,6 @@
     "allowJs": true,
     "moduleResolution": "node",
     "esModuleInterop": true,
-    "noEmit": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "strict": true,
@@ -25,7 +24,9 @@
       "*": ["node_modules/*", "src/types/*"]
     },
     "forceConsistentCasingInFileNames": true,
-    "isolatedModules": true
+    "isolatedModules": true,
+    "outDir": "./outDir/tsconfig.dev.json/",
+    "noEmit": false
   },
   "include": ["./src", "./pages"],
   "exclude": ["node_modules"]
