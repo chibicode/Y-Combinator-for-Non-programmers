@@ -75,7 +75,7 @@
     "prettier": "^1.18.2",
     "sitemap": "^5.0.0",
     "ts-jest": "^24.0.2",
-    "typescript": "^3.6.4",
+    "typescript": "^3.7.0-beta",
     "url-loader": "^2.2.0"
   }
 }

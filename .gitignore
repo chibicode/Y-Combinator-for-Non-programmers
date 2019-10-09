@@ -1,3 +1,5 @@
+outDir
+
 .tsbuild
 *.tsbuildinfo
 report.*.json
