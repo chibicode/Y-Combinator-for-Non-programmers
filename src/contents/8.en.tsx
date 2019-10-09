@@ -26,7 +26,7 @@ export default () => (
   <EpisodeCardList
     cards={[
       {
-        title: <>Saya to the rescue</>,
+        title: <>We’re doomed!</>,
         content: (
           <>
             <EmojiSeparator
@@ -93,6 +93,13 @@ export default () => (
                 }
               ]}
             />
+          </>
+        )
+      },
+      {
+        title: <>Saya to the rescue</>,
+        content: (
+          <>
             <P>
               That’s when <Bold>Saya</Bold> <Emoji size="mdlg">👧🏻</Emoji>, a
               little girl who lives in Lambda Village, appeared.
@@ -144,15 +151,16 @@ export default () => (
                   type: 'sad',
                   children: (
                     <>
-                      <P>じゃあ、手短に説明するね。</P>
                       <P>
+                        Sure.{' '}
                         <Highlight>
-                          以下の弁当箱の{' '}
-                          <CustomEmoji size="mdlg" type="questionFoodGrey" />{' '}
-                          に、どのような法則に基づいて料理を入れると、「
-                          <HighlightBold>1を足す効果</HighlightBold>{' '}
-                          <CustomEmoji type="plusOneOrange" />
-                          」がある弁当箱になるか、という問題なんだ。
+                          We must fill each{' '}
+                          <CustomEmoji type="questionFoodGrey" /> in a way such
+                          that, the resulting lunchbox has{' '}
+                          <Bold>
+                            <H args={{ name: 'plusOneEffect' }} />
+                          </Bold>
+                          .
                         </Highlight>
                       </P>
                     </>
@@ -161,13 +169,12 @@ export default () => (
               ]}
             />
             <R.Jguj>
-              以下の弁当箱の <CustomEmoji size="mdlg" type="questionFoodGrey" />{' '}
-              に、
+              Fill each <CustomEmoji type="questionFoodGrey" /> icon in a way
+              such that,
               <br />
-              どのような法則に基づいて料理を入れると、
-              <br />「<HighlightBold>1を足す効果</HighlightBold>{' '}
-              <CustomEmoji type="plusOneOrange" />
-              」があるようになる？
+              The resulting lunchbox has
+              <br />
+              <H args={{ name: 'plusOneEffect' }} />.
             </R.Jguj>
             <BubbleQuotes
               quotes={[
@@ -176,13 +183,9 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        すなわち、
-                        <Highlight>
-                          <CustomEmoji type="blankNumber" /> <Emoji>➕</Emoji>{' '}
-                          <EmojiNumber number={1} />{' '}
-                          を計算できるようにしないといけない
-                        </Highlight>
-                        んだ。
+                        Which means, it needs to be able to calculate{' '}
+                        <CustomEmoji type="blankNumber" /> <Emoji>➕</Emoji>{' '}
+                        <EmojiNumber number={1} />.
                       </P>
                     </>
                   )
@@ -190,17 +193,16 @@ export default () => (
               ]}
             />
             <R.Qrgc>
-              <CustomEmoji type="blankNumber" size="mdlg" />{' '}
-              に変換できる弁当箱と合体させて
+              If you combine it with{' '}
+              <CustomEmoji type="blankNumber" size="mdlg" /> and
               <br />
-              <H args={{ name: 'runAndConvertToMathbox' }} />
-              した時、
+              <H args={{ name: 'runAndConvertToMathbox', lowerCase: true }} />…
             </R.Qrgc>
             <ExpressionRunnerSeparator />
             <R.Jxvy>
-              結果が <CustomEmoji type="blankNumber" size="mdlg" />{' '}
+              The result must be <CustomEmoji type="blankNumber" size="mdlg" />{' '}
               <Emoji size="mdlg">➕</Emoji>{' '}
-              <EmojiNumber number={1} size="mdlg" /> にならないといけない
+              <EmojiNumber number={1} size="mdlg" />
             </R.Jxvy>
             <BubbleQuotes
               quotes={[
@@ -208,7 +210,7 @@ export default () => (
                   type: 'saya',
                   children: (
                     <>
-                      <P>ふーん、じゃあサヤも解くのを手伝うよ！</P>
+                      <P>I see. I’ll help you then!</P>
                     </>
                   )
                 },
@@ -216,8 +218,10 @@ export default () => (
                   type: 'roll',
                   children: (
                     <>
+                      <P>We appreciate it, but this isn’t for kids.</P>
                       <P>
-                        手伝ってくれるのはありがたいけど、この問題はママゴトじゃないんだよ。俺らがどれだけ頑張っても分からなかったんだ。
+                        We adults tried hard but couldn’t solve it. So I doubt
+                        you can.
                       </P>
                     </>
                   )

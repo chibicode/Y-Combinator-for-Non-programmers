@@ -26,7 +26,7 @@ export default () => (
   <EpisodeCardList
     cards={[
       {
-        title: <>サヤちゃん現る</>,
+        title: <>どうしよう？</>,
         content: (
           <>
             <EmojiSeparator
@@ -71,6 +71,13 @@ export default () => (
                 }
               ]}
             />
+          </>
+        )
+      },
+      {
+        title: <>サヤちゃん現る</>,
+        content: (
+          <>
             <P>
               その時です。ラムダ村に暮らす少女の
               <HighlightBold>サヤちゃん</HighlightBold>{' '}
