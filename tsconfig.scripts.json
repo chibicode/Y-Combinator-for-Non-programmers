@@ -4,6 +4,7 @@
     "target": "es2017",
     "module": "commonjs",
     "lib": ["es2017"],
+    "noEmit": false,
     "outDir": "./outDir/tsconfig.scripts.json/",
     "incremental": true,
     "isolatedModules": false

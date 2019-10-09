@@ -25,7 +25,8 @@
     },
     "forceConsistentCasingInFileNames": true,
     "isolatedModules": true,
-    "outDir": "./outDir/tsconfig.json/"
+    "outDir": "./outDir/tsconfig.json/",
+    "noEmit": false
   },
   "include": ["./src", "./pages"],
   "exclude": ["node_modules"]
