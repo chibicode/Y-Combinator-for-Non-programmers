@@ -127,7 +127,10 @@ export default () => (
                         <Highlight>
                           以下の弁当箱の{' '}
                           <CustomEmoji size="mdlg" type="questionFoodGrey" />{' '}
-                          に、どのような法則に基づいて料理を入れると…
+                          に、どのような法則に基づいて料理を入れると、「
+                          <HighlightBold>1を足す効果</HighlightBold>{' '}
+                          <CustomEmoji type="plusOneOrange" />
+                          」がある弁当箱になるか、という問題なんだ。
                         </Highlight>
                       </P>
                     </>
@@ -135,23 +138,21 @@ export default () => (
                 }
               ]}
             />
-            <R.Envj>
+            <R.Jguj>
               以下の弁当箱の <CustomEmoji size="mdlg" type="questionFoodGrey" />{' '}
               に、
               <br />
-              どのような法則に基づいて料理を入れると…
-            </R.Envj>
+              どのような法則に基づいて料理を入れると、
+              <br />「<HighlightBold>1を足す効果</HighlightBold>{' '}
+              <CustomEmoji type="plusOneOrange" />
+              」があるようになる？
+            </R.Jguj>
             <BubbleQuotes
               quotes={[
                 {
                   type: 'sad',
                   children: (
                     <>
-                      <P>
-                        「<HighlightBold>1を足す効果</HighlightBold>{' '}
-                        <CustomEmoji type="plusOneOrange" />
-                        」がある弁当箱になるか、という問題なんだ。
-                      </P>
                       <P>
                         すなわち、
                         <Highlight>
@@ -166,22 +167,18 @@ export default () => (
                 }
               ]}
             />
-            <R.Omwd>
+            <R.Qrgc>
               <CustomEmoji type="blankNumber" size="mdlg" />{' '}
               に変換できる弁当箱と合体させて
               <br />
               <H args={{ name: 'runAndConvertToMathbox' }} />
               した時、
-            </R.Omwd>
+            </R.Qrgc>
             <ExpressionRunnerSeparator />
             <R.Jxvy>
               結果が <CustomEmoji type="blankNumber" size="mdlg" />{' '}
               <Emoji size="mdlg">➕</Emoji>{' '}
-              <EmojiNumber number={1} size="mdlg" /> になる？
-              <br />
-              (すなわち「<HighlightBold>1を足す効果</HighlightBold>{' '}
-              <CustomEmoji type="plusOneOrange" />
-              」がある？)
+              <EmojiNumber number={1} size="mdlg" /> にならないといけない
             </R.Jxvy>
             <BubbleQuotes
               quotes={[

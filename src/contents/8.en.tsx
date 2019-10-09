@@ -40,6 +40,28 @@ export default () => (
               The villagers in Lambda Village were struggling with this
               difficult problem:
             </P>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>
+                        <Highlight>
+                          You must fill each{' '}
+                          <CustomEmoji type="questionFoodGrey" /> in a way such
+                          that, the resulting lunchbox has{' '}
+                          <Bold>
+                            <H args={{ name: 'plusOneEffect' }} />
+                          </Bold>
+                          .
+                        </Highlight>
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
             <R.Jguj>
               Fill each <CustomEmoji type="questionFoodGrey" /> icon in a way
               such that,
@@ -54,7 +76,7 @@ export default () => (
                   type: 'crying',
                   children: (
                     <>
-                      <P>だめだ…全然分からない！</P>
+                      <P>Hmm… I have no clue!</P>
                     </>
                   )
                 },
@@ -63,7 +85,8 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        これを解かないと計算箱を返してもらえないのに…どうしよう…
+                        But we need to solve this to get our mathboxes{' '}
+                        <CustomEmoji type="mathBox" /> back! We’re doomed!
                       </P>
                     </>
                   )
@@ -71,17 +94,15 @@ export default () => (
               ]}
             />
             <P>
-              その時です。ラムダ村に暮らす少女の
-              <HighlightBold>サヤちゃん</HighlightBold>{' '}
-              <Emoji size="mdlg">👧🏻</Emoji>{' '}
-              が、問題に苦戦している村人たちに話しかけてきました。
+              That’s when <Bold>Saya</Bold> <Emoji size="mdlg">👧🏻</Emoji>, a
+              little girl who lives in Lambda Village, appeared.
             </P>
             <EmojiSeparator
               emojis={['✨', '👧🏻', '✨']}
               description={
                 <>
-                  ラムダ村に暮らす少女の
-                  <HighlightBold>サヤちゃん</HighlightBold>
+                  <Bold>Saya</Bold>,<br />a little girl who lives in Lambda
+                  Village
                 </>
               }
             />
@@ -91,7 +112,7 @@ export default () => (
                   type: 'saya',
                   children: (
                     <>
-                      <P>ねえねえ、みんな何してるの？</P>
+                      <P>Hey guys! What are you doing there?</P>
                     </>
                   )
                 },
@@ -100,11 +121,13 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        おお、サヤちゃんか。実は、にっくき悪魔 <Emoji>😈</Emoji>{' '}
-                        に計算箱を奪われてしまったんだ。
+                        Oh, hey Saya. Well, we have some bad news. The devil{' '}
+                        <Emoji>😈</Emoji> has stolen our mathboxes{' '}
+                        <CustomEmoji type="mathBox" />.
                       </P>
                       <P>
-                        奴が出題した問題を解かないと計算箱を返してもらえないんだけど、俺らには難しくて解けないんだよ。
+                        To get them back, we need to solve this difficult
+                        question. But it’s too hard for us!
                       </P>
                     </>
                   )
@@ -113,7 +136,7 @@ export default () => (
                   type: 'saya',
                   children: (
                     <>
-                      <P>ふーん、どんな問題なの？</P>
+                      <P>I see. Can you tell me what the question is?</P>
                     </>
                   )
                 },
@@ -126,7 +149,10 @@ export default () => (
                         <Highlight>
                           以下の弁当箱の{' '}
                           <CustomEmoji size="mdlg" type="questionFoodGrey" />{' '}
-                          に、どのような法則に基づいて料理を入れると…
+                          に、どのような法則に基づいて料理を入れると、「
+                          <HighlightBold>1を足す効果</HighlightBold>{' '}
+                          <CustomEmoji type="plusOneOrange" />
+                          」がある弁当箱になるか、という問題なんだ。
                         </Highlight>
                       </P>
                     </>
@@ -134,23 +160,21 @@ export default () => (
                 }
               ]}
             />
-            <R.Envj>
+            <R.Jguj>
               以下の弁当箱の <CustomEmoji size="mdlg" type="questionFoodGrey" />{' '}
               に、
               <br />
-              どのような法則に基づいて料理を入れると…
-            </R.Envj>
+              どのような法則に基づいて料理を入れると、
+              <br />「<HighlightBold>1を足す効果</HighlightBold>{' '}
+              <CustomEmoji type="plusOneOrange" />
+              」があるようになる？
+            </R.Jguj>
             <BubbleQuotes
               quotes={[
                 {
                   type: 'sad',
                   children: (
                     <>
-                      <P>
-                        「<HighlightBold>1を足す効果</HighlightBold>{' '}
-                        <CustomEmoji type="plusOneOrange" />
-                        」がある弁当箱になるか、という問題なんだ。
-                      </P>
                       <P>
                         すなわち、
                         <Highlight>
@@ -165,22 +189,18 @@ export default () => (
                 }
               ]}
             />
-            <R.Omwd>
+            <R.Qrgc>
               <CustomEmoji type="blankNumber" size="mdlg" />{' '}
               に変換できる弁当箱と合体させて
               <br />
               <H args={{ name: 'runAndConvertToMathbox' }} />
               した時、
-            </R.Omwd>
+            </R.Qrgc>
             <ExpressionRunnerSeparator />
             <R.Jxvy>
               結果が <CustomEmoji type="blankNumber" size="mdlg" />{' '}
               <Emoji size="mdlg">➕</Emoji>{' '}
-              <EmojiNumber number={1} size="mdlg" /> になる？
-              <br />
-              (すなわち「<HighlightBold>1を足す効果</HighlightBold>{' '}
-              <CustomEmoji type="plusOneOrange" />
-              」がある？)
+              <EmojiNumber number={1} size="mdlg" /> にならないといけない
             </R.Jxvy>
             <BubbleQuotes
               quotes={[

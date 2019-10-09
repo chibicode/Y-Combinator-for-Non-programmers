@@ -262,8 +262,8 @@ export default () => (
                         <Bold>Here’s the requirement:</Bold>{' '}
                         <Highlight>
                           You must fill each{' '}
-                          <CustomEmoji type="questionFoodGrey" /> in a way such
-                          that, the resulting lunchbox has{' '}
+                          <CustomEmoji type="questionFoodGrey" /> icon in a way
+                          such that, the resulting lunchbox has{' '}
                           <Bold>
                             <H args={{ name: 'plusOneEffect' }} />
                           </Bold>

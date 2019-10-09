@@ -1262,12 +1262,6 @@ export const xxan: ExpressionRunnerShorthandConfig = {
   showPriorities: true
 }
 
-export const omwd: ExpressionRunnerShorthandConfig = {
-  runner: 'simple',
-  initialExpressionContainer: initialExpressionContainers.drbs,
-  showPriorities: true
-}
-
 export const nuco: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   initialExpressionContainer: initialExpressionContainers.kwqc,
