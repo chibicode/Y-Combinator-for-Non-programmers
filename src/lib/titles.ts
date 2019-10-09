@@ -23,7 +23,7 @@ export const episodeTitles = {
     5: 'Lunchboxes with 3 Rows',
     6: 'Minion’s Trick',
     7: 'The “Plus One” Effect',
-    8: '?',
+    8: 'Super Saya',
     9: '?',
     10: '?',
     11: '?',

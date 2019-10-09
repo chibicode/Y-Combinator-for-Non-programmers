@@ -3,7 +3,6 @@ import EpisodeCardList from 'src/components/EpisodeCardList'
 import {
   P,
   Highlight,
-  HighlightBold,
   Ul,
   UlLi,
   Bold,
@@ -1586,11 +1585,32 @@ export default () => (
                         let’s state it again:
                       </P>
                       <P>
-                        <HighlightBold>
-                          この弁当箱に、どのような法則に基づいて{' '}
-                          <CustomEmoji type="questionFoodGrey" />{' '}
-                          に料理を入れると…
-                        </HighlightBold>
+                        <Highlight>
+                          Fill each <CustomEmoji type="questionFoodGrey" /> icon
+                          in a way such that…
+                        </Highlight>
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Envj>
+              Fill each <CustomEmoji type="questionFoodGrey" /> icon in a way
+              such that…
+            </R.Envj>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>
+                        <Highlight>
+                          The resulting lunchbox has
+                          <br />
+                          <H args={{ name: 'plusOneEffect' }} />.
+                        </Highlight>
                       </P>
                     </>
                   )
@@ -1598,10 +1618,7 @@ export default () => (
               ]}
             />
             <R.Jguj>
-              Fill each <CustomEmoji type="questionFoodGrey" /> icon in a way
-              such that,
-              <br />
-              the resulting lunchbox has
+              The resulting lunchbox has
               <br />
               <H args={{ name: 'plusOneEffect' }} />.
             </R.Jguj>
