@@ -23,7 +23,8 @@
       "*": ["node_modules/*", "src/types/*"]
     },
     "forceConsistentCasingInFileNames": true,
-    "isolatedModules": true
+    "isolatedModules": true,
+    "noEmit": true
   },
   "include": ["./src", "./pages"],
   "exclude": ["node_modules"]
