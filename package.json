@@ -26,13 +26,12 @@
     "en": "IS_DEVELOPMENT=true DEV_LOCALE=en next -p 9990",
     "dev": "cp tsconfig.dev.json tsconfig.json && rm -f report.*.json && rm -f *.log && rm -rf .next && concurrently \"yarn jp\" \"yarn en\"",
     "ts-node": "tsc --project tsconfig.scripts.json && node -r module-alias/register",
-    "sitemap": "yarn ts-node outDir/tsconfig.scripts.json/scripts/generateSitemap.js",
     "precompute": "tsc --project tsconfig.scripts.json && node -r module-alias/register outDir/tsconfig.scripts.json/scripts/precomputeExpressionContainers.js",
     "tsc": "tsc",
     "eslint": "eslint --ext .js,.ts,.tsx .",
     "eslint:fix": "eslint --ext .js,.ts,.tsx --fix .",
     "build": "cp tsconfig.prod.json tsconfig.json && next build",
-    "build:jp": "cp tsconfig.prod.json tsconfig.json && PRODUCTION_LOCALE=jp yarn sitemap && PRODUCTION_LOCALE=jp next build && PRODUCTION_LOCALE=jp next export",
+    "build:jp": "cp tsconfig.prod.json tsconfig.json && PRODUCTION_LOCALE=jp next build && PRODUCTION_LOCALE=jp next export",
     "twemoji": "mkdir -p .twemoji && rm -f src/components/Twemoji/* && rm -f .twemoji/* && cp `yarn --silent ts-node outDir/tsconfig.scripts.json/scripts/copyUsedEmojis.js` .twemoji && svgr --ext tsx --no-svgo --filename-case kebab --no-dimensions -d src/components/Twemoji .twemoji && eslint --ext .tsx --fix src/components/Twemoji && yarn twemoji:bundle",
     "twemoji:bundle": "yarn ts-node outDir/tsconfig.scripts.json/scripts/generateEmojisBundle.js",
     "test": "jest"
@@ -70,7 +69,6 @@
     "jest": "^24.9.0",
     "module-alias": "^2.2.2",
     "prettier": "^1.18.2",
-    "sitemap": "^5.0.0",
     "ts-jest": "^24.0.2",
     "typescript": "^3.7.0-beta",
     "url-loader": "^2.2.0"

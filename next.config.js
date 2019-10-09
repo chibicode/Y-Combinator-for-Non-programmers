@@ -1,5 +1,4 @@
 const path = require('path')
-const fs = require('fs')
 
 const config = {
   webpack(config) {
@@ -22,13 +21,6 @@ const config = {
   env: {
     productionLocale: process.env.PRODUCTION_LOCALE,
     isDevelopment: process.env.IS_DEVELOPMENT
-  },
-  exportPathMap(defaultPathMap, { dev, outDir }) {
-    if (!dev) {
-      fs.copyFileSync('sitemap.xml', `${outDir}/sitemap.xml`)
-    }
-
-    return defaultPathMap
   }
 }
 

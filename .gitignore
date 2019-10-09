@@ -4,7 +4,6 @@ tsconfig.json
 .tsbuild
 *.tsbuildinfo
 report.*.json
-sitemap.xml
 
 out
 .envrc
