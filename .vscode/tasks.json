@@ -5,7 +5,7 @@
       "type": "shell",
       "label": "tsc watch",
       "command": "./node_modules/.bin/tsc",
-      "args": ["-w"],
+      "args": ["-p", "tsconfig.dev.json", "-w"],
       "problemMatcher": ["$tsc-watch"],
       "isBackground": true,
       "runOptions": {
