@@ -23,6 +23,115 @@ import InlinePrioritiesLabel from 'src/components/InlinePrioritiesLabel'
 import NextLessonButton from 'src/components/NextLessonButton'
 import { Beginner5Rules } from 'src/contents/5.jp'
 
+export const StepOne = () => (
+  <>
+    <BubbleQuotes
+      quotes={[
+        {
+          type: 'dog',
+          children: (
+            <>
+              <P>
+                それでは、
+                <H args={{ name: 'fastForward' }} /> していきましょう！
+              </P>
+              <P>
+                まず、
+                <HighlightBold>
+                  <InlinePrioritiesLabel>1</InlinePrioritiesLabel>{' '}
+                  のペアが左右ふたつ以上あるので、一番左の{' '}
+                  <InlinePrioritiesLabel>1</InlinePrioritiesLabel>{' '}
+                  のペアからはじめます。
+                </HighlightBold>
+              </P>
+            </>
+          )
+        }
+      ]}
+    />
+    <P>
+      <H
+        args={{
+          name: 'pressFastForward',
+          mentionRightArrow: true
+        }}
+      />
+    </P>
+  </>
+)
+
+export const StepTwo = () => (
+  <>
+    <BubbleQuotes
+      quotes={[
+        {
+          type: 'dog',
+          children: (
+            <>
+              <P>
+                続いて、また{' '}
+                <Highlight>
+                  <InlinePrioritiesLabel>1</InlinePrioritiesLabel>{' '}
+                  のペアからはじめたいのですが、
+                  <InlinePrioritiesLabel>1</InlinePrioritiesLabel>{' '}
+                  のペアの一番下の段にひとつの料理(
+                  <EmojiWithText letter="b" />
+                  )しかないので不可能です。
+                </Highlight>
+              </P>
+              <P>
+                というわけで、
+                <HighlightBold>
+                  次は <InlinePrioritiesLabel>2</InlinePrioritiesLabel>{' '}
+                  のペアから
+                </HighlightBold>
+                はじめます。
+              </P>
+            </>
+          )
+        }
+      ]}
+    />
+    <P>
+      <H
+        args={{
+          name: 'pressFastForward'
+        }}
+      />
+    </P>
+  </>
+)
+
+export const StepThree = () => (
+  <>
+    <BubbleQuotes
+      quotes={[
+        {
+          type: 'dog',
+          children: (
+            <>
+              <P>
+                次も前回と同じく、
+                <HighlightBold>
+                  <InlinePrioritiesLabel>2</InlinePrioritiesLabel>{' '}
+                  のペアからはじめます。
+                </HighlightBold>
+              </P>
+            </>
+          )
+        }
+      ]}
+    />
+    <P>
+      <H
+        args={{
+          name: 'pressFastForward'
+        }}
+      />
+    </P>
+  </>
+)
+
 export default () => (
   <EpisodeCardList
     cards={[
@@ -1368,105 +1477,15 @@ export default () => (
               <br />
               それ以外なら<HighlightBold>失敗</HighlightBold> <Emoji>😭</Emoji>
             </ExpressionRunnerCaptionOnly>
-            <BubbleQuotes
-              quotes={[
-                {
-                  type: 'dog',
-                  children: (
-                    <>
-                      <P>
-                        それでは、
-                        <H args={{ name: 'fastForward' }} /> していきましょう！
-                      </P>
-                      <P>
-                        まず、
-                        <HighlightBold>
-                          <InlinePrioritiesLabel>1</InlinePrioritiesLabel>{' '}
-                          のペアが左右ふたつ以上あるので、一番左の{' '}
-                          <InlinePrioritiesLabel>1</InlinePrioritiesLabel>{' '}
-                          のペアからはじめます。
-                        </HighlightBold>
-                      </P>
-                    </>
-                  )
-                }
-              ]}
-            />
-            <P>
-              <H
-                args={{
-                  name: 'pressFastForward'
-                }}
-              />
-            </P>
+            <StepOne />
             <R.Dhiu>
               <H args={{ name: 'startWithLeftMostOneCaption' }} />
             </R.Dhiu>
-            <BubbleQuotes
-              quotes={[
-                {
-                  type: 'dog',
-                  children: (
-                    <>
-                      <P>
-                        続いて、また{' '}
-                        <Highlight>
-                          <InlinePrioritiesLabel>1</InlinePrioritiesLabel>{' '}
-                          のペアからはじめたいのですが、
-                          <InlinePrioritiesLabel>1</InlinePrioritiesLabel>{' '}
-                          のペアの一番下の段にひとつの料理(
-                          <EmojiWithText letter="b" />
-                          )しかないので不可能です。
-                        </Highlight>
-                      </P>
-                      <P>
-                        というわけで、
-                        <HighlightBold>
-                          次は <InlinePrioritiesLabel>2</InlinePrioritiesLabel>{' '}
-                          のペアから
-                        </HighlightBold>
-                        はじめます。
-                      </P>
-                    </>
-                  )
-                }
-              ]}
-            />
-            <P>
-              <H
-                args={{
-                  name: 'pressFastForward'
-                }}
-              />
-            </P>
+            <StepTwo />
             <R.Akjy>
               <H args={{ name: 'startWithTwoCaption' }} />
             </R.Akjy>
-            <BubbleQuotes
-              quotes={[
-                {
-                  type: 'dog',
-                  children: (
-                    <>
-                      <P>
-                        次も前回と同じく、
-                        <HighlightBold>
-                          <InlinePrioritiesLabel>2</InlinePrioritiesLabel>{' '}
-                          のペアからはじめます。
-                        </HighlightBold>
-                      </P>
-                    </>
-                  )
-                }
-              ]}
-            />
-            <P>
-              <H
-                args={{
-                  name: 'pressFastForward'
-                }}
-              />
-            </P>
+            <StepThree />
             <R.Hnyn>
               <H args={{ name: 'startWithTwoCaption' }} />
             </R.Hnyn>
