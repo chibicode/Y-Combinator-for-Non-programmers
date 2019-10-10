@@ -15,6 +15,7 @@ import EmojiNumber from 'src/components/EmojiNumber'
 import Emoji from 'src/components/Emoji'
 import H from 'src/components/H'
 import ExpressionRunnerSeparator from 'src/components/ExpressionRunnerSeparator'
+import EmojiForLetter from 'src/components/EmojiForLetter'
 import ExpressionRunnerCaptionOnly from 'src/components/ExpressionRunnerCaptionOnly'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import * as R from 'src/components/Runners'
@@ -786,10 +787,10 @@ export default () => (
                         はあるか？
                       </R.Dvpl>
                       <P>
-                        <Emoji>🅰️</Emoji> には <EmojiWithText letter="h" />、
-                        <Emoji>🅱️</Emoji> には <EmojiWithText letter="i" />、
+                        <Emoji>🅰️</Emoji> には <EmojiForLetter letter="h" />、
+                        <Emoji>🅱️</Emoji> には <EmojiForLetter letter="i" />、
                         <CustomEmoji type="C" /> には{' '}
-                        <EmojiWithText letter="j" />
+                        <EmojiForLetter letter="j" />
                         を当てはめてみたよ。
                       </P>
                     </>

@@ -17,6 +17,7 @@ import Emoji from 'src/components/Emoji'
 import H from 'src/components/H'
 import ExpressionRunnerSeparator from 'src/components/ExpressionRunnerSeparator'
 import ExpressionRunnerCaptionOnly from 'src/components/ExpressionRunnerCaptionOnly'
+import EmojiForLetter from 'src/components/EmojiForLetter'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import * as R from 'src/components/Runners'
 import EmojiWithText from 'src/components/EmojiWithText'
@@ -810,7 +811,7 @@ export default () => (
         )
       },
       {
-        title: <>同じ法則の、他の弁当箱も試してみる</>,
+        title: <>Let’s try other lunchboxes that have the same pattern</>,
         content: (
           <>
             <BubbleQuotes
@@ -820,22 +821,26 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        じゃあ、たとえばこの弁当箱でも、同じ法則に沿っているから、
-                        <H args={{ name: 'plusOneEffect' }} />
-                        があるってこと？
+                        <Bold>How about this lunchbox?</Bold>{' '}
+                        <Italic>
+                          It is different from Saya’s lunchbox, but has the same
+                          pattern.
+                        </Italic>
+                      </P>
+                      <P>
+                        I used <EmojiForLetter letter="h" /> for{' '}
+                        <Emoji>🅰️</Emoji>, <EmojiForLetter letter="i" /> for{' '}
+                        <Emoji>🅱️</Emoji>, and <EmojiForLetter letter="j" /> for{' '}
+                        <CustomEmoji type="C" />.
                       </P>
                       <R.Dvpl>
-                        同じ法則で料理を入れてみた。
+                        It is different from Saya’s lunchbox,
                         <br />
-                        <H args={{ name: 'plusOneEffect' }} />
-                        はあるか？
+                        but has the same pattern.
                       </R.Dvpl>
                       <P>
-                        <Emoji>🅰️</Emoji> には <EmojiWithText letter="h" />、
-                        <Emoji>🅱️</Emoji> には <EmojiWithText letter="i" />、
-                        <CustomEmoji type="C" /> には{' '}
-                        <EmojiWithText letter="j" />
-                        を当てはめてみたよ。
+                        <Bold>So you’re saying…</Bold> This one has{' '}
+                        <H args={{ name: 'plusOneEffect' }} /> too?
                       </P>
                     </>
                   )
@@ -844,11 +849,7 @@ export default () => (
                   type: 'dog',
                   children: (
                     <>
-                      <P>
-                        はい、
-                        <H args={{ name: 'plusOneEffect' }} />
-                        はありますよ。
-                      </P>
+                      <P>はい、 はありますよ。</P>
                       <P>
                         <Highlight>
                           試しに、
