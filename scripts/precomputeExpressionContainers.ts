@@ -8,6 +8,8 @@ const precomputeFile = (key: string) => {
   const configBase = runnerConfigs[key as keyof typeof runnerConfigs]
   const config = buildExpressionRunnerConfigFromShorthand(configBase)
   const expressionContainers = buildExpressionContainers(config)
+  const showBottomProgressBar =
+    expressionContainers.filter(x => x.numLeafNodes > 10).length > 0
   const {
     speed,
     hideControls,
@@ -49,7 +51,8 @@ const precomputeFile = (key: string) => {
       convert,
       crossed,
       skipActive,
-      showDefaultAndActiveOnly
+      showDefaultAndActiveOnly,
+      showBottomProgressBar
     },
     null,
     2

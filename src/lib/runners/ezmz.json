@@ -238,5 +238,6 @@
   "highlightOverrides": {},
   "highlightOverrideActiveAfterStart": false,
   "highlightFunctions": false,
-  "convert": "toMathBoxPlay"
+  "convert": "toMathBoxPlay",
+  "showBottomProgressBar": false
 }

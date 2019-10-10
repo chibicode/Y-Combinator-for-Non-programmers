@@ -79,5 +79,6 @@
   "bottomRightBadgeOverrides": {},
   "highlightOverrides": {},
   "highlightOverrideActiveAfterStart": false,
-  "highlightFunctions": false
+  "highlightFunctions": false,
+  "showBottomProgressBar": false
 }

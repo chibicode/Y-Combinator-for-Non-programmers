@@ -222,5 +222,6 @@
     "c": "highlighted"
   },
   "highlightOverrideActiveAfterStart": false,
-  "highlightFunctions": false
+  "highlightFunctions": false,
+  "showBottomProgressBar": false
 }

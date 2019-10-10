@@ -41,6 +41,7 @@ export interface ExpressionRunnerPrecomputedProps {
   showAllShowSteps: ExpressionRunnerConfig['showAllShowSteps']
   convert: ExpressionRunnerConfig['convert']
   crossed: ExpressionRunnerConfig['crossed']
+  showBottomProgressBar: boolean
 }
 
 const autoplaySpeed = (speed: number) => 1000 / speed
@@ -69,7 +70,8 @@ const ExpressionRunnerPrecomputed = ({
   showAllShowSteps,
   children,
   convert,
-  crossed
+  crossed,
+  showBottomProgressBar
 }: ExpressionRunnerPrecomputedProps) => {
   const [{ isFastForwarding, isPlaying }, setPlaybackStatus] = useState<
     PlaybackState
@@ -266,22 +268,19 @@ const ExpressionRunnerPrecomputed = ({
           size={containerSize === 'xxs' ? 'xs' : 'sm'}
           horizontalPadding={0}
         >
-          {progessBarVisible &&
-            (variableSize === 'xs' ||
-              variableSize === 'xxs' ||
-              variableSize === 'xxxs') && (
-              <div
-                css={css`
-                  margin: ${spaces(1)} auto ${spaces(0.25)};
-                `}
-              >
-                <ProgressBar
-                  percent={percentDone}
-                  fromPercent={fromPercent}
-                  speed={isPlaying ? autoplaySpeed(speed) : undefined}
-                />
-              </div>
-            )}
+          {progessBarVisible && showBottomProgressBar && (
+            <div
+              css={css`
+                margin: ${spaces(1)} auto ${spaces(0.25)};
+              `}
+            >
+              <ProgressBar
+                percent={percentDone}
+                fromPercent={fromPercent}
+                speed={isPlaying ? autoplaySpeed(speed) : undefined}
+              />
+            </div>
+          )}
         </Container>
         <Container size="xxs" horizontalPadding={0.25}>
           {!hideControls && (

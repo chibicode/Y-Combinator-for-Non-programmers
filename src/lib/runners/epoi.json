@@ -124,5 +124,6 @@
   "highlightOverrides": {},
   "highlightOverrideActiveAfterStart": false,
   "highlightFunctions": false,
-  "convert": "toMathBox"
+  "convert": "toMathBox",
+  "showBottomProgressBar": false
 }

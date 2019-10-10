@@ -54,5 +54,6 @@
   "highlightOverrides": {},
   "highlightOverrideActiveAfterStart": false,
   "highlightFunctions": false,
-  "crossed": true
+  "crossed": true,
+  "showBottomProgressBar": false
 }

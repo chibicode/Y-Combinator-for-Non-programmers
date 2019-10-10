@@ -25119,5 +25119,6 @@
   "highlightOverrides": {},
   "highlightOverrideActiveAfterStart": false,
   "highlightFunctions": false,
-  "showDefaultAndActiveOnly": true
+  "showDefaultAndActiveOnly": true,
+  "showBottomProgressBar": true
 }
