@@ -800,7 +800,10 @@ export default () => (
                   type: 'dog',
                   children: (
                     <>
-                      <P>はい、 はありますよ。</P>
+                      <P>
+                        はい、
+                        <H args={{ name: 'plusOneEffect' }} /> はありますよ。
+                      </P>
                       <P>
                         <Highlight>
                           試しに、
