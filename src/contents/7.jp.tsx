@@ -995,7 +995,6 @@ export default () => (
         )
       },
       {
-        type: 'yesNoQuiz',
         title: <>計算箱を賭けた問題</>,
         content: (
           <>
@@ -1686,7 +1685,6 @@ export default () => (
         )
       },
       {
-        type: 'yesNoQuiz',
         title: <>問題をもう一度</>,
         content: (
           <>
