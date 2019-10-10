@@ -297,18 +297,22 @@ export default () => (
               ]}
             />
             <R.Plde>
-              <EmojiNumber number={1} /> に変換できる弁当箱と、
+              Combine Saya’s lunchbox with a lunchbox
               <br />
-              <Emoji>👧🏻</Emoji> サヤちゃんの弁当箱を合体させ…
+              that can be converted to <EmojiNumber number={1} />…
             </R.Plde>
             <ExpressionRunnerSeparator />
             <ExpressionRunnerCaptionOnly>
-              <H args={{ name: 'runAndConvertToMathbox' }} />
+              <Highlight>
+                <H args={{ name: 'runAndConvertToMathbox' }} />
+              </Highlight>
+            </ExpressionRunnerCaptionOnly>
+            <ExpressionRunnerSeparator />
+            <ExpressionRunnerCaptionOnly>
+              If it becomes <EmojiNumber number={2} size="mdlg" />,{' '}
+              <Highlight>success</Highlight>. <Emoji>🎉</Emoji>
               <br />
-              して、結果が <EmojiNumber number={2} size="mdlg" /> になれば
-              <HighlightBold>成功</HighlightBold> <Emoji>🎉</Emoji>
-              <br />
-              それ以外なら<HighlightBold>失敗</HighlightBold> <Emoji>😭</Emoji>
+              Otherwise, <Highlight>failure</Highlight> <Emoji>😭</Emoji>
             </ExpressionRunnerCaptionOnly>
             <BubbleQuotes
               quotes={[
@@ -317,9 +321,8 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        じゃあ、
-                        <H args={{ name: 'play' }} />
-                        してみよう！
+                        Let’s first{' '}
+                        <H args={{ name: 'play', lowerCase: true }} /> it!
                       </P>
                     </>
                   )
