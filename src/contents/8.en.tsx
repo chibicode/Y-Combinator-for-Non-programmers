@@ -232,12 +232,12 @@ export default () => (
         )
       },
       {
-        title: <>サヤちゃんの弁当箱</>,
+        title: <>Saya’s Lunchbox</>,
         content: (
           <>
             <P>
-              サヤちゃんは少し考えた後、
-              <CustomEmoji type="questionFoodGrey" /> に料理を入れてみました。
+              Saya spent some time thinking, and came up with the following
+              lunchbox:
             </P>
             <BubbleQuotes
               quotes={[
@@ -246,8 +246,9 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        ねえねえ、サヤも <CustomEmoji type="questionFoodGrey" />{' '}
-                        に料理を入れてみたんだけど、見てくれる？
+                        Hey, I filled each{' '}
+                        <CustomEmoji type="questionFoodGrey" /> icon as follows.
+                        Can you take a look?
                       </P>
                     </>
                   )
@@ -255,7 +256,7 @@ export default () => (
               ]}
             />
             <R.Qrfw>
-              <Emoji>👧🏻</Emoji> サヤちゃんの弁当箱
+              <Emoji>👧🏻</Emoji> Saya’s Lunchbox
             </R.Qrfw>
             <BubbleQuotes
               quotes={[
@@ -264,14 +265,12 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        ふむふむ…どうせ上手くいかないと思うけど、試してみるか。
+                        Hmm… I don’t think it’s going to work, but we’ll try
+                        anyway.
                       </P>
                       <P>
-                        前回もやったように、
-                        <Highlight>
-                          <EmojiNumber number={1} />{' '}
-                          に変換できる弁当箱と合体させて、
-                        </Highlight>
+                        We’ll combine it with a lunchbox that can be converted
+                        to <EmojiNumber number={1} />…
                       </P>
                       <R.Rbup>
                         <H
@@ -283,12 +282,14 @@ export default () => (
                         />
                       </R.Rbup>
                       <P>
-                        <H args={{ name: 'runAndConvertToMathbox' }} />
-                        して、
-                        <Highlight>
-                          結果が <EmojiNumber number={2} /> になるか
-                        </Highlight>
-                        確かめてみよう。どうせムリだろうけど！
+                        Then{' '}
+                        <H
+                          args={{
+                            name: 'runAndConvertToMathbox',
+                            lowerCase: true
+                          }}
+                        />
+                        , and see if it will become <EmojiNumber number={2} />.
                       </P>
                     </>
                   )
