@@ -891,9 +891,8 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        結果、
-                        <EmojiNumber number={4} />{' '}
-                        に変換できる弁当箱が残りました！
+                        The result was a lunchbox that can be converted to{' '}
+                        <EmojiNumber number={4} />!
                       </P>
                       <R.Zxkq>
                         <H
@@ -905,9 +904,9 @@ export default () => (
                         />
                       </R.Zxkq>
                       <P>
-                        つまり、
+                        <Bold>Therefore:</Bold> It calculated{' '}
                         <EmojiNumber number={3} /> <Emoji>➕</Emoji>{' '}
-                        <EmojiNumber number={1} /> を計算できたというわけです。
+                        <EmojiNumber number={1} />.
                       </P>
                     </>
                   )
@@ -917,16 +916,13 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        なるほど、やっぱりこちらの弁当箱にも
-                        <H args={{ name: 'plusOneEffect' }} />
-                        があるということか。
+                        I see, so this one has{' '}
+                        <H args={{ name: 'plusOneEffect' }} /> as well.
                       </P>
                       <R.Udxn>
-                        サヤちゃんの弁当箱と同じく、こちらの
+                        Just like <Emoji>👧🏻</Emoji> Saya’s lunchbox,
                         <br />
-                        弁当箱にも
-                        <H args={{ name: 'plusOneEffect' }} />
-                        がある
+                        This one also has <H args={{ name: 'plusOneEffect' }} />
                       </R.Udxn>
                     </>
                   )
