@@ -7,7 +7,8 @@ import {
   Ul,
   UlLi,
   Bold,
-  Hr
+  Hr,
+  Italic
 } from 'src/components/ContentTags'
 import CustomEmoji from 'src/components/CustomEmoji'
 import BubbleQuotes from 'src/components/BubbleQuotes'
@@ -297,9 +298,9 @@ export default () => (
               ]}
             />
             <R.Plde>
-              Combine Saya’s lunchbox with a lunchbox
+              Combine <Emoji>👧🏻</Emoji> Saya’s lunchbox with
               <br />
-              that can be converted to <EmojiNumber number={1} />…
+              a lunchbox that can be converted to <EmojiNumber number={1} />…
             </R.Plde>
             <ExpressionRunnerSeparator />
             <ExpressionRunnerCaptionOnly>
@@ -384,7 +385,7 @@ export default () => (
       {
         title: (
           <>
-            <EmojiNumber number={2} /> に変換できる
+            Can be converted to <EmojiNumber number={2} />
           </>
         ),
         content: (
@@ -396,8 +397,8 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        この弁当箱は、
-                        <EmojiNumber number={2} /> に変換できます！
+                        The resulting lunchbox can be converted to{' '}
+                        <EmojiNumber number={2} />!
                       </P>
                     </>
                   )
@@ -417,15 +418,10 @@ export default () => (
                   type: 'dog',
                   children: (
                     <>
-                      <P>ということは、サヤちゃんの弁当箱は…</P>
                       <P>
-                        <Highlight>
-                          <EmojiNumber number={1} />{' '}
-                          に変換できる弁当箱と合体させ、
-                          <H args={{ name: 'runAndConvertToMathbox' }} />
-                          すると、結果が <EmojiNumber number={2} /> になる
-                        </Highlight>
-                        ということですね。
+                        <Bold>That means:</Bold> Saya’s lunchbox can turn{' '}
+                        <EmojiNumber number={1} /> into{' '}
+                        <EmojiNumber number={2} />.
                       </P>
                     </>
                   )
@@ -433,15 +429,19 @@ export default () => (
               ]}
             />
             <R.Plde>
-              <EmojiNumber number={1} /> に変換できる弁当箱と、
+              Combine <Emoji>👧🏻</Emoji> Saya’s lunchbox with
               <br />
-              <Emoji>👧🏻</Emoji> サヤちゃんの弁当箱を合体させ…
+              a lunchbox that can be converted to <EmojiNumber number={1} />…
             </R.Plde>
             <ExpressionRunnerSeparator />
             <R.Pmdm>
-              <H args={{ name: 'runAndConvertToMathbox' }} />
+              After
               <br />
-              すると、結果が <EmojiNumber number={2} /> になる
+              <Highlight>
+                <H args={{ name: 'runAndConvertToMathbox' }} />,
+              </Highlight>
+              <br />
+              it became <EmojiNumber number={2} />
             </R.Pmdm>
             <BubbleQuotes
               quotes={[
@@ -450,11 +450,9 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        つまり、
-                        <EmojiNumber number={1} /> <Emoji>➕</Emoji>{' '}
-                        <EmojiNumber number={1} /> が計算できたので、
-                        <HighlightBold>成功です！</HighlightBold>{' '}
-                        <Emoji>🎉</Emoji>
+                        It calculated <EmojiNumber number={1} />{' '}
+                        <Emoji>➕</Emoji> <EmojiNumber number={1} />, so it’s a
+                        success! <Emoji>🎉</Emoji>
                       </P>
                     </>
                   )
@@ -463,7 +461,7 @@ export default () => (
                   type: 'saya',
                   children: (
                     <>
-                      <P>やったー！</P>
+                      <P>Yay!</P>
                     </>
                   )
                 },
@@ -471,9 +469,8 @@ export default () => (
                   type: 'surprised',
                   children: (
                     <>
-                      <P>
-                        そんなバカな…！俺らがどれだけ頭をひねっても分からなかったのに、サヤちゃんにいとも簡単に解かれるなんて！
-                      </P>
+                      <P>No way! We tried so hard but couldn’t solve it…</P>
+                      <P>Can’t believe Saya solved it so easily!</P>
                     </>
                   )
                 }
@@ -485,8 +482,8 @@ export default () => (
       {
         title: (
           <>
-            <EmojiNumber number={2} /> <Emoji>➕</Emoji>{' '}
-            <EmojiNumber number={1} /> はできる？
+            Can it calculate <EmojiNumber number={2} /> <Emoji>➕</Emoji>{' '}
+            <EmojiNumber number={1} />?
           </>
         ),
         content: (
@@ -498,22 +495,36 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        いや、まだ分からんぞ。
-                        <EmojiNumber number={1} /> <Emoji>➕</Emoji>{' '}
-                        <EmojiNumber number={1} /> ができるからといって、
-                        <HighlightBold>
-                          他の数字に対しても
-                          <H args={{ name: 'plusOneEffect' }} />
-                          があるとは限らない。
-                        </HighlightBold>
+                        <Bold>Wait, we still don’t know if Saya is right.</Bold>
                       </P>
                       <P>
-                        たとえば、
-                        <HighlightBold>
+                        Just because it can calculate <EmojiNumber number={1} />{' '}
+                        <Emoji>➕</Emoji> <EmojiNumber number={1} />,{' '}
+                        <Italic>it doesn’t necessarily mean</Italic> that it has{' '}
+                        <H args={{ name: 'plusOneEffect' }} />.
+                      </P>
+                    </>
+                  )
+                },
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>That’s a good point!</P>
+                    </>
+                  )
+                },
+                {
+                  type: 'roll',
+                  children: (
+                    <>
+                      <P>We need to try other examples to make sure!</P>
+                      <P>
+                        <Highlight>
+                          For example, let’s try calculating{' '}
                           <EmojiNumber number={2} /> <Emoji>➕</Emoji>{' '}
-                          <EmojiNumber number={1} /> も計算できるのかどうか
-                        </HighlightBold>
-                        確かめてみないと。
+                          <EmojiNumber number={1} /> with Saya’s lunchbox.
+                        </Highlight>
                       </P>
                     </>
                   )
@@ -526,7 +537,7 @@ export default () => (
                 <Emoji>➕</Emoji>,
                 <EmojiNumber number={1} />
               ]}
-              description={<>これも計算できる？</>}
+              description={<>Can Saya’s lunchbox calculate this?</>}
             />
             <BubbleQuotes
               quotes={[
