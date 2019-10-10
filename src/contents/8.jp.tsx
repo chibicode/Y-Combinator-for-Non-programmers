@@ -802,7 +802,8 @@ export default () => (
                     <>
                       <P>
                         はい、
-                        <H args={{ name: 'plusOneEffect' }} /> はありますよ。
+                        <H args={{ name: 'plusOneEffect' }} />
+                        はありますよ。
                       </P>
                       <P>
                         <Highlight>
