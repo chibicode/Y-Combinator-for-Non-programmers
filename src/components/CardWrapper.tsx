@@ -33,6 +33,7 @@ const cardActionToColor = (
 const typeToColor = (type: EpisodeCardType['type']): CardProps['color'] =>
   type
     ? {
+        challengeProblem: 'blue' as 'blue',
         yesNoQuiz: 'blue' as 'blue',
         sideNote: 'brown' as 'brown',
         meta: 'indigo' as 'indigo',

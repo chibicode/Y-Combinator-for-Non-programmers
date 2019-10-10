@@ -995,7 +995,7 @@ export default () => (
         )
       },
       {
-        type: 'yesNoQuiz',
+        type: 'challengeProblem',
         title: <>The Challenge</>,
         content: (
           <>
@@ -1587,7 +1587,7 @@ export default () => (
         )
       },
       {
-        type: 'yesNoQuiz',
+        type: 'challengeProblem',
         title: <>Presenting the question one more time</>,
         content: (
           <>

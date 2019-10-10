@@ -20,7 +20,7 @@ import locale from 'src/lib/locale'
 import { numEpisodesExceptFirstAndLast } from 'src/lib/episodeCategories'
 
 export interface EpisodeCardType {
-  type?: 'yesNoQuiz' | 'sideNote' | 'meta' | 'summary'
+  type?: 'yesNoQuiz' | 'sideNote' | 'meta' | 'summary' | 'challengeProblem'
   title?: React.ReactNode
   preview?: CardProps['preview']
   content?: React.ReactNode
