@@ -47,6 +47,105 @@ const OnePlusOneTest = () => (
   </>
 )
 
+export const StepOne = () => (
+  <>
+    <BubbleQuotes
+      quotes={[
+        {
+          type: 'dog',
+          children: (
+            <>
+              <P>
+                Let’s <H args={{ name: 'fastForward', lowerCase: true }} /> it!
+              </P>
+              <P>
+                <Bold>First:</Bold>{' '}
+                <Highlight>
+                  Because there are multiple pairs of{' '}
+                  <InlinePrioritiesLabel>1</InlinePrioritiesLabel>’s, we start
+                  from the leftmost pair.
+                </Highlight>
+              </P>
+            </>
+          )
+        }
+      ]}
+    />
+    <P>
+      <H
+        args={{
+          name: 'pressFastForward',
+          mentionRightArrow: true
+        }}
+      />
+    </P>
+  </>
+)
+
+export const StepTwo = () => (
+  <>
+    <BubbleQuotes
+      quotes={[
+        {
+          type: 'dog',
+          children: (
+            <>
+              <P>
+                <Bold>Second:</Bold> We can’t start with the leftmost pair of{' '}
+                <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
+                ’s because there’s only one item on the bottom (a{' '}
+                <EmojiWithText letter="b" />)
+              </P>
+              <P>
+                Therefore,{' '}
+                <Highlight>
+                  we do the pair of{' '}
+                  <InlinePrioritiesLabel>2</InlinePrioritiesLabel>’s.
+                </Highlight>
+              </P>
+            </>
+          )
+        }
+      ]}
+    />
+    <P>
+      <H
+        args={{
+          name: 'pressFastForward'
+        }}
+      />
+    </P>
+  </>
+)
+
+export const StepThree = () => (
+  <>
+    <BubbleQuotes
+      quotes={[
+        {
+          type: 'dog',
+          children: (
+            <>
+              <P>
+                <Bold>Third:</Bold> We’ll need to start with the pair of{' '}
+                <InlinePrioritiesLabel>2</InlinePrioritiesLabel>’s again, just
+                like the last time.
+              </P>
+            </>
+          )
+        }
+      ]}
+    />
+    <P>
+      <H
+        args={{
+          name: 'pressFastForward'
+        }}
+      />
+    </P>
+  </>
+)
+
 export default () => (
   <EpisodeCardList
     cards={[
@@ -1300,97 +1399,15 @@ export default () => (
               ]}
             />
             <OnePlusOneTest />
-            <BubbleQuotes
-              quotes={[
-                {
-                  type: 'dog',
-                  children: (
-                    <>
-                      <P>
-                        Let’s{' '}
-                        <H args={{ name: 'fastForward', lowerCase: true }} />{' '}
-                        it!
-                      </P>
-                      <P>
-                        <Bold>First:</Bold>{' '}
-                        <Highlight>
-                          Because there are multiple pairs of{' '}
-                          <InlinePrioritiesLabel>1</InlinePrioritiesLabel>’s, we
-                          start from the leftmost pair.
-                        </Highlight>
-                      </P>
-                    </>
-                  )
-                }
-              ]}
-            />
-            <P>
-              <H
-                args={{
-                  name: 'pressFastForward'
-                }}
-              />
-            </P>
+            <StepOne />
             <R.Dhiu>
               <H args={{ name: 'startWithLeftMostOneCaption' }} />
             </R.Dhiu>
-            <BubbleQuotes
-              quotes={[
-                {
-                  type: 'dog',
-                  children: (
-                    <>
-                      <P>
-                        <Bold>Second:</Bold> We can’t start with the leftmost
-                        pair of <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
-                        ’s because there’s only one item on the bottom (a{' '}
-                        <EmojiWithText letter="b" />)
-                      </P>
-                      <P>
-                        Therefore,{' '}
-                        <Highlight>
-                          we do the pair of{' '}
-                          <InlinePrioritiesLabel>2</InlinePrioritiesLabel>’s.
-                        </Highlight>
-                      </P>
-                    </>
-                  )
-                }
-              ]}
-            />
-            <P>
-              <H
-                args={{
-                  name: 'pressFastForward'
-                }}
-              />
-            </P>
+            <StepTwo />
             <R.Akjy>
               <H args={{ name: 'startWithTwoCaption' }} />
             </R.Akjy>
-            <BubbleQuotes
-              quotes={[
-                {
-                  type: 'dog',
-                  children: (
-                    <>
-                      <P>
-                        <Bold>Third:</Bold> We’ll need to start with the pair of{' '}
-                        <InlinePrioritiesLabel>2</InlinePrioritiesLabel>’s
-                        again, just like the last time.
-                      </P>
-                    </>
-                  )
-                }
-              ]}
-            />
-            <P>
-              <H
-                args={{
-                  name: 'pressFastForward'
-                }}
-              />
-            </P>
+            <StepThree />
             <R.Hnyn>
               <H args={{ name: 'startWithTwoCaption' }} />
             </R.Hnyn>

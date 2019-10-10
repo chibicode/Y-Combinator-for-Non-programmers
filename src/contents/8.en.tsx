@@ -21,6 +21,7 @@ import * as R from 'src/components/Runners'
 import InlinePrioritiesLabel from 'src/components/InlinePrioritiesLabel'
 import EmojiWithText from 'src/components/EmojiWithText'
 import NextLessonButton from 'src/components/NextLessonButton'
+import { StepOne, StepTwo, StepThree } from 'src/contents/7.en'
 
 export default () => (
   <EpisodeCardList
@@ -335,75 +336,44 @@ export default () => (
       {
         title: (
           <>
-            <H args={{ name: 'play' }} /> してみると…
+            What happens if you <H args={{ name: 'play', lowerCase: true }} />{' '}
+            it?
           </>
         ),
         content: (
           <>
-            <P>
-              それでは、<Emoji>👧🏻</Emoji>{' '}
-              サヤちゃんの弁当箱を実行してみましょう！
-            </P>
-            <P>
-              まず、
-              <Highlight>
-                <InlinePrioritiesLabel>1</InlinePrioritiesLabel>{' '}
-                のペアが左右ふたつ以上あるので、一番左の{' '}
-                <InlinePrioritiesLabel>1</InlinePrioritiesLabel>{' '}
-                のペアからはじめます。
-              </Highlight>
-              <H
-                args={{
-                  name: 'pressFastForward',
-                  mentionRightArrow: true
-                }}
-              />
-            </P>
+            <StepOne />
             <R.Jsvg>
               <H args={{ name: 'startWithLeftMostOneCaption' }} />
             </R.Jsvg>
-            <P>
-              続いて、また{' '}
-              <Highlight>
-                <InlinePrioritiesLabel>1</InlinePrioritiesLabel>{' '}
-                のペアからはじめたいのですが、
-                <InlinePrioritiesLabel>1</InlinePrioritiesLabel>{' '}
-                のペアの一番下の段にひとつの料理(
-                <EmojiWithText letter="b" />
-                )しかないので不可能です。
-              </Highlight>
-            </P>
-            <P>
-              というわけで、
-              <HighlightBold>
-                次は <InlinePrioritiesLabel>2</InlinePrioritiesLabel> のペアから
-              </HighlightBold>
-              はじめます。
-            </P>
+            <StepTwo />
             <R.Uexo>
               <H args={{ name: 'startWithTwoCaption' }} />
             </R.Uexo>
-            <P>
-              次も前回と同じく、
-              <HighlightBold>
-                <InlinePrioritiesLabel>2</InlinePrioritiesLabel>{' '}
-                のペアからはじめます。
-              </HighlightBold>
-            </P>
+            <StepThree />
             <R.Hdhy>
               <H args={{ name: 'startWithTwoCaption' }} />
             </R.Hdhy>
-            <P>つまり、最終的に以下のようになりました！</P>
-            <R.Rhcv>
-              <H args={{ name: 'play' }} /> した結果
-            </R.Rhcv>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>So this is the final result!</P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Rhcv>Final result</R.Rhcv>
             <BubbleQuotes
               quotes={[
                 {
                   type: 'surprised',
                   children: (
                     <>
-                      <P>こ、これはもしや…？</P>
+                      <P>Wait…! It can’t be…!</P>
                     </>
                   )
                 }
