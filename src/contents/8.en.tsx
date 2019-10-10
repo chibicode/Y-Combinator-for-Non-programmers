@@ -546,10 +546,8 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        じゃあ、
-                        <Highlight>
-                          <EmojiNumber number={2} /> に変換できる弁当箱と、
-                        </Highlight>
+                        Ok, so let me combine this lunchbox that can be
+                        converted to <EmojiNumber number={2} />…
                       </P>
                       <R.Spga>
                         <H
@@ -560,18 +558,13 @@ export default () => (
                           }}
                         />
                       </R.Spga>
-                      <P>サヤが考えた弁当箱を合体させてみるね！</P>
+                      <P>With the lunchbox I came up with earlier!</P>
                       <R.Qrfw>
-                        <Emoji>👧🏻</Emoji> サヤちゃんの弁当箱
+                        <Emoji>👧🏻</Emoji> Saya’s lunchbox
                       </R.Qrfw>
                       <P>
-                        合体したものを
-                        <H args={{ name: 'runAndConvertToMathbox' }} />
-                        して、
-                        <Highlight>
-                          結果が <EmojiNumber number={3} /> になればいい
-                        </Highlight>
-                        んだよね。
+                        We want the result to be <EmojiNumber number={3} />,
+                        right?
                       </P>
                     </>
                   )
@@ -579,18 +572,22 @@ export default () => (
               ]}
             />
             <R.Awwn>
-              <EmojiNumber number={2} /> に変換できる弁当箱と、
+              Combine <Emoji>👧🏻</Emoji> Saya’s lunchbox with
               <br />
-              <Emoji>👧🏻</Emoji> サヤちゃんの弁当箱を合体させ…
+              a lunchbox that can be converted to <EmojiNumber number={2} />…
             </R.Awwn>
             <ExpressionRunnerSeparator />
             <ExpressionRunnerCaptionOnly>
-              <H args={{ name: 'runAndConvertToMathbox' }} />
+              <Highlight>
+                <H args={{ name: 'runAndConvertToMathbox' }} />
+              </Highlight>
+            </ExpressionRunnerCaptionOnly>
+            <ExpressionRunnerSeparator />
+            <ExpressionRunnerCaptionOnly>
+              If it becomes <EmojiNumber number={3} size="mdlg" />,{' '}
+              <Highlight>success</Highlight>. <Emoji>🎉</Emoji>
               <br />
-              して、結果が <EmojiNumber number={3} size="mdlg" /> になれば
-              <HighlightBold>成功</HighlightBold> <Emoji>🎉</Emoji>
-              <br />
-              それ以外なら<HighlightBold>失敗</HighlightBold> <Emoji>😭</Emoji>
+              Otherwise, <Highlight>failure</Highlight> <Emoji>😭</Emoji>
             </ExpressionRunnerCaptionOnly>
             <BubbleQuotes
               quotes={[
@@ -599,10 +596,10 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        まずは実行してみるね。
+                        Let’s run it.{' '}
                         <H args={{ name: 'pressFastForward', girl: true }} />
                       </P>
-                      <P>今回は、最後まで止まらずに早送りします！</P>
+                      <P>This time, we won’t stop until the end!</P>
                     </>
                   )
                 }
@@ -615,15 +612,13 @@ export default () => (
                   type: 'saya',
                   children: (
                     <>
-                      <P>結果はこうなったよ！</P>
+                      <P>This is the final result!</P>
                     </>
                   )
                 }
               ]}
             />
-            <R.Zsxo>
-              <H args={{ name: 'play' }} /> した結果
-            </R.Zsxo>
+            <R.Zsxo>The final result</R.Zsxo>
             <BubbleQuotes
               quotes={[
                 {
@@ -631,8 +626,8 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        この弁当箱は、
-                        <EmojiNumber number={3} /> に変換できます！
+                        This lunchbox can be converted to{' '}
+                        <EmojiNumber number={3} />!
                       </P>
                     </>
                   )
@@ -653,10 +648,9 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        つまり、
+                        <Bold>Therefore:</Bold> It calculated{' '}
                         <EmojiNumber number={2} /> <Emoji>➕</Emoji>{' '}
-                        <EmojiNumber number={1} /> が計算できたので、
-                        <HighlightBold>またしても成功です！</HighlightBold>{' '}
+                        <EmojiNumber number={1} />, so it’s a success!{' '}
                         <Emoji>🎉</Emoji>
                       </P>
                     </>
@@ -666,7 +660,7 @@ export default () => (
                   type: 'saya',
                   children: (
                     <>
-                      <P>わーい、わーい！</P>
+                      <P>Yay again!</P>
                     </>
                   )
                 },
@@ -674,7 +668,7 @@ export default () => (
                   type: 'surprised',
                   children: (
                     <>
-                      <P>す、すごい…！</P>
+                      <P>Wow…!</P>
                     </>
                   )
                 }
@@ -686,8 +680,7 @@ export default () => (
       {
         title: (
           <>
-            <H args={{ name: 'plusOneEffect' }} />
-            がある法則
+            The pattern for <H args={{ name: 'plusOneEffect' }} />
           </>
         ),
         content: (
