@@ -795,10 +795,11 @@ export default () => (
                         pattern.
                       </P>
                       <R.Blvt>
-                        Any lunchboxes that fit the following pattern
+                        Any lunchboxes that fit the following
                         <br />
-                        have <H args={{ name: 'plusOneEffect' }} />.<br />
-                        <Emoji>👧🏻</Emoji> Saya’s lunchbox fits this pattern
+                        pattern have <H args={{ name: 'plusOneEffect' }} />.
+                        <br />
+                        <Emoji>👧🏻</Emoji> Saya’s lunchbox fits this pattern!
                       </R.Blvt>
                     </>
                   )
