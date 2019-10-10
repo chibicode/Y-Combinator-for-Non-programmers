@@ -692,17 +692,18 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        ではここで正解を言いましょう。
-                        <HighlightBold>
-                          サヤちゃんが考えた弁当箱は、
-                          <H args={{ name: 'plusOneEffect' }} />
-                          がある弁当箱です。
-                        </HighlightBold>
+                        <Bold>Let me tell you this:</Bold>{' '}
+                        <Highlight>
+                          Saya’s lunchbox <Italic>does</Italic> have{' '}
+                          <H args={{ name: 'plusOneEffect' }} />!
+                        </Highlight>
                       </P>
                       <P>
-                        だから、
-                        <Highlight>サヤちゃんの答えが正解です！</Highlight>
-                        おめでとうございます！<Emoji>🎉</Emoji>
+                        Therefore,{' '}
+                        <HighlightBold>
+                          Saya’s answer was correct.
+                        </HighlightBold>{' '}
+                        Congratulations! <Emoji>🎉</Emoji>
                       </P>
                     </>
                   )
@@ -710,10 +711,8 @@ export default () => (
               ]}
             />
             <R.Nvqu>
-              <Emoji>👧🏻</Emoji> サヤちゃんが考えた弁当箱には
-              <br />
+              <Emoji>👧🏻</Emoji> Saya’s lunchbox has{' '}
               <H args={{ name: 'plusOneEffect' }} />
-              がある
             </R.Nvqu>
             <BubbleQuotes
               quotes={[
@@ -721,7 +720,7 @@ export default () => (
                   type: 'saya',
                   children: (
                     <>
-                      <P>わーい、ミニオンさんありがとう！</P>
+                      <P>Thank you, Minion!</P>
                     </>
                   )
                 },
@@ -730,12 +729,14 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        さらに言うと、サヤちゃんが考えた弁当箱以外にも、
-                        <HighlightBold>
-                          以下の法則に当てはまる弁当箱であれば、 どれでも
-                          <H args={{ name: 'plusOneEffect' }} />
-                          があります。
-                        </HighlightBold>
+                        <Bold>By the way:</Bold> There are{' '}
+                        <Italic>other</Italic> correct answers as well.
+                      </P>
+                      <P>
+                        <Highlight>
+                          Any lunchboxes that fit the following pattern have{' '}
+                          <H args={{ name: 'plusOneEffect' }} />.
+                        </Highlight>
                       </P>
                     </>
                   )
@@ -743,10 +744,9 @@ export default () => (
               ]}
             />
             <R.Blvt>
-              この法則に当てはまる弁当箱であれば、
+              Any lunchboxes that fit the following pattern
               <br />
-              <H args={{ name: 'plusOneEffect' }} />
-              がある
+              have <H args={{ name: 'plusOneEffect' }} />
             </R.Blvt>
             <BubbleQuotes
               quotes={[
@@ -754,29 +754,35 @@ export default () => (
                   type: 'saya',
                   children: (
                     <>
-                      <P>サヤが考えた弁当箱の場合、</P>
+                      <P>
+                        I see. So the lunchbox I came up with had the following:
+                      </P>
                       <Ul>
                         <UlLi>
-                          <Emoji>🅰️</Emoji> は <EmojiWithText letter="a" />
+                          <EmojiWithText letter="a" capitalize /> for{' '}
+                          <Emoji>🅰️</Emoji>
                         </UlLi>
                         <UlLi>
-                          <Emoji>🅱️</Emoji> は <EmojiWithText letter="b" />
+                          <EmojiWithText letter="b" capitalize /> for{' '}
+                          <Emoji>🅱️</Emoji>
                         </UlLi>
                         <UlLi>
-                          <CustomEmoji type="C" /> は{' '}
-                          <EmojiWithText letter="c" />
+                          <EmojiWithText letter="c" capitalize /> for{' '}
+                          <CustomEmoji type="C" />
                         </UlLi>
                       </Ul>
-                      <P>ということかな？</P>
                     </>
                   )
                 }
               ]}
             />
             <R.Oykb>
-              <Emoji>🅰️</Emoji> は <EmojiWithText letter="a" />、<br />
-              <Emoji>🅱️</Emoji> は <EmojiWithText letter="b" />、<br />
-              <CustomEmoji type="C" /> は <EmojiWithText letter="c" />
+              <EmojiWithText letter="a" capitalize /> for <Emoji>🅰️</Emoji>,
+              <br />
+              <EmojiWithText letter="b" capitalize /> for <Emoji>🅱️</Emoji>, and
+              <br />
+              <EmojiWithText letter="c" capitalize /> for{' '}
+              <CustomEmoji type="C" />
             </R.Oykb>
             <BubbleQuotes
               quotes={[
@@ -785,13 +791,14 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        その通りです。サヤちゃんが考えた弁当箱は、ちゃんとこの法則に当てはまっているのです。
+                        Exactly. Saya’s lunchbox actually fits the following
+                        pattern.
                       </P>
                       <R.Blvt>
-                        この法則に当てはまる弁当箱であれば、
+                        Any lunchboxes that fit the following pattern
                         <br />
-                        <H args={{ name: 'plusOneEffect' }} />
-                        がある
+                        have <H args={{ name: 'plusOneEffect' }} />.<br />
+                        <Emoji>👧🏻</Emoji> Saya’s lunchbox fits this pattern
                       </R.Blvt>
                     </>
                   )
