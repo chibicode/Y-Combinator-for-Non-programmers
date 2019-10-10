@@ -146,7 +146,7 @@ interface HProps {
     | { name: 'minusOneEffect'; capitalize?: true }
     | { name: 'startWithTwoCaption' }
     | { name: 'startWithLeftMostOneCaption' }
-    | { name: 'convertiblePatternCaption', skipFirst?: true }
+    | { name: 'convertiblePatternCaption'; skipFirst?: true }
     | { name: 'convertiblePatternThreeColumnsCaption' }
     | { name: 'convertiblePatternFirstCaption' }
     | { name: 'convertiblePatternSecondCaption' }
@@ -1476,7 +1476,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
     if (locale === 'en') {
       return (
         <Highlight highlightType="pink">
-          You can also skip until the end.
+          You can also skip to the end.
         </Highlight>
       )
     } else {

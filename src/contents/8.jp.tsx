@@ -801,16 +801,14 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        はい、
-                        <H args={{ name: 'plusOneEffect' }} />
-                        はありますよ。
+                        Yes, it also has <H args={{ name: 'plusOneEffect' }} />.
                       </P>
                       <P>
+                        <Bold>As a test:</Bold>{' '}
                         <Highlight>
-                          試しに、
-                          <EmojiNumber number={3} />{' '}
-                          に変換できるこちらの弁当箱と合体させて
-                          <H args={{ name: 'play' }} /> してみましょう。
+                          Let’s combine it with this lunchbox that can be
+                          converted to <EmojiNumber number={3} /> and see what
+                          happens!
                         </Highlight>
                       </P>
                       <R.Cjxe>
@@ -823,14 +821,10 @@ export default () => (
                         />
                       </R.Cjxe>
                       <P>
-                        実行したとき、
-                        <HighlightBold>
-                          結果が <EmojiNumber number={4} />{' '}
-                          に変換できる弁当箱になれば、
-                          <EmojiNumber number={3} /> <Emoji>➕</Emoji>{' '}
-                          <EmojiNumber number={1} /> を計算できたので成功
-                        </HighlightBold>
-                        になります。
+                        If the result is <EmojiNumber number={4} />, then that
+                        means it calculated <EmojiNumber number={3} />{' '}
+                        <Emoji>➕</Emoji> <EmojiNumber number={1} />{' '}
+                        successfully. Let’s check!
                       </P>
                     </>
                   )
