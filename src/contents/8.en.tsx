@@ -934,7 +934,7 @@ export default () => (
       },
       {
         type: 'summary',
-        title: <>立ち止まって振り返ろう</>,
+        title: <>Let’s Pause and Look Back</>,
         content: (
           <>
             <BubbleQuotes
@@ -943,10 +943,7 @@ export default () => (
                   type: 'tired',
                   children: (
                     <>
-                      <P>
-                        俺らふだん頭を使っていないから、情報量が多すぎて疲れてしまった…
-                      </P>
-                      <P>ちょっとひと休みしてもらえないか？</P>
+                      <P>That was a lot of information. Can we take a break?</P>
                     </>
                   )
                 },
@@ -954,17 +951,18 @@ export default () => (
                   type: 'dog',
                   children: (
                     <>
-                      <P>いいですよ！</P>
+                      <P>Sure, let’s take a break!</P>
                       <P>
-                        ちなみに現時点で、
-                        <Highlight>中級編も半分を終えました</Highlight>
-                        。つまり、本稿の折り返し地点を越えたということです。
-                        <Highlight>
-                          残るは中級編の残り半分と、上級編のみです。
-                        </Highlight>
+                        <Bold>By the way:</Bold>{' '}
+                        <Italic>
+                          We’re halfway done with the intermediate levels.
+                        </Italic>{' '}
+                        And we’re also halfway done with the{' '}
+                        <Italic>entire course.</Italic>
                       </P>
                       <P>
-                        いい機会なので、少し立ち止まって振り返ってみましょう。
+                        <Bold>So: </Bold> Let’s pause and look back at what we
+                        just did!
                       </P>
                     </>
                   )
@@ -972,19 +970,25 @@ export default () => (
               ]}
             />
             <P>
-              まずこちらをご覧ください。これは、
+              First, take a look at this one. It’s a mathbox that can calculate{' '}
               <EmojiNumber number={1} /> <Emoji>➕</Emoji>{' '}
-              <EmojiNumber number={1} /> を計算できる計算箱ですね。
+              <EmojiNumber number={1} /> using{' '}
+              <H args={{ name: 'plusOneFeature', capitalize: true }} />.
             </P>
             <R.Mcug>
-              <EmojiNumber number={1} /> <Emoji>➕</Emoji>{' '}
-              <EmojiNumber number={1} /> を計算できる計算箱。
+              A mathbox that can calculate <EmojiNumber number={1} />{' '}
+              <Emoji>➕</Emoji> <EmojiNumber number={1} />
               <br />
-              実行すると <EmojiNumber number={2} /> になる
+              using <H args={{ name: 'plusOneFeature', capitalize: true }} />.
+              <br />
+              If you run it, it becomes <EmojiNumber number={2} />.
             </R.Mcug>
             <P>
-              これまで学んだことを一言でまとめると、上の計算箱にあるような「
-              <H args={{ name: 'plusOneFeature' }} />
+              If we were to summarize what we just did in this chapter, it’ll be
+              this:
+            </P>
+            <P>
+              <H args={{ name: 'plusOneFeature', capitalize: true }} /> can be <Bold>replicated</Bold> using a lunchbox
               」は、
               <HighlightBold>弁当箱で「再現」できる</HighlightBold>
               、ということです。

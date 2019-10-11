@@ -915,7 +915,7 @@ export default () => (
                   type: 'dog',
                   children: (
                     <>
-                      <P>いいですよ！</P>
+                      <P>いいですよ、ひと休みしましょう！</P>
                       <P>
                         ちなみに現時点で、
                         <Highlight>中級編も半分を終えました</Highlight>
@@ -933,11 +933,16 @@ export default () => (
               ]}
             />
             <P>
-              まずこちらをご覧ください。これは、
+              まずこちらをご覧ください。これは、「
+              <H args={{ name: 'plusOneFeature', capitalize: true }} />」
+              を使うことで、
               <EmojiNumber number={1} /> <Emoji>➕</Emoji>{' '}
               <EmojiNumber number={1} /> を計算できる計算箱ですね。
             </P>
             <R.Mcug>
+              「<H args={{ name: 'plusOneFeature', capitalize: true }} />
+              」を使うことで
+              <br />
               <EmojiNumber number={1} /> <Emoji>➕</Emoji>{' '}
               <EmojiNumber number={1} /> を計算できる計算箱。
               <br />
