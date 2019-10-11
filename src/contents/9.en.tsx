@@ -954,34 +954,32 @@ export default () => (
                   type: 'dog',
                   children: (
                     <>
-                      <P>それでは、</P>
+                      <P>Let’s use the following special rule:</P>
                       <Ul>
                         <UlLi>
-                          <Highlight>
-                            <BottomRightBadge
-                              inline
-                              bottomRightBadgeType="callArg"
-                            />{' '}
-                            と{' '}
-                            <BottomRightBadge
-                              inline
-                              bottomRightBadgeType="funcUnbound"
-                            />{' '}
-                            に同じ料理が登場したら、
-                          </Highlight>
+                          If the same item appears in both{' '}
+                          <BottomRightBadge
+                            inline
+                            bottomRightBadgeType="callArg"
+                          />{' '}
+                          and{' '}
+                          <BottomRightBadge
+                            inline
+                            bottomRightBadgeType="funcUnbound"
+                          />
+                          …
                         </UlLi>
                         <UlLi>
-                          <HighlightBold>
-                            自動的に{' '}
+                          <Highlight>
+                            It will automatically change conflicting{' '}
                             <BottomRightBadge
                               inline
                               bottomRightBadgeType="callArg"
-                            />{' '}
-                            を、まだ使われてない料理にランダムに変える。
-                          </HighlightBold>
+                            />
+                            ’s to something different.
+                          </Highlight>
                         </UlLi>
                       </Ul>
-                      <P>という特別ルールを設けましょう。</P>
                     </>
                   )
                 }
@@ -995,17 +993,25 @@ export default () => (
               ]}
               description={
                 <>
-                  <BottomRightBadge inline bottomRightBadgeType="callArg" /> と{' '}
-                  <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />{' '}
-                  に同じ料理が登場したら、
+                  If the same item appears in
                   <br />
-                  <HighlightBold>
-                    自動的に{' '}
-                    <BottomRightBadge inline bottomRightBadgeType="callArg" />{' '}
-                    がまだ使われてない料理に
+                  both{' '}
+                  <BottomRightBadge
+                    inline
+                    bottomRightBadgeType="callArg"
+                  /> and{' '}
+                  <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />
+                  ,<br />
+                  <Highlight>
+                    it will automatically change
                     <br />
-                    ランダムに変わる
-                  </HighlightBold>
+                    conflicting{' '}
+                    <BottomRightBadge
+                      inline
+                      bottomRightBadgeType="callArg"
+                    />{' '}
+                    to something different.
+                  </Highlight>
                 </>
               }
             />
