@@ -988,9 +988,9 @@ export default () => (
             <Ul>
               <UlLi>
                 <Highlight>
-                  <CustomEmoji type="mathBox" /> A <Bold>mathbox</Bold> that has{' '}
-                  <CustomEmoji type="plusOne" /> can be <Bold>reproduced</Bold>{' '}
-                  by…
+                  <CustomEmoji type="mathBox" /> A <Bold>mathbox</Bold> that
+                  uses <CustomEmoji type="plusOne" /> can be{' '}
+                  <Bold>reproduced</Bold> by…
                 </Highlight>
               </UlLi>
               <UlLi>
@@ -1088,59 +1088,60 @@ export default () => (
             </R.Plde>
             <P>
               That’s what we mean by <HighlightBold>reproducing</HighlightBold>{' '}
-              a mathbox using a lunchbox.
+              a mathbox <CustomEmoji type="mathBox" /> using a lunchbox{' '}
+              <Emoji>🍱</Emoji>.
             </P>
           </>
         )
       },
       {
         type: 'summary',
-        title: <>もっと複雑な計算箱も再現できる</>,
+        title: <>You can reproduce more complicated mathboxes</>,
         content: (
           <>
-            <P>もちろん、もっと複雑な計算箱も弁当箱で再現できます。</P>
             <P>
-              たとえば、初級その1に登場したこちらの計算箱をご覧ください。
-              <H args={{ name: 'play' }} /> すると、結果は{' '}
-              <EmojiNumber number={4} /> になります。
+              Of course, you can also reproduce{' '}
+              <Italic>more complicated mathboxes</Italic>.
+            </P>
+            <P>
+              <Highlight>
+                For example, take a look at this mathbox that appeared on
+                Beginner 1.
+              </Highlight>{' '}
+              If you <H args={{ name: 'play', lowerCase: true }} /> it, the
+              result will be <EmojiNumber number={4} />.
             </P>
             <R.Jiqb />
-            <P>
-              これを弁当箱で再現するには、
-              <Highlight>
-                <EmojiNumber number={2} /> に変換できる弁当箱と、
-                <H args={{ name: 'plusOneEffect' }} />
-                がある弁当箱を「<HighlightBold>2個</HighlightBold>
-                」合体させればいい
-              </Highlight>
-              のです。
-            </P>
+            <P>To reproduce this using a lunchbox, you’ll need:</P>
+            <Ul>
+              <UlLi>
+                <Highlight>
+                  A lunchbox that can be converted to <EmojiNumber number={2} />
+                  , and:
+                </Highlight>
+              </UlLi>
+              <UlLi>
+                <Highlight>
+                  Two lunchboxes that have{' '}
+                  <H args={{ name: 'plusOneEffect' }} />.
+                </Highlight>
+              </UlLi>
+            </Ul>
             <R.Xhdq>
-              <EmojiNumber number={2} /> に変換できる弁当箱と
+              How to reproduce <EmojiNumber number={2} />{' '}
+              <CustomEmoji type="plusOne" /> <CustomEmoji type="plusOne" />{' '}
               <br />
-              <H args={{ name: 'plusOneEffect' }} />
-              がある弁当箱を「<HighlightBold>2個</HighlightBold>」<br />
-              合体すれば、
-              <EmojiNumber number={2} /> <CustomEmoji type="plusOne" />{' '}
-              <CustomEmoji type="plusOne" /> の計算箱を再現できる
+              using a lunchbox.
+              <br />
+              The final result will be <EmojiNumber number={4} />.
             </R.Xhdq>
             <P>
-              上の弁当箱は実行に時間がかかるので、ここでは早送りはしませんが、
+              <Bold>Summary:</Bold>{' '}
               <Highlight>
-                <H args={{ name: 'runAndConvertToMathbox' }} />{' '}
-                ボタンを押すと、答えが <EmojiNumber number={4} />{' '}
-                になるのを確認できます。
+                A <Bold>mathbox</Bold> that uses <CustomEmoji type="plusOne" />{' '}
+                can be <Bold>reproduced</Bold> by a lunchbox that has{' '}
+                <H args={{ name: 'plusOneEffect' }} />.
               </Highlight>
-            </P>
-            <Hr />
-            <P>
-              まとめると、
-              <Highlight>
-                計算箱の「
-                <H args={{ name: 'plusOneFeature' }} />
-                」は、弁当箱で再現することができる
-              </Highlight>
-              のです。このポイントさえ覚えていただければ、細かいことは分からなくても大丈夫です！
             </P>
             <EmojiSeparator
               nodes={[
@@ -1152,12 +1153,12 @@ export default () => (
               ]}
               description={
                 <>
-                  計算箱の「
-                  <H args={{ name: 'plusOneFeature' }} />
-                  」は、
+                  A <Bold>mathbox</Bold> that uses{' '}
+                  <CustomEmoji type="plusOne" /> can be
                   <br />
-                  弁当箱で「<HighlightBold>再現</HighlightBold>
-                  」することができる
+                  <HighlightBold>reproduced</HighlightBold> by…
+                  <br />A <Bold>lunchbox</Bold> that has{' '}
+                  <H args={{ name: 'plusOneEffect' }} />.
                 </>
               }
             />
@@ -1165,33 +1166,35 @@ export default () => (
         )
       },
       {
-        type: 'summary',
-        title: <>他の機能も再現できる？</>,
+        type: 'challengeProblem',
+        title: <>Can we reproduce other mathboxes?</>,
         content: (
           <>
             <P>
-              ここで疑問なのですが、初級で説明した通り、計算箱には「
-              <H args={{ name: 'plusOneFeature' }} />
-              」以外にも、「
-              <H args={{ name: 'minusOneFeature' }} />
-              」や、「
-              <H args={{ name: 'repeatFeature' }} />
-              」がありましたよね。
+              <Bold>Remember that:</Bold> In Beginner 1 and 2, we explained that
+              mathboxes also have other features, which are:
             </P>
+            <Ul>
+              <UlLi>
+                <H args={{ name: 'minusOneFeature', capitalize: true }} />, and
+              </UlLi>
+              <UlLi>
+                <H args={{ name: 'repeatFeature', capitalize: true }} />.
+              </UlLi>
+            </Ul>
             <R.Xmqp>
-              「<H args={{ name: 'minusOneFeature' }} />
-              」の例
+              A mathbox that uses <H args={{ name: 'minusOneFeature' }} />
             </R.Xmqp>
             <R.Ednv>
-              「<H args={{ name: 'repeatFeature' }} />
-              」の例
+              A mathbox that uses <H args={{ name: 'repeatFeature' }} />
               <br />
-              (<CustomEmoji type="plusOne" /> を <EmojiNumber number={4} />{' '}
-              回繰り返す)
+              (Repeat <CustomEmoji type="plusOne" /> four times)
             </R.Ednv>
             <P>
+              <Bold>Question:</Bold>{' '}
               <Highlight>
-                これらの機能も、弁当箱で再現することができるのでしょうか？
+                Can we also <Bold>reproduce</Bold> these features using
+                lunchboxes?
               </Highlight>
             </P>
             <EmojiSeparator
@@ -1202,27 +1205,23 @@ export default () => (
               ]}
               description={
                 <>
-                  「<H args={{ name: 'minusOneFeature' }} />
-                  」や
-                  <br />「<H args={{ name: 'repeatFeature' }} />
-                  」も、
+                  Can we <HighlightBold>reproduce</HighlightBold>{' '}
+                  <CustomEmoji type="minusOne" /> and <Emoji>🔁</Emoji>
                   <br />
-                  弁当箱で「再現」できる？
+                  using lunchboxes?
                 </>
               }
             />
             <P>
-              <Highlight>
-                この疑問については、後に答えが明らかになります。
-              </Highlight>
-              楽しみにしていてください。
+              <Bold>You don’t need to answer this question now:</Bold>{' '}
+              <Highlight>We’ll talk about this soon!</Highlight>
             </P>
           </>
         )
       },
       {
         type: 'sideNote',
-        title: <>考えつかなくても大丈夫！</>,
+        title: <>Side Note: Too Hard?</>,
         content: (
           <>
             <BubbleQuotes

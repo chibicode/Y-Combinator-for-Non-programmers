@@ -1118,7 +1118,7 @@ export default () => (
         )
       },
       {
-        type: 'summary',
+        type: 'challengeProblem',
         title: <>他の機能も再現できる？</>,
         content: (
           <>
