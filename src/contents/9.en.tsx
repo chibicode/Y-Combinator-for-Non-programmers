@@ -5,6 +5,8 @@ import {
   Highlight,
   HighlightBold,
   Ul,
+  Bold,
+  Italic,
   UlLi
 } from 'src/components/ContentTags'
 import H from 'src/components/H'
@@ -143,7 +145,7 @@ export default () => (
         )
       },
       {
-        title: <>If you it…</>,
+        title: <>If you run it…</>,
         content: (
           <>
             <P>
@@ -157,22 +159,15 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        実行を終えたので、
-                        <H args={{ name: 'convertToMathbox' }} />{' '}
-                        したいところですが…
-                      </P>
-                      <P>
-                        残念ながら、
-                        <HighlightBold>
-                          この弁当箱はぼくが計算箱に変換することができません。
-                        </HighlightBold>
+                        <Bold>Unfortunately:</Bold> I won’t be able to convert
+                        this lunchbox into a mathbox.
                       </P>
                     </>
                   )
                 }
               ]}
             />
-            <R.Auks>計算箱に変換できない</R.Auks>
+            <R.Auks>Can’t convert this into a mathbox</R.Auks>
             <BubbleQuotes
               quotes={[
                 {
@@ -180,25 +175,21 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        理由は、
-                        <Highlight>
-                          以下の法則に沿っていないからです。
-                        </Highlight>
+                        <Bold>Why?:</Bold> Because it doesn’t follow this
+                        pattern.
                       </P>
                       <R.Eozk>
-                        <H args={{ name: 'convertiblePatternCaption' }} />
+                        <H
+                          args={{
+                            name: 'convertiblePatternCaption',
+                            skipFirst: true
+                          }}
+                        />
                       </R.Eozk>
                       <P>
-                        <Highlight>
-                          右上には <Emoji>🅱️</Emoji> の料理が「
-                          <HighlightBold>ひとつだけ</HighlightBold>
-                          」ある必要があります。しかし、
-                          <Highlight>
-                            ここでは <Emoji>🅱️</Emoji> の料理が
-                            <HighlightBold>ふたつ</HighlightBold>もある
-                          </Highlight>
-                          ので、計算箱に変換できないのです。
-                        </Highlight>
+                        There needs to be exactly one <Emoji>🅱️</Emoji> on the
+                        top-right, but there are <Italic>two</Italic> in this
+                        case.
                       </P>
                     </>
                   )
@@ -206,9 +197,11 @@ export default () => (
               ]}
             />
             <R.Vqwp>
-              右上に <Emoji>🅱️</Emoji> がふたつあるので、
+              There needs to be exactly one <Emoji>🅱️</Emoji>
               <br />
-              計算箱に変換できない
+              on the top-right, but there are two.
+              <br />
+              That’s why it cannot be converted to a mathbox.
             </R.Vqwp>
             <BubbleQuotes
               quotes={[
@@ -217,8 +210,8 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        お、おかしい…なんで <EmojiNumber number={2} />{' '}
-                        に変換できる弁当箱にならないんだ？前回はちゃんとできていたのに…
+                        Hmm… what’s going on? Last time, we got{' '}
+                        <EmojiNumber number={2} />…
                       </P>
                     </>
                   )
