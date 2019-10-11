@@ -590,9 +590,8 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        <HighlightBold>
-                          左側は、下のふたつの料理が違うけど、右側は下のふたつの料理が同じになった！
-                        </HighlightBold>
+                        The bottom two are different on the left, but they’re
+                        the same on the right!
                       </P>
                     </>
                   )
@@ -601,23 +600,25 @@ export default () => (
                   type: 'dog',
                   children: (
                     <>
-                      <P>そうなんです。このまま最後まで実行すると、</P>
+                      <P>Yes. And if we continue until the end…</P>
                       <Ul>
                         <UlLi>
-                          左側は{' '}
+                          On the left, the <EmojiWithText letter="c" /> (which
+                          was{' '}
                           <BottomRightBadge
                             inline
                             bottomRightBadgeType="funcBound"
-                          />{' '}
-                          の <EmojiWithText letter="c" /> が残るのに対し、
+                          />
+                          ) will remain.
                         </UlLi>
                         <UlLi>
-                          右側は{' '}
+                          On the right, the <EmojiWithText letter="d" /> (which
+                          was{' '}
                           <BottomRightBadge
                             inline
                             bottomRightBadgeType="callArg"
-                          />{' '}
-                          の <EmojiWithText letter="d" /> が残ります。
+                          />
+                          ) will remain.
                         </UlLi>
                       </Ul>
                     </>
