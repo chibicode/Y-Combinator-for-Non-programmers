@@ -296,7 +296,7 @@ export default () => (
       {
         title: (
           <>
-            If there are the same items on{' '}
+            If the same item exists in both{' '}
             <BottomRightBadge inline bottomRightBadgeType="callArg" /> and{' '}
             <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />, the
             results will differ
@@ -310,11 +310,12 @@ export default () => (
                   type: 'dog',
                   children: (
                     <>
-                      <P>では、ここでネタばらしをしましょう。</P>
+                      <P>Let me tell you what’s going on.</P>
                       <P>
-                        こちらに、先ほど
-                        <HighlightBold>失敗した</HighlightBold>
-                        例をもう一度表示しています。
+                        Let’s take a look at the previous example that{' '}
+                        <Italic>failed</Italic> to calculate{' '}
+                        <EmojiNumber number={1} /> <Emoji>➕</Emoji>{' '}
+                        <EmojiNumber number={1} />.
                       </P>
                     </>
                   )
@@ -322,12 +323,10 @@ export default () => (
               ]}
             />
             <R.Ybne>
-              先ほど{' '}
-              <Highlight>
-                <EmojiNumber number={1} /> <Emoji>➕</Emoji>{' '}
-                <EmojiNumber number={1} /> を計算できなかった
-              </Highlight>
-              例
+              The example that <Italic>failed</Italic> to calculate
+              <br />
+              <EmojiNumber number={1} /> <Emoji>➕</Emoji>{' '}
+              <EmojiNumber number={1} />
             </R.Ybne>
             <BubbleQuotes
               quotes={[
@@ -336,24 +335,27 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        次に、
+                        Let’s label each item with{' '}
                         <BottomRightBadge
                           inline
                           bottomRightBadgeType="callArg"
-                        />{' '}
+                        />
+                        ,{' '}
                         <BottomRightBadge
                           inline
                           bottomRightBadgeType="funcArg"
-                        />{' '}
+                        />
+                        ,{' '}
                         <BottomRightBadge
                           inline
                           bottomRightBadgeType="funcUnbound"
-                        />{' '}
+                        />
+                        , or{' '}
                         <BottomRightBadge
                           inline
                           bottomRightBadgeType="funcBound"
-                        />{' '}
-                        の印をつけてみます。
+                        />
+                        .
                       </P>
                     </>
                   )
@@ -368,21 +370,19 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        ここで、
-                        <HighlightBold>
-                          <BottomRightBadge
-                            inline
-                            bottomRightBadgeType="callArg"
-                          />{' '}
-                          と{' '}
-                          <BottomRightBadge
-                            inline
-                            bottomRightBadgeType="funcUnbound"
-                          />{' '}
-                          の両方に、
-                          <EmojiWithText letter="b" /> がある
-                        </HighlightBold>
-                        のに注目してみてください。
+                        <Bold>Notice that:</Bold> The{' '}
+                        <EmojiWithText letter="b" postfix="es" /> are labeled as
+                        either{' '}
+                        <BottomRightBadge
+                          inline
+                          bottomRightBadgeType="callArg"
+                        />{' '}
+                        or{' '}
+                        <BottomRightBadge
+                          inline
+                          bottomRightBadgeType="funcUnbound"
+                        />
+                        .
                       </P>
                     </>
                   )
@@ -390,10 +390,13 @@ export default () => (
               ]}
             />
             <R.Kwyy>
-              <BottomRightBadge inline bottomRightBadgeType="callArg" /> と{' '}
-              <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />{' '}
-              の両方に
-              <EmojiWithText letter="b" /> がある
+              The <EmojiWithText letter="b" postfix="es" /> are labeled as
+              <br />
+              either <BottomRightBadge
+                inline
+                bottomRightBadgeType="callArg"
+              />{' '}
+              or <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />
             </R.Kwyy>
             <BubbleQuotes
               quotes={[
@@ -402,26 +405,38 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        実は、このように{' '}
-                        <HighlightBold>
+                        <Bold>Here’s an important point:</Bold>{' '}
+                        <Highlight>
+                          If the same item exists in both{' '}
                           <BottomRightBadge
                             inline
                             bottomRightBadgeType="callArg"
                           />{' '}
-                          と{' '}
+                          and{' '}
                           <BottomRightBadge
                             inline
                             bottomRightBadgeType="funcUnbound"
-                          />{' '}
-                          に同じ料理があると、実行結果が狂ってしまう
-                        </HighlightBold>
-                        のです。
+                          />
+                          , then the results change.
+                        </Highlight>
                       </P>
                       <P>
-                        実行結果が狂ってしまうから、
+                        In this case, <EmojiForLetter letter="b" /> is in both{' '}
+                        <BottomRightBadge
+                          inline
+                          bottomRightBadgeType="callArg"
+                        />{' '}
+                        and{' '}
+                        <BottomRightBadge
+                          inline
+                          bottomRightBadgeType="funcUnbound"
+                        />
+                        .
+                      </P>
+                      <P>
+                        That’s why it couldn’t calculate{' '}
                         <EmojiNumber number={1} /> <Emoji>➕</Emoji>{' '}
-                        <EmojiNumber number={1} />{' '}
-                        を計算できない、ということになります。
+                        <EmojiNumber number={1} />.
                       </P>
                     </>
                   )
@@ -436,26 +451,12 @@ export default () => (
               ]}
               description={
                 <>
-                  <HighlightBold>
-                    <BottomRightBadge inline bottomRightBadgeType="callArg" />{' '}
-                    と{' '}
-                    <BottomRightBadge
-                      inline
-                      bottomRightBadgeType="funcUnbound"
-                    />{' '}
-                    に同じ料理があると、
-                    <br />
-                    実行結果が狂う
-                  </HighlightBold>
+                  If the same item exists in both{' '}
+                  <BottomRightBadge inline bottomRightBadgeType="callArg" /> and{' '}
+                  <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />
+                  ,
                   <br />
-                  (先ほどの場合は
-                  <EmojiWithText letter="b" /> が<br />
-                  <BottomRightBadge
-                    inline
-                    bottomRightBadgeType="callArg"
-                  /> と{' '}
-                  <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />{' '}
-                  両方にある)
+                  then the results change.
                 </>
               }
             />
@@ -465,7 +466,7 @@ export default () => (
                   type: 'surprised',
                   children: (
                     <>
-                      <P>へー、そうなんだ！どうして結果が狂うの？</P>
+                      <P>Really? Why does that happen?</P>
                     </>
                   )
                 },
@@ -473,10 +474,7 @@ export default () => (
                   type: 'dog',
                   children: (
                     <>
-                      <P>
-                        この例だと複雑すぎて説明が難しいので、
-                        <Highlight>簡単な例を使って説明しますね！</Highlight>
-                      </P>
+                      <P>Let me use an example to explain!</P>
                     </>
                   )
                 }
