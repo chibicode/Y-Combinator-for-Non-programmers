@@ -555,12 +555,12 @@ export default () => (
                 <>
                   <R.Rypq>
                     <BottomRightBadge inline bottomRightBadgeType="callArg" />{' '}
-                    と{' '}
+                    and{' '}
                     <BottomRightBadge
                       inline
                       bottomRightBadgeType="funcUnbound"
                     />{' '}
-                    が同じ
+                    are the same
                   </R.Rypq>
                   <ExpressionRunnerSeparator />
                   <R.Wqml></R.Wqml>
@@ -569,7 +569,7 @@ export default () => (
                   <ExpressionRunnerSeparator />
                   <R.Osff></R.Osff>
                   <ExpressionRunnerSeparator />
-                  <R.Fxok>下の料理が同じ</R.Fxok>
+                  <R.Fxok>The bottom two are the same</R.Fxok>
                 </>
               }
             />

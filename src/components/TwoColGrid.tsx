@@ -22,6 +22,10 @@ const TwoColGrid = ({
   >
     <Flex
       css={[
+        css`
+          margin-left: ${spaces('-0.5')};
+          margin-right: ${spaces('-1.25')};
+        `,
         !noTopNegativeMargin &&
           css`
             margin-top: ${spaces('-1.5')};
