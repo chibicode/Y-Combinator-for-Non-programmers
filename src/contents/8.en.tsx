@@ -972,27 +972,34 @@ export default () => (
             <P>
               First, take a look at this one. It’s a mathbox that can calculate{' '}
               <EmojiNumber number={1} /> <Emoji>➕</Emoji>{' '}
-              <EmojiNumber number={1} /> using{' '}
-              <H args={{ name: 'plusOneFeature', capitalize: true }} />.
+              <EmojiNumber number={1} /> using <CustomEmoji type="plusOne" />.
             </P>
             <R.Mcug>
               A mathbox that can calculate <EmojiNumber number={1} />{' '}
               <Emoji>➕</Emoji> <EmojiNumber number={1} />
               <br />
-              using <H args={{ name: 'plusOneFeature', capitalize: true }} />.
-              <br />
-              If you run it, it becomes <EmojiNumber number={2} />.
+              using <CustomEmoji type="plusOne" />. If you run it, it becomes{' '}
+              <EmojiNumber number={2} />.
             </R.Mcug>
             <P>
               If we were to summarize what we just did in this chapter, it’ll be
               this:
             </P>
-            <P>
-              <H args={{ name: 'plusOneFeature', capitalize: true }} /> can be <Bold>replicated</Bold> using a lunchbox
-              」は、
-              <HighlightBold>弁当箱で「再現」できる</HighlightBold>
-              、ということです。
-            </P>
+            <Ul>
+              <UlLi>
+                <Highlight>
+                  <CustomEmoji type="mathBox" /> A <Bold>mathbox</Bold> that has{' '}
+                  <CustomEmoji type="plusOne" /> can be <Bold>reproduced</Bold>{' '}
+                  by…
+                </Highlight>
+              </UlLi>
+              <UlLi>
+                <Highlight>
+                  <Emoji>🍱</Emoji> A <Bold>lunchbox</Bold> that has{' '}
+                  <H args={{ name: 'plusOneEffect' }} />.
+                </Highlight>
+              </UlLi>
+            </Ul>
             <EmojiSeparator
               nodes={[
                 <CustomEmoji type="mathBox" />,
@@ -1003,83 +1010,85 @@ export default () => (
               ]}
               description={
                 <>
-                  計算箱の「
-                  <H args={{ name: 'plusOneFeature' }} />
-                  」は、
+                  A <Bold>mathbox</Bold> that uses{' '}
+                  <CustomEmoji type="plusOne" /> can be
                   <br />
-                  弁当箱で「<HighlightBold>再現</HighlightBold>
-                  」することができる
+                  <HighlightBold>reproduced</HighlightBold> by…
+                  <br />A <Bold>lunchbox</Bold> that has{' '}
+                  <H args={{ name: 'plusOneEffect' }} />.
                 </>
               }
             />
             <P>
-              「<HighlightBold>再現</HighlightBold>
-              」できる、とはどういうことでしょうか？先ほどの計算箱の例で説明しますね。
+              What does <HighlightBold>“reproduced”</HighlightBold> mean? Let me
+              explain…
             </P>
-            <R.Lizi>これを弁当箱で再現します</R.Lizi>
+            <Hr />
             <P>
-              <Bold>ステップ1:</Bold> まず、
-              <Highlight>
-                計算箱の <EmojiNumber number={1} /> の代わりに、
-                <HighlightBold>
-                  <EmojiNumber number={1} /> に変換できる
-                </HighlightBold>
-                弁当箱
-              </Highlight>
-              を用意します。
+              Let’s <HighlightBold>reproduce</HighlightBold> the following
+              mathbox <CustomEmoji type="mathBox" /> using a lunchbox{' '}
+              <Emoji>🍱</Emoji>.
             </P>
-            <R.Rnug>これの代わりに…</R.Rnug>
+            <R.Lizi>We’ll reproduce this using a lunchbox</R.Lizi>
+            <P>
+              <Bold>Step 1:</Bold>{' '}
+              <Highlight>
+                First, instead of <EmojiNumber number={1} />, we use a lunchbox
+                that can be converted to <EmojiNumber number={1} />.
+              </Highlight>
+            </P>
+            <R.Rnug>Instead of this…</R.Rnug>
             <ExpressionRunnerSeparator />
             <R.Rbup>
-              <EmojiNumber number={1} /> に変換できる弁当箱を用意
+              Use a lunchbox that can be converted to <EmojiNumber number={1} />
+              :<br />
+              <H
+                args={{
+                  name: 'canBeConvertedCaption',
+                  letter: 'd',
+                  number: 1
+                }}
+              />
             </R.Rbup>
             <P>
-              <Bold>ステップ2:</Bold> 次に、
+              <Bold>Step 2:</Bold>{' '}
               <Highlight>
-                計算箱の <CustomEmoji type="plusOne" /> の代わりに、
-                <H args={{ name: 'plusOneEffect' }} />
+                Next, instead of <CustomEmoji type="plusOne" />, use a lunchbox
+                that has <H args={{ name: 'plusOneEffect' }} />.
               </Highlight>
-              がある弁当箱を用意します。
             </P>
-            <R.Bhpw>これの代わりに…</R.Bhpw>
+            <R.Bhpw>Instead of this…</R.Bhpw>
             <ExpressionRunnerSeparator />
             <R.Qrfw>
-              <H args={{ name: 'plusOneEffect' }} />
-              がある弁当箱を用意
-              <br />(<Emoji>👧🏻</Emoji> サヤちゃんが考えた弁当箱です)
-            </R.Qrfw>
-            <P>
-              <Bold>ステップ3:</Bold>{' '}
-              このふたつを合体させた弁当箱は、先ほども説明した通り、
-              <Highlight>
-                <H args={{ name: 'runAndConvertToMathbox' }} /> すると{' '}
-                <EmojiNumber number={2} /> になります
-              </Highlight>
-              ね。
-            </P>
-            <R.Dyoq>
-              <EmojiNumber number={1} /> に変換できる弁当箱と
+              Use a lunchbox that has
               <br />
               <H args={{ name: 'plusOneEffect' }} />
-              がある弁当箱を合体
-            </R.Dyoq>
+              <br />(<Emoji>👧🏻</Emoji> Saya’s lunchbox)
+            </R.Qrfw>
             <P>
-              つまり、先ほど登場した <EmojiNumber number={1} />{' '}
-              <Emoji>➕</Emoji> <EmojiNumber number={1} />{' '}
-              を計算できる計算箱は、
+              <Bold>Step 3:</Bold> If you combine them and then{' '}
+              <H args={{ name: 'runAndConvertToMathbox', lowerCase: true }} />…
             </P>
+            <P>
+              <Highlight>
+                It will become <EmojiNumber number={2} />,
+              </Highlight>{' '}
+              as we saw on this page.
+            </P>
+            <R.Dyoq>Combined lunchboxes…</R.Dyoq>
+            <P>Therefore, this mathbox:</P>
             <R.Lizi></R.Lizi>
             <P>
-              <HighlightBold>こちらの弁当箱で「再現」できる</HighlightBold>
-              ということです。
+              Can be <HighlightBold>reproduced</HighlightBold> by this lunchbox.
             </P>
             <R.Plde>
-              <EmojiNumber number={1} /> <CustomEmoji type="plusOne" />{' '}
-              の計算箱を、弁当箱で再現
+              <HighlightBold>Reproduce</HighlightBold>{' '}
+              <EmojiNumber number={1} /> <CustomEmoji type="plusOne" /> using a
+              lunchbox
             </R.Plde>
             <P>
-              これが、「<Highlight>計算箱を弁当箱で再現する</Highlight>
-              」ということなんですね。
+              That’s what we mean by <HighlightBold>reproducing</HighlightBold>{' '}
+              a mathbox using a lunchbox.
             </P>
           </>
         )
