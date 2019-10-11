@@ -222,7 +222,7 @@ export default () => (
         )
       },
       {
-        title: <>前回と比較してみよう</>,
+        title: <>Let’s compare with the last time</>,
         content: (
           <>
             <BubbleQuotes
@@ -232,15 +232,14 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        では、前回と比較してみましょう。前回実行したのは、こちらの弁当箱でした。
+                        Let’s compare with the last time. Previously, we used
+                        the following lunchbox:
                       </P>
                       <P>
-                        <HighlightBold>
-                          先ほどと唯一違うのは、上の部分に{' '}
-                          <EmojiWithText letter="b" /> のかわりに{' '}
-                          <EmojiWithText letter="e" /> が入っている
-                        </HighlightBold>
-                        ところです。(<Highlight>黄色</Highlight>で示しています)
+                        <Bold>The only difference</Bold>: It has{' '}
+                        <EmojiForLetter letter="e" />
+                        ’s on the top instead of <EmojiForLetter letter="b" />
+                        ’s. Everything else is the same.
                       </P>
                     </>
                   )
@@ -251,15 +250,13 @@ export default () => (
               <H args={{ name: 'pressFastForward' }} />
             </P>
             <R.Exbn>
-              <HighlightBold>前回実行した弁当箱:</HighlightBold>
+              <HighlightBold>What used last time:</HighlightBold>
               <br />
-              上の部分は <EmojiNumber number={1} /> に変換できる。
+              It has <EmojiForLetter letter="e" />
+              ’s on top instead of <EmojiForLetter letter="b" />
+              ’s.
               <br />
-              <Highlight>
-                先ほどと違うのは、上の <EmojiForLetter letter="e" /> の部分。
-              </Highlight>
-              <br />
-              それ以外はすべて先ほどと同じ。
+              Everything else is the same.
             </R.Exbn>
             <BubbleQuotes
               quotes={[
@@ -268,8 +265,8 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        こちらは、最終的に <EmojiNumber number={2} />{' '}
-                        に変換できる弁当箱になりますね。
+                        This one did become a lunchbox that can be converted to{' '}
+                        <EmojiNumber number={2} />.
                       </P>
                     </>
                   )
@@ -287,7 +284,7 @@ export default () => (
                   type: 'thinking',
                   children: (
                     <>
-                      <P>うーん、どうして結果に違いが出るんだろう？</P>
+                      <P>Hmm, why is there a difference?</P>
                     </>
                   )
                 }
@@ -299,9 +296,10 @@ export default () => (
       {
         title: (
           <>
-            <BottomRightBadge inline bottomRightBadgeType="callArg" /> と{' '}
-            <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />{' '}
-            に同じ料理があると、結果が狂う
+            If there are the same items on{' '}
+            <BottomRightBadge inline bottomRightBadgeType="callArg" /> and{' '}
+            <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />, the
+            results will differ
           </>
         ),
         content: (
