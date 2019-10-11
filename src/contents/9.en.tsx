@@ -105,13 +105,9 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        そりゃあ、
-                        <Highlight>
-                          <EmojiNumber number={1} /> <Emoji>➕</Emoji>{' '}
-                          <EmojiNumber number={1} /> を計算できるんだから、
-                          <EmojiNumber number={2} /> になるに決まっている
-                        </Highlight>
-                        だろう？
+                        Well, because it calculates <EmojiNumber number={1} />{' '}
+                        <Emoji>➕</Emoji> <EmojiNumber number={1} />, the result
+                        should be <EmojiNumber number={2} />, right?
                       </P>
                     </>
                   )
@@ -126,7 +122,8 @@ export default () => (
               ]}
               description={
                 <>
-                  結果は <EmojiNumber number={2} /> になるはず…？
+                  The result should be <EmojiNumber number={2} />
+                  …?
                 </>
               }
             />
@@ -136,11 +133,7 @@ export default () => (
                   type: 'saya',
                   children: (
                     <>
-                      <P>
-                        じゃあ、
-                        <H args={{ name: 'play' }} />
-                        してみてよ！
-                      </P>
+                      <P>Let’s run it to check!</P>
                     </>
                   )
                 }
@@ -150,11 +143,10 @@ export default () => (
         )
       },
       {
-        title: <>実行してみると…</>,
+        title: <>If you it…</>,
         content: (
           <>
             <P>
-              それでは、
               <H args={{ name: 'pressFastForward', skippable: true }} />
             </P>
             <R.Akik />
