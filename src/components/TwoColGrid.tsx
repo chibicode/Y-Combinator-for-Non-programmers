@@ -2,6 +2,7 @@
 import { css, jsx } from '@emotion/core'
 import Flex from 'src/components/Flex'
 import { spaces } from 'src/lib/theme'
+import TwoColContext from 'src/components/TwoColContext'
 
 const TwoColGrid = ({
   left,
@@ -14,35 +15,41 @@ const TwoColGrid = ({
   noTopNegativeMargin?: boolean
   noBottomNegativeMargin?: boolean
 }) => (
-  <Flex
-    css={[
-      !noTopNegativeMargin &&
-        css`
-          margin-top: ${spaces('-1.5')};
-        `,
-      !noBottomNegativeMargin &&
-        css`
-          margin-bottom: ${spaces('-1.5')};
-        `
-    ]}
+  <TwoColContext.Provider
+    value={{
+      inTwoCol: true
+    }}
   >
-    <div
-      css={css`
-        padding: 0 ${spaces(0.75)};
-        flex: 1;
-      `}
+    <Flex
+      css={[
+        !noTopNegativeMargin &&
+          css`
+            margin-top: ${spaces('-1.5')};
+          `,
+        !noBottomNegativeMargin &&
+          css`
+            margin-bottom: ${spaces('-1.5')};
+          `
+      ]}
     >
-      {left}
-    </div>
-    <div
-      css={css`
-        padding: 0 ${spaces(0.75)};
-        flex: 1;
-      `}
-    >
-      {right}
-    </div>
-  </Flex>
+      <div
+        css={css`
+          padding: 0 ${spaces(0.75)};
+          flex: 1;
+        `}
+      >
+        {left}
+      </div>
+      <div
+        css={css`
+          padding: 0 ${spaces(0.75)};
+          flex: 1;
+        `}
+      >
+        {right}
+      </div>
+    </Flex>
+  </TwoColContext.Provider>
 )
 
 export default TwoColGrid

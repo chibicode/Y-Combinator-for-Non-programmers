@@ -484,13 +484,7 @@ export default () => (
         )
       },
       {
-        title: (
-          <>
-            <BottomRightBadge inline bottomRightBadgeType="callArg" /> と{' '}
-            <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />{' '}
-            に同じ料理がない場合とある場合
-          </>
-        ),
+        title: <>A Simple Example</>,
         content: (
           <>
             <BubbleQuotes
@@ -499,40 +493,37 @@ export default () => (
                   type: 'dog',
                   children: (
                     <>
-                      <P>
-                        では、簡単な例で説明します。次のふたつの例をご覧ください。
-                      </P>
+                      <P>Here’s a simple example:</P>
                       <Ul>
                         <UlLi>
-                          左側は、
+                          The left lunchbox has different{' '}
                           <BottomRightBadge
                             inline
                             bottomRightBadgeType="callArg"
                           />{' '}
-                          と{' '}
+                          and{' '}
                           <BottomRightBadge
                             inline
                             bottomRightBadgeType="funcUnbound"
-                          />{' '}
-                          が違います。
+                          />
+                          .
                         </UlLi>
                         <UlLi>
-                          右側は、
+                          The right lunchbox has the same{' '}
                           <BottomRightBadge
                             inline
                             bottomRightBadgeType="callArg"
                           />{' '}
-                          と{' '}
+                          and{' '}
                           <BottomRightBadge
                             inline
                             bottomRightBadgeType="funcUnbound"
                           />{' '}
-                          が同じ
-                          <EmojiWithText letter="b" />
-                          です。
+                          (both <EmojiForLetter letter="b" />
+                          ).
                         </UlLi>
                       </Ul>
-                      <P>それぞれを進めてみますね。</P>
+                      <P>Let’s see what happens to each lunchbox!</P>
                     </>
                   )
                 }
@@ -543,12 +534,12 @@ export default () => (
                 <>
                   <R.Oukl>
                     <BottomRightBadge inline bottomRightBadgeType="callArg" />{' '}
-                    と{' '}
+                    and{' '}
                     <BottomRightBadge
                       inline
                       bottomRightBadgeType="funcUnbound"
                     />{' '}
-                    が違う
+                    are different
                   </R.Oukl>
                   <ExpressionRunnerSeparator />
                   <R.Etae></R.Etae>
@@ -557,7 +548,7 @@ export default () => (
                   <ExpressionRunnerSeparator />
                   <R.Yabb></R.Yabb>
                   <ExpressionRunnerSeparator />
-                  <R.Hbbv>下の料理が違う</R.Hbbv>
+                  <R.Hbbv>The bottom two are different</R.Hbbv>
                 </>
               }
               right={

@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core'
-import { useState } from 'react'
+import { useState, useContext } from 'react'
 import Container from 'src/components/Container'
 import ExpressionBox from 'src/components/ExpressionBox'
 import H from 'src/components/H'
@@ -21,6 +21,7 @@ import numLeafNodesToVariableSize from 'src/lib/numLeafNodesToVariableSize'
 import functionDepthsToContainerSize from 'src/lib/functionDepthsToContainerSize'
 import CrossSvg from 'src/components/CrossSvg'
 import { LinkButton } from 'src/components/ContentTags/LinkButton'
+import TwoColContext from 'src/components/TwoColContext'
 
 export interface ExpressionRunnerPrecomputedProps {
   expressionContainers: readonly SteppedExpressionContainer[]
@@ -161,9 +162,15 @@ const ExpressionRunnerPrecomputed = ({
   const containerSize = functionDepthsToContainerSize(
     expressionContainers[currentIndex].expression.maxNestedFunctionDepth || 0
   )
-  const variableSize = numLeafNodesToVariableSize(
+  let variableSize = numLeafNodesToVariableSize(
     expressionContainers[currentIndex].numLeafNodes
   )
+
+  const { inTwoCol } = useContext(TwoColContext)
+
+  if (inTwoCol && (variableSize === 'lg' || variableSize === 'md')) {
+    variableSize = 'sm'
+  }
 
   return (
     <ExpressionRunnerContext.Provider
