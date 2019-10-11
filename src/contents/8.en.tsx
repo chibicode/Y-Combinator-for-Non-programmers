@@ -1230,7 +1230,7 @@ export default () => (
                   type: 'sad',
                   children: (
                     <>
-                      <P>ミニオン、ひとつ愚痴を聞いてもらえるかい？</P>
+                      <P>Hey Minion, I want to tell you about something…</P>
                     </>
                   )
                 },
@@ -1238,7 +1238,7 @@ export default () => (
                   type: 'dog',
                   children: (
                     <>
-                      <P>はい、どうしました？</P>
+                      <P>Sure, what’s up?</P>
                     </>
                   )
                 },
@@ -1247,11 +1247,13 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        さっきの問題、難しすぎやしないかい？普通は、サヤちゃんみたいに答えをとっさに思いつかないよ！
+                        <Italic>Wasn’t that problem too difficult?</Italic>{' '}
+                        There’s no way we could’ve come up with an answer
+                        quickly like Saya did.
                       </P>
                       <P>
                         <Highlight>
-                          こういうのがパッと思いつけないと、コンピュータサイエンスを学ぶ資格はないのかな？
+                          Maybe computer science is too hard for us…?
                         </Highlight>
                       </P>
                     </>
@@ -1260,9 +1262,9 @@ export default () => (
               ]}
             />
             <R.Qrfw>
-              さっきの答えの弁当箱。普通はこんなの、
+              There’s no way we could’ve come up with
               <br />
-              とっさに思いつかないよ！<Emoji>😢</Emoji>
+              this answer!
             </R.Qrfw>
             <BubbleQuotes
               quotes={[
@@ -1271,10 +1273,13 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        <HighlightBold>
-                          いえ、そんなことは全くありませんよ。
-                        </HighlightBold>
-                        むしろ、こういう答えを思いつけるのはひと握りの天才だけです。
+                        <Bold>Please don’t worry.</Bold> In fact, only a super
+                        genius would be able to come up with an answer for this
+                        question.
+                      </P>
+                      <P>
+                        And you don’t need to be a super genius to learn about
+                        computer science or Y combinator.
                       </P>
                     </>
                   )
@@ -1283,7 +1288,7 @@ export default () => (
                   type: 'sad',
                   children: (
                     <>
-                      <P>え、そうなの？</P>
+                      <P>Oh, really?</P>
                     </>
                   )
                 },
@@ -1291,11 +1296,15 @@ export default () => (
                   type: 'dog',
                   children: (
                     <>
-                      <P>はい。先ほどの問題は超難問でしたから。</P>
                       <P>
-                        <HighlightBold>
-                          答えを思いつけなくても、答えを見て、「なるほど、そういうことだったのか」と理解できれば、コンピュータサイエンスを学ぶ素養は十分すぎるほどあります。
-                        </HighlightBold>
+                        <Bold>Yes:</Bold> It was a very difficult question. We
+                        didn’t expect you to answer it.
+                      </P>
+                      <P>
+                        <Highlight>
+                          As long as you can look at the answer and understand
+                          why it’s correct, you’ll be fine.
+                        </Highlight>
                       </P>
                     </>
                   )
@@ -1304,7 +1313,7 @@ export default () => (
                   type: 'smile',
                   children: (
                     <>
-                      <P>そっか…気が楽になったよ。ありがとう！</P>
+                      <P>Ok… I feel much better now. Thank you, Minion!</P>
                     </>
                   )
                 },
@@ -1312,7 +1321,7 @@ export default () => (
                   type: 'dog',
                   children: (
                     <>
-                      <P>いえいえ。それでは、そろそろ話を戻しましょう！</P>
+                      <P>No problem. Let’s get back to the story!</P>
                     </>
                   )
                 }
@@ -1320,17 +1329,17 @@ export default () => (
             />
             <EmojiSeparator
               emojis={['🐶', '🙂', '😈', '👧🏻']}
-              description={<>話を戻しましょう！</>}
+              description={<>Let’s get back to the story!</>}
             />
           </>
         )
       },
       {
-        title: <>話を戻すと…</>,
+        title: <>Back to the story…</>,
         content: (
           <>
             <P>
-              悪魔による難しい問題に見事答えられたことで、村人たちは大喜びでした。
+              The villagers are all very happy that the question is now solved!
             </P>
             <BubbleQuotes
               quotes={[
@@ -1338,15 +1347,16 @@ export default () => (
                   type: 'celebrate',
                   children: (
                     <>
-                      <P>
-                        やった！サヤちゃんのおかげで問題に答えられたぞ！これで計算箱を返してもらえる！
-                      </P>
+                      <P>Thanks to Saya, we solved the difficult question!</P>
+                      <P>That means we’ll get our mathboxes back!</P>
                     </>
                   )
                 }
               ]}
             />
-            <P>しかし、当のサヤちゃんには何か腑に落ちない点があるようです。</P>
+            <P>
+              However, <Italic>Saya doesn’t seem too happy.</Italic>
+            </P>
             <BubbleQuotes
               quotes={[
                 {
@@ -1354,10 +1364,8 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        ミニオンさん、
-                        <Highlight>
-                          おかしなことに気づいちゃったんだけど…
-                        </Highlight>
+                        Hey Minion, I noticed something{' '}
+                        <Italic>very strange…</Italic>
                       </P>
                     </>
                   )
@@ -1366,16 +1374,15 @@ export default () => (
                   type: 'dog',
                   children: (
                     <>
-                      <P>はい、「おかしなこと」とは何ですか？</P>
+                      <P>Oh really? What do you mean?</P>
                     </>
                   )
                 }
               ]}
             />
             <P>
-              サヤちゃんが気づいた、「
-              <HighlightBold>おかしなこと</HighlightBold>
-              」とは何なのでしょうか？次のページで説明していきます！
+              <Bold>What strange things did Saya notice?</Bold> Let’s take a
+              look on the next page!
             </P>
             <EmojiSeparator emojis={['❓', '👧🏻', '❓']} />
             <NextLessonButton />
