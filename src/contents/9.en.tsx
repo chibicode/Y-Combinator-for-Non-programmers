@@ -538,7 +538,8 @@ export default () => (
                     <BottomRightBadge
                       inline
                       bottomRightBadgeType="funcUnbound"
-                    />{' '}
+                    />
+                    <br />
                     are different
                   </R.Oukl>
                   <ExpressionRunnerSeparator />
@@ -548,7 +549,11 @@ export default () => (
                   <ExpressionRunnerSeparator />
                   <R.Yabb></R.Yabb>
                   <ExpressionRunnerSeparator />
-                  <R.Hbbv>The bottom two are different</R.Hbbv>
+                  <R.Hbbv>
+                    The bottom two
+                    <br />
+                    are different
+                  </R.Hbbv>
                 </>
               }
               right={
@@ -559,7 +564,8 @@ export default () => (
                     <BottomRightBadge
                       inline
                       bottomRightBadgeType="funcUnbound"
-                    />{' '}
+                    />
+                    <br />
                     are the same
                   </R.Rypq>
                   <ExpressionRunnerSeparator />
@@ -569,7 +575,11 @@ export default () => (
                   <ExpressionRunnerSeparator />
                   <R.Osff></R.Osff>
                   <ExpressionRunnerSeparator />
-                  <R.Fxok>The bottom two are the same</R.Fxok>
+                  <R.Fxok>
+                    The bottom two
+                    <br />
+                    are the same
+                  </R.Fxok>
                 </>
               }
             />
