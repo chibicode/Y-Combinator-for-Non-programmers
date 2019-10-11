@@ -9,7 +9,7 @@ const precomputeFile = (key: string) => {
   const config = buildExpressionRunnerConfigFromShorthand(configBase)
   const expressionContainers = buildExpressionContainers(config)
   const showBottomProgressBar =
-    expressionContainers.filter(x => x.numLeafNodes > 10).length > 0
+    expressionContainers.filter(x => x.numLeafNodes >= 10).length > 0
   const {
     speed,
     hideControls,

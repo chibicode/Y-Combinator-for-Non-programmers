@@ -369,5 +369,5 @@
   "highlightOverrides": {},
   "highlightOverrideActiveAfterStart": false,
   "highlightFunctions": false,
-  "showBottomProgressBar": false
+  "showBottomProgressBar": true
 }

@@ -223,5 +223,5 @@
   "highlightOverrideActiveAfterStart": false,
   "highlightFunctions": false,
   "skipActive": true,
-  "showBottomProgressBar": false
+  "showBottomProgressBar": true
 }
