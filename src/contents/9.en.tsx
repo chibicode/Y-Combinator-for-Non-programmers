@@ -654,9 +654,7 @@ export default () => (
                   type: 'dog',
                   children: (
                     <>
-                      <P>
-                        最初と最後だけをピックアップすると、以下のようになります。
-                      </P>
+                      <P>So this is before and after:</P>
                     </>
                   )
                 }
@@ -666,31 +664,47 @@ export default () => (
               left={
                 <>
                   <R.Oukl>
-                    <BottomRightBadge inline bottomRightBadgeType="callArg" />{' '}
-                    と{' '}
+                    <Bold>Before:</Bold>
+                    <br />
+                    <BottomRightBadge
+                      inline
+                      bottomRightBadgeType="callArg"
+                    />{' '}
+                    and{' '}
                     <BottomRightBadge
                       inline
                       bottomRightBadgeType="funcUnbound"
-                    />{' '}
-                    が違う
+                    />
+                    <br />
+                    are different
                   </R.Oukl>
                   <ExpressionRunnerSeparator />
-                  <R.Yxel></R.Yxel>
+                  <R.Yxel>
+                    <Bold>After:</Bold>
+                  </R.Yxel>
                 </>
               }
               right={
                 <>
                   <R.Rypq>
-                    <BottomRightBadge inline bottomRightBadgeType="callArg" />{' '}
-                    と{' '}
+                    <Bold>Before:</Bold>
+                    <br />
+                    <BottomRightBadge
+                      inline
+                      bottomRightBadgeType="callArg"
+                    />{' '}
+                    and{' '}
                     <BottomRightBadge
                       inline
                       bottomRightBadgeType="funcUnbound"
-                    />{' '}
-                    が同じ
+                    />
+                    <br />
+                    are the same{' '}
                   </R.Rypq>
                   <ExpressionRunnerSeparator />
-                  <R.Ivol></R.Ivol>
+                  <R.Ivol>
+                    <Bold>After:</Bold>
+                  </R.Ivol>
                 </>
               }
             />
@@ -701,17 +715,20 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        というわけで、
-                        <BottomRightBadge
-                          inline
-                          bottomRightBadgeType="callArg"
-                        />{' '}
-                        と{' '}
-                        <BottomRightBadge
-                          inline
-                          bottomRightBadgeType="funcUnbound"
-                        />{' '}
-                        に同じ料理がない場合とある場合で、最終的な結果が狂ってくることがお分かりいただけたでしょうか。
+                        <Bold>So, hope you understood that:</Bold>{' '}
+                        <Highlight>
+                          If the same item exists in both{' '}
+                          <BottomRightBadge
+                            inline
+                            bottomRightBadgeType="callArg"
+                          />{' '}
+                          and{' '}
+                          <BottomRightBadge
+                            inline
+                            bottomRightBadgeType="funcUnbound"
+                          />
+                          , then the results change.
+                        </Highlight>
                       </P>
                     </>
                   )
@@ -726,17 +743,12 @@ export default () => (
               ]}
               description={
                 <>
-                  <HighlightBold>
-                    <BottomRightBadge inline bottomRightBadgeType="callArg" />{' '}
-                    と{' '}
-                    <BottomRightBadge
-                      inline
-                      bottomRightBadgeType="funcUnbound"
-                    />{' '}
-                    に同じ料理があると、
-                    <br />
-                    実行結果が狂う
-                  </HighlightBold>
+                  If the same item exists in both{' '}
+                  <BottomRightBadge inline bottomRightBadgeType="callArg" /> and{' '}
+                  <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />
+                  ,
+                  <br />
+                  then the results change.
                 </>
               }
             />
@@ -744,7 +756,7 @@ export default () => (
         )
       },
       {
-        title: <>話を戻すと…</>,
+        title: <>Back to the original example</>,
         content: (
           <>
             <BubbleQuotes
@@ -754,23 +766,23 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        では、先ほど <EmojiNumber number={1} />{' '}
-                        <Emoji>➕</Emoji> <EmojiNumber number={1} />{' '}
-                        を計算できなかった弁当箱に話を戻しましょう。
+                        Let’s go back to the previous example that couldn’t
+                        calculate <EmojiNumber number={1} /> <Emoji>➕</Emoji>{' '}
+                        <EmojiNumber number={1} />.
                       </P>
                       <P>
+                        This failed because <EmojiForLetter letter="b" /> was in
+                        both{' '}
                         <BottomRightBadge
                           inline
                           bottomRightBadgeType="callArg"
                         />{' '}
-                        と{' '}
+                        and{' '}
                         <BottomRightBadge
                           inline
                           bottomRightBadgeType="funcUnbound"
-                        />{' '}
-                        の両方に
-                        <EmojiWithText letter="b" />{' '}
-                        があるので、結果が狂うのですね。
+                        />
+                        , which caused the result to change.
                       </P>
                     </>
                   )
@@ -778,17 +790,14 @@ export default () => (
               ]}
             />
             <R.Kwyy>
-              <Highlight>
-                <EmojiNumber number={1} /> <Emoji>➕</Emoji>{' '}
-                <EmojiNumber number={1} /> を計算できなかった
-              </Highlight>
-              理由:
+              Couldn’t calculate <EmojiNumber number={1} /> <Emoji>➕</Emoji>{' '}
+              <EmojiNumber number={1} />
               <br />
-              <BottomRightBadge inline bottomRightBadgeType="callArg" /> と{' '}
-              <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />{' '}
-              の両方に
-              <EmojiWithText letter="b" /> が<br />
-              あるせいで、結果が狂ったから
+              because <EmojiForLetter letter="b" /> was in both{' '}
+              <BottomRightBadge inline bottomRightBadgeType="callArg" /> and{' '}
+              <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />,
+              <br />
+              which caused the result to change.
             </R.Kwyy>
             <BubbleQuotes
               quotes={[
@@ -796,7 +805,25 @@ export default () => (
                   type: 'thinking',
                   children: (
                     <>
-                      <P>じゃあ、どうすればいいんだろう？</P>
+                      <P>
+                        Hmm… then what should we do in this case? Just give up?
+                      </P>
+                    </>
+                  )
+                },
+                {
+                  type: 'saya',
+                  children: (
+                    <>
+                      <P>Let’s not give up! I think there’s a way.</P>
+                    </>
+                  )
+                },
+                {
+                  type: 'thinking',
+                  children: (
+                    <>
+                      <P>But… what can we do?</P>
                     </>
                   )
                 },
@@ -805,28 +832,13 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        <HighlightBold>
-                          <BottomRightBadge
-                            inline
-                            bottomRightBadgeType="callArg"
-                          />{' '}
-                          と{' '}
-                          <BottomRightBadge
-                            inline
-                            bottomRightBadgeType="funcUnbound"
-                          />{' '}
-                          のどちらかの
-                          <EmojiWithText letter="b" />{' '}
-                          を別の料理に変えれば、上手くいく
-                        </HighlightBold>
-                        というわけだよね。
+                        Let’s ask Minion{' '}
+                        <Italic>if we can change the rule to fix this.</Italic>
                       </P>
                       <P>
-                        じゃあ…
+                        <Bold>Minion</Bold>: I’d like to ask you for a favor.{' '}
                         <Highlight>
-                          ミニオンさんお願い！
-                          <HighlightBold>特別ルール</HighlightBold>
-                          を設けてくれないかな？
+                          Can we please set up a <Bold>special rule</Bold>?
                         </Highlight>
                       </P>
                     </>
@@ -836,7 +848,9 @@ export default () => (
                   type: 'dog',
                   children: (
                     <>
-                      <P>どういうことですか？</P>
+                      <P>
+                        <Bold>Special rule?</Bold> What do you mean by that?
+                      </P>
                     </>
                   )
                 },
@@ -845,22 +859,32 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        <H args={{ name: 'bentoBoxPuzzle' }} />
-                        に、「
-                        <HighlightBold>
-                          <BottomRightBadge
-                            inline
-                            bottomRightBadgeType="callArg"
-                          />{' '}
-                          と{' '}
-                          <BottomRightBadge
-                            inline
-                            bottomRightBadgeType="funcUnbound"
-                          />{' '}
-                          に同じ料理が登場したら、どちらかを別な料理に変える
-                        </HighlightBold>
-                        」という特別ルールを設けてほしいんだ。
+                        I’d like the following{' '}
+                        <HighlightBold>special rule</HighlightBold> to apply in
+                        cases like this:
                       </P>
+                      <Ul>
+                        <UlLi>
+                          <Highlight>
+                            If the same item appears in both{' '}
+                            <BottomRightBadge
+                              inline
+                              bottomRightBadgeType="callArg"
+                            />{' '}
+                            and{' '}
+                            <BottomRightBadge
+                              inline
+                              bottomRightBadgeType="funcUnbound"
+                            />
+                            …
+                          </Highlight>
+                        </UlLi>
+                        <UlLi>
+                          <Highlight>
+                            Change one of them to something different.
+                          </Highlight>
+                        </UlLi>
+                      </Ul>
                     </>
                   )
                 }
@@ -874,19 +898,18 @@ export default () => (
               ]}
               description={
                 <>
-                  <HighlightBold>
-                    <BottomRightBadge inline bottomRightBadgeType="callArg" />{' '}
-                    と{' '}
-                    <BottomRightBadge
-                      inline
-                      bottomRightBadgeType="funcUnbound"
-                    />{' '}
-                    に同じ料理が登場したら、
-                    <br />
-                    どちらかを別な料理に変える
-                  </HighlightBold>
+                  <Bold>Can we use this special rule:</Bold>
                   <br />
-                  という特別ルールを設けてほしい
+                  If the same item appears in
+                  <br />
+                  both{' '}
+                  <BottomRightBadge
+                    inline
+                    bottomRightBadgeType="callArg"
+                  /> and{' '}
+                  <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />
+                  ,<br />
+                  change one of them to something different.
                 </>
               }
             />
@@ -896,11 +919,7 @@ export default () => (
                   type: 'dog',
                   children: (
                     <>
-                      <P>
-                        <HighlightBold>
-                          分かりました、いいですよ！
-                        </HighlightBold>
-                      </P>
+                      <P>Sure, that’s fine!</P>
                     </>
                   )
                 },
@@ -908,7 +927,7 @@ export default () => (
                   type: 'saya',
                   children: (
                     <>
-                      <P>やったー、ありがとう！</P>
+                      <P>Thank you!</P>
                     </>
                   )
                 },
@@ -916,7 +935,7 @@ export default () => (
                   type: 'roll',
                   children: (
                     <>
-                      <P>え、そんなに簡単にルールを改変してくれるの…？</P>
+                      <P>What… you can change the rule just like that?</P>
                     </>
                   )
                 }
@@ -926,7 +945,7 @@ export default () => (
         )
       },
       {
-        title: <>特別ルール</>,
+        title: <>The Special Rule</>,
         content: (
           <>
             <BubbleQuotes
