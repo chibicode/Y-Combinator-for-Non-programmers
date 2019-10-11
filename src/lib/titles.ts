@@ -24,7 +24,7 @@ export const episodeTitles = {
     6: 'Minion’s Trick',
     7: 'The “Plus One” Effect',
     8: 'Super Saya',
-    9: '?',
+    9: 'Can’t Add One?',
     10: '?',
     11: '?',
     12: '?',
