@@ -1324,7 +1324,7 @@ export default () => (
         )
       },
       {
-        title: <>これで完璧！</>,
+        title: <>What happens now?</>,
         content: (
           <>
             <BubbleQuotes
@@ -1334,11 +1334,12 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        いろいろあったけど、これで、
-                        <H args={{ name: 'plusOneEffect' }} />
-                        がある弁当箱は完璧にマスターしたぞ！
+                        <Bold>Anyway:</Bold> We figured out how to do{' '}
+                        <H args={{ name: 'plusOneEffect' }} />!
                       </P>
-                      <P>悪魔よ、約束通り計算箱は返してもらう！</P>
+                      <P>
+                        The devil! As you promised, give us our mathboxes back!
+                      </P>
                     </>
                   )
                 },
@@ -1346,14 +1347,15 @@ export default () => (
                   type: 'devil',
                   children: (
                     <>
-                      <P>うぐぐ…</P>
+                      <P>Ugh…!</P>
                     </>
                   )
                 }
               ]}
             />
             <P>
-              果たして、村人たちは計算箱を取り戻せたのでしょうか？次のページで確かめてみましょう！
+              Will the villagers get their mathboxes back? Let’s see on the next
+              page!
             </P>
             <NextLessonButton />
           </>
