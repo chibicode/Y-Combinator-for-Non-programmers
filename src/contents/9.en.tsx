@@ -838,7 +838,7 @@ export default () => (
                       <P>
                         <Bold>Minion</Bold>: I’d like to ask you for a favor.{' '}
                         <Highlight>
-                          Can we please set up a <Bold>special rule</Bold>?
+                          Can we please add a <Bold>special rule</Bold>?
                         </Highlight>
                       </P>
                     </>
@@ -954,7 +954,7 @@ export default () => (
                   type: 'dog',
                   children: (
                     <>
-                      <P>Let’s use the following special rule:</P>
+                      <P>Let’s add the following special rule:</P>
                       <Ul>
                         <UlLi>
                           If the same item appears in both{' '}
@@ -1022,17 +1022,31 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        つまり、先ほどのように{' '}
+                        So, if there’s the same item in both{' '}
                         <BottomRightBadge
                           inline
                           bottomRightBadgeType="callArg"
                         />{' '}
-                        と{' '}
+                        and{' '}
                         <BottomRightBadge
                           inline
                           bottomRightBadgeType="funcUnbound"
+                        />
+                        …
+                      </P>
+                      <P>
+                        (<Bold>In this case:</Bold>{' '}
+                        <EmojiForLetter letter="b" /> is in both{' '}
+                        <BottomRightBadge
+                          inline
+                          bottomRightBadgeType="callArg"
                         />{' '}
-                        に同じ料理が登場した場合…
+                        and{' '}
+                        <BottomRightBadge
+                          inline
+                          bottomRightBadgeType="funcUnbound"
+                        />
+                        )
                       </P>
                     </>
                   )
@@ -1047,51 +1061,87 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        <HighlightBold>
-                          <BottomRightBadge
-                            inline
-                            bottomRightBadgeType="callArg"
-                          />{' '}
-                          の <EmojiWithText letter="b" />
-                          が自動的に別の料理に変わります。
-                        </HighlightBold>
+                        <Bold>Because of this special rule:</Bold> The{' '}
+                        <EmojiWithText letter="b" postfix="es" /> in{' '}
+                        <BottomRightBadge
+                          inline
+                          bottomRightBadgeType="callArg"
+                        />{' '}
+                        will now become something else.
                       </P>
+                      <EmojiSeparator
+                        nodes={[
+                          <EmojiForLetterWithBottomRightBadgeWrapper bottomRightBadgeType="callArg">
+                            <EmojiForLetter letter="b" />
+                          </EmojiForLetterWithBottomRightBadgeWrapper>,
+                          <CustomEmoji type="singleArrow" />,
+                          <Emoji>❓</Emoji>
+                        ]}
+                        description={
+                          <>
+                            The <EmojiWithText letter="b" postfix="es" /> in{' '}
+                            <BottomRightBadge
+                              inline
+                              bottomRightBadgeType="callArg"
+                            />{' '}
+                            <br />
+                            will now become something else.
+                          </>
+                        }
+                      />
+                    </>
+                  )
+                }
+              ]}
+            />
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'thinking',
+                  children: (
+                    <>
+                      <P>What does it become then?</P>
+                    </>
+                  )
+                },
+                {
+                  type: 'dog',
+                  children: (
+                    <>
                       <P>
                         <Highlight>
-                          何に変わるかについてですが、
-                          <HighlightBold>
-                            まだ使われていない料理にランダムに変わります
-                          </HighlightBold>
-                          。ここでは、
-                          <EmojiWithText letter="e" /> になりました。
+                          It will turn into{' '}
+                          <Bold>a random food item that’s not yet used</Bold>.
                         </Highlight>
                       </P>
+                      <P>
+                        In this case, it became <EmojiWithText letter="e" />.
+                      </P>
+                      <EmojiSeparator
+                        nodes={[
+                          <EmojiForLetterWithBottomRightBadgeWrapper bottomRightBadgeType="callArg">
+                            <EmojiForLetter letter="b" />
+                          </EmojiForLetterWithBottomRightBadgeWrapper>,
+                          <CustomEmoji type="singleArrow" />,
+                          <EmojiForLetterWithBottomRightBadgeWrapper bottomRightBadgeType="callArg">
+                            <EmojiForLetter letter="e" />
+                          </EmojiForLetterWithBottomRightBadgeWrapper>
+                        ]}
+                        description={
+                          <>
+                            It turns into <EmojiWithText letter="e" />,<br />a
+                            random food item
+                            <br />
+                            that’s not yet used.
+                          </>
+                        }
+                      />
                     </>
                   )
                 }
               ]}
             />
             <R.Niwv />
-            <EmojiSeparator
-              nodes={[
-                <EmojiForLetterWithBottomRightBadgeWrapper bottomRightBadgeType="callArg">
-                  <EmojiForLetter letter="b" />
-                </EmojiForLetterWithBottomRightBadgeWrapper>,
-                <CustomEmoji type="singleArrow" />,
-                <EmojiForLetterWithBottomRightBadgeWrapper bottomRightBadgeType="callArg">
-                  <EmojiForLetter letter="e" />
-                </EmojiForLetterWithBottomRightBadgeWrapper>
-              ]}
-              description={
-                <>
-                  <BottomRightBadge inline bottomRightBadgeType="callArg" /> の
-                  <EmojiWithText letter="b" /> が、まだ
-                  <br />
-                  使われていない
-                  <EmojiWithText letter="e" /> に変わる
-                </>
-              }
-            />
             <BubbleQuotes
               quotes={[
                 {
@@ -1099,17 +1149,16 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        これで、
                         <BottomRightBadge
                           inline
                           bottomRightBadgeType="callArg"
                         />{' '}
-                        と{' '}
+                        and{' '}
                         <BottomRightBadge
                           inline
                           bottomRightBadgeType="funcUnbound"
                         />{' '}
-                        が被らなくなった！
+                        no longer overlap now!
                       </P>
                     </>
                   )
@@ -1119,7 +1168,7 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        では、最後まで進めてみましょう。
+                        Let’s see what happens until the end.{' '}
                         <H args={{ name: 'pressFastForward' }} />
                       </P>
                     </>
@@ -1135,8 +1184,8 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        やった！無事、
-                        <EmojiNumber number={2} /> に変換できる弁当箱になった！
+                        Yay! It became a lunchbox that can be converted to{' '}
+                        <EmojiNumber number={2} />!
                       </P>
                     </>
                   )
@@ -1148,6 +1197,8 @@ export default () => (
                 args={{ name: 'canBeConvertedCaption', number: 2, letter: 'b' }}
               />
             </R.Rico>
+            <ExpressionRunnerSeparator />
+            <R.Pmdm></R.Pmdm>
             <BubbleQuotes
               quotes={[
                 {
@@ -1155,9 +1206,9 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        ということは、
-                        <EmojiNumber number={1} /> <Emoji>➕</Emoji>{' '}
-                        <EmojiNumber number={1} /> を計算できたということだね！
+                        That means it calculated <EmojiNumber number={1} />{' '}
+                        <Emoji>➕</Emoji> <EmojiNumber number={1} />{' '}
+                        successfully! <Emoji>🎉</Emoji>
                       </P>
                     </>
                   )
@@ -1166,9 +1217,7 @@ export default () => (
                   type: 'dog',
                   children: (
                     <>
-                      <P>
-                        その通りです。では、そろそろ今回のまとめに入りましょう！
-                      </P>
+                      <P>Yes. Let’s summarize what we just did!</P>
                     </>
                   )
                 }

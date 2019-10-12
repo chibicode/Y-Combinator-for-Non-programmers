@@ -273,7 +273,14 @@ const Explanation = ({
     }
     case 'alphaConvertDone': {
       if (locale === 'en') {
-        return <>?</>
+        return (
+          <>
+            <Emoji>🐶</Emoji> <Bold>Special rule:</Bold>
+            <br />
+            Change <BottomRightBadge bottomRightBadgeType="callArg" inline /> to
+            something else
+          </>
+        )
       } else {
         return (
           <>
