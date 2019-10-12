@@ -7,7 +7,8 @@ import {
   Ul,
   UlLi,
   Hr,
-  Bold
+  Bold,
+  Italic
 } from 'src/components/ContentTags'
 import H from 'src/components/H'
 import BubbleQuotes from 'src/components/BubbleQuotes'
@@ -29,7 +30,7 @@ export default () => (
     underConstruction
     cards={[
       {
-        title: <>返してもらった計算箱は…</>,
+        title: <>What we got back is…</>,
         content: (
           <>
             <BubbleQuotes
@@ -38,20 +39,30 @@ export default () => (
                   type: 'devil',
                   children: (
                     <>
-                      <P>では、計算箱を返してやろう！</P>
+                      <P>
+                        Fine! Since you got the question right, I’ll return your
+                        mathboxes!
+                      </P>
+                      <P>Here it is!</P>
                     </>
                   )
                 }
               ]}
             />
-            <R.Rviy>返してもらった計算箱</R.Rviy>
+            <R.Rviy>
+              <Emoji>😈</Emoji> I’ll return this!
+            </R.Rviy>
             <BubbleQuotes
               quotes={[
                 {
                   type: 'roll',
                   children: (
                     <>
-                      <P>あれ…これだけか？</P>
+                      <P>Wait… that’s it?</P>
+                      <P>
+                        This is a mathbox with{' '}
+                        <H args={{ name: 'plusOneFeature' }} />, but…
+                      </P>
                     </>
                   )
                 },
@@ -60,15 +71,9 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        これは「
-                        <H args={{ name: 'plusOneFeature' }} />
-                        」がある計算箱だけど…
-                      </P>
-                      <P>
-                        「<H args={{ name: 'minusOneFeature' }} />
-                        」がある計算箱や、「
-                        <H args={{ name: 'repeatFeature' }} />
-                        」がある計算箱はどこにいったんだ？
+                        What about the ones with{' '}
+                        <H args={{ name: 'minusOneFeature' }} /> or{' '}
+                        <H args={{ name: 'repeatFeature' }} />?
                       </P>
                     </>
                   )
@@ -79,14 +84,26 @@ export default () => (
               left={
                 <>
                   <R.Ditw>
-                    <H args={{ name: 'minusOneFeature' }} />
+                    <H
+                      args={{
+                        name: 'minusOneFeature',
+                        addNewline: true,
+                        capitalize: true
+                      }}
+                    />
                   </R.Ditw>
                 </>
               }
               right={
                 <>
                   <R.Bwnp>
-                    <H args={{ name: 'repeatFeature' }} />
+                    <H
+                      args={{
+                        name: 'repeatFeature',
+                        addNewline: true,
+                        capitalize: true
+                      }}
+                    />
                   </R.Bwnp>
                   <ExpressionRunnerSeparator blank />
                   <R.Ewfr></R.Ewfr>
@@ -99,16 +116,11 @@ export default () => (
                   type: 'devil',
                   children: (
                     <>
-                      <P>
-                        <HighlightBold>
-                          それらは、まだ返すわけにはいかないな。
-                        </HighlightBold>
-                      </P>
+                      <P>I can’t return those yet.</P>
                       <P>
                         <Highlight>
-                          いまお前たちに返せるのは、「
-                          <H args={{ name: 'plusOneFeature' }} />
-                          」がある計算箱だけだ。
+                          The only one I’m returning you now is mathboxes with{' '}
+                          <H args={{ name: 'plusOneFeature' }} />.
                         </Highlight>
                       </P>
                     </>
@@ -118,7 +130,7 @@ export default () => (
                   type: 'scared',
                   children: (
                     <>
-                      <P>な、なんだってー！</P>
+                      <P>Wait, what? No way!</P>
                     </>
                   )
                 },
@@ -127,7 +139,8 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        話が違うじゃないか！さっきの問題を解いたら、計算箱を返してくれると言っただろう？
+                        But… you said, you’ll return our mathboxes if we solve
+                        that difficult problem!
                       </P>
                     </>
                   )
@@ -136,11 +149,12 @@ export default () => (
                   type: 'devil',
                   children: (
                     <>
+                      <P>I said I’ll return the mathboxes…</P>
                       <P>
-                        計算箱を返すとは言ったが…
-                        <HighlightBold>
-                          計算箱のすべての機能を返すとは言っていないからな！
-                        </HighlightBold>
+                        <Highlight>
+                          But I never promised to return <Italic>all</Italic> of
+                          the features!
+                        </Highlight>
                       </P>
                     </>
                   )
@@ -149,7 +163,7 @@ export default () => (
                   type: 'sad',
                   children: (
                     <>
-                      <P>そ、そんなー！嘘つきじゃないか！</P>
+                      <P>Nooo! You’re a liar!</P>
                     </>
                   )
                 },
@@ -157,7 +171,7 @@ export default () => (
                   type: 'devil',
                   children: (
                     <>
-                      <P>まあ、わたしは悪魔だからな。</P>
+                      <P>Well, I’m a devil after all.</P>
                     </>
                   )
                 }
@@ -167,7 +181,7 @@ export default () => (
         )
       },
       {
-        title: <>どうすればいい？</>,
+        title: <>What do we need to do?</>,
         content: (
           <>
             <BubbleQuotes
@@ -177,7 +191,9 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        じゃあ、どうしたらすべての機能を返してもらえるんだ？
+                        So… what do we need to do to get{' '}
+                        <Italic>all of the features</Italic>
+                        back?
                       </P>
                     </>
                   )
@@ -187,13 +203,10 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        そうだな…先ほどの問題ではお前たちに、
-                        <Highlight>
-                          計算箱の「
-                          <H args={{ name: 'plusOneFeature' }} />
-                          」を弁当箱で再現してもらった
-                        </Highlight>
-                        よな。
+                        Well… on the previous pages, I asked you to{' '}
+                        <HighlightBold>reproduce</HighlightBold>{' '}
+                        <H args={{ name: 'plusOneFeature' }} /> using a
+                        lunchbox.
                       </P>
                     </>
                   )
@@ -201,11 +214,11 @@ export default () => (
               ]}
             />
             <R.Lizi>
-              <EmojiNumber number={1} /> <CustomEmoji type="plusOne" />{' '}
-              の計算箱を…
+              Reproduce <EmojiNumber number={1} />{' '}
+              <CustomEmoji type="plusOne" /> …
             </R.Lizi>
             <ExpressionRunnerSeparator />
-            <R.Plde>弁当箱で再現した</R.Plde>
+            <R.Plde>Using a lunchbox</R.Plde>
             <BubbleQuotes
               quotes={[
                 {
@@ -213,16 +226,15 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        だから、
                         <Highlight>
-                          「<H args={{ name: 'minusOneFeature' }} />
-                          」や「
-                          <H args={{ name: 'repeatFeature' }} />
-                          」を返してほしかったら、
-                          <HighlightBold>
-                            それらを同じように弁当箱で再現してみることだな！
-                          </HighlightBold>
+                          So, if want <H args={{ name: 'minusOneFeature' }} />{' '}
+                          or <H args={{ name: 'repeatFeature' }} /> back…
                         </Highlight>
+                      </P>
+                      <P>
+                        <HighlightBold>
+                          You must reproduce them using lunchboxes!
+                        </HighlightBold>
                       </P>
                     </>
                   )
@@ -233,26 +245,48 @@ export default () => (
               left={
                 <>
                   <R.Ditw>
-                    <H args={{ name: 'minusOneFeature' }} />
+                    <H
+                      args={{
+                        name: 'minusOneFeature',
+                        capitalize: true,
+                        addNewline: true
+                      }}
+                    />
                   </R.Ditw>
                   <ExpressionRunnerSeparator />
                   <EmojiSeparator
                     emojis={['❓', '🍱', '❓']}
-                    description={<>弁当箱で再現</>}
+                    description={
+                      <>
+                        Reproduce with
+                        <br />a lunchbox
+                      </>
+                    }
                   />
                 </>
               }
               right={
                 <>
                   <R.Bwnp>
-                    <H args={{ name: 'repeatFeature' }} />
+                    <H
+                      args={{
+                        name: 'repeatFeature',
+                        capitalize: true,
+                        addNewline: true
+                      }}
+                    />
                   </R.Bwnp>
                   <ExpressionRunnerSeparator blank />
                   <R.Ewfr></R.Ewfr>
                   <ExpressionRunnerSeparator />
                   <EmojiSeparator
                     emojis={['❓', '🍱', '❓']}
-                    description={<>弁当箱で再現</>}
+                    description={
+                      <>
+                        Reproduce with
+                        <br />a lunchbox
+                      </>
+                    }
                   />
                 </>
               }
@@ -263,14 +297,11 @@ export default () => (
                   type: 'scared',
                   children: (
                     <>
-                      <P>えー！</P>
+                      <P>What!</P>
                       <P>
-                        「<H args={{ name: 'plusOneFeature' }} />
-                        」を再現するのにも苦戦したのに、「
-                        <H args={{ name: 'minusOneFeature' }} />
-                        」や「
-                        <H args={{ name: 'repeatFeature' }} />
-                        」を再現するなんて、できっこないよ！
+                        We struggled to reproduce <CustomEmoji type="plusOne" />{' '}
+                        using a lunchbox. I don’t know if we can reproduce{' '}
+                        <CustomEmoji type="minusOne" /> or <Emoji>🔁</Emoji>…
                       </P>
                     </>
                   )
@@ -279,7 +310,7 @@ export default () => (
                   type: 'devil',
                   children: (
                     <>
-                      <P>だったら諦めることだな。</P>
+                      <P>If you can’t do it, you won’t get them back.</P>
                     </>
                   )
                 },
@@ -288,19 +319,13 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        で、でも…「
-                        <H args={{ name: 'minusOneFeature' }} />
-                        」や「
-                        <H args={{ name: 'repeatFeature' }} />
-                        」がないと、
-                        <Highlight>
-                          <HighlightBold>
-                            引き算や、大きな数の足し算・引き算
-                          </HighlightBold>
-                          ができないよ！
-                        </Highlight>
+                        But… we need <H args={{ name: 'minusOneFeature' }} />{' '}
+                        and <H args={{ name: 'repeatFeature' }} />!
                       </P>
-                      <P>俺らは計算箱がないと何もできないんだ！</P>
+                      <P>
+                        Without these features, we won’t be able to calculate
+                        subtractions or add/subtract large numbers.
+                      </P>
                     </>
                   )
                 },
@@ -308,7 +333,11 @@ export default () => (
                   type: 'crying',
                   children: (
                     <>
-                      <P>頑張って弁当箱で再現するしかないのか…</P>
+                      <P>
+                        We’re so bad at math, so we really need those features
+                        back.
+                      </P>
+                      <P>I guess we have to try!</P>
                     </>
                   )
                 }

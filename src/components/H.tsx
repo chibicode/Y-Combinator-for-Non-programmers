@@ -140,8 +140,8 @@ interface HProps {
     | { name: 'canBeConverted' }
     | { name: 'plusOneEffect'; capitalize?: true }
     | { name: 'plusOneFeature'; capitalize?: true }
-    | { name: 'minusOneFeature'; capitalize?: true }
-    | { name: 'repeatFeature'; capitalize?: true }
+    | { name: 'minusOneFeature'; capitalize?: true; addNewline?: true }
+    | { name: 'repeatFeature'; capitalize?: true; addNewline?: true }
     | { name: 'conditionFeature'; capitalize?: true }
     | { name: 'minusOneEffect'; capitalize?: true }
     | { name: 'startWithTwoCaption' }
@@ -1560,7 +1560,8 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
     if (locale === 'en') {
       return (
         <>
-          {args.capitalize ? 'T' : 't'}he <Bold>“Minus 1”</Bold> feature{' '}
+          {args.capitalize ? 'T' : 't'}he <Bold>“Minus 1”</Bold>
+          {args.addNewline ? <br /> : ' '}feature{' '}
           <CustomEmoji type="minusOne" />
         </>
       )
@@ -1577,7 +1578,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
     if (locale === 'en') {
       return (
         <>
-          {args.capitalize ? 'T' : 't'}he <Bold>“Repeat”</Bold> feature{' '}
+          {args.capitalize ? 'T' : 't'}he <Bold>“Repeat”</Bold>{args.addNewline ? <br /> : ' '}feature{' '}
           <Emoji>🔁</Emoji>
         </>
       )
