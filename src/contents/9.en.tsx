@@ -25,6 +25,25 @@ import TwoColGrid from 'src/components/TwoColGrid'
 import * as R from 'src/components/Runners'
 import NextLessonButton from 'src/components/NextLessonButton'
 
+export const SpecialRule = () => (
+  <>
+    <Ul>
+      <UlLi>
+        If the same item appears in both{' '}
+        <BottomRightBadge inline bottomRightBadgeType="callArg" /> and{' '}
+        <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />…
+      </UlLi>
+      <UlLi>
+        <Highlight>
+          It will automatically change conflicting{' '}
+          <BottomRightBadge inline bottomRightBadgeType="callArg" />
+          ’s to something different.
+        </Highlight>
+      </UlLi>
+    </Ul>
+  </>
+)
+
 export default () => (
   <EpisodeCardList
     underConstruction
@@ -893,7 +912,7 @@ export default () => (
             <EmojiSeparator
               nodes={[
                 <BottomRightBadge inline bottomRightBadgeType="callArg" />,
-                <Emoji>🙇🏻‍♀️</Emoji>,
+                <Emoji>👧🏻</Emoji>,
                 <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />
               ]}
               description={
@@ -954,32 +973,11 @@ export default () => (
                   type: 'dog',
                   children: (
                     <>
-                      <P>Let’s add the following special rule:</P>
-                      <Ul>
-                        <UlLi>
-                          If the same item appears in both{' '}
-                          <BottomRightBadge
-                            inline
-                            bottomRightBadgeType="callArg"
-                          />{' '}
-                          and{' '}
-                          <BottomRightBadge
-                            inline
-                            bottomRightBadgeType="funcUnbound"
-                          />
-                          …
-                        </UlLi>
-                        <UlLi>
-                          <Highlight>
-                            It will automatically change conflicting{' '}
-                            <BottomRightBadge
-                              inline
-                              bottomRightBadgeType="callArg"
-                            />
-                            ’s to something different.
-                          </Highlight>
-                        </UlLi>
-                      </Ul>
+                      <P>
+                        Let’s add the following{' '}
+                        <HighlightBold>special rule:</HighlightBold>
+                      </P>
+                      <SpecialRule />
                     </>
                   )
                 }
@@ -1218,20 +1216,17 @@ export default () => (
         content: (
           <>
             <P>
-              前回サヤちゃんが考えた
-              <H args={{ name: 'plusOneEffect' }} />
-              がある弁当箱は、
+              If you combine <Emoji>👧🏻</Emoji> Saya’s lunchbox which has{' '}
+              <H args={{ name: 'plusOneEffect' }} />…
             </P>
             <R.Nvqu>
+              <Emoji>👧🏻</Emoji> Saya’s lunchbox which as
+              <br />
               <H args={{ name: 'plusOneEffect' }} />
-              がある弁当箱
             </R.Nvqu>
             <P>
-              次の
-              <Highlight>
-                <EmojiNumber number={1} /> に変換できる弁当箱
-              </Highlight>
-              と組み合わせた場合、
+              …with the following lunchbox which can be converted to{' '}
+              <EmojiNumber number={1} />…
             </P>
             <R.Cmla>
               <H
@@ -1243,37 +1238,53 @@ export default () => (
               />
             </R.Cmla>
             <P>
-              <BottomRightBadge inline bottomRightBadgeType="callArg" /> と{' '}
-              <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />{' '}
-              に同じ料理があり、そのままだと結果が狂ってしまいます。
+              Then, there will be the same item (
+              <Highlight>
+                <EmojiForLetter letter="b" />
+              </Highlight>
+              ) in both{' '}
+              <BottomRightBadge inline bottomRightBadgeType="callArg" /> and{' '}
+              <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />.
+            </P>
+            <P>
+              Because of this, if we don’t do anything, it won’t be able to
+              calculate <EmojiNumber number={1} /> <Emoji>➕</Emoji>{' '}
+              <EmojiNumber number={1} />.
             </P>
             <R.Kwyy>
-              <BottomRightBadge inline bottomRightBadgeType="callArg" /> と{' '}
-              <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />{' '}
-              の両方に
-              <EmojiWithText letter="b" /> がある
+              <Highlight>
+                <EmojiForLetter letter="b" />
+              </Highlight>{' '}
+              is in both{' '}
+              <BottomRightBadge inline bottomRightBadgeType="callArg" /> and{' '}
+              <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />
             </R.Kwyy>
-            <P>しかし、今回から新たに以下の特別ルールが適用されます:</P>
-            <Ul>
-              <UlLi>
-                <Highlight>
-                  <BottomRightBadge inline bottomRightBadgeType="callArg" /> と{' '}
-                  <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />{' '}
-                  に同じ料理が登場したら、
-                </Highlight>
-              </UlLi>
-              <UlLi>
-                <HighlightBold>
-                  自動的に{' '}
-                  <BottomRightBadge inline bottomRightBadgeType="callArg" />{' '}
-                  を、まだ使われてない料理にランダムに変える。
-                </HighlightBold>
-              </UlLi>
-            </Ul>
+            <ExpressionRunnerSeparator />
+            <ExpressionRunnerCaptionOnly>
+              Because there’s a conflict in
+              <br />
+              <BottomRightBadge
+                inline
+                bottomRightBadgeType="callArg"
+              /> and{' '}
+              <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />,
+              <br />
+              If we don’t do anything, it won’t be
+              <br />
+              able to calculate <EmojiNumber
+                number={1}
+              /> <Emoji>➕</Emoji> <EmojiNumber number={1} />
+            </ExpressionRunnerCaptionOnly>
+            <P>
+              However, the <HighlightBold>special rule</HighlightBold> applies
+              in this case:
+            </P>
+            <SpecialRule />
             <R.Niwv />
             <P>
-              これにより、正しく <EmojiNumber number={1} /> <Emoji>➕</Emoji>{' '}
-              <EmojiNumber number={1} /> を計算できるようになります。
+              By doing this, it will be able to calculate{' '}
+              <EmojiNumber number={1} /> <Emoji>➕</Emoji>{' '}
+              <EmojiNumber number={1} />.
             </P>
             <BubbleQuotes
               quotes={[
@@ -1281,7 +1292,10 @@ export default () => (
                   type: 'thinking',
                   children: (
                     <>
-                      <P>うーん、この特別ルールは忘れてしまいそうだなあ…</P>
+                      <P>
+                        I get it, but I don’t know if I can remember to use this
+                        rule…
+                      </P>
                     </>
                   )
                 },
@@ -1290,19 +1304,16 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        ご心配なく！
-                        <Highlight>
-                          この特別ルールは次のページ以降で登場する弁当箱でも使われますが、
-                        </Highlight>
-                        <HighlightBold>
-                          暗記する必要はありません。
-                        </HighlightBold>
-                        早送り中に自動で行われますから。
+                        <Bold>Don’t worry:</Bold> This special rule will appear
+                        starting from the next page,{' '}
+                        <Highlight>but you don’t have to memorize it</Highlight>
+                        . It will just happen <Italic>automatically</Italic>.
                       </P>
                       <P>
-                        なんとなく「
-                        <Highlight>こういう法則があるんだな</Highlight>
-                        」と思ってくだされば大丈夫です！
+                        <Highlight>
+                          You just need to know that these rules exist
+                        </Highlight>
+                        , and you should be fine.
                       </P>
                     </>
                   )
