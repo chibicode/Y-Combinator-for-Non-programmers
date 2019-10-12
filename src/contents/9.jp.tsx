@@ -1012,7 +1012,7 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        つまり、先ほどのように{' '}
+                        つまり、先ほどのように <EmojiWithText letter="b" /> が{' '}
                         <BottomRightBadge
                           inline
                           bottomRightBadgeType="callArg"
@@ -1022,7 +1022,7 @@ export default () => (
                           inline
                           bottomRightBadgeType="funcUnbound"
                         />{' '}
-                        に同じ料理が登場した場合…
+                        両方に登場した場合…
                       </P>
                     </>
                   )
@@ -1046,42 +1046,77 @@ export default () => (
                           が自動的に別の料理に変わります。
                         </HighlightBold>
                       </P>
+                      <EmojiSeparator
+                        nodes={[
+                          <EmojiForLetterWithBottomRightBadgeWrapper bottomRightBadgeType="callArg">
+                            <EmojiForLetter letter="b" />
+                          </EmojiForLetterWithBottomRightBadgeWrapper>,
+                          <CustomEmoji type="singleArrow" />,
+                          <Emoji>❓</Emoji>
+                        ]}
+                        description={
+                          <>
+                            <BottomRightBadge
+                              inline
+                              bottomRightBadgeType="callArg"
+                            />{' '}
+                            の
+                            <EmojiWithText letter="b" /> が、
+                            <br />
+                            自動的に別の料理に変わる
+                          </>
+                        }
+                      />
+                    </>
+                  )
+                },
+                {
+                  type: 'thinking',
+                  children: (
+                    <>
+                      <P>じゃあ、何の料理に変わるの？</P>
+                    </>
+                  )
+                },
+                {
+                  type: 'dog',
+                  children: (
+                    <>
                       <P>
+                        これは、
                         <Highlight>
-                          何に変わるかについてですが、
                           <HighlightBold>
                             まだ使われていない料理にランダムに変わります
                           </HighlightBold>
                           。ここでは、
-                          <EmojiWithText letter="e" /> になりました。
+                          <EmojiWithText letter="e" /> になります。
                         </Highlight>
                       </P>
+
+                      <EmojiSeparator
+                        nodes={[
+                          <EmojiForLetterWithBottomRightBadgeWrapper bottomRightBadgeType="callArg">
+                            <EmojiForLetter letter="b" />
+                          </EmojiForLetterWithBottomRightBadgeWrapper>,
+                          <CustomEmoji type="singleArrow" />,
+                          <EmojiForLetterWithBottomRightBadgeWrapper bottomRightBadgeType="callArg">
+                            <EmojiForLetter letter="e" />
+                          </EmojiForLetterWithBottomRightBadgeWrapper>
+                        ]}
+                        description={
+                          <>
+                            まだ使われていない
+                            <br />
+                            <EmojiWithText letter="e" /> に変わる
+                          </>
+                        }
+                      />
                     </>
                   )
                 }
               ]}
             />
             <R.Niwv />
-            <EmojiSeparator
-              nodes={[
-                <EmojiForLetterWithBottomRightBadgeWrapper bottomRightBadgeType="callArg">
-                  <EmojiForLetter letter="b" />
-                </EmojiForLetterWithBottomRightBadgeWrapper>,
-                <CustomEmoji type="singleArrow" />,
-                <EmojiForLetterWithBottomRightBadgeWrapper bottomRightBadgeType="callArg">
-                  <EmojiForLetter letter="e" />
-                </EmojiForLetterWithBottomRightBadgeWrapper>
-              ]}
-              description={
-                <>
-                  <BottomRightBadge inline bottomRightBadgeType="callArg" /> の
-                  <EmojiWithText letter="b" /> が、まだ
-                  <br />
-                  使われていない
-                  <EmojiWithText letter="e" /> に変わる
-                </>
-              }
-            />
             <BubbleQuotes
               quotes={[
                 {

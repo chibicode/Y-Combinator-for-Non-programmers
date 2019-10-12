@@ -1032,21 +1032,7 @@ export default () => (
                           inline
                           bottomRightBadgeType="funcUnbound"
                         />
-                        …
-                      </P>
-                      <P>
-                        (<Bold>In this case:</Bold>{' '}
-                        <EmojiForLetter letter="b" /> is in both{' '}
-                        <BottomRightBadge
-                          inline
-                          bottomRightBadgeType="callArg"
-                        />{' '}
-                        and{' '}
-                        <BottomRightBadge
-                          inline
-                          bottomRightBadgeType="funcUnbound"
-                        />
-                        )
+                        … (in this case: <EmojiForLetter letter="b" />)
                       </P>
                     </>
                   )
@@ -1091,11 +1077,7 @@ export default () => (
                       />
                     </>
                   )
-                }
-              ]}
-            />
-            <BubbleQuotes
-              quotes={[
+                },
                 {
                   type: 'thinking',
                   children: (
@@ -1115,7 +1097,7 @@ export default () => (
                         </Highlight>
                       </P>
                       <P>
-                        In this case, it became <EmojiWithText letter="e" />.
+                        In this case, it becomes <EmojiWithText letter="e" />.
                       </P>
                       <EmojiSeparator
                         nodes={[
@@ -1168,7 +1150,7 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        Let’s see what happens until the end.{' '}
+                        Let’s continue then!{' '}
                         <H args={{ name: 'pressFastForward' }} />
                       </P>
                     </>
