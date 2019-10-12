@@ -10,7 +10,7 @@ export const lessonTitle = {
 }[locale]
 
 export const description = {
-  en: 'Computer Science for the Rest of Us',
+  en: 'A Terrible Introduction to Computer Science',
   jp: 'プログラミング未経験者向けの、邪道なコンピュータサイエンスの入門書'
 }[locale]
 
@@ -25,7 +25,7 @@ export const episodeTitles = {
     7: 'The “Plus One” Effect',
     8: 'Super Saya',
     9: 'Can’t Add One?',
-    10: '?',
+    10: 'The “Minus One” Effect',
     11: '?',
     12: '?',
     13: '?',
