@@ -17,6 +17,7 @@ import BottomRightBadge from 'src/components/BottomRightBadge'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import CustomEmoji from 'src/components/CustomEmoji'
 import ExpressionRunnerSeparator from 'src/components/ExpressionRunnerSeparator'
+import InlineRunAndConvertToMathboxButton from 'src/components/InlineRunAndConvertToMathboxButton'
 import EmojiWithText from 'src/components/EmojiWithText'
 import Emoji from 'src/components/Emoji'
 import ExpressionRunnerCaptionOnly from 'src/components/ExpressionRunnerCaptionOnly'
@@ -349,8 +350,7 @@ export default () => (
       {
         title: (
           <>
-            <H args={{ name: 'minusOneEffect' }} />
-            がある弁当箱のヒント
+            <H args={{ name: 'minusOneEffect', capitalize: true }} />
           </>
         ),
         content: (
@@ -362,9 +362,9 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        もちろん、ヒント無しでやれとは言わん。前回同様、ヒントを出してやろうじゃないか。
+                        <Bold>Don’t worry:</Bold> Minion will give you a hint on
+                        how to reproduce those features using lunchboxes.
                       </P>
-                      <P>ミニオン、ヒントを説明したまえ！</P>
                     </>
                   )
                 },
@@ -372,13 +372,13 @@ export default () => (
                   type: 'dog',
                   children: (
                     <>
-                      <P>わかりました。こちらの弁当箱をご覧ください。</P>
                       <P>
-                        前回と同じく、
-                        <Highlight>
-                          それぞれの <CustomEmoji type="questionFoodGrey" />{' '}
-                          には何らかの料理が入ります。
-                        </Highlight>
+                        Yes! <H args={{ name: 'lookAtThisBentoBox' }} />.
+                      </P>
+                      <P>
+                        Just like the last time, each{' '}
+                        <CustomEmoji type="questionFoodGrey" /> icon represents
+                        some food item.
                       </P>
                     </>
                   )
@@ -386,9 +386,8 @@ export default () => (
               ]}
             />
             <R.Pbop>
-              それぞれの <CustomEmoji type="questionFoodGrey" /> には
-              <br />
-              何らかの料理が入る
+              Each <CustomEmoji type="questionFoodGrey" /> icon represents some
+              food item
             </R.Pbop>
             <BubbleQuotes
               quotes={[
@@ -396,7 +395,7 @@ export default () => (
                   type: 'thinking',
                   children: (
                     <>
-                      <P>なんか、めちゃくちゃ複雑な弁当箱だな…</P>
+                      <P>Hmm… it looks really complicated!</P>
                     </>
                   )
                 },
@@ -405,13 +404,16 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        そして、
-                        <HighlightBold>
-                          それぞれの <CustomEmoji type="questionFoodGrey" />{' '}
-                          に、ある法則に基づいて料理を入れると、
-                          <H args={{ name: 'minusOneEffect' }} />
-                          がある弁当箱になります。
-                        </HighlightBold>
+                        This time,{' '}
+                        <Highlight>
+                          you must fill each{' '}
+                          <CustomEmoji type="questionFoodGrey" /> in a way such
+                          that, the resulting lunchbox has{' '}
+                          <Bold>
+                            <H args={{ name: 'minusOneEffect' }} />
+                          </Bold>
+                          .
+                        </Highlight>
                       </P>
                     </>
                   )
@@ -419,12 +421,12 @@ export default () => (
               ]}
             />
             <R.Skoo>
-              それぞれの <CustomEmoji type="questionFoodGrey" /> に、
+              You must fill each <CustomEmoji type="questionFoodGrey" /> in a
+              way
               <br />
-              <HighlightBold>ある法則に基づいて</HighlightBold>料理を入れると、
+              such that, the resulting lunchbox has
               <br />
-              <H args={{ name: 'minusOneEffect' }} />
-              がある弁当箱になる
+              <H args={{ name: 'minusOneEffect' }} />.
             </R.Skoo>
             <BubbleQuotes
               quotes={[
@@ -433,14 +435,15 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        なに、
-                        <H args={{ name: 'minusOneEffect' }} />
-                        だって？
+                        <H
+                          args={{ name: 'minusOneEffect', capitalize: true }}
+                        />
+                        ?
                       </P>
                       <P>
-                        前回の
-                        <H args={{ name: 'plusOneEffect' }} />
-                        の真逆なのかな？
+                        Is that the oppposite of{' '}
+                        <H args={{ name: 'plusOneEffect' }} /> we talked about
+                        earlier?
                       </P>
                     </>
                   )
@@ -450,30 +453,19 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        その通りです。上の
-                        <H args={{ name: 'minusOneEffect' }} />
-                        がある弁当箱を、
+                        Yes!{' '}
+                        <Highlight>
+                          If you combine the above lunchbox with a lunchbox that
+                          can be converted to <CustomEmoji type="blankNumber" />
+                          , and do:
+                        </Highlight>
                       </P>
-                      <Ul>
-                        <UlLi>
-                          <Highlight>
-                            ある数字 <CustomEmoji type="blankNumber" />{' '}
-                            に変換できる弁当箱と合体させ、
-                          </Highlight>
-                        </UlLi>
-                        <UlLi>
-                          <Highlight>
-                            <H args={{ name: 'runAndConvertToMathbox' }} />
-                            すると、
-                          </Highlight>
-                        </UlLi>
-                      </Ul>
+                      <InlineRunAndConvertToMathboxButton />
                       <P>
                         <Highlight>
-                          結果は <CustomEmoji type="blankNumber" />{' '}
-                          <Emoji>➖</Emoji> <EmojiNumber number={1} /> になる
+                          The result will be <CustomEmoji type="blankNumber" />{' '}
+                          <Emoji>➖</Emoji> <EmojiNumber number={1} />.
                         </Highlight>
-                        のです。
                       </P>
                     </>
                   )
@@ -481,17 +473,20 @@ export default () => (
               ]}
             />
             <R.Xqjd>
-              <CustomEmoji type="blankNumber" /> に変換できる弁当箱と、
+              Combine a lunchbox that can be converted to{' '}
+              <CustomEmoji type="blankNumber" />
               <br />
-              <H args={{ name: 'minusOneEffect' }} />
-              がある弁当箱を合体させ…
+              with a lunchbox with <H args={{ name: 'minusOneEffect' }} />
             </R.Xqjd>
             <ExpressionRunnerSeparator />
             <R.Gvxz>
-              <H args={{ name: 'runAndConvertToMathbox' }} />
+              If you{' '}
+              <Highlight>
+                <H args={{ name: 'runAndConvertToMathbox', lowerCase: true }} />
+              </Highlight>
               <br />
-              すると、結果は <CustomEmoji type="blankNumber" />{' '}
-              <Emoji>➖</Emoji> <EmojiNumber number={1} /> になる
+              it will become <CustomEmoji type="blankNumber" />{' '}
+              <Emoji>➖</Emoji> <EmojiNumber number={1} />
             </R.Gvxz>
             <BubbleQuotes
               quotes={[
@@ -500,9 +495,9 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        つまりこれを使えば、計算箱の「
-                        <H args={{ name: 'minusOneFeature' }} />
-                        」を再現できるというわけだな。
+                        I see. So this is how you can reproduce{' '}
+                        <H args={{ name: 'minusOneFeature' }} /> using a
+                        lunchbox.
                       </P>
                     </>
                   )
@@ -510,16 +505,13 @@ export default () => (
               ]}
             />
             <R.Ditw>
-              計算箱の「
-              <H args={{ name: 'minusOneFeature' }} />
-              」は…
+              <CustomEmoji type="mathBox" /> A <Bold>mathbox</Bold> that uses{' '}
+              <CustomEmoji type="minusOne" /> can be <Bold>reproduced</Bold> by…
             </R.Ditw>
             <ExpressionRunnerSeparator />
             <R.Xqjd>
-              <H args={{ name: 'minusOneEffect' }} />
-              がある弁当箱を
-              <br />
-              使えば、再現できる
+              <Emoji>🍱</Emoji> A <Bold>lunchbox</Bold> that has{' '}
+              <H args={{ name: 'minusOneEffect' }} />.
             </R.Xqjd>
           </>
         )
