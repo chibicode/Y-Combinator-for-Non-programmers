@@ -946,10 +946,7 @@ export default () => (
                   type: 'saya',
                   children: (
                     <>
-                      <P>
-                        まずは実行してみるね。
-                        <H args={{ name: 'pressFastForward', girl: true }} />
-                      </P>
+                      <P>まずは実行してみるね。</P>
                       <Ul>
                         <UlLi>
                           今回は、
@@ -969,6 +966,9 @@ export default () => (
                           」を押してね！
                         </UlLi>
                       </Ul>
+                      <P>
+                        <H args={{ name: 'pressFastForward', girl: true }} />
+                      </P>
                     </>
                   )
                 }

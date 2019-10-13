@@ -977,29 +977,31 @@ export default () => (
                   type: 'saya',
                   children: (
                     <>
-                      <P>
-                        まずは実行してみるね。
-                        <H args={{ name: 'pressFastForward', girl: true }} />
-                      </P>
+                      <P>Let’s run it! </P>
                       <Ul>
                         <UlLi>
-                          今回は、
                           <Highlight>
-                            最後まで止まらずに早送りするね！
-                          </Highlight>
+                            We won’t pause in the middle this time.
+                          </Highlight>{' '}
+                          It’ll go all the way to the end.
                         </UlLi>
                         <UlLi>
-                          複雑なので、
-                          <Highlight>目で追わなくても大丈夫だよ！</Highlight>
+                          <Highlight>
+                            You don’t have to follow all the steps!
+                          </Highlight>{' '}
+                          Just glance over it.
                         </UlLi>
                         <UlLi>
-                          ちょっと時間がかかるので、待てない方は下の「
-                          <HighlightBold>
+                          It will take some time, so if you can’t wait, press{' '}
+                          <Highlight highlightType="pink">
                             <H args={{ name: 'skipToTheEnd' }} /> →
-                          </HighlightBold>
-                          」を押してね！
+                          </Highlight>
+                          .
                         </UlLi>
                       </Ul>
+                      <P>
+                        <H args={{ name: 'pressFastForward', girl: true }} />
+                      </P>
                     </>
                   )
                 }
