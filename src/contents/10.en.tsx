@@ -690,15 +690,7 @@ export default () => (
                         <Highlight>
                           You don’t have to follow all the steps!
                         </Highlight>{' '}
-                        You can
-                        なんとなく、「へー、こんなふうに進んでいくんだ」と思っていただければ大丈夫です。
-                      </P>
-                      <P>
-                        また、「
-                        <HighlightBold>
-                          <H args={{ name: 'skipToTheStoppingPoint' }} /> →
-                        </HighlightBold>
-                        」を押して、飛ばしていただいても結構です。
+                        Just glance over it and save your eyes!
                       </P>
                     </>
                   )
