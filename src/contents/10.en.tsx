@@ -690,7 +690,7 @@ export default () => (
                         <Highlight>
                           You don’t have to follow all the steps!
                         </Highlight>{' '}
-                        Just glance over it and save your eyes!
+                        Just glance over it. Save your eyes!
                       </P>
                     </>
                   )
@@ -700,32 +700,28 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        それより見てみて！
-                        <HighlightBold>
-                          途中で{' '}
-                          <BottomRightBadge
-                            inline
-                            bottomRightBadgeType="callArg"
-                          />{' '}
-                          と{' '}
-                          <BottomRightBadge
-                            inline
-                            bottomRightBadgeType="funcUnbound"
-                          />{' '}
-                          が同じ <EmojiWithText letter="f" /> になったよ！
-                        </HighlightBold>
+                        Take a look!{' '}
+                        <BottomRightBadge
+                          inline
+                          bottomRightBadgeType="callArg"
+                        />{' '}
+                        and{' '}
+                        <BottomRightBadge
+                          inline
+                          bottomRightBadgeType="funcUnbound"
+                        />{' '}
+                        are both <EmojiWithText letter="f" /> now.
                       </P>
                       <P>
-                        前回と同じように
                         <Highlight>
-                          特別ルールで、
+                          The <Bold>special rule</Bold> applies, and the{' '}
+                          <EmojiWithText letter="f" /> in{' '}
                           <BottomRightBadge
                             inline
                             bottomRightBadgeType="callArg"
                           />{' '}
-                          が別の料理に変わる
+                          changes to something else, right?
                         </Highlight>
-                        んだよね。
                       </P>
                     </>
                   )
@@ -733,10 +729,10 @@ export default () => (
               ]}
             />
             <P>
-              特別ルールを実行するには、
               <Highlight>
-                <H args={{ name: 'next' }} /> を押してみてください！
-              </Highlight>
+                Press <H args={{ name: 'next' }} />
+              </Highlight>{' '}
+              to apply the <HighlightBold>special rule</HighlightBold>!
             </P>
             <R.Xusi></R.Xusi>
             <BubbleQuotes
@@ -746,18 +742,18 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        そうですね！結果が狂わないように、
+                        The special rule just applied, and the{' '}
+                        <EmojiWithText letter="f" /> in{' '}
                         <BottomRightBadge
                           inline
                           bottomRightBadgeType="callArg"
                         />{' '}
-                        の <EmojiWithText letter="f" /> を{' '}
-                        <EmojiWithText letter="a" /> に変えました。
+                        became <EmojiWithText letter="a" />.
                       </P>
                       <P>
-                        では、最後まで
-                        <H args={{ name: 'fastForward' }} />
-                        してみてください！
+                        Now, just{' '}
+                        <H args={{ name: 'fastForward', lowerCase: true }} />{' '}
+                        until the end!
                       </P>
                     </>
                   )
@@ -772,8 +768,7 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        最終的に残った以下の弁当箱は、
-                        <EmojiNumber number={0} /> に変換できる弁当箱です！
+                        This can be converted to <EmojiNumber number={0} />!
                       </P>
                     </>
                   )
@@ -795,15 +790,21 @@ export default () => (
                   type: 'dog',
                   children: (
                     <>
-                      <P>ということは、サヤちゃんの弁当箱は…</P>
+                      <P>
+                        <Bold>That means:</Bold>{' '}
+                        <Highlight>
+                          If you combine Saya’s lunchbox with a lunchbox that
+                          can be converted to <EmojiNumber number={1} />, and
+                          do:
+                        </Highlight>
+                      </P>
+                      <InlineRunAndConvertToMathboxButton />
                       <P>
                         <Highlight>
-                          <EmojiNumber number={1} />{' '}
-                          に変換できる弁当箱と合体させ、
-                          <H args={{ name: 'runAndConvertToMathbox' }} />
-                          すると、結果が <EmojiNumber number={0} /> になる
+                          The result will be <EmojiNumber number={0} />, which
+                          is <EmojiNumber number={1} /> <Emoji>➖</Emoji>{' '}
+                          <EmojiNumber number={1} />.
                         </Highlight>
-                        ということですね。
                       </P>
                     </>
                   )
@@ -811,15 +812,19 @@ export default () => (
               ]}
             />
             <R.Ylav>
-              <EmojiNumber number={1} /> に変換できる弁当箱と、
+              Combine <Emoji>👧🏻</Emoji> Saya’s lunchbox with
               <br />
-              <Emoji>👧🏻</Emoji> サヤちゃんの弁当箱を合体させ…
+              a lunchbox that can be converted to <EmojiNumber number={1} />…
             </R.Ylav>
             <ExpressionRunnerSeparator />
+            <ExpressionRunnerCaptionOnly>
+              <Highlight>
+                <H args={{ name: 'runAndConvertToMathbox' }} />
+              </Highlight>
+            </ExpressionRunnerCaptionOnly>
+            <ExpressionRunnerSeparator />
             <R.Jwah>
-              <H args={{ name: 'runAndConvertToMathbox' }} />
-              <br />
-              すると、結果が <EmojiNumber number={0} /> になる
+              The result is <EmojiNumber number={0} />
             </R.Jwah>
             <BubbleQuotes
               quotes={[
@@ -828,11 +833,9 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        つまり、
-                        <EmojiNumber number={1} /> <Emoji>➖</Emoji>{' '}
-                        <EmojiNumber number={1} /> が計算できたので、
-                        <HighlightBold>成功です！</HighlightBold>{' '}
-                        <Emoji>🎉</Emoji>
+                        Because it calculated <EmojiNumber number={1} />{' '}
+                        <Emoji>➖</Emoji> <EmojiNumber number={1} />, it’s a
+                        success! <Emoji>🎉</Emoji>
                       </P>
                     </>
                   )
@@ -841,7 +844,7 @@ export default () => (
                   type: 'saya',
                   children: (
                     <>
-                      <P>やったー！</P>
+                      <P>Yay!</P>
                     </>
                   )
                 },
@@ -849,7 +852,7 @@ export default () => (
                   type: 'surprised',
                   children: (
                     <>
-                      <P>す、すごい…！</P>
+                      <P>Wow…!</P>
                     </>
                   )
                 }

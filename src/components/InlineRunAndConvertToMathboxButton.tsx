@@ -9,6 +9,8 @@ const InlineRunAndConvertToMathboxButton = () => (
   <P
     css={css`
       text-align: center;
+      margin-top: ${spaces(1.75)};
+      margin-bottom: ${spaces(1.75)};
     `}
   >
     <ExpressionRunnerButton
