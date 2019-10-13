@@ -768,7 +768,8 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        This can be converted to <EmojiNumber number={0} />!
+                        The resulting lunchbox can be converted to{' '}
+                        <EmojiNumber number={0} />!
                       </P>
                     </>
                   )
@@ -1015,8 +1016,8 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        最終的に残った以下の弁当箱は、
-                        <EmojiNumber number={1} /> に変換できる弁当箱です！
+                        The resulting lunchbox can be converted to{' '}
+                        <EmojiNumber number={1} />!
                       </P>
                     </>
                   )
@@ -1035,11 +1036,9 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        つまり、
-                        <EmojiNumber number={2} /> <Emoji>➖</Emoji>{' '}
-                        <EmojiNumber number={1} /> が計算できたので、
-                        <HighlightBold>またしても成功です！</HighlightBold>{' '}
-                        <Emoji>🎉</Emoji>
+                        That means it calculated <EmojiNumber number={2} />{' '}
+                        <Emoji>➖</Emoji> <EmojiNumber number={1} />, so it’s a
+                        success! <Emoji>🎉</Emoji>
                       </P>
                     </>
                   )
@@ -1048,7 +1047,7 @@ export default () => (
                   type: 'saya',
                   children: (
                     <>
-                      <P>わーい、わーい！</P>
+                      <P>Yay!</P>
                     </>
                   )
                 },
@@ -1056,7 +1055,7 @@ export default () => (
                   type: 'devil',
                   children: (
                     <>
-                      <P>ぐぬぬ…</P>
+                      <P>Ugh…</P>
                     </>
                   )
                 }
