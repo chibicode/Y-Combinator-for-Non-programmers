@@ -5,6 +5,7 @@ import Container from 'src/components/Container'
 import ExpressionBox from 'src/components/ExpressionBox'
 import H from 'src/components/H'
 import Emoji from 'src/components/Emoji'
+import { Highlight } from 'src/components/ContentTags'
 import ExpressionRunnerCaptionWrapper from 'src/components/ExpressionRunnerCaptionWrapper'
 import ProgressBar from 'src/components/ProgressBar'
 import ExpressionRunnerContext from 'src/components/ExpressionRunnerContext'
@@ -331,13 +332,15 @@ const ExpressionRunnerPrecomputed = ({
                       font-size: ${fontSizes(0.75)};
                     `}
                   >
-                    {expressionContainers[expressionContainers.length - 1]
-                      .containerState !== 'done' ? (
-                      <H args={{ name: 'skipToTheStoppingPoint' }} />
-                    ) : (
-                      <H args={{ name: 'skipToTheEnd' }} />
-                    )}{' '}
-                    →
+                    <Highlight highlightType="pink">
+                      {expressionContainers[expressionContainers.length - 1]
+                        .containerState !== 'done' ? (
+                        <H args={{ name: 'skipToTheStoppingPoint' }} />
+                      ) : (
+                        <H args={{ name: 'skipToTheEnd' }} />
+                      )}{' '}
+                      →
+                    </Highlight>
                   </LinkButton>
                 </ExpressionRunnerCaptionWrapper>
               </>
