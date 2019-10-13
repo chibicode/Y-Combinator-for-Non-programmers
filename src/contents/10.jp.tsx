@@ -648,14 +648,11 @@ export default () => (
         content: (
           <>
             <P>
-              それでは、<Emoji>👧🏻</Emoji>{' '}
-              サヤちゃんの弁当箱を実行してみましょう！
-            </P>
-            <P>
-              途中まで早送りしてみますね。
+              それでは、上記の弁当箱を実行してみましょう！途中まで早送りしてみますね。
               <H
                 args={{
-                  name: 'pressFastForward'
+                  name: 'pressFastForward',
+                  skippableToTheStoppingPoint: true
                 }}
               />
             </P>
@@ -679,13 +676,6 @@ export default () => (
                           すべてを目で追う必要はないですよ！
                         </Highlight>
                         なんとなく、「へー、こんなふうに進んでいくんだ」と思っていただければ大丈夫です。
-                      </P>
-                      <P>
-                        また、「
-                        <HighlightBold>
-                          <H args={{ name: 'skipToTheStoppingPoint' }} /> →
-                        </HighlightBold>
-                        」を押して、飛ばしていただいても結構です。
                       </P>
                     </>
                   )

@@ -335,12 +335,7 @@ export default () => (
         )
       },
       {
-        title: (
-          <>
-            What happens if you <H args={{ name: 'play', lowerCase: true }} />{' '}
-            it?
-          </>
-        ),
+        title: <>What happens if you run it?</>,
         content: (
           <>
             <StepOne />

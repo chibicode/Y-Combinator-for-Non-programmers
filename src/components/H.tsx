@@ -107,6 +107,7 @@ interface HProps {
         mentionRightArrow?: boolean
         girl?: boolean
         skippable?: boolean
+        skippableToTheStoppingPoint?: boolean
       }
     | { name: 'copy' }
     | { name: 'summary' }
@@ -154,6 +155,7 @@ interface HProps {
     | { name: 'skipToTheEnd' }
     | { name: 'skipToTheStoppingPoint' }
     | { name: 'fastForwardSkippableToTheEnd' }
+    | { name: 'fastForwardSkippableToTheStoppingPoint' }
     | { name: 'slide' }
     | { name: 'testimonialsTitle' }
     | { name: 'testimonialsContent' }
@@ -686,7 +688,9 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
         <>
           <Highlight>
             Press <H args={{ name: 'fastForward' }} />
-            {args.mentionRightArrow || args.skippable
+            {args.mentionRightArrow ||
+            args.skippable ||
+            args.skippableToTheStoppingPoint
               ? '.'
               : args.skipColon
               ? ''
@@ -706,6 +710,12 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
               <H args={{ name: 'fastForwardSkippableToTheEnd' }} />
             </>
           )}
+          {args.skippableToTheStoppingPoint && (
+            <>
+              {' '}
+              <H args={{ name: 'fastForwardSkippableToTheStoppingPoint' }} />
+            </>
+          )}
         </>
       )
     } else {
@@ -714,7 +724,9 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
           <Highlight>
             <H args={{ name: 'fastForward' }} /> を押してみて
             {!args.girl && <>ください</>}
-            {args.mentionRightArrow || args.skippable
+            {args.mentionRightArrow ||
+            args.skippable ||
+            args.skippableToTheStoppingPoint
               ? '。'
               : args.skipColon
               ? ''
@@ -730,6 +742,11 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
           {args.skippable && (
             <>
               <H args={{ name: 'fastForwardSkippableToTheEnd' }} />
+            </>
+          )}
+          {args.skippableToTheStoppingPoint && (
+            <>
+              <H args={{ name: 'fastForwardSkippableToTheStoppingPoint' }} />
             </>
           )}
         </>
@@ -1476,13 +1493,28 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
     if (locale === 'en') {
       return (
         <Highlight highlightType="pink">
-          You can also skip to the end.
+          You can also skip to the end. <Emoji>⏭</Emoji>
         </Highlight>
       )
     } else {
       return (
         <Highlight highlightType="pink">
-          最後までスキップすることも可能です。
+          最後までスキップすることも可能です。<Emoji>▶️</Emoji>
+        </Highlight>
+      )
+    }
+  }
+  if (args.name === 'fastForwardSkippableToTheStoppingPoint') {
+    if (locale === 'en') {
+      return (
+        <Highlight highlightType="pink">
+          You can also skip to the next stopping point. <Emoji>😉</Emoji>
+        </Highlight>
+      )
+    } else {
+      return (
+        <Highlight highlightType="pink">
+          途中までスキップすることも可能です。<Emoji>😉</Emoji>
         </Highlight>
       )
     }

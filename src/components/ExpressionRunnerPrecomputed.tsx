@@ -4,6 +4,7 @@ import { useState, useContext } from 'react'
 import Container from 'src/components/Container'
 import ExpressionBox from 'src/components/ExpressionBox'
 import H from 'src/components/H'
+import Emoji from 'src/components/Emoji'
 import ExpressionRunnerCaptionWrapper from 'src/components/ExpressionRunnerCaptionWrapper'
 import ProgressBar from 'src/components/ProgressBar'
 import ExpressionRunnerContext from 'src/components/ExpressionRunnerContext'
@@ -321,6 +322,7 @@ const ExpressionRunnerPrecomputed = ({
                     margin: ${spaces(1)} 0 ${spaces('-0.25')};
                   `}
                 >
+                  <Emoji>😉</Emoji>{' '}
                   <LinkButton
                     onClick={stepToTheEnd}
                     css={css`

@@ -653,23 +653,21 @@ export default () => (
         )
       },
       {
-        title: (
-          <>
-            What happens if you <H args={{ name: 'play', lowerCase: true }} />{' '}
-            it?
-          </>
-        ),
+        title: <>What happens if you run it?</>,
         content: (
           <>
             <P>
-              それでは、<Emoji>👧🏻</Emoji>{' '}
-              サヤちゃんの弁当箱を実行してみましょう！
+              Let’s run the above lunchbox.{' '}
+              <Highlight>
+                We’ll <H args={{ name: 'fastForward', lowerCase: true }} /> it
+                for a while and pause for an explanation.
+              </Highlight>
             </P>
             <P>
-              途中まで早送りしてみますね。
               <H
                 args={{
-                  name: 'pressFastForward'
+                  name: 'pressFastForward',
+                  skippableToTheStoppingPoint: true
                 }}
               />
             </P>
@@ -680,7 +678,7 @@ export default () => (
                   type: 'relieved',
                   children: (
                     <>
-                      <P>複雑すぎて、目で追うのがしんどい…</P>
+                      <P>This is so complicated. My eye hurts!</P>
                     </>
                   )
                 },
@@ -690,8 +688,9 @@ export default () => (
                     <>
                       <P>
                         <Highlight>
-                          すべてを目で追う必要はないですよ！
-                        </Highlight>
+                          You don’t have to follow all the steps!
+                        </Highlight>{' '}
+                        You can
                         なんとなく、「へー、こんなふうに進んでいくんだ」と思っていただければ大丈夫です。
                       </P>
                       <P>
