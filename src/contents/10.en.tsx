@@ -618,18 +618,22 @@ export default () => (
               ]}
             />
             <R.Ylav>
-              <EmojiNumber number={1} /> に変換できる弁当箱と、
+              Combine <Emoji>👧🏻</Emoji> Saya’s lunchbox with
               <br />
-              <Emoji>👧🏻</Emoji> サヤちゃんの弁当箱を合体させ…
+              a lunchbox that can be converted to <EmojiNumber number={1} />…
             </R.Ylav>
             <ExpressionRunnerSeparator />
             <ExpressionRunnerCaptionOnly>
-              <H args={{ name: 'runAndConvertToMathbox' }} />
+              <Highlight>
+                <H args={{ name: 'runAndConvertToMathbox' }} />
+              </Highlight>
+            </ExpressionRunnerCaptionOnly>
+            <ExpressionRunnerSeparator />
+            <ExpressionRunnerCaptionOnly>
+              If it becomes <EmojiNumber number={0} size="mdlg" />,{' '}
+              <Highlight>success</Highlight>. <Emoji>🎉</Emoji>
               <br />
-              して、結果が <EmojiNumber number={0} size="mdlg" /> になれば
-              <HighlightBold>成功</HighlightBold> <Emoji>🎉</Emoji>
-              <br />
-              それ以外なら<HighlightBold>失敗</HighlightBold> <Emoji>😭</Emoji>
+              Otherwise, <Highlight>failure</Highlight> <Emoji>😭</Emoji>
             </ExpressionRunnerCaptionOnly>
             <BubbleQuotes
               quotes={[
@@ -638,9 +642,7 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        じゃあ、
-                        <H args={{ name: 'play' }} />
-                        してみよう！
+                        Let’s <H args={{ name: 'play', lowerCase: true }} /> it!
                       </P>
                     </>
                   )
@@ -653,7 +655,8 @@ export default () => (
       {
         title: (
           <>
-            <H args={{ name: 'play' }} /> してみると…
+            What happens if you <H args={{ name: 'play', lowerCase: true }} />{' '}
+            it?
           </>
         ),
         content: (
