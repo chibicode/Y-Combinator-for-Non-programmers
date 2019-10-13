@@ -517,7 +517,7 @@ export default () => (
         )
       },
       {
-        title: <>サヤちゃんが考えた弁当箱</>,
+        title: <>Saya’s lunchbox, again</>,
         content: (
           <>
             <BubbleQuotes
@@ -526,10 +526,10 @@ export default () => (
                   type: 'crying',
                   children: (
                     <>
+                      <P>But… this lunchbox looks so complicated!</P>
                       <P>
-                        しかし…こんな複雑な弁当箱の{' '}
-                        <CustomEmoji type="questionFoodGrey" />{' '}
-                        を正しい法則で埋めるなんて…何日かかってもできなさそうだ！
+                        I don’t think we can figure out how to fill each{' '}
+                        <CustomEmoji type="questionFoodGrey" /> icon…
                       </P>
                     </>
                   )
@@ -537,12 +537,11 @@ export default () => (
               ]}
             />
             <R.Pbop>
-              それぞれの <CustomEmoji type="questionFoodGrey" /> には
-              <br />
-              何らかの料理が入る
+              Each <CustomEmoji type="questionFoodGrey" /> icon represents some
+              food item
             </R.Pbop>
             <P>
-              村人たちが困っていると、またサヤちゃんが何かひらめいたようです。
+              The villagers were struggling, but looks like Saya’s got an idea:
             </P>
             <BubbleQuotes
               quotes={[
@@ -550,7 +549,7 @@ export default () => (
                   type: 'saya',
                   children: (
                     <>
-                      <P>ねえねえ、サヤも試しにやってみたんだけど…</P>
+                      <P>Hey guys, I think I have an idea.</P>
                     </>
                   )
                 },
@@ -558,7 +557,7 @@ export default () => (
                   type: 'roll',
                   children: (
                     <>
-                      <P>え…サヤちゃん、まさか答えが分かったというのかい？</P>
+                      <P>What…? Saya, did you figure it out?</P>
                     </>
                   )
                 },
@@ -566,14 +565,16 @@ export default () => (
                   type: 'saya',
                   children: (
                     <>
-                      <P>とりあえずこれを見てみて！</P>
+                      <P>
+                        I don’t know if this is correct, but come take a look!
+                      </P>
                     </>
                   )
                 }
               ]}
             />
             <R.Cldb>
-              <Emoji>👧🏻</Emoji> サヤちゃんの弁当箱
+              <Emoji>👧🏻</Emoji> Saya’s lunchbox
             </R.Cldb>
             <BubbleQuotes
               quotes={[
