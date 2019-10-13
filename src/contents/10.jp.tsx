@@ -601,19 +601,6 @@ export default () => (
                           になれば成功というわけだ。
                         </Highlight>
                       </P>
-                      <EmojiSeparator
-                        nodes={[
-                          <Emoji>🍱</Emoji>,
-                          <Emoji>▶️</Emoji>,
-                          <CustomEmoji type="singleArrow" />,
-                          <EmojiNumber number={0} />
-                        ]}
-                        description={
-                          <>
-                            結果が <EmojiNumber number={0} /> になればOK
-                          </>
-                        }
-                      />
                     </>
                   )
                 }

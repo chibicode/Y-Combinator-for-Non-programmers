@@ -1578,8 +1578,8 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
     if (locale === 'en') {
       return (
         <>
-          {args.capitalize ? 'T' : 't'}he <Bold>“Repeat”</Bold>{args.addNewline ? <br /> : ' '}feature{' '}
-          <Emoji>🔁</Emoji>
+          {args.capitalize ? 'T' : 't'}he <Bold>“Repeat”</Bold>
+          {args.addNewline ? <br /> : ' '}feature <Emoji>🔁</Emoji>
         </>
       )
     } else {

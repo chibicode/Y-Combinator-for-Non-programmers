@@ -582,15 +582,10 @@ export default () => (
                   type: 'roll',
                   children: (
                     <>
+                      <P>Hmm… let’s see if this works.</P>
                       <P>
-                        ふむふむ…まさか今回も一発で正解なんてことはありえないと思うけど、とりあえず試してみるか。
-                      </P>
-                      <P>
-                        前回もやったように、
-                        <Highlight>
-                          <EmojiNumber number={1} />{' '}
-                          に変換できる弁当箱と合体させてみよう。
-                        </Highlight>
+                        We’ll combine it with a lunchbox that can be converted
+                        to <EmojiNumber number={1} />.
                       </P>
                       <R.Dqdv>
                         <H
@@ -602,11 +597,9 @@ export default () => (
                         />
                       </R.Dqdv>
                       <P>
-                        今回は
-                        <H args={{ name: 'minusOneEffect' }} />
-                        があるかどうかを確かめたいわけだから、
-                        <EmojiNumber number={1} /> <Emoji>➖</Emoji>{' '}
-                        <EmojiNumber number={1} /> が計算できないといけない。
+                        If it can calculate <EmojiNumber number={1} />{' '}
+                        <Emoji>➖</Emoji> <EmojiNumber number={1} />, then it’s
+                        a success. <Emoji>🎉</Emoji>
                       </P>
                       <EmojiSeparator
                         nodes={[
@@ -616,27 +609,9 @@ export default () => (
                         ]}
                       />
                       <P>
-                        つまり、
-                        <H args={{ name: 'runAndConvertToMathbox' }} />
-                        した時に、
-                        <Highlight>
-                          結果が <EmojiNumber number={0} />{' '}
-                          になれば成功というわけだ。
-                        </Highlight>
+                        <Bold>That means:</Bold> We want the final result to be{' '}
+                        <EmojiNumber number={0} />.
                       </P>
-                      <EmojiSeparator
-                        nodes={[
-                          <Emoji>🍱</Emoji>,
-                          <Emoji>▶️</Emoji>,
-                          <CustomEmoji type="singleArrow" />,
-                          <EmojiNumber number={0} />
-                        ]}
-                        description={
-                          <>
-                            結果が <EmojiNumber number={0} /> になればOK
-                          </>
-                        }
-                      />
                     </>
                   )
                 }
