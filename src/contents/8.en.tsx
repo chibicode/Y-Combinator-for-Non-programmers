@@ -977,7 +977,7 @@ export default () => (
               <EmojiNumber number={2} />.
             </R.Mcug>
             <P>
-              If we were to summarize what we just did in this chapter, it’ll be
+              If we were to summarize what we just did in this page, it’ll be
               this:
             </P>
             <Ul>

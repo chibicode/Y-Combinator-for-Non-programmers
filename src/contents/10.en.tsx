@@ -1067,8 +1067,7 @@ export default () => (
       {
         title: (
           <>
-            <H args={{ name: 'minusOneEffect' }} />
-            がある法則
+            <H args={{ name: 'minusOneEffect', capitalize: true }} />
           </>
         ),
         content: (
@@ -1079,13 +1078,10 @@ export default () => (
                   type: 'devil',
                   children: (
                     <>
-                      <P>まさか、こうも簡単に正解されるとは思わなかったが…</P>
+                      <P>I didn’t think you’ll get it this easily</P>
                       <P>
-                        <HighlightBold>
-                          サヤちゃんが考えた弁当箱は、
-                          <H args={{ name: 'minusOneEffect' }} />
-                          がある弁当箱だ！
-                        </HighlightBold>{' '}
+                        But <Highlight>Saya is correct!</Highlight> Her lunchbox
+                        does have <H args={{ name: 'minusOneEffect' }} />{' '}
                         <Emoji>🎉</Emoji>
                       </P>
                     </>
@@ -1094,10 +1090,9 @@ export default () => (
               ]}
             />
             <R.Rdae>
-              <Emoji>👧🏻</Emoji> サヤちゃんが考えた弁当箱には
+              <Emoji>👧🏻</Emoji> Saya’s lunchbox does have
               <br />
               <H args={{ name: 'minusOneEffect' }} />
-              がある
             </R.Rdae>
             <BubbleQuotes
               quotes={[
@@ -1105,7 +1100,7 @@ export default () => (
                   type: 'saya',
                   children: (
                     <>
-                      <P>やった！ということは、正解だね！</P>
+                      <P>Awesome!</P>
                     </>
                   )
                 },
@@ -1114,12 +1109,14 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        ちなみに、サヤちゃんが考えた弁当箱以外にも、
-                        <HighlightBold>
-                          以下の法則に当てはまる弁当箱であれば、 どれでも
-                          <H args={{ name: 'minusOneEffect' }} />
-                          があるぞ。
-                        </HighlightBold>
+                        <Bold>By the way:</Bold> There are{' '}
+                        <Italic>other</Italic> correct answers as well.
+                      </P>
+                      <P>
+                        <Highlight>
+                          Any lunchboxes that fit the following pattern have{' '}
+                          <H args={{ name: 'minusOneEffect' }} />.
+                        </Highlight>
                       </P>
                     </>
                   )
@@ -1127,10 +1124,9 @@ export default () => (
               ]}
             />
             <R.Cbmn>
-              この法則に当てはまる弁当箱であれば、
+              Any lunchboxes that fit the following pattern
               <br />
-              <H args={{ name: 'minusOneEffect' }} />
-              がある
+              have <H args={{ name: 'minusOneEffect' }} />
             </R.Cbmn>
             <BubbleQuotes
               quotes={[
@@ -1138,12 +1134,8 @@ export default () => (
                   type: 'thinking',
                   children: (
                     <>
-                      <P>
-                        たしかにサヤちゃんの弁当箱は、上の法則に当てはまっている…
-                      </P>
-                      <P>
-                        よくこんなの分かったなあ。サヤちゃんは天才なのかもしれない！
-                      </P>
+                      <P>I see. Saya’s lunchbox does fit the above pattern.</P>
+                      <P>Saya, you’re a genius!</P>
                     </>
                   )
                 },
@@ -1152,9 +1144,8 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        そんなことないよ！でも、これで「
-                        <H args={{ name: 'minusOneFeature' }} />
-                        」を再現できたね！
+                        No, I’m just lucky. But anyway, we’ve reproduced{' '}
+                        <H args={{ name: 'minusOneFeature' }} />!
                       </P>
                     </>
                   )
@@ -1168,21 +1159,30 @@ export default () => (
         type: 'summary',
         title: (
           <>
-            「<H args={{ name: 'minusOneFeature' }} />
-            」も再現できた！
+            We’ve reproduced <H args={{ name: 'minusOneFeature' }} />
           </>
         ),
         content: (
           <>
             <P>
-              今回学んだことを一言でまとめると、
-              <HighlightBold>
-                計算箱の「
-                <H args={{ name: 'minusOneFeature' }} />
-                」も、弁当箱で「再現」できる
-              </HighlightBold>
-              、ということです。
+              If we were to summarize what we just did in this page, it’ll be
+              this:
             </P>
+            <Ul>
+              <UlLi>
+                <Highlight>
+                  <CustomEmoji type="mathBox" /> A <Bold>mathbox</Bold> that
+                  uses <CustomEmoji type="minusOne" /> can be{' '}
+                  <Bold>reproduced</Bold> by…
+                </Highlight>
+              </UlLi>
+              <UlLi>
+                <Highlight>
+                  <Emoji>🍱</Emoji> A <Bold>lunchbox</Bold> that has{' '}
+                  <H args={{ name: 'minusOneEffect' }} />.
+                </Highlight>
+              </UlLi>
+            </Ul>
             <EmojiSeparator
               nodes={[
                 <CustomEmoji type="mathBox" />,
@@ -1193,42 +1193,48 @@ export default () => (
               ]}
               description={
                 <>
-                  計算箱の「
-                  <H args={{ name: 'minusOneFeature' }} />
-                  」は、
+                  A <Bold>mathbox</Bold> that uses{' '}
+                  <CustomEmoji type="minusOne" /> can be
                   <br />
-                  弁当箱で「<HighlightBold>再現</HighlightBold>
-                  」することができる
+                  <HighlightBold>reproduced</HighlightBold> by…
+                  <br />A <Bold>lunchbox</Bold> that has{' '}
+                  <H args={{ name: 'minusOneEffect' }} />.
                 </>
               }
             />
             <P>
-              たとえば、以下のような <EmojiNumber number={3} />{' '}
-              <Emoji>➖</Emoji> <EmojiNumber number={1} />{' '}
-              を計算する計算箱をご覧ください。
+              For example, take a look at this mathbox that calculates{' '}
+              <EmojiNumber number={3} /> <Emoji>➖</Emoji>{' '}
+              <EmojiNumber number={1} />{' '}
             </P>
             <R.Xmqp>
-              <EmojiNumber number={3} /> <Emoji>➖</Emoji>{' '}
-              <EmojiNumber number={1} /> を計算できる
+              A mathbox that calculates <EmojiNumber number={3} />{' '}
+              <Emoji>➖</Emoji> <EmojiNumber number={1} />
             </R.Xmqp>
             <P>
-              これを弁当箱で再現するには、
-              <Highlight>
-                <EmojiNumber number={3} /> に変換できる弁当箱と、
-                <H args={{ name: 'minusOneEffect' }} />
-                がある弁当箱を合体すればいい
-              </Highlight>
-              のです。
+              To <HighlightBold>reproduce</HighlightBold> this using a lunchbox,
+              we just need:
             </P>
+            <Ul>
+              <UlLi>
+                <Highlight>
+                  A lunchbox that can be converted to <EmojiNumber number={3} />
+                  , and…
+                </Highlight>
+              </UlLi>
+              <UlLi>
+                <Highlight>
+                  A lunchbox with <H args={{ name: 'minusOneEffect' }} />
+                </Highlight>{' '}
+                (like the one <Emoji>👧🏻</Emoji> Saya came up with).
+              </UlLi>
+            </Ul>
             <R.Fhkl>
-              <EmojiNumber number={3} /> に変換できる弁当箱と
+              How to reproduce <EmojiNumber number={3} />{' '}
+              <CustomEmoji type="minusOne" /> <br />
+              using a lunchbox.
               <br />
-              <H args={{ name: 'minusOneEffect' }} />
-              がある弁当箱を
-              <br />
-              合体すれば、
-              <EmojiNumber number={3} /> <CustomEmoji type="minusOne" />{' '}
-              の計算箱を再現できる
+              The final result will be <EmojiNumber number={2} />.
             </R.Fhkl>
             <P>
               上の
