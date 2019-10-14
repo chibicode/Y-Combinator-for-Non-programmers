@@ -419,51 +419,55 @@ export default () => (
                   type: 'dog',
                   children: (
                     <>
+                      <P>例を紹介しましょう。こちらをご覧ください。</P>
+                      <Ul>
+                        <UlLi>
+                          <CustomEmoji type="blankNumberRed" /> に{' '}
+                          <EmojiNumber number={2} /> を、
+                        </UlLi>
+                        <UlLi>
+                          <CustomEmoji type="blankNumberYellow" /> に{' '}
+                          <EmojiNumber number={1} /> を、
+                        </UlLi>
+                        <UlLi>
+                          <CustomEmoji type="blankNumberGreen" /> に{' '}
+                          <EmojiNumber number={0} /> を当てはめています。
+                        </UlLi>
+                      </Ul>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Zdpf>
+              <CustomEmoji type="blankNumberRed" />{' '}
+              <CustomEmoji type="blankNumberYellow" />{' '}
+              <CustomEmoji type="blankNumberGreen" /> に{' '}
+              <EmojiNumber number={2} /> <EmojiNumber number={1} />{' '}
+              <EmojiNumber number={0} /> を当てはめてみた
+            </R.Zdpf>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'dog',
+                  children: (
+                    <>
                       <P>
                         次に、
                         <InlineBorder type="falseCase" />{' '}
                         <InlineBorder type="trueCase" />{' '}
                         <InlineBorder type="condition" />{' '}
-                        がどういう意味かは、具体例で説明したほうが分かりやすいと思います。
+                        にそれぞれどんな効果があるか説明する前に、この計算箱を実行してみましょう。
                       </P>
                       <P>
-                        というわけで、
-                        <HighlightBold>
-                          <CustomEmoji type="blankNumberRed" />{' '}
-                          <CustomEmoji type="blankNumberYellow" />{' '}
-                          <CustomEmoji type="blankNumberGreen" />{' '}
-                          に何か適当な数字を入れてみてください！
-                        </HighlightBold>
-                      </P>
-                    </>
-                  )
-                },
-                {
-                  type: 'thinking',
-                  children: (
-                    <>
-                      <P>
-                        分かった。とりあえず、{' '}
-                        <HighlightBold>
-                          上から順に <EmojiNumber number={2} />{' '}
-                          <EmojiNumber number={1} /> <EmojiNumber number={0} />{' '}
-                          を入れてみたよ。
-                        </HighlightBold>
-                      </P>
-                      <P>
-                        これで、
-                        <H args={{ name: 'play' }} />
-                        を押すとどうなるのかな？
+                        <H args={{ name: 'pressPlay' }} />
                       </P>
                     </>
                   )
                 }
               ]}
             />
-            <R.Iatt>
-              <EmojiNumber number={2} /> <EmojiNumber number={1} />{' '}
-              <EmojiNumber number={0} /> を入れてみた
-            </R.Iatt>
+            <R.Iatt></R.Iatt>
             <BubbleQuotes
               quotes={[
                 {
