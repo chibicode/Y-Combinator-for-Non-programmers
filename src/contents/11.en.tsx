@@ -22,7 +22,7 @@ import InlineBorder from 'src/components/InlineBorder'
 import * as R from 'src/components/Runners'
 import NextLessonButton from 'src/components/NextLessonButton'
 import YesNoButtons from 'src/components/YesNoButtons'
-import { TwoPlusFour, Conclusion } from 'src/contents/2.jp'
+import { TwoPlusFour, Conclusion } from 'src/contents/2.en'
 
 export const TrueCaseExplanation = () => (
   <>
@@ -98,16 +98,16 @@ export default () => (
       {
         title: (
           <>
-            「<H args={{ name: 'repeatFeature' }} />
-            」の復習
+            Review: <H args={{ name: 'repeatFeature', capitalize: true }} />
           </>
         ),
         content: (
           <>
             <P>
-              一方、「
-              <H args={{ name: 'repeatFeature' }} />
-              」は、まだ返してもらっていません。これを弁当箱で再現できないと返してもらえないのです。
+              However, they still haven’t gotten{' '}
+              <H args={{ name: 'repeatFeature' }} /> back. They need to{' '}
+              <HighlightBold>reproduce</HighlightBold> this using a lunchbox to
+              get it back.
             </P>
             <TwoColGrid
               noTopNegativeMargin
@@ -115,36 +115,58 @@ export default () => (
               left={
                 <>
                   <R.Bwnp>
-                    <CustomEmoji type="plusOne" /> を{' '}
-                    <CustomEmoji type="blankNumber" /> 回<br />
-                    繰り返す
+                    Repeat <CustomEmoji type="plusOne" />
+                    <br />
+                    <CustomEmoji type="blankNumber" /> times
                   </R.Bwnp>
+                  <ExpressionRunnerSeparator />
+                  <EmojiSeparator
+                    emojis={['❓', '🍱', '❓']}
+                    description={
+                      <>
+                        Reproduce with
+                        <br />a lunchbox
+                      </>
+                    }
+                  />
                 </>
               }
               right={
                 <>
                   <R.Ewfr>
-                    <CustomEmoji type="minusOne" /> を{' '}
-                    <CustomEmoji type="blankNumber" /> 回<br />
-                    繰り返す
+                    Repeat <CustomEmoji type="minusOne" />
+                    <br />
+                    <CustomEmoji type="blankNumber" /> times
                   </R.Ewfr>
+                  <ExpressionRunnerSeparator />
+                  <EmojiSeparator
+                    emojis={['❓', '🍱', '❓']}
+                    description={
+                      <>
+                        Reproduce with
+                        <br />a lunchbox
+                      </>
+                    }
+                  />
                 </>
               }
             />
             <P>
-              「<H args={{ name: 'repeatFeature' }} />
-              」について忘れてしまった方も多いと思うので、ここで復習をしましょう。
+              In case you forgot about <H args={{ name: 'repeatFeature' }} />,
+              let’s do a quick review!
             </P>
             <P>
-              まず、こちらの計算箱をご覧になり、
-              <H args={{ name: 'pressPlay' }} />
+              Take a look at this mathbox and <H args={{ name: 'pressPlay' }} />
+              :
             </P>
             <TwoPlusFour />
           </>
         )
       },
       {
-        title: <>大きな数の足し算や引き算に役立つ</>,
+        title: (
+          <>It’s helpful for additions and subtractions of large numbers</>
+        ),
         content: (
           <>
             <P>

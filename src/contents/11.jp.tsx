@@ -111,6 +111,11 @@ export default () => (
                     <CustomEmoji type="blankNumber" /> 回<br />
                     繰り返す
                   </R.Bwnp>
+                  <ExpressionRunnerSeparator />
+                  <EmojiSeparator
+                    emojis={['❓', '🍱', '❓']}
+                    description={<>弁当箱で再現</>}
+                  />
                 </>
               }
               right={
@@ -120,6 +125,11 @@ export default () => (
                     <CustomEmoji type="blankNumber" /> 回<br />
                     繰り返す
                   </R.Ewfr>
+                  <ExpressionRunnerSeparator />
+                  <EmojiSeparator
+                    emojis={['❓', '🍱', '❓']}
+                    description={<>弁当箱で再現</>}
+                  />
                 </>
               }
             />
