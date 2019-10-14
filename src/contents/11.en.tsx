@@ -442,51 +442,55 @@ export default () => (
                   type: 'dog',
                   children: (
                     <>
-                      <P>
-                        次に、
-                        <InlineBorder type="falseCase" />{' '}
-                        <InlineBorder type="trueCase" />{' '}
-                        <InlineBorder type="condition" />{' '}
-                        がどういう意味かは、具体例で説明したほうが分かりやすいと思います。
-                      </P>
-                      <P>
-                        というわけで、
-                        <HighlightBold>
-                          <CustomEmoji type="blankNumberRed" />{' '}
-                          <CustomEmoji type="blankNumberYellow" />{' '}
-                          <CustomEmoji type="blankNumberGreen" />{' '}
-                          に何か適当な数字を入れてみてください！
-                        </HighlightBold>
-                      </P>
+                      <P>Here’s an example. I used:</P>
+                      <Ul>
+                        <UlLi>
+                          <EmojiNumber number={2} /> for{' '}
+                          <CustomEmoji type="blankNumberRed" />
+                        </UlLi>
+                        <UlLi>
+                          <EmojiNumber number={1} /> for{' '}
+                          <CustomEmoji type="blankNumberYellow" />
+                        </UlLi>
+                        <UlLi>
+                          <EmojiNumber number={0} /> for{' '}
+                          <CustomEmoji type="blankNumberGreen" />
+                        </UlLi>
+                      </Ul>
                     </>
                   )
-                },
+                }
+              ]}
+            />
+            <R.Zdpf>
+              Used <EmojiNumber number={2} /> <EmojiNumber number={1} />{' '}
+              <EmojiNumber number={0} /> for{' '}
+              <CustomEmoji type="blankNumberRed" />{' '}
+              <CustomEmoji type="blankNumberYellow" />{' '}
+              <CustomEmoji type="blankNumberGreen" />
+            </R.Zdpf>
+            <BubbleQuotes
+              quotes={[
                 {
-                  type: 'thinking',
+                  type: 'dog',
                   children: (
                     <>
                       <P>
-                        分かった。とりあえず、{' '}
-                        <HighlightBold>
-                          上から順に <EmojiNumber number={2} />{' '}
-                          <EmojiNumber number={1} /> <EmojiNumber number={0} />{' '}
-                          を入れてみたよ。
-                        </HighlightBold>
+                        <Bold>Next:</Bold> Before I explain what{' '}
+                        <InlineBorder type="falseCase" />{' '}
+                        <InlineBorder type="trueCase" />{' '}
+                        <InlineBorder type="condition" /> means, let’s run this
+                        mathbox and see what happens.
                       </P>
                       <P>
-                        これで、
-                        <H args={{ name: 'play' }} />
-                        を押すとどうなるのかな？
+                        <H args={{ name: 'pressPlay', capitalize: true }} />!
                       </P>
                     </>
                   )
                 }
               ]}
             />
-            <R.Iatt>
-              <EmojiNumber number={2} /> <EmojiNumber number={1} />{' '}
-              <EmojiNumber number={0} /> を入れてみた
-            </R.Iatt>
+            <R.Iatt></R.Iatt>
             <BubbleQuotes
               quotes={[
                 {
@@ -494,7 +498,7 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        <EmojiNumber number={1} /> になった！
+                        It became <EmojiNumber number={1} />!
                       </P>
                     </>
                   )
@@ -503,7 +507,7 @@ export default () => (
                   type: 'dog',
                   children: (
                     <>
-                      <P>では、どうしてこうなったか説明しますね！</P>
+                      <P>Let me explain why!</P>
                     </>
                   )
                 }
@@ -515,7 +519,7 @@ export default () => (
       {
         title: (
           <>
-            下の部分が <EmojiNumber number={0} /> かどうか
+            Check if the bottom section is <EmojiNumber number={0} />
           </>
         ),
         content: (
