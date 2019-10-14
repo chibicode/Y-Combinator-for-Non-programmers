@@ -720,17 +720,16 @@ export default () => (
                   type: 'dog',
                   children: (
                     <>
-                      <P>どうしてこうなったか説明しましょう。</P>
+                      <P>Let me explain why!</P>
                       <P>
-                        こちらも、
+                        <Bold>First</Bold> It checks if{' '}
                         <H
                           args={{
                             name: 'conditionSectionName',
                             type: 'condition'
                           }}
                         />{' '}
-                        の数字が <EmojiNumber number={0} />{' '}
-                        かどうかチェックします。
+                        is <EmojiNumber number={0} />.
                       </P>
                     </>
                   )
@@ -745,27 +744,31 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        今回は
-                        <H
-                          args={{
-                            name: 'conditionSectionName',
-                            type: 'condition'
-                          }}
-                        />{' '}
-                        に入っているのが <EmojiNumber number={0} /> ではなく、
-                        <EmojiNumber number={3} /> ですね。
+                        This time,{' '}
+                        <Highlight>
+                          what’s in{' '}
+                          <H
+                            args={{
+                              name: 'conditionSectionName',
+                              type: 'condition'
+                            }}
+                          />{' '}
+                          is not <EmojiNumber number={0} />.
+                        </Highlight>{' '}
+                        Instead, it’s <EmojiNumber number={3} />.
                       </P>
                       <P>
-                        この場合は、
-                        <HighlightBold>
+                        In this case,{' '}
+                        <Highlight>
+                          the number in{' '}
                           <H
                             args={{
                               name: 'conditionSectionName',
                               type: 'falseCase'
                             }}
                           />{' '}
-                          に入っている数字が最終的に残ります。
-                        </HighlightBold>
+                          becomes the final result.
+                        </Highlight>
                       </P>
                     </>
                   )
@@ -775,8 +778,8 @@ export default () => (
             <R.Guhy />
             <ExpressionRunnerSeparator />
             <R.Seie>
-              <InlineBorder type="falseCase" /> に入っていた{' '}
-              <EmojiNumber number={5} /> が残る
+              The result is <EmojiNumber number={5} />, which was in{' '}
+              <InlineBorder type="falseCase" />
             </R.Seie>
             <BubbleQuotes
               quotes={[
@@ -785,12 +788,11 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        なるほど…
-                        <InlineBorder type="falseCase" /> は、「
-                        <HighlightBold>
-                          ゼロ以外の数字の場合はこちら
-                        </HighlightBold>
-                        」という意味なんだね。
+                        I see… so{' '}
+                        <Highlight>
+                          the <InlineBorder type="falseCase" /> icon means “
+                          <Bold>not zero</Bold>.”
+                        </Highlight>
                       </P>
                     </>
                   )

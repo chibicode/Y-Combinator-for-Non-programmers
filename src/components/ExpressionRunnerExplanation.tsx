@@ -313,7 +313,7 @@ const Explanation = ({
         return (
           <>
             Because <InlineBorder type="condition" /> is{' '}
-            <EmojiNumber number={0} size="mdlg" />, the result is{' '}
+            <EmojiNumber number={0} size="mdlg" />, it chooses{' '}
             <InlineBorder type="trueCase" />
           </>
         )
@@ -332,7 +332,7 @@ const Explanation = ({
         return (
           <>
             Because <InlineBorder type="condition" /> is NOT{' '}
-            <EmojiNumber number={0} />, the result is{' '}
+            <EmojiNumber number={0} />, it chooses{' '}
             <InlineBorder type="falseCase" />
           </>
         )
