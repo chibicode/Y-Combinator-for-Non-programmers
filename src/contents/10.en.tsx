@@ -1370,7 +1370,7 @@ export default () => (
                 <CustomEmoji type="mathBox" /> Mathboxes are also computers:
               </Bold>{' '}
               Mathboxes can compute basic additions and subtractions. So, we can
-              say that they’re a computer, too.
+              say that they’re computers, too.
             </P>
             <EmojiSeparator
               nodes={[
@@ -1386,69 +1386,71 @@ export default () => (
             />
             <P>
               <Bold>
-                <Emoji>🍱</Emoji> 弁当箱も計算機(コンピュータ)かもしれない:
+                <Emoji>🍱</Emoji> Lunchboxes might be computers too?
               </Bold>{' '}
-              では、弁当箱はどうでしょう？ここまで見てきたところ、弁当箱は工夫することで、「1を足す」ことと「1を引く」ことができます。ということは、
-              <Highlight>弁当箱も「計算機(コンピュータ)」</Highlight>
-              なのかもしれません。
+              How about lunchboxes? It seems so far that lunchboxes can add and
+              subtract 1.{' '}
+              <Highlight>
+                That means lunchboxes might be computers, too.
+              </Highlight>
             </P>
             <EmojiSeparator
               emojis={['❓', '🍱', '❓']}
               description={
                 <>
-                  <Emoji>🍱</Emoji> 弁当箱も
-                  <br />
-                  計算機(コンピュータ)かもしれない
+                  <Emoji>🍱</Emoji> Lunchboxes might be computers too?
                 </>
               }
             />
             <P>
-              ここで重要なポイントなのですが、
+              <Bold>In fact:</Bold> We’ll soon learn that lunchboxes are indeed
+              computers. Furthermore,{' '}
               <Highlight>
-                実はこの弁当箱、今から80年以上も前に、
-                <Bold>とある研究の研究対象になっていた</Bold>のです。
-              </Highlight>
-              それは計算機にまつわる研究で、後のコンピュータサイエンスの発展に大きな影響を与えました。
+                Lunchboxes were actually a topic of computer science research
+                more than 80 years ago.
+              </Highlight>{' '}
+              This research was influential and became a foundation of modern
+              computer science.
             </P>
             <EmojiSeparator
               emojis={['🧑🏻', '🍱', '👨🏻‍🦳']}
               description={
                 <>
-                  弁当箱は、今から80年以上も前に
+                  Lunchboxes were a topic of
                   <br />
-                  計算機にまつわる研究の研究対象になっていた
+                  computer science research
+                  <br />
+                  more than 80 years ago.
                 </>
               }
             />
             <P>
-              <Bold>
-                これ以上のことは、上級編をすべて終えたときにお伝えします。
-              </Bold>
-              とりあえず今のところは、
+              <Bold>This is all we can say now.</Bold> We’ll talk more in detail
+              after we’re done with the advanced levels. For now, just keep the
+              following in mind <Emoji>😉</Emoji>:
             </P>
             <Ul>
               <UlLi>
-                <Highlight>「コンピュータ＝計算機」であり、</Highlight>
+                <Highlight>A computer is a computer device.</Highlight>
               </UlLi>
               <UlLi>
                 <Highlight>
-                  弁当箱は昔、計算機にまつわる研究の対象となっていて、
+                  Lunchboxes were a topic of computer science research more than
+                  80 years ago.
                 </Highlight>
               </UlLi>
               <UlLi>
                 <Highlight>
-                  その研究が、後のコンピュータサイエンスの発展に大きな影響を与えた
+                  That research was influential and became a foundation of
+                  modern computer science.
                 </Highlight>
               </UlLi>
             </Ul>
-            <P>
-              ということだけ頭に入れておいてください！<Emoji>😉</Emoji>
-            </P>
           </>
         )
       },
       {
-        title: <>中級はここまで！</>,
+        title: <>That’s it for the intermediate levels!</>,
         content: (
           <>
             <EmojiSeparator emojis={['🎉', '🤗', '🎉']} />
@@ -1459,15 +1461,13 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        どうだ、「
-                        <H args={{ name: 'minusOneFeature' }} />
-                        」も、弁当箱で再現したぞ！(やったのは俺らじゃなくて{' '}
-                        <Emoji>👧🏻</Emoji> サヤちゃんだけど…)
+                        Hey devil, we’ve reproduced{' '}
+                        <H args={{ name: 'minusOneFeature' }} /> using a
+                        lunchbox!
                       </P>
                       <P>
-                        約束通り、「
-                        <H args={{ name: 'minusOneFeature' }} />
-                        」がある計算箱も返してもらう！
+                        (Although it was <Emoji>👧🏻</Emoji> Saya who did all the
+                        work…)
                       </P>
                     </>
                   )
@@ -1476,7 +1476,26 @@ export default () => (
                   type: 'devil',
                   children: (
                     <>
-                      <P>ぐぬぬ…では、返してやろう！</P>
+                      <P>Ugh…!</P>
+                    </>
+                  )
+                },
+                {
+                  type: 'brave',
+                  children: (
+                    <>
+                      <P>
+                        As promised, give us{' '}
+                        <H args={{ name: 'minusOneFeature' }} /> back!
+                      </P>
+                    </>
+                  )
+                },
+                {
+                  type: 'devil',
+                  children: (
+                    <>
+                      <P>Fine, I will give it back to you!</P>
                     </>
                   )
                 },
@@ -1485,7 +1504,7 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        やったー！<Emoji>🎉</Emoji> <Emoji>🎉</Emoji>{' '}
+                        Yay! <Emoji>🎉</Emoji> <Emoji>🎉</Emoji>{' '}
                         <Emoji>🎉</Emoji>
                       </P>
                     </>
@@ -1494,8 +1513,7 @@ export default () => (
               ]}
             />
             <R.Ditw>
-              「<H args={{ name: 'minusOneFeature' }} />
-              」も返してもらった！
+              We got <H args={{ name: 'minusOneFeature' }} /> back!
             </R.Ditw>
             <BubbleQuotes
               quotes={[
@@ -1504,11 +1522,15 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        しかし、
+                        Well, but{' '}
                         <Highlight>
-                          「<H args={{ name: 'repeatFeature' }} />
-                          」がある計算箱は、まだ返すわけにはいかないな。返してほしかったら、これらも弁当箱で再現してみるんだな！
+                          I won’t give you back{' '}
+                          <H args={{ name: 'repeatFeature' }} /> yet.
                         </Highlight>
+                      </P>
+                      <P>
+                        If you want it back, you must reproduce it using a
+                        lunchbox too!
                       </P>
                     </>
                   )
@@ -1519,19 +1541,39 @@ export default () => (
               left={
                 <>
                   <R.Bwnp>
-                    <CustomEmoji type="plusOne" /> を{' '}
-                    <CustomEmoji type="blankNumber" /> 回<br />
-                    繰り返す
+                    Repeat <CustomEmoji type="plusOne" />
+                    <br />
+                    <CustomEmoji type="blankNumber" /> times
                   </R.Bwnp>
+                  <ExpressionRunnerSeparator />
+                  <EmojiSeparator
+                    emojis={['❓', '🍱', '❓']}
+                    description={
+                      <>
+                        Reproduce with
+                        <br />a lunchbox
+                      </>
+                    }
+                  />
                 </>
               }
               right={
                 <>
                   <R.Ewfr>
-                    <CustomEmoji type="minusOne" /> を{' '}
-                    <CustomEmoji type="blankNumber" /> 回<br />
-                    繰り返す
+                    Repeat <CustomEmoji type="minusOne" />
+                    <br />
+                    <CustomEmoji type="blankNumber" /> times
                   </R.Ewfr>
+                  <ExpressionRunnerSeparator />
+                  <EmojiSeparator
+                    emojis={['❓', '🍱', '❓']}
+                    description={
+                      <>
+                        Reproduce with
+                        <br />a lunchbox
+                      </>
+                    }
+                  />
                 </>
               }
             />
@@ -1542,8 +1584,8 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        難しそう…しかし、こっちには <Emoji>👧🏻</Emoji>{' '}
-                        サヤちゃんがいる！彼女ならなんとかしてくれるはずだ！
+                        Seems difficult…. But we have <Emoji>👧🏻</Emoji> Saya on
+                        our side! She’ll be able to solve it for sure!
                       </P>
                     </>
                   )
@@ -1553,8 +1595,13 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        <Highlight>ちなみに、中級編はここまでだ。</Highlight>
-                        決着は、次からはじまる上級編でつけよう！
+                        We’ll see. By the way, we’re now done with the
+                        intermediate levels.
+                      </P>
+                      <P>
+                        <Highlight>
+                          Let’s move on to the advanced levels next!
+                        </Highlight>
                       </P>
                     </>
                   )
@@ -1563,7 +1610,7 @@ export default () => (
                   type: 'brave',
                   children: (
                     <>
-                      <P>よーし、望むところだ！上級編へ進もう！</P>
+                      <P>Alright, let’s do it!</P>
                     </>
                   )
                 }
