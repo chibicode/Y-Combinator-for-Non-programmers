@@ -406,15 +406,15 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        まず、
-                        <HighlightBold>
-                          それぞれの <CustomEmoji type="blankNumberRed" />{' '}
-                          <CustomEmoji type="blankNumberYellow" />{' '}
-                          <CustomEmoji type="blankNumberGreen" />{' '}
-                          には数字を入れることができます。
-                        </HighlightBold>
-                        同じ数字を入れても構いませんし、違う数字を入れても構いません。
+                        <Bold>First:</Bold>{' '}
+                        <Highlight>
+                          You can put any number on each of{' '}
+                          <CustomEmoji type="blankNumberRed" />,{' '}
+                          <CustomEmoji type="blankNumberYellow" />, and{' '}
+                          <CustomEmoji type="blankNumberGreen" />.
+                        </Highlight>
                       </P>
+                      <P>The numbers could be all the same or all different.</P>
                     </>
                   )
                 }
@@ -428,11 +428,11 @@ export default () => (
               ]}
               description={
                 <>
-                  それぞれには数字が入る。
+                  You can put any number on each of
                   <br />
-                  同じ数字を入れても、
-                  <br />
-                  違う数字を入れてもOK
+                  <CustomEmoji type="blankNumberRed" />,{' '}
+                  <CustomEmoji type="blankNumberYellow" />, and{' '}
+                  <CustomEmoji type="blankNumberGreen" />.
                 </>
               }
             />
