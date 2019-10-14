@@ -243,7 +243,7 @@ export default () => (
         )
       },
       {
-        title: <>どうやって再現する？</>,
+        title: <>How do you reproduce it?</>,
         content: (
           <>
             <EmojiSeparator
@@ -256,19 +256,15 @@ export default () => (
               ]}
               description={
                 <>
-                  計算箱の「
-                  <H args={{ name: 'repeatFeature' }} />
-                  」を、
-                  <br />
-                  弁当箱でどう「<HighlightBold>再現</HighlightBold>」する？
+                  How do you <HighlightBold>reproduce</HighlightBold> <br />
+                  <H args={{ name: 'repeatFeature' }} /> with a lunchbox?
                 </>
               }
             />
             <P>
-              ラムダ村の村人たちは、計算箱の「
-              <H args={{ name: 'repeatFeature' }} />
-              」を <Emoji>😈</Emoji>{' '}
-              悪魔から返してもらうべく、弁当箱で繰り返しの機能を再現しようと頑張っていました。しかし…
+              The villagers have been trying hard to reproduce{' '}
+              <H args={{ name: 'repeatFeature' }} /> using a lunchbox. However,
+              looks like it’s not going well for them.
             </P>
             <BubbleQuotes
               quotes={[
@@ -277,14 +273,11 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        うーん、
-                        <Highlight>
-                          どんなに考えても、計算箱の「
-                          <H args={{ name: 'repeatFeature' }} />
-                          」を弁当箱で再現することができない…
-                        </Highlight>
+                        Hmm… no matter how much I try, we can’t think of a way
+                        to reproduce <H args={{ name: 'repeatFeature' }} />{' '}
+                        using a lunchbox!
                       </P>
-                      <P>サヤちゃん、何か思いついた？</P>
+                      <P>Saya, do you have any good ideas?</P>
                     </>
                   )
                 },
@@ -292,7 +285,7 @@ export default () => (
                   type: 'saya',
                   children: (
                     <>
-                      <P>サヤも、さっぱり分からないなあ…</P>
+                      <P>I have no idea either…</P>
                     </>
                   )
                 },
@@ -300,15 +293,15 @@ export default () => (
                   type: 'crying',
                   children: (
                     <>
-                      <P>サヤちゃんでも分からないなんて…もうお手上げだ！</P>
+                      <P>Oh no. If Saya can’t figure it out, we’re doomed!</P>
                     </>
                   )
                 }
               ]}
             />
             <P>
-              すると、悩んでいる村人たちのもとに、悪魔の助手の <Emoji>🐶</Emoji>{' '}
-              ミニオンがやってきました。
+              But luckily for them, <Emoji>🐶</Emoji> Minion seems to be willing
+              to offer some help.
             </P>
             <BubbleQuotes
               quotes={[
@@ -317,8 +310,8 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        みなさん、なかなかお困りのようですね。よければ、
-                        <HighlightBold>ヒントを出しましょうか？</HighlightBold>
+                        Hey guys, looks like you’re struggling. Do you want some{' '}
+                        hint?
                       </P>
                     </>
                   )
@@ -327,7 +320,7 @@ export default () => (
                   type: 'crying',
                   children: (
                     <>
-                      <P>おお、ミニオン！お願いだ、ヒントを教えてくれ！</P>
+                      <P>Oh, thank you Minion! Please, give us a hint!</P>
                     </>
                   )
                 },
@@ -336,9 +329,10 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        分かりました、ではまず、計算箱の「
-                        <H args={{ name: 'conditionFeature' }} />
-                        」について教えましょう。
+                        Sure. First, let’s talk about{' '}
+                        <Highlight>
+                          <H args={{ name: 'conditionFeature' }} />.
+                        </Highlight>
                       </P>
                     </>
                   )
@@ -348,8 +342,7 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        「<H args={{ name: 'conditionFeature' }} />
-                        」だって？何だそりゃ？
+                        <H args={{ name: 'conditionFeature' }} />? What’s that?
                       </P>
                     </>
                   )

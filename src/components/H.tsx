@@ -131,6 +131,7 @@ interface HProps {
     | {
         name: 'conditionSectionName'
         type: 'condition' | 'trueCase' | 'falseCase'
+        capitalize?: true
       }
     | { name: 'lookAtThisBentoBoxPuzzle' }
     | { name: 'convertToMathbox'; lowerCase?: true }
@@ -143,7 +144,7 @@ interface HProps {
     | { name: 'plusOneFeature'; capitalize?: true }
     | { name: 'minusOneFeature'; capitalize?: true; addNewline?: true }
     | { name: 'repeatFeature'; capitalize?: true; addNewline?: true }
-    | { name: 'conditionFeature'; capitalize?: true }
+    | { name: 'conditionFeature'; capitalize?: true; addNewline?: true }
     | { name: 'minusOneEffect'; capitalize?: true }
     | { name: 'startWithTwoCaption' }
     | { name: 'startWithLeftMostOneCaption' }
@@ -1153,7 +1154,28 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
   }
   if (args.name === 'conditionSectionName') {
     if (locale === 'en') {
-      return <>?</>
+      if (args.type === 'condition') {
+        return (
+          <>
+            {args.capitalize ? 'T' : 't'}he bottom section{' '}
+            <InlineBorder type="condition" />
+          </>
+        )
+      } else if (args.type === 'falseCase') {
+        return (
+          <>
+            {args.capitalize ? 'T' : 't'}he top section{' '}
+            <InlineBorder type="falseCase" />
+          </>
+        )
+      } else {
+        return (
+          <>
+            {args.capitalize ? 'T' : 't'}he middle section{' '}
+            <InlineBorder type="trueCase" />
+          </>
+        )
+      }
     } else {
       if (args.type === 'condition') {
         return (
@@ -1625,7 +1647,13 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
   }
   if (args.name === 'conditionFeature') {
     if (locale === 'en') {
-      return <>?</>
+      return (
+        <>
+          {args.capitalize ? 'T' : 't'}he <Bold>“Conditional”</Bold>
+          {args.addNewline ? <br /> : ' '}feature{' '}
+          <CustomEmoji type="condition" />
+        </>
+      )
     } else {
       return (
         <>
