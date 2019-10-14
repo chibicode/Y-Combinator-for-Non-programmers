@@ -7,7 +7,8 @@ import {
   Highlight,
   Ul,
   UlLi,
-  Bold
+  Bold,
+  Italic
 } from 'src/components/ContentTags'
 import H from 'src/components/H'
 import BubbleQuotes from 'src/components/BubbleQuotes'
@@ -60,7 +61,8 @@ export default () => (
           <>
             <P>
               <Bold>Welcome to the advanced levels:</Bold> Previously, the
-              villagers got <H args={{ name: 'plusOneFeature' }} /> and{' '}
+              villagers in Lambda Village got{' '}
+              <H args={{ name: 'plusOneFeature' }} /> and{' '}
               <H args={{ name: 'minusOneFeature' }} /> back.
             </P>
             <EmojiSeparator
@@ -165,39 +167,37 @@ export default () => (
       },
       {
         title: (
-          <>It’s helpful for additions and subtractions of large numbers</>
+          <>It’s necessary for additions and subtractions of large numbers</>
         ),
         content: (
           <>
             <P>
-              こちらも復習になりますが、ラムダ村の村人たちにとって、計算箱の「
-              <H args={{ name: 'repeatFeature' }} />
-              」は、
-              <HighlightBold>
-                大きな数の足し算や引き算をするときに欠かせない機能
-              </HighlightBold>
-              でした。
+              <Bold>(This is still a review)</Bold> For the villagers in Lambda
+              Village, <H args={{ name: 'repeatFeature' }} /> was necessary to
+              do additions and subtractions of large numbers.
             </P>
             <EmojiSeparator
               nodes={[<Emoji>✨</Emoji>, <Emoji>🔁</Emoji>, <Emoji>✨</Emoji>]}
               description={
                 <>
-                  「<H args={{ name: 'repeatFeature' }} />
-                  」は、大きな数の
+                  <H args={{ name: 'repeatFeature', capitalize: true }} /> was
+                  necessary
                   <br />
-                  足し算・引き算に欠かせない
+                  to do additions and subtractions of
+                  <br />
+                  large numbers.
                 </>
               }
             />
             <P>
-              たとえば、
+              <Bold>Example:</Bold> If you don’t use{' '}
+              <H args={{ name: 'repeatFeature' }} />, and wanted to calculate{' '}
               <EmojiNumber number={10} /> <Emoji>➕</Emoji>{' '}
-              <EmojiNumber number={10} />{' '}
-              を計算したい場合、繰り返しの機能を使わないと、
-              <CustomEmoji type="plusOne" /> を10回配置する必要があります。
+              <EmojiNumber number={10} />, you need to use{' '}
+              <CustomEmoji type="plusOne" /> <Italic>ten</Italic> times.
             </P>
             <R.Amoq>
-              <CustomEmoji type="plusOne" /> を10回配置
+              Use <CustomEmoji type="plusOne" /> ten times
             </R.Amoq>
             <P>
               <HighlightBold>
