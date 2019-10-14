@@ -1322,6 +1322,10 @@ export default () => (
             <WhatIsComputer />
             <Hr />
             <P>
+              では、ここで <CustomEmoji type="mathBox" /> 計算箱や{' '}
+              <Emoji>🍱</Emoji> 弁当箱の話に戻りましょう。
+            </P>
+            <P>
               <Bold>
                 <CustomEmoji type="mathBox" />{' '}
                 計算箱も計算機(コンピュータ)である:

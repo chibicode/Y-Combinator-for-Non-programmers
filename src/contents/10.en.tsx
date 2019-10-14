@@ -1362,16 +1362,15 @@ export default () => (
             <WhatIsComputer />
             <Hr />
             <P>
+              Now, let’s talk about <CustomEmoji type="mathBox" /> mathboxes and{' '}
+              <Emoji>🍱</Emoji> lunchboxes.
+            </P>
+            <P>
               <Bold>
-                <CustomEmoji type="mathBox" />{' '}
-                計算箱も計算機(コンピュータ)である:
+                <CustomEmoji type="mathBox" /> Mathboxes are also computers:
               </Bold>{' '}
-              今まで見てきた
-              <Highlight>
-                計算箱も、簡単な計算ができますから、いちおう「計算機
-                (コンピュータ)」ではあるのです
-              </Highlight>
-              。足し算と引き算だけしかできませんが…
+              Mathboxes can compute basic additions and subtractions. So, we can
+              say that they’re a computer, too.
             </P>
             <EmojiSeparator
               nodes={[
@@ -1381,7 +1380,7 @@ export default () => (
               ]}
               description={
                 <>
-                  <CustomEmoji type="mathBox" /> 計算箱も計算機(コンピュータ)
+                  <CustomEmoji type="mathBox" /> Mathboxes are also computers
                 </>
               }
             />
