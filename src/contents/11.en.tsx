@@ -190,23 +190,25 @@ export default () => (
               }
             />
             <P>
-              <Bold>Example:</Bold> If you don’t use{' '}
-              <H args={{ name: 'repeatFeature' }} />, and wanted to calculate{' '}
-              <EmojiNumber number={10} /> <Emoji>➕</Emoji>{' '}
-              <EmojiNumber number={10} />, you need to use{' '}
+              <Bold>Example (from beginner 2):</Bold>{' '}
+              <Highlight>
+                If you don’t use <H args={{ name: 'repeatFeature' }} />,
+              </Highlight>{' '}
+              and wanted to calculate <EmojiNumber number={10} />{' '}
+              <Emoji>➕</Emoji> <EmojiNumber number={10} />, you need to use{' '}
               <CustomEmoji type="plusOne" /> <Italic>ten</Italic> times.
             </P>
             <R.Amoq>
               Use <CustomEmoji type="plusOne" /> ten times
             </R.Amoq>
             <P>
-              <HighlightBold>
-                しかし初級その2でもやった通り、
-                <CustomEmoji type="plusOne" /> の数が増えると、
-                <CustomEmoji type="plusOne" />{' '}
-                の数を間違えてしまう可能性があります。
-              </HighlightBold>
-              そうすると、正しい計算ができません。
+              <Bold>However:</Bold> As the number gets large,{' '}
+              <Highlight>
+                we might make a mistake on the number of{' '}
+                <CustomEmoji type="plusOne" />
+                ’s to use
+              </Highlight>
+              . In such cases, we won’t get the correct results.
             </P>
             <EmojiSeparator
               nodes={[
@@ -216,20 +218,25 @@ export default () => (
               ]}
               description={
                 <>
-                  <CustomEmoji type="plusOne" /> の数を間違えやすい
+                  We might put the wrong number of
+                  <br />
+                  <CustomEmoji type="plusOne" />
+                  ’s as the number gets large.
                 </>
               }
             />
             <P>
-              一方、繰り返しの機能を使えば、
-              <EmojiNumber number={10} /> <Emoji>➕</Emoji>{' '}
-              <EmojiNumber number={10} />{' '}
-              といった計算も、以下のようにシンプルになります。
-              <CustomEmoji type="plusOne" /> の数を間違えることもありません。
+              <Bold>On the other hand:</Bold>{' '}
+              <Highlight>
+                If you use <H args={{ name: 'repeatFeature' }} />,
+              </Highlight>{' '}
+              you can calculate <EmojiNumber number={10} /> <Emoji>➕</Emoji>{' '}
+              <EmojiNumber number={10} /> as follows. You won’t make a mistake
+              on the number of <CustomEmoji type="plusOne" />
+              ’s to use.
             </P>
             <R.Jehv>
-              <CustomEmoji type="plusOne" /> を <EmojiNumber number={10} />{' '}
-              回繰り返す
+              Repeat <CustomEmoji type="plusOne" /> ten times
             </R.Jehv>
             <Conclusion />
           </>
