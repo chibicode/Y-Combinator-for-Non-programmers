@@ -186,7 +186,7 @@ const Explanation = ({
           </>
         ) : (
           <>
-            There’s no match <TopLeftBadge topLeftBadgeType="unmatch" inline />{' '}
+            There’s NO match <TopLeftBadge topLeftBadgeType="unmatch" inline />{' '}
             among <BottomRightBadge bottomRightBadgeType="funcArg" inline />
             ’s and <BottomRightBadge bottomRightBadgeType="funcBound" inline />
             ’s
@@ -293,7 +293,12 @@ const Explanation = ({
     }
     case 'conditionActive': {
       if (locale === 'en') {
-        return <>?</>
+        return (
+          <>
+            Check if <InlineBorder type="condition" /> is{' '}
+            <EmojiNumber number={0} size="mdlg" />
+          </>
+        )
       } else {
         return (
           <>
@@ -305,7 +310,13 @@ const Explanation = ({
     }
     case 'trueCaseActive': {
       if (locale === 'en') {
-        return <>?</>
+        return (
+          <>
+            Because <InlineBorder type="condition" /> is{' '}
+            <EmojiNumber number={0} size="mdlg" />, the result is{' '}
+            <InlineBorder type="trueCase" />
+          </>
+        )
       } else {
         return (
           <>
@@ -318,7 +329,13 @@ const Explanation = ({
     }
     case 'falseCaseActive': {
       if (locale === 'en') {
-        return <>?</>
+        return (
+          <>
+            Because <InlineBorder type="condition" /> is NOT{' '}
+            <EmojiNumber number={0} />, the result is{' '}
+            <InlineBorder type="falseCase" />
+          </>
+        )
       } else {
         return (
           <>

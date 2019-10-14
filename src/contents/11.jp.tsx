@@ -673,6 +673,8 @@ export default () => (
                         />
                         残るのは <EmojiNumber number={4} /> ではなく、
                         <EmojiNumber number={5} /> になります。
+                      </P>
+                      <P>
                         <H args={{ name: 'pressPlay' }} />
                       </P>
                     </>

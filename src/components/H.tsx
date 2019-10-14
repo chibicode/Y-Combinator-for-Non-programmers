@@ -1157,21 +1157,21 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
       if (args.type === 'condition') {
         return (
           <>
-            {args.capitalize ? 'T' : 't'}he bottom section{' '}
+            {args.capitalize ? 'T' : 't'}he <Bold>bottom</Bold> section{' '}
             <InlineBorder type="condition" />
           </>
         )
       } else if (args.type === 'falseCase') {
         return (
           <>
-            {args.capitalize ? 'T' : 't'}he top section{' '}
+            {args.capitalize ? 'T' : 't'}he <Bold>top</Bold> section{' '}
             <InlineBorder type="falseCase" />
           </>
         )
       } else {
         return (
           <>
-            {args.capitalize ? 'T' : 't'}he middle section{' '}
+            {args.capitalize ? 'T' : 't'}he <Bold>middle</Bold> section{' '}
             <InlineBorder type="trueCase" />
           </>
         )

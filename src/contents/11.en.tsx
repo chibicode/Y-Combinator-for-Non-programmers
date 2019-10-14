@@ -531,18 +531,21 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        「<H args={{ name: 'conditionFeature' }} />
-                        」はまず、
-                        <HighlightBold>
+                        Here’s how <H args={{ name: 'conditionFeature' }} />{' '}
+                        works.
+                      </P>
+                      <P>
+                        <Bold>First:</Bold>{' '}
+                        <Highlight>
+                          It checks if the number in{' '}
                           <H
                             args={{
                               name: 'conditionSectionName',
                               type: 'condition'
                             }}
                           />{' '}
-                          に入っている数字が <EmojiNumber number={0} /> かどうか
-                        </HighlightBold>
-                        チェックします。
+                          is <EmojiNumber number={0} /> or not.
+                        </Highlight>
                       </P>
                     </>
                   )
@@ -557,13 +560,14 @@ export default () => (
                   children: (
                     <>
                       <P>
+                        In this case, the number in{' '}
                         <H
                           args={{
                             name: 'conditionSectionName',
                             type: 'condition'
                           }}
                         />{' '}
-                        に入っている数字は <EmojiNumber number={0} /> だね。
+                        is <EmojiNumber number={0} />.
                       </P>
                     </>
                   )
@@ -572,29 +576,31 @@ export default () => (
                   type: 'dog',
                   children: (
                     <>
-                      <P>そうですね。</P>
+                      <P>Yes. And this is what happens next:</P>
                       <Ul>
                         <UlLi>
-                          このように
-                          <H
-                            args={{
-                              name: 'conditionSectionName',
-                              type: 'condition'
-                            }}
-                          />{' '}
-                          に入っている数字が <EmojiNumber number={0} />{' '}
-                          である場合、
+                          <Highlight>
+                            If the number in{' '}
+                            <H
+                              args={{
+                                name: 'conditionSectionName',
+                                type: 'condition'
+                              }}
+                            />{' '}
+                            is <EmojiNumber number={0} />,
+                          </Highlight>
                         </UlLi>
                         <UlLi>
-                          <HighlightBold>
+                          <Highlight>
+                            Then the number in{' '}
                             <H
                               args={{
                                 name: 'conditionSectionName',
                                 type: 'trueCase'
                               }}
                             />{' '}
-                            に入っている数字が最終的に残るのです。
-                          </HighlightBold>
+                            becomes the final result.
+                          </Highlight>
                         </UlLi>
                       </Ul>
                     </>
@@ -605,8 +611,8 @@ export default () => (
             <R.Rjfy />
             <ExpressionRunnerSeparator />
             <R.Rnug>
-              <InlineBorder type="trueCase" /> に入っていた{' '}
-              <EmojiNumber number={1} /> が残る
+              The result is <EmojiNumber number={1} />, which was in{' '}
+              <InlineBorder type="trueCase" />
             </R.Rnug>
             <BubbleQuotes
               quotes={[
@@ -615,7 +621,7 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        なるほど、だから <EmojiNumber number={1} /> が残るのか！
+                        I see, that’s why it becomes <EmojiNumber number={1} />!
                       </P>
                     </>
                   )
@@ -641,10 +647,13 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        では、もうひとつ例を紹介します。こちらは、
-                        <H args={{ name: 'yesNoQuiz' }} />{' '}
-                        にしてみましょう。こちらの計算箱をご覧ください。
+                        I’ll show you another example. This one’s going to be a{' '}
+                        <Bold>
+                          <H args={{ name: 'yesNoQuiz' }} />
+                        </Bold>
+                        .{' '}
                       </P>
+                      <P>Take a look at this mathbox:</P>
                     </>
                   )
                 }
@@ -658,9 +667,9 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        <Bold>質問:</Bold> これを
-                        <H args={{ name: 'play' }} />{' '}
-                        すると、最終的に以下のようになるでしょうか？
+                        <Bold>Question:</Bold> If we{' '}
+                        <H args={{ name: 'play', lowerCase: true }} />, will it
+                        become like this?
                       </P>
                     </>
                   )
@@ -690,13 +699,14 @@ export default () => (
                         <H
                           args={{
                             name: 'theAnswerIs',
-                            isYes: false,
-                            sentence: true
+                            isYes: false
                           }}
                         />
-                        残るのは <EmojiNumber number={4} /> ではなく、
-                        <EmojiNumber number={5} /> になります。
-                        <H args={{ name: 'pressPlay' }} />
+                        . The final result is <EmojiNumber number={5} />, not{' '}
+                        <EmojiNumber number={4} />.
+                      </P>
+                      <P>
+                        <H args={{ name: 'pressPlay', capitalize: true }} />
                       </P>
                     </>
                   )
