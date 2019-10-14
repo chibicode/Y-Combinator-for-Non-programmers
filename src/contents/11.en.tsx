@@ -353,7 +353,11 @@ export default () => (
         )
       },
       {
-        title: <>条件分岐の機能</>,
+        title: (
+          <>
+            <H args={{ name: 'conditionFeature', capitalize: true }} />
+          </>
+        ),
         content: (
           <>
             <BubbleQuotes
@@ -362,15 +366,14 @@ export default () => (
                   type: 'dog',
                   children: (
                     <>
-                      <P>まず、こちらの計算箱をご覧ください。</P>
+                      <P>Take a look at this mathbox:</P>
                     </>
                   )
                 }
               ]}
             />
             <R.Rhoa>
-              「<H args={{ name: 'conditionFeature' }} />
-              」がある計算箱
+              A mathbox with <H args={{ name: 'conditionFeature' }} />
             </R.Rhoa>
             <BubbleQuotes
               quotes={[
@@ -378,22 +381,22 @@ export default () => (
                   type: 'surprised',
                   children: (
                     <>
-                      <P>なんだこれは？</P>
+                      <P>What’s this?</P>
                       <Ul>
                         <UlLi>
-                          それぞれ <CustomEmoji type="blankNumberRed" />{' '}
-                          <CustomEmoji type="blankNumberYellow" />{' '}
-                          <CustomEmoji type="blankNumberGreen" /> が入っていて、
+                          It contains <CustomEmoji type="blankNumberRed" />,{' '}
+                          <CustomEmoji type="blankNumberYellow" />, and{' '}
+                          <CustomEmoji type="blankNumberGreen" />.
                         </UlLi>
                         <UlLi>
-                          左側に <InlineBorder type="falseCase" />{' '}
+                          On the left, there are three signs:{' '}
+                          <InlineBorder type="falseCase" />{' '}
                           <InlineBorder type="trueCase" />{' '}
-                          <InlineBorder type="condition" />{' '}
-                          という3種類の印がある。
+                          <InlineBorder type="condition" />
                         </UlLi>
                       </Ul>
                       <P>
-                        なんだか、信号機 <Emoji>🚦</Emoji> みたいだ…
+                        It looks like a traffic signal <Emoji>🚦</Emoji>…
                       </P>
                     </>
                   )
