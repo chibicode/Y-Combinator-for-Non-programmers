@@ -1291,39 +1291,69 @@ export default () => (
       {
         type: 'sideNote',
         title: (
-          <>Side Note: Does this have anything to do with computer science?</>
+          <>
+            Side Note: Does this have anything to do with computer science or Y
+            combinator?
+          </>
         ),
         preview: {
           content: (
             <>
               <P>
-                ここまで読んで、「パズルは何となく分かるけど、
+                <Bold>You might be wondering:</Bold>{' '}
                 <Highlight>
-                  これってコンピュータサイエンスと何の繋がりがあるの？
+                  “I understand the puzzles, but does it have anything to do
+                  with <Bold>Y combinator</Bold> or{' '}
+                  <Bold>computer science</Bold>?”
                 </Highlight>
-                」と思われた方も多いかもしれません。
               </P>
               <EmojiSeparator
                 emojis={['💻', '🤔', '💻']}
                 description={
                   <>
-                    コンピュータサイエンスと
+                    Does it have anything to do with
                     <br />
-                    何の繋がりがあるの？
+                    <Bold>Y combinator</Bold> or <Bold>computer science</Bold>?
                   </>
                 }
               />
               <P>
-                コンピュータサイエンスとの繋がりは、
+                <Bold>First, about Y combinator:</Bold> You’ll learn about Y
+                combinator on the advanced levels, which will start from the
+                next page.
+              </P>
+              <P>
+                <Bold>Spoiler:</Bold>{' '}
                 <Highlight>
-                  次からはじまる上級編をすべて終えたあとに詳しく説明します
-                </Highlight>
-                が、「<HighlightBold>いま気になる！</HighlightBold>
-                」という方は、↓の「続きを読む」を押してください。「上級編が終わるまで待ちたい」という方は、読み飛ばしても大丈夫です。
+                  Y combinator is actually a special kind of a lunchbox.
+                </Highlight>{' '}
+                You’ll soon find out what that means!
+              </P>
+              <EmojiSeparator
+                emojis={['❓', '🍱', '❓']}
+                description={
+                  <>
+                    <Bold>Y combinator</Bold> is actually
+                    <br />
+                    <Italic>a special kind of a lunchbox</Italic>
+                  </>
+                }
+              />
+              <P>
+                <Bold>Next, about computer science:</Bold> You’ll learn about
+                the relationship between the lunchboxes and computer science
+                after we’re done with the advanced levels.
+              </P>
+              <P>
+                However,{' '}
+                <Highlight>
+                  if you want to know more now, press “Continue Reading” below.
+                </Highlight>{' '}
+                Otherwise, you should keep reading instead.
               </P>
             </>
           ),
-          text: <>続きを読む</>
+          text: <>Continue Reading</>
         },
         content: (
           <>
