@@ -11,12 +11,13 @@ export interface CardContentProps {
 }
 
 const CardContent = ({ preview, children }: CardContentProps) => {
-  const [previewOnly, setPreviewOnly] = useState(!!preview)
+  const defaultPreviewOnly = process.env.isDevelopment ? false : !!preview
+  const [previewOnly, setPreviewOnly] = useState(defaultPreviewOnly)
   return (
     <>
       {preview && preview.content}
       <ExpressionRunnerScrollAdjuster />
-      {preview && previewOnly && (
+      {preview && (process.env.isDevelopment || previewOnly) && (
         <>
           <P>
             <LinkButton

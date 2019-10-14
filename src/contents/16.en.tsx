@@ -1,12 +1,6 @@
 import React from 'react'
 import EpisodeCardList from 'src/components/EpisodeCardList'
-import {
-  P,
-  HighlightBold,
-  Bold,
-  Highlight,
-  Italic
-} from 'src/components/ContentTags'
+import { P, Bold, Highlight, Italic } from 'src/components/ContentTags'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 
 export const WhatIsComputer = () => (
@@ -57,7 +51,13 @@ export const WhatIsComputer = () => (
     </P>
     <EmojiSeparator
       emojis={['🔢', '🔢', '💻', '🔢', '🔢']}
-      description={<>コンピュータは、大量の計算を行える計算機</>}
+      description={
+        <>
+          Computers can do a large amount of
+          <br />
+          computations very quickly
+        </>
+      }
     />
     <P>
       This is why a computer, at its core, is a <Bold>computing device.</Bold>

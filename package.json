@@ -24,6 +24,8 @@
   "scripts": {
     "jp": "IS_DEVELOPMENT=true DEV_LOCALE=jp next -p 9991",
     "en": "IS_DEVELOPMENT=true DEV_LOCALE=en next -p 9990",
+    "jp:production": "PRODUCTION=jp next -p 9993",
+    "en:production": "PRODUCTION=en next -p 9992",
     "dev": "cp tsconfig.dev.json tsconfig.json && rm -f report.*.json && rm -f *.log && rm -rf .next && concurrently \"yarn jp\" \"yarn en\"",
     "ts-node": "tsc --project tsconfig.scripts.json && node -r module-alias/register",
     "precompute": "tsc --project tsconfig.scripts.json && node -r module-alias/register outDir/tsconfig.scripts.json/scripts/precomputeExpressionContainers.js",
