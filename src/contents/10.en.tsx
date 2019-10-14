@@ -1347,13 +1347,14 @@ export default () => (
               <P>
                 However,{' '}
                 <Highlight>
-                  if you want to know more now, press “Continue Reading” below.
+                  if you want to know more now, press “Continue reading about
+                  computer science” below.
                 </Highlight>{' '}
                 Otherwise, you should keep reading instead.
               </P>
             </>
           ),
-          text: <>Continue Reading</>
+          text: <>Continue reading about computer science</>
         },
         content: (
           <>
