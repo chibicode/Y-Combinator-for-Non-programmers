@@ -28,12 +28,12 @@ import { TwoPlusFour, Conclusion } from 'src/contents/2.en'
 export const TrueCaseExplanation = () => (
   <>
     <R.Dqwh>
-      <InlineBorder type="condition" /> が <EmojiNumber number={0} /> なら…
+      If <InlineBorder type="condition" /> is <EmojiNumber number={0} />…
     </R.Dqwh>
     <ExpressionRunnerSeparator />
     <R.Vwvb>
-      <InlineBorder type="trueCase" /> に入っている{' '}
-      <CustomEmoji type="blankNumberYellow" /> が残る
+      <CustomEmoji type="blankNumberYellow" /> in{' '}
+      <InlineBorder type="trueCase" /> becomes the final result
     </R.Vwvb>
   </>
 )
@@ -41,12 +41,12 @@ export const TrueCaseExplanation = () => (
 export const FalseCaseExplanation = () => (
   <>
     <R.Glbk>
-      <InlineBorder type="condition" /> が <EmojiNumber number={0} /> 以外なら…
+      If <InlineBorder type="condition" /> is not <EmojiNumber number={0} />…
     </R.Glbk>
     <ExpressionRunnerSeparator />
     <R.Rtza>
-      <InlineBorder type="falseCase" /> に入っている{' '}
-      <CustomEmoji type="blankNumberRed" /> が残る
+      <CustomEmoji type="blankNumberRed" /> in <InlineBorder type="falseCase" />{' '}
+      becomes the final result
     </R.Rtza>
   </>
 )
@@ -812,59 +812,64 @@ export default () => (
         content: (
           <>
             <P>
-              まとめると、この「
-              <H args={{ name: 'conditionFeature' }} />
-              」の法則は以下の通りです。
+              <Bold>Summary:</Bold> Here’s how{' '}
+              <H args={{ name: 'conditionFeature' }} /> works:
             </P>
             <R.Rhoa>
-              「<H args={{ name: 'conditionFeature' }} />
-              」がある計算箱
+              A mathbox with <H args={{ name: 'conditionFeature' }} />
             </R.Rhoa>
             <P>
               <Highlight>
-                まず、
-                <H
-                  args={{ name: 'conditionSectionName', type: 'condition' }}
-                />{' '}
-                の中にある <CustomEmoji type="blankNumberGreen" /> が{' '}
-                <EmojiNumber number={0} /> かどうかチェックします。
+                <Bold>First:</Bold> It checks if{' '}
+                <CustomEmoji type="blankNumberGreen" /> in{' '}
+                <H args={{ name: 'conditionSectionName', type: 'condition' }} />{' '}
+                is <EmojiNumber number={0} />.
               </Highlight>
             </P>
             <P>
               <Highlight>
-                もし <EmojiNumber number={0} /> なら、{' '}
+                <Bold>
+                  If it’s <EmojiNumber number={0} />:
+                </Bold>{' '}
+                <CustomEmoji type="blankNumberYellow" /> in{' '}
                 <H args={{ name: 'conditionSectionName', type: 'trueCase' }} />{' '}
-                の中にある <CustomEmoji type="blankNumberYellow" /> が残ります。
+                becomes the final result.
               </Highlight>
             </P>
             <TrueCaseExplanation />
             <P>
               <Highlight>
-                もし <EmojiNumber number={0} /> でなければ、
-                <H
-                  args={{ name: 'conditionSectionName', type: 'falseCase' }}
-                />{' '}
-                の中にある <CustomEmoji type="blankNumberRed" /> が残ります。
+                <Bold>
+                  If it’s not <EmojiNumber number={0} />:
+                </Bold>{' '}
+                <CustomEmoji type="blankNumberRed" /> in{' '}
+                <H args={{ name: 'conditionSectionName', type: 'falseCase' }} />{' '}
+                becomes the final result.
               </Highlight>
             </P>
             <FalseCaseExplanation />
             <BubbleQuotes
               quotes={[
                 {
-                  type: 'thinking',
+                  type: 'dog',
                   children: (
                     <>
                       <P>
-                        なるほど、「
+                        By the way, it’s called{' '}
                         <Highlight>
-                          <EmojiNumber number={0} /> かどうか？
-                        </Highlight>
-                        」という「
-                        <HighlightBold>条件</HighlightBold>」によって 「
-                        <HighlightBold>分岐</HighlightBold>
-                        」するから、「
-                        <H args={{ name: 'conditionFeature' }} />
-                        」なのか。
+                          <H
+                            args={{ name: 'conditionFeature', hideIcon: true }}
+                          />
+                        </Highlight>{' '}
+                        because the final result is{' '}
+                        <HighlightBold>conditioned</HighlightBold> on what’s in{' '}
+                        <H
+                          args={{
+                            name: 'conditionSectionName',
+                            type: 'condition'
+                          }}
+                        />
+                        .
                       </P>
                     </>
                   )
@@ -881,14 +886,13 @@ export default () => (
               ]}
               description={
                 <>
-                  「
-                  <Highlight>
-                    <EmojiNumber number={0} /> かどうか？
-                  </Highlight>
-                  」という
-                  <br />「<HighlightBold>条件</HighlightBold>」によって 「
-                  <HighlightBold>分岐</HighlightBold>」するから 「
-                  <H args={{ name: 'conditionFeature' }} />」
+                  It’s called{' '}
+                  <H args={{ name: 'conditionFeature', hideIcon: true }} />
+                  <br />
+                  because the final result is{' '}
+                  <HighlightBold>conditioned</HighlightBold> on
+                  <br />
+                  what’s in <InlineBorder type="condition" />.
                 </>
               }
             />

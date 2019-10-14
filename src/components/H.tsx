@@ -144,7 +144,12 @@ interface HProps {
     | { name: 'plusOneFeature'; capitalize?: true }
     | { name: 'minusOneFeature'; capitalize?: true; addNewline?: true }
     | { name: 'repeatFeature'; capitalize?: true; addNewline?: true }
-    | { name: 'conditionFeature'; capitalize?: true; addNewline?: true }
+    | {
+        name: 'conditionFeature'
+        capitalize?: true
+        addNewline?: true
+        hideIcon?: true
+      }
     | { name: 'minusOneEffect'; capitalize?: true }
     | { name: 'startWithTwoCaption' }
     | { name: 'startWithLeftMostOneCaption' }
@@ -1650,8 +1655,13 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
       return (
         <>
           {args.capitalize ? 'T' : 't'}he <Bold>“Conditional”</Bold>
-          {args.addNewline ? <br /> : ' '}feature{' '}
-          <CustomEmoji type="condition" />
+          {args.addNewline ? <br /> : ' '}feature
+          {!args.hideIcon && (
+            <>
+              {' '}
+              <CustomEmoji type="condition" />
+            </>
+          )}
         </>
       )
     } else {
