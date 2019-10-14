@@ -1236,21 +1236,14 @@ export default () => (
               <br />
               The final result will be <EmojiNumber number={2} />.
             </R.Fhkl>
-            <P>
-              上の
-              <H args={{ name: 'runAndConvertToMathbox' }} />
-              ボタンを押すと、答えが <EmojiNumber number={2} />{' '}
-              になるのを確認できます。
-            </P>
             <Hr />
             <P>
-              まとめると、
+              <Bold>Summary:</Bold>{' '}
               <Highlight>
-                計算箱の「
-                <H args={{ name: 'minusOneFeature' }} />
-                」も、弁当箱で再現することができる
+                A <Bold>mathbox</Bold> that uses <CustomEmoji type="minusOne" />{' '}
+                can be <Bold>reproduced</Bold> by a lunchbox that has{' '}
+                <H args={{ name: 'minusOneEffect' }} />.
               </Highlight>
-              のです。このポイントさえ覚えていただければ、細かいことは分からなくても大丈夫です！
             </P>
             <EmojiSeparator
               nodes={[
@@ -1262,12 +1255,12 @@ export default () => (
               ]}
               description={
                 <>
-                  計算箱の「
-                  <H args={{ name: 'minusOneFeature' }} />
-                  」も、
+                  A <Bold>mathbox</Bold> that uses{' '}
+                  <CustomEmoji type="minusOne" /> can be
                   <br />
-                  弁当箱で「<HighlightBold>再現</HighlightBold>
-                  」することができる
+                  <HighlightBold>reproduced</HighlightBold> by…
+                  <br />A <Bold>lunchbox</Bold> that has{' '}
+                  <H args={{ name: 'minusOneEffect' }} />.
                 </>
               }
             />
@@ -1278,14 +1271,13 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        今回の「
-                        <H args={{ name: 'minusOneFeature' }} />
-                        」を再現する問題も、超難問です。だから、サヤちゃんのように答えを思いつけなくても大丈夫です。
+                        Just like the last problem, this problem was very hard.
+                        We didn’t expect you to answer it.
                       </P>
                       <P>
-                        前回話した通り、
                         <Highlight>
-                          答えを思いつけなくても、答えを見て、「なるほど、そういうことだったのか」と理解できれば、コンピュータサイエンスを学ぶ素養は十分すぎるほどあります。
+                          As long as you can look at the answer and understand
+                          why it’s correct, you’ll be fine.
                         </Highlight>
                       </P>
                     </>
@@ -1298,7 +1290,9 @@ export default () => (
       },
       {
         type: 'sideNote',
-        title: <>余談: コンピュータサイエンスと何の繋がりがあるの？</>,
+        title: (
+          <>Side Note: Does this have anything to do with computer science?</>
+        ),
         preview: {
           content: (
             <>

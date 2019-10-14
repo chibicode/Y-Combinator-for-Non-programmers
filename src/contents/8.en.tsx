@@ -1112,7 +1112,7 @@ export default () => (
               <UlLi>
                 <Highlight>
                   A lunchbox that can be converted to <EmojiNumber number={2} />
-                  , and:
+                  , and…
                 </Highlight>
               </UlLi>
               <UlLi>
