@@ -24,7 +24,7 @@ import ExpressionRunnerCaptionOnly from 'src/components/ExpressionRunnerCaptionO
 import TwoColGrid from 'src/components/TwoColGrid'
 import * as R from 'src/components/Runners'
 import NextLessonButton from 'src/components/NextLessonButton'
-import { WhatIsComputer } from 'src/contents/16.jp'
+import { WhatIsComputer } from 'src/contents/16.en'
 
 export default () => (
   <EpisodeCardList
