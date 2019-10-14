@@ -680,7 +680,7 @@ export default () => (
               }
             />
             <P>
-              They were using mathboxes’ <H args={{ name: 'plusOneFeature' }} />
+              They were using <H args={{ name: 'plusOneFeature' }} />
               , <H args={{ name: 'minusOneFeature' }} />, and{' '}
               <H args={{ name: 'repeatFeature' }} /> to do additions and
               subtractions accurately.

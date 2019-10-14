@@ -26,7 +26,7 @@ export const episodeTitles = {
     8: 'Super Saya',
     9: 'Can’t Add One?',
     10: 'The “Minus One” Effect',
-    11: '?',
+    11: 'The “Conditional” Feature',
     12: '?',
     13: '?',
     14: '?',

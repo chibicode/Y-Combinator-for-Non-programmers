@@ -57,20 +57,22 @@ export default () => (
         title: <>上級編へようこそ！</>,
         content: (
           <>
+            <P>
+              中級編では、<Emoji>😈</Emoji> 悪魔から計算箱の「
+              <H args={{ name: 'plusOneFeature' }} />
+              」と「
+              <H args={{ name: 'minusOneFeature' }} />
+              」を返してもらいました。
+            </P>
             <EmojiSeparator
               nodes={[
                 <CustomEmoji type="plusOne" />,
                 <Emoji>🤗</Emoji>,
                 <CustomEmoji type="minusOne" />
               ]}
+              description={<>ふたつの機能を返してもらった！</>}
             />
-            <P>
-              中級編では、<Emoji>😈</Emoji> 悪魔から計算箱の「
-              <H args={{ name: 'plusOneFeature' }} />
-              」と「
-              <H args={{ name: 'minusOneFeature' }} />
-              」を返してもらいました。どちらも、弁当箱で再現することができたのです。
-            </P>
+            <P>どちらも、弁当箱で再現することができたのです。</P>
             <R.Rviy>
               「<H args={{ name: 'plusOneFeature' }} />」
             </R.Rviy>
@@ -78,7 +80,7 @@ export default () => (
             <R.Eweo>弁当箱で再現</R.Eweo>
             <Hr />
             <R.Ditw>
-              <H args={{ name: 'minusOneFeature' }} />
+              「<H args={{ name: 'minusOneFeature' }} />」
             </R.Ditw>
             <ExpressionRunnerSeparator />
             <R.Bgko>弁当箱で再現</R.Bgko>

@@ -28,7 +28,6 @@ import { WhatIsComputer } from 'src/contents/16.en'
 
 export default () => (
   <EpisodeCardList
-    underConstruction
     cards={[
       {
         title: <>What we got back is…</>,
