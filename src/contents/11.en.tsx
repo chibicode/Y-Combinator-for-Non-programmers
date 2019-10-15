@@ -53,7 +53,6 @@ export const FalseCaseExplanation = () => (
 
 export default () => (
   <EpisodeCardList
-    underConstruction
     cards={[
       {
         title: <>Welcome to the advanced levels!</>,
@@ -900,7 +899,7 @@ export default () => (
         )
       },
       {
-        title: <>繰り返しの機能と関連がある</>,
+        title: <>It’s a secret feature of a mathbox</>,
         content: (
           <>
             <BubbleQuotes
@@ -910,13 +909,11 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        この「
-                        <H args={{ name: 'conditionFeature' }} />
-                        」は、
-                        <HighlightBold>
-                          実は計算箱にもともと備わっていた隠れ機能
-                        </HighlightBold>
-                        なんです。
+                        You probably didn’t know this, but{' '}
+                        <Highlight>
+                          <H args={{ name: 'conditionFeature' }} /> is actually
+                          one of the secret features of a mathbox.
+                        </Highlight>
                       </P>
                     </>
                   )
@@ -926,10 +923,16 @@ export default () => (
             <EmojiSeparator
               nodes={[
                 <Emoji>✨</Emoji>,
+                <CustomEmoji type="mathBox" />,
                 <CustomEmoji type="condition" />,
                 <Emoji>✨</Emoji>
               ]}
-              description={<>計算箱に備わっていた隠れ機能</>}
+              description={
+                <>
+                  It’s a secret feature of a mathbox{' '}
+                  <CustomEmoji type="mathBox" />
+                </>
+              }
             />
             <BubbleQuotes
               quotes={[
@@ -937,9 +940,7 @@ export default () => (
                   type: 'surprised',
                   children: (
                     <>
-                      <P>
-                        へー、そんなこと、ラムダ村の俺らは誰も知らなかったぞ！
-                      </P>
+                      <P>Really? I didn’t know this feature existed!</P>
                     </>
                   )
                 },
@@ -948,13 +949,12 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        そうなんです。「
-                        <H args={{ name: 'conditionFeature' }} />
-                        」は
+                        In fact,{' '}
                         <Highlight>
-                          あまり役に立たないので、いつしか忘れ去られてしまった
-                        </Highlight>
-                        のです。
+                          <H args={{ name: 'conditionFeature' }} /> has been
+                          forgotten by most people,
+                        </Highlight>{' '}
+                        because it’s not a very useful feature.
                       </P>
                     </>
                   )
@@ -963,30 +963,39 @@ export default () => (
                   type: 'thinking',
                   children: (
                     <>
-                      <P>
-                        たしかに、「
-                        <Highlight>
-                          <EmojiNumber number={0} /> かどうか？
-                        </Highlight>
-                        」をチェックできても、何の役にも立たなさそうだけど…
-                      </P>
+                      <P>I guess it doesn’t seem very useful…</P>
                     </>
                   )
-                },
+                }
+              ]}
+            />
+          </>
+        )
+      },
+      {
+        title: (
+          <>
+            It’s related to <H args={{ name: 'repeatFeature' }} />
+          </>
+        ),
+        content: (
+          <>
+            <BubbleQuotes
+              quotes={[
                 {
                   type: 'dog',
                   children: (
                     <>
                       <P>
-                        しかし、この「
-                        <H args={{ name: 'conditionFeature' }} />
-                        」は、
+                        But <H args={{ name: 'conditionFeature' }} /> is
+                        actually important.
+                      </P>
+                      <P>
+                        <Bold>Why?</Bold>{' '}
                         <Highlight>
-                          実は「
-                          <H args={{ name: 'repeatFeature' }} />
-                          」と関連がある
+                          Because it actually is related to{' '}
+                          <H args={{ name: 'repeatFeature' }} />.
                         </Highlight>
-                        のです。
                       </P>
                     </>
                   )
@@ -1001,10 +1010,11 @@ export default () => (
               ]}
               description={
                 <>
-                  「<H args={{ name: 'conditionFeature' }} />
-                  」は、
-                  <br />「<H args={{ name: 'repeatFeature' }} />
-                  」と関連がある
+                  <H args={{ name: 'conditionFeature', capitalize: true }} />
+                  <br />
+                  is related to
+                  <br />
+                  <H args={{ name: 'repeatFeature' }} />
                 </>
               }
             />
@@ -1014,7 +1024,7 @@ export default () => (
                   type: 'surprised',
                   children: (
                     <>
-                      <P>え、そうなの？</P>
+                      <P>Really? These two are related?</P>
                     </>
                   )
                 },
@@ -1022,34 +1032,22 @@ export default () => (
                   type: 'dog',
                   children: (
                     <>
-                      <P>
-                        はい。ここが重要なのですが…村人のみなさんは「
-                        <H args={{ name: 'repeatFeature' }} />
-                        」を弁当箱で再現できずに苦戦していましたよね。
-                      </P>
-                    </>
-                  )
-                },
-                {
-                  type: 'sad',
-                  children: (
-                    <>
-                      <P>うん、どうしていいか全然分からない…</P>
-                    </>
-                  )
-                },
-                {
-                  type: 'dog',
-                  children: (
-                    <>
-                      <P>
-                        実は、まず「
-                        <H args={{ name: 'conditionFeature' }} />
-                        」を弁当箱で再現することができれば、「
-                        <H args={{ name: 'repeatFeature' }} />
-                        」を弁当箱で再現できてしまうんです！
-                      </P>
-                      <P>その理由は、また後に説明しますが…</P>
+                      <P>Yes. And because they’re related,</P>
+                      <Ul>
+                        <UlLi>
+                          <Highlight>
+                            If you’re able to reproduce{' '}
+                            <H args={{ name: 'conditionFeature' }} /> using a
+                            lunchbox,
+                          </Highlight>
+                        </UlLi>
+                        <UlLi>
+                          <Highlight>
+                            You’ll be able to reproduce{' '}
+                            <H args={{ name: 'repeatFeature' }} /> too!
+                          </Highlight>
+                        </UlLi>
+                      </Ul>
                     </>
                   )
                 }
@@ -1065,10 +1063,11 @@ export default () => (
               ]}
               description={
                 <>
-                  「<H args={{ name: 'conditionFeature' }} />
-                  」を
+                  If you can reproduce
                   <br />
-                  弁当箱で再現できれば…
+                  <H args={{ name: 'conditionFeature' }} />
+                  <br />
+                  using a lunchbox, then…
                 </>
               }
             />
@@ -1083,10 +1082,9 @@ export default () => (
               ]}
               description={
                 <>
-                  「<H args={{ name: 'repeatFeature' }} />
-                  」も
+                  You’ll be able to reproduce
                   <br />
-                  弁当箱で再現できる！
+                  <H args={{ name: 'repeatFeature' }} /> too!
                 </>
               }
             />
@@ -1096,7 +1094,7 @@ export default () => (
                   type: 'surprised',
                   children: (
                     <>
-                      <P>なんと！</P>
+                      <P>Wow, really?</P>
                     </>
                   )
                 },
@@ -1105,14 +1103,15 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        だからまずは、「
-                        <H args={{ name: 'conditionFeature' }} />
-                        」を弁当箱で再現してみてください！
+                        Yes.{' '}
+                        <Highlight>
+                          So you should first try to reproduce{' '}
+                          <H args={{ name: 'conditionFeature' }} /> first.
+                        </Highlight>
                       </P>
                       <P>
-                        これが解ければ、「
-                        <H args={{ name: 'repeatFeature' }} />
-                        」を弁当箱で再現するのに一歩近づきますよ。
+                        Once you do that, you’ll be able to reproduce{' '}
+                        <H args={{ name: 'repeatFeature' }} /> too.
                       </P>
                     </>
                   )
@@ -1120,24 +1119,17 @@ export default () => (
               ]}
             />
             <R.Rhoa>
-              「<H args={{ name: 'conditionFeature' }} />
-              」を…
+              If you can reproduce
+              <br />
+              <H args={{ name: 'conditionFeature' }} />
+              <br />
+              using a lunchbox…
             </R.Rhoa>
             <ExpressionRunnerSeparator />
-            <EmojiSeparator
-              emojis={['❓', '🍱', '❓']}
-              description={
-                <>
-                  <HighlightBold>弁当箱で再現できたら…</HighlightBold>
-                </>
-              }
-            />
-            <ExpressionRunnerSeparator />
             <ExpressionRunnerCaptionOnly>
-              「<H args={{ name: 'repeatFeature' }} />
-              」を
+              You’ll be able to reproduce
               <br />
-              再現するのに一歩近づく！
+              <H args={{ name: 'repeatFeature' }} /> too!
             </ExpressionRunnerCaptionOnly>
             <BubbleQuotes
               quotes={[
@@ -1145,16 +1137,19 @@ export default () => (
                   type: 'thinking',
                   children: (
                     <>
-                      <P>そうか。よーし、やってみよう！</P>
+                      <P>Hmm… ok.</P>
+                      <P>
+                        I don’t know why these two features are related… but
+                        let’s try anyway!
+                      </P>
                     </>
                   )
                 }
               ]}
             />
             <P>
-              というわけで、次のページでは、「
-              <H args={{ name: 'conditionFeature' }} />
-              」を弁当箱で再現してみます。次に進みましょう！
+              On the next page, we’ll try to reproduce{' '}
+              <H args={{ name: 'conditionFeature' }} /> using a lunchbox!
             </P>
             <NextLessonButton />
           </>

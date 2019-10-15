@@ -3,7 +3,7 @@ import * as React from 'react'
 const ConditionSvg = (props: React.SVGProps<SVGSVGElement>) => (
   <svg viewBox="0 0 36 36" {...props}>
     <g stroke="none" strokeWidth={1} fill="none" fillRule="evenodd">
-      <g fill="#3B88C3" fillRule="nonzero">
+      <g fill="#0097A7" fillRule="nonzero">
         <path
           d="M36,32 C36,34.209 34.209,36 32,36 L4,36 C1.791,36 0,34.209 0,32 L0,4 C0,1.791 1.791,0 4,0 L32,0 C34.209,0 36,1.791 36,4 L36,32 Z"
           id="Path"

@@ -863,7 +863,7 @@ export default () => (
         )
       },
       {
-        title: <>繰り返しの機能と関連がある</>,
+        title: <>計算箱の隠れ機能</>,
         content: (
           <>
             <BubbleQuotes
@@ -889,6 +889,7 @@ export default () => (
             <EmojiSeparator
               nodes={[
                 <Emoji>✨</Emoji>,
+                <CustomEmoji type="mathBox" />,
                 <CustomEmoji type="condition" />,
                 <Emoji>✨</Emoji>
               ]}
@@ -935,7 +936,18 @@ export default () => (
                       </P>
                     </>
                   )
-                },
+                }
+              ]}
+            />
+          </>
+        )
+      },
+      {
+        title: <>繰り返しの機能と関連がある</>,
+        content: (
+          <>
+            <BubbleQuotes
+              quotes={[
                 {
                   type: 'dog',
                   children: (
@@ -943,13 +955,15 @@ export default () => (
                       <P>
                         しかし、この「
                         <H args={{ name: 'conditionFeature' }} />
-                        」は、
+                        」は、実はとても重要なのです。
+                      </P>
+                      <P>
                         <Highlight>
-                          実は「
+                          なぜかというと、「
                           <H args={{ name: 'repeatFeature' }} />
                           」と関連がある
                         </Highlight>
-                        のです。
+                        からです。
                       </P>
                     </>
                   )
@@ -986,7 +1000,7 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        はい。ここが重要なのですが…村人のみなさんは「
+                        はい。そして、村人のみなさんは「
                         <H args={{ name: 'repeatFeature' }} />
                         」を弁当箱で再現できずに苦戦していましたよね。
                       </P>
