@@ -686,7 +686,7 @@ export default () => (
         )
       },
       {
-        title: <>では確かめてみよう！</>,
+        title: <>Let’s check!</>,
         content: (
           <>
             <BubbleQuotes
@@ -696,11 +696,38 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        では、
-                        <EmojiNumber number={2} /> <EmojiNumber number={1} />{' '}
-                        <EmojiNumber number={0} />{' '}
-                        にそれぞれ変換できる弁当箱を入れてみたよ。(黄色の部分)
+                        So I filled each of{' '}
+                        <CustomEmoji type="blankNumberRed" />{' '}
+                        <CustomEmoji type="blankNumberYellow" />{' '}
+                        <CustomEmoji type="blankNumberGreen" /> with lunchboxes
+                        that can be converted to <EmojiNumber number={2} />{' '}
+                        <EmojiNumber number={1} /> <EmojiNumber number={0} />.
                       </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Jbqw>
+              Use <EmojiNumber number={2} /> <EmojiNumber number={1} />{' '}
+              <EmojiNumber number={0} /> for{' '}
+              <CustomEmoji type="blankNumberRed" />{' '}
+              <CustomEmoji type="blankNumberYellow" />{' '}
+              <CustomEmoji type="blankNumberGreen" />
+            </R.Jbqw>
+            <ExpressionRunnerSeparator />
+            <R.Kfru>
+              Fill with lunchboxes that can be
+              <br />
+              converted to <EmojiNumber number={2} /> <EmojiNumber number={1} />{' '}
+              <EmojiNumber number={0} />
+            </R.Kfru>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'saya',
+                  children: (
+                    <>
                       <P>
                         というわけで、
                         <H args={{ name: 'pressFastForward', girl: true }} />
@@ -723,15 +750,7 @@ export default () => (
                 }
               ]}
             />
-            <R.Svbd>
-              黄色の部分は、上から順に
-              <br />
-              <EmojiNumber number={2} /> に変換できる弁当箱、
-              <br />
-              <EmojiNumber number={1} /> に変換できる弁当箱、
-              <br />
-              <EmojiNumber number={0} /> に変換できる弁当箱。
-            </R.Svbd>
+            <R.Svbd></R.Svbd>
             <BubbleQuotes
               quotes={[
                 {

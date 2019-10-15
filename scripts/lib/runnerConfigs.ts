@@ -1987,10 +1987,16 @@ export const jbqw: ExpressionRunnerShorthandConfig = {
   showPriorities: true
 }
 
+export const kfru: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.zmua,
+  showPriorities: true
+}
+
 export const svbd: ExpressionRunnerShorthandConfig = {
   runner: 'playButtonOnly',
   skipToTheEnd: false,
-  initialExpressionContainer: initialExpressionContainers.zmua,
+  initialExpressionContainer: initialExpressionContainers.exhr,
   showPriorities: true,
   skipActive: true,
   speed: 2

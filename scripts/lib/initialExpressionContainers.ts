@@ -1331,6 +1331,19 @@ export const eryp = initializeExpressionContainer(
   )
 )
 
+export const exhr = initializeExpressionContainer(
+  isZeroParams(
+    'a',
+    'b',
+    'c',
+    'd',
+    'e',
+    numberParams('f', 'g', 1),
+    numberParams('h', 'i', 2),
+    numberParams('j', 'k', 0)
+  )
+)
+
 export const zmua = initializeExpressionContainer(
   isZeroParams(
     'a',
