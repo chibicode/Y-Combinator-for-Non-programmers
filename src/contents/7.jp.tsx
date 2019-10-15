@@ -6,6 +6,7 @@ import {
   HighlightBold,
   Ul,
   UlLi,
+  Bold,
   Hr
 } from 'src/components/ContentTags'
 import CustomEmoji from 'src/components/CustomEmoji'
@@ -1326,7 +1327,7 @@ export default () => (
                   content: (
                     <>
                       <P>
-                        今回の弁当箱では、
+                        <Bold>復習が必要ですか？:</Bold> 今回の弁当箱では、
                         <Highlight>初級その5で学んだ法則が登場</Highlight>
                         します。
                       </P>

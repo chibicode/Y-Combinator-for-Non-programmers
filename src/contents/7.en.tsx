@@ -1294,15 +1294,16 @@ export default () => (
                   content: (
                     <>
                       <P>
-                        To solve the above lunchbox,{' '}
+                        <Bold>Need a review?:</Bold> To solve the above
+                        lunchbox,{' '}
                         <Highlight>
                           we’ll need to use the rules from{' '}
                           <Bold>Beginner 5</Bold>.
                         </Highlight>
                       </P>
                       <P>
-                        <Bold>If you’ve forgotten the rules:</Bold> Press “Do a
-                        Quick Review” below to review.
+                        If you’ve forgotten the rules, press “Do a Quick Review”
+                        below to review.
                       </P>
                     </>
                   )
