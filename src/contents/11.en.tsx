@@ -41,7 +41,7 @@ export const TrueCaseExplanation = () => (
 export const FalseCaseExplanation = () => (
   <>
     <R.Glbk>
-      If <InlineBorder type="condition" /> is not <EmojiNumber number={0} />…
+      If <InlineBorder type="condition" /> is NOT <EmojiNumber number={0} />…
     </R.Glbk>
     <ExpressionRunnerSeparator />
     <R.Rtza>
