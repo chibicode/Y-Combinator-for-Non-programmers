@@ -40,7 +40,8 @@ export const vdhd: ExpressionRunnerShorthandConfig = {
   skipToTheEnd: false,
   initialExpressionContainer: initialExpressionContainers.pisd,
   initialState: 'showFuncUnbound',
-  showPriorities: true
+  showPriorities: true,
+  speed: 1.25
 }
 
 export const ltpe: ExpressionRunnerShorthandConfig = {
@@ -126,7 +127,8 @@ export const myjz: ExpressionRunnerShorthandConfig = {
   skipToTheEnd: false,
   initialExpressionContainer: initialExpressionContainers.drvy,
   showPriorities: true,
-  initialState: 'active'
+  initialState: 'active',
+  speed: 1.25
 }
 
 export const ayok: ExpressionRunnerShorthandConfig = {
@@ -206,7 +208,8 @@ export const zemy: ExpressionRunnerShorthandConfig = {
   skipToTheEnd: false,
   initialExpressionContainer: initialExpressionContainers.hrdv,
   initialState: 'active',
-  showPriorities: true
+  showPriorities: true,
+  speed: 1.25
 }
 
 export const fclo: ExpressionRunnerShorthandConfig = {
@@ -393,7 +396,8 @@ export const hykj: ExpressionRunnerShorthandConfig = {
   skipToTheEnd: false,
   initialExpressionContainer: initialExpressionContainers.lqti,
   initialState: 'showFuncUnbound',
-  showPriorities: true
+  showPriorities: true,
+  speed: 1.25
 }
 
 export const iatt: ExpressionRunnerShorthandConfig = {

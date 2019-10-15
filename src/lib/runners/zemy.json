@@ -427,7 +427,7 @@
       "activePriority": 2
     }
   ],
-  "speed": 1,
+  "speed": 1.25,
   "hideControls": false,
   "explanationsVisibility": "hiddenInitialPausedOnly",
   "hidePriorities": false,
