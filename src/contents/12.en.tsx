@@ -729,22 +729,9 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        というわけで、
+                        Let’s run it!{' '}
                         <H args={{ name: 'pressFastForward', girl: true }} />
                       </P>
-                      <Ul>
-                        <UlLi>
-                          複雑なので、
-                          <Highlight>目で追わなくても大丈夫だよ！</Highlight>
-                        </UlLi>
-                        <UlLi>
-                          ちょっと時間がかかるので、待てない方は下の「
-                          <HighlightBold>
-                            <H args={{ name: 'skipToTheEnd' }} /> →
-                          </HighlightBold>
-                          」を押してね！
-                        </UlLi>
-                      </Ul>
                     </>
                   )
                 }
