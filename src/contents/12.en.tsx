@@ -120,26 +120,25 @@ export default () => (
         title: <>Saya’s Idea</>,
         content: (
           <>
-            <P>するといつものように、サヤちゃんが何かひらめいたようです。</P>
+            <P>As usual, Saya seems to have an idea!</P>
             <BubbleQuotes
               quotes={[
                 {
                   type: 'saya',
                   children: (
                     <>
-                      <P>サヤもちょっと考えてみた！これを見てくれる？</P>
+                      <P>Hey, can you take a look at this?</P>
                     </>
                   )
                 }
               ]}
             />
             <R.Rhoa>
-              「<H args={{ name: 'conditionFeature' }} />
-              」を…
+              Reproduce <H args={{ name: 'conditionFeature' }} />…
             </R.Rhoa>
             <ExpressionRunnerSeparator />
             <R.Sdta>
-              <Emoji>👧🏻</Emoji> 弁当箱で再現してみた！
+              <Emoji>👧🏻</Emoji> Using a lunchbox!
             </R.Sdta>
             <BubbleQuotes
               quotes={[
@@ -147,9 +146,7 @@ export default () => (
                   type: 'surprised',
                   children: (
                     <>
-                      <P>
-                        なんと！じゃあ、これが本当に再現できてるか、確かめてみよう！
-                      </P>
+                      <P>Wow! Thanks Saya! Let’s see if this actually works.</P>
                     </>
                   )
                 }
