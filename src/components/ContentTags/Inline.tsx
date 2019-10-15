@@ -9,6 +9,7 @@ import {
   CardProps
 } from 'src/components/Card'
 import { LinkContext } from 'src/components/ContentTags/Links'
+import BubbleQuoteContext from 'src/components/BubbleQuoteContext'
 
 export type InlineHighlightType = 'white' | 'none' | 'blue' | 'pink'
 
@@ -113,6 +114,10 @@ export const Highlight = ({
   const { inHighlightType } = useContext(HighlightContext)
   const { inLink } = useContext(LinkContext)
   const { color } = useContext(CardColorContext)
+  const { inQuote } = useContext(BubbleQuoteContext)
+
+  const baseColor = inQuote ? 'white' : color
+
   if (inHighlightType === 'white' || highlightType === 'none') {
     return <span {...props} />
   } else {
@@ -124,12 +129,12 @@ export const Highlight = ({
               background: ${highlightType === 'pink'
                 ? colors('pink50')
                 : highlightType === 'blue'
-                ? mix(color, colors('blue50'))
+                ? mix(baseColor, colors('blue50'))
                 : highlightType === 'white'
                 ? colors('white')
-                : color === 'yellow'
-                ? mix(color, colors('pink100'))
-                : mix(color, colors('yellow100'))};
+                : baseColor === 'yellow'
+                ? mix(baseColor, colors('pink100'))
+                : mix(baseColor, colors('yellow100'))};
             `,
             inLink &&
               css`
