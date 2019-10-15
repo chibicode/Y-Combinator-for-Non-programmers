@@ -473,7 +473,7 @@ export default () => (
         )
       },
       {
-        title: <>やっぱりサヤちゃんが正解？</>,
+        title: <>So Saya’s right?</>,
         content: (
           <>
             <BubbleQuotes
@@ -483,9 +483,8 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        とういうことは、やっぱりサヤちゃんの弁当箱が、「
-                        <H args={{ name: 'conditionFeature' }} />
-                        」の再現としては正解なのかな？
+                        So… it looks like Saya’s lunchbox successfully
+                        reproduced <H args={{ name: 'conditionFeature' }} />?
                       </P>
                     </>
                   )
@@ -493,14 +492,13 @@ export default () => (
               ]}
             />
             <R.Rhoa>
-              「<H args={{ name: 'conditionFeature' }} />
-              」を…
+              Reproduce <H args={{ name: 'conditionFeature' }} />…
             </R.Rhoa>
             <ExpressionRunnerSeparator />
             <R.Sdta>
-              <Emoji>👧🏻</Emoji> サヤちゃんが弁当箱で再現してみた！
+              <Emoji>👧🏻</Emoji> Using a lunchbox!
               <br />
-              <HighlightBold>果たして、これが正解なのか？</HighlightBold>
+              <Bold>Question:</Bold> Is this the correct answer?
             </R.Sdta>
             <BubbleQuotes
               quotes={[
@@ -508,7 +506,9 @@ export default () => (
                   type: 'saya',
                   children: (
                     <>
-                      <P>念のため、最終チェックをしたほうがいいかも！</P>
+                      <P>
+                        Let’s do a <Italic>final check</Italic>, just in case!
+                      </P>
                     </>
                   )
                 },
@@ -516,7 +516,7 @@ export default () => (
                   type: 'surprised',
                   children: (
                     <>
-                      <P>最終チェックだって？</P>
+                      <P>Final check?</P>
                     </>
                   )
                 }
@@ -528,9 +528,9 @@ export default () => (
       {
         title: (
           <>
-            <CustomEmoji type="blankNumberRed" />{' '}
+            Fill all of <CustomEmoji type="blankNumberRed" />{' '}
             <CustomEmoji type="blankNumberYellow" />{' '}
-            <CustomEmoji type="blankNumberGreen" /> 全てを埋める
+            <CustomEmoji type="blankNumberGreen" />
           </>
         ),
         content: (
@@ -541,19 +541,20 @@ export default () => (
                   type: 'saya',
                   children: (
                     <>
-                      <P>いちおう最終チェックとして、</P>
+                      <P>As a final check:</P>
                       <Ul>
                         <UlLi>
                           <Highlight>
+                            Let’s fill all of{' '}
                             <CustomEmoji type="blankNumberRed" />{' '}
                             <CustomEmoji type="blankNumberYellow" />{' '}
-                            <CustomEmoji type="blankNumberGreen" />{' '}
-                            の全てを埋めてみて、
+                            <CustomEmoji type="blankNumberGreen" /> with some
+                            random numbers, and…
                           </Highlight>
                         </UlLi>
                         <UlLi>
                           <Highlight>
-                            それをサヤの弁当箱でも再現できるかやってみるよ！
+                            See if my lunchbox can <Bold>reproduce</Bold> it.
                           </Highlight>
                         </UlLi>
                       </Ul>
@@ -564,7 +565,7 @@ export default () => (
                   type: 'thinking',
                   children: (
                     <>
-                      <P>ん？どういうこと？</P>
+                      <P>Hmm, what do you mean by that?</P>
                     </>
                   )
                 },
@@ -572,25 +573,19 @@ export default () => (
                   type: 'saya',
                   children: (
                     <>
-                      <P>たとえば、</P>
+                      <P>For example:</P>
                       <Ul>
                         <UlLi>
-                          <Highlight>
-                            条件分岐の機能がある計算箱の{' '}
-                            <CustomEmoji type="blankNumberRed" />{' '}
-                            <CustomEmoji type="blankNumberYellow" />{' '}
-                            <CustomEmoji type="blankNumberGreen" /> に、
-                          </Highlight>
+                          On the following mathbox, if we fill each of{' '}
+                          <CustomEmoji type="blankNumberRed" />{' '}
+                          <CustomEmoji type="blankNumberYellow" />{' '}
+                          <CustomEmoji type="blankNumberGreen" /> with{' '}
+                          <EmojiNumber number={2} /> <EmojiNumber number={1} />{' '}
+                          <EmojiNumber number={0} />…
                         </UlLi>
                         <UlLi>
-                          <Highlight>
-                            それぞれ <EmojiNumber number={2} />{' '}
-                            <EmojiNumber number={1} />{' '}
-                            <EmojiNumber number={0} /> を入れた場合…
-                          </Highlight>
-                        </UlLi>
-                        <UlLi>
-                          最終的に <EmojiNumber number={1} /> が残るよね。
+                          Then the final result would be{' '}
+                          <EmojiNumber number={1} />.
                         </UlLi>
                       </Ul>
                     </>
@@ -599,22 +594,23 @@ export default () => (
               ]}
             />
             <R.Rhoa>
-              <CustomEmoji type="blankNumberRed" />{' '}
+              If we fill each of <CustomEmoji type="blankNumberRed" />{' '}
               <CustomEmoji type="blankNumberYellow" />{' '}
-              <CustomEmoji type="blankNumberGreen" /> の部分に、
+              <CustomEmoji type="blankNumberGreen" />…
             </R.Rhoa>
             <ExpressionRunnerSeparator />
             <R.Zdpf>
-              <EmojiNumber number={2} /> <EmojiNumber number={1} />{' '}
-              <EmojiNumber number={0} /> を入れた場合、
+              With <EmojiNumber number={2} /> <EmojiNumber number={1} />{' '}
+              <EmojiNumber number={0} />
+              …then,
               <br />
-              <InlineBorder type="condition" /> が <EmojiNumber number={0} />{' '}
-              なので…
+              Because <InlineBorder type="condition" /> is{' '}
+              <EmojiNumber number={0} />…
             </R.Zdpf>
             <ExpressionRunnerSeparator />
             <R.Rnug>
-              <InlineBorder type="trueCase" /> に入っていた{' '}
-              <EmojiNumber number={1} /> が残る
+              The final result is <EmojiNumber number={1} />,<br />
+              which was in <InlineBorder type="trueCase" />
             </R.Rnug>
             <BubbleQuotes
               quotes={[
