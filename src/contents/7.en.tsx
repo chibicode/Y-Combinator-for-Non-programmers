@@ -6,13 +6,15 @@ import {
   Ul,
   UlLi,
   Bold,
-  Italic
+  Italic,
+  Hr
 } from 'src/components/ContentTags'
 import CustomEmoji from 'src/components/CustomEmoji'
 import BubbleQuotes from 'src/components/BubbleQuotes'
 import EmojiNumber from 'src/components/EmojiNumber'
 import Emoji from 'src/components/Emoji'
 import EmojiForLetter from 'src/components/EmojiForLetter'
+import CardContent from 'src/components/CardContent'
 import InlineRunAndConvertToMathboxButton from 'src/components/InlineRunAndConvertToMathboxButton'
 import H from 'src/components/H'
 import ExpressionRunnerSeparator from 'src/components/ExpressionRunnerSeparator'
@@ -1270,44 +1272,45 @@ export default () => (
                         <H args={{ name: 'play', lowerCase: true }} /> the above
                         lunchbox!
                       </P>
-                      <P>…but before we do that, let’s do a quick review.</P>
                     </>
                   )
                 }
               ]}
             />
           </>
-        )
-      },
-      {
-        type: 'sideNote',
-        title: <>Review of Beginner 5</>,
-        content: (
-          <>
-            <BubbleQuotes
-              quotes={[
-                {
-                  type: 'dog',
-                  children: (
+        ),
+        footer: {
+          content: (
+            <>
+              <CardContent
+                children={
+                  <>
+                    <Hr />
+                    <Beginner5Rules />
+                  </>
+                }
+                preview={{
+                  text: <>Review beginner rules</>,
+                  content: (
                     <>
                       <P>
+                        To solve the above lunchbox,{' '}
                         <Highlight>
-                          To solve the above lunchbox, we’ll need to use the
-                          rules from <Bold>Beginner 5</Bold>.
+                          we’ll need to use the rules from{' '}
+                          <Bold>Beginner 5</Bold>.
                         </Highlight>
                       </P>
                       <P>
-                        You don’t need to memorize them, but let’s just do a
-                        quick review.
+                        <Bold>If you’ve forgotten the rules:</Bold> Press
+                        “Review beginner rules” below to review.
                       </P>
                     </>
                   )
-                }
-              ]}
-            />
-            <Beginner5Rules />
-          </>
-        )
+                }}
+              />
+            </>
+          )
+        }
       },
       {
         title: (
@@ -1317,24 +1320,6 @@ export default () => (
         ),
         content: (
           <>
-            <BubbleQuotes
-              quotes={[
-                {
-                  type: 'brave',
-                  children: (
-                    <>
-                      <P>Ok, let’s get back on track!</P>
-                      <P>
-                        We want to check if it can calculate{' '}
-                        <EmojiNumber number={1} /> <Emoji>➕</Emoji>{' '}
-                        <EmojiNumber number={1} />, right?
-                      </P>
-                    </>
-                  )
-                }
-              ]}
-            />
-            <OnePlusOneTest />
             <StepOne />
             <R.Dhiu>
               <H args={{ name: 'startWithLeftMostOneCaption' }} />
