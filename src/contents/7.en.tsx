@@ -1624,8 +1624,7 @@ export default () => (
                     <>
                       <P>
                         <Highlight>
-                          The resulting lunchbox has
-                          <br />
+                          The resulting lunchbox has{' '}
                           <H args={{ name: 'plusOneEffect' }} />.
                         </Highlight>
                       </P>
