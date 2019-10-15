@@ -140,7 +140,7 @@ const VariableEmoji = ({ expression }: VariableExpressionBoxProps) => {
         {locale === 'jp' && (
           <span
             css={css`
-              font-size: 0.6em;
+              font-size: ${variableSize === 'lg' ? '0.5em' : '0.6em'};
               font-weight: bold;
               text-align: center;
               display: block;
