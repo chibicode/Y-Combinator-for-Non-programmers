@@ -1302,8 +1302,10 @@ export default () => (
                         </Highlight>
                       </P>
                       <P>
-                        If you’ve forgotten the rules, press “Do a Quick Review”
-                        below to review.
+                        If you’ve forgotten the rules,{' '}
+                        <Highlight>
+                          press “Do a Quick Review” below to review.
+                        </Highlight>
                       </P>
                     </>
                   )
