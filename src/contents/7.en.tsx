@@ -1290,7 +1290,7 @@ export default () => (
                   </>
                 }
                 preview={{
-                  text: <>Review beginner rules</>,
+                  text: <>Do a Quick Review</>,
                   content: (
                     <>
                       <P>
@@ -1301,8 +1301,8 @@ export default () => (
                         </Highlight>
                       </P>
                       <P>
-                        <Bold>If you’ve forgotten the rules:</Bold> Press
-                        “Review beginner rules” below to review.
+                        <Bold>If you’ve forgotten the rules:</Bold> Press “Do a
+                        Quick Review” below to review.
                       </P>
                     </>
                   )

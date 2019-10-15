@@ -5,7 +5,8 @@ import {
   Highlight,
   HighlightBold,
   Ul,
-  UlLi
+  UlLi,
+  Hr
 } from 'src/components/ContentTags'
 import CustomEmoji from 'src/components/CustomEmoji'
 import BubbleQuotes from 'src/components/BubbleQuotes'
@@ -22,6 +23,7 @@ import EmojiWithText from 'src/components/EmojiWithText'
 import InlinePrioritiesLabel from 'src/components/InlinePrioritiesLabel'
 import NextLessonButton from 'src/components/NextLessonButton'
 import { Beginner5Rules } from 'src/contents/5.jp'
+import CardContent from 'src/components/CardContent'
 
 export const StepOne = () => (
   <>
@@ -1304,32 +1306,24 @@ export default () => (
                       <P>では、上の弁当箱を実行したらどうなるか見ていこう！</P>
                     </>
                   )
-                },
-                {
-                  type: 'dog',
-                  children: (
-                    <>
-                      <P>
-                        はい！しかしその前に、ちょっとだけ復習をしましょう。
-                      </P>
-                    </>
-                  )
                 }
               ]}
             />
           </>
-        )
-      },
-      {
-        type: 'sideNote',
-        title: <>初級編の復習</>,
-        content: (
-          <>
-            <BubbleQuotes
-              quotes={[
-                {
-                  type: 'dog',
-                  children: (
+        ),
+        footer: {
+          content: (
+            <>
+              <CardContent
+                children={
+                  <>
+                    <Hr />
+                    <Beginner5Rules />
+                  </>
+                }
+                preview={{
+                  text: <>初級編の内容を復習する</>,
+                  content: (
                     <>
                       <P>
                         今回の弁当箱では、
@@ -1337,64 +1331,20 @@ export default () => (
                         します。
                       </P>
                       <P>
-                        覚えていなくても、早送りで勝手に進んでくれるので大丈夫ですが、いちおう復習をしておきましょう！
+                        忘れてしまった場合は、↓の「初級編の内容を復習する」を押してください。
                       </P>
                     </>
                   )
-                }
-              ]}
-            />
-            <Beginner5Rules />
-          </>
-        )
+                }}
+              />
+            </>
+          )
+        }
       },
       {
         title: <>早送りしてみよう</>,
         content: (
           <>
-            <BubbleQuotes
-              quotes={[
-                {
-                  type: 'brave',
-                  children: (
-                    <>
-                      <P>
-                        初級編の復習もしたことだし、先ほど考えた弁当箱に、
-                        <H args={{ name: 'plusOneEffect' }} />
-                        があるかどうか見ていこう！
-                      </P>
-                      <P>
-                        以下のように、
-                        <HighlightBold>
-                          <EmojiNumber number={1} /> <Emoji>➕</Emoji>{' '}
-                          <EmojiNumber number={1} /> が計算できれば
-                          <HighlightBold>成功</HighlightBold> <Emoji>🎉</Emoji>
-                        </HighlightBold>{' '}
-                        なんだよな。
-                      </P>
-                    </>
-                  )
-                }
-              ]}
-            />
-            <R.Nuco>
-              <EmojiNumber number={1} /> に変換できる弁当箱と、
-              <br />
-              先ほどの弁当箱を合体させ…
-            </R.Nuco>
-            <ExpressionRunnerSeparator />
-            <ExpressionRunnerCaptionOnly>
-              <Highlight>
-                <H args={{ name: 'runAndConvertToMathbox' }} /> して…
-              </Highlight>
-            </ExpressionRunnerCaptionOnly>
-            <ExpressionRunnerSeparator />
-            <ExpressionRunnerCaptionOnly>
-              結果が <EmojiNumber number={2} size="mdlg" /> になれば
-              <HighlightBold>成功</HighlightBold> <Emoji>🎉</Emoji>
-              <br />
-              それ以外なら<HighlightBold>失敗</HighlightBold> <Emoji>😭</Emoji>
-            </ExpressionRunnerCaptionOnly>
             <StepOne />
             <R.Dhiu>
               <H args={{ name: 'startWithLeftMostOneCaption' }} />

@@ -56,10 +56,7 @@ export default () => (
                 <Bold>If so:</Bold> I’ve prepared a{' '}
                 <Italic>review material</Italic> for you. If you’ve forgotten
                 what we’ve learned so far,{' '}
-                <Highlight>
-                  press <Bold>Do a Quick Review</Bold>
-                </Highlight>{' '}
-                below.
+                <Highlight>press “Do a Quick Review”</Highlight> below.
               </P>
               <P>
                 <Bold>Otherwise:</Bold> If you’ve just finished the beginner
