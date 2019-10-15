@@ -46,7 +46,6 @@ export const SpecialRule = () => (
 
 export default () => (
   <EpisodeCardList
-    underConstruction
     cards={[
       {
         title: <>Saya’s Question</>,

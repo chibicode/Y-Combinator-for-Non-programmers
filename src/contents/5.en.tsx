@@ -178,7 +178,6 @@ const WillReturn = () => (
 
 export default () => (
   <EpisodeCardList
-    underConstruction
     cards={[
       {
         type: 'summary',

@@ -29,7 +29,6 @@ import { ThreeRowRules, Beginner5Rules } from 'src/contents/5.en'
 
 export default () => (
   <EpisodeCardList
-    underConstruction
     cards={[
       {
         type: 'summary',

@@ -1525,7 +1525,7 @@ export const akik: ExpressionRunnerShorthandConfig = {
   skipToTheEnd: false,
   skipAlphaConvert: true,
   skipActive: true,
-  speed: 1.25
+  speed: 1.5
 }
 
 export const auks: ExpressionRunnerShorthandConfig = {
@@ -1783,7 +1783,7 @@ export const zwut: ExpressionRunnerShorthandConfig = {
   skipToTheEnd: false,
   lastAllowedExpressionState: 'needsAlphaConvert',
   skipActive: true,
-  speed: 1.25
+  speed: 1.5
 }
 
 export const xusi: ExpressionRunnerShorthandConfig = {
@@ -1993,7 +1993,7 @@ export const svbd: ExpressionRunnerShorthandConfig = {
   initialExpressionContainer: initialExpressionContainers.zmua,
   showPriorities: true,
   skipActive: true,
-  speed: 1.75
+  speed: 2
 }
 
 export const oclg: ExpressionRunnerShorthandConfig = {
@@ -2212,7 +2212,7 @@ export const ovua: ExpressionRunnerShorthandConfig = {
   showPriorities: true,
   lastAllowedExpressionState: 'default',
   lastAllowedExpressionStateAfterIterations: 3,
-  speed: 1.75
+  speed: 2
 }
 
 export const bras: ExpressionRunnerShorthandConfig = {
@@ -2294,7 +2294,7 @@ export const dwmc: ExpressionRunnerShorthandConfig = {
   nextIterations: 5,
   lastAllowedExpressionState: 'default',
   lastAllowedExpressionStateAfterIterations: 3,
-  speed: 1.75
+  speed: 2
 }
 
 export const tfsi: ExpressionRunnerShorthandConfig = {
@@ -2332,7 +2332,7 @@ export const uwyn: ExpressionRunnerShorthandConfig = {
   nextIterations: 9,
   lastAllowedExpressionState: 'default',
   lastAllowedExpressionStateAfterIterations: 5,
-  speed: 1.75
+  speed: 2
 }
 
 export const jjet: ExpressionRunnerShorthandConfig = {
@@ -2378,7 +2378,7 @@ export const snlf: ExpressionRunnerShorthandConfig = {
   nextIterations: 15,
   lastAllowedExpressionState: 'default',
   lastAllowedExpressionStateAfterIterations: 6,
-  speed: 1.75
+  speed: 2
 }
 
 export const gngw: ExpressionRunnerShorthandConfig = {
@@ -2527,7 +2527,7 @@ export const ugvz: ExpressionRunnerShorthandConfig = {
   runner: 'playButtonOnly',
   skipToTheEnd: false,
   skipActive: true,
-  speed: 1.75,
+  speed: 2,
   initialExpressionContainer: initialExpressionContainers.yknu,
   showPriorities: true
 }
@@ -2573,7 +2573,7 @@ export const wzqv: ExpressionRunnerShorthandConfig = {
   runner: 'playButtonOnly',
   skipToTheEnd: false,
   skipActive: true,
-  speed: 1.75,
+  speed: 2,
   initialExpressionContainer: initialExpressionContainers.ndtm,
   showPriorities: true
 }

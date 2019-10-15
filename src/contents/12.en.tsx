@@ -215,14 +215,8 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        <Highlight>
-                          使うのは、
-                          <HighlightBold>
-                            こちらの <EmojiNumber number={0} />{' '}
-                            に変換できる弁当箱
-                          </HighlightBold>
-                          です！
-                        </Highlight>
+                        We will use this lunchbox that can be converted to{' '}
+                        <EmojiNumber number={0} />:
                       </P>
                       <R.Elyq>
                         <H
@@ -234,7 +228,7 @@ export default () => (
                         />
                       </R.Elyq>
                       <P>
-                        入れてみると次のようになるよ。
+                        Let’s try running it!{' '}
                         <H args={{ name: 'pressFastForward', girl: true }} />
                       </P>
                     </>
@@ -243,17 +237,9 @@ export default () => (
               ]}
             />
             <R.Nmrp>
-              「
-              <HighlightBold>
-                <CustomEmoji type="blankNumberGreen" /> に変換できる弁当箱
-              </HighlightBold>
-              」のところに、
+              Use a lunchbox
               <br />
-              <HighlightBold>
-                <EmojiNumber number={0} /> に変換できる弁当箱
-              </HighlightBold>
-              を入れてみた
-              <br />(<HighlightBold>一番下の黄色の部分</HighlightBold>)
+              that can be converted to <EmojiNumber number={0} />
             </R.Nmrp>
             <BubbleQuotes
               quotes={[
