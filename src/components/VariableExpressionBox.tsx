@@ -47,6 +47,7 @@ export const variableExpressionBoxFontSize = (
   }[size])
 
 const VariableEmoji = ({ expression }: VariableExpressionBoxProps) => {
+  const { variableSize } = useContext(ExpressionRunnerContext)
   const { hideBottomRightBadges, bottomRightBadgeOverrides } = useContext(
     ExpressionRunnerContext
   )
@@ -62,7 +63,7 @@ const VariableEmoji = ({ expression }: VariableExpressionBoxProps) => {
         {locale === 'en' && (
           <span
             css={css`
-              font-size: 0.5em;
+              font-size: ${variableSize === 'lg' ? '0.45em' : '0.5em'};
               font-weight: bold;
               text-align: center;
               display: block;
