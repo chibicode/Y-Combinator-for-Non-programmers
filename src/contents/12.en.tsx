@@ -6,7 +6,8 @@ import {
   Highlight,
   Ul,
   UlLi,
-  Bold
+  Bold,
+  Italic
 } from 'src/components/ContentTags'
 import H from 'src/components/H'
 import BubbleQuotes from 'src/components/BubbleQuotes'
@@ -258,11 +259,12 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        Right.{' '}
+                        Right. And{' '}
                         <Highlight>
-                          And this is the same as using{' '}
-                          <H args={{ name: 'conditionFeature' }} />, right?
+                          this is the same as using{' '}
+                          <H args={{ name: 'conditionFeature' }} />
                         </Highlight>
+                        , right?
                       </P>
                     </>
                   )
@@ -326,17 +328,26 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        次は、サヤの弁当箱の一番下の「
-                        <HighlightBold>
-                          <CustomEmoji type="blankNumberGreen" />{' '}
-                          に変換できる弁当箱
-                        </HighlightBold>
-                        」のところに、「
-                        <HighlightBold>
-                          <EmojiNumber number={1} /> に変換できる弁当箱
-                        </HighlightBold>
-                        」を入れてみるね。
+                        <Bold>Next:</Bold> Let’s try the case for{' '}
+                        <Italic>NOT</Italic> <EmojiNumber number={0} />.{' '}
+                        <Highlight>
+                          So we’ll use <EmojiNumber number={1} /> instead.
+                        </Highlight>
                       </P>
+                      <Ul>
+                        <UlLi>
+                          On the bottom section that says{' '}
+                          <Highlight>
+                            “Lunchbox that can be converted to{' '}
+                            <CustomEmoji type="blankNumberGreen" />”
+                          </Highlight>
+                          ,
+                        </UlLi>
+                        <UlLi>
+                          Let’s put a lunchbox that can be converted to{' '}
+                          <EmojiNumber number={1} />.
+                        </UlLi>
+                      </Ul>
                     </>
                   )
                 }
@@ -353,15 +364,9 @@ export default () => (
             </R.Hhjq>
             <ExpressionRunnerSeparator />
             <R.Psyv>
-              一番下の 「
-              <HighlightBold>
-                <CustomEmoji type="blankNumberGreen" /> に変換できる弁当箱
-              </HighlightBold>
-              」<br />
-              のところに、
-              <EmojiNumber number={1} /> に変換できる
+              Use a lunchbox
               <br />
-              弁当箱を入れてみる
+              that can be converted to <EmojiNumber number={1} />
             </R.Psyv>
             <BubbleQuotes
               quotes={[
@@ -370,14 +375,8 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        <Highlight>
-                          使うのは、
-                          <HighlightBold>
-                            こちらの <EmojiNumber number={1} />{' '}
-                            に変換できる弁当箱
-                          </HighlightBold>
-                          です！
-                        </Highlight>
+                        We will use this lunchbox that can be converted to{' '}
+                        <EmojiNumber number={1} />:
                       </P>
                       <R.Ooya>
                         <H
@@ -389,7 +388,7 @@ export default () => (
                         />
                       </R.Ooya>
                       <P>
-                        入れてみると次のようになるよ。
+                        Let’s try running it!{' '}
                         <H args={{ name: 'pressFastForward', girl: true }} />
                       </P>
                     </>
@@ -398,17 +397,9 @@ export default () => (
               ]}
             />
             <R.Gpat>
-              「
-              <HighlightBold>
-                <CustomEmoji type="blankNumberGreen" /> に変換できる弁当箱
-              </HighlightBold>
-              」のところに、
+              Use a lunchbox
               <br />
-              <HighlightBold>
-                <EmojiNumber number={1} /> に変換できる弁当箱
-              </HighlightBold>
-              を入れてみた
-              <br />(<HighlightBold>一番下の黄色の部分</HighlightBold>)
+              that can be converted to <EmojiNumber number={1} />
             </R.Gpat>
             <BubbleQuotes
               quotes={[
@@ -417,9 +408,8 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        おお、今度は先ほどと逆に、{' '}
-                        <CustomEmoji type="blankNumberRed" />{' '}
-                        に変換できる弁当箱が残った！
+                        This time, the result is{' '}
+                        <CustomEmoji type="blankNumberRed" />!
                       </P>
                     </>
                   )
@@ -429,9 +419,12 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        これも、「
-                        <H args={{ name: 'conditionFeature' }} />
-                        」を使ったときと同じだよね？
+                        Right. Again,{' '}
+                        <Highlight>
+                          this is the same as using{' '}
+                          <H args={{ name: 'conditionFeature' }} />
+                        </Highlight>
+                        , right?
                       </P>
                     </>
                   )
@@ -439,29 +432,26 @@ export default () => (
               ]}
             />
             <P>
-              「<H args={{ name: 'conditionFeature' }} />
-              」を使った場合:
+              If we use <H args={{ name: 'conditionFeature' }} />:
             </P>
             <R.Glbk>
-              <InlineBorder type="condition" /> に <EmojiNumber number={1} />{' '}
-              を入れた場合…
+              If we use <EmojiNumber number={1} /> for{' '}
+              <CustomEmoji type="blankNumberGreen" />…
             </R.Glbk>
             <ExpressionRunnerSeparator />
             <R.Rtza>
-              <InlineBorder type="falseCase" /> に入っている{' '}
-              <CustomEmoji type="blankNumberRed" /> が残る
+              The final result is <CustomEmoji type="blankNumberRed" />
             </R.Rtza>
             <P>
-              <Emoji>👧🏻</Emoji> サヤの弁当箱を使った場合:
+              If we use <Emoji>👧🏻</Emoji> Saya’s lunchbox:
             </P>
             <R.Psyv>
-              一番下に <EmojiNumber number={1} /> に変換できる
-              <br />
-              弁当箱を入れた場合…
+              If we use <EmojiNumber number={1} /> for{' '}
+              <CustomEmoji type="blankNumberGreen" />…
             </R.Psyv>
             <ExpressionRunnerSeparator />
             <R.Kiiq>
-              <CustomEmoji type="blankNumberRed" /> が残る
+              The final result is <CustomEmoji type="blankNumberRed" />
             </R.Kiiq>
             <BubbleQuotes
               quotes={[
@@ -470,12 +460,9 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        たしかに、
-                        <HighlightBold>
-                          両方とも <EmojiNumber number={1} /> を入れると{' '}
-                          <CustomEmoji type="blankNumberRed" /> が残る
-                        </HighlightBold>
-                        ね！
+                        Right, in both cases, if we start with{' '}
+                        <EmojiNumber number={1} />, the final result is{' '}
+                        <CustomEmoji type="blankNumberRed" />!
                       </P>
                     </>
                   )
