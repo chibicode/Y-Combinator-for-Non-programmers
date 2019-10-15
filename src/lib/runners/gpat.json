@@ -3712,7 +3712,7 @@
       "numLeafNodes": 2
     }
   ],
-  "speed": 1.25,
+  "speed": 1.5,
   "hideControls": false,
   "explanationsVisibility": "hiddenInitialPausedOnly",
   "hidePriorities": false,

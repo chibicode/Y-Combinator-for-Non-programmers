@@ -1933,7 +1933,7 @@ export const nmrp: ExpressionRunnerShorthandConfig = {
   initialExpressionContainer: initialExpressionContainers.psdd,
   showPriorities: true,
   skipActive: true,
-  speed: 1.25
+  speed: 1.5
 }
 
 export const ycpk: ExpressionRunnerShorthandConfig = {
@@ -1961,7 +1961,7 @@ export const gpat: ExpressionRunnerShorthandConfig = {
   initialExpressionContainer: initialExpressionContainers.nnqw,
   showPriorities: true,
   skipActive: true,
-  speed: 1.25
+  speed: 1.5
 }
 
 export const psyv: ExpressionRunnerShorthandConfig = {
@@ -1993,7 +1993,7 @@ export const svbd: ExpressionRunnerShorthandConfig = {
   initialExpressionContainer: initialExpressionContainers.zmua,
   showPriorities: true,
   skipActive: true,
-  speed: 1.5
+  speed: 1.75
 }
 
 export const oclg: ExpressionRunnerShorthandConfig = {

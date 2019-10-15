@@ -158,7 +158,8 @@ export default () => (
       {
         title: (
           <>
-            <EmojiNumber number={0} /> を入れた場合
+            If you use <EmojiNumber number={0} /> for{' '}
+            <CustomEmoji type="blankNumberGreen" />
           </>
         ),
         content: (
@@ -170,32 +171,42 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        では、まずサヤの弁当箱の一番下の「
-                        <HighlightBold>
-                          <CustomEmoji type="blankNumberGreen" />{' '}
-                          に変換できる弁当箱
-                        </HighlightBold>
-                        」のところに、「
-                        <HighlightBold>
-                          <EmojiNumber number={0} /> に変換できる弁当箱
-                        </HighlightBold>
-                        」を入れてみるね。
+                        <Bold>First:</Bold> Let’s try the case for{' '}
+                        <EmojiNumber number={0} />:
                       </P>
+                      <Ul>
+                        <UlLi>
+                          On the bottom section that says{' '}
+                          <Highlight>
+                            “Lunchbox that can be converted to{' '}
+                            <CustomEmoji type="blankNumberGreen" />”
+                          </Highlight>
+                          ,
+                        </UlLi>
+                        <UlLi>
+                          Let’s put a lunchbox that can be converted to{' '}
+                          <EmojiNumber number={0} />.
+                        </UlLi>
+                      </Ul>
                     </>
                   )
                 }
               ]}
             />
-            <R.Ycpk>
-              一番下の 「
-              <HighlightBold>
-                <CustomEmoji type="blankNumberGreen" /> に変換できる弁当箱
-              </HighlightBold>
-              」<br />
-              のところに、
-              <EmojiNumber number={0} /> に変換できる
+            <R.Hhjq>
+              On the bottom section that says
               <br />
-              弁当箱を入れてみる
+              <Highlight>
+                “Lunchbox that can be converted to{' '}
+                <CustomEmoji type="blankNumberGreen" />”
+              </Highlight>
+              …
+            </R.Hhjq>
+            <ExpressionRunnerSeparator />
+            <R.Ycpk>
+              Use a lunchbox
+              <br />
+              that can be converted to <EmojiNumber number={0} />
             </R.Ycpk>
             <BubbleQuotes
               quotes={[
@@ -349,6 +360,16 @@ export default () => (
                 }
               ]}
             />
+            <R.Hhjq>
+              On the bottom section that says
+              <br />
+              <Highlight>
+                “Lunchbox that can be converted to{' '}
+                <CustomEmoji type="blankNumberGreen" />”
+              </Highlight>
+              …
+            </R.Hhjq>
+            <ExpressionRunnerSeparator />
             <R.Psyv>
               一番下の 「
               <HighlightBold>

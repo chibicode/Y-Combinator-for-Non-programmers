@@ -166,6 +166,7 @@ export default () => (
       {
         title: (
           <>
+            <CustomEmoji type="blankNumberGreen" /> に{' '}
             <EmojiNumber number={0} /> を入れた場合
           </>
         ),
@@ -194,13 +195,16 @@ export default () => (
                 }
               ]}
             />
-            <R.Ycpk>
+            <R.Hhjq>
               一番下の 「
               <HighlightBold>
                 <CustomEmoji type="blankNumberGreen" /> に変換できる弁当箱
               </HighlightBold>
               」<br />
-              のところに、
+              のところに…
+            </R.Hhjq>
+            <ExpressionRunnerSeparator />
+            <R.Ycpk>
               <EmojiNumber number={0} /> に変換できる
               <br />
               弁当箱を入れてみる
@@ -329,6 +333,7 @@ export default () => (
       {
         title: (
           <>
+            <CustomEmoji type="blankNumberGreen" /> に{' '}
             <EmojiNumber number={1} /> を入れた場合
           </>
         ),
@@ -357,13 +362,16 @@ export default () => (
                 }
               ]}
             />
-            <R.Psyv>
+            <R.Hhjq>
               一番下の 「
               <HighlightBold>
                 <CustomEmoji type="blankNumberGreen" /> に変換できる弁当箱
               </HighlightBold>
               」<br />
-              のところに、
+              のところに…
+            </R.Hhjq>
+            <ExpressionRunnerSeparator />
+            <R.Psyv>
               <EmojiNumber number={1} /> に変換できる
               <br />
               弁当箱を入れてみる
