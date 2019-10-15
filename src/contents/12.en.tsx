@@ -248,8 +248,7 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        <CustomEmoji type="blankNumberYellow" />{' '}
-                        に変換できる弁当箱が残った！
+                        The result is <CustomEmoji type="blankNumberYellow" />!
                       </P>
                     </>
                   )
@@ -259,9 +258,11 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        うん、これって「
-                        <H args={{ name: 'conditionFeature' }} />
-                        」を使ったときと同じだよね？
+                        Right.{' '}
+                        <Highlight>
+                          And this is the same as using{' '}
+                          <H args={{ name: 'conditionFeature' }} />, right?
+                        </Highlight>
                       </P>
                     </>
                   )
@@ -269,29 +270,26 @@ export default () => (
               ]}
             />
             <P>
-              「<H args={{ name: 'conditionFeature' }} />
-              」を使った場合:
+              If we use <H args={{ name: 'conditionFeature' }} />:
             </P>
             <R.Dqwh>
-              <InlineBorder type="condition" /> に <EmojiNumber number={0} />{' '}
-              を入れた場合…
+              If we use <EmojiNumber number={0} /> for{' '}
+              <CustomEmoji type="blankNumberGreen" />…
             </R.Dqwh>
             <ExpressionRunnerSeparator />
             <R.Vwvb>
-              <InlineBorder type="trueCase" /> に入っている{' '}
-              <CustomEmoji type="blankNumberYellow" /> が残る
+              The final result is <CustomEmoji type="blankNumberYellow" />
             </R.Vwvb>
             <P>
-              <Emoji>👧🏻</Emoji> サヤの弁当箱を使った場合:
+              If we use <Emoji>👧🏻</Emoji> Saya’s lunchbox:
             </P>
             <R.Ycpk>
-              一番下に <EmojiNumber number={0} /> に変換できる
-              <br />
-              弁当箱を入れた場合…
+              If we use <EmojiNumber number={0} /> for{' '}
+              <CustomEmoji type="blankNumberGreen" />…
             </R.Ycpk>
             <ExpressionRunnerSeparator />
             <R.Bndi>
-              <CustomEmoji type="blankNumberYellow" /> が残る
+              The final result is <CustomEmoji type="blankNumberYellow" />
             </R.Bndi>
             <BubbleQuotes
               quotes={[
@@ -300,12 +298,9 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        たしかに、
-                        <HighlightBold>
-                          両方とも <EmojiNumber number={0} /> を入れると{' '}
-                          <CustomEmoji type="blankNumberYellow" /> が残る
-                        </HighlightBold>
-                        ね！
+                        Right, in both cases, if we start with{' '}
+                        <EmojiNumber number={0} />, the final result is{' '}
+                        <CustomEmoji type="blankNumberYellow" />!
                       </P>
                     </>
                   )
@@ -318,7 +313,8 @@ export default () => (
       {
         title: (
           <>
-            <EmojiNumber number={1} /> を入れた場合
+            If we use <EmojiNumber number={1} /> for{' '}
+            <CustomEmoji type="blankNumberGreen" />
           </>
         ),
         content: (
