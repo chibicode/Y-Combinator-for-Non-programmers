@@ -1412,7 +1412,8 @@ export const nlbn: ExpressionRunnerShorthandConfig = {
   runner: 'playButtonOnly',
   initialExpressionContainer: initialExpressionContainers.ngth,
   showPriorities: true,
-  skipToTheEnd: false
+  skipToTheEnd: false,
+  speed: 1.25
 }
 
 export const zsxo: ExpressionRunnerShorthandConfig = {
@@ -1475,7 +1476,7 @@ export const oqpi: ExpressionRunnerShorthandConfig = {
   showPriorities: true,
   skipToTheEnd: false,
   skipActive: true,
-  speed: 1.25
+  speed: 1.5
 }
 
 export const zxkq: ExpressionRunnerShorthandConfig = {
@@ -1830,7 +1831,7 @@ export const ifiq: ExpressionRunnerShorthandConfig = {
   showPriorities: true,
   skipToTheEnd: false,
   skipActive: true,
-  speed: 1.75
+  speed: 2
 }
 
 export const joaq: ExpressionRunnerShorthandConfig = {

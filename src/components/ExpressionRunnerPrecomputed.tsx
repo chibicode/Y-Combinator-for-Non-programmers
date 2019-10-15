@@ -133,7 +133,7 @@ const ExpressionRunnerPrecomputed = ({
   const autoplay = () => {
     setPlaybackStatus({
       isPlaying: true,
-      isFastForwarding: speed >= FASTFORWARDING_THRESHOLD
+      isFastForwarding: speed > FASTFORWARDING_THRESHOLD
     })
   }
 
