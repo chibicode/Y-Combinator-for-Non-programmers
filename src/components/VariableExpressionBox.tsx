@@ -22,9 +22,9 @@ interface VariableExpressionBoxProps {
   expression: VariableExpression
 }
 
-export const variableExpressionBoxPadding = (
-  size: ExpressionRunnerContextProps['variableSize']
-) =>
+// Need to use a short name to work around this bug:
+// https://github.com/microsoft/typescript-styled-plugin/issues/88
+export const p = (size: ExpressionRunnerContextProps['variableSize']) =>
   ({
     lg: spaces(0.5),
     md: spaces(0.375),
@@ -384,8 +384,7 @@ const VariableExpressionBox = ({ expression }: VariableExpressionBoxProps) => {
         css={css`
           flex: 1;
           font-size: ${variableExpressionBoxFontSize(variableSize)};
-          padding: ${variableExpressionBoxPadding(variableSize)} ${spaces(0.5)}
-            ${variableExpressionBoxPadding(variableSize)};
+          padding: ${p(variableSize)} ${spaces(0.5)} ${p(variableSize)};
         `}
       >
         <VariableEmoji expression={expression} />
