@@ -27,7 +27,7 @@ const HighlightContext = React.createContext<HighlightContextProps>(
 
 const mix = (color: CardProps['color'], base: string) =>
   Color(base)
-    .mix(Color(backgroundColor(color)), 0.4)
+    .mix(Color(backgroundColor(color)), 0.2)
     .hsl()
     .string()
 
@@ -58,6 +58,9 @@ export const HighlightBold = ({
   const { inHighlightType } = useContext(HighlightContext)
   const { inLink } = useContext(LinkContext)
   const { color } = useContext(CardColorContext)
+  const { inQuote } = useContext(BubbleQuoteContext)
+
+  const baseColor = inQuote ? 'white' : color
   if (inHighlightType === 'white' || highlightType === 'none') {
     return (
       <span
@@ -77,12 +80,12 @@ export const HighlightBold = ({
             css`
               font-weight: bold;
               background: ${highlightType === 'blue'
-                ? mix(color, colors('blue50'))
+                ? mix(baseColor, colors('blue50'))
                 : highlightType === 'white'
                 ? colors('white')
-                : color === 'yellow'
-                ? mix(color, colors('pink100'))
-                : mix(color, colors('yellow100'))};
+                : baseColor === 'yellow'
+                ? mix(baseColor, colors('pink100'))
+                : mix(baseColor, colors('yellow100'))};
             `,
             inLink &&
               css`
