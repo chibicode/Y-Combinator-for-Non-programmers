@@ -917,11 +917,20 @@ export default () => (
                   type: 'thinking',
                   children: (
                     <>
-                      <P>うーん、条件分岐の機能を再現できたのはいいとして…</P>
                       <P>
-                        俺らがやりたいのは、「
-                        <H args={{ name: 'repeatFeature' }} />
-                        」を弁当箱で再現することなんだけど…
+                        I understand that we can reproduce{' '}
+                        <H
+                          args={{
+                            name: 'conditionFeature'
+                          }}
+                        />
+                        , but…
+                      </P>
+                      <P>
+                        <Highlight>
+                          <Bold>What we really need to do</Bold> is to reproduce{' '}
+                          <H args={{ name: 'repeatFeature' }} />.
+                        </Highlight>
                       </P>
                     </>
                   )
@@ -932,19 +941,41 @@ export default () => (
               left={
                 <>
                   <R.Bwnp>
-                    <CustomEmoji type="plusOne" /> を{' '}
-                    <CustomEmoji type="blankNumber" /> 回<br />
-                    繰り返す
+                    Repeat <CustomEmoji type="plusOne" />
+                    <br />
+                    <CustomEmoji type="blankNumber" /> times
                   </R.Bwnp>
+                  <ExpressionRunnerSeparator />
+                  <EmojiSeparator
+                    size="mdsm"
+                    emojis={['❓', '🍱', '❓']}
+                    description={
+                      <>
+                        Reproduce with
+                        <br />a lunchbox
+                      </>
+                    }
+                  />
                 </>
               }
               right={
                 <>
                   <R.Ewfr>
-                    <CustomEmoji type="minusOne" /> を{' '}
-                    <CustomEmoji type="blankNumber" /> 回<br />
-                    繰り返す
+                    Repeat <CustomEmoji type="minusOne" />
+                    <br />
+                    <CustomEmoji type="blankNumber" /> times
                   </R.Ewfr>
+                  <ExpressionRunnerSeparator />
+                  <EmojiSeparator
+                    emojis={['❓', '🍱', '❓']}
+                    size="mdsm"
+                    description={
+                      <>
+                        Reproduce with
+                        <br />a lunchbox
+                      </>
+                    }
+                  />
                 </>
               }
             />
@@ -954,14 +985,18 @@ export default () => (
                   type: 'dog',
                   children: (
                     <>
+                      <P>Right, but remember what I said on the last page:</P>
                       <P>
-                        そうですね。しかし、上級その1でぼくが言ったことを思い出して下さい。
-                      </P>
-                      <P>
-                        「<H args={{ name: 'repeatFeature' }} />
-                        」は、「
-                        <H args={{ name: 'conditionFeature' }} />
-                        」と<HighlightBold>関連がある</HighlightBold>のです。
+                        <Highlight>
+                          <H
+                            args={{
+                              name: 'conditionFeature',
+                              capitalize: true
+                            }}
+                          />{' '}
+                          is <Italic>related to</Italic>{' '}
+                          <H args={{ name: 'repeatFeature' }} />.
+                        </Highlight>
                       </P>
                     </>
                   )
@@ -970,16 +1005,17 @@ export default () => (
             />
             <EmojiSeparator
               nodes={[
-                <Emoji>🔁</Emoji>,
+                <CustomEmoji type="condition" />,
                 <CustomEmoji type="doubleArrow" />,
-                <CustomEmoji type="condition" />
+                <Emoji>🔁</Emoji>
               ]}
               description={
                 <>
-                  「<H args={{ name: 'repeatFeature' }} />
-                  」は、
-                  <br />「<H args={{ name: 'conditionFeature' }} />
-                  」と関連がある
+                  <H args={{ name: 'conditionFeature', capitalize: true }} />
+                  <br />
+                  is <Italic>related to</Italic>
+                  <br />
+                  <H args={{ name: 'repeatFeature' }} />
                 </>
               }
             />
@@ -990,14 +1026,15 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        だから、先ほど「
-                        <H args={{ name: 'conditionFeature' }} />
-                        」を弁当箱で再現したことによって、
+                        Therefore, because you were able to reproduce{' '}
+                        <H args={{ name: 'conditionFeature' }} /> using a
+                        lunchbox…
                       </P>
                       <P>
-                        みなさんは「
-                        <H args={{ name: 'repeatFeature' }} />
-                        」を弁当箱で再現するのに大きく近づいたのです。
+                        <Highlight>
+                          You’re now very close to reproducing{' '}
+                          <H args={{ name: 'repeatFeature' }} /> as well!
+                        </Highlight>
                       </P>
                     </>
                   )
@@ -1014,10 +1051,11 @@ export default () => (
               ]}
               description={
                 <>
-                  「<H args={{ name: 'conditionFeature' }} />
-                  」を
+                  Because we reproduced
                   <br />
-                  弁当箱で再現したことにより…
+                  <H args={{ name: 'conditionFeature' }} />
+                  <br />
+                  using a lunchbox…
                 </>
               }
             />
@@ -1032,10 +1070,9 @@ export default () => (
               ]}
               description={
                 <>
-                  「<H args={{ name: 'repeatFeature' }} />
-                  」を
+                  We’re now very close to reproducing
                   <br />
-                  弁当箱で再現するのに大きく近づいた！
+                  <H args={{ name: 'repeatFeature' }} />!
                 </>
               }
             />
@@ -1045,7 +1082,10 @@ export default () => (
                   type: 'thinking',
                   children: (
                     <>
-                      <P>うーん…そう言われても、どういうことやらさっぱり…</P>
+                      <P>Hmm… ok, can you explain more?</P>
+                      <P>
+                        We don’t even know how these two features are related…
+                      </P>
                     </>
                   )
                 },
@@ -1054,12 +1094,9 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        では、
-                        <HighlightBold>
-                          次のページでまたヒントを出しましょう！
-                        </HighlightBold>
+                        Yes, I will explain on the next page! Please continue
+                        reading!
                       </P>
-                      <P>というわけで、先に進んでみてください。</P>
                     </>
                   )
                 }

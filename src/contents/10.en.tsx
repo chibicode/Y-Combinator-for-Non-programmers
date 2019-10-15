@@ -256,6 +256,7 @@ export default () => (
                   <ExpressionRunnerSeparator />
                   <EmojiSeparator
                     emojis={['❓', '🍱', '❓']}
+                    size="mdsm"
                     description={
                       <>
                         Reproduce with
@@ -281,6 +282,7 @@ export default () => (
                   <ExpressionRunnerSeparator />
                   <EmojiSeparator
                     emojis={['❓', '🍱', '❓']}
+                    size="mdsm"
                     description={
                       <>
                         Reproduce with
@@ -1547,6 +1549,7 @@ export default () => (
                   <ExpressionRunnerSeparator />
                   <EmojiSeparator
                     emojis={['❓', '🍱', '❓']}
+                    size="mdsm"
                     description={
                       <>
                         Reproduce with
@@ -1566,6 +1569,7 @@ export default () => (
                   <ExpressionRunnerSeparator />
                   <EmojiSeparator
                     emojis={['❓', '🍱', '❓']}
+                    size="mdsm"
                     description={
                       <>
                         Reproduce with

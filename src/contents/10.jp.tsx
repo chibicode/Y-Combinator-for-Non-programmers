@@ -236,6 +236,7 @@ export default () => (
                   </R.Ditw>
                   <ExpressionRunnerSeparator />
                   <EmojiSeparator
+                    size="mdsm"
                     emojis={['❓', '🍱', '❓']}
                     description={<>弁当箱で再現</>}
                   />
@@ -250,6 +251,7 @@ export default () => (
                   <R.Ewfr></R.Ewfr>
                   <ExpressionRunnerSeparator />
                   <EmojiSeparator
+                    size="mdsm"
                     emojis={['❓', '🍱', '❓']}
                     description={<>弁当箱で再現</>}
                   />
@@ -1493,6 +1495,7 @@ export default () => (
                   </R.Bwnp>
                   <ExpressionRunnerSeparator />
                   <EmojiSeparator
+                    size="mdsm"
                     emojis={['❓', '🍱', '❓']}
                     description={<>弁当箱で再現</>}
                   />
@@ -1507,6 +1510,7 @@ export default () => (
                   </R.Ewfr>
                   <ExpressionRunnerSeparator />
                   <EmojiSeparator
+                    size="mdsm"
                     emojis={['❓', '🍱', '❓']}
                     description={<>弁当箱で再現</>}
                   />

@@ -952,6 +952,12 @@ export default () => (
                     <CustomEmoji type="blankNumber" /> 回<br />
                     繰り返す
                   </R.Bwnp>
+                  <ExpressionRunnerSeparator />
+                  <EmojiSeparator
+                    size="mdsm"
+                    emojis={['❓', '🍱', '❓']}
+                    description={<>弁当箱で再現</>}
+                  />
                 </>
               }
               right={
@@ -961,6 +967,12 @@ export default () => (
                     <CustomEmoji type="blankNumber" /> 回<br />
                     繰り返す
                   </R.Ewfr>
+                  <ExpressionRunnerSeparator />
+                  <EmojiSeparator
+                    size="mdsm"
+                    emojis={['❓', '🍱', '❓']}
+                    description={<>弁当箱で再現</>}
+                  />
                 </>
               }
             />
@@ -974,10 +986,12 @@ export default () => (
                         そうですね。しかし、上級その1でぼくが言ったことを思い出して下さい。
                       </P>
                       <P>
-                        「<H args={{ name: 'repeatFeature' }} />
-                        」は、「
-                        <H args={{ name: 'conditionFeature' }} />
-                        」と<HighlightBold>関連がある</HighlightBold>のです。
+                        <Highlight>
+                          「<H args={{ name: 'conditionFeature' }} />
+                          」は、「
+                          <H args={{ name: 'repeatFeature' }} />
+                          」と<HighlightBold>関連がある</HighlightBold>のです。
+                        </Highlight>
                       </P>
                     </>
                   )
@@ -986,15 +1000,15 @@ export default () => (
             />
             <EmojiSeparator
               nodes={[
-                <Emoji>🔁</Emoji>,
+                <CustomEmoji type="condition" />,
                 <CustomEmoji type="doubleArrow" />,
-                <CustomEmoji type="condition" />
+                <Emoji>🔁</Emoji>
               ]}
               description={
                 <>
-                  「<H args={{ name: 'repeatFeature' }} />
+                  「<H args={{ name: 'conditionFeature' }} />
                   」は、
-                  <br />「<H args={{ name: 'conditionFeature' }} />
+                  <br />「<H args={{ name: 'repeatFeature' }} />
                   」と関連がある
                 </>
               }

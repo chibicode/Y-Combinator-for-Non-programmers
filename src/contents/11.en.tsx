@@ -123,6 +123,7 @@ export default () => (
                   <ExpressionRunnerSeparator />
                   <EmojiSeparator
                     emojis={['❓', '🍱', '❓']}
+                    size="mdsm"
                     description={
                       <>
                         Reproduce with
@@ -142,6 +143,7 @@ export default () => (
                   <ExpressionRunnerSeparator />
                   <EmojiSeparator
                     emojis={['❓', '🍱', '❓']}
+                    size="mdsm"
                     description={
                       <>
                         Reproduce with
@@ -993,7 +995,7 @@ export default () => (
                       <P>
                         <Bold>Why?</Bold>{' '}
                         <Highlight>
-                          Because it actually is related to{' '}
+                          Because it actually is <Italic>related to</Italic>{' '}
                           <H args={{ name: 'repeatFeature' }} />.
                         </Highlight>
                       </P>
@@ -1012,7 +1014,7 @@ export default () => (
                 <>
                   <H args={{ name: 'conditionFeature', capitalize: true }} />
                   <br />
-                  is related to
+                  is <Italic>related to</Italic>
                   <br />
                   <H args={{ name: 'repeatFeature' }} />
                 </>
