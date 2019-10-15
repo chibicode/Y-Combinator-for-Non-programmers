@@ -28,7 +28,6 @@ export interface CardProps {
     | 'green'
     | 'blue'
     | 'indigo'
-    | 'white'
     | 'pink'
     | 'brown'
   slideNumber?: number
@@ -53,7 +52,6 @@ export const backgroundColor = (color: CardProps['color']) =>
   ({
     green: colors('green50'),
     grey: colors('grey100'),
-    white: colors('white'),
     orange: colors('deepOrange50'),
     yellow: colors('yellow100'),
     purple: colors('deepPurple50'),
@@ -68,7 +66,6 @@ const slideLabelBgColor = (color: CardProps['color']) =>
   ({
     green: colors('green600'),
     grey: colors('grey600'),
-    white: colors('grey600'),
     orange: colors('deepOrange600'),
     yellow: colors('yellow900'),
     purple: colors('deepPurple300'),
@@ -198,7 +195,11 @@ const Card = ({
               border-bottom-left-radius: ${radii(0.5)};
             `}
           >
-            {footer.content}
+            <CardColorContext.Provider
+              value={{ color: footer.color || 'brown' }}
+            >
+              {footer.content}
+            </CardColorContext.Provider>
           </div>
         )}
       </div>
