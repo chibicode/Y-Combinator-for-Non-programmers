@@ -730,7 +730,7 @@ export default () => (
                       </P>
                       <P>
                         <Highlight>
-                          Any lunchboxes that fit the following pattern have{' '}
+                          Any lunchboxes that have the following pattern have{' '}
                           <H args={{ name: 'plusOneEffect' }} />.
                         </Highlight>
                       </P>
@@ -740,7 +740,7 @@ export default () => (
               ]}
             />
             <R.Blvt>
-              Any lunchboxes that fit the following pattern
+              Any lunchboxes that have the following pattern
               <br />
               have <H args={{ name: 'plusOneEffect' }} />
             </R.Blvt>

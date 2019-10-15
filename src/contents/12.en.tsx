@@ -745,8 +745,8 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        最終的に残ったこちらの弁当箱は、
-                        <EmojiNumber number={1} /> に変換できる弁当箱だね。
+                        The result is a lunchbox that can be converted to{' '}
+                        <EmojiNumber number={1} />!
                       </P>
                       <R.Oclg>
                         <H
@@ -758,11 +758,8 @@ export default () => (
                         />
                       </R.Oclg>
                       <P>
-                        だから、
-                        <EmojiNumber number={1} /> が残ったので、
-                        <HighlightBold>
-                          成功
-                        </HighlightBold> <Emoji>🎉</Emoji> です！
+                        Because the result is <EmojiNumber number={1} />, it’s a
+                        success! <Emoji>🎉</Emoji>
                       </P>
                     </>
                   )
@@ -771,7 +768,7 @@ export default () => (
                   type: 'celebrate',
                   children: (
                     <>
-                      <P>やったー、さすがサヤちゃん！</P>
+                      <P>Yay! Saya, you’re awesome!</P>
                     </>
                   )
                 }
@@ -795,11 +792,13 @@ export default () => (
                   type: 'dog',
                   children: (
                     <>
-                      <P>お見事！サヤちゃん、正解です！</P>
                       <P>
-                        サヤちゃんの弁当箱は、「
-                        <H args={{ name: 'conditionFeature' }} />
-                        」を再現しています！
+                        <Bold>Good job, Saya!</Bold> You’re correct!
+                      </P>
+                      <P>
+                        You have successfully{' '}
+                        <HighlightBold>reproduced</HighlightBold>{' '}
+                        <H args={{ name: 'conditionFeature' }} />!
                       </P>
                     </>
                   )
@@ -807,14 +806,13 @@ export default () => (
               ]}
             />
             <R.Rhoa>
-              「<H args={{ name: 'conditionFeature' }} />
-              」は…
+              <H args={{ name: 'conditionFeature', capitalize: true }} />…
             </R.Rhoa>
             <ExpressionRunnerSeparator />
             <R.Sdta>
-              <Emoji>👧🏻</Emoji> サヤちゃんの弁当箱で
+              …can be reproduced by
               <br />
-              再現できている！
+              <Emoji>👧🏻</Emoji> Saya’s lunchbox!
             </R.Sdta>
             <BubbleQuotes
               quotes={[
@@ -822,7 +820,7 @@ export default () => (
                   type: 'saya',
                   children: (
                     <>
-                      <P>やったー！</P>
+                      <P>Yay!</P>
                     </>
                   )
                 },
@@ -831,12 +829,14 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        ちなみに、
+                        <Bold>By the way:</Bold> There are{' '}
+                        <Italic>other</Italic> correct answers as well.
+                      </P>
+                      <P>
                         <Highlight>
-                          以下のような <Emoji>🅰️</Emoji> <Emoji>🅱️</Emoji>{' '}
-                          <CustomEmoji type="C" /> <CustomEmoji type="D" />{' '}
-                          <CustomEmoji type="E" />{' '}
-                          の法則に沿っていれば、それぞれに何の料理が入っていても、条件分岐の機能を再現することができます。
+                          Any lunchboxes that have the following pattern can be
+                          used to reproduce{' '}
+                          <H args={{ name: 'conditionFeature' }} />.
                         </Highlight>
                       </P>
                     </>
@@ -845,9 +845,11 @@ export default () => (
               ]}
             />
             <R.Fton>
-              以下の法則に当てはまる弁当箱で
+              Any lunchboxes that have the following
               <br />
-              あれば、条件分岐の機能を再現できる
+              pattern can be used to reproduce
+              <br />
+              <H args={{ name: 'conditionFeature' }} />.
             </R.Fton>
             <BubbleQuotes
               quotes={[
@@ -856,13 +858,16 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        まとめると、
+                        <Bold>So, we now know that:</Bold>{' '}
                         <Highlight>
-                          計算箱の「
-                          <H args={{ name: 'conditionFeature' }} />
-                          」も、弁当箱で再現することができる
+                          <H
+                            args={{
+                              name: 'conditionFeature',
+                              capitalize: true
+                            }}
+                          />{' '}
+                          can be reproduced using a lunchbox.
                         </Highlight>
-                        のです。このポイントさえ覚えていただければ、細かいことは分からなくても大丈夫です！
                       </P>
                     </>
                   )
@@ -879,12 +884,14 @@ export default () => (
               ]}
               description={
                 <>
-                  計算箱の「
-                  <H args={{ name: 'conditionFeature' }} />
-                  」も、
+                  <H
+                    args={{
+                      name: 'conditionFeature',
+                      capitalize: true
+                    }}
+                  />{' '}
                   <br />
-                  弁当箱で「<HighlightBold>再現</HighlightBold>
-                  」することができる
+                  can be reproduced using a lunchbox
                 </>
               }
             />
@@ -892,7 +899,16 @@ export default () => (
         )
       },
       {
-        title: <>繰り返しの機能は？</>,
+        title: (
+          <>
+            But what about{' '}
+            <H
+              args={{
+                name: 'repeatFeature'
+              }}
+            />
+          </>
+        ),
         content: (
           <>
             <BubbleQuotes
