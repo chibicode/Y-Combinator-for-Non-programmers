@@ -619,50 +619,46 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        では、
-                        <Highlight>
-                          サヤの弁当箱の <CustomEmoji type="blankNumberRed" />{' '}
+                        Let’s try the same thing with my lunchbox, and see if
+                        the result is also <EmojiNumber number={1} />.
+                      </P>
+                      <Ul>
+                        <UlLi>
+                          I will also use <EmojiNumber number={2} />{' '}
+                          <EmojiNumber number={1} /> <EmojiNumber number={0} />{' '}
+                          for <CustomEmoji type="blankNumberRed" />{' '}
                           <CustomEmoji type="blankNumberYellow" />{' '}
-                          <CustomEmoji type="blankNumberGreen" /> にも{' '}
-                          <EmojiNumber number={2} /> <EmojiNumber number={1} />{' '}
-                          <EmojiNumber number={0} /> を入れてみるよ。
-                        </Highlight>
-                      </P>
-                      <P>
-                        これを
-                        <H args={{ name: 'play' }} /> したとき、
-                        <Highlight>
-                          先ほど同じく結果が <EmojiNumber number={1} /> になれば
-                          <HighlightBold>
-                            成功
-                          </HighlightBold> <Emoji>🎉</Emoji> というわけだよね。
-                        </Highlight>
-                      </P>
+                          <CustomEmoji type="blankNumberGreen" />, and…
+                        </UlLi>
+                        <UlLi>
+                          If we run it and the final result is{' '}
+                          <EmojiNumber number={1} /> just like the above, it’s a
+                          success! <Emoji>🎉</Emoji>
+                        </UlLi>
+                      </Ul>
                     </>
                   )
                 }
               ]}
             />
             <R.Sdta>
-              <Emoji>👧🏻</Emoji> サヤの弁当箱の…
+              <Emoji>👧🏻</Emoji> In Saya’s lunchbox…
             </R.Sdta>
             <ExpressionRunnerSeparator />
             <R.Jbqw>
-              <CustomEmoji type="blankNumberRed" /> に{' '}
-              <EmojiNumber number={2} /> を、
-              <br />
-              <CustomEmoji type="blankNumberYellow" /> に{' '}
-              <EmojiNumber number={1} /> を、
-              <br />
-              <CustomEmoji type="blankNumberGreen" /> に{' '}
-              <EmojiNumber number={0} /> を入れてみた
+              Use <EmojiNumber number={2} /> <EmojiNumber number={1} />{' '}
+              <EmojiNumber number={0} /> for{' '}
+              <CustomEmoji type="blankNumberRed" />{' '}
+              <CustomEmoji type="blankNumberYellow" />{' '}
+              <CustomEmoji type="blankNumberGreen" />
             </R.Jbqw>
             <ExpressionRunnerSeparator />
             <ExpressionRunnerCaptionOnly>
               <Highlight>
-                <EmojiNumber size="semilg" number={1} /> に変換できる弁当箱
+                If it becomes a lunchbox that can be
                 <br />
-                になれば<HighlightBold>成功</HighlightBold> <Emoji>🎉</Emoji>
+                converted to <EmojiNumber size="semilg" number={1} />, then{' '}
+                <HighlightBold>success</HighlightBold> <Emoji>🎉</Emoji>
               </Highlight>
             </ExpressionRunnerCaptionOnly>
             <BubbleQuotes
@@ -672,11 +668,14 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        なるほど。これを実行して計算箱に変換したときに{' '}
-                        <EmojiNumber number={1} /> になれば…
+                        I see, if the result is the same as using{' '}
+                        <H args={{ name: 'conditionFeature' }} />…
                       </P>
                       <P>
-                        サヤちゃんの弁当箱が条件分岐の弁当箱を再現できていると見て間違いないな。
+                        We can be pretty sure that Saya’s lunchbox has{' '}
+                        <HighlightBold>reproduced</HighlightBold>{' '}
+                        <H args={{ name: 'conditionFeature' }} /> correctly.
+                        Let’s check!
                       </P>
                     </>
                   )
