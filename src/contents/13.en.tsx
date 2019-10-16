@@ -222,7 +222,7 @@ export default () => (
         )
       },
       {
-        title: <>Replace with mathboxes: Phase 1</>,
+        title: <>Replace each section: Phase 1</>,
         content: (
           <>
             <BubbleQuotes
@@ -359,7 +359,7 @@ export default () => (
         )
       },
       {
-        title: <>計算箱に置き換える・その2</>,
+        title: <>Replace each section: Phase 2</>,
         content: (
           <>
             <BubbleQuotes
@@ -368,13 +368,15 @@ export default () => (
                   type: 'saya',
                   children: (
                     <>
-                      <P>次に、この右の黄色の部分に注目してみて！</P>
+                      <P>
+                        Now, <Highlight>take a look at this section.</Highlight>
+                      </P>
                     </>
                   )
                 }
               ]}
             />
-            <R.Poha>右の部分に注目</R.Poha>
+            <R.Poha>Take a look at this section</R.Poha>
             <BubbleQuotes
               quotes={[
                 {
@@ -382,16 +384,13 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        これはもしかして…
-                        <Highlight>
-                          中級その3でやった、
-                          <H args={{ name: 'plusOneEffect' }} />
-                          がある弁当箱かな？
-                        </Highlight>
+                        This looks like a lunchbox that has{' '}
+                        <H args={{ name: 'plusOneEffect' }} />!
                       </P>
                       <R.Vcqp>
+                        A lunchbox with
+                        <br />
                         <H args={{ name: 'plusOneEffect' }} />
-                        がある弁当箱
                       </R.Vcqp>
                     </>
                   )
@@ -401,11 +400,10 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        その通り！だから、この部分をいったん{' '}
-                        <HighlightBold>
-                          <CustomEmoji type="plusOne" /> に置き換える
-                        </HighlightBold>
-                        ね。
+                        Exactly! So we’ll{' '}
+                        <Highlight>
+                          replace this with <CustomEmoji type="plusOne" />.
+                        </Highlight>
                       </P>
                     </>
                   )
@@ -413,7 +411,7 @@ export default () => (
               ]}
             />
             <R.Cpdy>
-              <CustomEmoji type="plusOne" /> に置き換えてみる
+              Replace with <CustomEmoji type="plusOne" />
             </R.Cpdy>
             <BubbleQuotes
               quotes={[
@@ -421,7 +419,7 @@ export default () => (
                   type: 'thinking',
                   children: (
                     <>
-                      <P>なるほど、だいぶシンプルになってきたぞ…</P>
+                      <P>Hmm… it’s getting much simpler!</P>
                     </>
                   )
                 }
@@ -431,7 +429,7 @@ export default () => (
         )
       },
       {
-        title: <>計算箱に置き換える・その3</>,
+        title: <>Replace each section: Phase 3</>,
         content: (
           <>
             <BubbleQuotes
@@ -440,13 +438,18 @@ export default () => (
                   type: 'saya',
                   children: (
                     <>
-                      <P>最後に、右下の全ての部分に注目してみて！</P>
+                      <P>
+                        Finally,{' '}
+                        <Highlight>
+                          take a look at the <Bold>bottom-right</Bold> section!
+                        </Highlight>
+                      </P>
                     </>
                   )
                 }
               ]}
             />
-            <R.Lxgj>右下の全ての部分に注目</R.Lxgj>
+            <R.Lxgj>Take a look at the bottom-right section</R.Lxgj>
             <BubbleQuotes
               quotes={[
                 {
@@ -454,15 +457,14 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        そういればこれは、前回やった「
-                        <H args={{ name: 'conditionFeature' }} />
-                        」に変換できる弁当箱と同じだ！
+                        Oh! This looks exactly like the one we saw on the last
+                        page: a lunchbox that reproduces{' '}
+                        <H args={{ name: 'conditionFeature' }} />.
                       </P>
                       <R.Vlhb>
-                        「<H args={{ name: 'conditionFeature' }} />
-                        」に
+                        A lunchbox that reproduces
                         <br />
-                        変換できる弁当箱
+                        <H args={{ name: 'conditionFeature' }} />
                       </R.Vlhb>
                     </>
                   )
@@ -472,28 +474,29 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        そう！だから、右下の部分を「
-                        <H args={{ name: 'conditionFeature' }} />
-                        」に置き換えるんだ。
+                        Exactly! So{' '}
+                        <Highlight>
+                          we’ll replace it with{' '}
+                          <H args={{ name: 'conditionFeature' }} />.
+                        </Highlight>
                       </P>
                       <R.Ruou>
-                        「<H args={{ name: 'conditionFeature' }} />
-                        」に置き換える
+                        Replace with <H args={{ name: 'conditionFeature' }} />
                       </R.Ruou>
-                      <P>以下のように置き換えてみるよ。</P>
-                      <R.Wenx></R.Wenx>
+                      <P>Here’s how we’re going to replace it:</P>
+                      <R.Wenx>Before (the bottom right section)</R.Wenx>
                       <ExpressionRunnerSeparator />
-                      <R.Crvj></R.Crvj>
-                      <P>置き換えるとこうなります！</P>
+                      <R.Crvj>After (the bottom right section)</R.Crvj>
+                      <P>After the replacement, it’ll look like this:</P>
                     </>
                   )
                 }
               ]}
             />
             <R.Awbq>
-              「<H args={{ name: 'conditionFeature' }} />
-              」<br />
-              の部分を置き換えた後
+              After replacing with
+              <br />
+              <H args={{ name: 'conditionFeature' }} />
             </R.Awbq>
             <BubbleQuotes
               quotes={[
@@ -501,7 +504,7 @@ export default () => (
                   type: 'surprised',
                   children: (
                     <>
-                      <P>なんと、超シンプルになった！</P>
+                      <P>Wow, it’s much simpler now!</P>
                     </>
                   )
                 }

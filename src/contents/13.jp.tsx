@@ -468,9 +468,9 @@ export default () => (
                         」に置き換える
                       </R.Ruou>
                       <P>以下のように置き換えてみるよ。</P>
-                      <R.Wenx></R.Wenx>
+                      <R.Wenx>置き換え前(右下の部分のみ)</R.Wenx>
                       <ExpressionRunnerSeparator />
-                      <R.Crvj></R.Crvj>
+                      <R.Crvj>置き換え後(右下の部分のみ)</R.Crvj>
                       <P>置き換えるとこうなります！</P>
                     </>
                   )
