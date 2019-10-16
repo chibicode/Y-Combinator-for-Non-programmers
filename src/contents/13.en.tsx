@@ -6,7 +6,8 @@ import {
   Highlight,
   Ul,
   UlLi,
-  Bold
+  Bold,
+  Italic
 } from 'src/components/ContentTags'
 import H from 'src/components/H'
 import BubbleQuotes from 'src/components/BubbleQuotes'
@@ -138,7 +139,7 @@ export default () => (
                   type: 'tired',
                   children: (
                     <>
-                      <P>めちゃくちゃ複雑な弁当箱だなあ…</P>
+                      <P>This looks really complicated…</P>
                     </>
                   )
                 },
@@ -146,8 +147,12 @@ export default () => (
                   type: 'dog',
                   children: (
                     <>
-                      <P>ここで質問です。</P>
+                      <P>
+                        <Bold>Now, here’s a question:</Bold> What happens when
+                        you do this:
+                      </P>
                       <InlineRunAndConvertToMathboxButton />
+                      <P>…on the above lunchbox?</P>
                     </>
                   )
                 },
@@ -156,11 +161,8 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        <Highlight>
-                          そんなの、すぐ答えられるわけないだろう！
-                        </Highlight>
-                        こんな複雑な弁当箱、
-                        <H args={{ name: 'play' }} /> するのもひと苦労だよ！
+                        Well… there’s no way I can figure it out in my head.
+                        It’s too complicated!
                       </P>
                     </>
                   )
@@ -170,16 +172,12 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        サヤはすぐ分かったよ！
-                        <H args={{ name: 'runAndConvertToMathbox' }} /> すると、
-                        <HighlightBold>
-                          結果は <EmojiNumber number={4} /> になる
-                        </HighlightBold>
-                        んじゃない？
+                        <Bold>I figured it out!</Bold> I think the result will
+                        be <EmojiNumber number={4} />.
                       </P>
                       <R.Kizi>
-                        <Emoji>👧🏻</Emoji> 結果は <EmojiNumber number={4} />{' '}
-                        になると思う！
+                        <Emoji>👧🏻</Emoji> I think the result will be{' '}
+                        <EmojiNumber number={4} />
                       </R.Kizi>
                     </>
                   )
@@ -189,10 +187,8 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        <HighlightBold>
-                          まさにその通り！サヤちゃん、正解です！
-                          <Emoji>🎉</Emoji>
-                        </HighlightBold>
+                        <Bold>Yes! Correct!</Bold> Saya, You’re exactly right!{' '}
+                        <Emoji>🎉</Emoji>
                       </P>
                     </>
                   )
@@ -201,13 +197,11 @@ export default () => (
                   type: 'surprised',
                   children: (
                     <>
-                      <P>へ？なんでそんな早く正解が分かるの…？</P>
                       <P>
-                        <Highlight>
-                          サヤちゃん、まさか一瞬で頭の中で
-                          <H args={{ name: 'play' }} /> したのかい？
-                        </Highlight>
+                        What? How is it possible that you figured it out so
+                        quickly?
                       </P>
+                      <P>Saya, did you solve it all in your head?</P>
                     </>
                   )
                 },
@@ -216,7 +210,8 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        ううん、そんなことはしていないよ。じゃあ、どうやって解いたかを教えてあげるね！
+                        Not really. Actually, <Italic>I used a trick.</Italic>{' '}
+                        Let me explain!
                       </P>
                     </>
                   )
