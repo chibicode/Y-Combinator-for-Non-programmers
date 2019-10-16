@@ -1399,6 +1399,45 @@ export const harq = initializeExpressionContainer(
   numberParamsHighlightNumber('g', 'h', 2)
 )
 
+export const wvsk = initializeExpressionContainer([
+  {
+    arg: 'f',
+    body: isZeroParams(
+      'a',
+      'b',
+      'c',
+      'd',
+      'e',
+      numberParams('g', 'h', 2),
+      [succParams('i', 'j', 'k'), 'f'],
+      'f'
+    )
+  },
+  {
+    shorthandNumber: 3,
+    initialHighlight: true
+  }
+])
+
+export const nuux = initializeExpressionContainer([
+  {
+    arg: 'f',
+    body: isZeroParams(
+      'a',
+      'b',
+      'c',
+      'd',
+      'e',
+      numberParams('g', 'h', 2),
+      [succParams('i', 'j', 'k'), 'f'],
+      'f'
+    )
+  },
+  {
+    shorthandNumber: 3
+  }
+])
+
 export const aqul = initializeExpressionContainer([
   {
     arg: 'f',
@@ -1417,8 +1456,7 @@ export const aqul = initializeExpressionContainer([
     )
   },
   {
-    shorthandNumber: 3,
-    initialHighlight: true
+    shorthandNumber: 3
   }
 ])
 

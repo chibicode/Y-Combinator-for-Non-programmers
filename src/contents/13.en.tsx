@@ -234,8 +234,7 @@ export default () => (
                       <P>
                         <Bold>First:</Bold>{' '}
                         <Highlight>
-                          Take a look at the top section, and the middle section
-                          on the right side!
+                          Take a look at the <Bold>top section</Bold>.
                         </Highlight>
                       </P>
                     </>
@@ -243,11 +242,9 @@ export default () => (
                 }
               ]}
             />
-            <R.Dpaw>
-              一番上の部分と、
-              <br />
-              右の真ん中の部分に注目
-            </R.Dpaw>
+            <R.Ywpq>
+              Take a look at the <Bold>top section</Bold>
+            </R.Ywpq>
             <BubbleQuotes
               quotes={[
                 {
@@ -255,11 +252,8 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        あ、
-                        <Highlight>
-                          一番上の部分をよく見ると、これは{' '}
-                          <EmojiNumber number={3} /> に変換できる弁当箱だ！
-                        </Highlight>
+                        Oh! The top section is actually a lunchbox that can be
+                        converted to <EmojiNumber number={3} />!
                       </P>
                       <R.Ayrl>
                         <H
@@ -270,22 +264,6 @@ export default () => (
                           }}
                         />
                       </R.Ayrl>
-                      <P>
-                        さらに、
-                        <Highlight>
-                          右の真ん中の部分をよく見ると、これは{' '}
-                          <EmojiNumber number={2} /> に変換できる弁当箱だ！
-                        </Highlight>
-                      </P>
-                      <R.Vhte>
-                        <H
-                          args={{
-                            name: 'canBeConvertedCaption',
-                            letter: 'g',
-                            number: 2
-                          }}
-                        />
-                      </R.Vhte>
                     </>
                   )
                 },
@@ -294,22 +272,28 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        そう！だから、とりあえずこれらを
-                        <HighlightBold>
-                          <EmojiNumber number={3} /> と{' '}
-                          <EmojiNumber number={2} /> に置き換えてみる
-                        </HighlightBold>
-                        ね。
+                        そう！だから、とりあえずこれらを{' '}
+                        <EmojiNumber number={3} /> に置き換えてみるね！
                       </P>
                     </>
                   )
                 }
               ]}
             />
-            <R.Wgby>
-              それぞれ <EmojiNumber number={3} /> と <EmojiNumber number={2} />{' '}
-              に置き換えてみる
-            </R.Wgby>
+            <R.Uwgj>
+              それぞれ <EmojiNumber number={3} /> に置き換えてみる
+            </R.Uwgj>
+            <R.Vhte>
+              <H
+                args={{
+                  name: 'canBeConvertedCaption',
+                  letter: 'g',
+                  number: 2
+                }}
+              />
+            </R.Vhte>
+            <R.Itis></R.Itis>
+            <R.Wgby></R.Wgby>
             <BubbleQuotes
               quotes={[
                 {

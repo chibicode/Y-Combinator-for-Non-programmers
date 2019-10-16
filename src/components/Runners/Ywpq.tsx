@@ -1,12 +1,12 @@
 import React from 'react'
 import ExpressionRunnerPrecomputed from 'src/components/ExpressionRunnerPrecomputed'
-import config from 'src/lib/runners/dpaw.json'
+import config from 'src/lib/runners/ywpq.json'
 
-const Dpaw = ({ children }: { children?: React.ReactNode }) => (
+const Ywpq = ({ children }: { children?: React.ReactNode }) => (
   // @ts-ignore
   <ExpressionRunnerPrecomputed {...config}>
     {children}
   </ExpressionRunnerPrecomputed>
 )
 
-export default Dpaw
+export default Ywpq

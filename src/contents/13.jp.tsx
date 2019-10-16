@@ -222,20 +222,14 @@ export default () => (
                     <>
                       <P>
                         まず、
-                        <Highlight>
-                          一番上の部分と、右の真ん中の部分に注目してみて！
-                        </Highlight>
+                        <Highlight>一番上の部分に注目してみて！</Highlight>
                       </P>
                     </>
                   )
                 }
               ]}
             />
-            <R.Dpaw>
-              一番上の部分と、
-              <br />
-              右の真ん中の部分に注目
-            </R.Dpaw>
+            <R.Ywpq>一番上の部分に注目</R.Ywpq>
             <BubbleQuotes
               quotes={[
                 {
@@ -258,8 +252,48 @@ export default () => (
                           }}
                         />
                       </R.Ayrl>
+                    </>
+                  )
+                },
+                {
+                  type: 'saya',
+                  children: (
+                    <>
                       <P>
-                        さらに、
+                        そう！だから、とりあえずこれを
+                        <HighlightBold>
+                          <EmojiNumber number={3} /> に置き換えてみる
+                        </HighlightBold>
+                        ね。
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Uwgj>
+              上の部分を <EmojiNumber number={3} /> に置き換えてみる
+            </R.Uwgj>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'saya',
+                  children: (
+                    <>
+                      <P>次は、右の真ん中の部分に注目してみて！</P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Itis>右の真ん中の部分に注目</R.Itis>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'surprised',
+                  children: (
+                    <>
+                      <P>
                         <Highlight>
                           右の真ん中の部分をよく見ると、これは{' '}
                           <EmojiNumber number={2} /> に変換できる弁当箱だ！
@@ -282,9 +316,8 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        そう！だから、とりあえずこれらを
+                        そう！だから、これを
                         <HighlightBold>
-                          <EmojiNumber number={3} /> と{' '}
                           <EmojiNumber number={2} /> に置き換えてみる
                         </HighlightBold>
                         ね。
@@ -295,8 +328,7 @@ export default () => (
               ]}
             />
             <R.Wgby>
-              それぞれ <EmojiNumber number={3} /> と <EmojiNumber number={2} />{' '}
-              に置き換えてみる
+              <EmojiNumber number={2} /> に置き換えてみる
             </R.Wgby>
             <BubbleQuotes
               quotes={[

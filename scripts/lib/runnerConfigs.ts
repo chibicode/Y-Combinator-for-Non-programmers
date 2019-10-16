@@ -2021,15 +2021,13 @@ export const bnyo: ExpressionRunnerShorthandConfig = {
   showPriorities: true
 }
 
-export const dpaw: ExpressionRunnerShorthandConfig = {
+export const ywpq: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   initialExpressionContainer: initialExpressionContainers.gbbo,
   showPriorities: true,
   highlightOverrides: {
     l: 'highlighted',
-    m: 'highlighted',
-    g: 'highlighted',
-    h: 'highlighted'
+    m: 'highlighted'
   }
 }
 
@@ -2045,6 +2043,22 @@ export const vhte: ExpressionRunnerShorthandConfig = {
   initialExpressionContainer: initialExpressionContainers.harq,
   showPriorities: true,
   bottomRightBadgeOverrides: { g: '🅰️', h: '🅱️' }
+}
+
+export const uwgj: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.wvsk,
+  showPriorities: true
+}
+
+export const itis: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.nuux,
+  showPriorities: true,
+  highlightOverrides: {
+    g: 'highlighted',
+    h: 'highlighted'
+  }
 }
 
 export const wgby: ExpressionRunnerShorthandConfig = {
