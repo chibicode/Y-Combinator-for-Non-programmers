@@ -19,6 +19,7 @@ import TwoColGrid from 'src/components/TwoColGrid'
 import InlineBorder from 'src/components/InlineBorder'
 import * as R from 'src/components/Runners'
 import ExpressionRunnerCaptionOnly from 'src/components/ExpressionRunnerCaptionOnly'
+import InlineRunAndConvertToMathboxButton from 'src/components/InlineRunAndConvertToMathboxButton'
 import NextLessonButton from 'src/components/NextLessonButton'
 
 export default () => (
@@ -109,11 +110,7 @@ export default () => (
                 }
               ]}
             />
-            <R.Bnyo>
-              <H args={{ name: 'runAndConvertToMathbox' }} />
-              <br />
-              するとどうなる？
-            </R.Bnyo>
+            <R.Bnyo>複雑な弁当箱</R.Bnyo>
             <BubbleQuotes
               quotes={[
                 {
@@ -128,12 +125,12 @@ export default () => (
                   type: 'dog',
                   children: (
                     <>
+                      <P>ここで質問です。上の弁当箱を、</P>
+                      <InlineRunAndConvertToMathboxButton />
                       <P>
-                        ここで質問です。
+                        すると、
                         <HighlightBold>
-                          上の弁当箱を、
-                          <H args={{ name: 'runAndConvertToMathbox' }} />{' '}
-                          すると、どんな結果になるでしょう？
+                          どんな結果になるでしょう？
                         </HighlightBold>
                       </P>
                     </>
@@ -159,7 +156,6 @@ export default () => (
                     <>
                       <P>
                         サヤはすぐ分かったよ！
-                        <H args={{ name: 'runAndConvertToMathbox' }} /> すると、
                         <HighlightBold>
                           結果は <EmojiNumber number={4} /> になる
                         </HighlightBold>

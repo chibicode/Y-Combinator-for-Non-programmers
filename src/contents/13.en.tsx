@@ -17,6 +17,7 @@ import CustomEmoji from 'src/components/CustomEmoji'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import TwoColGrid from 'src/components/TwoColGrid'
 import InlineBorder from 'src/components/InlineBorder'
+import InlineRunAndConvertToMathboxButton from 'src/components/InlineRunAndConvertToMathboxButton'
 import * as R from 'src/components/Runners'
 import ExpressionRunnerCaptionOnly from 'src/components/ExpressionRunnerCaptionOnly'
 import NextLessonButton from 'src/components/NextLessonButton'
@@ -124,17 +125,13 @@ export default () => (
                   type: 'dog',
                   children: (
                     <>
-                      <P>まずは、こちらの弁当箱をご覧ください。</P>
+                      <P>Let’s take a look at this lunchbox:</P>
                     </>
                   )
                 }
               ]}
             />
-            <R.Bnyo>
-              <H args={{ name: 'runAndConvertToMathbox' }} />
-              <br />
-              するとどうなる？
-            </R.Bnyo>
+            <R.Bnyo>A complicated lunchbox</R.Bnyo>
             <BubbleQuotes
               quotes={[
                 {
@@ -149,14 +146,8 @@ export default () => (
                   type: 'dog',
                   children: (
                     <>
-                      <P>
-                        ここで質問です。
-                        <HighlightBold>
-                          上の弁当箱を、
-                          <H args={{ name: 'runAndConvertToMathbox' }} />{' '}
-                          すると、どんな結果になるでしょう？
-                        </HighlightBold>
-                      </P>
+                      <P>ここで質問です。</P>
+                      <InlineRunAndConvertToMathboxButton />
                     </>
                   )
                 },
