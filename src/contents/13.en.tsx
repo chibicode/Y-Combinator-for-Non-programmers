@@ -272,8 +272,10 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        そう！だから、とりあえずこれらを{' '}
-                        <EmojiNumber number={3} /> に置き換えてみるね！
+                        Yes! So we’ll{' '}
+                        <Highlight>
+                          replace this section with <EmojiNumber number={3} />.
+                        </Highlight>
                       </P>
                     </>
                   )
@@ -281,26 +283,73 @@ export default () => (
               ]}
             />
             <R.Uwgj>
-              それぞれ <EmojiNumber number={3} /> に置き換えてみる
+              Replace the top section with <EmojiNumber number={3} />
             </R.Uwgj>
-            <R.Vhte>
-              <H
-                args={{
-                  name: 'canBeConvertedCaption',
-                  letter: 'g',
-                  number: 2
-                }}
-              />
-            </R.Vhte>
-            <R.Itis></R.Itis>
-            <R.Wgby></R.Wgby>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'saya',
+                  children: (
+                    <>
+                      <P>
+                        <Bold>Second:</Bold>{' '}
+                        <Highlight>
+                          Take a look at the <Bold>middle-right section</Bold>.
+                        </Highlight>
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Itis>Take a look at the middle-right section</R.Itis>
             <BubbleQuotes
               quotes={[
                 {
                   type: 'surprised',
                   children: (
                     <>
-                      <P>なるほど…！</P>
+                      <P>
+                        The middle-right section is actually a lunchbox that can
+                        be converted to <EmojiNumber number={2} />!
+                      </P>
+                      <R.Vhte>
+                        <H
+                          args={{
+                            name: 'canBeConvertedCaption',
+                            letter: 'g',
+                            number: 2
+                          }}
+                        />
+                      </R.Vhte>
+                    </>
+                  )
+                },
+                {
+                  type: 'saya',
+                  children: (
+                    <>
+                      <P>
+                        Yes! So we’ll{' '}
+                        <Highlight>
+                          replace this section with <EmojiNumber number={2} />.
+                        </Highlight>
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Wgby>
+              Replace the middle-right section with <EmojiNumber number={2} />
+            </R.Wgby>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'surprised',
+                  children: (
+                    <>
+                      <P>I see…!</P>
                     </>
                   )
                 }
