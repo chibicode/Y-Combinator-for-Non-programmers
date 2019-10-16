@@ -58,7 +58,7 @@ export default () => (
         )
       },
       {
-        title: <>とても複雑な弁当箱</>,
+        title: <>A very complicated lunchbox</>,
         content: (
           <>
             <BubbleQuotes
@@ -68,9 +68,8 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        では、これから「
-                        <H args={{ name: 'repeatFeature' }} />
-                        」を弁当箱で再現するのに役立つヒントを出していきますね。
+                        Let me give you a hint to reproduce{' '}
+                        <H args={{ name: 'repeatFeature' }} /> using a lunchbox!
                       </P>
                     </>
                   )
@@ -81,19 +80,41 @@ export default () => (
               left={
                 <>
                   <R.Bwnp>
-                    <CustomEmoji type="plusOne" /> を{' '}
-                    <CustomEmoji type="blankNumber" /> 回<br />
-                    繰り返す
+                    Repeat <CustomEmoji type="plusOne" />
+                    <br />
+                    <CustomEmoji type="blankNumber" /> times
                   </R.Bwnp>
+                  <ExpressionRunnerSeparator />
+                  <EmojiSeparator
+                    size="mdsm"
+                    emojis={['❓', '🍱', '❓']}
+                    description={
+                      <>
+                        Reproduce with
+                        <br />a lunchbox
+                      </>
+                    }
+                  />
                 </>
               }
               right={
                 <>
                   <R.Ewfr>
-                    <CustomEmoji type="minusOne" /> を{' '}
-                    <CustomEmoji type="blankNumber" /> 回<br />
-                    繰り返す
+                    Repeat <CustomEmoji type="minusOne" />
+                    <br />
+                    <CustomEmoji type="blankNumber" /> times
                   </R.Ewfr>
+                  <ExpressionRunnerSeparator />
+                  <EmojiSeparator
+                    emojis={['❓', '🍱', '❓']}
+                    size="mdsm"
+                    description={
+                      <>
+                        Reproduce with
+                        <br />a lunchbox
+                      </>
+                    }
+                  />
                 </>
               }
             />
