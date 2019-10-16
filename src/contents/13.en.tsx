@@ -514,7 +514,7 @@ export default () => (
         )
       },
       {
-        title: <>あとは実行するだけ</>,
+        title: <>Let’s run it</>,
         content: (
           <>
             <BubbleQuotes
@@ -524,9 +524,7 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        あとは、これを
-                        <H args={{ name: 'play' }} />{' '}
-                        するだけだよ。というわけで、
+                        Let’s run it!{' '}
                         <H args={{ name: 'pressFastForward', girl: true }} />
                       </P>
                     </>
@@ -541,17 +539,21 @@ export default () => (
                   type: 'saya',
                   children: (
                     <>
-                      <P>
-                        ここまできたら、後は簡単だよね。
-                        <HighlightBold>
-                          <InlineBorder type="condition" /> が{' '}
-                          <EmojiNumber number={3} /> だから、
-                          <InlineBorder type="falseCase" /> に入っている{' '}
+                      <P>From here, it’s simple.</P>
+                      <Ul>
+                        <UlLi>
+                          <Highlight>
+                            Because <InlineBorder type="condition" /> is{' '}
+                            <EmojiNumber number={3} />, which is not zero…
+                          </Highlight>
+                        </UlLi>
+                        <UlLi>
+                          The result will be what’s in{' '}
+                          <InlineBorder type="falseCase" />, which is{' '}
                           <EmojiNumber number={3} />{' '}
-                          <CustomEmoji type="plusOne" /> が残る
-                        </HighlightBold>
-                        んだ。
-                      </P>
+                          <CustomEmoji type="plusOne" />.
+                        </UlLi>
+                      </Ul>
                       <P>
                         <H args={{ name: 'pressFastForward', girl: true }} />
                       </P>
@@ -568,15 +570,11 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        ほらね、サヤがさっき言ったように、
-                        <HighlightBold>
-                          最後に <EmojiNumber number={4} /> が残った
-                        </HighlightBold>
-                        でしょう？
+                        See, the final result is <EmojiNumber number={4} />!
                       </P>
                       <R.Kizi>
-                        <Emoji>👧🏻</Emoji> 結果は <EmojiNumber number={4} />{' '}
-                        になった！
+                        <Emoji>👧🏻</Emoji> The final result is{' '}
+                        <EmojiNumber number={4} />
                       </R.Kizi>
                     </>
                   )
@@ -585,7 +583,7 @@ export default () => (
                   type: 'thinking',
                   children: (
                     <>
-                      <P>たしかに…！</P>
+                      <P>Hmm… I see!</P>
                     </>
                   )
                 }
