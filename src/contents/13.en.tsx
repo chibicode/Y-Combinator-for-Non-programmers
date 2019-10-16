@@ -222,7 +222,7 @@ export default () => (
         )
       },
       {
-        title: <>計算箱に置き換える・その1</>,
+        title: <>Replace with mathboxes: Phase 1</>,
         content: (
           <>
             <BubbleQuotes
@@ -232,9 +232,10 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        まず、
+                        <Bold>First:</Bold>{' '}
                         <Highlight>
-                          一番上の部分と、右の真ん中の部分に注目してみて！
+                          Take a look at the top section, and the middle section
+                          on the right side!
                         </Highlight>
                       </P>
                     </>
