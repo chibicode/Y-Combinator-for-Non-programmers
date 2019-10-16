@@ -28,22 +28,6 @@ export default () => (
     underConstruction
     cards={[
       {
-        type: 'summary',
-        title: <>Things will get harder</>,
-        content: (
-          <>
-            <P>
-              Starting from this page, things will get harder. It might take you
-              longer to read this page than before. But I think you’ll be fine!
-            </P>
-            <EmojiSeparator
-              emojis={['🤔', '🤔', '🤔']}
-              description={<>Things will get harder</>}
-            />
-          </>
-        )
-      },
-      {
         title: (
           <>
             Reproducing <H args={{ name: 'conditionFeature' }} />

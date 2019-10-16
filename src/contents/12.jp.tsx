@@ -25,24 +25,6 @@ export default () => (
   <EpisodeCardList
     cards={[
       {
-        type: 'summary',
-        title: <>本格的に上級向けになります</>,
-        content: (
-          <>
-            <P>
-              <HighlightBold>
-                このページから、本格的に上級向けになります。
-              </HighlightBold>
-              前のページに比べて、読むのに時間がかかるかもしれません。
-            </P>
-            <EmojiSeparator
-              emojis={['🤔', '🤔', '🤔']}
-              description={<>本格的に上級向けになります！</>}
-            />
-          </>
-        )
-      },
-      {
         title: <>条件分岐の再現</>,
         content: (
           <>
