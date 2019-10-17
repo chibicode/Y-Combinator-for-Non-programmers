@@ -463,10 +463,10 @@ export default () => (
                         <H args={{ name: 'conditionFeature' }} />
                         」に置き換えるんだ。
                       </P>
-                      <R.Ruou>
+                      <R.Rhoa>
                         「<H args={{ name: 'conditionFeature' }} />
                         」に置き換える
-                      </R.Ruou>
+                      </R.Rhoa>
                       <P>以下のように置き換えてみるよ。</P>
                       <R.Wenx>置き換え前(右下の部分のみ)</R.Wenx>
                       <ExpressionRunnerSeparator />

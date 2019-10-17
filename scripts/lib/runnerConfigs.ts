@@ -2088,11 +2088,6 @@ export const vlhb: ExpressionRunnerShorthandConfig = {
   showPriorities: true
 }
 
-export const ruou: ExpressionRunnerShorthandConfig = {
-  runner: 'simple',
-  initialExpressionContainer: initialExpressionContainers.anme
-}
-
 export const awbq: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   initialExpressionContainer: initialExpressionContainers.exoq,

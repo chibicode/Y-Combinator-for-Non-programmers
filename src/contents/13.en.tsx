@@ -479,9 +479,9 @@ export default () => (
                           <H args={{ name: 'conditionFeature' }} />.
                         </Highlight>
                       </P>
-                      <R.Ruou>
+                      <R.Rhoa>
                         Replace with <H args={{ name: 'conditionFeature' }} />
-                      </R.Ruou>
+                      </R.Rhoa>
                       <P>Here’s how we’re going to replace it:</P>
                       <R.Wenx>Before (the bottom right section)</R.Wenx>
                       <ExpressionRunnerSeparator />
