@@ -602,13 +602,13 @@ export default () => (
                 }
               ]}
             />
-            <R.Bnyo>サヤちゃんは、もともとの弁当箱を…</R.Bnyo>
+            <R.Hkfq>サヤちゃんは、もともとの弁当箱を…</R.Hkfq>
             <ExpressionRunnerSeparator />
-            <R.Ghwe>
+            <R.Zcwk>
               それぞれの要素に対応する計算箱に
               <br />
               置き換えてから実行していた
-            </R.Ghwe>
+            </R.Zcwk>
             <ExpressionRunnerSeparator />
             <R.Kizi></R.Kizi>
             <BubbleQuotes
@@ -724,8 +724,10 @@ export default () => (
                       </R.Gmgs>
                       <P>
                         つまり、
-                        <H args={{ name: 'runAndConvertToMathbox' }} />{' '}
-                        すると、結果は <EmojiNumber number={4} /> になるのです。
+                        <H
+                          args={{ name: 'convertToMathbox' }}
+                        /> すると、結果は <EmojiNumber number={4} />{' '}
+                        になるのです。
                       </P>
                       <R.Kizi></R.Kizi>
                     </>

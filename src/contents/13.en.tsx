@@ -593,7 +593,7 @@ export default () => (
         )
       },
       {
-        title: <>そのまま実行していたら？</>,
+        title: <>What if we run it directly?</>,
         content: (
           <>
             <BubbleQuotes
@@ -603,28 +603,26 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        しかし…
-                        <Highlight>
-                          サヤちゃんがとった手法はズルなんじゃないか？
-                        </Highlight>
+                        <Bold>But… isn’t that cheating?</Bold>
                       </P>
                       <P>
-                        サヤちゃんは、もともとの弁当箱を、それぞれの要素に対応する計算箱に置き換えてから実行したけど…
+                        Saya’s strategy was to replace each section with the
+                        corresponding mathbox features…
                       </P>
                     </>
                   )
                 }
               ]}
             />
-            <R.Bnyo>サヤちゃんは、もともとの弁当箱を…</R.Bnyo>
+            <R.Hkfq>
+              <Emoji>👧🏻</Emoji> Saya replaced each section…
+            </R.Hkfq>
             <ExpressionRunnerSeparator />
-            <R.Ghwe>
-              それぞれの要素に対応する計算箱に
-              <br />
-              置き換えてから実行していた
-            </R.Ghwe>
+            <R.Zcwk>…with the corresponding mathbox features</R.Zcwk>
             <ExpressionRunnerSeparator />
-            <R.Kizi></R.Kizi>
+            <R.Kizi>
+              And the result was <EmojiNumber number={4} />
+            </R.Kizi>
             <BubbleQuotes
               quotes={[
                 {
@@ -632,13 +630,12 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        <HighlightBold>
-                          もともとの弁当箱を、そのまま
-                          <H
-                            args={{ name: 'play' }}
-                          /> しても、結果は同じく <EmojiNumber number={4} />{' '}
-                          になっていたのかな？
-                        </HighlightBold>
+                        <Bold>But I’m wondering:</Bold>{' '}
+                        <Highlight>
+                          Would the result also be <EmojiNumber number={4} /> if
+                          we <H args={{ name: 'play', lowerCase: true }} /> the
+                          original lunchbox directly?
+                        </Highlight>
                       </P>
                     </>
                   )
@@ -646,16 +643,16 @@ export default () => (
               ]}
             />
             <R.Bnyo>
-              <Emoji>🍱</Emoji> もともとの弁当箱を、
+              <Emoji>🍱</Emoji> If we{' '}
+              <H args={{ name: 'play', lowerCase: true }} />
               <br />
-              そのまま
-              <H args={{ name: 'play' }} /> しても…
+              the original lunchbox directly…
             </R.Bnyo>
             <ExpressionRunnerSeparator />
             <ExpressionRunnerCaptionOnly>
-              結果は同じく
+              Would the result also be
               <br />
-              <EmojiNumber size="semilg" number={4} /> になっていた？
+              <EmojiNumber size="semilg" number={4} />?
             </ExpressionRunnerCaptionOnly>
             <BubbleQuotes
               quotes={[
@@ -663,7 +660,7 @@ export default () => (
                   type: 'dog',
                   children: (
                     <>
-                      <P>では、確かめてみましょう！</P>
+                      <P>Let’s check!</P>
                     </>
                   )
                 }
@@ -673,7 +670,7 @@ export default () => (
         )
       },
       {
-        title: <>そのまま実行してみる</>,
+        title: <>Run it directly</>,
         content: (
           <>
             <BubbleQuotes
@@ -683,29 +680,29 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        では、もともとの弁当箱を
-                        <H args={{ name: 'fastForward' }} />
-                        してみましょう！
+                        Let’s{' '}
+                        <H args={{ name: 'fastForward', lowerCase: true }} />{' '}
+                        the original lunchbox directly!
                       </P>
                       <Ul>
                         <UlLi>
-                          ステップ数が非常に多いので、
-                          <HighlightBold>
-                            3倍速で早送りします！
-                          </HighlightBold>{' '}
+                          There are so many steps, so we’ll{' '}
+                          <Highlight>
+                            change the playback speed to 3x.
+                          </Highlight>{' '}
                           <Emoji>⏩</Emoji> <Emoji>⏩</Emoji> <Emoji>⏩</Emoji>
                         </UlLi>
                         <UlLi>
-                          <Highlight>
-                            早送り中は、目に優しくなるように弁当箱を半透明にしています。
-                          </Highlight>
+                          While playing, we’ll{' '}
+                          <Highlight>dim the lunchbox</Highlight> so it’s easier
+                          for your eyes.
                         </UlLi>
                         <UlLi>
-                          待てない方は、「
-                          <HighlightBold>
-                            <H args={{ name: 'skipToTheEnd' }} /> →
-                          </HighlightBold>
-                          」を押して下さい！
+                          If you can’t wait, press{' '}
+                          <Highlight highlightType="pink">
+                            “<H args={{ name: 'skipToTheEnd' }} /> →”
+                          </Highlight>
+                          .
                         </UlLi>
                       </Ul>
                     </>
@@ -721,11 +718,8 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        最後に残った以下の弁当箱は、
-                        <HighlightBold>
-                          <EmojiNumber number={4} /> に変換できる弁当箱
-                        </HighlightBold>
-                        ですね。
+                        The final result is a lunchbox that can be converted to{' '}
+                        <EmojiNumber number={4} />.
                       </P>
                       <R.Gmgs>
                         <H
@@ -737,9 +731,11 @@ export default () => (
                         />
                       </R.Gmgs>
                       <P>
-                        つまり、
-                        <H args={{ name: 'runAndConvertToMathbox' }} />{' '}
-                        すると、結果は <EmojiNumber number={4} /> になるのです。
+                        If you{' '}
+                        <H
+                          args={{ name: 'convertToMathbox', lowerCase: true }}
+                        />
+                        , the result will be <EmojiNumber number={4} />.
                       </P>
                       <R.Kizi></R.Kizi>
                     </>
@@ -749,13 +745,9 @@ export default () => (
                   type: 'surprised',
                   children: (
                     <>
+                      <P>This result is the same as Saya’s method!</P>
                       <P>
-                        <HighlightBold>
-                          サヤちゃんのやり方でやったときと、結果が同じになった！
-                        </HighlightBold>
-                      </P>
-                      <P>
-                        ということは、サヤちゃんのやり方は間違ってなかったのか…
+                        <Bold>So…</Bold> I guess Saya’s method was right…?
                       </P>
                     </>
                   )
@@ -764,7 +756,9 @@ export default () => (
                   type: 'dog',
                   children: (
                     <>
-                      <P>そういうことですね！</P>
+                      <P>
+                        <Bold>Yes!</Bold> Saya’s method was a correct approach.
+                      </P>
                     </>
                   )
                 }
@@ -775,7 +769,7 @@ export default () => (
       },
       {
         type: 'summary',
-        title: <>ここまでの振り返り</>,
+        title: <>What we learned so far</>,
         content: (
           <>
             <BubbleQuotes
@@ -784,13 +778,14 @@ export default () => (
                   type: 'dog',
                   children: (
                     <>
-                      <P>ここで一旦立ち止まって振り返ってみましょう。</P>
+                      <P>Let’s step back and review what we learned so far.</P>
                       <P>
-                        さきほどサヤちゃんがやったのは、「
-                        <HighlightBold>
-                          弁当箱の一部分を、同じ効果がある計算箱と置き換える
-                        </HighlightBold>
-                        」という手法でした。図で説明すると、以下のような感じですね。
+                        Saya solved the problem by{' '}
+                        <Italic>
+                          replacing parts of a lunchbox with the corresponding
+                          mathbox features
+                        </Italic>
+                        , like this:
                       </P>
                     </>
                   )
@@ -798,11 +793,12 @@ export default () => (
               ]}
             />
             <R.Ykqf>
-              <Emoji>🍱</Emoji> 弁当箱の一部分を…
+              Replacing parts of a lunchbox… <Emoji>🍱</Emoji>
             </R.Ykqf>
             <ExpressionRunnerSeparator />
             <R.Ifpo>
-              同じ効果がある <CustomEmoji type="mathBox" /> 計算箱と置き換える
+              With the corresponding mathbox features{' '}
+              <CustomEmoji type="mathBox" />
             </R.Ifpo>
             <BubbleQuotes
               quotes={[
@@ -811,14 +807,12 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        重要なのは、
+                        <Bold>As we saw earlier:</Bold>{' '}
                         <Highlight>
-                          このように弁当箱の一部分を計算箱と置き換えても、
-                          <HighlightBold>
-                            実行したら結果は同じになる
-                          </HighlightBold>
+                          If you replace parts of a lunchbox with the
+                          corresponding mathbox features, the result will be the
+                          same.
                         </Highlight>
-                        ということです。
                       </P>
                     </>
                   )
@@ -831,15 +825,17 @@ export default () => (
                 <CustomEmoji type="singleArrow" />,
                 <CustomEmoji type="mathBox" />
               ]}
-              description={<>弁当箱の一部分を計算箱と置き換えても…</>}
+              description={
+                <>
+                  If you replace parts of a lunchbox
+                  <br />
+                  with the corresponding mathbox features
+                </>
+              }
             />
             <ExpressionRunnerSeparator />
             <ExpressionRunnerCaptionOnly>
-              <HighlightBold>
-                実行したら
-                <br />
-                結果は同じになる！
-              </HighlightBold>
+              <Highlight>the result will be the same.</Highlight>
             </ExpressionRunnerCaptionOnly>
             <BubbleQuotes
               quotes={[
@@ -848,12 +844,8 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        たしかに先ほどの場合は、
-                        <Highlight>
-                          サヤちゃんの手法を使っても、そのまま実行しても、どちらも結果は{' '}
-                          <EmojiNumber number={4} /> になった
-                        </Highlight>
-                        な。
+                        Right. That’s what happened on the earlier example - the
+                        result was <EmojiNumber number={4} /> in either case.
                       </P>
                     </>
                   )
@@ -863,16 +855,12 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        はい。
+                        Yes. And I{' '}
                         <Highlight>
-                          複雑な弁当箱は、それぞれの部分をシンプルな計算箱に置き換えると分かりやすくなります。
-                        </Highlight>
-                      </P>
-                      <P>
-                        <HighlightBold>
-                          結果は変わらないのだから、積極的に置き換えていくべき
-                        </HighlightBold>
-                        ということですね。
+                          <Bold>encourage</Bold> you to replace parts of
+                          lunchbox as much as possible
+                        </Highlight>{' '}
+                        to make it simpler. (like <Emoji>👧🏻</Emoji> Saya did)
                       </P>
                     </>
                   )
@@ -880,29 +868,32 @@ export default () => (
               ]}
             />
             <R.Bnyo>
-              <Emoji>🍱</Emoji> 複雑な弁当箱は…
+              <Emoji>🍱</Emoji> This lunchbox is complex, so…
             </R.Bnyo>
             <ExpressionRunnerSeparator />
             <R.Ghwe>
-              それぞれの部分を
+              <Bold>Simplify it</Bold> by replacing each section
               <br />
-              シンプルな計算箱 <CustomEmoji type="mathBox" /> に置き換えると
-              <br />
-              分かりやすくなる
+              with the corresponding mathbox feature
             </R.Ghwe>
             <ExpressionRunnerSeparator />
             <ExpressionRunnerCaptionOnly>
-              <HighlightBold>
-                ちなみに、どちらの場合も
+              <Highlight>
+                In either case,
                 <br />
-                実行結果は <EmojiNumber size="semilg" number={4} /> になる
-              </HighlightBold>
+                the final result will be{' '}
+                <EmojiNumber size="semilg" number={4} />
+              </Highlight>
             </ExpressionRunnerCaptionOnly>
           </>
         )
       },
       {
-        title: <>繰り返しの機能との関係</>,
+        title: (
+          <>
+            How this is related to <H args={{ name: 'repeatFeature' }} />
+          </>
+        ),
         content: (
           <>
             <BubbleQuotes

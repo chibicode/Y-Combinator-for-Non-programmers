@@ -2021,6 +2021,12 @@ export const bnyo: ExpressionRunnerShorthandConfig = {
   showPriorities: true
 }
 
+export const hkfq: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.nden,
+  showPriorities: true
+}
+
 export const ywpq: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   initialExpressionContainer: initialExpressionContainers.gbbo,
@@ -2135,6 +2141,12 @@ export const crvj: ExpressionRunnerShorthandConfig = {
 export const ghwe: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   initialExpressionContainer: initialExpressionContainers.aiyb,
+  showPriorities: true
+}
+
+export const zcwk: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.mldl,
   showPriorities: true
 }
 

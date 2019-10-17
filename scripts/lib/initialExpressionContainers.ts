@@ -1391,6 +1391,23 @@ export const gbbo = initializeExpressionContainer([
   numberParams('l', 'm', 3)
 ])
 
+export const nden = initializeExpressionContainer([
+  {
+    arg: 'f',
+    body: isZeroParams(
+      highlighted('a'),
+      highlighted('b'),
+      highlighted('c'),
+      highlighted('d'),
+      highlighted('e'),
+      numberParams(highlighted('g'), highlighted('h'), 2),
+      [succParams(highlighted('i'), highlighted('j'), highlighted('k')), 'f'],
+      'f'
+    )
+  },
+  numberParams(highlighted('l'), highlighted('m'), 3)
+])
+
 export const loem = initializeExpressionContainer(
   numberParamsHighlightNumber('l', 'm', 3)
 )
@@ -1602,6 +1619,22 @@ export const aiyb = initializeExpressionContainer([
   },
   {
     shorthandNumber: 3
+  }
+])
+
+export const mldl = initializeExpressionContainer([
+  {
+    arg: 'f',
+    body: {
+      checkType: 'isZero',
+      condition: 'f',
+      trueCase: { shorthandNumber: 2, initialHighlight: true },
+      falseCase: [{ shorthandFunc: 'add', initialHighlight: true }, 'f']
+    }
+  },
+  {
+    shorthandNumber: 3,
+    initialHighlight: true
   }
 ])
 
