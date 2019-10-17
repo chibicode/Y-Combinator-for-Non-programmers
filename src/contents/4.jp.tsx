@@ -881,7 +881,7 @@ export default () => (
               <EmojiWithText letter="g" /> と <EmojiWithText letter="o" />{' '}
               が残るのです。
             </P>
-            <R.Thbw />
+            <R.Weoz />
           </>
         )
       },

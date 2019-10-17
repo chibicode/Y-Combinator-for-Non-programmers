@@ -656,7 +656,7 @@ export default () => (
             </P>
             <R.Rakk />
             <ExpressionRunnerSeparator />
-            <R.Thbw />
+            <R.Weoz />
             <P>
               <Bold>例その4:</Bold>
             </P>

@@ -925,7 +925,7 @@ export default () => (
               And we’re left with <EmojiWithText letter="g" /> and{' '}
               <EmojiWithText letter="o" />.
             </P>
-            <R.Thbw />
+            <R.Weoz />
           </>
         )
       },

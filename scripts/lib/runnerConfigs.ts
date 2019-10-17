@@ -270,12 +270,6 @@ export const issq: ExpressionRunnerShorthandConfig = {
   explanationsVisibility: 'visible'
 }
 
-export const thbw: ExpressionRunnerShorthandConfig = {
-  runner: 'simple',
-  isDone: true,
-  initialExpressionContainer: initialExpressionContainers.sisf
-}
-
 export const dtzu: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   initialExpressionContainer: initialExpressionContainers.lqti,
@@ -854,8 +848,8 @@ export const ehxq: ExpressionRunnerShorthandConfig = {
 
 export const weoz: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
-  initialExpressionContainer: initialExpressionContainers.sisf,
-  isDone: true
+  isDone: true,
+  initialExpressionContainer: initialExpressionContainers.sisf
 }
 
 export const uwma: ExpressionRunnerShorthandConfig = {
