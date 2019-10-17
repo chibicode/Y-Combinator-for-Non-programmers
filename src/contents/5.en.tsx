@@ -799,7 +799,7 @@ export default () => (
                 }
               ]}
             />
-            <R.Jwue>We now have a simpler lunchbox</R.Jwue>
+            <R.Hbbv>We now have a simpler lunchbox</R.Hbbv>
             <BubbleQuotes
               quotes={[
                 {

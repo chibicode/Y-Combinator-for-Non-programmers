@@ -720,7 +720,7 @@ export default () => (
                 }
               ]}
             />
-            <R.Jwue>残った弁当箱はシンプルな2段</R.Jwue>
+            <R.Hbbv>残った弁当箱はシンプルな2段</R.Hbbv>
             <BubbleQuotes
               quotes={[
                 {

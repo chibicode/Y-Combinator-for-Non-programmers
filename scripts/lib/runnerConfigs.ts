@@ -491,13 +491,6 @@ export const kvso: ExpressionRunnerShorthandConfig = {
   skipToTheEnd: false
 }
 
-export const jwue: ExpressionRunnerShorthandConfig = {
-  runner: 'simple',
-  initialExpressionContainer: initialExpressionContainers.pisd,
-  nextIterations: 1,
-  showPriorities: true
-}
-
 export const sgnp: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   initialExpressionContainer: initialExpressionContainers.pisd,
@@ -1584,7 +1577,7 @@ export const kwyy: ExpressionRunnerShorthandConfig = {
 
 export const oukl: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
-  initialExpressionContainer: initialExpressionContainers.ycof,
+  initialExpressionContainer: initialExpressionContainers.pisd,
   showPriorities: true,
   initialState: 'showFuncUnbound',
   highlightOverrides: { b: 'highlighted', c: 'highlighted' },
@@ -1602,7 +1595,7 @@ export const rypq: ExpressionRunnerShorthandConfig = {
 
 export const etae: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
-  initialExpressionContainer: initialExpressionContainers.ycof,
+  initialExpressionContainer: initialExpressionContainers.pisd,
   showPriorities: true,
   initialState: 'betaReducePreviewBefore',
   highlightOverrideActiveAfterStart: true
@@ -1619,7 +1612,7 @@ export const wqml: ExpressionRunnerShorthandConfig = {
 
 export const jwdn: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
-  initialExpressionContainer: initialExpressionContainers.ycof,
+  initialExpressionContainer: initialExpressionContainers.pisd,
   showPriorities: true,
   initialState: 'betaReducePreviewAfter',
   skipAlphaConvert: true
@@ -1635,7 +1628,7 @@ export const abnp: ExpressionRunnerShorthandConfig = {
 
 export const yabb: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
-  initialExpressionContainer: initialExpressionContainers.ycof,
+  initialExpressionContainer: initialExpressionContainers.pisd,
   showPriorities: true,
   initialState: 'betaReducePreviewCrossed',
   skipAlphaConvert: true
@@ -1651,7 +1644,7 @@ export const osff: ExpressionRunnerShorthandConfig = {
 
 export const hbbv: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
-  initialExpressionContainer: initialExpressionContainers.ycof,
+  initialExpressionContainer: initialExpressionContainers.pisd,
   showPriorities: true,
   nextIterations: 1,
   skipAlphaConvert: true
@@ -1667,7 +1660,7 @@ export const fxok: ExpressionRunnerShorthandConfig = {
 
 export const lxhc: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
-  initialExpressionContainer: initialExpressionContainers.ycof,
+  initialExpressionContainer: initialExpressionContainers.pisd,
   showPriorities: true,
   nextIterations: 1,
   skipAlphaConvert: true,
@@ -1685,7 +1678,7 @@ export const hvqy: ExpressionRunnerShorthandConfig = {
 
 export const nntn: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
-  initialExpressionContainer: initialExpressionContainers.ycof,
+  initialExpressionContainer: initialExpressionContainers.pisd,
   showPriorities: true,
   nextIterations: 1,
   skipAlphaConvert: true,
@@ -1712,7 +1705,7 @@ export const bdme: ExpressionRunnerShorthandConfig = {
 
 export const yxel: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
-  initialExpressionContainer: initialExpressionContainers.ycof,
+  initialExpressionContainer: initialExpressionContainers.pisd,
   showPriorities: true,
   skipAlphaConvert: true,
   isDone: true

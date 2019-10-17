@@ -1089,18 +1089,6 @@ export const kipz = initializeExpressionContainer([
   'd'
 ])
 
-export const ycof = initializeExpressionContainer([
-  {
-    arg: 'a',
-    body: {
-      arg: 'b',
-      body: 'a'
-    }
-  },
-  'c',
-  'd'
-])
-
 export const guql = initializeExpressionContainer(
   predParams(
     'questionFoodGrey',
