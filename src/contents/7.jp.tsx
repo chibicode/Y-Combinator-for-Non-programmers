@@ -246,11 +246,51 @@ export default () => (
             />
             <R.Hkbs>
               <H
-                args={{ name: 'canBeConvertedCaption', letter: 'd', number: 1 }}
+                args={{ name: 'canBeConvertedCaption', letter: 'd', number: 0 }}
               />
             </R.Hkbs>
             <ExpressionRunnerSeparator />
             <R.Jwah />
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>
+                        次に、
+                        <HighlightBold>
+                          上の弁当箱と、こちらの弁当箱を合体させます。
+                        </HighlightBold>
+                      </P>
+                      <P>
+                        それぞれの <CustomEmoji type="questionFoodGrey" />{' '}
+                        には何らかの料理が入るのですが、それについてはこれから説明します。
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Envj>
+              こちらの弁当箱と合体させる。
+              <br />
+              それぞれの <CustomEmoji type="questionFoodGrey" /> には
+              <br />
+              何らかの料理が入る
+            </R.Envj>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>合体させると、次のようになります。</P>
+                    </>
+                  )
+                }
+              ]}
+            />
             <BubbleQuotes
               quotes={[
                 {
