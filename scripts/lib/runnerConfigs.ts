@@ -2037,13 +2037,6 @@ export const ayrl: ExpressionRunnerShorthandConfig = {
   bottomRightBadgeOverrides: { l: '🅰️', m: '🅱️' }
 }
 
-export const vhte: ExpressionRunnerShorthandConfig = {
-  runner: 'simple',
-  initialExpressionContainer: initialExpressionContainers.harq,
-  showPriorities: true,
-  bottomRightBadgeOverrides: { g: '🅰️', h: '🅱️' }
-}
-
 export const uwgj: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   initialExpressionContainer: initialExpressionContainers.wvsk,

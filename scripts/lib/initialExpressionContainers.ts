@@ -1397,10 +1397,6 @@ export const loem = initializeExpressionContainer(
   numberParamsHighlightNumber('l', 'm', 3)
 )
 
-export const harq = initializeExpressionContainer(
-  numberParamsHighlightNumber('g', 'h', 2)
-)
-
 export const wvsk = initializeExpressionContainer([
   {
     arg: 'f',

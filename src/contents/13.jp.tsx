@@ -299,7 +299,7 @@ export default () => (
                           <EmojiNumber number={2} /> に変換できる弁当箱だ！
                         </Highlight>
                       </P>
-                      <R.Vhte>
+                      <R.Mzys>
                         <H
                           args={{
                             name: 'canBeConvertedCaption',
@@ -307,7 +307,7 @@ export default () => (
                             number: 2
                           }}
                         />
-                      </R.Vhte>
+                      </R.Mzys>
                     </>
                   )
                 },

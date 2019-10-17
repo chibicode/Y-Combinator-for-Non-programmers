@@ -312,7 +312,7 @@ export default () => (
                         The middle-right section is actually a lunchbox that can
                         be converted to <EmojiNumber number={2} />!
                       </P>
-                      <R.Vhte>
+                      <R.Mzys>
                         <H
                           args={{
                             name: 'canBeConvertedCaption',
@@ -320,7 +320,7 @@ export default () => (
                             number: 2
                           }}
                         />
-                      </R.Vhte>
+                      </R.Mzys>
                     </>
                   )
                 },
