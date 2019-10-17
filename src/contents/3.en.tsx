@@ -730,7 +730,7 @@ export default () => (
             </P>
             <R.Ldqk />
             <ExpressionRunnerSeparator />
-            <R.Fogc />
+            <R.Cpkp />
             <BubbleQuotes
               quotes={[
                 {

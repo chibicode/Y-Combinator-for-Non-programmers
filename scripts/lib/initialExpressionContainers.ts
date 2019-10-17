@@ -40,14 +40,6 @@ export const sisf = initializeExpressionContainer([
   }
 ])
 
-export const zgxp = initializeExpressionContainer([
-  {
-    arg: 'h',
-    body: 'i'
-  },
-  'j'
-])
-
 export const ysyy = initializeExpressionContainer([
   {
     arg: 'h',

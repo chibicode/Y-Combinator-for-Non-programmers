@@ -160,7 +160,7 @@ export const bgfl: ExpressionRunnerShorthandConfig = {
 
 export const cpkp: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
-  initialExpressionContainer: initialExpressionContainers.zgxp,
+  initialExpressionContainer: initialExpressionContainers.ysyy,
   isDone: true
 }
 
@@ -514,12 +514,6 @@ export const nmmz: ExpressionRunnerShorthandConfig = {
 
 export const ldqk: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
-  initialExpressionContainer: initialExpressionContainers.ysyy
-}
-
-export const fogc: ExpressionRunnerShorthandConfig = {
-  runner: 'simple',
-  isDone: true,
   initialExpressionContainer: initialExpressionContainers.ysyy
 }
 
