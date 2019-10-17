@@ -785,6 +785,11 @@ export const epmt = initializeExpressionContainer(
   succParams('questionFoodGrey', 'questionFoodGrey', 'questionFoodGrey')
 )
 
+export const ikrk = initializeExpressionContainer([
+  succParams('questionFoodGrey', 'questionFoodGrey', 'questionFoodGrey'),
+  numberParams('d', 'e', 0)
+])
+
 export const yrgv = initializeExpressionContainer(
   succParams('questionFoodGrey', 'questionFoodGrey', 'questionFoodGrey', true)
 )

@@ -1091,6 +1091,12 @@ export const envj: ExpressionRunnerShorthandConfig = {
   showPriorities: true
 }
 
+export const stda: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.ikrk,
+  showPriorities: true
+}
+
 export const jguj: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   initialExpressionContainer: initialExpressionContainers.yrgv,

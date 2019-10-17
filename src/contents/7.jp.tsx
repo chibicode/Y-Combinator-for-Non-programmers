@@ -291,67 +291,14 @@ export default () => (
                 }
               ]}
             />
+            <R.Stda>合体させるとこうなる</R.Stda>
             <BubbleQuotes
               quotes={[
-                {
-                  type: 'thinking',
-                  children: (
-                    <>
-                      <P>何だか複雑そうな弁当箱だなあ…</P>
-                      <P>
-                        <HighlightBold>
-                          <CustomEmoji type="questionFoodGrey" />{' '}
-                          にはそれぞれ何の料理が入るの？
-                        </HighlightBold>
-                      </P>
-                    </>
-                  )
-                },
                 {
                   type: 'dog',
                   children: (
                     <>
-                      <P>
-                        それが今回の問題です！
-                        <HighlightBold>
-                          村人のみなさんには、
-                          <CustomEmoji type="questionFoodGrey" />{' '}
-                          には何の料理が入るかを当ててもらいます。
-                        </HighlightBold>
-                      </P>
-                    </>
-                  )
-                }
-              ]}
-            />
-            <R.Envj>
-              <HighlightBold>
-                <CustomEmoji type="questionFoodGrey" /> に何が入るかを
-                <br />
-                当ててもらいます！<Emoji>🐶</Emoji>
-              </HighlightBold>
-            </R.Envj>
-            <BubbleQuotes
-              quotes={[
-                {
-                  type: 'thinking',
-                  children: (
-                    <>
-                      <P>
-                        でも、まだ何の情報もないから…
-                        <CustomEmoji type="questionFoodGrey" />{' '}
-                        に何が入るかなんて分かんないよ。
-                      </P>
-                    </>
-                  )
-                },
-                {
-                  type: 'dog',
-                  children: (
-                    <>
-                      <P>
-                        その通りです。まだ説明することがありますから。では、続けますね！
-                      </P>
+                      <P>それでは、ここで質問です！</P>
                     </>
                   )
                 }
