@@ -824,12 +824,6 @@ export const duuk: ExpressionRunnerShorthandConfig = {
   bottomRightBadgeOverrides: { j: '🅱️', i: '🅰️' }
 }
 
-export const otbe: ExpressionRunnerShorthandConfig = {
-  runner: 'simple',
-  showPriorities: true,
-  initialExpressionContainer: initialExpressionContainers.uarl
-}
-
 export const ehxq: ExpressionRunnerShorthandConfig = {
   runner: 'predefined',
   showPriorities: true,

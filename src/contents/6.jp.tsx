@@ -512,7 +512,7 @@ export default () => (
                 }
               ]}
             />
-            <R.Otbe />
+            <R.Kizi />
             <YesNoButtons answer="yes" />
           </>
         )
