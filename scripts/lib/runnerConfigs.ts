@@ -1485,13 +1485,6 @@ export const oqpi: ExpressionRunnerShorthandConfig = {
   speed: 1.5
 }
 
-export const zxkq: ExpressionRunnerShorthandConfig = {
-  runner: 'simple',
-  initialExpressionContainer: initialExpressionContainers.wwii,
-  showPriorities: true,
-  bottomRightBadgeOverrides: { j: '🅱️', i: '🅰️' }
-}
-
 export const dyoq: ExpressionRunnerShorthandConfig = {
   runner: 'predefined',
   initialExpressionContainers: [

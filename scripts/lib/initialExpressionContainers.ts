@@ -1039,10 +1039,6 @@ export const mtyb = initializeExpressionContainer([
   numberParams('k', 'l', 3)
 ])
 
-export const wwii = initializeExpressionContainer(
-  numberParamsHighlightNumber('i', 'j', 4)
-)
-
 export const orfr = initializeExpressionContainer([
   succParams('a', 'b', 'c', false, true),
   numberParams('d', 'b', 1)

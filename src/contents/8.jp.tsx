@@ -852,7 +852,7 @@ export default () => (
                         <EmojiNumber number={4} />{' '}
                         に変換できる弁当箱が残りました！
                       </P>
-                      <R.Zxkq>
+                      <R.Duuk>
                         <H
                           args={{
                             name: 'canBeConvertedCaption',
@@ -860,7 +860,7 @@ export default () => (
                             number: 4
                           }}
                         />
-                      </R.Zxkq>
+                      </R.Duuk>
                       <P>
                         つまり、
                         <EmojiNumber number={3} /> <Emoji>➕</Emoji>{' '}
