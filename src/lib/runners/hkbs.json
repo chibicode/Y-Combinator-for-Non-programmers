@@ -1,0 +1,70 @@
+{
+  "expressionContainers": [
+    {
+      "expression": {
+        "arg": {
+          "name": "d",
+          "highlightType": "default",
+          "topLeftBadgeType": "none",
+          "bottomRightBadgeType": "none",
+          "type": "variable",
+          "argPriorityAgg": [],
+          "funcPriorityAgg": [],
+          "emphasizePriority": false,
+          "bound": false,
+          "maxNestedFunctionDepth": 0
+        },
+        "body": {
+          "arg": {
+            "name": "e",
+            "highlightType": "default",
+            "topLeftBadgeType": "none",
+            "bottomRightBadgeType": "none",
+            "type": "variable",
+            "argPriorityAgg": [],
+            "funcPriorityAgg": [],
+            "emphasizePriority": false,
+            "bound": false,
+            "maxNestedFunctionDepth": 0
+          },
+          "body": {
+            "name": "e",
+            "highlightType": "default",
+            "topLeftBadgeType": "none",
+            "bottomRightBadgeType": "none",
+            "type": "variable",
+            "argPriorityAgg": [],
+            "funcPriorityAgg": [],
+            "emphasizePriority": false,
+            "bound": true,
+            "maxNestedFunctionDepth": 0
+          },
+          "type": "function",
+          "maxNestedFunctionDepth": 1
+        },
+        "type": "function",
+        "maxNestedFunctionDepth": 2
+      },
+      "numLeafNodes": 1,
+      "containerState": "ready",
+      "previouslyChangedExpressionState": "default"
+    }
+  ],
+  "speed": 1,
+  "hideControls": true,
+  "explanationsVisibility": "hidden",
+  "hidePriorities": false,
+  "hidePlayButton": false,
+  "hideBottomRightBadges": false,
+  "skipToTheEnd": false,
+  "hideFuncUnboundBadgeOnExplanation": false,
+  "highlightOverridesCallArgAndFuncUnboundOnly": false,
+  "bottomRightBadgeOverrides": {
+    "d": "🅰️",
+    "e": "🅱️"
+  },
+  "highlightOverrides": {},
+  "highlightOverrideActiveAfterStart": false,
+  "highlightFunctions": false,
+  "showBottomProgressBar": false
+}

@@ -1150,6 +1150,19 @@ export const pbop: ExpressionRunnerShorthandConfig = {
   showPriorities: true
 }
 
+export const dvfg: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.lyet,
+  showPriorities: true
+}
+
+export const hkbs: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.lyet,
+  showPriorities: true,
+  bottomRightBadgeOverrides: { d: '🅰️', e: '🅱️' }
+}
+
 export const fxde: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   initialExpressionContainer: initialExpressionContainers.okmr,

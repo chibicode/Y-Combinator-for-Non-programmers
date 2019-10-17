@@ -28,7 +28,7 @@ export const episodeTitles = {
     10: 'The “Minus One” Effect',
     11: 'The “Conditional” Feature',
     12: 'Reproducing the “Conditional” Feature',
-    13: '?',
+    13: 'Replace Parts of a Lunchbox',
     14: '?',
     15: '?',
     16: '?'
@@ -40,7 +40,7 @@ export const episodeTitles = {
     4: '弁当箱の法則',
     5: '3段の弁当箱',
     6: 'ミニオンの芸',
-    7: '1を足す効果',
+    7: 'ゼロからイチへ',
     8: '天才サヤちゃん',
     9: '1を足せない？',
     10: '1を引く効果',

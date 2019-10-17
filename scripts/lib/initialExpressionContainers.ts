@@ -252,6 +252,7 @@ export const mhbx = initializeExpressionContainer(
   numberParamsHighlightNumber('e', 'f', 1)
 )
 
+export const lyet = initializeExpressionContainer(numberParams('d', 'e', 0))
 export const okmr = initializeExpressionContainer(numberParams('d', 'e', 1))
 export const dqgs = initializeExpressionContainer(numberParams('f', 'g', 2))
 export const zdlx = initializeExpressionContainer(
