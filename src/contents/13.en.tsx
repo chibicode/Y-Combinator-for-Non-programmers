@@ -891,7 +891,8 @@ export default () => (
       {
         title: (
           <>
-            How this is related to <H args={{ name: 'repeatFeature' }} />
+            How this is related to reproducing{' '}
+            <H args={{ name: 'repeatFeature' }} />?
           </>
         ),
         content: (
@@ -903,11 +904,11 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        でもさあ…質問なんだけど、
+                        <Bold>But I still don’t get it:</Bold>{' '}
                         <Highlight>
-                          この話って、「
-                          <H args={{ name: 'repeatFeature' }} />
-                          」と何の関係があるの？
+                          How is this related to <Bold>reproducing</Bold>{' '}
+                          <H args={{ name: 'repeatFeature' }} /> using a
+                          lunchbox?
                         </Highlight>
                       </P>
                     </>
@@ -920,23 +921,45 @@ export default () => (
               left={
                 <>
                   <R.Bwnp>
-                    <CustomEmoji type="plusOne" /> を{' '}
-                    <CustomEmoji type="blankNumber" /> 回<br />
-                    繰り返す
+                    Repeat <CustomEmoji type="plusOne" />
+                    <br />
+                    <CustomEmoji type="blankNumber" /> times
                   </R.Bwnp>
+                  <ExpressionRunnerSeparator />
+                  <EmojiSeparator
+                    emojis={['❓', '🍱', '❓']}
+                    size="mdsm"
+                    description={
+                      <>
+                        Reproduce with
+                        <br />a lunchbox
+                      </>
+                    }
+                  />
                 </>
               }
               right={
                 <>
                   <R.Ewfr>
-                    <CustomEmoji type="minusOne" /> を{' '}
-                    <CustomEmoji type="blankNumber" /> 回<br />
-                    繰り返す
+                    Repeat <CustomEmoji type="minusOne" />
+                    <br />
+                    <CustomEmoji type="blankNumber" /> times
                   </R.Ewfr>
+                  <ExpressionRunnerSeparator />
+                  <EmojiSeparator
+                    emojis={['❓', '🍱', '❓']}
+                    size="mdsm"
+                    description={
+                      <>
+                        Reproduce with
+                        <br />a lunchbox
+                      </>
+                    }
+                  />
                 </>
               }
             />
-            <P>すると、サヤちゃんが何かに気づいたようです。</P>
+            <P>It looks like Saya noticed something:</P>
             <BubbleQuotes
               quotes={[
                 {
@@ -944,11 +967,9 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        <Highlight>
-                          ねえねえ、もしかしたらサヤ、「
-                          <H args={{ name: 'repeatFeature' }} />
-                          」を弁当箱で再現できたかもしれない！
-                        </Highlight>
+                        Hey, I think I figured out how to{' '}
+                        <HighlightBold>reproduce</HighlightBold>{' '}
+                        <H args={{ name: 'repeatFeature' }} />!
                       </P>
                     </>
                   )
@@ -957,7 +978,13 @@ export default () => (
             />
             <EmojiSeparator
               emojis={['🔁', '👧🏻', '🔁']}
-              description={<>繰り返しの機能を再現できたかも！</>}
+              description={
+                <>
+                  I think I figured out how to
+                  <br />
+                  reproduce <H args={{ name: 'repeatFeature' }} />!
+                </>
+              }
             />
             <BubbleQuotes
               quotes={[
@@ -965,7 +992,7 @@ export default () => (
                   type: 'surprised',
                   children: (
                     <>
-                      <P>え！サヤちゃん、本当かい？</P>
+                      <P>Wow, really?</P>
                     </>
                   )
                 },
@@ -973,7 +1000,7 @@ export default () => (
                   type: 'saya',
                   children: (
                     <>
-                      <P>うん、それでは説明するね！</P>
+                      <P>Yes, let me explain!</P>
                     </>
                   )
                 }
@@ -983,7 +1010,7 @@ export default () => (
         )
       },
       {
-        title: <>先ほどの弁当箱にいろいろ追加してみる</>,
+        title: <>Add more stuff to the previous lunchbox</>,
         content: (
           <>
             <BubbleQuotes
@@ -992,13 +1019,13 @@ export default () => (
                   type: 'saya',
                   children: (
                     <>
-                      <P>こちらが、先ほどの弁当箱だけど…</P>
+                      <P>Here’s the lunchbox we used earlier on this page:</P>
                     </>
                   )
                 }
               ]}
             />
-            <R.Ghwe>先ほどの弁当箱</R.Ghwe>
+            <R.Ghwe>The lunchbox we used earlier on this page</R.Ghwe>
             <BubbleQuotes
               quotes={[
                 {
@@ -1006,9 +1033,9 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        この弁当箱に、以下のように
-                        <HighlightBold>いろいろ追加してみた</HighlightBold>の。
-                        <Highlight>黄色の部分が追加した部分</Highlight>だよ。
+                        I just added some items to this lunchbox. The{' '}
+                        <Highlight>yellow section</Highlight> is the added
+                        items.
                       </P>
                     </>
                   )
@@ -1016,7 +1043,7 @@ export default () => (
               ]}
             />
             <R.Cefx>
-              <HighlightBold>黄色が追加した部分</HighlightBold>
+              The <Highlight>yellow section</Highlight> is the added items.
             </R.Cefx>
             <BubbleQuotes
               quotes={[
@@ -1024,8 +1051,7 @@ export default () => (
                   type: 'thinking',
                   children: (
                     <>
-                      <P>ふむふむ…何やら複雑になったなあ。</P>
-                      <P>で、これがどうしたっていうの？</P>
+                      <P>Hmm… ok, whats’s so special about this lunchbox?</P>
                     </>
                   )
                 }
@@ -1035,7 +1061,7 @@ export default () => (
         )
       },
       {
-        title: <>実行してみると</>,
+        title: <>Let’s run it!</>,
         content: (
           <>
             <BubbleQuotes
@@ -1045,21 +1071,25 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        では、この弁当箱を
-                        <H args={{ name: 'play' }} /> してみて！
+                        Let’s <H args={{ name: 'play', lowerCase: true }} />{' '}
+                        this lunchbox!
                       </P>
                       <P>
                         (
                         <Highlight>
-                          次のページで早送りして詳細に解説するけど、今回は早送りは省略します！
+                          I will show all the steps on the next page, but we’ll
+                          skip that for now
                         </Highlight>
-                        )
+                        .)
                       </P>
                     </>
                   )
                 }
               ]}
             />
+            <P>
+              <H args={{ name: 'pressPlay', capitalize: true }} />
+            </P>
             <R.Htir></R.Htir>
             <BubbleQuotes
               quotes={[
@@ -1068,11 +1098,11 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        結果は <EmojiNumber number={5} /> になったよ。
+                        The result is <EmojiNumber number={5} />.
                       </P>
                       <P>
-                        早送りしてないから、なぜ <EmojiNumber number={5} />{' '}
-                        になったかは分からないけど…
+                        Because we didn’t see all the steps, I don’t know how it
+                        became <EmojiNumber number={5} /> though…
                       </P>
                     </>
                   )
@@ -1081,12 +1111,10 @@ export default () => (
                   type: 'saya',
                   children: (
                     <>
+                      <P>Yes, I will show all the steps on the next page.</P>
                       <P>
-                        うん、早送りは次のページでやるから、今はとりあえず「
-                        <Highlight>
-                          なるほど、結果は <EmojiNumber number={5} /> になるんだ
-                        </Highlight>
-                        」と受け入れてほしい！
+                        <Bold>For now:</Bold> Just assume that the result is{' '}
+                        <EmojiNumber number={5} />!
                       </P>
                     </>
                   )
@@ -1095,9 +1123,7 @@ export default () => (
                   type: 'thinking',
                   children: (
                     <>
-                      <P>
-                        そうか、次のページでまた詳しく説明してくれるんだね。了解だよ。
-                      </P>
+                      <P>Ok, but why is this lunchbox important?</P>
                     </>
                   )
                 }
@@ -1107,7 +1133,7 @@ export default () => (
         )
       },
       {
-        title: <>足し算ができる？</>,
+        title: <>It can do additions?</>,
         content: (
           <>
             <BubbleQuotes
