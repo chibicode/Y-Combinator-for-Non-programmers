@@ -1119,7 +1119,7 @@ export default () => (
         )
       },
       {
-        title: <>足し算ができる？</>,
+        title: <>ふたつの数字の足し算ができる？</>,
         content: (
           <>
             <BubbleQuotes
@@ -1148,9 +1148,12 @@ export default () => (
             <R.Peiy>
               実行前の弁当箱に入っていた、
               <br />
-              <EmojiNumber number={2} /> と <EmojiNumber number={3} /> を足すと{' '}
-              <EmojiNumber number={5} /> になる
+              <EmojiNumber number={2} /> と <EmojiNumber number={3} /> を足すと…
             </R.Peiy>
+            <ExpressionRunnerSeparator />
+            <R.Seie>
+              <EmojiNumber number={5} /> になる
+            </R.Seie>
             <BubbleQuotes
               quotes={[
                 {
@@ -1186,7 +1189,10 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        つまり…<HighlightBold>足し算ができる</HighlightBold>
+                        つまり…
+                        <HighlightBold>
+                          ふたつの数字の足し算ができる
+                        </HighlightBold>
                         ってこと？
                       </P>
                     </>
