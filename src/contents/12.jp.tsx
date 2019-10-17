@@ -125,9 +125,9 @@ export default () => (
               」を…
             </R.Rhoa>
             <ExpressionRunnerSeparator />
-            <R.Sdta>
+            <R.Vlhb>
               <Emoji>👧🏻</Emoji> 弁当箱で再現してみた！
-            </R.Sdta>
+            </R.Vlhb>
             <BubbleQuotes
               quotes={[
                 {
@@ -505,11 +505,11 @@ export default () => (
               」を…
             </R.Rhoa>
             <ExpressionRunnerSeparator />
-            <R.Sdta>
+            <R.Vlhb>
               <Emoji>👧🏻</Emoji> サヤちゃんが弁当箱で再現してみた！
               <br />
               <HighlightBold>果たして、これが正解なのか？</HighlightBold>
-            </R.Sdta>
+            </R.Vlhb>
             <BubbleQuotes
               quotes={[
                 {
@@ -655,9 +655,9 @@ export default () => (
                 }
               ]}
             />
-            <R.Sdta>
+            <R.Vlhb>
               <Emoji>👧🏻</Emoji> サヤの弁当箱の…
-            </R.Sdta>
+            </R.Vlhb>
             <ExpressionRunnerSeparator />
             <R.Jbqw>
               <CustomEmoji type="blankNumberRed" /> に{' '}
@@ -825,11 +825,11 @@ export default () => (
               」は…
             </R.Rhoa>
             <ExpressionRunnerSeparator />
-            <R.Sdta>
+            <R.Vlhb>
               <Emoji>👧🏻</Emoji> サヤちゃんの弁当箱で
               <br />
               再現できている！
-            </R.Sdta>
+            </R.Vlhb>
             <BubbleQuotes
               quotes={[
                 {

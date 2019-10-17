@@ -122,9 +122,9 @@ export default () => (
               Reproduce <H args={{ name: 'conditionFeature' }} />…
             </R.Rhoa>
             <ExpressionRunnerSeparator />
-            <R.Sdta>
+            <R.Vlhb>
               <Emoji>👧🏻</Emoji> Using a lunchbox!
-            </R.Sdta>
+            </R.Vlhb>
             <BubbleQuotes
               quotes={[
                 {
@@ -479,11 +479,11 @@ export default () => (
               Reproduce <H args={{ name: 'conditionFeature' }} />…
             </R.Rhoa>
             <ExpressionRunnerSeparator />
-            <R.Sdta>
+            <R.Vlhb>
               <Emoji>👧🏻</Emoji> Using a lunchbox!
               <br />
               <Bold>Question:</Bold> Is this the correct answer?
-            </R.Sdta>
+            </R.Vlhb>
             <BubbleQuotes
               quotes={[
                 {
@@ -625,9 +625,9 @@ export default () => (
                 }
               ]}
             />
-            <R.Sdta>
+            <R.Vlhb>
               <Emoji>👧🏻</Emoji> In Saya’s lunchbox…
-            </R.Sdta>
+            </R.Vlhb>
             <ExpressionRunnerSeparator />
             <R.Jbqw>
               Use <EmojiNumber number={2} /> <EmojiNumber number={1} />{' '}
@@ -793,11 +793,11 @@ export default () => (
               <H args={{ name: 'conditionFeature', capitalize: true }} />…
             </R.Rhoa>
             <ExpressionRunnerSeparator />
-            <R.Sdta>
+            <R.Vlhb>
               …can be reproduced by
               <br />
               <Emoji>👧🏻</Emoji> Saya’s lunchbox!
-            </R.Sdta>
+            </R.Vlhb>
             <BubbleQuotes
               quotes={[
                 {

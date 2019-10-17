@@ -1869,12 +1869,6 @@ export const rhoa: ExpressionRunnerShorthandConfig = {
   initialExpressionContainer: initialExpressionContainers.anme
 }
 
-export const sdta: ExpressionRunnerShorthandConfig = {
-  runner: 'simple',
-  initialExpressionContainer: initialExpressionContainers.cmay,
-  showPriorities: true
-}
-
 export const hhjq: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   initialExpressionContainer: initialExpressionContainers.rpcm,
