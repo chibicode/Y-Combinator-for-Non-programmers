@@ -762,7 +762,7 @@ export default () => (
                         最終的に残ったこちらの弁当箱は、
                         <EmojiNumber number={1} /> に変換できる弁当箱だね。
                       </P>
-                      <R.Oclg>
+                      <R.Ooya>
                         <H
                           args={{
                             name: 'canBeConvertedCaption',
@@ -770,7 +770,7 @@ export default () => (
                             number: 1
                           }}
                         />
-                      </R.Oclg>
+                      </R.Ooya>
                       <P>
                         だから、
                         <EmojiNumber number={1} /> が残ったので、

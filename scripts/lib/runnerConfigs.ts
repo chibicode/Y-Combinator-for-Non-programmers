@@ -1995,13 +1995,6 @@ export const svbd: ExpressionRunnerShorthandConfig = {
   speed: 2
 }
 
-export const oclg: ExpressionRunnerShorthandConfig = {
-  runner: 'simple',
-  initialExpressionContainer: initialExpressionContainers.qzuv,
-  showPriorities: true,
-  bottomRightBadgeOverrides: { f: '🅰️', g: '🅱️' }
-}
-
 export const fton: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   initialExpressionContainer: initialExpressionContainers.lcce,

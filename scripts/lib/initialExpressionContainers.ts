@@ -1342,10 +1342,6 @@ export const zmua = initializeExpressionContainer(
   )
 )
 
-export const qzuv = initializeExpressionContainer(
-  numberParamsHighlightNumber('f', 'g', 1)
-)
-
 export const lcce = initializeExpressionContainer(
   isZeroParams(
     'A',

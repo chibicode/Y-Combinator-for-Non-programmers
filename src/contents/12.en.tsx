@@ -732,7 +732,7 @@ export default () => (
                         The result is a lunchbox that can be converted to{' '}
                         <EmojiNumber number={1} />!
                       </P>
-                      <R.Oclg>
+                      <R.Ooya>
                         <H
                           args={{
                             name: 'canBeConvertedCaption',
@@ -740,7 +740,7 @@ export default () => (
                             number: 1
                           }}
                         />
-                      </R.Oclg>
+                      </R.Ooya>
                       <P>
                         Because the result is <EmojiNumber number={1} />, it’s a
                         success! <Emoji>🎉</Emoji>
