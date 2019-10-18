@@ -575,14 +575,74 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        では、
-                        <H args={{ name: 'play' }} /> してみましょう！
+                        では、上の弁当箱を実行したらどうなるか見てみましょう！
                       </P>
                     </>
                   )
                 }
               ]}
             />
+          </>
+        ),
+        footer: {
+          content: (
+            <>
+              <CardContent
+                children={
+                  <>
+                    <Hr />
+                    <Beginner5Rules />
+                  </>
+                }
+                preview={{
+                  text: <>初級編の内容を復習する</>,
+                  content: (
+                    <>
+                      <P>
+                        <Bold>復習が必要ですか？:</Bold> 今回の弁当箱では、
+                        <Highlight>初級その5で学んだ法則が登場</Highlight>
+                        します。
+                      </P>
+                      <P>
+                        復習したい場合は、↓の「初級編の内容を復習する」を押してください。
+                      </P>
+                    </>
+                  )
+                }}
+              />
+            </>
+          )
+        }
+      },
+      {
+        title: <>早送りしてみよう</>,
+        content: (
+          <>
+            <StepOne />
+            <R.Dhiu>
+              <H args={{ name: 'startWithLeftMostOneCaption' }} />
+            </R.Dhiu>
+            <StepTwo />
+            <R.Akjy>
+              <H args={{ name: 'startWithTwoCaption' }} />
+            </R.Akjy>
+            <StepThree />
+            <R.Hnyn>
+              <H args={{ name: 'startWithTwoCaption' }} />
+            </R.Hnyn>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>つまり、最終的に以下のようになりました！</P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Bwff>実行結果</R.Bwff>
           </>
         )
       },

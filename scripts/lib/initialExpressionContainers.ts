@@ -790,16 +790,6 @@ export const ikrk = initializeExpressionContainer([
   numberParams('d', 'e', 0)
 ])
 
-export const uhae = initializeExpressionContainer([
-  succParams(highlighted('a'), highlighted('b'), highlighted('c')),
-  numberParams('d', 'e', 0)
-])
-
-export const pyas = initializeExpressionContainer([
-  succParams('a', 'b', 'c'),
-  numberParams('d', 'e', 0)
-])
-
 export const yrgv = initializeExpressionContainer(
   succParams('questionFoodGrey', 'questionFoodGrey', 'questionFoodGrey', true)
 )
@@ -862,6 +852,37 @@ export const drbs = initializeExpressionContainer([
 export const hswh = initializeExpressionContainer({
   shorthandNumberPlusOrMinusOne: 'plus'
 })
+
+export const mzms = initializeExpressionContainer([
+  {
+    arg: highlighted('a'),
+    body: {
+      arg: highlighted('b'),
+      body: {
+        arg: highlighted('c'),
+        body: [
+          highlighted('b'),
+          [highlighted('a'), highlighted('b'), highlighted('b')]
+        ]
+      }
+    }
+  },
+  numberParams('d', 'e', 0)
+])
+
+export const ipgy = initializeExpressionContainer([
+  {
+    arg: 'a',
+    body: {
+      arg: 'b',
+      body: {
+        arg: 'c',
+        body: ['b', ['a', 'b', 'b']]
+      }
+    }
+  },
+  numberParams('d', 'e', 0)
+])
 
 export const ktus = initializeExpressionContainer({
   arg: 'a',

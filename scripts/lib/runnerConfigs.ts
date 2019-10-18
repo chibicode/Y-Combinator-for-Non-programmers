@@ -1099,13 +1099,13 @@ export const stda: ExpressionRunnerShorthandConfig = {
 
 export const fzpz: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
-  initialExpressionContainer: initialExpressionContainers.uhae,
+  initialExpressionContainer: initialExpressionContainers.mzms,
   showPriorities: true
 }
 
 export const whrn: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
-  initialExpressionContainer: initialExpressionContainers.pyas,
+  initialExpressionContainer: initialExpressionContainers.ipgy,
   showPriorities: true
 }
 

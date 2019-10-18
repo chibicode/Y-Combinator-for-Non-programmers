@@ -92,7 +92,7 @@
               "body": {
                 "arg": {
                   "arg": {
-                    "name": "c",
+                    "name": "b",
                     "highlightType": "default",
                     "topLeftBadgeType": "none",
                     "bottomRightBadgeType": "none",
