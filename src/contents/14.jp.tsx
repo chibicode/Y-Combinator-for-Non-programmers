@@ -72,30 +72,31 @@ export default () => (
               」を使った計算箱は…
             </R.Qycx>
             <ExpressionRunnerSeparator />
-            <R.Peiy>
+            <R.Kjba>
               以下の弁当箱で再現できている？<Emoji>🤔</Emoji>
-            </R.Peiy>
+            </R.Kjba>
             <P>
-              サヤちゃんの弁当箱は、前回
-              <Highlight>
-                <H args={{ name: 'play' }} /> してみると{' '}
-                <EmojiNumber number={5} /> になりました。
-              </Highlight>
-            </P>
-            <P>
-              つまり、「
+              サヤちゃんが言うには、上の弁当箱は、「
               <H args={{ name: 'repeatFeature' }} />
-              」を使った場合と同じように、
-              <EmojiNumber number={2} /> <Emoji>➕</Emoji>{' '}
-              <EmojiNumber number={3} /> を計算できているかのように見えます。
+              」を使った場合と同じく、
+              <Highlight>
+                <EmojiNumber number={2} /> に対して{' '}
+                <CustomEmoji type="plusOne" /> を3回繰り返す
+              </Highlight>
+              ように変化すると言うのです。
             </P>
-            <R.Kjba>実行すると…</R.Kjba>
+            <R.Kjba>この弁当箱を実行すると…</R.Kjba>
             <ExpressionRunnerSeparator />
-            <R.Seie>
-              <EmojiNumber number={5} /> になる。ということは
-              <br /> <EmojiNumber number={2} /> <Emoji>➕</Emoji>{' '}
-              <EmojiNumber number={3} /> を計算できている？
-            </R.Seie>
+            <R.Jwce>
+              「
+              <H args={{ name: 'repeatFeature' }} />
+              」と同じく、
+              <br />
+              <EmojiNumber number={2} /> に対して <CustomEmoji type="plusOne" />{' '}
+              を3回繰り返す
+            </R.Jwce>
+            <ExpressionRunnerSeparator />
+            <R.Seie></R.Seie>
             <P>
               今回は、本当にこの弁当箱が「
               <H args={{ name: 'repeatFeature' }} />
@@ -105,7 +106,7 @@ export default () => (
         )
       },
       {
-        title: <>途中で何が起きているのか？</>,
+        title: <>途中、何が起きているのか？</>,
         content: (
           <>
             <BubbleQuotes
@@ -125,8 +126,9 @@ export default () => (
                       <P>
                         そうすることで、
                         <Highlight>
-                          どいうった経緯で最終的に <EmojiNumber number={5} />{' '}
-                          になるのか
+                          どいうった経緯で最終的に「
+                          <H args={{ name: 'repeatFeature' }} />
+                          」と同じになるのか
                         </Highlight>
                         を知ることができるからね。
                       </P>
@@ -149,9 +151,13 @@ export default () => (
               }
             />
             <ExpressionRunnerSeparator />
-            <R.Seie>
-              最終的に <EmojiNumber number={5} /> になるのか？
-            </R.Seie>
+            <R.Jwce>
+              「
+              <H args={{ name: 'repeatFeature' }} />
+              」と同じになるのか？
+            </R.Jwce>
+            <ExpressionRunnerSeparator />
+            <R.Seie></R.Seie>
             <BubbleQuotes
               quotes={[
                 {

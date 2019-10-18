@@ -1142,7 +1142,8 @@ export default () => (
               <H args={{ name: 'repeatFeature' }} />
               」と同じく、
               <br />
-              <CustomEmoji type="plusOne" /> を3回繰り返す
+              <EmojiNumber number={2} /> に対して <CustomEmoji type="plusOne" />{' '}
+              を3回繰り返す
             </R.Jwce>
             <ExpressionRunnerSeparator />
             <R.Seie></R.Seie>
