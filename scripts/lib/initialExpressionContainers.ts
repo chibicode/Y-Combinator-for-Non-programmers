@@ -906,14 +906,14 @@ export const kwqc = initializeExpressionContainer([
       }
     }
   },
-  numberParams('d', 'e', 1)
+  numberParams('d', 'e', 0)
 ])
 
 export const iqbf = initializeExpressionContainer({
   arg: 'b',
   body: {
     arg: 'c',
-    body: ['b', ['b', { name: 'b', highlighted: true }]]
+    body: ['b', { name: 'b', highlighted: true }]
   }
 })
 
@@ -986,7 +986,7 @@ export const utur = initializeExpressionContainer([
 ])
 
 export const abbh = initializeExpressionContainer(
-  numberParamsHighlightNonNumber('b', 'c', 2)
+  numberParamsHighlightNonNumber('b', 'c', 1)
 )
 
 export const uzzl = initializeExpressionContainer(succParams('a', 'b', 'c'))
