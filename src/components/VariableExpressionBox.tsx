@@ -93,6 +93,16 @@ const VariableEmoji = ({ expression }: VariableExpressionBoxProps) => {
               <EmojiNumber number={expression.shorthandNumber} />
             ) : expression.shorthandNumberAfterConvert === 'blank' ? (
               <CustomEmoji type="blankNumber" />
+            ) : expression.shorthandNumberAfterConvert === 'blankPlusOne' ? (
+              <>
+                <CustomEmoji type="blankNumber" /> <Emoji>➕</Emoji>{' '}
+                <EmojiNumber number={1} />
+              </>
+            ) : expression.shorthandNumberAfterConvert === 'blankMinusOne' ? (
+              <>
+                <CustomEmoji type="blankNumber" /> <Emoji>➖</Emoji>{' '}
+                <EmojiNumber number={1} />
+              </>
             ) : expression.shorthandNumberAfterConvert === 'trueCase' ? (
               <CustomEmoji type="blankNumberYellow" />
             ) : expression.shorthandNumberAfterConvert === 'falseCase' ? (
@@ -153,19 +163,6 @@ const VariableEmoji = ({ expression }: VariableExpressionBoxProps) => {
             />
           </span>
         )}
-      </div>
-    )
-  } else if (
-    expression.name === 'blankNumber' &&
-    expression.shorthandNumberPlusOrMinusOne
-  ) {
-    return (
-      <div>
-        <CustomEmoji type="blankNumber" size="sm" />{' '}
-        <Emoji size="sm">
-          {expression.shorthandNumberPlusOrMinusOne === 'plus' ? '➕' : '➖'}
-        </Emoji>{' '}
-        <EmojiNumber size="sm" number={1} />
       </div>
     )
   } else if (expression.name === 'Amult') {

@@ -6,7 +6,6 @@ import {
   isVariableShorthandNumberParams,
   isConditionalParams,
   isVariableShorthandFuncParams,
-  isQuestionPlusOrMinusOneParams,
   isQuestionShorthandNumberAfterConvertParams,
   isRepeatExpressionParams
 } from 'scripts/lib/expressionParamGuards'
@@ -19,7 +18,6 @@ import {
   VariableShorthandNumberParams,
   ConditionalExpressionParams,
   RepeatExpressionParams,
-  QuestionPlusOrMinusOneParams,
   QuestionShorthandNumberAfterConvertParams,
   VariableShorthandFuncParams,
   BinaryExpressionParams
@@ -182,12 +180,6 @@ export default function buildExpressionFromParams(
         expressionParams.initialHighlight ? 'initialHighlighted' : 'default'
       ),
       shorthandFunc: expressionParams.shorthandFunc
-    }
-  } else if (isQuestionPlusOrMinusOneParams(expressionParams)) {
-    return {
-      ...buildVariableExpression('blankNumber', true, 'default'),
-      shorthandNumberPlusOrMinusOne:
-        expressionParams.shorthandNumberPlusOrMinusOne
     }
   } else if (isQuestionShorthandNumberAfterConvertParams(expressionParams)) {
     return {

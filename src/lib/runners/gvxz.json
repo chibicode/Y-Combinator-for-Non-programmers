@@ -11,10 +11,10 @@
         "funcPriorityAgg": [],
         "emphasizePriority": false,
         "bound": true,
-        "shorthandNumberPlusOrMinusOne": "minus",
+        "shorthandNumberAfterConvert": "blankMinusOne",
         "maxNestedFunctionDepth": 0
       },
-      "numLeafNodes": 1,
+      "numLeafNodes": 2,
       "containerState": "ready",
       "previouslyChangedExpressionState": "default"
     }

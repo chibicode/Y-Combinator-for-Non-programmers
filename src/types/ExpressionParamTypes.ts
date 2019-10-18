@@ -12,12 +12,6 @@ export interface HighlightedVariableExpressionParams {
   readonly highlighted: true
 }
 
-export interface QuestionPlusOrMinusOneParams {
-  readonly shorthandNumberPlusOrMinusOne: NonNullable<
-    VariableShorthandNumber['shorthandNumberPlusOrMinusOne']
-  >
-}
-
 export interface QuestionShorthandNumberAfterConvertParams {
   readonly shorthandNumberAfterConvert: NonNullable<
     VariableShorthandNumber['shorthandNumberAfterConvert']
@@ -74,6 +68,5 @@ export type ExpressionParams =
   | ConditionalExpressionParams
   | RepeatExpressionParams
   | VariableShorthandFuncParams
-  | QuestionPlusOrMinusOneParams
   | QuestionShorthandNumberAfterConvertParams
   | BinaryExpressionParams

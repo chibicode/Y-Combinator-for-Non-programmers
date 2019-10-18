@@ -20,14 +20,14 @@ export interface VariableExpression {
     | 'condition'
     | 'binaryFirst'
     | 'binarySecond'
-  readonly shorthandNumberPlusOrMinusOne?: 'plus' | 'minus'
+    | 'blankPlusOne'
+    | 'blankMinusOne'
   readonly maxNestedFunctionDepth?: number
 }
 
 export interface VariableShorthandNumber extends VariableExpression {
   readonly shorthandNumber: NonNullable<VariableExpression['shorthandNumber']>
   readonly shorthandNumberAfterConvert?: VariableExpression['shorthandNumberAfterConvert']
-  readonly shorthandNumberPlusOrMinusOne?: VariableExpression['shorthandNumberPlusOrMinusOne']
 }
 
 export interface VariableShorthandFunc extends VariableExpression {

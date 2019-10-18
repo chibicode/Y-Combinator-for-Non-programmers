@@ -7,7 +7,6 @@ import {
   HighlightedVariableExpressionParams,
   ConditionalExpressionParams,
   VariableShorthandFuncParams,
-  QuestionPlusOrMinusOneParams,
   QuestionShorthandNumberAfterConvertParams,
   RepeatExpressionParams
 } from 'src/types/ExpressionParamTypes'
@@ -68,15 +67,6 @@ export function isConditionalParams(
     !!(expressionParams as ConditionalExpressionParams).trueCase &&
     !!(expressionParams as ConditionalExpressionParams).falseCase &&
     !!(expressionParams as ConditionalExpressionParams).checkType
-  )
-}
-
-export function isQuestionPlusOrMinusOneParams(
-  expressionParams: ExpressionParams
-): expressionParams is QuestionPlusOrMinusOneParams {
-  return (
-    (expressionParams as QuestionPlusOrMinusOneParams)
-      .shorthandNumberPlusOrMinusOne !== undefined
   )
 }
 

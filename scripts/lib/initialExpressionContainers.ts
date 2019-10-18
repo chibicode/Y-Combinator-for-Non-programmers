@@ -835,7 +835,7 @@ export const drbs = initializeExpressionContainer([
 ])
 
 export const hswh = initializeExpressionContainer({
-  shorthandNumberPlusOrMinusOne: 'plus'
+  shorthandNumberAfterConvert: 'blankPlusOne'
 })
 
 export const mzms = initializeExpressionContainer([
@@ -1075,7 +1075,7 @@ export const guql = initializeExpressionContainer(
 )
 
 export const jskq = initializeExpressionContainer({
-  shorthandNumberPlusOrMinusOne: 'minus'
+  shorthandNumberAfterConvert: 'blankMinusOne'
 })
 
 export const xwlj = initializeExpressionContainer([
