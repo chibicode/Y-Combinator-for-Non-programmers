@@ -5,8 +5,7 @@ import {
   HighlightBold,
   Highlight,
   Ul,
-  UlLi,
-  Bold
+  UlLi
 } from 'src/components/ContentTags'
 import H from 'src/components/H'
 import BubbleQuotes from 'src/components/BubbleQuotes'
