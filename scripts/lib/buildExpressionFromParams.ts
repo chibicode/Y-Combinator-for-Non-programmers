@@ -97,9 +97,6 @@ export default function buildExpressionFromParams(
   expressionParams: RepeatExpressionParams
 ): RepeatExpression
 export default function buildExpressionFromParams(
-  expressionParams: QuestionPlusOrMinusOneParams
-): StepVariable
-export default function buildExpressionFromParams(
   expressionParams: QuestionShorthandNumberAfterConvertParams
 ): StepVariable
 export default function buildExpressionFromParams(
