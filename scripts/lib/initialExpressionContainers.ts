@@ -240,9 +240,6 @@ export const uarl = initializeDoneExpressionContainer({ shorthandNumber: 4 })
 export const mxkk = initializeDoneExpressionContainer({ shorthandNumber: 5 })
 
 export const sfvk = initializeExpressionContainer(numberParams('e', 'f', 1))
-export const mhbx = initializeExpressionContainer(
-  numberParamsHighlightNumber('e', 'f', 1)
-)
 
 export const lyet = initializeExpressionContainer(numberParams('d', 'e', 0))
 export const okmr = initializeExpressionContainer(numberParams('d', 'e', 1))
@@ -256,22 +253,6 @@ export const qyqi = initializeExpressionContainer(
 export const entt = initializeExpressionContainer(
   numberParamsHighlightNumber('f', 'g', 2)
 )
-
-export const wowr = initializeExpressionContainer([
-  {
-    arg: 'g',
-    body: numberParams('e', 'f', 1)
-  },
-  'h'
-])
-
-export const elax = initializeExpressionContainer([
-  {
-    arg: 'c',
-    body: numberParams('a', 'b', 0)
-  },
-  'd'
-])
 
 export const dupe = initializeExpressionContainer({
   arg: 'A',

@@ -750,71 +750,10 @@ export const dubm: ExpressionRunnerShorthandConfig = {
   initialExpressionContainer: initialExpressionContainers.wcdn
 }
 
-export const rlrs: ExpressionRunnerShorthandConfig = {
-  runner: 'simple',
-  showPriorities: true,
-  initialExpressionContainer: initialExpressionContainers.wowr
-}
-
-export const csqj: ExpressionRunnerShorthandConfig = {
-  runner: 'playButtonOnly',
-  showPriorities: true,
-  initialExpressionContainer: initialExpressionContainers.wowr,
-  initialState: 'active',
-  skipToTheEnd: false
-}
-
-export const igpn: ExpressionRunnerShorthandConfig = {
-  runner: 'simple',
-  showPriorities: true,
-  initialExpressionContainer: initialExpressionContainers.sfvk
-}
-
-export const hhdu: ExpressionRunnerShorthandConfig = {
-  runner: 'simple',
-  showPriorities: true,
-  initialExpressionContainer: initialExpressionContainers.mhbx,
-  bottomRightBadgeOverrides: { f: '🅱️', e: '🅰️' }
-}
-
 export const rnug: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   showPriorities: true,
   initialExpressionContainer: initialExpressionContainers.ntua
-}
-
-export const zahd: ExpressionRunnerShorthandConfig = {
-  runner: 'predefined',
-  showPriorities: true,
-  initialExpressionContainers: [
-    initialExpressionContainers.wowr,
-    initialExpressionContainers.ntua
-  ],
-  convert: 'toMathBoxPlay'
-}
-
-export const qsnv: ExpressionRunnerShorthandConfig = {
-  runner: 'simple',
-  showPriorities: true,
-  initialExpressionContainer: initialExpressionContainers.elax
-}
-
-export const dcji: ExpressionRunnerShorthandConfig = {
-  runner: 'predefined',
-  showPriorities: true,
-  initialExpressionContainers: [
-    initialExpressionContainers.elax,
-    initialExpressionContainers.irhr
-  ],
-  convert: 'toMathBoxPlay'
-}
-
-export const zlrx: ExpressionRunnerShorthandConfig = {
-  runner: 'playButtonOnly',
-  showPriorities: true,
-  initialExpressionContainer: initialExpressionContainers.elax,
-  skipToTheEnd: false,
-  initialState: 'active'
 }
 
 export const duuk: ExpressionRunnerShorthandConfig = {
