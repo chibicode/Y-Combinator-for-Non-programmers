@@ -421,32 +421,26 @@ export default () => (
                   type: 'dog',
                   children: (
                     <>
-                      <P>
-                        その通りです。上の
-                        <H args={{ name: 'minusOneEffect' }} />
-                        がある弁当箱を、
-                      </P>
+                      <P>その通りです。</P>
                       <Ul>
+                        <UlLi>
+                          上の
+                          <H args={{ name: 'minusOneEffect' }} />
+                          がある弁当箱を、
+                        </UlLi>
                         <UlLi>
                           <Highlight>
                             ある数字 <CustomEmoji type="blankNumber" />{' '}
-                            に変換できる弁当箱と合体させ、
+                            に変換できる弁当箱と合体させて実行すると、
                           </Highlight>
                         </UlLi>
                         <UlLi>
                           <Highlight>
-                            <H args={{ name: 'runAndConvertToMathbox' }} />
-                            すると、
+                            <CustomEmoji type="blankNumber" /> <Emoji>➖</Emoji>{' '}
+                            <EmojiNumber number={1} /> に変換できる弁当箱になる
                           </Highlight>
                         </UlLi>
                       </Ul>
-                      <P>
-                        <Highlight>
-                          結果は <CustomEmoji type="blankNumber" />{' '}
-                          <Emoji>➖</Emoji> <EmojiNumber number={1} /> になる
-                        </Highlight>
-                        のです。
-                      </P>
                     </>
                   )
                 }
@@ -460,10 +454,10 @@ export default () => (
             </R.Xqjd>
             <ExpressionRunnerSeparator />
             <R.Gvxz>
-              <H args={{ name: 'runAndConvertToMathbox' }} />
+              <H args={{ name: 'play' }} /> すると、
               <br />
-              すると、結果は <CustomEmoji type="blankNumber" />{' '}
-              <Emoji>➖</Emoji> <EmojiNumber number={1} /> になる
+              <CustomEmoji type="blankNumber" /> <Emoji>➖</Emoji>{' '}
+              <EmojiNumber number={1} /> に変換できる弁当箱になる
             </R.Gvxz>
             <BubbleQuotes
               quotes={[

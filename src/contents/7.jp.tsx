@@ -37,7 +37,7 @@ export const Problem = () => (
     <ExpressionRunnerSeparator />
     <R.Jzwg>
       <HighlightBold>
-        実行後に
+        <H args={{ name: 'play' }} /> した後に
         <br />
         <EmojiNumber number={1} /> に変換できる弁当箱になる？
       </HighlightBold>
