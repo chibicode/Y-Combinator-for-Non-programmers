@@ -1280,6 +1280,8 @@ export default () => (
             <R.Qsnv />
             <ExpressionRunnerSeparator />
             <R.Jwah>
+              After
+              <br />
               <HighlightBold>
                 <H args={{ name: 'runAndConvertToMathbox' }} />
               </HighlightBold>
@@ -1330,8 +1332,13 @@ export default () => (
                     <>
                       <P>
                         Suppose that you{' '}
-                        <H args={{ name: 'runAndConvertToMathbox' }} /> the
-                        lunchbox below:
+                        <H
+                          args={{
+                            name: 'runAndConvertToMathbox',
+                            lowerCase: true
+                          }}
+                        />{' '}
+                        the lunchbox below:
                       </P>
                     </>
                   )
@@ -1497,6 +1504,15 @@ export default () => (
                 }
               ]}
             />
+            <R.Rlrs />
+            <ExpressionRunnerSeparator />
+            <R.Rnug>
+              After
+              <br />
+              <HighlightBold>
+                <H args={{ name: 'runAndConvertToMathbox' }} />
+              </HighlightBold>
+            </R.Rnug>
           </>
         )
       },

@@ -1484,6 +1484,15 @@ export default () => (
                 }
               ]}
             />
+            <R.Rlrs>もともとの弁当箱を…</R.Rlrs>
+            <ExpressionRunnerSeparator />
+            <R.Rnug>
+              <HighlightBold>
+                <H args={{ name: 'runAndConvertToMathbox' }} />
+              </HighlightBold>
+              <br />
+              すると <EmojiNumber number={1} /> になる
+            </R.Rnug>
           </>
         )
       },
