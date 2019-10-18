@@ -26,6 +26,26 @@ import NextLessonButton from 'src/components/NextLessonButton'
 import { Beginner5Rules } from 'src/contents/5.jp'
 import CardContent from 'src/components/CardContent'
 
+export const Problem = () => (
+  <>
+    <R.Stda>
+      <HighlightBold>
+        問題: それぞれの <CustomEmoji type="questionFoodGrey" /> に、
+        <br />
+        どんな料理を入れると、
+      </HighlightBold>
+    </R.Stda>
+    <ExpressionRunnerSeparator />
+    <R.Rnug>
+      <HighlightBold>
+        <H args={{ name: 'runAndConvertToMathbox' }} />
+        <br />
+        したとき、結果が <EmojiNumber number={1} /> になる？
+      </HighlightBold>
+    </R.Rnug>
+  </>
+)
+
 export const StepOne = () => (
   <>
     <BubbleQuotes
@@ -420,21 +440,7 @@ export default () => (
                 }
               ]}
             />
-            <R.Stda>
-              <HighlightBold>
-                問題: それぞれの <CustomEmoji type="questionFoodGrey" /> に、
-                <br />
-                どんな料理を入れると、
-              </HighlightBold>
-            </R.Stda>
-            <ExpressionRunnerSeparator />
-            <R.Rnug>
-              <HighlightBold>
-                <H args={{ name: 'runAndConvertToMathbox' }} />
-                <br />
-                したとき、結果が <EmojiNumber number={1} /> になる？
-              </HighlightBold>
-            </R.Rnug>
+            <Problem />
             <BubbleQuotes
               quotes={[
                 {
@@ -442,7 +448,8 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        この問題こそが、以前から話していた「難しい問題」だ。
+                        この問題こそが、以前から話していた「
+                        <Bold>難しい問題</Bold>」だ。
                         <Highlight>
                           これを解けたら、約束通り計算箱を返してやろう！
                         </Highlight>
@@ -842,22 +849,7 @@ export default () => (
                 }
               ]}
             />
-            <R.Stda>
-              <HighlightBold>
-                問題: それぞれの <CustomEmoji type="questionFoodGrey" /> に、
-                <br />
-                どんな料理を入れると、
-              </HighlightBold>
-            </R.Stda>
-            <ExpressionRunnerSeparator />
-            <R.Rnug>
-              <HighlightBold>
-                <H args={{ name: 'runAndConvertToMathbox' }} />
-                <br />
-                したとき、結果が <EmojiNumber number={1} /> になる？
-              </HighlightBold>
-            </R.Rnug>
-
+            <Problem />
             <BubbleQuotes
               quotes={[
                 {

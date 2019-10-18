@@ -1013,8 +1013,8 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        This is the very difficult question I’ve been talking
-                        about.
+                        This is the <Bold>“very difficult question”</Bold> I’ve
+                        been talking about.
                       </P>
                       <P>
                         <Highlight>

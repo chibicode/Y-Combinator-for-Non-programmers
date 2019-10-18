@@ -19,7 +19,7 @@ import EmojiForLetter from 'src/components/EmojiForLetter'
 import ExpressionRunnerCaptionOnly from 'src/components/ExpressionRunnerCaptionOnly'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import * as R from 'src/components/Runners'
-import { StepOne, StepTwo, StepThree } from 'src/contents/7.jp'
+import { Problem, StepOne, StepTwo, StepThree } from 'src/contents/7.jp'
 import EmojiWithText from 'src/components/EmojiWithText'
 import NextLessonButton from 'src/components/NextLessonButton'
 
@@ -31,25 +31,10 @@ export default () => (
         content: (
           <>
             <EmojiSeparator
-              nodes={[
-                <Emoji>😭</Emoji>,
-                <CustomEmoji type="plusOneOrange" />,
-                <Emoji>😭</Emoji>
-              ]}
+              nodes={[<Emoji>😭</Emoji>, <Emoji>❓</Emoji>, <Emoji>😭</Emoji>]}
             />
             <P>ラムダ村の村人たちは、前回の問題に四苦八苦していました。</P>
-            <R.Envj>
-              <HighlightBold>
-                どのような法則に基づいて <CustomEmoji type="questionFoodGrey" />{' '}
-                に料理を入れると…
-              </HighlightBold>
-            </R.Envj>
-            <R.Jguj>
-              <HighlightBold>
-                <H args={{ name: 'plusOneEffect' }} />
-                がある弁当箱になる？
-              </HighlightBold>
-            </R.Jguj>
+            <Problem />
             <BubbleQuotes
               quotes={[
                 {
