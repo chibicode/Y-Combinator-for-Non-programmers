@@ -308,6 +308,157 @@ export default () => (
         )
       },
       {
+        type: 'challengeProblem',
+        title: (
+          <>
+            <EmojiNumber number={0} /> を <EmojiNumber number={1} /> に
+          </>
+        ),
+        content: (
+          <>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>
+                        先ほどの弁当箱は、
+                        <HighlightBold>
+                          それぞれの <CustomEmoji type="questionFoodGrey" />{' '}
+                          に、ある法則に基づいて料理を入れ、
+                        </HighlightBold>
+                      </P>
+                      <InlineRunAndConvertToMathboxButton />
+                      <P>
+                        …を行うと、
+                        <HighlightBold>
+                          結果が <EmojiNumber number={1} /> になります。
+                        </HighlightBold>
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Stda>
+              それぞれの <CustomEmoji type="questionFoodGrey" /> に、
+              <br />
+              ある法則に基づいて料理を入れ、
+            </R.Stda>
+            <ExpressionRunnerSeparator />
+            <R.Rnug>
+              <H args={{ name: 'runAndConvertToMathbox' }} />
+              <br />
+              すると、結果は <EmojiNumber number={1} /> になる
+            </R.Rnug>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>
+                        もともとの弁当箱が <EmojiNumber number={0} />{' '}
+                        に変換できる弁当箱だったので、
+                      </P>
+                      <R.Hkbs>
+                        <H
+                          args={{
+                            name: 'canBeConvertedCaption',
+                            letter: 'd',
+                            number: 0
+                          }}
+                        />
+                      </R.Hkbs>
+                      <P>
+                        先ほどの <CustomEmoji type="questionFoodGrey" />{' '}
+                        がたくさんある弁当箱と合体させると、
+                        <HighlightBold>
+                          <EmojiNumber number={0} /> が{' '}
+                          <EmojiNumber number={1} /> になる
+                        </HighlightBold>
+                        というわけですね。
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <EmojiSeparator
+              nodes={[
+                <EmojiNumber number={0} />,
+                <CustomEmoji type="singleArrow" />,
+                <CustomEmoji type="questionFoodGrey" />,
+                <CustomEmoji type="singleArrow" />,
+                <EmojiNumber number={1} />
+              ]}
+              description={
+                <>
+                  先ほどの <CustomEmoji type="questionFoodGrey" />{' '}
+                  がたくさんある弁当箱と
+                  <br />
+                  合体させると、
+                  <EmojiNumber number={0} /> が <EmojiNumber number={1} />{' '}
+                  になる
+                </>
+              }
+            />
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>それでは、ここで問題です！</P>
+                      <P>
+                        <HighlightBold>
+                          それぞれの <CustomEmoji type="questionFoodGrey" />{' '}
+                          にどんな料理を入れると、結果が{' '}
+                          <EmojiNumber number={1} /> になるでしょう？
+                        </HighlightBold>
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Stda>
+              <HighlightBold>
+                問題: それぞれの <CustomEmoji type="questionFoodGrey" /> に、
+                <br />
+                どんな料理を入れると、
+              </HighlightBold>
+            </R.Stda>
+            <ExpressionRunnerSeparator />
+            <R.Rnug>
+              <HighlightBold>
+                <H args={{ name: 'runAndConvertToMathbox' }} />
+                <br />
+                したとき、結果が <EmojiNumber number={1} /> になる？
+              </HighlightBold>
+            </R.Rnug>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'devil',
+                  children: (
+                    <>
+                      <P>
+                        この問題こそが、以前から話していた「難しい問題」だ。
+                        <Highlight>
+                          これを解けたら、約束通り計算箱を返してやろう！
+                        </Highlight>
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+          </>
+        )
+      },
+      {
         title: (
           <>
             <H args={{ name: 'plusOneEffect' }} />
