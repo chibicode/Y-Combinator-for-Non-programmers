@@ -790,6 +790,16 @@ export const ikrk = initializeExpressionContainer([
   numberParams('d', 'e', 0)
 ])
 
+export const uhae = initializeExpressionContainer([
+  succParams(highlighted('a'), highlighted('b'), highlighted('c')),
+  numberParams('d', 'e', 0)
+])
+
+export const pyas = initializeExpressionContainer([
+  succParams('a', 'b', 'c'),
+  numberParams('d', 'e', 0)
+])
+
 export const yrgv = initializeExpressionContainer(
   succParams('questionFoodGrey', 'questionFoodGrey', 'questionFoodGrey', true)
 )

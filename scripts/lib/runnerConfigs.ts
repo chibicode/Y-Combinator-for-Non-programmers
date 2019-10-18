@@ -1097,6 +1097,18 @@ export const stda: ExpressionRunnerShorthandConfig = {
   showPriorities: true
 }
 
+export const fzpz: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.uhae,
+  showPriorities: true
+}
+
+export const whrn: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.pyas,
+  showPriorities: true
+}
+
 export const jguj: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   initialExpressionContainer: initialExpressionContainers.yrgv,

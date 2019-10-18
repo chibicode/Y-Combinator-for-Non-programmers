@@ -459,6 +459,134 @@ export default () => (
         )
       },
       {
+        title: <>試しに適当な料理を入れてみる</>,
+        content: (
+          <>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'crying',
+                  children: (
+                    <>
+                      <P>
+                        うーん…
+                        <Highlight>
+                          問題を完全に理解できた自信がないし、どうやって解けばいいかさっぱり分からない！
+                        </Highlight>
+                      </P>
+                    </>
+                  )
+                },
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>大丈夫、安心してください！</P>
+                      <P>
+                        <HighlightBold>
+                          試しに、
+                          <CustomEmoji type="questionFoodGrey" />{' '}
+                          に適当な料理を入れてみると、問題を理解できると思います。
+                        </HighlightBold>
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Stda>
+              <CustomEmoji type="questionFoodGrey" />{' '}
+              に適当な料理を入れてみて下さい！<Emoji>🐶</Emoji>
+            </R.Stda>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'sad',
+                  children: (
+                    <>
+                      <P>
+                        わかった。じゃあとりあえず、
+                        <CustomEmoji type="questionFoodGrey" />{' '}
+                        に適当な料理を入れてみよう。
+                      </P>
+                      <P>
+                        <Highlight>
+                          <EmojiWithText letter="a" />、
+                          <EmojiWithText letter="b" />、
+                          <EmojiWithText letter="c" />
+                          を適当な組み合わせで{' '}
+                          <CustomEmoji type="questionFoodGrey" />{' '}
+                          に入れてみたよ。
+                        </Highlight>
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Fzpz>
+              <EmojiForLetter letter="a" /> <EmojiForLetter letter="b" />{' '}
+              <EmojiForLetter letter="c" /> を適当に{' '}
+              <CustomEmoji type="questionFoodGrey" /> に入れてみた
+            </R.Fzpz>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>では、問題を復習しましょう。上の弁当箱を、</P>
+                      <InlineRunAndConvertToMathboxButton />
+                      <P>したときに、結果が…</P>
+                      <Ul>
+                        <UlLi>
+                          <EmojiNumber number={1} /> になれば
+                          <HighlightBold>成功</HighlightBold> <Emoji>🎉</Emoji>
+                        </UlLi>
+                        <UlLi>
+                          それ以外なら<HighlightBold>失敗</HighlightBold>{' '}
+                          <Emoji>😭</Emoji>
+                        </UlLi>
+                      </Ul>
+                      <P>というわけです。</P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Whrn>こちらの弁当箱を…</R.Whrn>
+            <ExpressionRunnerSeparator />
+            <ExpressionRunnerCaptionOnly>
+              <Highlight>
+                <H args={{ name: 'runAndConvertToMathbox' }} /> して…
+              </Highlight>
+            </ExpressionRunnerCaptionOnly>
+            <ExpressionRunnerSeparator />
+            <ExpressionRunnerCaptionOnly>
+              結果が <EmojiNumber number={1} size="mdlg" /> になれば
+              <HighlightBold>成功</HighlightBold> <Emoji>🎉</Emoji>
+              <br />
+              それ以外なら<HighlightBold>失敗</HighlightBold> <Emoji>😭</Emoji>
+            </ExpressionRunnerCaptionOnly>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>
+                        では、
+                        <H args={{ name: 'play' }} /> してみましょう！
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+          </>
+        )
+      },
+      {
         title: (
           <>
             <H args={{ name: 'plusOneEffect' }} />
