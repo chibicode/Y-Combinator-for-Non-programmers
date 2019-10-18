@@ -15,7 +15,6 @@ import EmojiNumber from 'src/components/EmojiNumber'
 import Emoji from 'src/components/Emoji'
 import EmojiForLetter from 'src/components/EmojiForLetter'
 import H from 'src/components/H'
-import InlineRunAndConvertToMathboxButton from 'src/components/InlineRunAndConvertToMathboxButton'
 import ExpressionRunnerSeparator from 'src/components/ExpressionRunnerSeparator'
 import ExpressionRunnerCaptionOnly from 'src/components/ExpressionRunnerCaptionOnly'
 import EmojiSeparator from 'src/components/EmojiSeparator'
@@ -36,13 +35,13 @@ export const Problem = () => (
       </HighlightBold>
     </R.Stda>
     <ExpressionRunnerSeparator />
-    <R.Rnug>
+    <R.Jzwg>
       <HighlightBold>
-        <H args={{ name: 'runAndConvertToMathbox' }} />
+        実行後に
         <br />
-        したとき、結果が <EmojiNumber number={1} /> になる？
+        <EmojiNumber number={1} /> に変換できる弁当箱になる？
       </HighlightBold>
-    </R.Rnug>
+    </R.Jzwg>
   </>
 )
 
@@ -346,20 +345,20 @@ export default () => (
                   type: 'dog',
                   children: (
                     <>
-                      <P>
-                        先ほどの弁当箱は、
-                        <HighlightBold>
-                          それぞれの <CustomEmoji type="questionFoodGrey" />{' '}
-                          に、ある法則に基づいて料理を入れ、
-                        </HighlightBold>
-                      </P>
-                      <InlineRunAndConvertToMathboxButton />
-                      <P>
-                        …を行うと、
-                        <HighlightBold>
-                          結果が <EmojiNumber number={1} /> になります。
-                        </HighlightBold>
-                      </P>
+                      <P>実は、先ほどの弁当箱は、</P>
+                      <Ul>
+                        <UlLi>
+                          <HighlightBold>
+                            それぞれの <CustomEmoji type="questionFoodGrey" />{' '}
+                            に、ある法則に基づいて料理を入れて
+                            <H args={{ name: 'play' }} /> すると、
+                          </HighlightBold>
+                        </UlLi>
+                        <UlLi>
+                          <EmojiNumber number={1} />{' '}
+                          に変換できる弁当箱になります。
+                        </UlLi>
+                      </Ul>
                     </>
                   )
                 }
@@ -372,9 +371,9 @@ export default () => (
             </R.Stda>
             <ExpressionRunnerSeparator />
             <R.Rnug>
-              <H args={{ name: 'runAndConvertToMathbox' }} />
+              <H args={{ name: 'play' }} /> すると、
               <br />
-              すると、結果は <EmojiNumber number={1} /> になる
+              <EmojiNumber number={1} /> に変換できる弁当箱になる
             </R.Rnug>
             <BubbleQuotes
               quotes={[
@@ -395,14 +394,20 @@ export default () => (
                           }}
                         />
                       </R.Hkbs>
-                      <P>
-                        端的に言うと、
-                        <HighlightBold>
-                          <EmojiNumber number={0} /> が{' '}
-                          <EmojiNumber number={1} /> になる
-                        </HighlightBold>
-                        というわけですね。
-                      </P>
+                      <P>実行することで、</P>
+                      <Ul>
+                        <UlLi>
+                          <HighlightBold>
+                            <EmojiNumber number={0} /> に変換できる弁当箱が、
+                          </HighlightBold>
+                        </UlLi>
+                        <UlLi>
+                          <HighlightBold>
+                            <EmojiNumber number={1} /> に変換できる弁当箱になる
+                          </HighlightBold>
+                        </UlLi>
+                      </Ul>
+                      <P>というわけですね。</P>
                     </>
                   )
                 }
@@ -416,8 +421,9 @@ export default () => (
               ]}
               description={
                 <>
-                  <EmojiNumber number={0} /> が <EmojiNumber number={1} />{' '}
-                  になる
+                  <EmojiNumber number={0} /> に変換できる弁当箱が、
+                  <br />
+                  <EmojiNumber number={1} /> に変換できる弁当箱になる
                 </>
               }
             />
@@ -431,8 +437,9 @@ export default () => (
                       <P>
                         <HighlightBold>
                           それぞれの <CustomEmoji type="questionFoodGrey" />{' '}
-                          にどんな料理を入れると、結果が{' '}
-                          <EmojiNumber number={1} /> になるでしょう？
+                          にどんな料理を入れると、実行後に{' '}
+                          <EmojiNumber number={1} />{' '}
+                          に変換できる弁当箱になるでしょう？
                         </HighlightBold>
                       </P>
                     </>
@@ -539,17 +546,21 @@ export default () => (
                   type: 'dog',
                   children: (
                     <>
-                      <P>では、問題を復習しましょう。上の弁当箱を、</P>
-                      <InlineRunAndConvertToMathboxButton />
-                      <P>したときに、結果が…</P>
+                      <P>
+                        では、問題を復習しましょう。上の弁当箱を実行したときに、結果が…
+                      </P>
                       <Ul>
                         <UlLi>
-                          <EmojiNumber number={1} /> になれば
-                          <HighlightBold>成功</HighlightBold> <Emoji>🎉</Emoji>
+                          <Highlight>
+                            <EmojiNumber number={1} />{' '}
+                            に変換できる弁当箱になれば
+                            <Bold>成功</Bold> <Emoji>🎉</Emoji>
+                          </Highlight>
                         </UlLi>
                         <UlLi>
-                          それ以外なら<HighlightBold>失敗</HighlightBold>{' '}
-                          <Emoji>😭</Emoji>
+                          <Highlight>
+                            それ以外なら<Bold>失敗</Bold> <Emoji>😭</Emoji>
+                          </Highlight>
                         </UlLi>
                       </Ul>
                       <P>というわけです。</P>
@@ -558,17 +569,13 @@ export default () => (
                 }
               ]}
             />
-            <R.Whrn>こちらの弁当箱を…</R.Whrn>
+            <R.Whrn>こちらの弁当箱を実行して…</R.Whrn>
             <ExpressionRunnerSeparator />
             <ExpressionRunnerCaptionOnly>
-              <Highlight>
-                <H args={{ name: 'runAndConvertToMathbox' }} /> して…
-              </Highlight>
-            </ExpressionRunnerCaptionOnly>
-            <ExpressionRunnerSeparator />
-            <ExpressionRunnerCaptionOnly>
-              結果が <EmojiNumber number={1} size="mdlg" /> になれば
-              <HighlightBold>成功</HighlightBold> <Emoji>🎉</Emoji>
+              <EmojiNumber number={1} size="mdlg" /> に変換できる
+              <br />
+              弁当箱になれば <HighlightBold>成功</HighlightBold>{' '}
+              <Emoji>🎉</Emoji>
               <br />
               それ以外なら<HighlightBold>失敗</HighlightBold> <Emoji>😭</Emoji>
             </ExpressionRunnerCaptionOnly>
@@ -840,8 +847,9 @@ export default () => (
                       <P>
                         <HighlightBold>
                           それぞれの <CustomEmoji type="questionFoodGrey" />{' '}
-                          にどんな料理を入れると、結果が{' '}
-                          <EmojiNumber number={1} /> になるでしょう？
+                          にどんな料理を入れると、実行後に{' '}
+                          <EmojiNumber number={1} />{' '}
+                          に変換できる弁当箱になるでしょう？
                         </HighlightBold>
                       </P>
                     </>

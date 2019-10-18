@@ -222,6 +222,10 @@ export const rlzd = initializeExpressionContainer([
 export const mzxw = initializeExpressionContainer(numberParams('a', 'b', 0))
 export const irhr = initializeDoneExpressionContainer({ shorthandNumber: 0 })
 export const ntua = initializeDoneExpressionContainer({ shorthandNumber: 1 })
+export const dpvy = initializeDoneExpressionContainer({
+  shorthandNumber: 1,
+  shorthandNumberAfterConvert: 'number'
+})
 export const nskn = initializeExpressionContainer(numberParams('e', 'f', 2))
 export const qbnd = initializeExpressionContainer(numberParams('k', 'l', 2))
 export const tnyj = initializeExpressionContainer(

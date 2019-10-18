@@ -756,6 +756,12 @@ export const rnug: ExpressionRunnerShorthandConfig = {
   initialExpressionContainer: initialExpressionContainers.ntua
 }
 
+export const jzwg: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  showPriorities: true,
+  initialExpressionContainer: initialExpressionContainers.dpvy
+}
+
 export const duuk: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   showPriorities: true,
