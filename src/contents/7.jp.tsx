@@ -236,8 +236,11 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        前回の復習ですが、この弁当箱は、ぼくが計算箱に変換すると{' '}
-                        <EmojiNumber number={0} /> になります。
+                        前回の復習ですが、この弁当箱は、
+                        <HighlightBold>
+                          ぼくが計算箱に変換すると <EmojiNumber number={0} />{' '}
+                          になります。
+                        </HighlightBold>
                       </P>
                     </>
                   )
@@ -264,8 +267,9 @@ export default () => (
                         </HighlightBold>
                       </P>
                       <P>
-                        それぞれの <CustomEmoji type="questionFoodGrey" />{' '}
-                        には何らかの料理が入るのですが、それについてはこれから説明します。
+                        それぞれの <CustomEmoji type="questionFoodGrey" /> には
+                        <Highlight>何らかの料理が入る</Highlight>
+                        のですが、それについてはこれから説明します。
                       </P>
                     </>
                   )
@@ -372,8 +376,7 @@ export default () => (
                         />
                       </R.Hkbs>
                       <P>
-                        先ほどの <CustomEmoji type="questionFoodGrey" />{' '}
-                        がたくさんある弁当箱と合体させると、
+                        端的に言うと、
                         <HighlightBold>
                           <EmojiNumber number={0} /> が{' '}
                           <EmojiNumber number={1} /> になる
@@ -389,16 +392,10 @@ export default () => (
               nodes={[
                 <EmojiNumber number={0} />,
                 <CustomEmoji type="singleArrow" />,
-                <CustomEmoji type="questionFoodGrey" />,
-                <CustomEmoji type="singleArrow" />,
                 <EmojiNumber number={1} />
               ]}
               description={
                 <>
-                  先ほどの <CustomEmoji type="questionFoodGrey" />{' '}
-                  がたくさんある弁当箱と
-                  <br />
-                  合体させると、
                   <EmojiNumber number={0} /> が <EmojiNumber number={1} />{' '}
                   になる
                 </>
@@ -724,7 +721,7 @@ export default () => (
                           ではなくて
                           <EmojiWithText letter="c" />
                           だったら、
-                          <EmojiNumber number={2} /> に変換できていたのになあ。
+                          <EmojiNumber number={1} /> に変換できていたのになあ。
                         </Highlight>
                         あとちょっとだったのに！
                       </P>
@@ -769,13 +766,9 @@ export default () => (
                 }
               ]}
             />
-            <R.Nuco>
-              <EmojiNumber number={0} /> に変換できる弁当箱と合体させ…
-            </R.Nuco>
+            <R.Nuco>実行しても…</R.Nuco>
             <ExpressionRunnerSeparator />
             <R.Xwzc>
-              実行したところ、
-              <br />
               <HighlightBold>
                 <EmojiNumber number={1} size="mdlg" />{' '}
                 に変換できる弁当箱にならなかった
@@ -803,7 +796,8 @@ export default () => (
             <R.Olyw>
               先ほどのように料理を
               <br />
-              当てはめるのは間違い <Emoji>😭</Emoji>
+              当てはめるのは<HighlightBold>不正解</HighlightBold>{' '}
+              <Emoji>😭</Emoji>
             </R.Olyw>
             <BubbleQuotes
               quotes={[
