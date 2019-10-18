@@ -398,7 +398,7 @@ export const iatt: ExpressionRunnerShorthandConfig = {
   runner: 'predefined',
   initialExpressionContainers: [
     initialExpressionContainers.ekyd,
-    initialExpressionContainers.zrwn
+    initialExpressionContainers.ntua
   ]
 }
 
@@ -980,7 +980,7 @@ export const pgxb: ExpressionRunnerShorthandConfig = {
   runner: 'predefined',
   initialExpressionContainers: [
     initialExpressionContainers.bmar,
-    initialExpressionContainers.ilbg
+    initialExpressionContainers.hdpc
   ]
 }
 

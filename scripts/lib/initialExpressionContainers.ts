@@ -2220,14 +2220,6 @@ export const nuoh = initializeExpressionContainer([
   'B'
 ])
 
-export const ilbg = initializeDoneExpressionContainer({
-  shorthandNumber: 2
-})
-
-export const zrwn = initializeDoneExpressionContainer({
-  shorthandNumber: 1
-})
-
 export const ntes = initializeExpressionContainer(numberParams('c', 'd', 1))
 
 export const tgxv = initializeExpressionContainer(numberParams('g', 'h', 3))
