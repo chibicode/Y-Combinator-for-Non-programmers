@@ -1025,7 +1025,7 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        この弁当箱は、以下のように{' '}
+                        この計算箱は、以下のように{' '}
                         <CustomEmoji type="plusOne" /> を3回繰り返すことにより、
                         <EmojiNumber number={3} /> <Emoji>➕</Emoji>{' '}
                         <EmojiNumber number={2} /> を計算できるわけだよね。
@@ -1077,6 +1077,11 @@ export default () => (
                     <>
                       <P>
                         先ほど登場した、複雑な部分を計算箱に置き換えた弁当箱に注目してみて！
+                      </P>
+                      <P>
+                        これに変更を加えることで、「
+                        <H args={{ name: 'repeatFeature' }} />
+                        」を再現してみるよ。
                       </P>
                     </>
                   )

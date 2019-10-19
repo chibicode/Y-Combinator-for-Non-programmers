@@ -1008,6 +1008,81 @@ export default () => (
         )
       },
       {
+        title: (
+          <>
+            Repeat <CustomEmoji type="plusOne" /> three times
+          </>
+        ),
+        content: (
+          <>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'saya',
+                  children: (
+                    <>
+                      <P>
+                        <Bold>First:</Bold> Take a look at this mathbox with{' '}
+                        <H args={{ name: 'repeatFeature' }} />!
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Qycx>
+              A lunchbox with <H args={{ name: 'repeatFeature' }} />
+            </R.Qycx>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'saya',
+                  children: (
+                    <>
+                      <P>
+                        This mathbox repeats <CustomEmoji type="plusOne" />{' '}
+                        three times, and calculates <EmojiNumber number={3} />{' '}
+                        <Emoji>➕</Emoji> <EmojiNumber number={2} />.
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Qycx></R.Qycx>
+            <ExpressionRunnerSeparator />
+            <R.Jwce>
+              Repeats <CustomEmoji type="plusOne" /> three times
+            </R.Jwce>
+            <ExpressionRunnerSeparator />
+            <R.Seie></R.Seie>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'saya',
+                  children: (
+                    <>
+                      <P>
+                        I figured out how to reproduce this behavior using a
+                        lunchbox!
+                      </P>
+                    </>
+                  )
+                },
+                {
+                  type: 'surprised',
+                  children: (
+                    <>
+                      <P>Reall? Please show me how!</P>
+                    </>
+                  )
+                }
+              ]}
+            />
+          </>
+        )
+      },
+      {
         title: <>Add more stuff to the previous lunchbox</>,
         content: (
           <>
@@ -1017,7 +1092,11 @@ export default () => (
                   type: 'saya',
                   children: (
                     <>
-                      <P>Here’s the lunchbox we used earlier on this page:</P>
+                      <P>Here’s the lunchbox we used earlier on this page.</P>
+                      <P>
+                        We’ll make some changes to this lunchbox to reproduce{' '}
+                        <H args={{ name: 'repeatFeature' }} />.
+                      </P>
                     </>
                   )
                 }
@@ -1052,310 +1131,95 @@ export default () => (
                       <P>Hmm… ok, whats’s so special about this lunchbox?</P>
                     </>
                   )
-                }
-              ]}
-            />
-          </>
-        )
-      },
-      {
-        title: <>Let’s run it!</>,
-        content: (
-          <>
-            <BubbleQuotes
-              quotes={[
-                {
-                  type: 'saya',
-                  children: (
-                    <>
-                      <P>
-                        Let’s <H args={{ name: 'play', lowerCase: true }} />{' '}
-                        this lunchbox!
-                      </P>
-                      <P>
-                        (
-                        <Highlight>
-                          I will show all the steps on the next page, but we’ll
-                          skip that for now
-                        </Highlight>
-                        .)
-                      </P>
-                    </>
-                  )
-                }
-              ]}
-            />
-            <P>
-              <H args={{ name: 'pressPlay', capitalize: true }} />
-            </P>
-            <R.Htir></R.Htir>
-            <BubbleQuotes
-              quotes={[
-                {
-                  type: 'thinking',
-                  children: (
-                    <>
-                      <P>
-                        The result is <EmojiNumber number={5} />.
-                      </P>
-                      <P>
-                        Because we didn’t see all the steps, I don’t know how it
-                        became <EmojiNumber number={5} /> though…
-                      </P>
-                    </>
-                  )
                 },
                 {
                   type: 'saya',
                   children: (
                     <>
-                      <P>Yes, I will show all the steps on the next page.</P>
-                      <P>
-                        <Bold>For now:</Bold> Just assume that the result is{' '}
-                        <EmojiNumber number={5} />!
-                      </P>
-                    </>
-                  )
-                },
-                {
-                  type: 'thinking',
-                  children: (
-                    <>
-                      <P>Ok, but why is this lunchbox important?</P>
-                    </>
-                  )
-                }
-              ]}
-            />
-          </>
-        )
-      },
-      {
-        title: <>It can do additions of two numbers?</>,
-        content: (
-          <>
-            <BubbleQuotes
-              quotes={[
-                {
-                  type: 'saya',
-                  children: (
-                    <>
-                      <P>
-                        <Bold>Take a look:</Bold>
-                      </P>
+                      <P>It turns out that:</P>
                       <Ul>
                         <UlLi>
                           <Highlight>
-                            The original lunchbox had two numbers:{' '}
-                            <EmojiNumber number={2} /> and{' '}
-                            <EmojiNumber number={3} />.
+                            If you{' '}
+                            <H args={{ name: 'play', lowerCase: true }} /> the
+                            above lunchbox,
                           </Highlight>
                         </UlLi>
                         <UlLi>
                           <Highlight>
-                            If you add them, it would be{' '}
-                            <EmojiNumber number={5} />…
-                          </Highlight>
-                        </UlLi>
-                        <UlLi>
-                          <Highlight>
-                            …which is what happens when you{' '}
-                            <H args={{ name: 'play', lowerCase: true }} /> it.
+                            It behaves exactly like the earlier mathbox that has{' '}
+                            <H args={{ name: 'repeatFeature' }} />.
                           </Highlight>
                         </UlLi>
                       </Ul>
+                      <P>Therefore, it becomes like this:</P>
                     </>
                   )
                 }
               ]}
             />
-            <R.Peiy>
-              The original lunchbox had two numbers:
-              <br />
-              <EmojiNumber number={2} /> and <EmojiNumber number={3} />.
-              <br />
-              If you add them, it would be <EmojiNumber number={5} />…
-            </R.Peiy>
+            <R.Kjba>
+              If you <H args={{ name: 'play', lowerCase: true }} /> this
+              lunchbox…
+            </R.Kjba>
             <ExpressionRunnerSeparator />
-            <R.Seie>
-              …which is what happens when you
+            <R.Jwce>
+              Just like using <H args={{ name: 'repeatFeature' }} />,
               <br />
-              <H args={{ name: 'play', lowerCase: true }} /> it.
-            </R.Seie>
-            <BubbleQuotes
-              quotes={[
-                {
-                  type: 'thinking',
-                  children: (
-                    <>
-                      <P>Hmm… that’s true…</P>
-                    </>
-                  )
-                },
-                {
-                  type: 'saya',
-                  children: (
-                    <>
-                      <P>
-                        <Bold>So:</Bold> This lunchbox might be calculating{' '}
-                        <EmojiNumber number={2} /> <Emoji>➕</Emoji>{' '}
-                        <EmojiNumber number={3} />?
-                      </P>
-                    </>
-                  )
-                }
-              ]}
-            />
-            <R.Peiy>
-              This lunchbox might be calculating
-              <br />
-              <EmojiNumber number={2} /> <Emoji>➕</Emoji>{' '}
-              <EmojiNumber number={3} />?
-            </R.Peiy>
-            <BubbleQuotes
-              quotes={[
-                {
-                  type: 'thinking',
-                  children: (
-                    <>
-                      <P>
-                        So you’re saying…{' '}
-                        <Highlight>
-                          this lunchbox can do{' '}
-                          <Bold>additions of two numbers?</Bold>
-                        </Highlight>
-                      </P>
-                    </>
-                  )
-                }
-              ]}
-            />
-          </>
-        ),
-        footer: {
-          content: (
-            <>
-              <P>
-                <Bold>You might be wondering:</Bold>{' '}
-                <Highlight>
-                  “Does it really become <EmojiNumber number={5} /> when you run
-                  it?”
-                </Highlight>
-              </P>
-              <P>
-                If so, don’t worry! We’ll show you all the steps on the next
-                page, so just continue reading! <Emoji>😉</Emoji>
-              </P>
-            </>
-          )
-        }
-      },
-      {
-        title: (
-          <>
-            It can reproduce <H args={{ name: 'repeatFeature' }} />?
-          </>
-        ),
-        content: (
-          <>
-            <BubbleQuotes
-              quotes={[
-                {
-                  type: 'thinking',
-                  children: (
-                    <>
-                      <P>
-                        <Bold>Wait a minute:</Bold>{' '}
-                        <Highlight>
-                          By using a mathbox with{' '}
-                          <H args={{ name: 'repeatFeature' }} />, you can also
-                          calculate <EmojiNumber number={2} /> <Emoji>➕</Emoji>{' '}
-                          <EmojiNumber number={3} />.
-                        </Highlight>
-                      </P>
-                    </>
-                  )
-                }
-              ]}
-            />
-            <R.Qycx>
-              By using a mathbox with
-              <br />
-              <H args={{ name: 'repeatFeature' }} />,<br />
-              you can also calculate <EmojiNumber number={2} />{' '}
-              <Emoji>➕</Emoji> <EmojiNumber number={3} />.
-            </R.Qycx>
-            <ExpressionRunnerSeparator />
-            <R.Jwce></R.Jwce>
+              Repeat <CustomEmoji type="plusOne" /> three times on{' '}
+              <EmojiNumber number={2} />
+            </R.Jwce>
             <ExpressionRunnerSeparator />
             <R.Seie></R.Seie>
-            <BubbleQuotes
-              quotes={[
-                {
-                  type: 'thinking',
-                  children: (
-                    <>
-                      <P>
-                        So, maybe{' '}
-                        <Highlight>
-                          Saya’s lunchbox actually <Bold>reproduced</Bold> the
-                          above mathbox with{' '}
-                          <H args={{ name: 'repeatFeature' }} />?
-                        </Highlight>
-                      </P>
-                    </>
-                  )
-                }
-              ]}
-            />
-            <R.Qycx>
-              This mathbox with
-              <br />
-              <H args={{ name: 'repeatFeature' }} />…
-            </R.Qycx>
-            <ExpressionRunnerSeparator />
-            <R.Peiy>
-              …was reproduced by this lunchbox? <Emoji>🤔</Emoji>
-            </R.Peiy>
             <BubbleQuotes
               quotes={[
                 {
                   type: 'surprised',
                   children: (
                     <>
+                      <P>Wow, really?</P>
                       <P>
-                        If so, that means we just successfully{' '}
-                        <HighlightBold>reproduced</HighlightBold>{' '}
-                        <H args={{ name: 'repeatFeature' }} />!
+                        If that’s true, that means we’ve reproduced{' '}
+                        <H args={{ name: 'repeatFeature' }} />.
                       </P>
                     </>
                   )
                 }
               ]}
             />
-            <EmojiSeparator
-              nodes={[
-                <CustomEmoji type="mathBox" />,
-                <Emoji>🔁</Emoji>,
-                <CustomEmoji type="doubleArrow" />,
-                <Emoji>🍱</Emoji>,
-                <Emoji>🔁</Emoji>
-              ]}
-              description={
-                <>
-                  Did we just reproduce
-                  <br />
-                  <H args={{ name: 'repeatFeature' }} />?
-                </>
-              }
-            />
+            <R.Qycx>
+              This mathbox with <H args={{ name: 'repeatFeature' }} />…
+            </R.Qycx>
+            <ExpressionRunnerSeparator />
+            <R.Kjba>
+              Can be reproduced by this lunchbox?<Emoji>🤔</Emoji>
+            </R.Kjba>
             <BubbleQuotes
               quotes={[
+                {
+                  type: 'thinking',
+                  children: (
+                    <>
+                      <P>But does it really work?</P>
+                      <P>
+                        <Highlight>
+                          We need to{' '}
+                          <H args={{ name: 'play', lowerCase: true }} /> it to
+                          see if it’s correct.
+                        </Highlight>
+                      </P>
+                    </>
+                  )
+                },
                 {
                   type: 'saya',
                   children: (
                     <>
-                      <P>Let’s dive in deeper on the next page!</P>
+                      <P>
+                        Yes, let’s{' '}
+                        <H args={{ name: 'play', lowerCase: true }} /> on the
+                        next page to check!
+                      </P>
                     </>
                   )
                 }
@@ -1363,21 +1227,7 @@ export default () => (
             />
             <NextLessonButton />
           </>
-        ),
-        footer: {
-          content: (
-            <>
-              <P>
-                <Bold>If you’re confused:</Bold>{' '}
-                <Highlight>
-                  Don’t worry! If you read the next page, it should all make
-                  sense.
-                </Highlight>{' '}
-                Just keep reading! <Emoji>😉</Emoji>
-              </P>
-            </>
-          )
-        }
+        )
       }
     ]}
   />

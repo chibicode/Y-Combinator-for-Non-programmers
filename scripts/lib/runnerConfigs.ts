@@ -2154,12 +2154,6 @@ export const kjba: ExpressionRunnerShorthandConfig = {
   showPriorities: true
 }
 
-export const htir: ExpressionRunnerShorthandConfig = {
-  runner: 'playButtonOnly',
-  initialExpressionContainer: initialExpressionContainers.jrfk,
-  showPriorities: true
-}
-
 export const peiy: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   initialExpressionContainer: initialExpressionContainers.aqni,
