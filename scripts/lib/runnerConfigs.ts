@@ -728,6 +728,12 @@ export const kizi: ExpressionRunnerShorthandConfig = {
   initialExpressionContainer: initialExpressionContainers.uarl
 }
 
+export const ldcq: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  showPriorities: true,
+  initialExpressionContainer: initialExpressionContainers.kaaf
+}
+
 export const jwah: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   showPriorities: true,

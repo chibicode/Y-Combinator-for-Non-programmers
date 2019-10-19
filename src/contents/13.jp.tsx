@@ -18,7 +18,6 @@ import TwoColGrid from 'src/components/TwoColGrid'
 import InlineBorder from 'src/components/InlineBorder'
 import * as R from 'src/components/Runners'
 import ExpressionRunnerCaptionOnly from 'src/components/ExpressionRunnerCaptionOnly'
-import InlineRunAndConvertToMathboxButton from 'src/components/InlineRunAndConvertToMathboxButton'
 import NextLessonButton from 'src/components/NextLessonButton'
 
 export default () => (
@@ -124,10 +123,9 @@ export default () => (
                   type: 'dog',
                   children: (
                     <>
-                      <P>ここで質問です。上の弁当箱を、</P>
-                      <InlineRunAndConvertToMathboxButton />
                       <P>
-                        すると、
+                        ここで質問です。上の弁当箱を
+                        <H args={{ name: 'play' }} /> すると、
                         <HighlightBold>
                           どんな結果になるでしょう？
                         </HighlightBold>
@@ -143,8 +141,7 @@ export default () => (
                         <Highlight>
                           そんなの、すぐ答えられるわけないだろう！
                         </Highlight>
-                        こんな複雑な弁当箱、
-                        <H args={{ name: 'play' }} /> するのもひと苦労だよ！
+                        こんな複雑な弁当箱の実行結果なんて、見当がつかないよ！
                       </P>
                     </>
                   )
@@ -156,14 +153,16 @@ export default () => (
                       <P>
                         サヤはすぐ分かったよ！
                         <HighlightBold>
-                          結果は <EmojiNumber number={4} /> になる
+                          <EmojiNumber number={4} /> に変換できる弁当箱になる
                         </HighlightBold>
                         んじゃない？
                       </P>
-                      <R.Kizi>
-                        <Emoji>👧🏻</Emoji> 結果は <EmojiNumber number={4} />{' '}
-                        になると思う！
-                      </R.Kizi>
+                      <R.Ldcq>
+                        <Emoji>👧🏻</Emoji> 結果は
+                        <br />
+                        <EmojiNumber number={4} />{' '}
+                        に変換できる弁当箱になると思う！
+                      </R.Ldcq>
                     </>
                   )
                 },

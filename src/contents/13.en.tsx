@@ -18,7 +18,6 @@ import CustomEmoji from 'src/components/CustomEmoji'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import TwoColGrid from 'src/components/TwoColGrid'
 import InlineBorder from 'src/components/InlineBorder'
-import InlineRunAndConvertToMathboxButton from 'src/components/InlineRunAndConvertToMathboxButton'
 import * as R from 'src/components/Runners'
 import ExpressionRunnerCaptionOnly from 'src/components/ExpressionRunnerCaptionOnly'
 import NextLessonButton from 'src/components/NextLessonButton'
@@ -148,10 +147,8 @@ export default () => (
                     <>
                       <P>
                         <Bold>Now, here’s a question:</Bold> What happens when
-                        you do this:
+                        you <H args={{ name: 'play' }} /> it?
                       </P>
-                      <InlineRunAndConvertToMathboxButton />
-                      <P>…on the above lunchbox?</P>
                     </>
                   )
                 },
@@ -172,12 +169,14 @@ export default () => (
                     <>
                       <P>
                         <Bold>I figured it out!</Bold> I think the result will
-                        be <EmojiNumber number={4} />.
+                        be a lunchbox that can be converted to{' '}
+                        <EmojiNumber number={4} />.
                       </P>
-                      <R.Kizi>
-                        <Emoji>👧🏻</Emoji> I think the result will be{' '}
-                        <EmojiNumber number={4} />
-                      </R.Kizi>
+                      <R.Ldcq>
+                        <Emoji>👧🏻</Emoji> I think the result will be <br />a
+                        lunchbox that can be converted to{' '}
+                        <EmojiNumber number={4} />!
+                      </R.Ldcq>
                     </>
                   )
                 },
