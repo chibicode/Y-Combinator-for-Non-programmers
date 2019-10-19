@@ -79,9 +79,7 @@ export default () => (
                       <P>
                         これを、前回サヤが考えた
                         <H args={{ name: 'plusOneEffect' }} />
-                        がある弁当箱と合体させて、
-                        <H args={{ name: 'runAndConvertToMathbox' }} />{' '}
-                        すると、どうなると思う？
+                        がある弁当箱と合体させて、実行するとどうなると思う？
                       </P>
                     </>
                   )
@@ -92,9 +90,7 @@ export default () => (
               <H args={{ name: 'plusOneEffect' }} />
               と合体させて、
               <br />
-              <H args={{ name: 'runAndConvertToMathbox' }} />
-              <br />
-              するとどうなる？
+              実行するとどうなる？
             </R.Nhqo>
             <BubbleQuotes
               quotes={[
@@ -107,7 +103,8 @@ export default () => (
                         <Highlight>
                           <EmojiNumber number={1} /> <Emoji>➕</Emoji>{' '}
                           <EmojiNumber number={1} /> を計算できるんだから、
-                          <EmojiNumber number={2} /> になるに決まっている
+                          <EmojiNumber number={2} />{' '}
+                          に変換できる弁当箱になるに決まっている
                         </Highlight>
                         だろう？
                       </P>
@@ -124,7 +121,9 @@ export default () => (
               ]}
               description={
                 <>
-                  結果は <EmojiNumber number={2} /> になるはず…？
+                  <EmojiNumber number={2} /> に変換できる
+                  <br />
+                  弁当箱になるはず…？
                 </>
               }
             />

@@ -95,7 +95,7 @@ export default () => (
                         <Highlight>
                           What do you think happens if I combined it with a
                           lunchbox that has{' '}
-                          <H args={{ name: 'plusOneEffect' }} />?
+                          <H args={{ name: 'plusOneEffect' }} /> and run it?
                         </Highlight>
                       </P>
                     </>
@@ -106,17 +106,13 @@ export default () => (
             <R.Nhqo>
               If I combined it with a lunchbox that has
               <br />
-              <H args={{ name: 'plusOneEffect' }} />, and…
+              <H args={{ name: 'plusOneEffect' }} />…
             </R.Nhqo>
             <ExpressionRunnerSeparator />
             <ExpressionRunnerCaptionOnly>
-              <Highlight>
-                <H args={{ name: 'runAndConvertToMathbox' }} />
-              </Highlight>
-            </ExpressionRunnerCaptionOnly>
-            <ExpressionRunnerSeparator />
-            <ExpressionRunnerCaptionOnly>
-              What happens?
+              What happens
+              <br />
+              when you <H args={{ name: 'play', lowerCase: true }} /> it?
             </ExpressionRunnerCaptionOnly>
             <BubbleQuotes
               quotes={[
@@ -126,8 +122,11 @@ export default () => (
                     <>
                       <P>
                         Well, because it calculates <EmojiNumber number={1} />{' '}
-                        <Emoji>➕</Emoji> <EmojiNumber number={1} />, the result
-                        should be <EmojiNumber number={2} />, right?
+                        <Emoji>➕</Emoji> <EmojiNumber number={1} />…
+                      </P>
+                      <P>
+                        It should become a lunchbox that can be converted to{' '}
+                        <EmojiNumber number={2} />, right?
                       </P>
                     </>
                   )
@@ -142,7 +141,9 @@ export default () => (
               ]}
               description={
                 <>
-                  The result should be <EmojiNumber number={2} />
+                  Should become a lunchbox
+                  <br />
+                  that can be converted to <EmojiNumber number={2} />
                   …?
                 </>
               }
@@ -227,10 +228,7 @@ export default () => (
                   type: 'thinking',
                   children: (
                     <>
-                      <P>
-                        Hmm… what’s going on? Last time, we got{' '}
-                        <EmojiNumber number={2} />…
-                      </P>
+                      <P>Hmm… what’s going on? Last time, it worked…</P>
                     </>
                   )
                 }
