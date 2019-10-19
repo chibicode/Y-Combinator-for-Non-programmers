@@ -38,7 +38,7 @@ export default () => (
             <P>
               こんにちは、<HighlightBold>上杉周作</HighlightBold>
               と申します。米国在住のプログラマ兼ブロガーです。2019年に日経BP社から発売された『
-              <ExternalLink href="https://amzn.to/2QlZIqm">
+              <ExternalLink href="https://www.amazon.co.jp/dp/4822289605/ref=cm_sw_em_r_mt_dp_U_h20QDbG5PNQK4">
                 <HighlightBold>ファクトフルネス</HighlightBold>
               </ExternalLink>
               』の共訳者でもあります。
@@ -48,7 +48,7 @@ export default () => (
               。
             </P>
             <P>
-              <ExternalLink href="https://amzn.to/2QlZIqm">
+              <ExternalLink href="https://www.amazon.co.jp/dp/4822289605/ref=cm_sw_em_r_mt_dp_U_h20QDbG5PNQK4">
                 <Img
                   size="small"
                   src="/static/images/factfulness.jpg"

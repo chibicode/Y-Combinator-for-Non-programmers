@@ -1012,7 +1012,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
             <Hr />
             <P>
               <Bold>宣伝:</Bold> もしご興味があれば、わたしが共訳した書籍『
-              <ExternalLink href="https://amzn.to/2QlZIqm">
+              <ExternalLink href="https://www.amazon.co.jp/dp/4822289605/ref=cm_sw_em_r_mt_dp_U_h20QDbG5PNQK4">
                 <HighlightBold>ファクトフルネス</HighlightBold>
               </ExternalLink>
               』や、
@@ -1022,7 +1022,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
               もご覧ください。
             </P>
             <P>
-              <ExternalLink href="https://amzn.to/2QlZIqm">
+              <ExternalLink href="https://www.amazon.co.jp/dp/4822289605/ref=cm_sw_em_r_mt_dp_U_h20QDbG5PNQK4">
                 <Img
                   size="small"
                   src="/static/images/factfulness.jpg"
