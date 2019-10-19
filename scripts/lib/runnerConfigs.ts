@@ -734,6 +734,18 @@ export const ldcq: ExpressionRunnerShorthandConfig = {
   initialExpressionContainer: initialExpressionContainers.kaaf
 }
 
+export const aflw: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  showPriorities: true,
+  initialExpressionContainer: initialExpressionContainers.avsj
+}
+
+export const nxjv: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  showPriorities: true,
+  initialExpressionContainer: initialExpressionContainers.yudv
+}
+
 export const jwah: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   showPriorities: true,

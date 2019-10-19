@@ -380,18 +380,15 @@ export default () => (
                           <Highlight>
                             <CustomEmoji type="blankNumberPurple" /> と{' '}
                             <CustomEmoji type="blankNumberPink" />{' '}
-                            に数字を入れ、
+                            に数字を入れて実行すると…
                           </Highlight>
                         </UlLi>
                         <UlLi>
-                          <H args={{ name: 'runAndConvertToMathbox' }} />{' '}
-                          すると…
-                        </UlLi>
-                        <UlLi>
                           <HighlightBold>
-                            結果は <CustomEmoji type="blankNumberPurple" />{' '}
+                            <CustomEmoji type="blankNumberPurple" />{' '}
                             <Emoji>➕</Emoji>{' '}
-                            <CustomEmoji type="blankNumberPink" /> になるんだ。
+                            <CustomEmoji type="blankNumberPink" />{' '}
+                            に変換できる弁当箱になるんだ。
                           </HighlightBold>
                         </UlLi>
                       </Ul>
@@ -402,27 +399,16 @@ export default () => (
             />
             <R.Hvfb>
               <CustomEmoji type="blankNumberPurple" /> と{' '}
-              <CustomEmoji type="blankNumberPink" /> に数字を入れ、
+              <CustomEmoji type="blankNumberPink" /> に数字を入れて
               <br />
-              <H args={{ name: 'runAndConvertToMathbox' }} />
-              <br />
-              すると…
+              実行すると…
             </R.Hvfb>
             <ExpressionRunnerSeparator />
-            <EmojiSeparator
-              nodes={[
-                <CustomEmoji type="blankNumberPurple" />,
-                <Emoji>➕</Emoji>,
-                <CustomEmoji type="blankNumberPink" />
-              ]}
-              description={
-                <>
-                  結果は <CustomEmoji type="blankNumberPurple" />{' '}
-                  <Emoji>➕</Emoji> <CustomEmoji type="blankNumberPink" />{' '}
-                  になる
-                </>
-              }
-            />
+            <R.Nxjv>
+              <CustomEmoji type="blankNumberPurple" /> <Emoji>➕</Emoji>{' '}
+              <CustomEmoji type="blankNumberPink" /> に<br />
+              変換できる弁当箱になる
+            </R.Nxjv>
             <BubbleQuotes
               quotes={[
                 {
@@ -621,18 +607,15 @@ export default () => (
                           <Highlight>
                             <CustomEmoji type="blankNumberPurple" /> と{' '}
                             <CustomEmoji type="blankNumberPink" />{' '}
-                            に数字を入れ、
+                            に数字を入れて実行すると…
                           </Highlight>
                         </UlLi>
                         <UlLi>
-                          <H args={{ name: 'runAndConvertToMathbox' }} />{' '}
-                          すると…
-                        </UlLi>
-                        <UlLi>
                           <HighlightBold>
-                            結果は <CustomEmoji type="blankNumberPurple" />{' '}
+                            <CustomEmoji type="blankNumberPurple" />{' '}
                             <Emoji>✖️</Emoji>{' '}
-                            <CustomEmoji type="blankNumberPink" /> になるんだ。
+                            <CustomEmoji type="blankNumberPink" />{' '}
+                            に変換できる弁当箱になるんだ。
                           </HighlightBold>
                         </UlLi>
                       </Ul>
@@ -643,27 +626,16 @@ export default () => (
             />
             <R.Vqyl>
               <CustomEmoji type="blankNumberPurple" /> と{' '}
-              <CustomEmoji type="blankNumberPink" /> に数字を入れ、
+              <CustomEmoji type="blankNumberPink" /> に数字を入れて
               <br />
-              <H args={{ name: 'runAndConvertToMathbox' }} />
-              <br />
-              すると…
+              実行すると…
             </R.Vqyl>
             <ExpressionRunnerSeparator />
-            <EmojiSeparator
-              nodes={[
-                <CustomEmoji type="blankNumberPurple" />,
-                <Emoji>✖️</Emoji>,
-                <CustomEmoji type="blankNumberPink" />
-              ]}
-              description={
-                <>
-                  結果は <CustomEmoji type="blankNumberPurple" />{' '}
-                  <Emoji>✖️</Emoji> <CustomEmoji type="blankNumberPink" />{' '}
-                  になる
-                </>
-              }
-            />
+            <R.Aflw>
+              <CustomEmoji type="blankNumberPurple" /> <Emoji>✖️</Emoji>{' '}
+              <CustomEmoji type="blankNumberPink" /> に<br />
+              変換できる弁当箱になる
+            </R.Aflw>
             <BubbleQuotes
               quotes={[
                 {

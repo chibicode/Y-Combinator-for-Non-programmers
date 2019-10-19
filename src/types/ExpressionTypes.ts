@@ -22,6 +22,8 @@ export interface VariableExpression {
     | 'binarySecond'
     | 'blankPlusOne'
     | 'blankMinusOne'
+    | 'binaryMultiply'
+    | 'binaryAdd'
   readonly maxNestedFunctionDepth?: number
 }
 

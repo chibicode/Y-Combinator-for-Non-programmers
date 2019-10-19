@@ -2454,3 +2454,11 @@ export const abhd = initializeExpressionContainer([
   },
   { name: 'blankNumber', highlighted: true }
 ])
+
+export const avsj = initializeExpressionContainer({
+  shorthandNumberAfterConvert: 'binaryMultiply'
+})
+
+export const yudv = initializeExpressionContainer({
+  shorthandNumberAfterConvert: 'binaryAdd'
+})

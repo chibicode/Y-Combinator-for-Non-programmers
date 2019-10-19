@@ -113,6 +113,16 @@ const VariableEmoji = ({ expression }: VariableExpressionBoxProps) => {
               <CustomEmoji type="blankNumberPurple" />
             ) : expression.shorthandNumberAfterConvert === 'binarySecond' ? (
               <CustomEmoji type="blankNumberPink" />
+            ) : expression.shorthandNumberAfterConvert === 'binaryMultiply' ? (
+              <>
+                <CustomEmoji type="blankNumberPurple" /> <Emoji>✖️</Emoji>{' '}
+                <CustomEmoji type="blankNumberPink" />
+              </>
+            ) : expression.shorthandNumberAfterConvert === 'binaryAdd' ? (
+              <>
+                <CustomEmoji type="blankNumberPurple" /> <Emoji>➕</Emoji>{' '}
+                <CustomEmoji type="blankNumberPink" />
+              </>
             ) : (
               <></>
             )}
