@@ -734,6 +734,18 @@ export const jwah: ExpressionRunnerShorthandConfig = {
   initialExpressionContainer: initialExpressionContainers.irhr
 }
 
+export const nbck: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  showPriorities: true,
+  initialExpressionContainer: initialExpressionContainers.haeo
+}
+
+export const cawl: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  showPriorities: true,
+  initialExpressionContainer: initialExpressionContainers.yljj
+}
+
 export const vlob: ExpressionRunnerShorthandConfig = {
   runner: 'predefined',
   initialExpressionContainers: [
@@ -1798,13 +1810,9 @@ export const cbmn: ExpressionRunnerShorthandConfig = {
 }
 
 export const fhkl: ExpressionRunnerShorthandConfig = {
-  runner: 'predefined',
-  initialExpressionContainers: [
-    initialExpressionContainers.iius,
-    initialExpressionContainers.hdpc
-  ],
-  showPriorities: true,
-  convert: 'toMathBoxPlay'
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.iius,
+  showPriorities: true
 }
 
 export const eweo: ExpressionRunnerShorthandConfig = {

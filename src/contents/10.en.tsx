@@ -17,7 +17,6 @@ import BottomRightBadge from 'src/components/BottomRightBadge'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import CustomEmoji from 'src/components/CustomEmoji'
 import ExpressionRunnerSeparator from 'src/components/ExpressionRunnerSeparator'
-import InlineRunAndConvertToMathboxButton from 'src/components/InlineRunAndConvertToMathboxButton'
 import EmojiWithText from 'src/components/EmojiWithText'
 import Emoji from 'src/components/Emoji'
 import ExpressionRunnerCaptionOnly from 'src/components/ExpressionRunnerCaptionOnly'
@@ -453,21 +452,23 @@ export default () => (
                   type: 'dog',
                   children: (
                     <>
-                      <P>
-                        Yes!{' '}
-                        <Highlight>
-                          If you combine the above lunchbox with a lunchbox that
-                          can be converted to <CustomEmoji type="blankNumber" />
-                          , and do:
-                        </Highlight>
-                      </P>
-                      <InlineRunAndConvertToMathboxButton />
-                      <P>
-                        <Highlight>
-                          The result will be <CustomEmoji type="blankNumber" />{' '}
-                          <Emoji>➖</Emoji> <EmojiNumber number={1} />.
-                        </Highlight>
-                      </P>
+                      <P>Yes! </P>
+                      <Ul>
+                        <UlLi>
+                          <Highlight>
+                            If you combine the above lunchbox with a lunchbox
+                            that can be converted to{' '}
+                            <CustomEmoji type="blankNumber" />,
+                          </Highlight>
+                        </UlLi>
+                        <UlLi>
+                          <Highlight>
+                            The result would be a lunchbox that can be converted
+                            to <CustomEmoji type="blankNumber" />{' '}
+                            <Emoji>➖</Emoji> <EmojiNumber number={1} />.
+                          </Highlight>
+                        </UlLi>
+                      </Ul>
                     </>
                   )
                 }
@@ -481,13 +482,11 @@ export default () => (
             </R.Xqjd>
             <ExpressionRunnerSeparator />
             <R.Gvxz>
-              If you{' '}
-              <Highlight>
-                <H args={{ name: 'runAndConvertToMathbox', lowerCase: true }} />
-              </Highlight>
-              <br />
-              it will become <CustomEmoji type="blankNumber" />{' '}
-              <Emoji>➖</Emoji> <EmojiNumber number={1} />
+              If you <H args={{ name: 'play', lowerCase: true }} /> it, the
+              result would be
+              <br />a lunchbox that can be converted to{' '}
+              <CustomEmoji type="blankNumber" /> <Emoji>➖</Emoji>{' '}
+              <EmojiNumber number={1} />
             </R.Gvxz>
             <BubbleQuotes
               quotes={[
@@ -610,7 +609,8 @@ export default () => (
                         ]}
                       />
                       <P>
-                        <Bold>That means:</Bold> We want the final result to be{' '}
+                        <Bold>That means:</Bold> We want the final result to be
+                        a lunchbox that can be converted to{' '}
                         <EmojiNumber number={0} />.
                       </P>
                     </>
@@ -625,13 +625,9 @@ export default () => (
             </R.Ylav>
             <ExpressionRunnerSeparator />
             <ExpressionRunnerCaptionOnly>
-              <Highlight>
-                <H args={{ name: 'runAndConvertToMathbox' }} />
-              </Highlight>
-            </ExpressionRunnerCaptionOnly>
-            <ExpressionRunnerSeparator />
-            <ExpressionRunnerCaptionOnly>
-              If it becomes <EmojiNumber number={0} size="mdlg" />,{' '}
+              If it becomes a lunchbox that can be
+              <br />
+              converted to <EmojiNumber number={0} size="mdlg" />,{' '}
               <Highlight>success</Highlight>. <Emoji>🎉</Emoji>
               <br />
               Otherwise, <Highlight>failure</Highlight> <Emoji>😭</Emoji>
@@ -793,21 +789,22 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        <Bold>That means:</Bold>{' '}
-                        <Highlight>
-                          If you combine Saya’s lunchbox with a lunchbox that
-                          can be converted to <EmojiNumber number={1} />, and
-                          do:
-                        </Highlight>
+                        <Bold>That means:</Bold> <Highlight>and do:</Highlight>
                       </P>
-                      <InlineRunAndConvertToMathboxButton />
-                      <P>
-                        <Highlight>
-                          The result will be <EmojiNumber number={0} />, which
-                          is <EmojiNumber number={1} /> <Emoji>➖</Emoji>{' '}
-                          <EmojiNumber number={1} />.
-                        </Highlight>
-                      </P>
+                      <Ul>
+                        <UlLi>
+                          <Highlight>
+                            If you combine Saya’s lunchbox with a lunchbox that
+                            can be converted to <EmojiNumber number={1} />,
+                          </Highlight>
+                        </UlLi>
+                        <UlLi>
+                          <Highlight>
+                            The final result is a lunchbox that can be converted
+                            to <EmojiNumber number={0} />.
+                          </Highlight>
+                        </UlLi>
+                      </Ul>
                     </>
                   )
                 }
@@ -819,14 +816,10 @@ export default () => (
               a lunchbox that can be converted to <EmojiNumber number={1} />…
             </R.Ylav>
             <ExpressionRunnerSeparator />
-            <ExpressionRunnerCaptionOnly>
-              <Highlight>
-                <H args={{ name: 'runAndConvertToMathbox' }} />
-              </Highlight>
-            </ExpressionRunnerCaptionOnly>
-            <ExpressionRunnerSeparator />
             <R.Jwah>
-              The result is <EmojiNumber number={0} />
+              The result is a lunchbox that can be
+              <br />
+              converted to <EmojiNumber number={0} />
             </R.Jwah>
             <BubbleQuotes
               quotes={[
@@ -962,13 +955,9 @@ export default () => (
             </R.Zwvj>
             <ExpressionRunnerSeparator />
             <ExpressionRunnerCaptionOnly>
-              <Highlight>
-                <H args={{ name: 'runAndConvertToMathbox' }} />
-              </Highlight>
-            </ExpressionRunnerCaptionOnly>
-            <ExpressionRunnerSeparator />
-            <ExpressionRunnerCaptionOnly>
-              If it becomes <EmojiNumber number={1} size="mdlg" />,{' '}
+              If it becomes a lunchbox that can be
+              <br />
+              converted to <EmojiNumber number={1} size="mdlg" />,{' '}
               <Highlight>success</Highlight>. <Emoji>🎉</Emoji>
               <br />
               Otherwise, <Highlight>failure</Highlight> <Emoji>😭</Emoji>
@@ -1234,9 +1223,9 @@ export default () => (
               How to reproduce <EmojiNumber number={3} />{' '}
               <CustomEmoji type="minusOne" /> <br />
               using a lunchbox.
-              <br />
-              The final result will be <EmojiNumber number={2} />.
             </R.Fhkl>
+            <ExpressionRunnerSeparator />
+            <R.Cawl></R.Cawl>
             <Hr />
             <P>
               <Bold>Summary:</Bold>{' '}

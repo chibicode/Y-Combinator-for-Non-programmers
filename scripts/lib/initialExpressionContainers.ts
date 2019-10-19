@@ -221,7 +221,15 @@ export const rlzd = initializeExpressionContainer([
 
 export const mzxw = initializeExpressionContainer(numberParams('a', 'b', 0))
 export const irhr = initializeDoneExpressionContainer({ shorthandNumber: 0 })
+export const haeo = initializeDoneExpressionContainer({
+  shorthandNumber: 0,
+  shorthandNumberAfterConvert: 'number'
+})
 export const ntua = initializeDoneExpressionContainer({ shorthandNumber: 1 })
+export const yljj = initializeDoneExpressionContainer({
+  shorthandNumber: 2,
+  shorthandNumberAfterConvert: 'number'
+})
 export const dpvy = initializeDoneExpressionContainer({
   shorthandNumber: 1,
   shorthandNumberAfterConvert: 'number'
@@ -2250,8 +2258,11 @@ export const rjyq = initializeDoneExpressionContainer({
 })
 
 export const iius = initializeExpressionContainer([
-  predParams('a', 'b', 'c', 'd', 'e', 'f'),
-  numberParams('g', 'h', 3)
+  predParams('a', 'b', 'c', 'd', 'e', 'f', true),
+  {
+    shorthandNumber: 3,
+    shorthandNumberAfterConvert: 'number'
+  }
 ])
 
 export const ptsa = initializeExpressionContainer([
