@@ -43,7 +43,7 @@ export interface ExpressionRunnerProps {
   initializeInstructions: readonly InitializeInstruction[]
   lastAllowedExpressionState?: ExpressionContainer['previouslyChangedExpressionState']
   lastAllowedExpressionStateAfterIterations?: number
-  hidePlayButton?: boolean
+  hideRunButton?: boolean
   speed: number
   showAllShowSteps?: boolean
   skipAlphaConvert?: boolean

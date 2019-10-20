@@ -11,7 +11,7 @@ interface ExpressionRunnerControlsProps {
   canStepForward: boolean
   canStepBackward: boolean
   isRunning: boolean
-  showPlayButton: boolean
+  showRunButton: boolean
   skipToTheEnd: boolean
   onNextClick: () => void
   onPreviousClick: () => void
@@ -54,7 +54,7 @@ const ExpressionRunnerControls = ({
   canStepBackward,
   onNextClick,
   onPreviousClick,
-  showPlayButton,
+  showRunButton,
   isRunning,
   onAutoClick,
   onResetClick,
@@ -73,7 +73,7 @@ const ExpressionRunnerControls = ({
         margin: ${spaces(1)} -2px 0 -2px;
       `}
     >
-      {showPlayButton ? (
+      {showRunButton ? (
         <>
           {!isRunning && canStepBackward && !skipToTheEnd ? (
             <ExpressionRunnerButton
@@ -100,7 +100,7 @@ const ExpressionRunnerControls = ({
       ) : (
         <ButtonPlaceholder flex={1} />
       )}
-      {showPlayButton && (
+      {showRunButton && (
         <ExpressionRunnerButton
           onClick={
             canStepForward
@@ -157,7 +157,7 @@ const ExpressionRunnerControls = ({
           )}
         </ExpressionRunnerButton>
       )}
-      {showPlayButton ? (
+      {showRunButton ? (
         <>
           {!isRunning && canStepForward && !skipToTheEnd ? (
             <ExpressionRunnerButton

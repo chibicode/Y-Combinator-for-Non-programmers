@@ -1,11 +1,11 @@
 import {
   ExpressionRunnerShorthandConfig,
   expressionRunnerSimpleConfigDefault,
-  expressionRunnerPlayButtonOnlyConfigDefault,
+  expressionRunnerRunButtonOnlyConfigDefault,
   expressionRunnerSingleStepConfigDefault,
   expressionRunnerPredefinedConfigDefault,
   isExpressionRunnerSimpleConfig,
-  isExpressionRunnerPlayButtonOnlyConfig,
+  isExpressionRunnerRunButtonOnlyConfig,
   isExpressionRunnerSingleStepConfig
 } from 'scripts/lib/expressionRunnerShorthandConfig'
 import { ExpressionContainer } from 'src/types/ExpressionContainerTypes'
@@ -27,7 +27,7 @@ export interface ExpressionRunnerConfig {
   initializeInstructions: readonly InitializeInstruction[]
   lastAllowedExpressionState?: ExpressionContainer['previouslyChangedExpressionState']
   lastAllowedExpressionStateAfterIterations?: number
-  hidePlayButton?: boolean
+  hideRunButton?: boolean
   speed: number
   showAllShowSteps?: boolean
   skipAlphaConvert?: boolean
@@ -51,7 +51,7 @@ const expressionRunnerDefaults = {
   explanationsVisibility: 'visible',
   initializeInstructions: [],
   skipToTheEnd: false,
-  hidePlayButton: false,
+  hideRunButton: false,
   speed: 1,
   hideFuncUnboundBadgeOnExplanation: false,
   highlightOverridesCallArgAndFuncUnboundOnly: false,
@@ -152,7 +152,7 @@ const buildExpressionRunnerConfigFromShorthand = (
       }),
       crossed
     }
-  } else if (isExpressionRunnerPlayButtonOnlyConfig(config)) {
+  } else if (isExpressionRunnerRunButtonOnlyConfig(config)) {
     const {
       initialExpressionContainer,
       initialState,
@@ -171,8 +171,8 @@ const buildExpressionRunnerConfigFromShorthand = (
       explanationsVisibility
     } = mergeWithDefault<
       typeof config,
-      typeof expressionRunnerPlayButtonOnlyConfigDefault
-    >(config, expressionRunnerPlayButtonOnlyConfigDefault)
+      typeof expressionRunnerRunButtonOnlyConfigDefault
+    >(config, expressionRunnerRunButtonOnlyConfigDefault)
 
     runnerProps = {
       speed,
@@ -215,7 +215,7 @@ const buildExpressionRunnerConfigFromShorthand = (
       initialExpressionContainer,
       hidePriorities: !showPriorities,
       hideFuncUnboundBadgeOnExplanation,
-      hidePlayButton: true,
+      hideRunButton: true,
       explanationsVisibility,
       lastAllowedExpressionState: finalState,
       lastAllowedExpressionStateAfterIterations: nextIterations,
@@ -246,7 +246,7 @@ const buildExpressionRunnerConfigFromShorthand = (
       initialExpressionContainers,
       hidePriorities: !showPriorities,
       hideFuncUnboundBadgeOnExplanation,
-      hidePlayButton: false,
+      hideRunButton: false,
       explanationsVisibility,
       lastAllowedExpressionStateAfterIterations: nextIterations,
       showAllShowSteps,

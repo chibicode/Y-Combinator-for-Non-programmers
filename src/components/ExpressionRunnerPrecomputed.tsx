@@ -32,7 +32,7 @@ export interface ExpressionRunnerPrecomputedProps {
   hideControls: ExpressionRunnerConfig['hideControls']
   explanationsVisibility: ExpressionRunnerConfig['explanationsVisibility']
   hidePriorities: ExpressionRunnerConfig['hidePriorities']
-  hidePlayButton: ExpressionRunnerConfig['hidePlayButton']
+  hideRunButton: ExpressionRunnerConfig['hideRunButton']
   hideBottomRightBadges: ExpressionRunnerConfig['hideBottomRightBadges']
   skipToTheEnd: ExpressionRunnerConfig['skipToTheEnd']
   hideFuncUnboundBadgeOnExplanation: ExpressionRunnerConfig['hideFuncUnboundBadgeOnExplanation']
@@ -61,7 +61,7 @@ const ExpressionRunnerPrecomputed = ({
   hideControls,
   explanationsVisibility,
   hidePriorities,
-  hidePlayButton,
+  hideRunButton,
   hideBottomRightBadges,
   skipToTheEnd,
   hideFuncUnboundBadgeOnExplanation,
@@ -160,7 +160,7 @@ const ExpressionRunnerPrecomputed = ({
       !isRunning &&
       currentIndex > 0)
   const progessBarVisible =
-    !hidePlayButton && !skipToTheEnd && (isRunning || atLeastOneStepTaken)
+    !hideRunButton && !skipToTheEnd && (isRunning || atLeastOneStepTaken)
   const containerSize = functionDepthsToContainerSize(
     expressionContainers[currentIndex].expression.maxNestedFunctionDepth || 0
   )
@@ -298,7 +298,7 @@ const ExpressionRunnerPrecomputed = ({
               onPreviousClick={stepBackward}
               canStepForward={canStepForward}
               canStepBackward={atLeastOneStepTaken}
-              showPlayButton={!hidePlayButton}
+              showRunButton={!hideRunButton}
               isRunning={isRunning}
               onAutoClick={autoplay}
               onSkipToTheEndClick={stepToTheEnd}
@@ -313,7 +313,7 @@ const ExpressionRunnerPrecomputed = ({
           size={containerSize === 'xxs' ? 'xs' : 'sm'}
           horizontalPadding={0}
         >
-          {!hidePlayButton &&
+          {!hideRunButton &&
             canStepForward &&
             !skipToTheEnd &&
             (resetClicked || speed > 1) && (
@@ -349,7 +349,7 @@ const ExpressionRunnerPrecomputed = ({
             currentIndex === expressionContainers.length - 1 &&
             expressionContainers[expressionContainers.length - 1]
               .containerState !== 'done' &&
-            !hidePlayButton && (
+            !hideRunButton && (
               <ExpressionRunnerCaptionWrapper
                 css={css`
                   margin-top: ${spaces(0.5)};

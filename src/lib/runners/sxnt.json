@@ -93,7 +93,7 @@
   "hideControls": true,
   "explanationsVisibility": "visible",
   "hidePriorities": true,
-  "hidePlayButton": false,
+  "hideRunButton": false,
   "hideBottomRightBadges": false,
   "skipToTheEnd": false,
   "hideFuncUnboundBadgeOnExplanation": false,

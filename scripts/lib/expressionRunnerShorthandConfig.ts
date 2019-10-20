@@ -36,7 +36,7 @@ export function isExpressionRunnerSimpleConfig(
   return c.runner === 'simple'
 }
 
-export const expressionRunnerPlayButtonOnlyConfigDefault = {
+export const expressionRunnerRunButtonOnlyConfigDefault = {
   initialState: 'default',
   skipToTheEnd: true,
   hideFuncUnboundBadgeOnExplanation: true,
@@ -46,14 +46,14 @@ export const expressionRunnerPlayButtonOnlyConfigDefault = {
   explanationsVisibility: 'hiddenInitialPausedOnly'
 }
 
-export function isExpressionRunnerPlayButtonOnlyConfig(
+export function isExpressionRunnerRunButtonOnlyConfig(
   c: ExpressionRunnerShorthandConfig
-): c is ExpressionRunnerPlayButtonOnlyConfig {
-  return c.runner === 'playButtonOnly'
+): c is ExpressionRunnerRunButtonOnlyConfig {
+  return c.runner === 'runButtonOnly'
 }
 
-interface ExpressionRunnerPlayButtonOnlyConfig {
-  runner: 'playButtonOnly'
+interface ExpressionRunnerRunButtonOnlyConfig {
+  runner: 'runButtonOnly'
   initialExpressionContainer: SteppedExpressionContainer
   initialState?: ExpressionContainer['previouslyChangedExpressionState']
   skipToTheEnd?: boolean
@@ -124,6 +124,6 @@ interface ExpressionRunnerPredefinedConfig {
 
 export type ExpressionRunnerShorthandConfig =
   | ExpressionRunnerSimpleConfig
-  | ExpressionRunnerPlayButtonOnlyConfig
+  | ExpressionRunnerRunButtonOnlyConfig
   | ExpressionRunnerSingleStepConfig
   | ExpressionRunnerPredefinedConfig

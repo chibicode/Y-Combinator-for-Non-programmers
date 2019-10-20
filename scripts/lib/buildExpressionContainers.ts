@@ -18,7 +18,7 @@ const buildExpressionContainers = ({
   hideControls,
   lastAllowedExpressionState,
   lastAllowedExpressionStateAfterIterations,
-  hidePlayButton
+  hideRunButton
 }: ExpressionRunnerConfig): readonly ExpressionContainer[] => {
   if (initialExpressionContainer) {
     let currentExpressionContainer: SteppedExpressionContainer = initialExpressionContainer
@@ -96,7 +96,7 @@ const buildExpressionContainers = ({
       )
       results.push(currentExpressionContainer)
 
-      if (hidePlayButton) {
+      if (hideRunButton) {
         break
       }
 
