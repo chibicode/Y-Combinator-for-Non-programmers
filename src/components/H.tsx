@@ -160,8 +160,8 @@ interface HProps {
     | { name: 'canBeConvertedCaption'; letter: VariableNames; number: number }
     | { name: 'skipToTheEnd' }
     | { name: 'skipToTheStoppingPoint' }
-    | { name: 'fastForwardSkippableToTheEnd' }
-    | { name: 'fastForwardSkippableToTheStoppingPoint' }
+    | { name: 'runSkippableToTheEnd' }
+    | { name: 'runSkippableToTheStoppingPoint' }
     | { name: 'slide' }
     | { name: 'testimonialsTitle' }
     | { name: 'testimonialsContent' }
@@ -761,13 +761,13 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
           {args.skippable && (
             <>
               {' '}
-              <H args={{ name: 'fastForwardSkippableToTheEnd' }} />
+              <H args={{ name: 'runSkippableToTheEnd' }} />
             </>
           )}
           {args.skippableToTheStoppingPoint && (
             <>
               {' '}
-              <H args={{ name: 'fastForwardSkippableToTheStoppingPoint' }} />
+              <H args={{ name: 'runSkippableToTheStoppingPoint' }} />
             </>
           )}
         </>
@@ -795,12 +795,12 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
           )}
           {args.skippable && (
             <>
-              <H args={{ name: 'fastForwardSkippableToTheEnd' }} />
+              <H args={{ name: 'runSkippableToTheEnd' }} />
             </>
           )}
           {args.skippableToTheStoppingPoint && (
             <>
-              <H args={{ name: 'fastForwardSkippableToTheStoppingPoint' }} />
+              <H args={{ name: 'runSkippableToTheStoppingPoint' }} />
             </>
           )}
         </>
@@ -1564,7 +1564,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
       return <>途中までスキップ</>
     }
   }
-  if (args.name === 'fastForwardSkippableToTheEnd') {
+  if (args.name === 'runSkippableToTheEnd') {
     if (locale === 'en') {
       return (
         <Highlight highlightType="pink">
@@ -1579,7 +1579,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
       )
     }
   }
-  if (args.name === 'fastForwardSkippableToTheStoppingPoint') {
+  if (args.name === 'runSkippableToTheStoppingPoint') {
     if (locale === 'en') {
       return (
         <Highlight highlightType="pink">
