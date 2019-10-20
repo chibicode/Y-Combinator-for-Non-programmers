@@ -999,7 +999,7 @@ export const uzzl = initializeExpressionContainer(succParams('a', 'b', 'c'))
 
 export const uqth = initializeExpressionContainer([
   succParams('a', 'b', 'c'),
-  numberParams('d', 'e', 1)
+  numberParams('d', 'e', 0)
 ])
 
 export const oxuf = initializeExpressionContainer(

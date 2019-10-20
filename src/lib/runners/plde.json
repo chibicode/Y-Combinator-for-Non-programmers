@@ -31,37 +31,15 @@
               "maxNestedFunctionDepth": 0
             },
             "body": {
-              "arg": {
-                "name": "e",
-                "highlightType": "default",
-                "topLeftBadgeType": "none",
-                "bottomRightBadgeType": "none",
-                "type": "variable",
-                "argPriorityAgg": [
-                  1
-                ],
-                "funcPriorityAgg": [],
-                "emphasizePriority": false,
-                "bound": true,
-                "maxNestedFunctionDepth": 0
-              },
-              "func": {
-                "name": "d",
-                "highlightType": "default",
-                "topLeftBadgeType": "none",
-                "bottomRightBadgeType": "none",
-                "type": "variable",
-                "argPriorityAgg": [],
-                "funcPriorityAgg": [
-                  1
-                ],
-                "emphasizePriority": false,
-                "bound": true,
-                "maxNestedFunctionDepth": 0
-              },
-              "state": "default",
-              "type": "call",
-              "priority": 1,
+              "name": "e",
+              "highlightType": "default",
+              "topLeftBadgeType": "none",
+              "bottomRightBadgeType": "none",
+              "type": "variable",
+              "argPriorityAgg": [],
+              "funcPriorityAgg": [],
+              "emphasizePriority": false,
+              "bound": true,
               "maxNestedFunctionDepth": 0
             },
             "type": "function",
@@ -201,7 +179,7 @@
         "priority": 1,
         "maxNestedFunctionDepth": 3
       },
-      "numLeafNodes": 6,
+      "numLeafNodes": 5,
       "containerState": "ready",
       "previouslyChangedExpressionState": "default"
     }
