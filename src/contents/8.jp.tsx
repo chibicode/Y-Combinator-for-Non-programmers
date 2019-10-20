@@ -247,7 +247,7 @@ export default () => (
       {
         title: (
           <>
-            <EmojiNumber number={2} /> に変換できる
+            <EmojiNumber number={1} /> に変換できる
           </>
         ),
         content: (
@@ -260,52 +260,21 @@ export default () => (
                     <>
                       <P>
                         この弁当箱は、
-                        <EmojiNumber number={2} /> に変換できます！
+                        <EmojiNumber number={1} /> に変換できます！
                       </P>
                     </>
                   )
                 }
               ]}
             />
-            <R.Rico>
+            <R.Joaq>
               <H
-                args={{ name: 'canBeConvertedCaption', number: 2, letter: 'b' }}
+                args={{ name: 'canBeConvertedCaption', number: 1, letter: 'b' }}
               />
-            </R.Rico>
+            </R.Joaq>
             <ExpressionRunnerSeparator />
-            <R.Pmdm />
-            <BubbleQuotes
-              quotes={[
-                {
-                  type: 'dog',
-                  children: (
-                    <>
-                      <P>ということは、サヤちゃんの弁当箱は…</P>
-                      <P>
-                        <Highlight>
-                          <EmojiNumber number={1} />{' '}
-                          に変換できる弁当箱と合体させ、
-                          <H args={{ name: 'runAndConvertToMathbox' }} />
-                          すると、結果が <EmojiNumber number={2} /> になる
-                        </Highlight>
-                        ということですね。
-                      </P>
-                    </>
-                  )
-                }
-              ]}
-            />
-            <R.Plde>
-              <EmojiNumber number={1} /> に変換できる弁当箱と、
-              <br />
-              <Emoji>👧🏻</Emoji> サヤちゃんの弁当箱を合体させ…
-            </R.Plde>
-            <ExpressionRunnerSeparator />
-            <R.Pmdm>
-              <H args={{ name: 'runAndConvertToMathbox' }} />
-              <br />
-              すると、結果が <EmojiNumber number={2} /> になる
-            </R.Pmdm>
+            <R.Rnug />
+
             <BubbleQuotes
               quotes={[
                 {
@@ -313,10 +282,7 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        つまり、
-                        <EmojiNumber number={1} /> <Emoji>➕</Emoji>{' '}
-                        <EmojiNumber number={1} /> が計算できたので、
-                        <HighlightBold>成功です！</HighlightBold>{' '}
+                        つまり、<HighlightBold>成功です！</HighlightBold>{' '}
                         <Emoji>🎉</Emoji>
                       </P>
                     </>
