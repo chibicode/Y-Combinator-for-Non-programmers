@@ -230,10 +230,24 @@ export const yljj = initializeDoneExpressionContainer({
   shorthandNumber: 2,
   shorthandNumberAfterConvert: 'number'
 })
+export const zreh = initializeDoneExpressionContainer([
+  succParams('a', 'b', 'c'),
+  {
+    shorthandNumber: 2,
+    shorthandNumberAfterConvert: 'number'
+  }
+])
 export const dpvy = initializeDoneExpressionContainer({
   shorthandNumber: 1,
   shorthandNumberAfterConvert: 'number'
 })
+export const vzjq = initializeDoneExpressionContainer([
+  succParams('a', 'b', 'c'),
+  {
+    shorthandNumber: 1,
+    shorthandNumberAfterConvert: 'number'
+  }
+])
 export const nskn = initializeExpressionContainer(numberParams('e', 'f', 2))
 export const qbnd = initializeExpressionContainer(numberParams('k', 'l', 2))
 export const tnyj = initializeExpressionContainer(

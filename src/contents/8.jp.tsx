@@ -436,24 +436,37 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        では、ここで疑問です。<Emoji>👧🏻</Emoji>{' '}
-                        サヤちゃんの弁当箱を、
+                        では、ここで疑問なのですが…{' '}
+                        <Highlight>
+                          <Emoji>👧🏻</Emoji> サヤちゃんの弁当箱を、
+                        </Highlight>
                       </P>
                       <Ul>
                         <UlLi>
-                          <EmojiNumber number={1} /> に変換できる弁当箱や、
+                          <Highlight>
+                            <EmojiNumber number={1} /> に変換できる弁当箱や、
+                          </Highlight>
                         </UlLi>
                         <UlLi>
-                          <EmojiNumber number={2} />{' '}
-                          に変換できる弁当箱と組み合わせた場合、
+                          <Highlight>
+                            <EmojiNumber number={2} />{' '}
+                            に変換できる弁当箱と組み合わせて、
+                          </Highlight>
                         </UlLi>
                       </Ul>
-                      <P>結果はどうなるでしょう？</P>
+                      <P>
+                        <Highlight>
+                          <H args={{ name: 'play' }} />{' '}
+                          すると、結果はどうなるでしょう？
+                        </Highlight>
+                      </P>
                     </>
                   )
                 }
               ]}
             />
+            <R.Rqer></R.Rqer>
+            <R.Cqzt></R.Cqzt>
           </>
         )
       },

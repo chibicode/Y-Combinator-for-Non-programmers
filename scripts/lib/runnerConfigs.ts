@@ -792,6 +792,28 @@ export const jzwg: ExpressionRunnerShorthandConfig = {
   initialExpressionContainer: initialExpressionContainers.dpvy
 }
 
+export const cqzt: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  showPriorities: true,
+  initialExpressionContainer: initialExpressionContainers.zreh,
+  highlightOverrides: {
+    a: 'highlighted',
+    b: 'highlighted',
+    c: 'highlighted'
+  }
+}
+
+export const rqer: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  showPriorities: true,
+  initialExpressionContainer: initialExpressionContainers.vzjq,
+  highlightOverrides: {
+    a: 'highlighted',
+    b: 'highlighted',
+    c: 'highlighted'
+  }
+}
+
 export const duuk: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   showPriorities: true,
