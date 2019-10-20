@@ -465,8 +465,95 @@ export default () => (
                 }
               ]}
             />
-            <R.Rqer></R.Rqer>
-            <R.Cqzt></R.Cqzt>
+            <R.Rqer>
+              <EmojiNumber number={1} /> に変換できる弁当箱と、
+              <br />
+              <Emoji>👧🏻</Emoji> サヤちゃんの弁当箱と組み合わせて…
+            </R.Rqer>
+            <ExpressionRunnerSeparator />
+            <ExpressionRunnerCaptionOnly>
+              <H args={{ name: 'play' }} /> するとどうなる？
+            </ExpressionRunnerCaptionOnly>
+            <Hr />
+            <R.Cqzt>
+              <EmojiNumber number={2} /> に変換できる弁当箱と、
+              <br />
+              <Emoji>👧🏻</Emoji> サヤちゃんの弁当箱と組み合わせて…
+            </R.Cqzt>
+            <ExpressionRunnerSeparator />
+            <ExpressionRunnerCaptionOnly>
+              <H args={{ name: 'play' }} /> するとどうなる？
+            </ExpressionRunnerCaptionOnly>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'thinking',
+                  children: (
+                    <>
+                      <P>うーん、分からないなあ…</P>
+                      <P>
+                        先ほどは、
+                        <EmojiNumber number={0} /> が <EmojiNumber number={1} />{' '}
+                        になったけど、
+                        <EmojiNumber number={1} /> と <EmojiNumber number={2} />{' '}
+                        はどうなるだろう？
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <EmojiSeparator
+              nodes={[
+                <EmojiNumber number={0} />,
+                <CustomEmoji type="singleArrow" />,
+                <EmojiNumber number={1} />
+              ]}
+              description={
+                <>
+                  先ほどは、
+                  <EmojiNumber number={0} /> が <EmojiNumber number={1} />{' '}
+                  になったけど…
+                </>
+              }
+            />
+            <EmojiSeparator
+              nodes={[
+                <EmojiNumber number={1} />,
+                <CustomEmoji type="singleArrow" />,
+                <Emoji>❓</Emoji>
+              ]}
+              noBottomMargin
+            />
+            <EmojiSeparator
+              noTopMargin
+              nodes={[
+                <EmojiNumber number={2} />,
+                <CustomEmoji type="singleArrow" />,
+                <Emoji>❓</Emoji>
+              ]}
+              description={
+                <>
+                  <EmojiNumber number={1} /> や <EmojiNumber number={2} />{' '}
+                  は何になる？
+                </>
+              }
+            />
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>
+                        では、
+                        <H args={{ name: 'play' }} /> してみましょう！
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
           </>
         )
       },
