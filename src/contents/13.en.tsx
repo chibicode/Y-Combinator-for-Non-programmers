@@ -691,7 +691,7 @@ export default () => (
                           <Emoji>⏩</Emoji> <Emoji>⏩</Emoji> <Emoji>⏩</Emoji>
                         </UlLi>
                         <UlLi>
-                          While playing, we’ll{' '}
+                          While it’s running, we’ll{' '}
                           <Highlight>dim the lunchbox</Highlight> so it’s easier
                           for your eyes.
                         </UlLi>

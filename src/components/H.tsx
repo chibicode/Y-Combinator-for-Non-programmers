@@ -76,7 +76,7 @@ interface HProps {
       }
     | { name: 'next' }
     | { name: 'play'; lowerCase?: true }
-    | { name: 'fastForwarding' }
+    | { name: 'running' }
     | { name: 'pause' }
     | { name: 'fastForward'; lowerCase?: true }
     | { name: 'reset' }
@@ -504,7 +504,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
       )
     }
   }
-  if (args.name === 'fastForwarding') {
+  if (args.name === 'running') {
     if (locale === 'en') {
       return (
         <>

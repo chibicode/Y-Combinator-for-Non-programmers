@@ -219,7 +219,7 @@ const ExpressionRunnerPrecomputed = ({
           )}
           {isPlaying && (
             <ExpressionRunnerCaptionWrapper>
-              <H args={{ name: 'fastForwarding' }} />
+              <H args={{ name: 'running' }} />
             </ExpressionRunnerCaptionWrapper>
           )}
           {progessBarVisible && (
