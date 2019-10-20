@@ -63,7 +63,7 @@ const ExpressionRunnerControls = ({
   skipToTheEnd,
   convert
 }: ExpressionRunnerControlsProps) => {
-  const centerButtonWidth = convert ? 66 : 44
+  const centerButtonWidth = convert ? 66 : 48
   const sideButtonsWidth = (100 - centerButtonWidth) / 2 - 2
   return (
     <div
@@ -148,7 +148,7 @@ const ExpressionRunnerControls = ({
                 <H args={{ name: 'play' }} highlightType="none" />
               )
             ) : (
-              <H args={{ name: 'fastForward' }} highlightType="none" />
+              <H args={{ name: 'playAndShowAllSteps' }} highlightType="none" />
             )
           ) : convert && convert !== 'toMathBoxPlay' ? (
             <H args={{ name: 'undoConvertToMathbox' }} highlightType="none" />

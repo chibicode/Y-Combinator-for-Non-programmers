@@ -24,7 +24,7 @@ import {
   episodeTitles
 } from 'src/lib/titles'
 import EpisodeContext from 'src/components/EpisodeContext'
-import { colors } from 'src/lib/theme'
+import { colors, fontSizes } from 'src/lib/theme'
 import {
   episodeCategory,
   numEpisodesExceptFirstAndLast
@@ -168,6 +168,7 @@ interface HProps {
     | { name: 'goToOtherPage' }
     | { name: 'demoTitle' }
     | { name: 'whatTheNumberIsCaption' }
+    | { name: 'playAndShowAllSteps' }
 }
 
 const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
@@ -423,7 +424,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
       return (
         <>
           <HighlightBold highlightType={highlightType}>
-            {args.lowerCase ? 'r' : 'R'}un <Emoji>⏭</Emoji>
+            {args.lowerCase ? 'r' : 'R'}un <Emoji>▶️</Emoji>
           </HighlightBold>
         </>
       )
@@ -456,12 +457,26 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
       )
     }
   }
-  if (args.name === 'fastForwarding') {
+  if (args.name === 'playAndShowAllSteps') {
     if (locale === 'en') {
       return (
         <>
           <HighlightBold highlightType={highlightType}>
-            Playing… <Emoji>▶️</Emoji>
+            <span
+              css={css`
+                display: block;
+              `}
+            >
+              Run <Emoji>▶️</Emoji>
+            </span>
+            <span
+              css={css`
+                font-size: ${fontSizes(0.7)};
+                display: block;
+              `}
+            >
+              (Show every step)
+            </span>
           </HighlightBold>
         </>
       )
@@ -469,7 +484,40 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
       return (
         <>
           <HighlightBold highlightType={highlightType}>
-            早送り中… <Emoji>⏩</Emoji>
+            <span
+              css={css`
+                display: block;
+              `}
+            >
+              実行 <Emoji>▶️</Emoji>
+            </span>
+            <span
+              css={css`
+                font-size: ${fontSizes(0.7)};
+                display: block;
+              `}
+            >
+              (全ステップを表示)
+            </span>
+          </HighlightBold>
+        </>
+      )
+    }
+  }
+  if (args.name === 'fastForwarding') {
+    if (locale === 'en') {
+      return (
+        <>
+          <HighlightBold highlightType={highlightType}>
+            Running… <Emoji>▶️</Emoji>
+          </HighlightBold>
+        </>
+      )
+    } else {
+      return (
+        <>
+          <HighlightBold highlightType={highlightType}>
+            実行中… <Emoji>▶️</Emoji>
           </HighlightBold>
         </>
       )
@@ -1243,7 +1291,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
       return (
         <>
           <Bold>
-            {args.lowerCase ? 'r' : 'R'}un <Emoji>⏭</Emoji>
+            {args.lowerCase ? 'r' : 'R'}un <Emoji>▶️</Emoji>
           </Bold>{' '}
           and{args.addNewline ? <br /> : ' '}
           <H args={{ name: 'convertToMathbox', lowerCase: args.lowerCase }} />
