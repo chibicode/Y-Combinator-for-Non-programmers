@@ -199,10 +199,10 @@ export default () => (
                 }
               ]}
             />
-            <R.Lizi>
-              <EmojiNumber number={1} /> <CustomEmoji type="plusOne" />{' '}
+            <R.Rchd>
+              <EmojiNumber number={0} /> <CustomEmoji type="plusOne" />{' '}
               の計算箱を…
-            </R.Lizi>
+            </R.Rchd>
             <ExpressionRunnerSeparator />
             <R.Plde>弁当箱で再現した</R.Plde>
             <BubbleQuotes

@@ -377,6 +377,15 @@ export const pslb = initializeExpressionContainer({
   }
 })
 
+export const gmzz = initializeExpressionContainer([
+  {
+    shorthandFunc: 'add'
+  },
+  {
+    shorthandNumber: 0
+  }
+])
+
 export const vibe = initializeExpressionContainer([
   {
     shorthandFunc: 'add'

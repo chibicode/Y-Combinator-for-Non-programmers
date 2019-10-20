@@ -212,10 +212,10 @@ export default () => (
                 }
               ]}
             />
-            <R.Lizi>
-              Reproduce <EmojiNumber number={1} />{' '}
+            <R.Rchd>
+              Reproduce <EmojiNumber number={0} />{' '}
               <CustomEmoji type="plusOne" /> …
-            </R.Lizi>
+            </R.Rchd>
             <ExpressionRunnerSeparator />
             <R.Plde>Using a lunchbox</R.Plde>
             <BubbleQuotes

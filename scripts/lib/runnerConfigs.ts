@@ -864,6 +864,11 @@ export const lizi: ExpressionRunnerShorthandConfig = {
   initialExpressionContainer: initialExpressionContainers.vibe
 }
 
+export const rchd: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.gmzz
+}
+
 export const gnwm: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   initialExpressionContainer: initialExpressionContainers.lbkw
