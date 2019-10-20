@@ -108,7 +108,6 @@ import Emoji1f9ee from 'src/components/Twemoji/1f9ee'
 import Emoji2198 from 'src/components/Twemoji/2198'
 import Emoji21a9 from 'src/components/Twemoji/21a9'
 import Emoji23e9 from 'src/components/Twemoji/23e9'
-import Emoji23ed from 'src/components/Twemoji/23ed'
 import Emoji23f8 from 'src/components/Twemoji/23f8'
 import Emoji25b6 from 'src/components/Twemoji/25b6'
 import Emoji26a0 from 'src/components/Twemoji/26a0'
@@ -117,7 +116,6 @@ import Emoji2716 from 'src/components/Twemoji/2716'
 import Emoji2728 from 'src/components/Twemoji/2728'
 import Emoji274c from 'src/components/Twemoji/274c'
 import Emoji2753 from 'src/components/Twemoji/2753'
-import Emoji2754 from 'src/components/Twemoji/2754'
 import Emoji2764 from 'src/components/Twemoji/2764'
 import Emoji2795 from 'src/components/Twemoji/2795'
 import Emoji2796 from 'src/components/Twemoji/2796'
@@ -247,7 +245,6 @@ export default {
   '2198': Emoji2198,
   '21a9': Emoji21a9,
   '23e9': Emoji23e9,
-  '23ed': Emoji23ed,
   '23f8': Emoji23f8,
   '25b6': Emoji25b6,
   '26a0': Emoji26a0,
@@ -256,7 +253,6 @@ export default {
   '2728': Emoji2728,
   '274c': Emoji274c,
   '2753': Emoji2753,
-  '2754': Emoji2754,
   '2764': Emoji2764,
   '2795': Emoji2795,
   '2796': Emoji2796,
