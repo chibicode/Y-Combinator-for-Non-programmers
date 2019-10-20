@@ -107,7 +107,12 @@ export default () => (
                   type: 'saya',
                   children: (
                     <>
-                      <P>ふーん、じゃあサヤも解くのを手伝うよ！</P>
+                      <P>
+                        ふーん、
+                        <HighlightBold>
+                          じゃあサヤも解くのを手伝うよ！
+                        </HighlightBold>
+                      </P>
                     </>
                   )
                 },
