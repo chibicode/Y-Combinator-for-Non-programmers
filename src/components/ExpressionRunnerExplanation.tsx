@@ -17,7 +17,7 @@ import { ExpressionRunnerPrecomputedProps } from 'src/components/ExpressionRunne
 interface ExpressionRunnerExplanationProps {
   expressionContainer: SteppedExpressionContainer
   isDone: boolean
-  isPlaying: boolean
+  isRunning: boolean
   showAllShowSteps?: boolean
   hideFuncUnboundBadge?: boolean
   convert: ExpressionRunnerPrecomputedProps['convert']
@@ -354,7 +354,7 @@ const Explanation = ({
 const ExpressionRunnerExplanation = ({
   expressionContainer,
   isDone,
-  isPlaying,
+  isRunning,
   showAllShowSteps,
   hideFuncUnboundBadge,
   convert
@@ -373,7 +373,7 @@ const ExpressionRunnerExplanation = ({
             <H args={{ name: 'done' }} highlightType="none" />
           )
         ) : (
-          !isPlaying && (
+          !isRunning && (
             <Explanation
               state={expressionContainer.previouslyChangedExpressionState}
               matchExists={expressionContainer.matchExists}

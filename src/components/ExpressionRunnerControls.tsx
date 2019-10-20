@@ -10,7 +10,7 @@ import locale from 'src/lib/locale'
 interface ExpressionRunnerControlsProps {
   canStepForward: boolean
   canStepBackward: boolean
-  isPlaying: boolean
+  isRunning: boolean
   showPlayButton: boolean
   skipToTheEnd: boolean
   onNextClick: () => void
@@ -55,7 +55,7 @@ const ExpressionRunnerControls = ({
   onNextClick,
   onPreviousClick,
   showPlayButton,
-  isPlaying,
+  isRunning,
   onAutoClick,
   onResetClick,
   onPauseClick,
@@ -75,7 +75,7 @@ const ExpressionRunnerControls = ({
     >
       {showPlayButton ? (
         <>
-          {!isPlaying && canStepBackward && !skipToTheEnd ? (
+          {!isRunning && canStepBackward && !skipToTheEnd ? (
             <ExpressionRunnerButton
               onClick={onPreviousClick}
               css={css`
@@ -106,7 +106,7 @@ const ExpressionRunnerControls = ({
             canStepForward
               ? skipToTheEnd
                 ? onSkipToTheEndClick
-                : isPlaying
+                : isRunning
                 ? onPauseClick
                 : onAutoClick
               : onResetClick
@@ -116,7 +116,7 @@ const ExpressionRunnerControls = ({
               width: ${centerButtonWidth}%;
             `,
             canStepForward &&
-              !isPlaying &&
+              !isRunning &&
               css`
                 background: ${colors('yellow100')};
               `,
@@ -132,7 +132,7 @@ const ExpressionRunnerControls = ({
           ]}
         >
           {canStepForward ? (
-            isPlaying ? (
+            isRunning ? (
               <H args={{ name: 'pause' }} highlightType="none" />
             ) : skipToTheEnd ? (
               convert ? (
@@ -145,7 +145,7 @@ const ExpressionRunnerControls = ({
                   <H args={{ name: 'convertToMathbox' }} highlightType="none" />
                 )
               ) : (
-                <H args={{ name: 'play' }} highlightType="none" />
+                <H args={{ name: 'run' }} highlightType="none" />
               )
             ) : (
               <H args={{ name: 'playAndShowAllSteps' }} highlightType="none" />
@@ -159,7 +159,7 @@ const ExpressionRunnerControls = ({
       )}
       {showPlayButton ? (
         <>
-          {!isPlaying && canStepForward && !skipToTheEnd ? (
+          {!isRunning && canStepForward && !skipToTheEnd ? (
             <ExpressionRunnerButton
               onClick={onNextClick}
               css={css`

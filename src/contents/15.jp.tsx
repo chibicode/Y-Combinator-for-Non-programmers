@@ -248,7 +248,7 @@ export default () => (
                     <>
                       <P>
                         では、これを
-                        <H args={{ name: 'play' }} />{' '}
+                        <H args={{ name: 'run' }} />{' '}
                         するとどうなるか確かめてみよう！
                       </P>
                     </>
@@ -988,7 +988,7 @@ export default () => (
                         以下のように <MultiplyIcon /> を使って省略表記できる。
                       </P>
                       <P>
-                        <H args={{ name: 'play' }} /> を押してみると、ちゃんと{' '}
+                        <H args={{ name: 'run' }} /> を押してみると、ちゃんと{' '}
                         <EmojiNumber number={2} /> <Emoji>✖️</Emoji>{' '}
                         <EmojiNumber number={3} /> が計算できるぞ。
                       </P>
@@ -1398,7 +1398,7 @@ export default () => (
             <R.Eijx>
               一番上に <EmojiNumber number={5} /> を入れて
               <br />
-              <H args={{ name: 'play' }} /> すると…
+              <H args={{ name: 'run' }} /> すると…
             </R.Eijx>
             <ExpressionRunnerSeparator />
             <EmojiSeparator

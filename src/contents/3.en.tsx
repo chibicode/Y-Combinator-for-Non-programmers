@@ -480,7 +480,7 @@ export default () => (
                       </P>
                       <P>
                         For now, let’s talk about how we can{' '}
-                        <H args={{ name: 'play', lowerCase: true }} />{' '}
+                        <H args={{ name: 'run', lowerCase: true }} />{' '}
                         <H
                           args={{ name: 'bentoBoxPuzzle', indefinite: true }}
                         />
@@ -497,13 +497,13 @@ export default () => (
       {
         title: (
           <>
-            How to <H args={{ name: 'play', lowerCase: true }} /> a lunchbox
+            How to <H args={{ name: 'run', lowerCase: true }} /> a lunchbox
           </>
         ),
         content: (
           <>
             <P>
-              We can <H args={{ name: 'play', lowerCase: true }} />{' '}
+              We can <H args={{ name: 'run', lowerCase: true }} />{' '}
               <H args={{ name: 'bentoBoxPuzzle', indefinite: true }} />, just
               like how we can run a mathbox.{' '}
               <H args={{ name: 'pressPlay', capitalize: true }} /> below:
@@ -529,7 +529,7 @@ export default () => (
               ]}
             />
             <R.Ilpo>
-              If you <H args={{ name: 'play', lowerCase: true }} /> it…
+              If you <H args={{ name: 'run', lowerCase: true }} /> it…
             </R.Ilpo>
             <ExpressionRunnerSeparator />
             <R.Osqo>
@@ -545,7 +545,7 @@ export default () => (
                         There is actually a{' '}
                         <Italic>specific set of rules</Italic> that determines
                         what happens when you{' '}
-                        <H args={{ name: 'play', lowerCase: true }} /> a
+                        <H args={{ name: 'run', lowerCase: true }} /> a
                         lunchbox.
                       </P>
                       <P>
@@ -793,7 +793,7 @@ export default () => (
             <R.Loai />
             <P>
               <Highlight>
-                If you <H args={{ name: 'play', lowerCase: true }} /> this, will
+                If you <H args={{ name: 'run', lowerCase: true }} /> this, will
                 it become the following lunchbox at the end?
               </Highlight>
             </P>
@@ -818,7 +818,7 @@ export default () => (
             <R.Uvmv />
             <P>
               <Highlight>
-                If you <H args={{ name: 'play', lowerCase: true }} /> this, will
+                If you <H args={{ name: 'run', lowerCase: true }} /> this, will
                 it become the following lunchbox at the end?
               </Highlight>
             </P>
@@ -833,7 +833,7 @@ export default () => (
           <>
             <P>
               <Bold>Here are the answers:</Bold> If you{' '}
-              <H args={{ name: 'play', lowerCase: true }} /> each, this is what
+              <H args={{ name: 'run', lowerCase: true }} /> each, this is what
               happens:
             </P>
             <P>

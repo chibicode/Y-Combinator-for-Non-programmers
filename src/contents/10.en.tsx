@@ -482,7 +482,7 @@ export default () => (
             </R.Xqjd>
             <ExpressionRunnerSeparator />
             <R.Gvxz>
-              If you <H args={{ name: 'play', lowerCase: true }} /> it, the
+              If you <H args={{ name: 'run', lowerCase: true }} /> it, the
               result would be
               <br />a lunchbox that can be converted to{' '}
               <CustomEmoji type="blankNumber" /> <Emoji>➖</Emoji>{' '}
@@ -639,7 +639,7 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        Let’s <H args={{ name: 'play', lowerCase: true }} /> it!
+                        Let’s <H args={{ name: 'run', lowerCase: true }} /> it!
                       </P>
                     </>
                   )

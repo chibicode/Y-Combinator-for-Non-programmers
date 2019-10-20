@@ -214,7 +214,7 @@ export default () => (
                           If the bottom two items are the <Italic>same</Italic>
                         </Highlight>
                         , then when you{' '}
-                        <H args={{ name: 'play', lowerCase: true }} /> it,{' '}
+                        <H args={{ name: 'run', lowerCase: true }} /> it,{' '}
                         <Highlight>
                           we’re left with the <Italic>top item</Italic>
                         </Highlight>{' '}
@@ -294,7 +294,7 @@ export default () => (
                       </P>
                       <P>
                         In this case, when you{' '}
-                        <H args={{ name: 'play', lowerCase: true }} /> it,{' '}
+                        <H args={{ name: 'run', lowerCase: true }} /> it,{' '}
                         <Highlight>
                           we’re left with the <Italic>bottom-right item</Italic>
                         </Highlight>{' '}

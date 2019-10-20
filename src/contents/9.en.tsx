@@ -112,7 +112,7 @@ export default () => (
             <ExpressionRunnerCaptionOnly>
               What happens
               <br />
-              when you <H args={{ name: 'play', lowerCase: true }} /> it?
+              when you <H args={{ name: 'run', lowerCase: true }} /> it?
             </ExpressionRunnerCaptionOnly>
             <BubbleQuotes
               quotes={[

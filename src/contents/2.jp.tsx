@@ -157,7 +157,7 @@ export default () => (
             />
             <P>
               そのためにラムダ村の村人は、以下のような計算箱を
-              <H args={{ name: 'play' }} /> しようとしました。
+              <H args={{ name: 'run' }} /> しようとしました。
             </P>
             <R.Dfjp>
               <Emoji>😉</Emoji> これで <EmojiNumber number={10} />{' '}
@@ -351,7 +351,7 @@ export default () => (
             <P>
               <Highlight>
                 上の計算箱を
-                <H args={{ name: 'play' }} />
+                <H args={{ name: 'run' }} />
                 すると、計算をする前に、下の部分が次のように変化します。
               </Highlight>
               変化後には、
@@ -465,7 +465,7 @@ export default () => (
               </UlLi>
               <UlLi>
                 <Highlight>
-                  <H args={{ name: 'play' }} /> すると、
+                  <H args={{ name: 'run' }} /> すると、
                   <CustomEmoji type="plusOne" /> が{' '}
                   <CustomEmoji type="blankNumber" /> 回分繰り返される。
                 </Highlight>
@@ -525,7 +525,7 @@ export default () => (
             </R.Etku>
             <P>
               後は
-              <H args={{ name: 'play' }} /> するだけで、
+              <H args={{ name: 'run' }} /> するだけで、
               <EmojiNumber number={5} /> <Emoji>➕</Emoji>{' '}
               <EmojiNumber number={3} /> を計算してくれます。
             </P>

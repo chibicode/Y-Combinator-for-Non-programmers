@@ -125,7 +125,7 @@ export default () => (
                     <>
                       <P>
                         ここで質問です。上の弁当箱を
-                        <H args={{ name: 'play' }} /> すると、
+                        <H args={{ name: 'run' }} /> すると、
                         <HighlightBold>
                           どんな結果になるでしょう？
                         </HighlightBold>
@@ -187,7 +187,7 @@ export default () => (
                       <P>
                         <Highlight>
                           サヤちゃん、まさか一瞬で頭の中で
-                          <H args={{ name: 'play' }} /> したのかい？
+                          <H args={{ name: 'run' }} /> したのかい？
                         </Highlight>
                       </P>
                     </>
@@ -507,7 +507,7 @@ export default () => (
                     <>
                       <P>
                         あとは、これを
-                        <H args={{ name: 'play' }} />{' '}
+                        <H args={{ name: 'run' }} />{' '}
                         するだけだよ。というわけで、
                         <H args={{ name: 'pressFastForward', girl: true }} />
                       </P>
@@ -618,10 +618,8 @@ export default () => (
                       <P>
                         <HighlightBold>
                           もともとの弁当箱を、そのまま
-                          <H
-                            args={{ name: 'play' }}
-                          /> しても、結果は同じく <EmojiNumber number={4} />{' '}
-                          になっていたのかな？
+                          <H args={{ name: 'run' }} /> しても、結果は同じく{' '}
+                          <EmojiNumber number={4} /> になっていたのかな？
                         </HighlightBold>
                       </P>
                     </>
@@ -633,7 +631,7 @@ export default () => (
               <Emoji>🍱</Emoji> もともとの弁当箱を、
               <br />
               そのまま
-              <H args={{ name: 'play' }} /> しても…
+              <H args={{ name: 'run' }} /> しても…
             </R.Bnyo>
             <ExpressionRunnerSeparator />
             <ExpressionRunnerCaptionOnly>

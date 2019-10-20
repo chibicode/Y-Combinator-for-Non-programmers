@@ -642,7 +642,7 @@ export default () => (
                       </P>
                       <P>
                         これを
-                        <H args={{ name: 'play' }} /> したとき、
+                        <H args={{ name: 'run' }} /> したとき、
                         <Highlight>
                           先ほど同じく結果が <EmojiNumber number={1} /> になれば
                           <HighlightBold>

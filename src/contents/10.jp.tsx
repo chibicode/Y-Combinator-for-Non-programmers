@@ -454,7 +454,7 @@ export default () => (
             </R.Xqjd>
             <ExpressionRunnerSeparator />
             <R.Gvxz>
-              <H args={{ name: 'play' }} /> すると、
+              <H args={{ name: 'run' }} /> すると、
               <br />
               <CustomEmoji type="blankNumber" /> <Emoji>➖</Emoji>{' '}
               <EmojiNumber number={1} /> に変換できる弁当箱になる
@@ -626,7 +626,7 @@ export default () => (
                     <>
                       <P>
                         じゃあ、
-                        <H args={{ name: 'play' }} />
+                        <H args={{ name: 'run' }} />
                         してみよう！
                       </P>
                     </>
@@ -640,7 +640,7 @@ export default () => (
       {
         title: (
           <>
-            <H args={{ name: 'play' }} /> してみると…
+            <H args={{ name: 'run' }} /> してみると…
           </>
         ),
         content: (

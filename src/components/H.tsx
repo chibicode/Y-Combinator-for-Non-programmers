@@ -75,7 +75,7 @@ interface HProps {
         postfix?: string
       }
     | { name: 'next' }
-    | { name: 'play'; lowerCase?: true }
+    | { name: 'run'; lowerCase?: true }
     | { name: 'running' }
     | { name: 'pause' }
     | { name: 'fastForward'; lowerCase?: true }
@@ -419,7 +419,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
       )
     }
   }
-  if (args.name === 'play') {
+  if (args.name === 'run') {
     if (locale === 'en') {
       return (
         <>
@@ -618,13 +618,13 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
       return (
         <Highlight>
           {args.capitalize ? 'T' : 't'}
-          ry pressing <H args={{ name: 'play' }} />
+          ry pressing <H args={{ name: 'run' }} />
         </Highlight>
       )
     } else {
       return (
         <Highlight>
-          <H args={{ name: 'play' }} /> を押してみてください:
+          <H args={{ name: 'run' }} /> を押してみてください:
         </Highlight>
       )
     }
@@ -828,7 +828,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
         <>
           <Bold>Question:</Bold>{' '}
           <Highlight>
-            If we <H args={{ name: 'play', lowerCase: true }} /> the above
+            If we <H args={{ name: 'run', lowerCase: true }} /> the above
             lunchbox, will it eventually become the following?
           </Highlight>
         </>
@@ -837,7 +837,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
       return (
         <>
           <H args={{ name: 'question' }} /> 上の弁当箱を
-          <H args={{ name: 'play' }} /> すると、
+          <H args={{ name: 'run' }} /> すると、
           <HighlightBold>最終的に下のようになるでしょうか？</HighlightBold>
         </>
       )

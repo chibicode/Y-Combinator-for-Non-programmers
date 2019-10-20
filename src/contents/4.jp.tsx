@@ -183,7 +183,7 @@ export default () => (
                         <Highlight>
                           もし下のふたつの料理が
                           <HighlightBold>同じ</HighlightBold>なら、
-                          <H args={{ name: 'play' }} />
+                          <H args={{ name: 'run' }} />
                           したときに<HighlightBold>上にある</HighlightBold>
                           料理が残る
                         </Highlight>
@@ -258,7 +258,7 @@ export default () => (
                       <P>
                         <Highlight>
                           この場合は、
-                          <H args={{ name: 'play' }} />
+                          <H args={{ name: 'run' }} />
                           したときに<HighlightBold>右下にある</HighlightBold>
                           料理が残る
                         </Highlight>

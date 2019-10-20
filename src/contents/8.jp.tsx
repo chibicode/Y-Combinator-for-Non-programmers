@@ -173,7 +173,7 @@ export default () => (
                       </P>
                       <P>
                         これを
-                        <H args={{ name: 'play' }} /> して、
+                        <H args={{ name: 'run' }} /> して、
                         <EmojiNumber number={1} /> になればいいんだよな。
                       </P>
                     </>
@@ -199,7 +199,7 @@ export default () => (
                     <>
                       <P>
                         じゃあ、
-                        <H args={{ name: 'play' }} />
+                        <H args={{ name: 'run' }} />
                         してみよう！
                       </P>
                     </>
@@ -213,7 +213,7 @@ export default () => (
       {
         title: (
           <>
-            <H args={{ name: 'play' }} /> してみると…
+            <H args={{ name: 'run' }} /> してみると…
           </>
         ),
         content: (
@@ -232,7 +232,7 @@ export default () => (
             </R.Hdhy>
             <P>つまり、最終的に以下のようになりました！</P>
             <R.Rhcv>
-              <H args={{ name: 'play' }} /> した結果
+              <H args={{ name: 'run' }} /> した結果
             </R.Rhcv>
             <BubbleQuotes
               quotes={[
@@ -456,7 +456,7 @@ export default () => (
                       </Ul>
                       <P>
                         <Highlight>
-                          <H args={{ name: 'play' }} />{' '}
+                          <H args={{ name: 'run' }} />{' '}
                           すると、結果はどうなるでしょう？
                         </Highlight>
                       </P>
@@ -472,7 +472,7 @@ export default () => (
             </R.Rqer>
             <ExpressionRunnerSeparator />
             <ExpressionRunnerCaptionOnly>
-              <H args={{ name: 'play' }} /> するとどうなる？
+              <H args={{ name: 'run' }} /> するとどうなる？
             </ExpressionRunnerCaptionOnly>
             <Hr />
             <R.Cqzt>
@@ -482,7 +482,7 @@ export default () => (
             </R.Cqzt>
             <ExpressionRunnerSeparator />
             <ExpressionRunnerCaptionOnly>
-              <H args={{ name: 'play' }} /> するとどうなる？
+              <H args={{ name: 'run' }} /> するとどうなる？
             </ExpressionRunnerCaptionOnly>
             <BubbleQuotes
               quotes={[
@@ -547,7 +547,7 @@ export default () => (
                     <>
                       <P>
                         では、
-                        <H args={{ name: 'play' }} /> してみましょう！
+                        <H args={{ name: 'run' }} /> してみましょう！
                       </P>
                     </>
                   )
@@ -686,7 +686,7 @@ export default () => (
               ]}
             />
             <R.Zsxo>
-              <H args={{ name: 'play' }} /> した結果
+              <H args={{ name: 'run' }} /> した結果
             </R.Zsxo>
             <BubbleQuotes
               quotes={[
@@ -917,7 +917,7 @@ export default () => (
                           試しに、
                           <EmojiNumber number={3} />{' '}
                           に変換できるこちらの弁当箱と合体させて
-                          <H args={{ name: 'play' }} /> してみましょう。
+                          <H args={{ name: 'run' }} /> してみましょう。
                         </Highlight>
                       </P>
                       <R.Cjxe>
@@ -1161,7 +1161,7 @@ export default () => (
             <P>もちろん、もっと複雑な計算箱も弁当箱で再現できます。</P>
             <P>
               たとえば、初級その1に登場したこちらの計算箱をご覧ください。
-              <H args={{ name: 'play' }} /> すると、結果は{' '}
+              <H args={{ name: 'run' }} /> すると、結果は{' '}
               <EmojiNumber number={4} /> になります。
             </P>
             <R.Jiqb />
@@ -1636,7 +1636,7 @@ export default () => (
 //                     <>
 //                       <P>
 //                         じゃあ、
-//                         <H args={{ name: 'play' }} />
+//                         <H args={{ name: 'run' }} />
 //                         してみよう！
 //                       </P>
 //                     </>
@@ -1650,7 +1650,7 @@ export default () => (
 //       {
 //         title: (
 //           <>
-//             <H args={{ name: 'play' }} /> してみると…
+//             <H args={{ name: 'run' }} /> してみると…
 //           </>
 //         ),
 //         content: (
@@ -1669,7 +1669,7 @@ export default () => (
 //             </R.Hdhy>
 //             <P>つまり、最終的に以下のようになりました！</P>
 //             <R.Rhcv>
-//               <H args={{ name: 'play' }} /> した結果
+//               <H args={{ name: 'run' }} /> した結果
 //             </R.Rhcv>
 //             <BubbleQuotes
 //               quotes={[
@@ -1916,7 +1916,7 @@ export default () => (
 //               ]}
 //             />
 //             <R.Zsxo>
-//               <H args={{ name: 'play' }} /> した結果
+//               <H args={{ name: 'run' }} /> した結果
 //             </R.Zsxo>
 //             <BubbleQuotes
 //               quotes={[
@@ -2147,7 +2147,7 @@ export default () => (
 //                           試しに、
 //                           <EmojiNumber number={3} />{' '}
 //                           に変換できるこちらの弁当箱と合体させて
-//                           <H args={{ name: 'play' }} /> してみましょう。
+//                           <H args={{ name: 'run' }} /> してみましょう。
 //                         </Highlight>
 //                       </P>
 //                       <R.Cjxe>
@@ -2391,7 +2391,7 @@ export default () => (
 //             <P>もちろん、もっと複雑な計算箱も弁当箱で再現できます。</P>
 //             <P>
 //               たとえば、初級その1に登場したこちらの計算箱をご覧ください。
-//               <H args={{ name: 'play' }} /> すると、結果は{' '}
+//               <H args={{ name: 'run' }} /> すると、結果は{' '}
 //               <EmojiNumber number={4} /> になります。
 //             </P>
 //             <R.Jiqb />

@@ -324,7 +324,7 @@ export default () => (
                     <>
                       <P>
                         Let’s first{' '}
-                        <H args={{ name: 'play', lowerCase: true }} /> it!
+                        <H args={{ name: 'run', lowerCase: true }} /> it!
                       </P>
                     </>
                   )
@@ -1103,7 +1103,7 @@ export default () => (
                 For example, take a look at this mathbox that appeared on
                 Beginner 1.
               </Highlight>{' '}
-              If you <H args={{ name: 'play', lowerCase: true }} /> it, the
+              If you <H args={{ name: 'run', lowerCase: true }} /> it, the
               result will be <EmojiNumber number={4} />.
             </P>
             <R.Jiqb />

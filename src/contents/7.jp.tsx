@@ -37,7 +37,7 @@ export const Problem = () => (
     <ExpressionRunnerSeparator />
     <R.Jzwg>
       <HighlightBold>
-        <H args={{ name: 'play' }} /> した後に
+        <H args={{ name: 'run' }} /> した後に
         <br />
         <EmojiNumber number={1} /> に変換できる弁当箱になる？
       </HighlightBold>
@@ -351,7 +351,7 @@ export default () => (
                           <HighlightBold>
                             それぞれの <CustomEmoji type="questionFoodGrey" />{' '}
                             に、ある法則に基づいて料理を入れて
-                            <H args={{ name: 'play' }} /> すると、
+                            <H args={{ name: 'run' }} /> すると、
                           </HighlightBold>
                         </UlLi>
                         <UlLi>
@@ -371,7 +371,7 @@ export default () => (
             </R.Stda>
             <ExpressionRunnerSeparator />
             <R.Rnug>
-              <H args={{ name: 'play' }} /> すると、
+              <H args={{ name: 'run' }} /> すると、
               <br />
               <EmojiNumber number={1} /> に変換できる弁当箱になる
             </R.Rnug>

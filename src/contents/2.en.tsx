@@ -418,7 +418,7 @@ export default () => (
         content: (
           <>
             <P>
-              If you <H args={{ name: 'play', lowerCase: true }} /> the above
+              If you <H args={{ name: 'run', lowerCase: true }} /> the above
               mathbox,{' '}
               <Italic>
                 it automatically expands the bottom half before calculating the
@@ -429,7 +429,7 @@ export default () => (
               ’s.
             </P>
             <R.Sucz>
-              If you <H args={{ name: 'play', lowerCase: true }} /> this…
+              If you <H args={{ name: 'run', lowerCase: true }} /> this…
             </R.Sucz>
             <ExpressionRunnerSeparator />
             <R.Xlgb>
@@ -545,7 +545,7 @@ export default () => (
                 to the left of <CustomEmoji type="plusOne" />, then…
               </UlLi>
               <UlLi>
-                When you <H args={{ name: 'play' }} /> it,{' '}
+                When you <H args={{ name: 'run' }} /> it,{' '}
                 <CustomEmoji type="plusOne" /> gets repeated for{' '}
                 <CustomEmoji type="blankNumber" /> times.
               </UlLi>
@@ -605,7 +605,7 @@ export default () => (
               <Emoji>🅱️</Emoji> as <EmojiNumber number={3} />.
             </R.Etku>
             <P>
-              If you <H args={{ name: 'play', lowerCase: true }} /> it, it
+              If you <H args={{ name: 'run', lowerCase: true }} /> it, it
               calculates <EmojiNumber number={5} /> <Emoji>➕</Emoji>{' '}
               <EmojiNumber number={3} />.
             </P>

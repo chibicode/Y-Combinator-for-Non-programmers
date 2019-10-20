@@ -1269,7 +1269,7 @@ export default () => (
                     <>
                       <P>
                         Let’s first see what happens when you{' '}
-                        <H args={{ name: 'play', lowerCase: true }} /> the above
+                        <H args={{ name: 'run', lowerCase: true }} /> the above
                         lunchbox!
                       </P>
                     </>
@@ -1462,7 +1462,7 @@ export default () => (
               If you combine with the lunchbox that can be
               <br />
               converted to <EmojiNumber number={1} />, and{' '}
-              <H args={{ name: 'play', lowerCase: true }} /> it…
+              <H args={{ name: 'run', lowerCase: true }} /> it…
             </R.Nuco>
             <ExpressionRunnerSeparator />
             <R.Xwzc>

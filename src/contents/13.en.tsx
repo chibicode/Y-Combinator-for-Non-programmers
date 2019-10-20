@@ -147,7 +147,7 @@ export default () => (
                     <>
                       <P>
                         <Bold>Now, here’s a question:</Bold> What happens when
-                        you <H args={{ name: 'play' }} /> it?
+                        you <H args={{ name: 'run' }} /> it?
                       </P>
                     </>
                   )
@@ -631,7 +631,7 @@ export default () => (
                         <Bold>But I’m wondering:</Bold>{' '}
                         <Highlight>
                           Would the result also be <EmojiNumber number={4} /> if
-                          we <H args={{ name: 'play', lowerCase: true }} /> the
+                          we <H args={{ name: 'run', lowerCase: true }} /> the
                           original lunchbox directly?
                         </Highlight>
                       </P>
@@ -642,7 +642,7 @@ export default () => (
             />
             <R.Bnyo>
               <Emoji>🍱</Emoji> If we{' '}
-              <H args={{ name: 'play', lowerCase: true }} />
+              <H args={{ name: 'run', lowerCase: true }} />
               <br />
               the original lunchbox directly…
             </R.Bnyo>
@@ -1140,9 +1140,8 @@ export default () => (
                       <Ul>
                         <UlLi>
                           <Highlight>
-                            If you{' '}
-                            <H args={{ name: 'play', lowerCase: true }} /> the
-                            above lunchbox,
+                            If you <H args={{ name: 'run', lowerCase: true }} />{' '}
+                            the above lunchbox,
                           </Highlight>
                         </UlLi>
                         <UlLi>
@@ -1159,7 +1158,7 @@ export default () => (
               ]}
             />
             <R.Kjba>
-              If you <H args={{ name: 'play', lowerCase: true }} /> this
+              If you <H args={{ name: 'run', lowerCase: true }} /> this
               lunchbox…
             </R.Kjba>
             <ExpressionRunnerSeparator />
@@ -1204,7 +1203,7 @@ export default () => (
                       <P>
                         <Highlight>
                           We need to{' '}
-                          <H args={{ name: 'play', lowerCase: true }} /> it to
+                          <H args={{ name: 'run', lowerCase: true }} /> it to
                           see if it’s correct.
                         </Highlight>
                       </P>
@@ -1216,9 +1215,8 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        Yes, let’s{' '}
-                        <H args={{ name: 'play', lowerCase: true }} /> on the
-                        next page to check!
+                        Yes, let’s <H args={{ name: 'run', lowerCase: true }} />{' '}
+                        on the next page to check!
                       </P>
                     </>
                   )

@@ -135,7 +135,7 @@ export default () => (
                     <>
                       <P>
                         じゃあ、
-                        <H args={{ name: 'play' }} />
+                        <H args={{ name: 'run' }} />
                         してみてよ！
                       </P>
                     </>

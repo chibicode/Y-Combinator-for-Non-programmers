@@ -669,7 +669,7 @@ export default () => (
                     <>
                       <P>
                         <Bold>Question:</Bold> If we{' '}
-                        <H args={{ name: 'play', lowerCase: true }} />, will it
+                        <H args={{ name: 'run', lowerCase: true }} />, will it
                         become like this?
                       </P>
                     </>

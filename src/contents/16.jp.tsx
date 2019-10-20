@@ -510,15 +510,14 @@ export default () => (
             </R.Kzkg>
             <P>
               上の弁当箱は、
-              <H args={{ name: 'play' }} /> すると <Emoji>🅱️</Emoji>{' '}
-              になります。
+              <H args={{ name: 'run' }} /> すると <Emoji>🅱️</Emoji> になります。
               <H args={{ name: 'pressFastForward' }} />
             </P>
             <R.Unxf></R.Unxf>
             <P>
               <Highlight>
                 それと同じで、先ほどの「ラムダ計算」の記述式も、
-                <H args={{ name: 'play' }} /> すると
+                <H args={{ name: 'run' }} /> すると
                 <HighlightBold>B</HighlightBold>が残るのです。
               </Highlight>
             </P>

@@ -127,7 +127,7 @@ export default () => (
       {
         title: (
           <>
-            <H args={{ name: 'play' }} /> ボタン
+            <H args={{ name: 'run' }} /> ボタン
           </>
         ),
         content: (
@@ -135,7 +135,7 @@ export default () => (
             <P>
               それぞれの計算箱には
               <HighlightBold>
-                <H args={{ name: 'play' }} /> ボタン
+                <H args={{ name: 'run' }} /> ボタン
               </HighlightBold>
               がついており、それを押すと計算が実行されます。試しに、下の計算箱で
               <HighlightBold>
@@ -187,7 +187,7 @@ export default () => (
               </UlLi>
               <UlLi>
                 <Highlight>
-                  <H args={{ name: 'play' }} /> すると結果は{' '}
+                  <H args={{ name: 'run' }} /> すると結果は{' '}
                   <CustomEmoji type="blankNumber" /> <Emoji>➕</Emoji>{' '}
                   <EmojiNumber number={1} /> になる
                 </Highlight>
@@ -236,7 +236,7 @@ export default () => (
               計算箱は「1を足す」だけではなく、「
               <HighlightBold>1を引く</HighlightBold>
               」計算をすることもできます。こちらの計算箱を
-              <H args={{ name: 'play' }} />
+              <H args={{ name: 'run' }} />
               してみてください:
             </P>
             <R.Xmqp />

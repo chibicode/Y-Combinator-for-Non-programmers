@@ -52,7 +52,7 @@ const FASTFORWARDING_THRESHOLD = 2
 
 interface PlaybackState {
   isFastForwarding: boolean
-  isPlaying: boolean
+  isRunning: boolean
 }
 
 const ExpressionRunnerPrecomputed = ({
@@ -76,11 +76,11 @@ const ExpressionRunnerPrecomputed = ({
   crossed,
   showBottomProgressBar
 }: ExpressionRunnerPrecomputedProps) => {
-  const [{ isFastForwarding, isPlaying }, setPlaybackStatus] = useState<
+  const [{ isFastForwarding, isRunning }, setPlaybackStatus] = useState<
     PlaybackState
   >({
     isFastForwarding: false,
-    isPlaying: false
+    isRunning: false
   })
 
   const [currentIndex, setCurrentIndex] = useState<number>(0)
@@ -100,11 +100,11 @@ const ExpressionRunnerPrecomputed = ({
       if (currentIndex + 1 >= expressionContainers.length - 1) {
         setPlaybackStatus({
           isFastForwarding: false,
-          isPlaying: false
+          isRunning: false
         })
       }
     },
-    isPlaying ? autoplaySpeed(speed) : null
+    isRunning ? autoplaySpeed(speed) : null
   )
 
   const stepForward = () => {
@@ -132,14 +132,14 @@ const ExpressionRunnerPrecomputed = ({
 
   const autoplay = () => {
     setPlaybackStatus({
-      isPlaying: true,
+      isRunning: true,
       isFastForwarding: speed > FASTFORWARDING_THRESHOLD
     })
   }
 
   const pause = () => {
     setPlaybackStatus({
-      isPlaying: false,
+      isRunning: false,
       isFastForwarding: false
     })
   }
@@ -157,10 +157,10 @@ const ExpressionRunnerPrecomputed = ({
   const explanationsVisible =
     explanationsVisibility === 'visible' ||
     (explanationsVisibility === 'hiddenInitialPausedOnly' &&
-      !isPlaying &&
+      !isRunning &&
       currentIndex > 0)
   const progessBarVisible =
-    !hidePlayButton && !skipToTheEnd && (isPlaying || atLeastOneStepTaken)
+    !hidePlayButton && !skipToTheEnd && (isRunning || atLeastOneStepTaken)
   const containerSize = functionDepthsToContainerSize(
     expressionContainers[currentIndex].expression.maxNestedFunctionDepth || 0
   )
@@ -203,7 +203,7 @@ const ExpressionRunnerPrecomputed = ({
           {explanationsVisible && (
             <ExpressionRunnerCaptionWrapper>
               <ExpressionRunnerExplanation
-                isPlaying={isPlaying}
+                isRunning={isRunning}
                 expressionContainer={expressionContainers[currentIndex]}
                 isDone={isDone}
                 showAllShowSteps={showAllShowSteps}
@@ -212,12 +212,12 @@ const ExpressionRunnerPrecomputed = ({
               />
             </ExpressionRunnerCaptionWrapper>
           )}
-          {children && !explanationsVisible && !isPlaying && (
+          {children && !explanationsVisible && !isRunning && (
             <ExpressionRunnerCaptionWrapper>
               {children}
             </ExpressionRunnerCaptionWrapper>
           )}
-          {isPlaying && (
+          {isRunning && (
             <ExpressionRunnerCaptionWrapper>
               <H args={{ name: 'running' }} />
             </ExpressionRunnerCaptionWrapper>
@@ -231,7 +231,7 @@ const ExpressionRunnerPrecomputed = ({
               <ProgressBar
                 percent={percentDone}
                 fromPercent={fromPercent}
-                speed={isPlaying ? autoplaySpeed(speed) : undefined}
+                speed={isRunning ? autoplaySpeed(speed) : undefined}
               />
             </div>
           )}
@@ -286,7 +286,7 @@ const ExpressionRunnerPrecomputed = ({
               <ProgressBar
                 percent={percentDone}
                 fromPercent={fromPercent}
-                speed={isPlaying ? autoplaySpeed(speed) : undefined}
+                speed={isRunning ? autoplaySpeed(speed) : undefined}
               />
             </div>
           )}
@@ -299,7 +299,7 @@ const ExpressionRunnerPrecomputed = ({
               canStepForward={canStepForward}
               canStepBackward={atLeastOneStepTaken}
               showPlayButton={!hidePlayButton}
-              isPlaying={isPlaying}
+              isRunning={isRunning}
               onAutoClick={autoplay}
               onSkipToTheEndClick={stepToTheEnd}
               onResetClick={reset}
