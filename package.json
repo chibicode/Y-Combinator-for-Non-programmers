@@ -22,8 +22,8 @@
     "scripts": "outDir/tsconfig.scripts.json/scripts"
   },
   "scripts": {
-    "jp": "IS_DEVELOPMENT=true DEV_LOCALE=jp next -p 9991",
-    "en": "IS_DEVELOPMENT=true DEV_LOCALE=en next -p 9990",
+    "jp": "IS_DEVELOPMENT=true DEV_LOCALE=jp NODE_OPTIONS=--max_old_space_size=4096 next -p 9991",
+    "en": "IS_DEVELOPMENT=true DEV_LOCALE=en NODE_OPTIONS=--max_old_space_size=4096 next -p 9990",
     "jp:production": "PRODUCTION=jp next -p 9993",
     "en:production": "PRODUCTION=en next -p 9992",
     "dev": "cp tsconfig.dev.json tsconfig.json && rm -f report.*.json && rm -f *.log && rm -rf .next && concurrently \"yarn jp\" \"yarn en\"",
