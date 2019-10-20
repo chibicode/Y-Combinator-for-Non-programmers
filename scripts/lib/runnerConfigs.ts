@@ -1338,6 +1338,13 @@ export const plde: ExpressionRunnerShorthandConfig = {
   showPriorities: true
 }
 
+export const cpim: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.uqth,
+  showPriorities: true,
+  highlightOverrides: { a: 'highlighted', b: 'highlighted', c: 'highlighted' }
+}
+
 export const rjzw: ExpressionRunnerShorthandConfig = {
   runner: 'playButtonOnly',
   initialExpressionContainer: initialExpressionContainers.uqth,

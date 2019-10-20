@@ -149,9 +149,14 @@ export default () => (
                 }
               ]}
             />
-            <R.Plde>
-              <Emoji>👧🏻</Emoji> サヤちゃんの弁当箱
-            </R.Plde>
+            <R.Stda>
+              <Emoji>👧🏻</Emoji> それぞれの{' '}
+              <CustomEmoji type="questionFoodGrey" /> に…
+            </R.Stda>
+            <ExpressionRunnerSeparator />
+            <R.Cpim>
+              <Emoji>👧🏻</Emoji> 次のように料理を入れてみた！
+            </R.Cpim>
             <BubbleQuotes
               quotes={[
                 {
@@ -162,45 +167,22 @@ export default () => (
                         ふむふむ…どうせ上手くいかないと思うけど、試してみるか。
                       </P>
                       <P>
-                        前回もやったように、
-                        <Highlight>
-                          <EmojiNumber number={1} />{' '}
-                          に変換できる弁当箱と合体させて、
-                        </Highlight>
-                      </P>
-                      <R.Rbup>
-                        <H
-                          args={{
-                            name: 'canBeConvertedCaption',
-                            letter: 'd',
-                            number: 1
-                          }}
-                        />
-                      </R.Rbup>
-                      <P>
-                        <H args={{ name: 'runAndConvertToMathbox' }} />
-                        して、
-                        <Highlight>
-                          結果が <EmojiNumber number={2} /> になるか
-                        </Highlight>
-                        確かめてみよう。どうせムリだろうけど！
+                        これを
+                        <H args={{ name: 'play' }} /> して、
+                        <EmojiNumber number={1} /> になればいいんだよな。
                       </P>
                     </>
                   )
                 }
               ]}
             />
-            <R.Plde>
-              <EmojiNumber number={1} /> に変換できる弁当箱と、
-              <br />
-              <Emoji>👧🏻</Emoji> サヤちゃんの弁当箱を合体させ…
-            </R.Plde>
+            <R.Plde>こちらの弁当箱を実行して…</R.Plde>
             <ExpressionRunnerSeparator />
             <ExpressionRunnerCaptionOnly>
-              <H args={{ name: 'runAndConvertToMathbox' }} />
+              <EmojiNumber number={1} size="mdlg" /> に変換できる
               <br />
-              して、結果が <EmojiNumber number={2} size="mdlg" /> になれば
-              <HighlightBold>成功</HighlightBold> <Emoji>🎉</Emoji>
+              弁当箱になれば <HighlightBold>成功</HighlightBold>{' '}
+              <Emoji>🎉</Emoji>
               <br />
               それ以外なら<HighlightBold>失敗</HighlightBold> <Emoji>😭</Emoji>
             </ExpressionRunnerCaptionOnly>
