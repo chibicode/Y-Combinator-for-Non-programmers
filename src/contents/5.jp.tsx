@@ -757,9 +757,7 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        あとは前回とやり方は変わらない。
-                        <H args={{ name: 'fastForward' }} />{' '}
-                        で最後まで見てみよう。
+                        あとは前回とやり方は変わらない。最後まで見てみよう。
                       </P>
                     </>
                   )
@@ -802,10 +800,7 @@ export default () => (
                   type: 'devil',
                   children: (
                     <>
-                      <P>
-                        では復習のために、最初から最後まで
-                        <H args={{ name: 'fastForward' }} /> で見てみよう。
-                      </P>
+                      <P>では復習のために、最初から最後まで見てみよう。</P>
                     </>
                   )
                 }
@@ -933,7 +928,7 @@ export default () => (
                         が残るはずだ。
                       </P>
                       <P>
-                        <H args={{ name: 'fastForward' }} /> で見てみよう！
+                        <H args={{ name: 'run' }} /> してみよう！
                       </P>
                     </>
                   )
@@ -1361,10 +1356,7 @@ export default () => (
                 }
               ]}
             />
-            <P>
-              では、ここからは
-              <H args={{ name: 'fastForward' }} /> で見ていきましょう！
-            </P>
+            <P>では、最後まで見ていきましょう！</P>
             <R.Izgz />
             <BubbleQuotes
               quotes={[
@@ -1441,7 +1433,7 @@ export default () => (
                         <EmojiWithText letter="d" /> が残るはずだ。
                       </P>
                       <P>
-                        <H args={{ name: 'fastForward' }} /> で見てみよう！
+                        <H args={{ name: 'run' }} /> してみよう！
                       </P>
                     </>
                   )
@@ -1511,8 +1503,7 @@ export default () => (
               のペアからはじめる
             </R.Mhyv>
             <P>
-              残りは
-              <H args={{ name: 'fastForward' }} /> で見てみましょう。
+              では、最後まで見てみましょう。
               <H args={{ name: 'pressRun' }} />
             </P>
             <R.Ayok />
@@ -1733,10 +1724,7 @@ export default () => (
               <BottomRightBadge inline bottomRightBadgeType="funcBound" />{' '}
               はこうなる
             </R.Oork>
-            <P>
-              残りは
-              <H args={{ name: 'fastForward' }} /> で見ていきましょう:
-            </P>
+            <P>では、最後まで見ていきましょう:</P>
             <R.Diis />
             <BubbleQuotes
               quotes={[
@@ -1828,7 +1816,7 @@ export default () => (
                         が残るはずだ。
                       </P>
                       <P>
-                        <H args={{ name: 'fastForward' }} /> で見てみよう！
+                        <H args={{ name: 'run' }} /> してみよう！
                       </P>
                     </>
                   )
