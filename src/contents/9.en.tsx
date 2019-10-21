@@ -1145,8 +1145,7 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        Let’s continue then!{' '}
-                        <H args={{ name: 'pressRun' }} />
+                        Let’s continue then! <H args={{ name: 'pressRun' }} />
                       </P>
                     </>
                   )

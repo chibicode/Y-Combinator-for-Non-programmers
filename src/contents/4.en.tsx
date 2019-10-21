@@ -15,6 +15,8 @@ import BubbleQuotes from 'src/components/BubbleQuotes'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import Emoji from 'src/components/Emoji'
 import EmojiWithText from 'src/components/EmojiWithText'
+import InlineRunButtonShowAllSteps from 'src/components/InlineRunButtonShowAllSteps'
+import CustomEmoji from 'src/components/CustomEmoji'
 import EmojiForLetter from 'src/components/EmojiForLetter'
 import * as R from 'src/components/Runners'
 import ExpressionRunnerSeparator from 'src/components/ExpressionRunnerSeparator'
@@ -930,35 +932,46 @@ export default () => (
         )
       },
       {
-        title: (
-          <>
-            Let’s <H args={{ name: 'fastForward' }} />
-          </>
-        ),
+        title: <>Putting it together</>,
         content: (
           <>
             <P>
               To wrap up, let’s go through the entire process{' '}
               <Italic>from the beginning to the end</Italic>.{' '}
+            </P>
+            <P>
               <Highlight>
-                We’ll be using the <H args={{ name: 'fastForward' }} /> button
+                We’ll be using the <H args={{ name: 'run' }} /> button with the{' '}
+                <Bold>“Show every step”</Bold> functionality
               </Highlight>
               , which automatically goes through each step.
             </P>
+            <InlineRunButtonShowAllSteps>
+              If you use this button…
+            </InlineRunButtonShowAllSteps>
+            <ExpressionRunnerSeparator />
             <EmojiSeparator
-              emojis={['▶️', '🍱', '▶️']}
+              size="mdsm"
+              nodes={[
+                <Emoji>🍱</Emoji>,
+                <CustomEmoji type="singleArrow" />,
+                <Emoji>🍱</Emoji>,
+                <CustomEmoji type="singleArrow" />,
+                <Emoji>🍱</Emoji>,
+                <CustomEmoji type="singleArrow" />,
+                <Emoji>🍱</Emoji>
+              ]}
               description={
                 <>
-                  The <H args={{ name: 'fastForward' }} /> button:
+                  You’ll be able to see all steps
                   <br />
-                  Automatically goes through each step
+                  automatically
                 </>
               }
             />
             <P>
               Here’s the previous example with <Italic>one</Italic> item on the
-              top.{' '}
-              <H args={{ name: 'pressRun', mentionRightArrow: true }} />
+              top. <H args={{ name: 'pressRun', mentionRightArrow: true }} />
             </P>
             <R.Wunw />
             <P>
@@ -1116,35 +1129,39 @@ export default () => (
         )
       },
       {
-        title: (
-          <>
-            Let’s <H args={{ name: 'fastForward' }} />
-          </>
-        ),
+        title: <>Let’s show all the steps</>,
         content: (
           <>
             <P>
-              <Bold>Review Time:</Bold> Let’s use the{' '}
-              <H args={{ name: 'fastForward' }} /> button again, this time for
-              cases where{' '}
+              <Bold>Review Time:</Bold> Let’s show all the steps again - this
+              time for cases where{' '}
               <BottomRightBadge inline bottomRightBadgeType="funcArg" />
               ’s and{' '}
               <BottomRightBadge inline bottomRightBadgeType="funcBound" />
               ’s don’t match.
             </P>
             <EmojiSeparator
-              emojis={['▶️', '🍱', '▶️']}
+              size="mdsm"
+              nodes={[
+                <Emoji>🍱</Emoji>,
+                <CustomEmoji type="singleArrow" />,
+                <Emoji>🍱</Emoji>,
+                <CustomEmoji type="singleArrow" />,
+                <Emoji>🍱</Emoji>,
+                <CustomEmoji type="singleArrow" />,
+                <Emoji>🍱</Emoji>
+              ]}
               description={
                 <>
-                  Let’s use the <H args={{ name: 'fastForward' }} /> button
-                  again
+                  Let’s see all the steps
+                  <br />
+                  from the beginning to the end!
                 </>
               }
             />
             <P>
               Here’s the previous example with <Italic>one</Italic> item on the
-              top.{' '}
-              <H args={{ name: 'pressRun', mentionRightArrow: true }} />
+              top. <H args={{ name: 'pressRun', mentionRightArrow: true }} />
             </P>
             <R.Jbam />
             <P>

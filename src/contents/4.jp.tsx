@@ -900,7 +900,6 @@ export default () => (
             </P>
             <InlineRunButtonShowAllSteps>
               このボタンを使うと…
-              <br />
             </InlineRunButtonShowAllSteps>
             <ExpressionRunnerSeparator />
             <EmojiSeparator
