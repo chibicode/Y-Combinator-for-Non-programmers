@@ -938,6 +938,11 @@ export const ditw: ExpressionRunnerShorthandConfig = {
   initialExpressionContainer: initialExpressionContainers.ofza
 }
 
+export const tcyv: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.gjyx
+}
+
 export const jiqb: ExpressionRunnerShorthandConfig = {
   runner: 'runButtonOnly',
   initialExpressionContainer: initialExpressionContainers.gjyx
@@ -1527,6 +1532,12 @@ export const dyoq: ExpressionRunnerShorthandConfig = {
   ],
   showPriorities: true,
   convert: 'toMathBoxPlay'
+}
+
+export const oifs: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.sqcx,
+  showPriorities: true
 }
 
 export const caem: ExpressionRunnerShorthandConfig = {

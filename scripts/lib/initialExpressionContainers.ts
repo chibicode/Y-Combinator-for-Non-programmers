@@ -2285,6 +2285,17 @@ export const jxur = initializeExpressionContainer([
   [succParams('a', 'b', 'c'), numberParams('d', 'e', 2)]
 ])
 
+export const sqcx = initializeExpressionContainer([
+  succParams('a', 'b', 'c'),
+  [
+    succParams('a', 'b', 'c'),
+    {
+      shorthandNumberAfterConvert: 'number',
+      shorthandNumber: 2
+    }
+  ]
+])
+
 export const rjyq = initializeDoneExpressionContainer({
   shorthandNumber: 6
 })
