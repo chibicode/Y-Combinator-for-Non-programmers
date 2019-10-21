@@ -277,6 +277,9 @@ export const dqgs = initializeExpressionContainer(numberParams('f', 'g', 2))
 export const zdlx = initializeExpressionContainer(
   numberParamsHighlightNumber('d', 'e', 1)
 )
+export const aocc = initializeExpressionContainer(
+  numberParamsHighlightNumber('d', 'e', 2)
+)
 export const qyqi = initializeExpressionContainer(
   numberParamsHighlightNumber('d', 'b', 1)
 )
@@ -1022,6 +1025,10 @@ export const oxuf = initializeExpressionContainer(
 
 export const fhyo = initializeExpressionContainer(
   numberParamsHighlightNumber('b', 'c', 3)
+)
+
+export const yywl = initializeExpressionContainer(
+  numberParamsHighlightNumber('b', 'c', 4)
 )
 
 export const ngth = initializeExpressionContainer([

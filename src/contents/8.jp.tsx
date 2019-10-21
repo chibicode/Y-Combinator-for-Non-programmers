@@ -916,7 +916,6 @@ export default () => (
                 }
               ]}
             />
-
             <BlankNumberPlusOne />
             <BubbleQuotes
               quotes={[
@@ -945,6 +944,198 @@ export default () => (
                 <CustomEmoji type="doubleArrow" />,
                 <Emoji>🍱</Emoji>,
                 <CustomEmoji type="plusOne" />
+              ]}
+              description={
+                <>
+                  計算箱の「
+                  <H args={{ name: 'plusOneFeature' }} />
+                  」は、
+                  <br />
+                  弁当箱で「<HighlightBold>再現</HighlightBold>
+                  」することができる
+                </>
+              }
+            />
+          </>
+        )
+      },
+      {
+        title: <>もっと複雑な計算箱も再現できる</>,
+        content: (
+          <>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>
+                        もちろん、もっと複雑な計算箱も弁当箱で再現できます。
+                      </P>
+                      <P>
+                        たとえば、初級その1に登場したこちらの計算箱をご覧ください。
+                        <H args={{ name: 'run' }} /> すると、結果は{' '}
+                        <EmojiNumber number={4} /> になります。
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Jiqb />
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>
+                        これを弁当箱で「<HighlightBold>再現</HighlightBold>
+                        」するには、どうすればいいか分かりますか？
+                      </P>
+                    </>
+                  )
+                },
+                {
+                  type: 'saya',
+                  children: (
+                    <>
+                      <P>
+                        分かった！まず、
+                        <EmojiNumber number={2} /> に変換できる弁当箱を用意して…
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Ehsw>
+              <H
+                args={{
+                  name: 'canBeConvertedCaption',
+                  letter: 'f',
+                  number: 2
+                }}
+              />
+            </R.Ehsw>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'saya',
+                  children: (
+                    <>
+                      <P>
+                        そして、先ほどの <Emoji>👧🏻</Emoji> サヤの弁当箱と「
+                        <HighlightBold>2回</HighlightBold>
+                        」組み合わせればいいんじゃないかな？
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Caem>
+              <EmojiNumber number={2} /> に変換できる弁当箱を、
+              <br />
+              <Emoji>👧🏻</Emoji> サヤちゃんの弁当箱と
+              <br />「<HighlightBold>2回</HighlightBold>
+              」組み合わせることで、
+              <br />
+              <EmojiNumber number={2} /> <CustomEmoji type="plusOne" />{' '}
+              <CustomEmoji type="plusOne" /> を再現する
+            </R.Caem>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>
+                        正解です！では、
+                        <H args={{ name: 'run' }} /> を押してみてください。
+                      </P>
+                      <P>
+                        (
+                        <Highlight>
+                          今回は時間省略のため、途中のステップを見せるのは省略します！
+                        </Highlight>
+                        )
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Byaf></R.Byaf>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>
+                        最後に残ったこちらの弁当箱は、
+                        <EmojiNumber number={4} /> に変換できる弁当箱です！
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Ifqp>
+              <H
+                args={{
+                  name: 'canBeConvertedCaption',
+                  letter: 'b',
+                  number: 4
+                }}
+              />
+            </R.Ifqp>
+            <P>
+              これを弁当箱で再現するには、
+              <Highlight>
+                <EmojiNumber number={2} /> に変換できる弁当箱と、
+                <H args={{ name: 'plusOneEffect' }} />
+                がある弁当箱を「<HighlightBold>2個</HighlightBold>
+                」合体させればいい
+              </Highlight>
+              のです。
+            </P>
+            <R.Byaf></R.Byaf>
+            <R.Xhdq>
+              <EmojiNumber number={2} /> に変換できる弁当箱と
+              <br />
+              <H args={{ name: 'plusOneEffect' }} />
+              がある弁当箱を「<HighlightBold>2個</HighlightBold>」<br />
+              合体すれば、
+              <EmojiNumber number={2} /> <CustomEmoji type="plusOne" />{' '}
+              <CustomEmoji type="plusOne" /> の計算箱を再現できる
+            </R.Xhdq>
+            <P>
+              上の弁当箱を実行するのは、時間がかかるので今回は行いませんが、
+              <Highlight>
+                <H args={{ name: 'runAndConvertToMathbox' }} />{' '}
+                ボタンを押すと、答えが <EmojiNumber number={4} />{' '}
+                になるのを確認できます。
+              </Highlight>
+            </P>
+            <Hr />
+            <P>
+              まとめると、
+              <Highlight>
+                計算箱の「
+                <H args={{ name: 'plusOneFeature' }} />
+                」は、弁当箱で再現することができる
+              </Highlight>
+              のです。このポイントさえ覚えていただければ、細かいことは分からなくても大丈夫です！
+            </P>
+            <EmojiSeparator
+              nodes={[
+                <CustomEmoji type="mathBox" />,
+                <CustomEmoji type="plusOne" />,
+                <CustomEmoji type="doubleArrow" />,
+                <Emoji>🍱</Emoji>,
+                <CustomEmoji type="plusOneOrange" />
               ]}
               description={
                 <>
