@@ -152,7 +152,7 @@ export default () => (
           <>
             <P>
               それでは、
-              <H args={{ name: 'pressFastForward', skippable: true }} />
+              <H args={{ name: 'pressRun', skippable: true }} />
             </P>
             <R.Akik />
             <BubbleQuotes
@@ -260,7 +260,7 @@ export default () => (
               ]}
             />
             <P>
-              <H args={{ name: 'pressFastForward' }} />
+              <H args={{ name: 'pressRun' }} />
             </P>
             <R.Exbn>
               <HighlightBold>前回実行した弁当箱:</HighlightBold>
@@ -1144,7 +1144,7 @@ export default () => (
                     <>
                       <P>
                         では、最後まで進めてみましょう。
-                        <H args={{ name: 'pressFastForward' }} />
+                        <H args={{ name: 'pressRun' }} />
                       </P>
                     </>
                   )

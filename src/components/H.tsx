@@ -102,7 +102,7 @@ interface HProps {
     | { name: 'whatHappensAtTheEndQuestion' }
     | { name: 'lookAtThisBentoBox'; lowerCase?: true }
     | {
-        name: 'pressFastForward'
+        name: 'pressRun'
         skipColon?: boolean
         mentionRightArrow?: boolean
         girl?: boolean
@@ -736,12 +736,12 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
       )
     }
   }
-  if (args.name === 'pressFastForward') {
+  if (args.name === 'pressRun') {
     if (locale === 'en') {
       return (
         <>
           <Highlight>
-            Press <H args={{ name: 'fastForward' }} />
+            Press <H args={{ name: 'run' }} />
             {args.mentionRightArrow ||
             args.skippable ||
             args.skippableToTheStoppingPoint
@@ -776,7 +776,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
       return (
         <>
           <Highlight>
-            <H args={{ name: 'fastForward' }} /> を押してみて
+            <H args={{ name: 'run' }} /> を押してみて
             {!args.girl && <>ください</>}
             {args.mentionRightArrow ||
             args.skippable ||

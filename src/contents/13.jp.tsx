@@ -509,7 +509,7 @@ export default () => (
                         あとは、これを
                         <H args={{ name: 'run' }} />{' '}
                         するだけだよ。というわけで、
-                        <H args={{ name: 'pressFastForward', girl: true }} />
+                        <H args={{ name: 'pressRun', girl: true }} />
                       </P>
                     </>
                   )
@@ -535,7 +535,7 @@ export default () => (
                         んだ。
                       </P>
                       <P>
-                        <H args={{ name: 'pressFastForward', girl: true }} />
+                        <H args={{ name: 'pressRun', girl: true }} />
                       </P>
                     </>
                   )

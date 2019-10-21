@@ -218,7 +218,7 @@ export default () => (
                       </R.Elyq>
                       <P>
                         入れてみると次のようになるよ。
-                        <H args={{ name: 'pressFastForward', girl: true }} />
+                        <H args={{ name: 'pressRun', girl: true }} />
                       </P>
                     </>
                   )
@@ -385,7 +385,7 @@ export default () => (
                       </R.Ooya>
                       <P>
                         入れてみると次のようになるよ。
-                        <H args={{ name: 'pressFastForward', girl: true }} />
+                        <H args={{ name: 'pressRun', girl: true }} />
                       </P>
                     </>
                   )
@@ -744,7 +744,7 @@ export default () => (
                     <>
                       <P>
                         というわけで、
-                        <H args={{ name: 'pressFastForward', girl: true }} />
+                        <H args={{ name: 'pressRun', girl: true }} />
                       </P>
                     </>
                   )

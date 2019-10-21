@@ -168,7 +168,7 @@ export default () => (
         content: (
           <>
             <P>
-              <H args={{ name: 'pressFastForward', skippable: true }} />
+              <H args={{ name: 'pressRun', skippable: true }} />
             </P>
             <R.Akik />
             <BubbleQuotes
@@ -263,7 +263,7 @@ export default () => (
               ]}
             />
             <P>
-              <H args={{ name: 'pressFastForward' }} />
+              <H args={{ name: 'pressRun' }} />
             </P>
             <R.Exbn>
               <HighlightBold>What used last time:</HighlightBold>
@@ -1146,7 +1146,7 @@ export default () => (
                     <>
                       <P>
                         Let’s continue then!{' '}
-                        <H args={{ name: 'pressFastForward' }} />
+                        <H args={{ name: 'pressRun' }} />
                       </P>
                     </>
                   )

@@ -74,7 +74,7 @@ export const StepOne = () => (
     <P>
       <H
         args={{
-          name: 'pressFastForward',
+          name: 'pressRun',
           mentionRightArrow: true
         }}
       />
@@ -117,7 +117,7 @@ export const StepTwo = () => (
     <P>
       <H
         args={{
-          name: 'pressFastForward'
+          name: 'pressRun'
         }}
       />
     </P>
@@ -147,7 +147,7 @@ export const StepThree = () => (
     <P>
       <H
         args={{
-          name: 'pressFastForward'
+          name: 'pressRun'
         }}
       />
     </P>

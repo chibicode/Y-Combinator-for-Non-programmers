@@ -11,6 +11,7 @@ import BottomRightBadge from 'src/components/BottomRightBadge'
 import TopLeftBadgeWrapper from 'src/components/TopLeftBadgeWrapper'
 import BubbleQuotes from 'src/components/BubbleQuotes'
 import EmojiSeparator from 'src/components/EmojiSeparator'
+import CustomEmoji from 'src/components/CustomEmoji'
 import Emoji from 'src/components/Emoji'
 import EmojiWithText from 'src/components/EmojiWithText'
 import EmojiForLetter from 'src/components/EmojiForLetter'
@@ -18,6 +19,7 @@ import * as R from 'src/components/Runners'
 import ExpressionRunnerSeparator from 'src/components/ExpressionRunnerSeparator'
 import H from 'src/components/H'
 import NextLessonButton from 'src/components/NextLessonButton'
+import InlineRunButtonShowAllSteps from 'src/components/InlineRunButtonShowAllSteps'
 
 export const BasicRules = ({
   includeFuncUnbound
@@ -886,31 +888,42 @@ export default () => (
         )
       },
       {
-        title: (
-          <>
-            <H args={{ name: 'fastForward' }} /> で見てみましょう
-          </>
-        ),
+        title: <>全てのステップを見てみましょう</>,
         content: (
           <>
             <P>
-              では、最初から最後まで
-              <H args={{ name: 'fastForward' }} /> で見てみましょう。
-              <H args={{ name: 'fastForward' }} /> 機能を使うと、
-              <Highlight>各ステップを自動で見ていくことができます。</Highlight>
+              では、最初から最後まで全てのステップを見てみましょう。こちらの「
+              <HighlightBold>全ステップを表示</HighlightBold>
+              」できるボタンを使って
+              <H args={{ name: 'run' }} />{' '}
+              すると、各ステップを自動で見ることができます。
             </P>
+            <InlineRunButtonShowAllSteps>
+              このボタンを使うと…
+              <br />
+            </InlineRunButtonShowAllSteps>
+            <ExpressionRunnerSeparator />
             <EmojiSeparator
-              emojis={['⏩', '🍱', '⏩']}
-              description={<>早送りすると、各ステップが自動で見れる</>}
+              size="mdsm"
+              nodes={[
+                <Emoji>🍱</Emoji>,
+                <CustomEmoji type="singleArrow" />,
+                <Emoji>🍱</Emoji>,
+                <CustomEmoji type="singleArrow" />,
+                <Emoji>🍱</Emoji>,
+                <CustomEmoji type="singleArrow" />,
+                <Emoji>🍱</Emoji>
+              ]}
+              description={<>各ステップを自動で見ることができる</>}
             />
             <P>
               こちらは、上にひとつの料理がある例です。
-              <H args={{ name: 'pressFastForward', mentionRightArrow: true }} />
+              <H args={{ name: 'pressRun', mentionRightArrow: true }} />
             </P>
             <R.Wunw />
             <P>
               こちらは、上にふたつの料理がある例です。
-              <H args={{ name: 'pressFastForward' }} />
+              <H args={{ name: 'pressRun' }} />
             </P>
             <R.Hluq />
           </>
@@ -1058,33 +1071,36 @@ export default () => (
         )
       },
       {
-        title: (
-          <>
-            <H args={{ name: 'fastForward' }} />
-            で見てみましょう
-          </>
-        ),
+        title: <>全てのステップを見てみましょう</>,
         content: (
           <>
             <P>
               復習のために、
               <BottomRightBadge inline bottomRightBadgeType="funcArg" /> と{' '}
               <BottomRightBadge inline bottomRightBadgeType="funcBound" />
-              が一致しなかった場合も、最初から最後まで
-              <H args={{ name: 'fastForward' }} /> で見てみましょう。
+              が一致しなかった場合も、最初から最後まで前ステップ見てみましょう。
             </P>
             <EmojiSeparator
-              emojis={['⏩', '🍱', '⏩']}
-              description={<>早送りで復習しよう！</>}
+              size="mdsm"
+              nodes={[
+                <Emoji>🍱</Emoji>,
+                <CustomEmoji type="singleArrow" />,
+                <Emoji>🍱</Emoji>,
+                <CustomEmoji type="singleArrow" />,
+                <Emoji>🍱</Emoji>,
+                <CustomEmoji type="singleArrow" />,
+                <Emoji>🍱</Emoji>
+              ]}
+              description={<>前ステップを見てみましょう！</>}
             />
             <P>
               こちらは、上にひとつの料理がある例です。
-              <H args={{ name: 'pressFastForward', mentionRightArrow: true }} />
+              <H args={{ name: 'pressRun', mentionRightArrow: true }} />
             </P>
             <R.Jbam />
             <P>
               こちらは、上にふたつの料理がある例です。
-              <H args={{ name: 'pressFastForward' }} />
+              <H args={{ name: 'pressRun' }} />
             </P>
             <R.Zuus />
           </>

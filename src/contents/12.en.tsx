@@ -214,7 +214,7 @@ export default () => (
                       </R.Elyq>
                       <P>
                         Let’s try running it!{' '}
-                        <H args={{ name: 'pressFastForward', girl: true }} />
+                        <H args={{ name: 'pressRun', girl: true }} />
                       </P>
                     </>
                   )
@@ -373,7 +373,7 @@ export default () => (
                       </R.Ooya>
                       <P>
                         Let’s try running it!{' '}
-                        <H args={{ name: 'pressFastForward', girl: true }} />
+                        <H args={{ name: 'pressRun', girl: true }} />
                       </P>
                     </>
                   )
@@ -714,7 +714,7 @@ export default () => (
                     <>
                       <P>
                         Let’s run it!{' '}
-                        <H args={{ name: 'pressFastForward', girl: true }} />
+                        <H args={{ name: 'pressRun', girl: true }} />
                       </P>
                     </>
                   )

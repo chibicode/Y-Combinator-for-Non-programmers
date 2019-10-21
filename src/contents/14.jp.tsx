@@ -198,7 +198,7 @@ export default () => (
                     <>
                       <P>
                         というわけで、
-                        <H args={{ name: 'pressFastForward', girl: true }} />
+                        <H args={{ name: 'pressRun', girl: true }} />
                       </P>
                       <Ul>
                         <UlLi>
@@ -376,7 +376,7 @@ export default () => (
                     <>
                       <P>
                         では、続きを見てみよう！
-                        <H args={{ name: 'pressFastForward', girl: true }} />
+                        <H args={{ name: 'pressRun', girl: true }} />
                       </P>
                     </>
                   )
@@ -553,7 +553,7 @@ export default () => (
                     <>
                       <P>
                         再度、<Emoji>🍱</Emoji> を省略する前の状態に戻したよ。
-                        <H args={{ name: 'pressFastForward', girl: true }} />
+                        <H args={{ name: 'pressRun', girl: true }} />
                       </P>
                     </>
                   )
@@ -728,7 +728,7 @@ export default () => (
                       <P>
                         <HighlightBold>これが最後</HighlightBold>だよ！
                         <Emoji>🍱</Emoji> を省略する前の状態に戻したので、
-                        <H args={{ name: 'pressFastForward', girl: true }} />
+                        <H args={{ name: 'pressRun', girl: true }} />
                       </P>
                     </>
                   )

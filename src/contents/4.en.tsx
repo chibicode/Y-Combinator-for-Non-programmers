@@ -958,12 +958,12 @@ export default () => (
             <P>
               Here’s the previous example with <Italic>one</Italic> item on the
               top.{' '}
-              <H args={{ name: 'pressFastForward', mentionRightArrow: true }} />
+              <H args={{ name: 'pressRun', mentionRightArrow: true }} />
             </P>
             <R.Wunw />
             <P>
               Here’s the previous example with <Italic>two</Italic> items on the
-              top. <H args={{ name: 'pressFastForward' }} />
+              top. <H args={{ name: 'pressRun' }} />
             </P>
             <R.Hluq />
           </>
@@ -1144,12 +1144,12 @@ export default () => (
             <P>
               Here’s the previous example with <Italic>one</Italic> item on the
               top.{' '}
-              <H args={{ name: 'pressFastForward', mentionRightArrow: true }} />
+              <H args={{ name: 'pressRun', mentionRightArrow: true }} />
             </P>
             <R.Jbam />
             <P>
               Here’s the previous example with <Italic>two</Italic> items on the
-              top. <H args={{ name: 'pressFastForward' }} />
+              top. <H args={{ name: 'pressRun' }} />
             </P>
             <R.Zuus />
           </>

@@ -663,7 +663,7 @@ export default () => (
             <P>
               <H
                 args={{
-                  name: 'pressFastForward',
+                  name: 'pressRun',
                   skippableToTheStoppingPoint: true
                 }}
               />
@@ -991,7 +991,7 @@ export default () => (
                         </UlLi>
                       </Ul>
                       <P>
-                        <H args={{ name: 'pressFastForward', girl: true }} />
+                        <H args={{ name: 'pressRun', girl: true }} />
                       </P>
                     </>
                   )

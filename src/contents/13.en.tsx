@@ -523,7 +523,7 @@ export default () => (
                     <>
                       <P>
                         Let’s run it!{' '}
-                        <H args={{ name: 'pressFastForward', girl: true }} />
+                        <H args={{ name: 'pressRun', girl: true }} />
                       </P>
                     </>
                   )
@@ -553,7 +553,7 @@ export default () => (
                         </UlLi>
                       </Ul>
                       <P>
-                        <H args={{ name: 'pressFastForward', girl: true }} />
+                        <H args={{ name: 'pressRun', girl: true }} />
                       </P>
                     </>
                   )

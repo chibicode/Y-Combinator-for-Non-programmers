@@ -265,7 +265,7 @@ export default () => (
           <>
             <P>
               では、
-              <H args={{ name: 'pressFastForward', skipColon: true }} />。
+              <H args={{ name: 'pressRun', skipColon: true }} />。
             </P>
             <Ul>
               <UlLi>

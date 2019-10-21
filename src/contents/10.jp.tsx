@@ -649,7 +649,7 @@ export default () => (
               それでは、上記の弁当箱を実行してみましょう！途中まで早送りしてみますね。
               <H
                 args={{
-                  name: 'pressFastForward',
+                  name: 'pressRun',
                   skippableToTheStoppingPoint: true
                 }}
               />
@@ -970,7 +970,7 @@ export default () => (
                         </UlLi>
                       </Ul>
                       <P>
-                        <H args={{ name: 'pressFastForward', girl: true }} />
+                        <H args={{ name: 'pressRun', girl: true }} />
                       </P>
                     </>
                   )

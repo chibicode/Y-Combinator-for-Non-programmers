@@ -767,7 +767,7 @@ export default () => (
               ]}
             />
             <P>
-              <H args={{ name: 'pressFastForward', mentionRightArrow: true }} />
+              <H args={{ name: 'pressRun', mentionRightArrow: true }} />
             </P>
             <R.Kvso />
             <BubbleQuotes
@@ -812,7 +812,7 @@ export default () => (
               ]}
             />
             <P>
-              <H args={{ name: 'pressFastForward', mentionRightArrow: true }} />
+              <H args={{ name: 'pressRun', mentionRightArrow: true }} />
             </P>
             <R.Beiz />
             <BubbleQuotes
@@ -942,7 +942,7 @@ export default () => (
             />
             <P>
               では、
-              <H args={{ name: 'pressFastForward', mentionRightArrow: true }} />
+              <H args={{ name: 'pressRun', mentionRightArrow: true }} />
             </P>
             <R.Hdxc />
             <BubbleQuotes
@@ -1450,7 +1450,7 @@ export default () => (
             />
             <P>
               では、
-              <H args={{ name: 'pressFastForward', mentionRightArrow: true }} />
+              <H args={{ name: 'pressRun', mentionRightArrow: true }} />
             </P>
             <R.Thkn />
             <BubbleQuotes
@@ -1513,7 +1513,7 @@ export default () => (
             <P>
               残りは
               <H args={{ name: 'fastForward' }} /> で見てみましょう。
-              <H args={{ name: 'pressFastForward' }} />
+              <H args={{ name: 'pressRun' }} />
             </P>
             <R.Ayok />
             <P>
@@ -1837,7 +1837,7 @@ export default () => (
             />
             <P>
               では、
-              <H args={{ name: 'pressFastForward', mentionRightArrow: true }} />
+              <H args={{ name: 'pressRun', mentionRightArrow: true }} />
             </P>
             <R.Cuwg />
             <BubbleQuotes

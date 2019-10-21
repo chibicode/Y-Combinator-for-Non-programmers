@@ -664,7 +664,7 @@ export default () => (
                     <>
                       <P>
                         まずは実行してみるね。
-                        <H args={{ name: 'pressFastForward', girl: true }} />
+                        <H args={{ name: 'pressRun', girl: true }} />
                       </P>
                       <P>今回は、最後まで止まらずに早送りします！</P>
                     </>
@@ -945,7 +945,7 @@ export default () => (
               ]}
             />
             <P>
-              <H args={{ name: 'pressFastForward', skippable: true }} />
+              <H args={{ name: 'pressRun', skippable: true }} />
             </P>
             <R.Oqpi />
             <BubbleQuotes
@@ -1894,7 +1894,7 @@ export default () => (
 //                     <>
 //                       <P>
 //                         まずは実行してみるね。
-//                         <H args={{ name: 'pressFastForward', girl: true }} />
+//                         <H args={{ name: 'pressRun', girl: true }} />
 //                       </P>
 //                       <P>今回は、最後まで止まらずに早送りします！</P>
 //                     </>
@@ -2175,7 +2175,7 @@ export default () => (
 //               ]}
 //             />
 //             <P>
-//               <H args={{ name: 'pressFastForward', skippable: true }} />
+//               <H args={{ name: 'pressRun', skippable: true }} />
 //             </P>
 //             <R.Oqpi />
 //             <BubbleQuotes

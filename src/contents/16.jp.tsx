@@ -511,7 +511,7 @@ export default () => (
             <P>
               上の弁当箱は、
               <H args={{ name: 'run' }} /> すると <Emoji>🅱️</Emoji> になります。
-              <H args={{ name: 'pressFastForward' }} />
+              <H args={{ name: 'pressRun' }} />
             </P>
             <R.Unxf></R.Unxf>
             <P>

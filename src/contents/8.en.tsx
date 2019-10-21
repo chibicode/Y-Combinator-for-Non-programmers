@@ -593,7 +593,7 @@ export default () => (
                     <>
                       <P>
                         Let’s run it.{' '}
-                        <H args={{ name: 'pressFastForward', girl: true }} />
+                        <H args={{ name: 'pressRun', girl: true }} />
                       </P>
                       <P>This time, we won’t stop until the end!</P>
                     </>
@@ -876,7 +876,7 @@ export default () => (
               ]}
             />
             <P>
-              <H args={{ name: 'pressFastForward', skippable: true }} />
+              <H args={{ name: 'pressRun', skippable: true }} />
             </P>
             <R.Oqpi />
             <BubbleQuotes

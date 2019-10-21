@@ -845,7 +845,7 @@ export default () => (
                     <>
                       <P>
                         Let’s keep going to the end.{' '}
-                        <H args={{ name: 'pressFastForward' }} />
+                        <H args={{ name: 'pressRun' }} />
                       </P>
                     </>
                   )
@@ -853,7 +853,7 @@ export default () => (
               ]}
             />
             <P>
-              <H args={{ name: 'pressFastForward', mentionRightArrow: true }} />
+              <H args={{ name: 'pressRun', mentionRightArrow: true }} />
             </P>
             <R.Kvso />
             <BubbleQuotes
@@ -899,7 +899,7 @@ export default () => (
               ]}
             />
             <P>
-              <H args={{ name: 'pressFastForward', mentionRightArrow: true }} />
+              <H args={{ name: 'pressRun', mentionRightArrow: true }} />
             </P>
             <R.Beiz />
             <BubbleQuotes
@@ -1003,7 +1003,7 @@ export default () => (
               ]}
             />
             <P>
-              <H args={{ name: 'pressFastForward', mentionRightArrow: true }} />
+              <H args={{ name: 'pressRun', mentionRightArrow: true }} />
             </P>
             <R.Hdxc />
             <BubbleQuotes
@@ -1437,7 +1437,7 @@ export default () => (
               ]}
             />
             <P>
-              <H args={{ name: 'pressFastForward' }} />
+              <H args={{ name: 'pressRun' }} />
             </P>
             <R.Izgz />
             <BubbleQuotes
@@ -1525,7 +1525,7 @@ export default () => (
               ]}
             />
             <P>
-              <H args={{ name: 'pressFastForward', mentionRightArrow: true }} />
+              <H args={{ name: 'pressRun', mentionRightArrow: true }} />
             </P>
             <R.Thkn />
             <BubbleQuotes
@@ -1601,7 +1601,7 @@ export default () => (
               <InlinePrioritiesLabel>1</InlinePrioritiesLabel>’s
             </R.Mhyv>
             <P>
-              The rest is simple. <H args={{ name: 'pressFastForward' }} />
+              The rest is simple. <H args={{ name: 'pressRun' }} />
             </P>
             <R.Ayok />
             <P>
@@ -1810,7 +1810,7 @@ export default () => (
               <BottomRightBadge inline bottomRightBadgeType="funcBound" />
             </R.Oork>
             <P>
-              The rest is simple. <H args={{ name: 'pressFastForward' }} />
+              The rest is simple. <H args={{ name: 'pressRun' }} />
             </P>
             <R.Diis />
             <BubbleQuotes
@@ -1920,7 +1920,7 @@ export default () => (
               ]}
             />
             <P>
-              <H args={{ name: 'pressFastForward', mentionRightArrow: true }} />
+              <H args={{ name: 'pressRun', mentionRightArrow: true }} />
             </P>
             <R.Cuwg />
             <BubbleQuotes
