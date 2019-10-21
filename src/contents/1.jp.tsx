@@ -194,13 +194,12 @@ export default () => (
               </UlLi>
             </Ul>
             <P>ということです。</P>
-            <EmojiSeparator
-              nodes={[
-                <CustomEmoji type="blankNumber" />,
-                <Emoji>➕</Emoji>,
-                <EmojiNumber number={1} />
-              ]}
-            />
+            <R.Ymtp>
+              <H args={{ name: 'run' }} /> すると結果は
+              <br />
+              <CustomEmoji type="blankNumber" /> <Emoji>➕</Emoji>{' '}
+              <EmojiNumber number={1} /> になる
+            </R.Ymtp>
             <P>
               これが、計算箱に備わっている機能のひとつ、「
               <H args={{ name: 'plusOneFeature' }} />

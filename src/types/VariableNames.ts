@@ -31,6 +31,7 @@ export type VariableNames =
   | 'Amult'
   | 'Bsingle'
   | 'blankNumber'
+  | 'blankNumberPlusOne'
   | 'shorthandFunc'
   | 'questionFoodGrey'
   | 'C'

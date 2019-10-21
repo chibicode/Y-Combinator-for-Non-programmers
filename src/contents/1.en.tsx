@@ -193,13 +193,12 @@ export default () => (
                 <Emoji>➕</Emoji> <EmojiNumber number={1} />.
               </UlLi>
             </Ul>
-            <EmojiSeparator
-              nodes={[
-                <CustomEmoji type="blankNumber" />,
-                <Emoji>➕</Emoji>,
-                <EmojiNumber number={1} />
-              ]}
-            />
+            <R.Ymtp>
+              If you <H args={{ name: 'run', lowerCase: true }} /> it,
+              <br />
+              the result will be <CustomEmoji type="blankNumber" />{' '}
+              <Emoji>➕</Emoji> <EmojiNumber number={1} />.
+            </R.Ymtp>
             <P>
               <Bold>This is the first feature of mathbox:</Bold>{' '}
               <Highlight>

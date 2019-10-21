@@ -23,6 +23,24 @@ import { Problem, StepOne, StepTwo, StepThree } from 'src/contents/7.jp'
 import EmojiWithText from 'src/components/EmojiWithText'
 import NextLessonButton from 'src/components/NextLessonButton'
 
+const BlankNumberPlusOne = () => (
+  <>
+    <R.Eweo>
+      <Emoji>👧🏻</Emoji> サヤちゃんの弁当箱と、
+      <br />
+      <CustomEmoji type="blankNumber" /> に変換できる弁当箱を
+      <br />
+      合体させて実行すると、
+    </R.Eweo>
+    <ExpressionRunnerSeparator />
+    <R.Jxvy>
+      <CustomEmoji type="blankNumber" /> <Emoji>➕</Emoji>{' '}
+      <EmojiNumber number={1} /> に<br />
+      変換できる弁当箱になる
+    </R.Jxvy>
+  </>
+)
+
 export default () => (
   <EpisodeCardList
     cards={[
@@ -660,6 +678,282 @@ export default () => (
                 <>
                   <EmojiNumber number={1} /> が <EmojiNumber number={2} />{' '}
                   になった
+                </>
+              }
+            />
+          </>
+        )
+      },
+      {
+        title: <>1を足すことができる</>,
+        content: (
+          <>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>
+                        つまり、<Emoji>👧🏻</Emoji> サヤちゃんの弁当箱を使うと、
+                      </P>
+                      <Ul>
+                        <UlLi>
+                          <Highlight>
+                            <EmojiNumber number={0} /> が{' '}
+                            <EmojiNumber number={1} /> になり、
+                          </Highlight>
+                        </UlLi>
+                        <UlLi>
+                          <Highlight>
+                            <EmojiNumber number={1} /> が{' '}
+                            <EmojiNumber number={2} /> になります。
+                          </Highlight>
+                        </UlLi>
+                      </Ul>
+                      <EmojiSeparator
+                        nodes={[
+                          <EmojiNumber number={0} />,
+                          <CustomEmoji type="singleArrow" />,
+                          <EmojiNumber number={1} />
+                        ]}
+                        noBottomMargin
+                      />
+                      <EmojiSeparator
+                        nodes={[
+                          <EmojiNumber number={1} />,
+                          <CustomEmoji type="singleArrow" />,
+                          <EmojiNumber number={2} />
+                        ]}
+                        noTopMargin
+                        description={
+                          <>
+                            <EmojiNumber number={0} /> が{' '}
+                            <EmojiNumber number={1} /> に、
+                            <EmojiNumber number={1} /> が{' '}
+                            <EmojiNumber number={2} /> に
+                          </>
+                        }
+                      />
+                      <P>つまり、どういうことか分かりますか？</P>
+                    </>
+                  )
+                },
+                {
+                  type: 'saya',
+                  children: (
+                    <>
+                      <P>
+                        もしかして…
+                        <HighlightBold>
+                          <EmojiNumber number={1} /> を足すことができるのかな？
+                        </HighlightBold>
+                      </P>
+                    </>
+                  )
+                },
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>サヤちゃん、その通りです！</P>
+                    </>
+                  )
+                },
+                {
+                  type: 'thinking',
+                  children: (
+                    <>
+                      <P>え、どういうこと？</P>
+                    </>
+                  )
+                },
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>
+                        つまり、
+                        <Highlight>
+                          仮に <Emoji>👧🏻</Emoji> サヤちゃんの弁当箱と{' '}
+                          <CustomEmoji type="blankNumber" />{' '}
+                          に変換できる弁当箱を合体させて実行すると、
+                        </Highlight>
+                      </P>
+                      <P>
+                        <HighlightBold>
+                          結果は <CustomEmoji type="blankNumber" />{' '}
+                          <Emoji>➕</Emoji> <EmojiNumber number={1} />{' '}
+                          に変換できる弁当箱になる
+                        </HighlightBold>
+                        、というわけです！
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <BlankNumberPlusOne />
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>
+                        <CustomEmoji type="blankNumber" /> が{' '}
+                        <CustomEmoji type="blankNumber" /> <Emoji>➕</Emoji>{' '}
+                        <EmojiNumber number={1} /> になるから、「
+                        <HighlightBold>1を足すことができる</HighlightBold>
+                        」というわけですね。
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <EmojiSeparator
+              nodes={[
+                <CustomEmoji type="blankNumber" />,
+                <CustomEmoji type="singleArrow" />,
+                <CustomEmoji type="blankNumber" />,
+                <Emoji>➕</Emoji>,
+                <EmojiNumber number={1} />
+              ]}
+              description={
+                <>
+                  <CustomEmoji type="blankNumber" /> が{' '}
+                  <CustomEmoji type="blankNumber" /> <Emoji>➕</Emoji>{' '}
+                  <EmojiNumber number={1} /> になる
+                </>
+              }
+            />
+          </>
+        )
+      },
+      {
+        title: (
+          <>
+            計算箱の <CustomEmoji type="plusOne" /> と同じことができる？
+          </>
+        ),
+        content: (
+          <>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>
+                        ここで思い出してほしいのですが…計算箱にも「
+                        <H args={{ name: 'plusOneFeature' }} />
+                        」がありますよね。
+                      </P>
+                      <P>
+                        計算箱ではこれを使うことで、何らかの数字に1を足すことができます。
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Rviy>
+              計算箱は、「
+              <H args={{ name: 'plusOneFeature' }} />
+              」を使うことで…
+            </R.Rviy>
+            <ExpressionRunnerSeparator />
+            <R.Ymtp>何らかの数字に1を足すことができる</R.Ymtp>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>
+                        今回学んだのは、
+                        <HighlightBold>
+                          「1を足す」という計算は、弁当箱でも行うことができる
+                        </HighlightBold>
+                        、ということです。
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <EmojiSeparator
+              nodes={[
+                <CustomEmoji type="plusOne" />,
+                <Emoji>🍱</Emoji>,
+                <CustomEmoji type="plusOne" />
+              ]}
+              description={
+                <>
+                  「1を足す」という計算は、
+                  <br />
+                  弁当箱でも行うことができる
+                </>
+              }
+            />
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>
+                        弁当箱を使う場合は、
+                        <Highlight>
+                          <CustomEmoji type="plusOne" /> の代わりに{' '}
+                          <Emoji>👧🏻</Emoji> サヤちゃんの弁当箱を使う
+                        </Highlight>
+                        ことで、1を足す計算を行うことができます。
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+
+            <BlankNumberPlusOne />
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>
+                        つまり、
+                        <Highlight>
+                          計算箱の「
+                          <H args={{ name: 'plusOneFeature' }} />
+                          」は、弁当箱を使って「<Bold>再現</Bold>」できる
+                        </Highlight>
+                        ということなんです。
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <EmojiSeparator
+              nodes={[
+                <CustomEmoji type="mathBox" />,
+                <CustomEmoji type="plusOne" />,
+                <CustomEmoji type="doubleArrow" />,
+                <Emoji>🍱</Emoji>,
+                <CustomEmoji type="plusOne" />
+              ]}
+              description={
+                <>
+                  計算箱の「
+                  <H args={{ name: 'plusOneFeature' }} />
+                  」は、
+                  <br />
+                  弁当箱で「<HighlightBold>再現</HighlightBold>
+                  」することができる
                 </>
               }
             />

@@ -1085,6 +1085,8 @@ export const henz = initializeExpressionContainer([
   numberParams('d', { name: 'e', highlighted: true }, 1)
 ])
 
+export const tsms = initializeExpressionContainer('blankNumberPlusOne')
+
 export const kipz = initializeExpressionContainer([
   {
     arg: 'a',

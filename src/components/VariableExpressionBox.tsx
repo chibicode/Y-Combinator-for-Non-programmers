@@ -285,6 +285,11 @@ const VariableEmoji = ({ expression }: VariableExpressionBoxProps) => {
         ) : expression.shorthandFunc === 'pred' &&
           expression.highlightType !== 'removed' ? (
           <CustomEmoji type="minusOne" size="sm" />
+        ) : expression.name === 'blankNumberPlusOne' ? (
+          <>
+            <CustomEmoji type="blankNumber" size="sm" />{' '}
+            <Emoji size="sm">➕</Emoji> <EmojiNumber number={1} size="sm" />
+          </>
         ) : customEmojiToComponent[
             expression.name as keyof typeof customEmojiToComponent
           ] && expression.highlightType !== 'removed' ? (
