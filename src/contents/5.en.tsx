@@ -891,7 +891,7 @@ export default () => (
                       <P>Ok, let’s do a review just in case.</P>
                       <P>
                         We’ll run it from the beginning to the end using the{' '}
-                        <H args={{ name: 'fastForward' }} /> button.
+                        <H args={{ name: 'run' }} /> button.
                       </P>
                     </>
                   )
@@ -993,8 +993,7 @@ export default () => (
                         <EmojiWithText letter="h" /> at the end.
                       </P>
                       <P>
-                        Let’s{' '}
-                        <H args={{ name: 'fastForward', lowerCase: true }} /> it
+                        Let’s <H args={{ name: 'run', lowerCase: true }} /> it
                         to check!
                       </P>
                     </>
@@ -1428,8 +1427,8 @@ export default () => (
                     <>
                       <P>
                         The rest is simple though. Let’s{' '}
-                        <H args={{ name: 'fastForward', lowerCase: true }} /> it
-                        from here.
+                        <H args={{ name: 'run', lowerCase: true }} /> it from
+                        here to the end.
                       </P>
                     </>
                   )
@@ -1515,8 +1514,7 @@ export default () => (
                         instead of <EmojiWithText letter="a" />.
                       </P>
                       <P>
-                        Let’s{' '}
-                        <H args={{ name: 'fastForward', lowerCase: true }} /> it
+                        Let’s <H args={{ name: 'run', lowerCase: true }} /> it
                         to check!
                       </P>
                     </>
@@ -1910,8 +1908,7 @@ export default () => (
                         <EmojiWithText letter="b" />.
                       </P>
                       <P>
-                        Let’s{' '}
-                        <H args={{ name: 'fastForward', lowerCase: true }} /> it
+                        Let’s <H args={{ name: 'run', lowerCase: true }} /> it
                         to check!
                       </P>
                     </>
