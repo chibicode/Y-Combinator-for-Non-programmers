@@ -1292,7 +1292,7 @@ export default () => (
                         <HighlightBold>
                           暗記する必要はありません。
                         </HighlightBold>
-                        早送り中に自動で行われますから。
+                        実行中に自動で行われますから。
                       </P>
                       <P>
                         なんとなく「

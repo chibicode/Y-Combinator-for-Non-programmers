@@ -666,7 +666,7 @@ export default () => (
                         まずは実行してみるね。
                         <H args={{ name: 'pressRun', girl: true }} />
                       </P>
-                      <P>今回は、最後まで止まらずに早送りします！</P>
+                      <P>今回は、最後まで止まらずに実行します！</P>
                     </>
                   )
                 }
@@ -1185,7 +1185,7 @@ export default () => (
               <CustomEmoji type="plusOne" /> の計算箱を再現できる
             </R.Xhdq>
             <P>
-              上の弁当箱は実行に時間がかかるので、ここでは早送りはしませんが、
+              上の弁当箱を実行するのは、時間がかかるので今回は行いませんが、
               <Highlight>
                 <H args={{ name: 'runAndConvertToMathbox' }} />{' '}
                 ボタンを押すと、答えが <EmojiNumber number={4} />{' '}
@@ -1896,7 +1896,7 @@ export default () => (
 //                         まずは実行してみるね。
 //                         <H args={{ name: 'pressRun', girl: true }} />
 //                       </P>
-//                       <P>今回は、最後まで止まらずに早送りします！</P>
+//                       <P>今回は、最後まで止まらずに実行します！</P>
 //                     </>
 //                   )
 //                 }
@@ -2415,7 +2415,7 @@ export default () => (
 //               <CustomEmoji type="plusOne" /> の計算箱を再現できる
 //             </R.Xhdq>
 //             <P>
-//               上の弁当箱は実行に時間がかかるので、ここでは早送りはしませんが、
+//               上の弁当箱を実行するのは、時間がかかるので今回は行いませんが、
 //               <Highlight>
 //                 <H args={{ name: 'runAndConvertToMathbox' }} />{' '}
 //                 ボタンを押すと、答えが <EmojiNumber number={4} />{' '}

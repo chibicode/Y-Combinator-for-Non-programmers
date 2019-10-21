@@ -646,7 +646,7 @@ export default () => (
         content: (
           <>
             <P>
-              それでは、上記の弁当箱を実行してみましょう！途中まで早送りしてみますね。
+              それでは、上記の弁当箱を実行してみましょう！途中まで進めてみますね。
               <H
                 args={{
                   name: 'pressRun',
@@ -953,9 +953,7 @@ export default () => (
                       <Ul>
                         <UlLi>
                           今回は、
-                          <Highlight>
-                            最後まで止まらずに早送りするね！
-                          </Highlight>
+                          <Highlight>最後まで止まらずに実行するね！</Highlight>
                         </UlLi>
                         <UlLi>
                           複雑なので、

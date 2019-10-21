@@ -260,7 +260,7 @@ export default () => (
         )
       },
       {
-        title: <>早送りしてみると…</>,
+        title: <>実行してみると…</>,
         content: (
           <>
             <P>
@@ -1158,11 +1158,11 @@ export default () => (
                       <Ul>
                         <UlLi>
                           ステップ数が非常に多いので、途中のいくつかのステップを省略した上で、
-                          <Highlight>3倍速で早送りするぞ。</Highlight>{' '}
+                          <Highlight>3倍速で進めるぞ。</Highlight>{' '}
                           <Emoji>⏩</Emoji> <Emoji>⏩</Emoji> <Emoji>⏩</Emoji>
                         </UlLi>
                         <UlLi>
-                          早送り中は、目に優しくなるように弁当箱を半透明にしている。
+                          実行中は、目に優しくなるように弁当箱を半透明にしている。
                         </UlLi>
                         <UlLi>
                           待てない場合は、「

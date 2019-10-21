@@ -626,7 +626,7 @@ export default () => (
         }
       },
       {
-        title: <>早送りしてみよう</>,
+        title: <>実行してみよう</>,
         content: (
           <>
             <StepOne />
@@ -2122,7 +2122,7 @@ export default () => (
 //         }
 //       },
 //       {
-//         title: <>早送りしてみよう</>,
+//         title: <>実行してみよう</>,
 //         content: (
 //           <>
 //             <StepOne />
