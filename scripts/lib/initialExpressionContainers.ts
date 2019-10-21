@@ -281,7 +281,7 @@ export const qyqi = initializeExpressionContainer(
   numberParamsHighlightNumber('d', 'b', 1)
 )
 export const entt = initializeExpressionContainer(
-  numberParamsHighlightNumber('f', 'g', 2)
+  numberParamsHighlightNumber('f', 'g', 1)
 )
 
 export const dupe = initializeExpressionContainer({
@@ -1026,7 +1026,7 @@ export const fhyo = initializeExpressionContainer(
 
 export const ngth = initializeExpressionContainer([
   succParams('a', 'b', 'c'),
-  numberParams('f', 'g', 2)
+  numberParams('f', 'g', 1)
 ])
 
 export const disc = initializeExpressionContainer(
@@ -1264,10 +1264,6 @@ export const zcia = initializeExpressionContainer(
 export const qrvj = initializeExpressionContainer({
   shorthandNumberAfterConvert: 'trueCase'
 })
-
-export const zfym = initializeExpressionContainer(
-  numberParamsHighlightNumber('f', 'g', 1)
-)
 
 export const nnqw = initializeExpressionContainer(
   isZeroParams(

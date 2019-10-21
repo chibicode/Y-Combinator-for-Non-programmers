@@ -1420,7 +1420,12 @@ export const rico: ExpressionRunnerShorthandConfig = {
 export const awwn: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   initialExpressionContainer: initialExpressionContainers.ngth,
-  showPriorities: true
+  showPriorities: true,
+  highlightOverrides: {
+    a: 'highlighted',
+    b: 'highlighted',
+    c: 'highlighted'
+  }
 }
 
 export const nlbn: ExpressionRunnerShorthandConfig = {
@@ -1948,7 +1953,7 @@ export const bndi: ExpressionRunnerShorthandConfig = {
 
 export const ooya: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
-  initialExpressionContainer: initialExpressionContainers.zfym,
+  initialExpressionContainer: initialExpressionContainers.entt,
   showPriorities: true,
   bottomRightBadgeOverrides: { f: '🅰️', g: '🅱️' }
 }

@@ -468,7 +468,7 @@ export default () => (
             <R.Rqer>
               <EmojiNumber number={1} /> に変換できる弁当箱と、
               <br />
-              <Emoji>👧🏻</Emoji> サヤちゃんの弁当箱と組み合わせて…
+              <Emoji>👧🏻</Emoji> サヤちゃんの弁当箱を組み合わせて…
             </R.Rqer>
             <ExpressionRunnerSeparator />
             <ExpressionRunnerCaptionOnly>
@@ -478,7 +478,7 @@ export default () => (
             <R.Cqzt>
               <EmojiNumber number={2} /> に変換できる弁当箱と、
               <br />
-              <Emoji>👧🏻</Emoji> サヤちゃんの弁当箱と組み合わせて…
+              <Emoji>👧🏻</Emoji> サヤちゃんの弁当箱を組み合わせて…
             </R.Cqzt>
             <ExpressionRunnerSeparator />
             <ExpressionRunnerCaptionOnly>
@@ -495,8 +495,10 @@ export default () => (
                         先ほどは、
                         <EmojiNumber number={0} /> が <EmojiNumber number={1} />{' '}
                         になったけど、
-                        <EmojiNumber number={1} /> と <EmojiNumber number={2} />{' '}
-                        はどうなるだろう？
+                        <Highlight>
+                          <EmojiNumber number={1} /> と{' '}
+                          <EmojiNumber number={2} /> はどうなるだろう？
+                        </Highlight>
                       </P>
                     </>
                   )
@@ -546,13 +548,185 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        では、
-                        <H args={{ name: 'run' }} /> してみましょう！
+                        では、それぞれ <H args={{ name: 'run' }} />{' '}
+                        してみましょう！
                       </P>
                     </>
                   )
                 }
               ]}
+            />
+          </>
+        )
+      },
+      {
+        title: (
+          <>
+            <EmojiNumber number={1} /> は何になる？
+          </>
+        ),
+        content: (
+          <>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>
+                        まず、
+                        <EmojiNumber number={1} /> に変換できる弁当箱と、
+                        <Emoji>👧🏻</Emoji>{' '}
+                        サヤちゃんの弁当箱を組み合わせた場合を見てみましょう！
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Rqer>
+              <EmojiNumber number={1} /> に変換できる弁当箱と、
+              <br />
+              <Emoji>👧🏻</Emoji> サヤちゃんの弁当箱を組み合わせて…
+            </R.Rqer>
+            <ExpressionRunnerSeparator />
+            <ExpressionRunnerCaptionOnly>
+              <H args={{ name: 'run' }} /> するとどうなる？
+            </ExpressionRunnerCaptionOnly>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>
+                        ここでは、こちらの <EmojiNumber number={1} />{' '}
+                        に変換できる弁当箱を使ってみます！
+                      </P>
+                      <R.Spga>
+                        <H
+                          args={{
+                            name: 'canBeConvertedCaption',
+                            letter: 'f',
+                            number: 1
+                          }}
+                        />
+                      </R.Spga>
+                      <P>
+                        これを <Emoji>👧🏻</Emoji>{' '}
+                        サヤちゃんの弁当箱と合体させてみます。
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Awwn>
+              <Emoji>👧🏻</Emoji> サヤちゃんの弁当箱と合体
+            </R.Awwn>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>
+                        では、
+                        <H args={{ name: 'run' }} />{' '}
+                        してみましょう！今回は、途中で止まりません。
+                        <H args={{ name: 'runSkippableToTheEnd' }} />
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Nlbn />
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>
+                        最後に残ったこちらの弁当箱は、
+                        <EmojiNumber number={2} /> に変換できる弁当箱です！
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Rico>
+              <H
+                args={{ name: 'canBeConvertedCaption', number: 2, letter: 'b' }}
+              />
+            </R.Rico>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'surprised',
+                  children: (
+                    <>
+                      <P>ということは…</P>
+                      <Ul>
+                        <UlLi>
+                          <Highlight>
+                            <EmojiNumber number={1} /> に変換できる弁当箱が、
+                          </Highlight>
+                        </UlLi>
+                        <UlLi>
+                          <Highlight>
+                            <EmojiNumber number={2} />{' '}
+                            に変換できる弁当箱になったのか？
+                          </Highlight>
+                        </UlLi>
+                      </Ul>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Rqer>
+              <EmojiNumber number={1} /> に変換できる弁当箱と、
+              <br />
+              <Emoji>👧🏻</Emoji> サヤちゃんの弁当箱を組み合わせて…
+            </R.Rqer>
+            <ExpressionRunnerSeparator />
+            <R.Cawl>
+              <H args={{ name: 'run' }} /> すると、
+              <br />
+              <EmojiNumber number={2} /> に変換できる弁当箱になる
+            </R.Cawl>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>
+                        つまり、<Emoji>👧🏻</Emoji>{' '}
+                        サヤちゃんの弁当箱を使うことで、
+                        <EmojiNumber number={1} /> が <EmojiNumber number={2} />{' '}
+                        になった、というわけですね。
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <EmojiSeparator
+              nodes={[
+                <EmojiNumber number={1} />,
+                <CustomEmoji type="singleArrow" />,
+                <EmojiNumber number={2} />
+              ]}
+              description={
+                <>
+                  <EmojiNumber number={1} /> が <EmojiNumber number={2} />{' '}
+                  になった
+                </>
+              }
             />
           </>
         )

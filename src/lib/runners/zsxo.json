@@ -30,39 +30,18 @@
           "body": {
             "arg": {
               "arg": {
-                "arg": {
-                  "name": "c",
-                  "highlightType": "default",
-                  "topLeftBadgeType": "none",
-                  "bottomRightBadgeType": "none",
-                  "type": "variable",
-                  "argPriorityAgg": [
-                    1,
-                    2,
-                    3
-                  ],
-                  "funcPriorityAgg": [],
-                  "emphasizePriority": false,
-                  "bound": true,
-                  "maxNestedFunctionDepth": 0
-                },
-                "func": {
-                  "name": "b",
-                  "highlightType": "default",
-                  "topLeftBadgeType": "none",
-                  "bottomRightBadgeType": "none",
-                  "type": "variable",
-                  "argPriorityAgg": [],
-                  "funcPriorityAgg": [
-                    3
-                  ],
-                  "emphasizePriority": false,
-                  "bound": true,
-                  "maxNestedFunctionDepth": 0
-                },
-                "state": "default",
-                "type": "call",
-                "priority": 3,
+                "name": "c",
+                "highlightType": "default",
+                "topLeftBadgeType": "none",
+                "bottomRightBadgeType": "none",
+                "type": "variable",
+                "argPriorityAgg": [
+                  1,
+                  2
+                ],
+                "funcPriorityAgg": [],
+                "emphasizePriority": false,
+                "bound": true,
                 "maxNestedFunctionDepth": 0
               },
               "func": {
@@ -112,7 +91,7 @@
       "previouslyChangedExpressionState": "default",
       "activePriority": 2,
       "containerState": "done",
-      "numLeafNodes": 4
+      "numLeafNodes": 3
     }
   ],
   "speed": 1,
