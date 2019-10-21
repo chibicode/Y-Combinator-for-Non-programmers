@@ -168,7 +168,7 @@ interface HProps {
     | { name: 'goToOtherPage' }
     | { name: 'demoTitle' }
     | { name: 'whatTheNumberIsCaption' }
-    | { name: 'playAndShowAllSteps' }
+    | { name: 'runAndShowAllSteps' }
 }
 
 const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
@@ -457,7 +457,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
       )
     }
   }
-  if (args.name === 'playAndShowAllSteps') {
+  if (args.name === 'runAndShowAllSteps') {
     if (locale === 'en') {
       return (
         <>

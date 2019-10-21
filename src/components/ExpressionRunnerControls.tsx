@@ -148,7 +148,7 @@ const ExpressionRunnerControls = ({
                 <H args={{ name: 'run' }} highlightType="none" />
               )
             ) : (
-              <H args={{ name: 'playAndShowAllSteps' }} highlightType="none" />
+              <H args={{ name: 'runAndShowAllSteps' }} highlightType="none" />
             )
           ) : convert && convert !== 'toMathBoxPlay' ? (
             <H args={{ name: 'undoConvertToMathbox' }} highlightType="none" />
