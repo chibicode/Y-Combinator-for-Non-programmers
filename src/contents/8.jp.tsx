@@ -435,27 +435,12 @@ export default () => (
                   type: 'dog',
                   children: (
                     <>
+                      <P>では、ここで疑問なのですが… </P>
                       <P>
-                        では、ここで疑問なのですが…{' '}
                         <Highlight>
                           <Emoji>👧🏻</Emoji> サヤちゃんの弁当箱を、
-                        </Highlight>
-                      </P>
-                      <Ul>
-                        <UlLi>
-                          <Highlight>
-                            <EmojiNumber number={1} /> に変換できる弁当箱や、
-                          </Highlight>
-                        </UlLi>
-                        <UlLi>
-                          <Highlight>
-                            <EmojiNumber number={2} />{' '}
-                            に変換できる弁当箱と組み合わせて、
-                          </Highlight>
-                        </UlLi>
-                      </Ul>
-                      <P>
-                        <Highlight>
+                          <EmojiNumber number={1} />{' '}
+                          に変換できる弁当箱と組み合わせて
                           <H args={{ name: 'run' }} />{' '}
                           すると、結果はどうなるでしょう？
                         </Highlight>
@@ -474,16 +459,6 @@ export default () => (
             <ExpressionRunnerCaptionOnly>
               <H args={{ name: 'run' }} /> するとどうなる？
             </ExpressionRunnerCaptionOnly>
-            <Hr />
-            <R.Cqzt>
-              <EmojiNumber number={2} /> に変換できる弁当箱と、
-              <br />
-              <Emoji>👧🏻</Emoji> サヤちゃんの弁当箱を組み合わせて…
-            </R.Cqzt>
-            <ExpressionRunnerSeparator />
-            <ExpressionRunnerCaptionOnly>
-              <H args={{ name: 'run' }} /> するとどうなる？
-            </ExpressionRunnerCaptionOnly>
             <BubbleQuotes
               quotes={[
                 {
@@ -496,8 +471,7 @@ export default () => (
                         <EmojiNumber number={0} /> が <EmojiNumber number={1} />{' '}
                         になったけど、
                         <Highlight>
-                          <EmojiNumber number={1} /> と{' '}
-                          <EmojiNumber number={2} /> はどうなるだろう？
+                          <EmojiNumber number={1} /> はどうなるだろう？
                         </Highlight>
                       </P>
                     </>
@@ -525,19 +499,9 @@ export default () => (
                 <CustomEmoji type="singleArrow" />,
                 <Emoji>❓</Emoji>
               ]}
-              noBottomMargin
-            />
-            <EmojiSeparator
-              noTopMargin
-              nodes={[
-                <EmojiNumber number={2} />,
-                <CustomEmoji type="singleArrow" />,
-                <Emoji>❓</Emoji>
-              ]}
               description={
                 <>
-                  <EmojiNumber number={1} /> や <EmojiNumber number={2} />{' '}
-                  は何になる？
+                  <EmojiNumber number={1} /> は何になる？
                 </>
               }
             />
@@ -547,10 +511,7 @@ export default () => (
                   type: 'dog',
                   children: (
                     <>
-                      <P>
-                        では、それぞれ <H args={{ name: 'run' }} />{' '}
-                        してみましょう！
-                      </P>
+                      <P>では、試してみましょう！</P>
                     </>
                   )
                 }
@@ -574,33 +535,7 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        まず、
-                        <EmojiNumber number={1} /> に変換できる弁当箱と、
-                        <Emoji>👧🏻</Emoji>{' '}
-                        サヤちゃんの弁当箱を組み合わせた場合を見てみましょう！
-                      </P>
-                    </>
-                  )
-                }
-              ]}
-            />
-            <R.Rqer>
-              <EmojiNumber number={1} /> に変換できる弁当箱と、
-              <br />
-              <Emoji>👧🏻</Emoji> サヤちゃんの弁当箱を組み合わせて…
-            </R.Rqer>
-            <ExpressionRunnerSeparator />
-            <ExpressionRunnerCaptionOnly>
-              <H args={{ name: 'run' }} /> するとどうなる？
-            </ExpressionRunnerCaptionOnly>
-            <BubbleQuotes
-              quotes={[
-                {
-                  type: 'dog',
-                  children: (
-                    <>
-                      <P>
-                        ここでは、こちらの <EmojiNumber number={1} />{' '}
+                        今回は、こちらの <EmojiNumber number={1} />{' '}
                         に変換できる弁当箱を使ってみます！
                       </P>
                       <R.Spga>
