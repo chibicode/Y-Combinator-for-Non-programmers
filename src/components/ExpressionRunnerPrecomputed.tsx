@@ -48,10 +48,10 @@ export interface ExpressionRunnerPrecomputedProps {
 }
 
 const autoplaySpeed = (speed: number) => 1000 / speed
-const FASTFORWARDING_THRESHOLD = 2
+const HIGHSPEED_THRESHOLD = 2
 
 interface PlaybackState {
-  isFastForwarding: boolean
+  isHighSpeed: boolean
   isRunning: boolean
 }
 
@@ -76,10 +76,10 @@ const ExpressionRunnerPrecomputed = ({
   crossed,
   showBottomProgressBar
 }: ExpressionRunnerPrecomputedProps) => {
-  const [{ isFastForwarding, isRunning }, setPlaybackStatus] = useState<
+  const [{ isHighSpeed, isRunning }, setPlaybackStatus] = useState<
     PlaybackState
   >({
-    isFastForwarding: false,
+    isHighSpeed: false,
     isRunning: false
   })
 
@@ -99,7 +99,7 @@ const ExpressionRunnerPrecomputed = ({
       // Don't use else: stop immediately if reaches the end
       if (currentIndex + 1 >= expressionContainers.length - 1) {
         setPlaybackStatus({
-          isFastForwarding: false,
+          isHighSpeed: false,
           isRunning: false
         })
       }
@@ -133,14 +133,14 @@ const ExpressionRunnerPrecomputed = ({
   const autoplay = () => {
     setPlaybackStatus({
       isRunning: true,
-      isFastForwarding: speed > FASTFORWARDING_THRESHOLD
+      isHighSpeed: speed > HIGHSPEED_THRESHOLD
     })
   }
 
   const pause = () => {
     setPlaybackStatus({
       isRunning: false,
-      isFastForwarding: false
+      isHighSpeed: false
     })
   }
 
@@ -246,7 +246,7 @@ const ExpressionRunnerPrecomputed = ({
               css={[
                 css`
                   line-height: ${lineHeights(1.3, { ignoreLocale: true })};
-                  opacity: ${isFastForwarding ? 0.5 : 1};
+                  opacity: ${isHighSpeed ? 0.5 : 1};
                   position: relative;
                   background-color: ${colors('white')};
                 `
