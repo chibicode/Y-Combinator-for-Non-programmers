@@ -656,8 +656,8 @@ export default () => (
             <P>
               Let’s run the above lunchbox.{' '}
               <Highlight>
-                We’ll <H args={{ name: 'fastForward', lowerCase: true }} /> it
-                for a while and pause for an explanation.
+                We’ll <H args={{ name: 'run', lowerCase: true }} /> it for a
+                while and pause for an explanation.
               </Highlight>
             </P>
             <P>
@@ -748,9 +748,8 @@ export default () => (
                         became <EmojiWithText letter="a" />.
                       </P>
                       <P>
-                        Now, just{' '}
-                        <H args={{ name: 'fastForward', lowerCase: true }} />{' '}
-                        until the end!
+                        Now, let’s <H args={{ name: 'run', lowerCase: true }} />{' '}
+                        it until the end!
                       </P>
                     </>
                   )

@@ -678,15 +678,14 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        Let’s{' '}
-                        <H args={{ name: 'fastForward', lowerCase: true }} />{' '}
-                        the original lunchbox directly!
+                        Let’s <H args={{ name: 'run', lowerCase: true }} /> the
+                        original lunchbox directly!
                       </P>
                       <Ul>
                         <UlLi>
                           There are so many steps, so we’ll{' '}
                           <Highlight>
-                            change the playback speed to 3x.
+                            increase the playback speed to 3x.
                           </Highlight>{' '}
                           <Emoji>⏩</Emoji> <Emoji>⏩</Emoji> <Emoji>⏩</Emoji>
                         </UlLi>

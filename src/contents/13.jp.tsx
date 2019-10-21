@@ -666,20 +666,17 @@ export default () => (
                     <>
                       <P>
                         では、もともとの弁当箱を
-                        <H args={{ name: 'fastForward' }} />
-                        してみましょう！
+                        <H args={{ name: 'run' }} /> してみましょう！
                       </P>
                       <Ul>
                         <UlLi>
                           ステップ数が非常に多いので、
-                          <HighlightBold>
-                            3倍速で早送りします！
-                          </HighlightBold>{' '}
+                          <HighlightBold>3倍速で進めます！</HighlightBold>{' '}
                           <Emoji>⏩</Emoji> <Emoji>⏩</Emoji> <Emoji>⏩</Emoji>
                         </UlLi>
                         <UlLi>
                           <Highlight>
-                            早送り中は、目に優しくなるように弁当箱を半透明にしています。
+                            実行中は、目に優しくなるように弁当箱を半透明にしています。
                           </Highlight>
                         </UlLi>
                         <UlLi>

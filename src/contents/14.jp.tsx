@@ -117,7 +117,7 @@ export default () => (
                     <>
                       <P>
                         今回は、前回サヤが考えた弁当箱を
-                        <H args={{ name: 'fastForward' }} /> して、
+                        <H args={{ name: 'run' }} /> して、
                         <HighlightBold>
                           途中、弁当箱がどう変化するかを確認してみる
                         </HighlightBold>
@@ -139,7 +139,7 @@ export default () => (
             />
             <R.Kjba>
               前回の弁当箱は、
-              <H args={{ name: 'fastForward' }} /> すると…
+              <H args={{ name: 'run' }} /> すると…
             </R.Kjba>
             <ExpressionRunnerSeparator />
             <EmojiSeparator
@@ -906,8 +906,8 @@ export default () => (
                       <P>
                         そして
                         <Highlight>
-                          <H args={{ name: 'fastForward' }} />{' '}
-                          していくと、終了直前に以下のようになった
+                          <H args={{ name: 'run' }} />{' '}
+                          すると、終了直前に以下のようになった
                         </Highlight>
                         よね。
                       </P>

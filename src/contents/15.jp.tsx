@@ -490,7 +490,7 @@ export default () => (
                           <EmojiNumber number={3} /> に変換できる弁当箱を{' '}
                           <CustomEmoji type="blankNumberPurple" /> と{' '}
                           <CustomEmoji type="blankNumberPink" /> に入れて、
-                          <H args={{ name: 'fastForward' }} /> してみよう。
+                          <H args={{ name: 'run' }} /> してみよう。
                         </HighlightBold>
                       </P>
                     </>
@@ -1152,7 +1152,7 @@ export default () => (
                     <>
                       <P>
                         これを
-                        <H args={{ name: 'fastForward' }} /> してみよう！
+                        <H args={{ name: 'run' }} /> してみよう！
                       </P>
                       {/* TODO: NOTE - we skip a lot of steps */}
                       <Ul>
@@ -1207,8 +1207,8 @@ export default () => (
                         の階乗を自動で計算してくれるんだ。
                       </P>
                       <P>
-                        というわけで、最後まで
-                        <H args={{ name: 'fastForward' }} /> してみよう！
+                        というわけで、
+                        <H args={{ name: 'run' }} /> して最後まで見てみよう！
                       </P>
                     </>
                   )
@@ -1224,8 +1224,8 @@ export default () => (
                     <>
                       <P>
                         というわけで、先ほどの弁当箱は
-                        <H args={{ name: 'fastForward' }} />{' '}
-                        すると以下のように変化することで、
+                        <H args={{ name: 'run' }} />{' '}
+                        すると、以下のように変化することで、
                         <EmojiNumber number={3} />{' '}
                         の階乗を自動で計算してくれるんだ。
                       </P>
@@ -1238,7 +1238,7 @@ export default () => (
               上の部分に <EmojiNumber number={3} /> を追加
               <br />
               して
-              <H args={{ name: 'fastForward' }} /> すると…
+              <H args={{ name: 'run' }} /> すると…
             </R.Zlfx>
             <ExpressionRunnerSeparator />
             <R.Qurt>
@@ -1308,7 +1308,7 @@ export default () => (
                     <>
                       <P>
                         これも
-                        <H args={{ name: 'fastForward' }} /> してみよう！
+                        <H args={{ name: 'run' }} /> してみよう！
                       </P>
                     </>
                   )

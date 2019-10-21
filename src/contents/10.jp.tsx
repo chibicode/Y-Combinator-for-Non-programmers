@@ -738,9 +738,9 @@ export default () => (
                         <EmojiWithText letter="a" /> に変えました。
                       </P>
                       <P>
-                        では、最後まで
-                        <H args={{ name: 'fastForward' }} />
-                        してみてください！
+                        では、
+                        <H args={{ name: 'run' }} />{' '}
+                        して最後まで見てみましょう！
                       </P>
                     </>
                   )

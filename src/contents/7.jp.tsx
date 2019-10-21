@@ -55,7 +55,7 @@ export const StepOne = () => (
             <>
               <P>
                 それでは、
-                <H args={{ name: 'fastForward' }} /> していきましょう！
+                <H args={{ name: 'run' }} /> しましょう！
               </P>
               <P>
                 まず、

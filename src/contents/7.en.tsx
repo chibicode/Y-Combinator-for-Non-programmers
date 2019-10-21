@@ -58,7 +58,7 @@ export const StepOne = () => (
           children: (
             <>
               <P>
-                Let’s <H args={{ name: 'fastForward', lowerCase: true }} /> it!
+                Let’s <H args={{ name: 'run', lowerCase: true }} /> it!
               </P>
               <P>
                 <Bold>First:</Bold>{' '}
@@ -1316,7 +1316,7 @@ export default () => (
       {
         title: (
           <>
-            Let’s <H args={{ name: 'fastForward', lowerCase: true }} />
+            Let’s <H args={{ name: 'run', lowerCase: true }} /> it!
           </>
         ),
         content: (

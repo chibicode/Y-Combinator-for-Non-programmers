@@ -78,7 +78,6 @@ interface HProps {
     | { name: 'run'; lowerCase?: true }
     | { name: 'running' }
     | { name: 'pause' }
-    | { name: 'fastForward'; lowerCase?: true }
     | { name: 'reset' }
     | { name: 'previous' }
     | { name: 'done' }
@@ -433,25 +432,6 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
         <>
           <HighlightBold highlightType={highlightType}>
             実行 <Emoji>▶️</Emoji>
-          </HighlightBold>
-        </>
-      )
-    }
-  }
-  if (args.name === 'fastForward') {
-    if (locale === 'en') {
-      return (
-        <>
-          <HighlightBold highlightType={highlightType}>
-            {args.lowerCase ? 'p' : 'P'}lay <Emoji>▶️</Emoji>
-          </HighlightBold>
-        </>
-      )
-    } else {
-      return (
-        <>
-          <HighlightBold highlightType={highlightType}>
-            早送り <Emoji>⏩</Emoji>
           </HighlightBold>
         </>
       )
