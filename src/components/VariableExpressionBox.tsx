@@ -56,7 +56,6 @@ const VariableEmoji = ({ expression }: VariableExpressionBoxProps) => {
     return (
       <div
         css={css`
-          margin-top: ${spaces(0.125)};
           padding: 0.25em 0;
         `}
       >
@@ -90,38 +89,40 @@ const VariableEmoji = ({ expression }: VariableExpressionBoxProps) => {
             `}
           >
             {expression.shorthandNumber !== undefined ? (
-              <EmojiNumber number={expression.shorthandNumber} />
+              <EmojiNumber size="sm" number={expression.shorthandNumber} />
             ) : expression.shorthandNumberAfterConvert === 'blank' ? (
-              <CustomEmoji type="blankNumber" />
+              <CustomEmoji size="sm" type="blankNumber" />
             ) : expression.shorthandNumberAfterConvert === 'blankPlusOne' ? (
               <>
-                <CustomEmoji type="blankNumber" /> <Emoji>➕</Emoji>{' '}
-                <EmojiNumber number={1} />
+                <CustomEmoji size="sm" type="blankNumber" />{' '}
+                <Emoji size="sm">➕</Emoji> <EmojiNumber size="sm" number={1} />
               </>
             ) : expression.shorthandNumberAfterConvert === 'blankMinusOne' ? (
               <>
-                <CustomEmoji type="blankNumber" /> <Emoji>➖</Emoji>{' '}
-                <EmojiNumber number={1} />
+                <CustomEmoji size="sm" type="blankNumber" />{' '}
+                <Emoji size="sm">➖</Emoji> <EmojiNumber size="sm" number={1} />
               </>
             ) : expression.shorthandNumberAfterConvert === 'trueCase' ? (
-              <CustomEmoji type="blankNumberYellow" />
+              <CustomEmoji size="sm" type="blankNumberYellow" />
             ) : expression.shorthandNumberAfterConvert === 'falseCase' ? (
-              <CustomEmoji type="blankNumberRed" />
+              <CustomEmoji size="sm" type="blankNumberRed" />
             ) : expression.shorthandNumberAfterConvert === 'condition' ? (
-              <CustomEmoji type="blankNumberGreen" />
+              <CustomEmoji size="sm" type="blankNumberGreen" />
             ) : expression.shorthandNumberAfterConvert === 'binaryFirst' ? (
-              <CustomEmoji type="blankNumberPurple" />
+              <CustomEmoji size="sm" type="blankNumberPurple" />
             ) : expression.shorthandNumberAfterConvert === 'binarySecond' ? (
-              <CustomEmoji type="blankNumberPink" />
+              <CustomEmoji size="sm" type="blankNumberPink" />
             ) : expression.shorthandNumberAfterConvert === 'binaryMultiply' ? (
               <>
-                <CustomEmoji type="blankNumberPurple" /> <Emoji>✖️</Emoji>{' '}
-                <CustomEmoji type="blankNumberPink" />
+                <CustomEmoji size="sm" type="blankNumberPurple" />{' '}
+                <Emoji size="sm">✖️</Emoji>{' '}
+                <CustomEmoji size="sm" type="blankNumberPink" />
               </>
             ) : expression.shorthandNumberAfterConvert === 'binaryAdd' ? (
               <>
-                <CustomEmoji type="blankNumberPurple" /> <Emoji>➕</Emoji>{' '}
-                <CustomEmoji type="blankNumberPink" />
+                <CustomEmoji size="sm" type="blankNumberPurple" />{' '}
+                <Emoji size="sm">➕</Emoji>{' '}
+                <CustomEmoji size="sm" type="blankNumberPink" />
               </>
             ) : (
               <></>
