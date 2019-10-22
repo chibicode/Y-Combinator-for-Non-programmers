@@ -1188,7 +1188,11 @@ export const wosn = initializeExpressionContainer(
 )
 
 export const vfwt = initializeExpressionContainer(
-  predParams('A', 'B', 'C', 'D', 'E', 'F', true)
+  predParams('A', 'B', 'C', 'D', 'E', 'F')
+)
+
+export const ccjv = initializeExpressionContainer(
+  predParams('g', 'h', 'i', 'j', 'k', 'l')
 )
 
 export const yvkr = initializeExpressionContainer([

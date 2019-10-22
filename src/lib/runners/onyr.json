@@ -3,7 +3,7 @@
     {
       "expression": {
         "arg": {
-          "name": "A",
+          "name": "g",
           "highlightType": "default",
           "topLeftBadgeType": "none",
           "bottomRightBadgeType": "none",
@@ -16,7 +16,7 @@
         },
         "body": {
           "arg": {
-            "name": "B",
+            "name": "h",
             "highlightType": "default",
             "topLeftBadgeType": "none",
             "bottomRightBadgeType": "none",
@@ -29,7 +29,7 @@
           },
           "body": {
             "arg": {
-              "name": "C",
+              "name": "i",
               "highlightType": "default",
               "topLeftBadgeType": "none",
               "bottomRightBadgeType": "none",
@@ -43,7 +43,7 @@
             "body": {
               "arg": {
                 "arg": {
-                  "name": "F",
+                  "name": "l",
                   "highlightType": "default",
                   "topLeftBadgeType": "none",
                   "bottomRightBadgeType": "none",
@@ -57,7 +57,7 @@
                   "maxNestedFunctionDepth": 0
                 },
                 "body": {
-                  "name": "F",
+                  "name": "l",
                   "highlightType": "default",
                   "topLeftBadgeType": "none",
                   "bottomRightBadgeType": "none",
@@ -74,7 +74,7 @@
               "func": {
                 "arg": {
                   "arg": {
-                    "name": "F",
+                    "name": "l",
                     "highlightType": "default",
                     "topLeftBadgeType": "none",
                     "bottomRightBadgeType": "none",
@@ -88,7 +88,7 @@
                     "maxNestedFunctionDepth": 0
                   },
                   "body": {
-                    "name": "C",
+                    "name": "i",
                     "highlightType": "default",
                     "topLeftBadgeType": "none",
                     "bottomRightBadgeType": "none",
@@ -105,7 +105,7 @@
                 "func": {
                   "arg": {
                     "arg": {
-                      "name": "D",
+                      "name": "j",
                       "highlightType": "default",
                       "topLeftBadgeType": "none",
                       "bottomRightBadgeType": "none",
@@ -120,7 +120,7 @@
                     },
                     "body": {
                       "arg": {
-                        "name": "E",
+                        "name": "k",
                         "highlightType": "default",
                         "topLeftBadgeType": "none",
                         "bottomRightBadgeType": "none",
@@ -134,7 +134,7 @@
                       "body": {
                         "arg": {
                           "arg": {
-                            "name": "B",
+                            "name": "h",
                             "highlightType": "default",
                             "topLeftBadgeType": "none",
                             "bottomRightBadgeType": "none",
@@ -149,7 +149,7 @@
                             "maxNestedFunctionDepth": 0
                           },
                           "func": {
-                            "name": "D",
+                            "name": "j",
                             "highlightType": "default",
                             "topLeftBadgeType": "none",
                             "bottomRightBadgeType": "none",
@@ -168,7 +168,7 @@
                           "maxNestedFunctionDepth": 0
                         },
                         "func": {
-                          "name": "E",
+                          "name": "k",
                           "highlightType": "default",
                           "topLeftBadgeType": "none",
                           "bottomRightBadgeType": "none",
@@ -193,7 +193,7 @@
                     "maxNestedFunctionDepth": 2
                   },
                   "func": {
-                    "name": "A",
+                    "name": "g",
                     "highlightType": "default",
                     "topLeftBadgeType": "none",
                     "bottomRightBadgeType": "none",
@@ -246,7 +246,14 @@
   "skipToTheEnd": false,
   "hideFuncUnboundBadgeOnExplanation": false,
   "highlightOverridesCallArgAndFuncUnboundOnly": false,
-  "bottomRightBadgeOverrides": {},
+  "bottomRightBadgeOverrides": {
+    "h": "🅱️",
+    "g": "🅰️",
+    "i": "C",
+    "j": "D",
+    "k": "E",
+    "l": "F"
+  },
   "highlightOverrides": {},
   "highlightOverrideActiveAfterStart": false,
   "highlightFunctions": false,

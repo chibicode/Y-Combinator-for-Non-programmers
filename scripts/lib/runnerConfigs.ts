@@ -1505,6 +1505,20 @@ export const oykb: ExpressionRunnerShorthandConfig = {
   bottomRightBadgeOverrides: { b: '🅱️', a: '🅰️', c: 'C' }
 }
 
+export const onyr: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.ccjv,
+  showPriorities: true,
+  bottomRightBadgeOverrides: {
+    h: '🅱️',
+    g: '🅰️',
+    i: 'C',
+    j: 'D',
+    k: 'E',
+    l: 'F'
+  }
+}
+
 export const dvpl: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   initialExpressionContainer: initialExpressionContainers.ojsm,

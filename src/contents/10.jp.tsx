@@ -12,11 +12,13 @@ import {
 import H from 'src/components/H'
 import BubbleQuotes from 'src/components/BubbleQuotes'
 import EmojiNumber from 'src/components/EmojiNumber'
+import EmojiForLetter from 'src/components/EmojiForLetter'
 import BottomRightBadge from 'src/components/BottomRightBadge'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import CustomEmoji from 'src/components/CustomEmoji'
 import ExpressionRunnerSeparator from 'src/components/ExpressionRunnerSeparator'
 import EmojiWithText from 'src/components/EmojiWithText'
+import CardContent from 'src/components/CardContent'
 import Emoji from 'src/components/Emoji'
 import ExpressionRunnerCaptionOnly from 'src/components/ExpressionRunnerCaptionOnly'
 import TwoColGrid from 'src/components/TwoColGrid'
@@ -356,13 +358,6 @@ export default () => (
                     </>
                   )
                 }
-                //   <P>
-                //   前回と同じく、
-                //   <Highlight>
-                //     それぞれの <CustomEmoji type="questionFoodGrey" />{' '}
-                //     には何らかの料理が入ります。
-                //   </Highlight>
-                // </P>
               ]}
             />
             <R.Ditw>
@@ -1158,7 +1153,65 @@ export default () => (
               ]}
             />
           </>
-        )
+        ),
+        footer: {
+          content: (
+            <>
+              <CardContent
+                children={
+                  <>
+                    <Hr />
+                    <P>
+                      <Emoji>👧🏻</Emoji> サヤちゃんが考えた弁当箱以外にも、
+                      <HighlightBold>
+                        以下の法則に当てはまる弁当箱であれば、どれでも 「
+                        <H args={{ name: 'minusOneFeature' }} />
+                        」を再現できます。
+                      </HighlightBold>
+                    </P>
+                    <R.Cbmn>
+                      この法則に当てはまる弁当箱であれば、
+                      <br />
+                      「<H args={{ name: 'minusOneFeature' }} />
+                      」を再現できる
+                    </R.Cbmn>
+                    <P>
+                      たとえば、以下のような弁当箱でも、「
+                      <H args={{ name: 'minusOneFeature' }} />
+                      」を再現することができます。
+                    </P>
+                    <R.Onyr>
+                      これも「
+                      <H args={{ name: 'minusOneFeature' }} />
+                      」を再現できる
+                    </R.Onyr>
+                  </>
+                }
+                preview={{
+                  text: <>続きを読む</>,
+                  content: (
+                    <>
+                      <P>
+                        <Bold>ちなみに:</Bold> 「
+                        <H args={{ name: 'minusOneFeature' }} />
+                        」を再現できる弁当箱は、
+                        <HighlightBold>
+                          <Emoji>👧🏻</Emoji>{' '}
+                          サヤちゃんが考えた弁当箱以外にもあります。
+                        </HighlightBold>
+                        つまり、正解は他にもあるのです。
+                      </P>
+                      <P>
+                        気になる方は、↓の「続きを読む」を押してみてください。
+                        (読まなくても先に進めます！)
+                      </P>
+                    </>
+                  )
+                }}
+              />
+            </>
+          )
+        }
       },
       {
         title: <>中級はここまで！</>,
