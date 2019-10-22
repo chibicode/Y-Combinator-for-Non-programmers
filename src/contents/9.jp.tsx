@@ -29,11 +29,7 @@ export default () => (
         title: <>サヤちゃんの疑問</>,
         content: (
           <>
-            <P>
-              サヤちゃんは、
-              <H args={{ name: 'plusOneEffect' }} />
-              がある弁当箱について、あることに気が付きました。
-            </P>
+            <P>サヤちゃんは、あることに気が付きました。</P>
             <BubbleQuotes
               quotes={[
                 {
@@ -77,9 +73,13 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        これを、前回サヤが考えた
-                        <H args={{ name: 'plusOneEffect' }} />
-                        がある弁当箱と合体させて、実行するとどうなると思う？
+                        これを、
+                        <Highlight>
+                          前回サヤが考えた「
+                          <H args={{ name: 'plusOneFeature' }} />
+                          」を再現できる弁当箱と合体させて、実行するとどうなる
+                        </Highlight>
+                        と思う？
                       </P>
                     </>
                   )
@@ -87,8 +87,11 @@ export default () => (
               ]}
             />
             <R.Nhqo>
-              <H args={{ name: 'plusOneEffect' }} />
-              と合体させて、
+              「
+              <H args={{ name: 'plusOneFeature' }} />
+              」を再現できる
+              <br />
+              弁当箱と合体させて、
               <br />
               実行するとどうなる？
             </R.Nhqo>
@@ -1211,14 +1214,19 @@ export default () => (
         content: (
           <>
             <P>
-              前回サヤちゃんが考えた
-              <H args={{ name: 'plusOneEffect' }} />
-              がある弁当箱は、
+              前回サヤちゃんが考えた「
+              <H args={{ name: 'plusOneFeature' }} />
+              」を再現できる弁当箱は、
             </P>
-            <R.Nvqu>
-              <H args={{ name: 'plusOneEffect' }} />
-              がある弁当箱
-            </R.Nvqu>
+            <R.Vcqp>
+              <Emoji>👧🏻</Emoji> サヤちゃんが考えた
+              <br />
+              「
+              <H args={{ name: 'plusOneFeature' }} />
+              」を
+              <br />
+              再現できる弁当箱
+            </R.Vcqp>
             <P>
               次の
               <Highlight>
@@ -1318,9 +1326,9 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        いろいろあったけど、これで、
-                        <H args={{ name: 'plusOneEffect' }} />
-                        がある弁当箱は完璧にマスターしたぞ！
+                        いろいろあったけど、これで、 「
+                        <H args={{ name: 'plusOneFeature' }} />」
+                        を再現できる弁当箱は完璧にマスターしたぞ！
                       </P>
                       <P>悪魔よ、約束通り計算箱は返してもらう！</P>
                     </>

@@ -1063,7 +1063,7 @@ export const mtyb = initializeExpressionContainer([
 ])
 
 export const orfr = initializeExpressionContainer([
-  succParams('a', 'b', 'c', true),
+  succParams(highlighted('a'), highlighted('b'), highlighted('c')),
   numberParams('d', 'b', 1)
 ])
 

@@ -92,10 +92,11 @@ export default () => (
                   children: (
                     <>
                       <P>
+                        What do you think happens{' '}
                         <Highlight>
-                          What do you think happens if I combined it with a
-                          lunchbox that has{' '}
-                          <H args={{ name: 'plusOneEffect' }} /> and run it?
+                          if I combined it with my lunchbox that{' '}
+                          <Bold>reproduces</Bold>{' '}
+                          <H args={{ name: 'plusOneFeature' }} />?
                         </Highlight>
                       </P>
                     </>
@@ -104,9 +105,9 @@ export default () => (
               ]}
             />
             <R.Nhqo>
-              If I combined it with a lunchbox that has
+              If I combined it with my lunchbox that
               <br />
-              <H args={{ name: 'plusOneEffect' }} />…
+              reproduces <H args={{ name: 'plusOneFeature' }} />…
             </R.Nhqo>
             <ExpressionRunnerSeparator />
             <ExpressionRunnerCaptionOnly>
@@ -1212,14 +1213,14 @@ export default () => (
         content: (
           <>
             <P>
-              If you combine <Emoji>👧🏻</Emoji> Saya’s lunchbox which has{' '}
-              <H args={{ name: 'plusOneEffect' }} />…
+              If you combine <Emoji>👧🏻</Emoji> Saya’s lunchbox which reproduces{' '}
+              <H args={{ name: 'plusOneFeature' }} />…
             </P>
-            <R.Nvqu>
-              <Emoji>👧🏻</Emoji> Saya’s lunchbox which as
+            <R.Vcqp>
+              <Emoji>👧🏻</Emoji> Saya’s lunchbox which reproduces
               <br />
-              <H args={{ name: 'plusOneEffect' }} />
-            </R.Nvqu>
+              <H args={{ name: 'plusOneFeature' }} />
+            </R.Vcqp>
             <P>
               …with the following lunchbox which can be converted to{' '}
               <EmojiNumber number={1} />…
@@ -1330,8 +1331,8 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        <Bold>Anyway:</Bold> We figured out how to do{' '}
-                        <H args={{ name: 'plusOneEffect' }} />!
+                        <Bold>Anyway:</Bold> We figured out how to reproduce{' '}
+                        <H args={{ name: 'plusOneFeature' }} />!
                       </P>
                       <P>
                         The devil! As you promised, give us our mathboxes back!
