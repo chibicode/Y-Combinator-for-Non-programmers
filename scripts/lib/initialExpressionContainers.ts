@@ -1392,6 +1392,19 @@ export const lcce = initializeExpressionContainer(
   )
 )
 
+export const vwlq = initializeExpressionContainer(
+  isZeroParams(
+    'f',
+    'g',
+    'h',
+    'i',
+    'j',
+    { shorthandNumberAfterConvert: 'trueCase' },
+    { shorthandNumberAfterConvert: 'falseCase' },
+    { shorthandNumberAfterConvert: 'condition' }
+  )
+)
+
 export const gbbo = initializeExpressionContainer([
   {
     arg: 'f',

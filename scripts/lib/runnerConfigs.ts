@@ -2117,6 +2117,19 @@ export const fton: ExpressionRunnerShorthandConfig = {
   showPriorities: true
 }
 
+export const imhz: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.vwlq,
+  showPriorities: true,
+  bottomRightBadgeOverrides: {
+    g: '🅱️',
+    f: '🅰️',
+    h: 'C',
+    i: 'D',
+    j: 'E'
+  }
+}
+
 export const bnyo: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   initialExpressionContainer: initialExpressionContainers.gbbo,
