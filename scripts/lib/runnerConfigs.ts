@@ -1859,9 +1859,25 @@ export const sldg: ExpressionRunnerShorthandConfig = {
   }
 }
 
+export const dtle: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.lwpw,
+  showPriorities: true,
+  highlightOverrides: {
+    g: 'highlighted',
+    h: 'highlighted'
+  }
+}
+
 export const hiag: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   initialExpressionContainer: initialExpressionContainers.nhpm,
+  showPriorities: true
+}
+
+export const gqct: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.yjhv,
   showPriorities: true
 }
 

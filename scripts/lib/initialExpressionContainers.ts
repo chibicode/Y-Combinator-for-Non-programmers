@@ -1162,6 +1162,14 @@ export const nhpm = initializeExpressionContainer([
   }
 ])
 
+export const yjhv = initializeExpressionContainer([
+  predParams('a', 'b', 'c', 'd', 'e', 'f'),
+  {
+    shorthandNumberAfterConvert: 'number',
+    shorthandNumber: 2
+  }
+])
+
 export const csai = initializeExpressionContainer(
   numberParamsHighlightNumber('b', 'c', 0)
 )

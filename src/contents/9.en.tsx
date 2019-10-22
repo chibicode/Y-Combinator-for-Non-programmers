@@ -1366,7 +1366,7 @@ export default () => (
                   type: 'devil',
                   children: (
                     <>
-                      <P>Ugh…!</P>
+                      <P>Grr…!</P>
                     </>
                   )
                 }

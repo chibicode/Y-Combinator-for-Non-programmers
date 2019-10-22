@@ -843,9 +843,8 @@ export default () => (
                         <EmojiNumber number={1} /> <Emoji>➖</Emoji>{' '}
                         <EmojiNumber number={1} /> が計算できたからといって、
                         <Highlight>
-                          その弁当箱に
-                          <H args={{ name: 'minusOneEffect' }} />
-                          があるとはまだ言い切れない
+                          「<H args={{ name: 'minusOneFeature' }} />
+                          」を再現できたとはまだ言い切れない
                         </Highlight>
                         ぞ。
                       </P>
@@ -861,14 +860,21 @@ export default () => (
                 }
               ]}
             />
-            <EmojiSeparator
-              nodes={[
-                <EmojiNumber number={2} />,
-                <Emoji>➖</Emoji>,
-                <EmojiNumber number={1} />
-              ]}
-              description={<>これも計算できる？</>}
-            />
+            <R.Gqct>
+              <EmojiNumber number={2} /> に変換できる弁当箱と
+              <br />
+              <Emoji>👧🏻</Emoji> サヤちゃんの弁当箱を合体させ…
+            </R.Gqct>
+            <ExpressionRunnerSeparator />
+            <ExpressionRunnerCaptionOnly>
+              実行したときに、
+              <EmojiNumber number={1} size="mdlg" /> に変換できる
+              <br />
+              弁当箱になれば<HighlightBold>成功</HighlightBold>{' '}
+              <Emoji>🎉</Emoji>
+              <br />
+              それ以外なら<HighlightBold>失敗</HighlightBold> <Emoji>😭</Emoji>
+            </ExpressionRunnerCaptionOnly>
             <BubbleQuotes
               quotes={[
                 {
@@ -892,41 +898,32 @@ export default () => (
                           }}
                         />
                       </R.Mzys>
-                      <P>
-                        合体したものを実行して、
-                        <Highlight>
-                          <EmojiNumber number={1} />{' '}
-                          に変換できる弁当箱になればいい
-                        </Highlight>
-                        んだよね。
-                      </P>
+                      <P>合体させるとこうなるよ！</P>
                     </>
                   )
                 }
               ]}
             />
-            <R.Zwvj>
-              <EmojiNumber number={2} /> に変換できる弁当箱と、
-              <br />
-              <Emoji>👧🏻</Emoji> サヤちゃんの弁当箱を合体させ…
-            </R.Zwvj>
-            <ExpressionRunnerSeparator />
-            <ExpressionRunnerCaptionOnly>
-              実行したときに、
-              <EmojiNumber number={1} size="mdlg" /> に変換できる
-              <br />
-              弁当箱になれば<HighlightBold>成功</HighlightBold>{' '}
-              <Emoji>🎉</Emoji>
-              <br />
-              それ以外なら<HighlightBold>失敗</HighlightBold> <Emoji>😭</Emoji>
-            </ExpressionRunnerCaptionOnly>
+            <R.Dtle>
+              <EmojiNumber number={2} /> に変換できる弁当箱と合体
+            </R.Dtle>
             <BubbleQuotes
               quotes={[
+                {
+                  type: 'smile',
+                  children: (
+                    <>
+                      <P>
+                        よし、
+                        <H args={{ name: 'run' }} /> してみよう！
+                      </P>
+                    </>
+                  )
+                },
                 {
                   type: 'saya',
                   children: (
                     <>
-                      <P>まずは実行してみるね。</P>
                       <Ul>
                         <UlLi>
                           今回は、
@@ -973,6 +970,43 @@ export default () => (
                 args={{ name: 'canBeConvertedCaption', number: 1, letter: 'b' }}
               />
             </R.Joaq>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>ということは、サヤちゃんの弁当箱は…</P>
+                      <Ul>
+                        <UlLi>
+                          <Highlight>
+                            <EmojiNumber number={2} />{' '}
+                            に変換できる弁当箱と合体させて実行すると、{' '}
+                          </Highlight>
+                        </UlLi>
+                        <UlLi>
+                          <Highlight>
+                            <EmojiNumber number={1} /> に変換できる弁当箱になる
+                          </Highlight>
+                        </UlLi>
+                      </Ul>
+                      <P>ということですね。</P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Gqct>
+              <EmojiNumber number={2} /> に変換できる弁当箱と
+              <br />
+              <Emoji>👧🏻</Emoji> サヤちゃんの弁当箱を合体させ…
+            </R.Gqct>
+            <ExpressionRunnerSeparator />
+            <R.Jzwg>
+              実行すると、
+              <br />
+              <EmojiNumber number={1} /> に変換できる弁当箱になる
+            </R.Jzwg>
             <BubbleQuotes
               quotes={[
                 {

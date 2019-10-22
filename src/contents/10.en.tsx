@@ -1043,7 +1043,7 @@ export default () => (
                   type: 'devil',
                   children: (
                     <>
-                      <P>Ugh…</P>
+                      <P>Grr…</P>
                     </>
                   )
                 }
@@ -1303,7 +1303,7 @@ export default () => (
                   type: 'devil',
                   children: (
                     <>
-                      <P>Ugh…!</P>
+                      <P>Grr…!</P>
                     </>
                   )
                 },
