@@ -248,7 +248,6 @@
             "maxNestedFunctionDepth": 4
           },
           "type": "function",
-          "meta": "minusOneEffect",
           "maxNestedFunctionDepth": 5
         },
         "state": "default",

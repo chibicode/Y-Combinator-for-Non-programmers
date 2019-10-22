@@ -1134,8 +1134,7 @@ export const xwlj = initializeExpressionContainer([
     'questionFoodGrey',
     'questionFoodGrey',
     'questionFoodGrey',
-    'questionFoodGrey',
-    true
+    'questionFoodGrey'
   ),
   {
     shorthandNumberAfterConvert: 'blank'
