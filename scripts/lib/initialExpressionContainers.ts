@@ -2212,6 +2212,20 @@ export const psxr = initializeExpressionContainer({
   ]
 })
 
+export const mqoa = initializeExpressionContainer({
+  arg: 'C',
+  body: [
+    {
+      arg: 'D',
+      body: ['C', ['D', 'D']]
+    },
+    {
+      arg: 'D',
+      body: ['C', ['D', 'D']]
+    }
+  ]
+})
+
 export const silw = initializeExpressionContainer([
   [
     addParams('a', 'b', 'c', 'd'),

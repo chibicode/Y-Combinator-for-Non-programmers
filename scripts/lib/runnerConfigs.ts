@@ -2615,6 +2615,12 @@ export const rjho: ExpressionRunnerShorthandConfig = {
   showPriorities: true
 }
 
+export const beug: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.mqoa,
+  showPriorities: true
+}
+
 export const hvfb: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   initialExpressionContainer: initialExpressionContainers.silw,

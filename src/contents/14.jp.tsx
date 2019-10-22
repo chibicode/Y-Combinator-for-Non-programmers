@@ -5,12 +5,15 @@ import {
   HighlightBold,
   Highlight,
   Ul,
-  UlLi
+  UlLi,
+  Bold,
+  Hr
 } from 'src/components/ContentTags'
 import H from 'src/components/H'
 import BubbleQuotes from 'src/components/BubbleQuotes'
 import Emoji from 'src/components/Emoji'
 import EmojiNumber from 'src/components/EmojiNumber'
+import CardContent from 'src/components/CardContent'
 import ExpressionRunnerSeparator from 'src/components/ExpressionRunnerSeparator'
 import InlineBorder from 'src/components/InlineBorder'
 import CustomEmoji from 'src/components/CustomEmoji'
@@ -1363,35 +1366,13 @@ export default () => (
                   )
                 },
                 {
-                  type: 'dog',
-                  children: (
-                    <>
-                      <P>
-                        ちなみに、以下のような法則に当てはまる弁当箱は、どれも「
-                        <HighlightBold>Yコンビネータ</HighlightBold>
-                        」と呼べるんですよ。
-                      </P>
-                    </>
-                  )
-                }
-              ]}
-            />
-            <R.Rjho>
-              この法則に当てはまる弁当箱は全部
-              <br />「<HighlightBold>Yコンビネータ</HighlightBold>」
-            </R.Rjho>
-            <BubbleQuotes
-              quotes={[
-                {
                   type: 'saya',
                   children: (
                     <>
                       <P>
                         そうなんだ。でもすごいね。
                         <HighlightBold>
-                          こんなシンプルな、
-                          <Emoji>🅰️</Emoji> と <Emoji>🅱️</Emoji>{' '}
-                          の二種類の料理しかない弁当箱が、繰り返しを可能にするなんて…
+                          こんなシンプルな、二種類の料理しかない弁当箱が、繰り返しを可能にするなんて…
                         </HighlightBold>
                       </P>
                       <P>
@@ -1425,7 +1406,53 @@ export default () => (
               }
             />
           </>
-        )
+        ),
+        footer: {
+          content: (
+            <>
+              <CardContent
+                children={
+                  <>
+                    <Hr />
+                    <P>
+                      <HighlightBold>
+                        以下の法則に当てはまる弁当箱は、どれも 「
+                        <HighlightBold>Yコンビネータ</HighlightBold>
+                        」です。
+                      </HighlightBold>
+                    </P>
+                    <R.Rjho>
+                      この法則に当てはまる弁当箱は全部
+                      <br />「<HighlightBold>Yコンビネータ</HighlightBold>」
+                    </R.Rjho>
+                    <P>
+                      たとえば、以下のような弁当箱も「
+                      <HighlightBold>Yコンビネータ</HighlightBold>
+                      」です。
+                    </P>
+                    <R.Beug>
+                      これも「
+                      <HighlightBold>Yコンビネータ</HighlightBold>」
+                    </R.Beug>
+                  </>
+                }
+                preview={{
+                  text: <>続きを読む</>,
+                  content: (
+                    <>
+                      <P>
+                        <Bold>ちなみに:</Bold> 上の弁当箱以外にも、「
+                        <HighlightBold>Yコンビネータ</HighlightBold>
+                        」の弁当箱は存在します。気になる方は、↓の「続きを読む」を押してみてください。
+                        (読まなくても先に進めます！)
+                      </P>
+                    </>
+                  )
+                }}
+              />
+            </>
+          )
+        }
       },
       {
         title: <>繰り返しの機能を返してもらえる？</>,
