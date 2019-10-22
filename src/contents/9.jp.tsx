@@ -575,6 +575,7 @@ export default () => (
               ]}
             />
             <TwoColGrid
+              maxVariableSize="sm"
               left={
                 <>
                   <R.Oukl>
@@ -661,6 +662,7 @@ export default () => (
               ]}
             />
             <TwoColGrid
+              maxVariableSize="sm"
               left={
                 <>
                   <R.Lxhc></R.Lxhc>
@@ -697,6 +699,7 @@ export default () => (
               ]}
             />
             <TwoColGrid
+              maxVariableSize="sm"
               left={
                 <>
                   <R.Oukl>

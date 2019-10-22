@@ -1,9 +1,9 @@
 import React from 'react'
 
-export interface TwoColContext {
-  inTwoCol?: boolean
+export interface TwoColContextProps {
+  maxVariableSize?: 'sm' | 'md'
 }
 
-export const twoColContext: TwoColContext = {}
+export const twoColContext: TwoColContextProps = {}
 
-export default React.createContext<TwoColContext>(twoColContext)
+export default React.createContext<TwoColContextProps>(twoColContext)

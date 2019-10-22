@@ -168,10 +168,17 @@ const ExpressionRunnerPrecomputed = ({
     expressionContainers[currentIndex].numLeafNodes
   )
 
-  const { inTwoCol } = useContext(TwoColContext)
+  const { maxVariableSize } = useContext(TwoColContext)
 
-  if (inTwoCol && (variableSize === 'lg' || variableSize === 'md')) {
-    variableSize = 'sm'
+  if (maxVariableSize) {
+    if (maxVariableSize === 'md' && variableSize === 'lg') {
+      variableSize = 'md'
+    } else if (
+      maxVariableSize === 'sm' &&
+      (variableSize === 'lg' || variableSize === 'md')
+    ) {
+      variableSize = 'sm'
+    }
   }
 
   return (

@@ -2,22 +2,24 @@
 import { css, jsx } from '@emotion/core'
 import Flex from 'src/components/Flex'
 import { spaces } from 'src/lib/theme'
-import TwoColContext from 'src/components/TwoColContext'
+import TwoColContext, { TwoColContextProps } from 'src/components/TwoColContext'
 
 const TwoColGrid = ({
   left,
   right,
   noTopNegativeMargin,
-  noBottomNegativeMargin
+  noBottomNegativeMargin,
+  maxVariableSize
 }: {
   left: React.ReactNode
   right: React.ReactNode
   noTopNegativeMargin?: boolean
   noBottomNegativeMargin?: boolean
+  maxVariableSize: TwoColContextProps['maxVariableSize']
 }) => (
   <TwoColContext.Provider
     value={{
-      inTwoCol: true
+      maxVariableSize
     }}
   >
     <Flex
@@ -55,5 +57,9 @@ const TwoColGrid = ({
     </Flex>
   </TwoColContext.Provider>
 )
+
+TwoColGrid.defaultProps = {
+  maxVariableSize: 'md'
+}
 
 export default TwoColGrid
