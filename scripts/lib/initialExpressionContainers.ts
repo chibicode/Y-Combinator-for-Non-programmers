@@ -13,6 +13,10 @@ import {
   numberParamsHighlightNonNumber
 } from 'scripts/lib/churchEncodingParams'
 
+export const prxd = initializeExpressionContainer({
+  shorthandFunc: 'add'
+})
+
 export const nyhe = initializeExpressionContainer([
   {
     arg: 'a',
@@ -1382,11 +1386,11 @@ export const gbbo = initializeExpressionContainer([
       'd',
       'e',
       numberParams('g', 'h', 2),
-      [succParams('i', 'j', 'k'), 'f'],
+      [succParams('a', 'b', 'c'), 'f'],
       'f'
     )
   },
-  numberParams('l', 'm', 3)
+  numberParams('i', 'j', 3)
 ])
 
 export const nden = initializeExpressionContainer([
@@ -1399,15 +1403,15 @@ export const nden = initializeExpressionContainer([
       highlighted('d'),
       highlighted('e'),
       numberParams(highlighted('g'), highlighted('h'), 2),
-      [succParams(highlighted('i'), highlighted('j'), highlighted('k')), 'f'],
+      [succParams(highlighted('a'), highlighted('b'), highlighted('c')), 'f'],
       'f'
     )
   },
-  numberParams(highlighted('l'), highlighted('m'), 3)
+  numberParams(highlighted('i'), highlighted('j'), 3)
 ])
 
 export const loem = initializeExpressionContainer(
-  numberParamsHighlightNumber('l', 'm', 3)
+  numberParamsHighlightNumber('i', 'j', 3)
 )
 
 export const wvsk = initializeExpressionContainer([
@@ -1420,7 +1424,7 @@ export const wvsk = initializeExpressionContainer([
       'd',
       'e',
       numberParams('g', 'h', 2),
-      [succParams('i', 'j', 'k'), 'f'],
+      [succParams('a', 'b', 'c'), 'f'],
       'f'
     )
   },
@@ -1440,7 +1444,7 @@ export const nuux = initializeExpressionContainer([
       'd',
       'e',
       numberParams('g', 'h', 2),
-      [succParams('i', 'j', 'k'), 'f'],
+      [succParams('a', 'b', 'c'), 'f'],
       'f'
     )
   },
@@ -1462,7 +1466,7 @@ export const aqul = initializeExpressionContainer([
         shorthandNumber: 2,
         initialHighlight: true
       },
-      [succParams('i', 'j', 'k'), 'f'],
+      [succParams('a', 'b', 'c'), 'f'],
       'f'
     )
   },
@@ -1483,7 +1487,7 @@ export const snye = initializeExpressionContainer([
       {
         shorthandNumber: 2
       },
-      [succParams('i', 'j', 'k'), 'f'],
+      [succParams('a', 'b', 'c'), 'f'],
       'f'
     )
   },
@@ -1492,9 +1496,28 @@ export const snye = initializeExpressionContainer([
   }
 ])
 
-export const aqvq = initializeExpressionContainer(
-  succParams('i', 'j', 'k', true)
-)
+export const syvj = initializeExpressionContainer([
+  {
+    arg: 'f',
+    body: isZeroParams(
+      'a',
+      'b',
+      'c',
+      'd',
+      'e',
+      {
+        shorthandNumber: 2
+      },
+      [succParams(highlighted('a'), highlighted('b'), highlighted('c')), 'f'],
+      'f'
+    )
+  },
+  {
+    shorthandNumber: 3
+  }
+])
+
+export const aqvq = initializeExpressionContainer(succParams('a', 'b', 'c'))
 
 export const abrk = initializeExpressionContainer([
   {

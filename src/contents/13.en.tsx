@@ -257,7 +257,7 @@ export default () => (
                         <H
                           args={{
                             name: 'canBeConvertedCaption',
-                            letter: 'l',
+                            letter: 'i',
                             number: 3
                           }}
                         />
@@ -382,14 +382,18 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        This looks like a lunchbox that has{' '}
-                        <H args={{ name: 'plusOneEffect' }} />!
+                        This looks like <Emoji>👧🏻</Emoji> Saya’s lunchbox that
+                        can <HighlightBold>reproduce</HighlightBold>{' '}
+                        <H args={{ name: 'plusOneFeature' }} />!
                       </P>
                       <R.Vcqp>
-                        A lunchbox with
+                        <Emoji>👧🏻</Emoji> Saya’s lunchbox that can{' '}
+                        <HighlightBold>reproduce</HighlightBold>
                         <br />
-                        <H args={{ name: 'plusOneEffect' }} />
+                        <H args={{ name: 'plusOneFeature' }} />
                       </R.Vcqp>
+                      <ExpressionRunnerSeparator />
+                      <R.Qwzy></R.Qwzy>
                     </>
                   )
                 },
@@ -718,15 +722,15 @@ export default () => (
                         The final result is a lunchbox that can be converted to{' '}
                         <EmojiNumber number={4} />.
                       </P>
-                      <R.Gmgs>
+                      <R.Ifqp>
                         <H
                           args={{
                             name: 'canBeConvertedCaption',
-                            letter: 'j',
+                            letter: 'b',
                             number: 4
                           }}
                         />
-                      </R.Gmgs>
+                      </R.Ifqp>
                       <P>
                         If you{' '}
                         <H

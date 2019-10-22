@@ -67,6 +67,11 @@ export const aezk: ExpressionRunnerShorthandConfig = {
   showPriorities: true
 }
 
+export const qwzy: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.prxd
+}
+
 export const igrl: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   initialExpressionContainer: initialExpressionContainers.lqti,
@@ -2077,8 +2082,8 @@ export const ywpq: ExpressionRunnerShorthandConfig = {
   initialExpressionContainer: initialExpressionContainers.gbbo,
   showPriorities: true,
   highlightOverrides: {
-    l: 'highlighted',
-    m: 'highlighted'
+    i: 'highlighted',
+    j: 'highlighted'
   }
 }
 
@@ -2113,13 +2118,8 @@ export const wgby: ExpressionRunnerShorthandConfig = {
 
 export const poha: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
-  initialExpressionContainer: initialExpressionContainers.snye,
-  showPriorities: true,
-  highlightOverrides: {
-    i: 'highlighted',
-    j: 'highlighted',
-    k: 'highlighted'
-  }
+  initialExpressionContainer: initialExpressionContainers.syvj,
+  showPriorities: true
 }
 
 export const vcqp: ExpressionRunnerShorthandConfig = {
@@ -2208,13 +2208,6 @@ export const ynoy: ExpressionRunnerShorthandConfig = {
   skipActive: true,
   initialExpressionContainer: initialExpressionContainers.gbbo,
   showPriorities: true
-}
-
-export const gmgs: ExpressionRunnerShorthandConfig = {
-  runner: 'simple',
-  initialExpressionContainer: initialExpressionContainers.teba,
-  showPriorities: true,
-  bottomRightBadgeOverrides: { j: '🅰️', k: '🅱️' }
 }
 
 export const ykqf: ExpressionRunnerShorthandConfig = {

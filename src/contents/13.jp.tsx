@@ -245,7 +245,7 @@ export default () => (
                         <H
                           args={{
                             name: 'canBeConvertedCaption',
-                            letter: 'l',
+                            letter: 'i',
                             number: 3
                           }}
                         />
@@ -369,15 +369,19 @@ export default () => (
                       <P>
                         これはもしかして…
                         <Highlight>
-                          中級その3でやった、
-                          <H args={{ name: 'plusOneEffect' }} />
-                          がある弁当箱かな？
+                          中級その3で <Emoji>👧🏻</Emoji> サヤちゃんが考えた、
+                          <H args={{ name: 'plusOneFeature' }} />
+                          を再現できる弁当箱かな？
                         </Highlight>
                       </P>
                       <R.Vcqp>
-                        <H args={{ name: 'plusOneEffect' }} />
-                        がある弁当箱
+                        <Emoji>👧🏻</Emoji> サヤちゃんが考えた、
+                        <br />
+                        <H args={{ name: 'plusOneFeature' }} />
+                        を再現できる弁当箱
                       </R.Vcqp>
+                      <ExpressionRunnerSeparator />
+                      <R.Qwzy></R.Qwzy>
                     </>
                   )
                 },
@@ -706,15 +710,15 @@ export default () => (
                         </HighlightBold>
                         ですね。
                       </P>
-                      <R.Gmgs>
+                      <R.Ifqp>
                         <H
                           args={{
                             name: 'canBeConvertedCaption',
-                            letter: 'j',
+                            letter: 'b',
                             number: 4
                           }}
                         />
-                      </R.Gmgs>
+                      </R.Ifqp>
                       <P>
                         つまり、
                         <H

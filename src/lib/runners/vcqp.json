@@ -3,7 +3,7 @@
     {
       "expression": {
         "arg": {
-          "name": "i",
+          "name": "a",
           "highlightType": "default",
           "topLeftBadgeType": "none",
           "bottomRightBadgeType": "none",
@@ -16,7 +16,7 @@
         },
         "body": {
           "arg": {
-            "name": "j",
+            "name": "b",
             "highlightType": "default",
             "topLeftBadgeType": "none",
             "bottomRightBadgeType": "none",
@@ -29,7 +29,7 @@
           },
           "body": {
             "arg": {
-              "name": "k",
+              "name": "c",
               "highlightType": "default",
               "topLeftBadgeType": "none",
               "bottomRightBadgeType": "none",
@@ -43,7 +43,7 @@
             "body": {
               "arg": {
                 "arg": {
-                  "name": "k",
+                  "name": "c",
                   "highlightType": "default",
                   "topLeftBadgeType": "none",
                   "bottomRightBadgeType": "none",
@@ -59,7 +59,7 @@
                 },
                 "func": {
                   "arg": {
-                    "name": "j",
+                    "name": "b",
                     "highlightType": "default",
                     "topLeftBadgeType": "none",
                     "bottomRightBadgeType": "none",
@@ -73,7 +73,7 @@
                     "maxNestedFunctionDepth": 0
                   },
                   "func": {
-                    "name": "i",
+                    "name": "a",
                     "highlightType": "default",
                     "topLeftBadgeType": "none",
                     "bottomRightBadgeType": "none",
@@ -98,7 +98,7 @@
                 "maxNestedFunctionDepth": 0
               },
               "func": {
-                "name": "j",
+                "name": "b",
                 "highlightType": "default",
                 "topLeftBadgeType": "none",
                 "bottomRightBadgeType": "none",
@@ -123,7 +123,6 @@
           "maxNestedFunctionDepth": 2
         },
         "type": "function",
-        "meta": "plusOneEffect",
         "maxNestedFunctionDepth": 3
       },
       "numLeafNodes": 4,
