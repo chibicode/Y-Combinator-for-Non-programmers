@@ -11,7 +11,10 @@ import {
 } from 'src/components/ContentTags'
 import CustomEmoji from 'src/components/CustomEmoji'
 import BubbleQuotes from 'src/components/BubbleQuotes'
+import CardContent from 'src/components/CardContent'
 import EmojiNumber from 'src/components/EmojiNumber'
+import EmojiWithText from 'src/components/EmojiWithText'
+import EmojiForLetter from 'src/components/EmojiForLetter'
 import Emoji from 'src/components/Emoji'
 import H from 'src/components/H'
 import ExpressionRunnerSeparator from 'src/components/ExpressionRunnerSeparator'
@@ -1141,7 +1144,109 @@ export default () => (
               }
             />
           </>
-        )
+        ),
+        footer: {
+          content: (
+            <>
+              <CardContent
+                children={
+                  <>
+                    <Hr />
+                    <P>
+                      <Emoji>👧🏻</Emoji> サヤちゃんが考えた弁当箱以外にも、
+                      <HighlightBold>
+                        以下の法則に当てはまる弁当箱であれば、どれでも 「
+                        <H args={{ name: 'plusOneFeature' }} />
+                        」を再現できます。
+                      </HighlightBold>
+                    </P>
+                    <R.Blvt>
+                      この法則に当てはまる弁当箱であれば、
+                      <br />
+                      「<H args={{ name: 'plusOneFeature' }} />
+                      」を再現できる
+                    </R.Blvt>
+                    <P>
+                      <Emoji>👧🏻</Emoji> サヤちゃんが考えた弁当箱の場合、
+                    </P>
+                    <Ul>
+                      <UlLi>
+                        <Emoji>🅰️</Emoji> は <EmojiWithText letter="a" />
+                      </UlLi>
+                      <UlLi>
+                        <Emoji>🅱️</Emoji> は <EmojiWithText letter="b" />
+                      </UlLi>
+                      <UlLi>
+                        <CustomEmoji type="C" /> は <EmojiWithText letter="c" />
+                      </UlLi>
+                    </Ul>
+                    <P>でした。</P>
+                    <R.Oykb>
+                      <Emoji>🅰️</Emoji> は <EmojiForLetter letter="a" />、
+                      <Emoji>🅱️</Emoji> は <EmojiForLetter letter="b" />、
+                      <CustomEmoji type="C" /> は <EmojiForLetter letter="c" />
+                    </R.Oykb>
+                    <P>他にも、例えば</P>
+                    <Ul>
+                      <UlLi>
+                        <Emoji>🅰️</Emoji> は <EmojiWithText letter="h" />
+                      </UlLi>
+                      <UlLi>
+                        <Emoji>🅱️</Emoji> は <EmojiWithText letter="i" />
+                      </UlLi>
+                      <UlLi>
+                        <CustomEmoji type="C" /> は <EmojiWithText letter="j" />
+                      </UlLi>
+                    </Ul>
+                    <P>
+                      にしても、「
+                      <H args={{ name: 'plusOneFeature' }} />
+                      」を再現することができます。
+                    </P>
+                    <R.Dvpl>
+                      <Emoji>🅰️</Emoji> は <EmojiForLetter letter="h" />、
+                      <Emoji>🅱️</Emoji> は <EmojiForLetter letter="i" />、
+                      <CustomEmoji type="C" /> は <EmojiForLetter letter="j" />
+                      。<br />
+                      これも「
+                      <H args={{ name: 'plusOneFeature' }} />
+                      」を
+                      <br />
+                      再現できる！
+                    </R.Dvpl>
+                    <P>
+                      つまり、「
+                      <H args={{ name: 'plusOneFeature' }} />
+                      」を再現できる弁当箱は、<Emoji>👧🏻</Emoji>{' '}
+                      サヤちゃんが考えた弁当箱以外にもたくさんあるということですね！
+                    </P>
+                  </>
+                }
+                preview={{
+                  text: <>続きを読む</>,
+                  content: (
+                    <>
+                      <P>
+                        <Bold>ちなみに:</Bold> 「
+                        <H args={{ name: 'plusOneFeature' }} />
+                        」を再現できる弁当箱は、
+                        <HighlightBold>
+                          <Emoji>👧🏻</Emoji>{' '}
+                          サヤちゃんが考えた弁当箱以外にもあります。
+                        </HighlightBold>
+                        つまり、正解は他にもあるのです。
+                      </P>
+                      <P>
+                        気になる方は、↓の「続きを読む」を押してみてください。
+                        (読まなくても先に進めます！)
+                      </P>
+                    </>
+                  )
+                }}
+              />
+            </>
+          )
+        }
       },
       {
         type: 'challengeProblem',

@@ -1040,13 +1040,9 @@ export const ngth = initializeExpressionContainer([
   numberParams('f', 'g', 1)
 ])
 
-export const disc = initializeExpressionContainer(
-  succParams('a', 'b', 'c', true)
-)
+export const disc = initializeExpressionContainer(succParams('a', 'b', 'c'))
 
-export const blns = initializeExpressionContainer(
-  succParams('A', 'B', 'C', true)
-)
+export const blns = initializeExpressionContainer(succParams('A', 'B', 'C'))
 
 export const ojsm = initializeExpressionContainer(succParams('h', 'i', 'j'))
 export const zgad = initializeExpressionContainer(
