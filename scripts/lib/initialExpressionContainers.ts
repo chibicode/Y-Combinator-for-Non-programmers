@@ -1154,6 +1154,14 @@ export const udaf = initializeExpressionContainer([
   numberParams('g', 'h', 1)
 ])
 
+export const nhpm = initializeExpressionContainer([
+  predParams('a', 'b', 'c', 'd', 'e', 'f'),
+  {
+    shorthandNumberAfterConvert: 'number',
+    shorthandNumber: 1
+  }
+])
+
 export const csai = initializeExpressionContainer(
   numberParamsHighlightNumber('b', 'c', 0)
 )

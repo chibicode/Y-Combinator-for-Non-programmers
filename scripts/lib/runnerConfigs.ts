@@ -1849,6 +1849,22 @@ export const ylav: ExpressionRunnerShorthandConfig = {
   showPriorities: true
 }
 
+export const sldg: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.udaf,
+  showPriorities: true,
+  highlightOverrides: {
+    g: 'highlighted',
+    h: 'highlighted'
+  }
+}
+
+export const hiag: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.nhpm,
+  showPriorities: true
+}
+
 export const zwut: ExpressionRunnerShorthandConfig = {
   runner: 'runButtonOnly',
   initialExpressionContainer: initialExpressionContainers.udaf,
