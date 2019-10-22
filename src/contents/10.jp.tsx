@@ -1047,8 +1047,8 @@ export default () => (
       {
         title: (
           <>
-            <H args={{ name: 'minusOneEffect' }} />
-            がある法則
+            「<H args={{ name: 'minusOneFeature' }} />
+            」を再現できた！
           </>
         ),
         content: (
@@ -1062,9 +1062,9 @@ export default () => (
                       <P>まさか、こうも簡単に正解されるとは思わなかったが…</P>
                       <P>
                         <HighlightBold>
-                          サヤちゃんが考えた弁当箱は、
-                          <H args={{ name: 'minusOneEffect' }} />
-                          がある弁当箱だ！
+                          サヤちゃんが考えた弁当箱は、 「
+                          <H args={{ name: 'minusOneFeature' }} />」
+                          を再現できる弁当箱だ！
                         </HighlightBold>{' '}
                         <Emoji>🎉</Emoji>
                       </P>
@@ -1073,12 +1073,15 @@ export default () => (
                 }
               ]}
             />
-            <R.Rdae>
-              <Emoji>👧🏻</Emoji> サヤちゃんが考えた弁当箱には
+            <R.Ditw>
+              「<H args={{ name: 'minusOneFeature' }} />」 は…
+            </R.Ditw>
+            <ExpressionRunnerSeparator />
+            <R.Bgko>
+              <Emoji>👧🏻</Emoji> サヤちゃんが考えた弁当箱で、
               <br />
-              <H args={{ name: 'minusOneEffect' }} />
-              がある
-            </R.Rdae>
+              再現できる！
+            </R.Bgko>
             <BubbleQuotes
               quotes={[
                 {
@@ -1090,37 +1093,9 @@ export default () => (
                   )
                 },
                 {
-                  type: 'devil',
-                  children: (
-                    <>
-                      <P>
-                        ちなみに、サヤちゃんが考えた弁当箱以外にも、
-                        <HighlightBold>
-                          以下の法則に当てはまる弁当箱であれば、 どれでも
-                          <H args={{ name: 'minusOneEffect' }} />
-                          があるぞ。
-                        </HighlightBold>
-                      </P>
-                    </>
-                  )
-                }
-              ]}
-            />
-            <R.Cbmn>
-              この法則に当てはまる弁当箱であれば、
-              <br />
-              <H args={{ name: 'minusOneEffect' }} />
-              がある
-            </R.Cbmn>
-            <BubbleQuotes
-              quotes={[
-                {
                   type: 'thinking',
                   children: (
                     <>
-                      <P>
-                        たしかにサヤちゃんの弁当箱は、上の法則に当てはまっている…
-                      </P>
                       <P>
                         よくこんなの分かったなあ。サヤちゃんは天才なのかもしれない！
                       </P>
@@ -1141,100 +1116,19 @@ export default () => (
                 }
               ]}
             />
-          </>
-        )
-      },
-      {
-        type: 'summary',
-        title: (
-          <>
-            「<H args={{ name: 'minusOneFeature' }} />
-            」も再現できた！
-          </>
-        ),
-        content: (
-          <>
-            <P>
-              今回学んだことを一言でまとめると、
-              <HighlightBold>
-                計算箱の「
-                <H args={{ name: 'minusOneFeature' }} />
-                」も、弁当箱で「再現」できる
-              </HighlightBold>
-              、ということです。
-            </P>
             <EmojiSeparator
               nodes={[
                 <CustomEmoji type="mathBox" />,
                 <CustomEmoji type="minusOne" />,
                 <CustomEmoji type="doubleArrow" />,
                 <Emoji>🍱</Emoji>,
-                <CustomEmoji type="minusOnePink" />
+                <CustomEmoji type="minusOne" />
               ]}
               description={
                 <>
                   計算箱の「
                   <H args={{ name: 'minusOneFeature' }} />
                   」は、
-                  <br />
-                  弁当箱で「<HighlightBold>再現</HighlightBold>
-                  」することができる
-                </>
-              }
-            />
-            <P>
-              たとえば、以下のような <EmojiNumber number={3} />{' '}
-              <Emoji>➖</Emoji> <EmojiNumber number={1} />{' '}
-              を計算する計算箱をご覧ください。
-            </P>
-            <R.Xmqp>
-              <EmojiNumber number={3} /> <Emoji>➖</Emoji>{' '}
-              <EmojiNumber number={1} /> を計算できる
-            </R.Xmqp>
-            <P>
-              これを弁当箱で再現するには、
-              <Highlight>
-                <EmojiNumber number={3} /> に変換できる弁当箱と、
-                <H args={{ name: 'minusOneEffect' }} />
-                がある弁当箱を合体すればいい
-              </Highlight>
-              のです。
-            </P>
-            <R.Fhkl>
-              <EmojiNumber number={3} /> に変換できる弁当箱と
-              <br />
-              <H args={{ name: 'minusOneEffect' }} />
-              がある弁当箱を
-              <br />
-              合体すれば、
-              <EmojiNumber number={3} /> <CustomEmoji type="minusOne" />{' '}
-              の計算箱を再現できる
-            </R.Fhkl>
-            <ExpressionRunnerSeparator />
-            <R.Cawl></R.Cawl>
-            <Hr />
-            <P>
-              まとめると、
-              <Highlight>
-                計算箱の「
-                <H args={{ name: 'minusOneFeature' }} />
-                」も、弁当箱で再現することができる
-              </Highlight>
-              のです。このポイントさえ覚えていただければ、細かいことは分からなくても大丈夫です！
-            </P>
-            <EmojiSeparator
-              nodes={[
-                <CustomEmoji type="mathBox" />,
-                <CustomEmoji type="minusOne" />,
-                <CustomEmoji type="doubleArrow" />,
-                <Emoji>🍱</Emoji>,
-                <CustomEmoji type="minusOnePink" />
-              ]}
-              description={
-                <>
-                  計算箱の「
-                  <H args={{ name: 'minusOneFeature' }} />
-                  」も、
                   <br />
                   弁当箱で「<HighlightBold>再現</HighlightBold>
                   」することができる
@@ -1248,7 +1142,7 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        今回の「
+                        ちなみに、今回の「
                         <H args={{ name: 'minusOneFeature' }} />
                         」を再現する問題も、超難問です。だから、サヤちゃんのように答えを思いつけなくても大丈夫です。
                       </P>
