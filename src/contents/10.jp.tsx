@@ -361,6 +361,11 @@ export default () => (
                 // </P>
               ]}
             />
+            <R.Ditw>
+              <H args={{ name: 'minusOneFeature' }} />
+            </R.Ditw>
+            <ExpressionRunnerSeparator />
+            <R.Jfgb></R.Jfgb>
             <R.Pbop>
               それぞれの <CustomEmoji type="questionFoodGrey" /> には
               <br />
