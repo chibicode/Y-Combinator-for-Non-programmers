@@ -24,6 +24,7 @@ import BottomRightBadge from 'src/components/BottomRightBadge'
 import TwoColGrid from 'src/components/TwoColGrid'
 import * as R from 'src/components/Runners'
 import NextLessonButton from 'src/components/NextLessonButton'
+import { BlankNumberPlusOne } from 'src/contents/8.en'
 
 export const SpecialRule = () => (
   <>
@@ -48,7 +49,25 @@ export default () => (
   <EpisodeCardList
     cards={[
       {
-        title: <>Saya’s Question</>,
+        type: 'summary',
+        title: <>Quick review</>,
+        content: (
+          <>
+            <P>
+              <Bold>On the last page, we learned that:</Bold> By using{' '}
+              <Emoji>👧🏻</Emoji> Saya’s lunchbox, we can{' '}
+              <HighlightBold>reproduce</HighlightBold>{' '}
+              <H args={{ name: 'plusOneFeature' }} /> of a mathbox.
+            </P>
+            <BlankNumberPlusOne />
+            <P>
+              <Bold>That’s it for the quick review.</Bold> Let’s continue!
+            </P>
+          </>
+        )
+      },
+      {
+        title: <>Saya’s question</>,
         content: (
           <>
             <P>Looks like Saya noticed something strange.</P>

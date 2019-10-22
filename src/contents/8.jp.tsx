@@ -21,7 +21,7 @@ import * as R from 'src/components/Runners'
 import { Problem, StepOne, StepTwo, StepThree } from 'src/contents/7.jp'
 import NextLessonButton from 'src/components/NextLessonButton'
 
-const BlankNumberPlusOne = () => (
+export const BlankNumberPlusOne = () => (
   <>
     <R.Eweo>
       <Emoji>👧🏻</Emoji> サヤちゃんの弁当箱と、
@@ -830,9 +830,10 @@ export default () => (
         )
       },
       {
+        type: 'summary',
         title: (
           <>
-            計算箱の <CustomEmoji type="plusOne" /> と同じことができる？
+            計算箱の <CustomEmoji type="plusOne" /> と同じことができる
           </>
         ),
         content: (

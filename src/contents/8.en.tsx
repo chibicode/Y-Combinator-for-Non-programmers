@@ -24,6 +24,24 @@ import EmojiWithText from 'src/components/EmojiWithText'
 import NextLessonButton from 'src/components/NextLessonButton'
 import { StepOne, StepTwo, StepThree } from 'src/contents/7.en'
 
+export const BlankNumberPlusOne = () => (
+  <>
+    <R.Eweo>
+      <Emoji>👧🏻</Emoji> サヤちゃんの弁当箱と、
+      <br />
+      <CustomEmoji type="blankNumber" /> に変換できる弁当箱を
+      <br />
+      合体させて実行すると、
+    </R.Eweo>
+    <ExpressionRunnerSeparator />
+    <R.Jxvy>
+      <CustomEmoji type="blankNumber" /> <Emoji>➕</Emoji>{' '}
+      <EmojiNumber number={1} /> に<br />
+      変換できる弁当箱になる
+    </R.Jxvy>
+  </>
+)
+
 export default () => (
   <EpisodeCardList
     cards={[

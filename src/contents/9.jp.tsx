@@ -21,10 +21,27 @@ import BottomRightBadge from 'src/components/BottomRightBadge'
 import TwoColGrid from 'src/components/TwoColGrid'
 import * as R from 'src/components/Runners'
 import NextLessonButton from 'src/components/NextLessonButton'
+import { BlankNumberPlusOne } from 'src/contents/8.jp'
 
 export default () => (
   <EpisodeCardList
     cards={[
+      {
+        type: 'summary',
+        title: <>前回の復習</>,
+        content: (
+          <>
+            <P>
+              前回は、<Emoji>👧🏻</Emoji>{' '}
+              サヤちゃんの弁当箱を使うことで、計算箱の「
+              <H args={{ name: 'plusOneFeature' }} />
+              」を再現できることを学びました。
+            </P>
+            <BlankNumberPlusOne />
+            <P>それでは、話を進めましょう！</P>
+          </>
+        )
+      },
       {
         title: <>サヤちゃんの疑問</>,
         content: (
