@@ -290,6 +290,11 @@ const VariableEmoji = ({ expression }: VariableExpressionBoxProps) => {
             <CustomEmoji type="blankNumber" size="sm" />{' '}
             <Emoji size="sm">➕</Emoji> <EmojiNumber number={1} size="sm" />
           </>
+        ) : expression.name === 'blankNumberMinusOne' ? (
+          <>
+            <CustomEmoji type="blankNumber" size="sm" />{' '}
+            <Emoji size="sm">➖</Emoji> <EmojiNumber number={1} size="sm" />
+          </>
         ) : customEmojiToComponent[
             expression.name as keyof typeof customEmojiToComponent
           ] && expression.highlightType !== 'removed' ? (

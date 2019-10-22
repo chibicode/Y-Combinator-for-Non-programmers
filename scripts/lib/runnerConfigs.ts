@@ -1248,6 +1248,12 @@ export const ymtp: ExpressionRunnerShorthandConfig = {
   showPriorities: true
 }
 
+export const jfgb: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.hipa,
+  showPriorities: true
+}
+
 export const qrgc: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   initialExpressionContainer: initialExpressionContainers.cyhx,

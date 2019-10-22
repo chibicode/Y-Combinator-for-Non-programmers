@@ -1097,6 +1097,7 @@ export const henz = initializeExpressionContainer([
 ])
 
 export const tsms = initializeExpressionContainer('blankNumberPlusOne')
+export const hipa = initializeExpressionContainer('blankNumberMinusOne')
 
 export const kipz = initializeExpressionContainer([
   {

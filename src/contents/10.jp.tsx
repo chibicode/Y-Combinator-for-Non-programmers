@@ -322,8 +322,7 @@ export default () => (
       {
         title: (
           <>
-            <H args={{ name: 'minusOneEffect' }} />
-            がある弁当箱のヒント
+            「<H args={{ name: 'minusOneFeature' }} />」 を再現するヒント
           </>
         ),
         content: (
@@ -345,17 +344,21 @@ export default () => (
                   type: 'dog',
                   children: (
                     <>
-                      <P>わかりました。こちらの弁当箱をご覧ください。</P>
                       <P>
-                        前回と同じく、
-                        <Highlight>
-                          それぞれの <CustomEmoji type="questionFoodGrey" />{' '}
-                          には何らかの料理が入ります。
-                        </Highlight>
+                        わかりました。では、「
+                        <H args={{ name: 'minusOneFeature' }} />」
+                        を再現するヒントを教えましょう！
                       </P>
                     </>
                   )
                 }
+                //   <P>
+                //   前回と同じく、
+                //   <Highlight>
+                //     それぞれの <CustomEmoji type="questionFoodGrey" />{' '}
+                //     には何らかの料理が入ります。
+                //   </Highlight>
+                // </P>
               ]}
             />
             <R.Pbop>
