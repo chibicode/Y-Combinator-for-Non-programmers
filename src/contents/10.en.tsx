@@ -212,12 +212,11 @@ export default () => (
                 }
               ]}
             />
-            <R.Rchd>
-              Reproduce <EmojiNumber number={0} />{' '}
-              <CustomEmoji type="plusOne" /> …
-            </R.Rchd>
+            <R.Rviy>
+              Reproduce <H args={{ name: 'plusOneFeature' }} />…
+            </R.Rviy>
             <ExpressionRunnerSeparator />
-            <R.Plde>Using a lunchbox</R.Plde>
+            <R.Eweo>Using a lunchbox</R.Eweo>
             <BubbleQuotes
               quotes={[
                 {

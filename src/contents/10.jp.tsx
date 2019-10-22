@@ -199,12 +199,13 @@ export default () => (
                 }
               ]}
             />
-            <R.Rchd>
-              <EmojiNumber number={0} /> <CustomEmoji type="plusOne" />{' '}
-              の計算箱を…
-            </R.Rchd>
+            <R.Rviy>
+              計算箱の「
+              <H args={{ name: 'plusOneFeature' }} />
+              」を…
+            </R.Rviy>
             <ExpressionRunnerSeparator />
-            <R.Plde>弁当箱で再現した</R.Plde>
+            <R.Eweo>弁当箱で再現した</R.Eweo>
             <BubbleQuotes
               quotes={[
                 {
