@@ -2618,7 +2618,11 @@ export const rjho: ExpressionRunnerShorthandConfig = {
 export const beug: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   initialExpressionContainer: initialExpressionContainers.mqoa,
-  showPriorities: true
+  showPriorities: true,
+  bottomRightBadgeOverrides: {
+    c: '🅰️',
+    d: '🅱️'
+  }
 }
 
 export const hvfb: ExpressionRunnerShorthandConfig = {

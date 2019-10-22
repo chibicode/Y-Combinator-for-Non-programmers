@@ -16,6 +16,7 @@ import {
 } from 'src/components/ContentTags'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import EmojiNumber from 'src/components/EmojiNumber'
+import EmojiWithText from 'src/components/EmojiWithText'
 import ExpressionRunnerSeparator from 'src/components/ExpressionRunnerSeparator'
 import H from 'src/components/H'
 import Emoji from 'src/components/Emoji'
@@ -528,18 +529,24 @@ export default () => (
               もちろん、もっと複雑なラムダ計算の記述式もあります。たとえば、こちらをご覧ください。この記述式は、何を表しているか分かりますか？
             </P>
             <CenteredCode size="sm">λA.(λB.A(B B))(λB.A(B B))</CenteredCode>
+            <P>これを弁当箱にすると、次のようになります。</P>
+            <R.Rjho></R.Rjho>
             <P>
-              答えを言うと、上の記述式は
+              もし <Emoji>🅰️</Emoji> に<EmojiWithText letter="a" /> を、
+              <Emoji>🅱️</Emoji> に<EmojiWithText letter="b" />{' '}
+              を当てはめると、以下のようになります。つまり、先ほどのラムダ計算の記述式は
               <HighlightBold>Yコンビネータを表している</HighlightBold>
-              のです。つまり、下の弁当箱とまったく同じです。
+              のです。
             </P>
-            <R.Rjho>
-              上のラムダ計算の記述式は、
+            <CenteredCode size="sm">λA.(λB.A(B B))(λB.A(B B))</CenteredCode>
+            <ExpressionRunnerSeparator />
+            <R.Xjzx>
+              先ほどのラムダ計算の記述式は、
               <br />「<HighlightBold>Yコンビネータ</HighlightBold>
-              」の弁当箱と同じ
-            </R.Rjho>
+              」を表している
+            </R.Xjzx>
             <P>
-              つまり本稿では、
+              まとめると、本稿では、
               <HighlightBold>
                 実はみなさんにラムダ計算を教えていたのです。
               </HighlightBold>

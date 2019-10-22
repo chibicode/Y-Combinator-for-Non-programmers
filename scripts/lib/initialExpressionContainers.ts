@@ -2213,15 +2213,15 @@ export const psxr = initializeExpressionContainer({
 })
 
 export const mqoa = initializeExpressionContainer({
-  arg: 'C',
+  arg: 'c',
   body: [
     {
-      arg: 'D',
-      body: ['C', ['D', 'D']]
+      arg: 'd',
+      body: ['c', ['d', 'd']]
     },
     {
-      arg: 'D',
-      body: ['C', ['D', 'D']]
+      arg: 'd',
+      body: ['c', ['d', 'd']]
     }
   ]
 })
