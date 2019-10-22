@@ -1211,160 +1211,6 @@ export default () => (
         )
       },
       {
-        type: 'sideNote',
-        title: (
-          <>
-            余談: Yコンビネータや、コンピュータサイエンスと何の繋がりがあるの？
-          </>
-        ),
-        preview: {
-          content: (
-            <>
-              <P>
-                ここまで読んで、「パズルは何となく分かるけど、
-                <Highlight>
-                  これってYコンビネータや、コンピュータサイエンスと何の繋がりがあるの？
-                </Highlight>
-                」と思われた方も多いかもしれません。
-              </P>
-              <EmojiSeparator
-                emojis={['💻', '🤔', '💻']}
-                description={
-                  <>
-                    Yコンビネータやコンピュータサイエンスと
-                    <br />
-                    何の繋がりがあるの？
-                  </>
-                }
-              />
-              <P>
-                まず、Yコンビネータについては、次からはじまる上級編で解説します。少しネタバレになりますが、
-                <Highlight>
-                  Yコンビネータは「
-                  <Bold>とある特殊な弁当箱</Bold>
-                  」のことを指します。
-                </Highlight>
-                それがどういう意味かは、上級編のお楽しみです！
-              </P>
-              <EmojiSeparator
-                emojis={['❓', '🍱', '❓']}
-                description={
-                  <>
-                    Yコンビネータは、
-                    <br />「<Bold>とある特殊な弁当箱</Bold>
-                    」のことを指す
-                  </>
-                }
-              />
-              <P>
-                次に、コンピュータサイエンスとの繋がりは、
-                <Highlight>
-                  上級編をすべて終えたあとに詳しく説明します
-                </Highlight>
-                が、「<HighlightBold>いま気になる！</HighlightBold>
-                」という方は、↓の「コンピュータサイエンスとの繋がりについて読む」を押してください。「上級編が終わるまで待ちたい」という方は、読み飛ばしても大丈夫です。
-              </P>
-            </>
-          ),
-          text: <>コンピュータサイエンスとの繋がりについて読む</>
-        },
-        content: (
-          <>
-            <Hr />
-            <WhatIsComputer />
-            <Hr />
-            <P>
-              では、ここで <CustomEmoji type="mathBox" /> 計算箱や{' '}
-              <Emoji>🍱</Emoji> 弁当箱の話に戻りましょう。
-            </P>
-            <P>
-              <Bold>
-                <CustomEmoji type="mathBox" />{' '}
-                計算箱も計算機(コンピュータ)である:
-              </Bold>{' '}
-              今まで見てきた
-              <Highlight>
-                計算箱も、簡単な計算ができますから、いちおう「計算機
-                (コンピュータ)」ではあるのです
-              </Highlight>
-              。足し算と引き算だけしかできませんが…
-            </P>
-            <EmojiSeparator
-              nodes={[
-                <Emoji>➕</Emoji>,
-                <CustomEmoji type="mathBox" />,
-                <Emoji>➖</Emoji>
-              ]}
-              description={
-                <>
-                  <CustomEmoji type="mathBox" /> 計算箱も計算機(コンピュータ)
-                </>
-              }
-            />
-            <P>
-              <Bold>
-                <Emoji>🍱</Emoji> 弁当箱も計算機(コンピュータ)かもしれない:
-              </Bold>{' '}
-              では、弁当箱はどうでしょう？ここまで見てきたところ、弁当箱は工夫することで、「1を足す」ことと「1を引く」ことができます。ということは、
-              <Highlight>弁当箱も「計算機(コンピュータ)」</Highlight>
-              なのかもしれません。
-            </P>
-            <EmojiSeparator
-              emojis={['❓', '🍱', '❓']}
-              description={
-                <>
-                  <Emoji>🍱</Emoji> 弁当箱も
-                  <br />
-                  計算機(コンピュータ)かもしれない
-                </>
-              }
-            />
-            <P>
-              ここで重要なポイントなのですが、
-              <Highlight>
-                実はこの弁当箱、今から80年以上も前に、
-                <Bold>とある研究の研究対象になっていた</Bold>のです。
-              </Highlight>
-              それは計算機にまつわる研究で、後のコンピュータサイエンスの発展に大きな影響を与えました。
-            </P>
-            <EmojiSeparator
-              emojis={['🧑🏻', '🍱', '👨🏻‍🦳']}
-              description={
-                <>
-                  弁当箱は、今から80年以上も前に
-                  <br />
-                  計算機にまつわる研究の研究対象になっていた
-                </>
-              }
-            />
-            <P>
-              <Bold>
-                これ以上のことは、上級編をすべて終えたときにお伝えします。
-              </Bold>
-              とりあえず今のところは、
-            </P>
-            <Ul>
-              <UlLi>
-                <Highlight>「コンピュータ＝計算機」であり、</Highlight>
-              </UlLi>
-              <UlLi>
-                <Highlight>
-                  弁当箱は昔、計算機にまつわる研究の対象となっていて、
-                </Highlight>
-              </UlLi>
-              <UlLi>
-                <Highlight>
-                  その研究が、後のコンピュータサイエンスの発展に大きな影響を与えた
-                </Highlight>
-              </UlLi>
-            </Ul>
-            <P>
-              ということだけ頭に入れておいてください！<Emoji>😉</Emoji>
-            </P>
-          </>
-        )
-      },
-      {
         title: <>中級はここまで！</>,
         content: (
           <>
@@ -1501,6 +1347,170 @@ export default () => (
                 }
               ]}
             />
+            <NextLessonButton />
+          </>
+        )
+      },
+      {
+        type: 'sideNote',
+        title: (
+          <>
+            余談: Yコンビネータや、コンピュータサイエンスと何の繋がりがあるの？
+          </>
+        ),
+        preview: {
+          afterText: (
+            <>
+              <P>
+                「上級編が終わるまで説明はいいや」という方は、こちらのボタンから先に進んでください！
+              </P>
+              <NextLessonButton />
+            </>
+          ),
+          content: (
+            <>
+              <P>
+                ここまで読んで、「パズルは何となく分かるけど、
+                <Highlight>
+                  これってYコンビネータや、コンピュータサイエンスと何の繋がりがあるの？
+                </Highlight>
+                」と思われた方も多いかもしれません。
+              </P>
+              <EmojiSeparator
+                emojis={['💻', '🤔', '💻']}
+                description={
+                  <>
+                    Yコンビネータやコンピュータサイエンスと
+                    <br />
+                    何の繋がりがあるの？
+                  </>
+                }
+              />
+              <P>
+                まず、Yコンビネータについては、次からはじまる上級編で解説します。少しネタバレになりますが、
+                <Highlight>
+                  Yコンビネータは「
+                  <Bold>とある特殊な弁当箱</Bold>
+                  」のことを指します。
+                </Highlight>
+                それがどういう意味かは、上級編のお楽しみです！
+              </P>
+              <EmojiSeparator
+                emojis={['❓', '🍱', '❓']}
+                description={
+                  <>
+                    Yコンビネータは、
+                    <br />「<Bold>とある特殊な弁当箱</Bold>
+                    」のことを指す
+                  </>
+                }
+              />
+              <P>
+                次に、コンピュータサイエンスとの繋がりは、
+                <Highlight>
+                  上級編をすべて終えたあとに詳しく説明します
+                </Highlight>
+                が、「<HighlightBold>いま気になる！</HighlightBold>
+                」という方は、↓の「コンピュータサイエンスとの繋がりについて読む」を押してください。
+              </P>
+            </>
+          ),
+          text: <>コンピュータサイエンスとの繋がりについて読む</>
+        },
+        content: (
+          <>
+            <Hr />
+            <WhatIsComputer />
+            <Hr />
+            <P>
+              では、ここで <CustomEmoji type="mathBox" /> 計算箱や{' '}
+              <Emoji>🍱</Emoji> 弁当箱の話に戻りましょう。
+            </P>
+            <P>
+              <Bold>
+                <CustomEmoji type="mathBox" />{' '}
+                計算箱も計算機(コンピュータ)である:
+              </Bold>{' '}
+              今まで見てきた
+              <Highlight>
+                計算箱も、簡単な計算ができますから、いちおう「計算機
+                (コンピュータ)」ではあるのです
+              </Highlight>
+              。足し算と引き算だけしかできませんが…
+            </P>
+            <EmojiSeparator
+              nodes={[
+                <Emoji>➕</Emoji>,
+                <CustomEmoji type="mathBox" />,
+                <Emoji>➖</Emoji>
+              ]}
+              description={
+                <>
+                  <CustomEmoji type="mathBox" /> 計算箱も計算機(コンピュータ)
+                </>
+              }
+            />
+            <P>
+              <Bold>
+                <Emoji>🍱</Emoji> 弁当箱も計算機(コンピュータ)かもしれない:
+              </Bold>{' '}
+              では、弁当箱はどうでしょう？ここまで見てきたところ、弁当箱は工夫することで、「1を足す」ことと「1を引く」ことができます。ということは、
+              <Highlight>弁当箱も「計算機(コンピュータ)」</Highlight>
+              なのかもしれません。
+            </P>
+            <EmojiSeparator
+              emojis={['❓', '🍱', '❓']}
+              description={
+                <>
+                  <Emoji>🍱</Emoji> 弁当箱も
+                  <br />
+                  計算機(コンピュータ)かもしれない
+                </>
+              }
+            />
+            <P>
+              ここで重要なポイントなのですが、
+              <Highlight>
+                実はこの弁当箱、今から80年以上も前に、
+                <Bold>とある研究の研究対象になっていた</Bold>のです。
+              </Highlight>
+              それは計算機にまつわる研究で、後のコンピュータサイエンスの発展に大きな影響を与えました。
+            </P>
+            <EmojiSeparator
+              emojis={['🧑🏻', '🍱', '👨🏻‍🦳']}
+              description={
+                <>
+                  弁当箱は、今から80年以上も前に
+                  <br />
+                  計算機にまつわる研究の研究対象になっていた
+                </>
+              }
+            />
+            <P>
+              <Bold>
+                これ以上のことは、上級編をすべて終えたときにお伝えします。
+              </Bold>
+              とりあえず今のところは、
+            </P>
+            <Ul>
+              <UlLi>
+                <Highlight>「コンピュータ＝計算機」であり、</Highlight>
+              </UlLi>
+              <UlLi>
+                <Highlight>
+                  弁当箱は昔、計算機にまつわる研究の対象となっていて、
+                </Highlight>
+              </UlLi>
+              <UlLi>
+                <Highlight>
+                  その研究が、後のコンピュータサイエンスの発展に大きな影響を与えた
+                </Highlight>
+              </UlLi>
+            </Ul>
+            <P>
+              ということだけ頭に入れておいてください！<Emoji>😉</Emoji>{' '}
+              では、先に進みましょう！
+            </P>
             <NextLessonButton />
           </>
         )

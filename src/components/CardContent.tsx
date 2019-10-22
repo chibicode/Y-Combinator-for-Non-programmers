@@ -7,6 +7,7 @@ export interface CardContentProps {
   preview?: {
     content: React.ReactNode
     text: React.ReactNode
+    afterText?: React.ReactNode
   }
 }
 
@@ -28,6 +29,7 @@ const CardContent = ({ preview, children }: CardContentProps) => {
               {preview.text}
             </LinkButton>
           </P>
+          {preview.afterText}
         </>
       )}
       {!previewOnly && children}

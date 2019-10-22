@@ -1277,167 +1277,6 @@ export default () => (
         )
       },
       {
-        type: 'sideNote',
-        title: (
-          <>
-            Side Note: Does this have anything to do with computer science or Y
-            combinator?
-          </>
-        ),
-        preview: {
-          content: (
-            <>
-              <P>
-                <Bold>You might be wondering:</Bold>{' '}
-                <Highlight>
-                  “I understand the puzzles, but does it have anything to do
-                  with <Bold>Y combinator</Bold> or{' '}
-                  <Bold>computer science</Bold>?”
-                </Highlight>
-              </P>
-              <EmojiSeparator
-                emojis={['💻', '🤔', '💻']}
-                description={
-                  <>
-                    Does it have anything to do with
-                    <br />
-                    <Bold>Y combinator</Bold> or <Bold>computer science</Bold>?
-                  </>
-                }
-              />
-              <P>
-                <Bold>First, about Y combinator:</Bold> You’ll learn about Y
-                combinator on the advanced levels, which will start from the
-                next page.
-              </P>
-              <P>
-                <Bold>Spoiler:</Bold>{' '}
-                <Highlight>
-                  Y combinator is actually a special kind of a lunchbox.
-                </Highlight>{' '}
-                You’ll soon find out what that means!
-              </P>
-              <EmojiSeparator
-                emojis={['❓', '🍱', '❓']}
-                description={
-                  <>
-                    <Bold>Y combinator</Bold> is actually
-                    <br />
-                    <Italic>a special kind of a lunchbox</Italic>
-                  </>
-                }
-              />
-              <P>
-                <Bold>Next, about computer science:</Bold> You’ll learn about
-                the relationship between the lunchboxes and computer science
-                after we’re done with the advanced levels.
-              </P>
-              <P>
-                However,{' '}
-                <Highlight>
-                  if you want to know more now, press “Continue reading about
-                  computer science” below.
-                </Highlight>{' '}
-                Otherwise, you should keep reading instead.
-              </P>
-            </>
-          ),
-          text: <>Continue reading about computer science</>
-        },
-        content: (
-          <>
-            <Hr />
-            <WhatIsComputer />
-            <Hr />
-            <P>
-              Now, let’s talk about <CustomEmoji type="mathBox" /> mathboxes and{' '}
-              <Emoji>🍱</Emoji> lunchboxes.
-            </P>
-            <P>
-              <Bold>
-                <CustomEmoji type="mathBox" /> Mathboxes are also computers:
-              </Bold>{' '}
-              Mathboxes can compute basic additions and subtractions. So, we can
-              say that they’re computers, too.
-            </P>
-            <EmojiSeparator
-              nodes={[
-                <Emoji>➕</Emoji>,
-                <CustomEmoji type="mathBox" />,
-                <Emoji>➖</Emoji>
-              ]}
-              description={
-                <>
-                  <CustomEmoji type="mathBox" /> Mathboxes are also computers
-                </>
-              }
-            />
-            <P>
-              <Bold>
-                <Emoji>🍱</Emoji> Lunchboxes might be computers too?
-              </Bold>{' '}
-              How about lunchboxes? It seems so far that lunchboxes can add and
-              subtract 1.{' '}
-              <Highlight>
-                That means lunchboxes might be computers, too.
-              </Highlight>
-            </P>
-            <EmojiSeparator
-              emojis={['❓', '🍱', '❓']}
-              description={
-                <>
-                  <Emoji>🍱</Emoji> Lunchboxes might be computers too?
-                </>
-              }
-            />
-            <P>
-              <Bold>In fact:</Bold> We’ll soon learn that lunchboxes are indeed
-              computers. Furthermore,{' '}
-              <Highlight>
-                Lunchboxes were actually a topic of computer science research
-                more than 80 years ago.
-              </Highlight>{' '}
-              This research was influential and became a foundation of modern
-              computer science.
-            </P>
-            <EmojiSeparator
-              emojis={['🧑🏻', '🍱', '👨🏻‍🦳']}
-              description={
-                <>
-                  Lunchboxes were a topic of
-                  <br />
-                  computer science research
-                  <br />
-                  more than 80 years ago.
-                </>
-              }
-            />
-            <P>
-              <Bold>This is all we can say now.</Bold> We’ll talk more in detail
-              after we’re done with the advanced levels. For now, just keep the
-              following in mind <Emoji>😉</Emoji>:
-            </P>
-            <Ul>
-              <UlLi>
-                <Highlight>A computer is a computer device.</Highlight>
-              </UlLi>
-              <UlLi>
-                <Highlight>
-                  Lunchboxes were a topic of computer science research more than
-                  80 years ago.
-                </Highlight>
-              </UlLi>
-              <UlLi>
-                <Highlight>
-                  That research was influential and became a foundation of
-                  modern computer science.
-                </Highlight>
-              </UlLi>
-            </Ul>
-          </>
-        )
-      },
-      {
         title: <>That’s it for the intermediate levels!</>,
         content: (
           <>
@@ -1606,6 +1445,177 @@ export default () => (
                 }
               ]}
             />
+            <NextLessonButton />
+          </>
+        )
+      },
+      {
+        type: 'sideNote',
+        title: (
+          <>
+            Side Note: Does this have anything to do with computer science or Y
+            combinator?
+          </>
+        ),
+        preview: {
+          content: (
+            <>
+              <P>
+                <Bold>You might be wondering:</Bold>{' '}
+                <Highlight>
+                  “I understand the puzzles, but does it have anything to do
+                  with <Bold>Y combinator</Bold> or{' '}
+                  <Bold>computer science</Bold>?”
+                </Highlight>
+              </P>
+              <EmojiSeparator
+                emojis={['💻', '🤔', '💻']}
+                description={
+                  <>
+                    Does it have anything to do with
+                    <br />
+                    <Bold>Y combinator</Bold> or <Bold>computer science</Bold>?
+                  </>
+                }
+              />
+              <P>
+                <Bold>First, about Y combinator:</Bold> You’ll learn about Y
+                combinator on the advanced levels, which will start from the
+                next page.
+              </P>
+              <P>
+                <Bold>Spoiler:</Bold>{' '}
+                <Highlight>
+                  Y combinator is actually a special kind of a lunchbox.
+                </Highlight>{' '}
+                You’ll soon find out what that means!
+              </P>
+              <EmojiSeparator
+                emojis={['❓', '🍱', '❓']}
+                description={
+                  <>
+                    <Bold>Y combinator</Bold> is actually
+                    <br />
+                    <Italic>a special kind of a lunchbox</Italic>
+                  </>
+                }
+              />
+              <P>
+                <Bold>Next, about computer science:</Bold> You’ll learn about
+                the relationship between the lunchboxes and computer science
+                after we’re done with the advanced levels.
+              </P>
+              <P>
+                However,{' '}
+                <Highlight>
+                  if you want to know more now, press “Continue reading about
+                  computer science” below.
+                </Highlight>{' '}
+              </P>
+            </>
+          ),
+          text: <>Continue reading about computer science</>,
+          afterText: (
+            <>
+              <P>
+                Otherwise, you should keep reading instead by pressing this
+                button:
+              </P>
+              <NextLessonButton />
+            </>
+          )
+        },
+        content: (
+          <>
+            <Hr />
+            <WhatIsComputer />
+            <Hr />
+            <P>
+              Now, let’s talk about <CustomEmoji type="mathBox" /> mathboxes and{' '}
+              <Emoji>🍱</Emoji> lunchboxes.
+            </P>
+            <P>
+              <Bold>
+                <CustomEmoji type="mathBox" /> Mathboxes are also computers:
+              </Bold>{' '}
+              Mathboxes can compute basic additions and subtractions. So, we can
+              say that they’re computers, too.
+            </P>
+            <EmojiSeparator
+              nodes={[
+                <Emoji>➕</Emoji>,
+                <CustomEmoji type="mathBox" />,
+                <Emoji>➖</Emoji>
+              ]}
+              description={
+                <>
+                  <CustomEmoji type="mathBox" /> Mathboxes are also computers
+                </>
+              }
+            />
+            <P>
+              <Bold>
+                <Emoji>🍱</Emoji> Lunchboxes might be computers too?
+              </Bold>{' '}
+              How about lunchboxes? It seems so far that lunchboxes can add and
+              subtract 1.{' '}
+              <Highlight>
+                That means lunchboxes might be computers, too.
+              </Highlight>
+            </P>
+            <EmojiSeparator
+              emojis={['❓', '🍱', '❓']}
+              description={
+                <>
+                  <Emoji>🍱</Emoji> Lunchboxes might be computers too?
+                </>
+              }
+            />
+            <P>
+              <Bold>In fact:</Bold> We’ll soon learn that lunchboxes are indeed
+              computers. Furthermore,{' '}
+              <Highlight>
+                Lunchboxes were actually a topic of computer science research
+                more than 80 years ago.
+              </Highlight>{' '}
+              This research was influential and became a foundation of modern
+              computer science.
+            </P>
+            <EmojiSeparator
+              emojis={['🧑🏻', '🍱', '👨🏻‍🦳']}
+              description={
+                <>
+                  Lunchboxes were a topic of
+                  <br />
+                  computer science research
+                  <br />
+                  more than 80 years ago.
+                </>
+              }
+            />
+            <P>
+              <Bold>This is all we can say now.</Bold> We’ll talk more in detail
+              after we’re done with the advanced levels. For now, just keep the
+              following in mind <Emoji>😉</Emoji>:
+            </P>
+            <Ul>
+              <UlLi>
+                <Highlight>A computer is a computer device.</Highlight>
+              </UlLi>
+              <UlLi>
+                <Highlight>
+                  Lunchboxes were a topic of computer science research more than
+                  80 years ago.
+                </Highlight>
+              </UlLi>
+              <UlLi>
+                <Highlight>
+                  That research was influential and became a foundation of
+                  modern computer science.
+                </Highlight>
+              </UlLi>
+            </Ul>
+            <P>Ok, let’s go to the advanced levels!</P>
             <NextLessonButton />
           </>
         )
