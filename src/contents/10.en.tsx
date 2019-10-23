@@ -1137,25 +1137,6 @@ export default () => (
               ]}
               description={
                 <>
-                  計算箱の「
-                  <H args={{ name: 'minusOneFeature' }} />
-                  」は、
-                  <br />
-                  弁当箱で「<HighlightBold>再現</HighlightBold>
-                  」することができる
-                </>
-              }
-            />
-            <EmojiSeparator
-              nodes={[
-                <CustomEmoji type="mathBox" />,
-                <CustomEmoji type="minusOne" />,
-                <CustomEmoji type="doubleArrow" />,
-                <Emoji>🍱</Emoji>,
-                <CustomEmoji type="minusOne" />
-              ]}
-              description={
-                <>
                   A mathbox that uses <H args={{ name: 'minusOneFeature' }} />
                   <br />
                   can be <HighlightBold>“reproduced”</HighlightBold> using a
@@ -1163,11 +1144,6 @@ export default () => (
                 </>
               }
             />
-            <R.Cbmn>
-              Any lunchboxes that have the following pattern
-              <br />
-              have <H args={{ name: 'minusOneEffect' }} />
-            </R.Cbmn>
             <BubbleQuotes
               quotes={[
                 {
