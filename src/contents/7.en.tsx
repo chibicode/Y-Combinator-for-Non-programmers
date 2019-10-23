@@ -521,7 +521,7 @@ export default () => (
                   children: (
                     <>
                       <P>Hmm… I don’t know if I understood the problem.</P>
-                      <P>And I have no clue how to solve it!</P>
+                      <P>And I have no idea how to solve it!</P>
                     </>
                   )
                 },

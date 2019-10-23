@@ -378,7 +378,7 @@ export default () => (
                       <P>
                         <Highlight>
                           <Emoji>👧🏻</Emoji>{' '}
-                          サヤちゃんの弁当箱を使って実行すると、
+                          サヤちゃんの弁当箱と合体させて実行すると、
                           <EmojiNumber number={1} />{' '}
                           に変換できる弁当箱になります。
                         </Highlight>
@@ -389,7 +389,7 @@ export default () => (
               ]}
             />
             <R.Cpim>
-              <Emoji>👧🏻</Emoji> サヤちゃんの弁当箱を使って実行すると…
+              <Emoji>👧🏻</Emoji> サヤちゃんの弁当箱と合体させて実行すると…
             </R.Cpim>
             <ExpressionRunnerSeparator />
             <R.Jzwg>
@@ -443,8 +443,7 @@ export default () => (
       {
         title: (
           <>
-            <EmojiNumber number={1} /> や <EmojiNumber number={2} />{' '}
-            と組み合わせた場合は？
+            <EmojiNumber number={1} /> と組み合わせた場合は？
           </>
         ),
         content: (
@@ -837,7 +836,9 @@ export default () => (
         type: 'summary',
         title: (
           <>
-            計算箱の <CustomEmoji type="plusOne" /> と同じことができる
+            計算箱の「
+            <H args={{ name: 'plusOneFeature' }} />
+            」を「再現」できる
           </>
         ),
         content: (

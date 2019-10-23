@@ -28,17 +28,19 @@ import CardContent from 'src/components/CardContent'
 export const BlankNumberPlusOne = () => (
   <>
     <R.Eweo>
-      <Emoji>👧🏻</Emoji> サヤちゃんの弁当箱と、
+      Combine <Emoji>👧🏻</Emoji> Saya’s lunchbox
       <br />
-      <CustomEmoji type="blankNumber" /> に変換できる弁当箱を
-      <br />
-      合体させて実行すると、
+      with a lunchbox that can be converted to{' '}
+      <CustomEmoji type="blankNumber" />
     </R.Eweo>
     <ExpressionRunnerSeparator />
     <R.Jxvy>
-      <CustomEmoji type="blankNumber" /> <Emoji>➕</Emoji>{' '}
-      <EmojiNumber number={1} /> に<br />
-      変換できる弁当箱になる
+      If you <H args={{ name: 'run' }} /> it,
+      <br />
+      it becomes a lunchobox
+      <br />
+      that can be converted to <CustomEmoji type="blankNumber" />{' '}
+      <Emoji>➕</Emoji> <EmojiNumber number={1} />
     </R.Jxvy>
   </>
 )
@@ -64,7 +66,7 @@ export default () => (
                   type: 'crying',
                   children: (
                     <>
-                      <P>Hmm… I have no clue!</P>
+                      <P>Hmm… I have no idea!</P>
                     </>
                   )
                 },
@@ -206,10 +208,17 @@ export default () => (
                 }
               ]}
             />
-            <R.Plde>We’ll <H args={{ name: 'run' }} /> this lunchbox, and…</R.Plde>
+            <R.Plde>
+              We’ll <H args={{ name: 'run' }} /> this lunchbox, and…
+            </R.Plde>
             <ExpressionRunnerSeparator />
             <ExpressionRunnerCaptionOnly>
-              If it becomes a lunchbox<br />that can be converted to <EmojiNumber number={1} size="mdlg" />, <Highlight>success</Highlight>. <Emoji>🎉</Emoji>
+              If it becomes a lunchbox
+              <br />
+              that can be converted to <EmojiNumber
+                number={1}
+                size="mdlg"
+              />, <Highlight>success</Highlight>. <Emoji>🎉</Emoji>
               <br />
               Otherwise, <Highlight>failure</Highlight> <Emoji>😭</Emoji>
             </ExpressionRunnerCaptionOnly>
@@ -220,7 +229,7 @@ export default () => (
                   children: (
                     <>
                       <P>
-                      Let’s first{' '}
+                        Let’s first{' '}
                         <H args={{ name: 'run', lowerCase: true }} /> it!
                       </P>
                     </>
@@ -263,9 +272,7 @@ export default () => (
                 }
               ]}
             />
-            <R.Rhcv>
-              Final Result
-            </R.Rhcv>
+            <R.Rhcv>Final Result</R.Rhcv>
             <BubbleQuotes
               quotes={[
                 {
@@ -281,7 +288,7 @@ export default () => (
                   children: (
                     <>
                       <P>
-                      The resulting lunchbox can be converted to{' '}
+                        The resulting lunchbox can be converted to{' '}
                         <EmojiNumber number={1} />!
                       </P>
                     </>
@@ -341,7 +348,9 @@ export default () => (
                   type: 'happy',
                   children: (
                     <>
-                      <P>とにかく、これで計算箱を返してもらえるぞ！</P>
+                      <P>
+                        Anyway, thanks to Saya, we’ll get our mathboxes back!
+                      </P>
                     </>
                   )
                 },
@@ -350,11 +359,12 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        そうですね。しかしその前に、
-                        <Highlight>
-                          ひとつだけ掘り下げたいことがあります
-                        </Highlight>
-                        。少しの間、辛抱してお聞きください！
+                        <Bold>Yes, but:</Bold> Before we move on,{' '}
+                        <Highlight>let’s dive in a little deeper.</Highlight>
+                      </P>
+                      <P>
+                        We’ll spend a bit of time to talk about some important
+                        stuff.
                       </P>
                     </>
                   )
@@ -363,7 +373,7 @@ export default () => (
                   type: 'thinking',
                   children: (
                     <>
-                      <P>掘り下げたいことだって？</P>
+                      <P>Hmm…?</P>
                     </>
                   )
                 },
@@ -372,9 +382,10 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        はい。まず、ここまでをまとめると、下のように{' '}
+                        <Bold>First:</Bold> Here’s what we’ve learned so far.{' '}
                         <Highlight>
-                          <EmojiNumber number={0} /> に変換できる弁当箱は、
+                          Here’s a lunchbox that can be converted to{' '}
+                          <EmojiNumber number={0} />:
                         </Highlight>
                       </P>
                       <R.Hkbs>
@@ -388,10 +399,9 @@ export default () => (
                       </R.Hkbs>
                       <P>
                         <Highlight>
-                          <Emoji>👧🏻</Emoji>{' '}
-                          サヤちゃんの弁当箱を使って実行すると、
-                          <EmojiNumber number={1} />{' '}
-                          に変換できる弁当箱になります。
+                          If we combine it with <Emoji>👧🏻</Emoji> Saya’s
+                          lunchbox, it will become a lunchbox that can be
+                          converted to <EmojiNumber number={1} />.
                         </Highlight>
                       </P>
                     </>
@@ -400,11 +410,15 @@ export default () => (
               ]}
             />
             <R.Cpim>
-              <Emoji>👧🏻</Emoji> サヤちゃんの弁当箱を使って実行すると…
+              If we combined it with
+              <br />
+              <Emoji>👧🏻</Emoji> Saya’s lunchbox…
             </R.Cpim>
             <ExpressionRunnerSeparator />
             <R.Jzwg>
-              <EmojiNumber number={1} /> に変換できる弁当箱になる
+              It will become a lunchbox
+              <br />
+              that can be converted to <EmojiNumber number={1} />
             </R.Jzwg>
             <BubbleQuotes
               quotes={[
@@ -413,22 +427,22 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        つまり、<Emoji>👧🏻</Emoji>{' '}
-                        サヤちゃんの弁当箱を使うことで、
+                        So, by using <Emoji>👧🏻</Emoji> Saya’s lunchbox,
                       </P>
                       <Ul>
                         <UlLi>
-                          <HighlightBold>
-                            <EmojiNumber number={0} /> に変換できる弁当箱が、
-                          </HighlightBold>
+                          <Highlight>
+                            A lunchbox that can be converted to{' '}
+                            <EmojiNumber number={0} />…
+                          </Highlight>
                         </UlLi>
                         <UlLi>
-                          <HighlightBold>
-                            <EmojiNumber number={1} /> に変換できる弁当箱になる
-                          </HighlightBold>
+                          <Highlight>
+                            Becomes a lunchbox that can be converted to{' '}
+                            <EmojiNumber number={1} />.
+                          </Highlight>
                         </UlLi>
                       </Ul>
-                      <P>というわけですね。</P>
                     </>
                   )
                 }
@@ -442,9 +456,11 @@ export default () => (
               ]}
               description={
                 <>
-                  <EmojiNumber number={0} /> に変換できる弁当箱が、
+                  A lunchbox that can be converted to <EmojiNumber number={0} />
                   <br />
-                  <EmojiNumber number={1} /> に変換できる弁当箱になる
+                  becomes a lunchbox
+                  <br />
+                  that can be converted to <EmojiNumber number={1} />
                 </>
               }
             />
@@ -454,8 +470,7 @@ export default () => (
       {
         title: (
           <>
-            <EmojiNumber number={1} /> や <EmojiNumber number={2} />{' '}
-            と組み合わせた場合は？
+            What if we combined it with <EmojiNumber number={1} />?
           </>
         ),
         content: (
@@ -466,14 +481,17 @@ export default () => (
                   type: 'dog',
                   children: (
                     <>
-                      <P>では、ここで疑問なのですが… </P>
+                      <P>
+                        <Bold>Now, here’s a question:</Bold>{' '}
+                        <Highlight>
+                          Suppose that we combine <Emoji>👧🏻</Emoji> Saya’s
+                          lunchbox with a lunchbox that can be converted to{' '}
+                          <EmojiNumber number={1} />.
+                        </Highlight>
+                      </P>
                       <P>
                         <Highlight>
-                          <Emoji>👧🏻</Emoji> サヤちゃんの弁当箱を、
-                          <EmojiNumber number={1} />{' '}
-                          に変換できる弁当箱と組み合わせて
-                          <H args={{ name: 'run' }} />{' '}
-                          すると、結果はどうなるでしょう？
+                          What happens when you <H args={{ name: 'run' }} /> it?
                         </Highlight>
                       </P>
                     </>
@@ -482,13 +500,13 @@ export default () => (
               ]}
             />
             <R.Rqer>
-              <EmojiNumber number={1} /> に変換できる弁当箱と、
+              Combine <Emoji>👧🏻</Emoji> Saya’s lunchbox with
               <br />
-              <Emoji>👧🏻</Emoji> サヤちゃんの弁当箱を組み合わせて…
+              a lunchbox that can be converted to <EmojiNumber number={1} />
             </R.Rqer>
             <ExpressionRunnerSeparator />
             <ExpressionRunnerCaptionOnly>
-              <H args={{ name: 'run' }} /> するとどうなる？
+              What happens when you <H args={{ name: 'run' }} /> it?
             </ExpressionRunnerCaptionOnly>
             <BubbleQuotes
               quotes={[
@@ -496,14 +514,11 @@ export default () => (
                   type: 'thinking',
                   children: (
                     <>
-                      <P>うーん、分からないなあ…</P>
+                      <P>Hmm… I have no idea…</P>
                       <P>
-                        先ほどは、
-                        <EmojiNumber number={0} /> が <EmojiNumber number={1} />{' '}
-                        になったけど、
-                        <Highlight>
-                          <EmojiNumber number={1} /> はどうなるだろう？
-                        </Highlight>
+                        Last time, <EmojiNumber number={0} /> became{' '}
+                        <EmojiNumber number={1} />. Don’t know what will happen
+                        this time…
                       </P>
                     </>
                   )
@@ -518,9 +533,8 @@ export default () => (
               ]}
               description={
                 <>
-                  先ほどは、
-                  <EmojiNumber number={0} /> が <EmojiNumber number={1} />{' '}
-                  になったけど…
+                  Last time, <EmojiNumber number={0} /> became{' '}
+                  <EmojiNumber number={1} />.
                 </>
               }
             />
@@ -532,7 +546,9 @@ export default () => (
               ]}
               description={
                 <>
-                  <EmojiNumber number={1} /> は何になる？
+                  What about this time?
+                  <br />
+                  What will <EmojiNumber number={1} /> become?
                 </>
               }
             />
@@ -542,7 +558,7 @@ export default () => (
                   type: 'dog',
                   children: (
                     <>
-                      <P>では、試してみましょう！</P>
+                      <P>Let’s check it!</P>
                     </>
                   )
                 }
@@ -554,7 +570,7 @@ export default () => (
       {
         title: (
           <>
-            <EmojiNumber number={1} /> は何になる？
+            What will <EmojiNumber number={1} /> become?
           </>
         ),
         content: (
@@ -566,8 +582,8 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        今回は、こちらの <EmojiNumber number={1} />{' '}
-                        に変換できる弁当箱を使ってみます！
+                        This time, we’ll use this lunchbox that can be converted
+                        to <EmojiNumber number={1} />.
                       </P>
                       <R.Ooya>
                         <H
@@ -579,8 +595,7 @@ export default () => (
                         />
                       </R.Ooya>
                       <P>
-                        これを <Emoji>👧🏻</Emoji>{' '}
-                        サヤちゃんの弁当箱と合体させてみます。
+                        Let’s combine it with <Emoji>👧🏻</Emoji> Saya’s lunchbox.
                       </P>
                     </>
                   )
@@ -588,7 +603,7 @@ export default () => (
               ]}
             />
             <R.Awwn>
-              <Emoji>👧🏻</Emoji> サヤちゃんの弁当箱と合体
+              Combine with <Emoji>👧🏻</Emoji> Saya’s lunchbox
             </R.Awwn>
             <BubbleQuotes
               quotes={[
@@ -597,9 +612,8 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        では、
-                        <H args={{ name: 'run' }} />{' '}
-                        してみましょう！今回は、途中で止まりません。
+                        Let’s <H args={{ name: 'run' }} /> it! We’ll continue
+                        running until the end.{' '}
                         <H args={{ name: 'runSkippableToTheEnd' }} />
                       </P>
                     </>
@@ -615,8 +629,8 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        最後に残ったこちらの弁当箱は、
-                        <EmojiNumber number={2} /> に変換できる弁当箱です！
+                        The resulting lunchbox can be converted to{' '}
+                        <EmojiNumber number={2} />!
                       </P>
                     </>
                   )
@@ -634,17 +648,18 @@ export default () => (
                   type: 'surprised',
                   children: (
                     <>
-                      <P>ということは…</P>
+                      <P>That means…</P>
                       <Ul>
                         <UlLi>
                           <Highlight>
-                            <EmojiNumber number={1} /> に変換できる弁当箱が、
+                            A lunchbox that can be converted to{' '}
+                            <EmojiNumber number={1} />…
                           </Highlight>
                         </UlLi>
                         <UlLi>
                           <Highlight>
-                            <EmojiNumber number={2} />{' '}
-                            に変換できる弁当箱になったのか？
+                            Became a lunchbox that can be converted to{' '}
+                            <EmojiNumber number={2} />?
                           </Highlight>
                         </UlLi>
                       </Ul>
@@ -654,15 +669,17 @@ export default () => (
               ]}
             />
             <R.Rqer>
-              <EmojiNumber number={1} /> に変換できる弁当箱と、
+              Combine <Emoji>👧🏻</Emoji> Saya’s lunchbox with
               <br />
-              <Emoji>👧🏻</Emoji> サヤちゃんの弁当箱を組み合わせて…
+              a lunchbox that can be converted to <EmojiNumber number={1} />
             </R.Rqer>
             <ExpressionRunnerSeparator />
             <R.Cawl>
-              <H args={{ name: 'run' }} /> すると、
+              If we <H args={{ name: 'run' }} /> it,
               <br />
-              <EmojiNumber number={2} /> に変換できる弁当箱になる
+              it becomes a lunchbox
+              <br />
+              that can be converted to <EmojiNumber number={2} />
             </R.Cawl>
             <BubbleQuotes
               quotes={[
@@ -671,10 +688,9 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        つまり、<Emoji>👧🏻</Emoji>{' '}
-                        サヤちゃんの弁当箱を使うことで、
-                        <EmojiNumber number={1} /> が <EmojiNumber number={2} />{' '}
-                        になった、というわけですね。
+                        <Bold>That means:</Bold> By using <Emoji>👧🏻</Emoji>{' '}
+                        Saya’s lunchbox, <EmojiNumber number={1} /> became{' '}
+                        <EmojiNumber number={2} />.
                       </P>
                     </>
                   )
@@ -689,8 +705,7 @@ export default () => (
               ]}
               description={
                 <>
-                  <EmojiNumber number={1} /> が <EmojiNumber number={2} />{' '}
-                  になった
+                  <EmojiNumber number={1} /> became <EmojiNumber number={2} />
                 </>
               }
             />
@@ -698,7 +713,11 @@ export default () => (
         )
       },
       {
-        title: <>1を足すことができる</>,
+        title: (
+          <>
+            It can add <EmojiNumber number={1} />
+          </>
+        ),
         content: (
           <>
             <BubbleQuotes
@@ -708,19 +727,21 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        つまり、<Emoji>👧🏻</Emoji> サヤちゃんの弁当箱を使うと、
+                        <Bold>
+                          So, by using <Emoji>👧🏻</Emoji> Saya’s lunchbox:
+                        </Bold>
                       </P>
                       <Ul>
                         <UlLi>
                           <Highlight>
-                            <EmojiNumber number={0} /> が{' '}
-                            <EmojiNumber number={1} /> になり、
+                            <EmojiNumber number={0} /> becomes{' '}
+                            <EmojiNumber number={1} />, and…
                           </Highlight>
                         </UlLi>
                         <UlLi>
                           <Highlight>
-                            <EmojiNumber number={1} /> が{' '}
-                            <EmojiNumber number={2} /> になります。
+                            <EmojiNumber number={1} /> becomes{' '}
+                            <EmojiNumber number={2} />.
                           </Highlight>
                         </UlLi>
                       </Ul>
@@ -741,14 +762,15 @@ export default () => (
                         noTopMargin
                         description={
                           <>
-                            <EmojiNumber number={0} /> が{' '}
-                            <EmojiNumber number={1} /> に、
-                            <EmojiNumber number={1} /> が{' '}
-                            <EmojiNumber number={2} /> に
+                            <EmojiNumber number={0} /> becomes{' '}
+                            <EmojiNumber number={1} />, and
+                            <br />
+                            <EmojiNumber number={1} /> becomes{' '}
+                            <EmojiNumber number={2} />.
                           </>
                         }
                       />
-                      <P>つまり、どういうことか分かりますか？</P>
+                      <P>Do you see the pattern?</P>
                     </>
                   )
                 },
@@ -757,10 +779,10 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        もしかして…
-                        <HighlightBold>
-                          <EmojiNumber number={1} /> を足すことができるのかな？
-                        </HighlightBold>
+                        Maybe…
+                        <Highlight>
+                          it can add <EmojiNumber number={1} />?
+                        </Highlight>
                       </P>
                     </>
                   )
@@ -769,7 +791,7 @@ export default () => (
                   type: 'dog',
                   children: (
                     <>
-                      <P>サヤちゃん、その通りです！</P>
+                      <P>Exactly!</P>
                     </>
                   )
                 },
@@ -777,7 +799,7 @@ export default () => (
                   type: 'thinking',
                   children: (
                     <>
-                      <P>え、どういうこと？</P>
+                      <P>What do you mean?</P>
                     </>
                   )
                 },
@@ -786,21 +808,28 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        つまり、
-                        <Highlight>
-                          仮に <Emoji>👧🏻</Emoji> サヤちゃんの弁当箱と{' '}
-                          <CustomEmoji type="blankNumber" />{' '}
-                          に変換できる弁当箱を合体させて実行すると、
-                        </Highlight>
+                        <Bold>Here’s what I mean:</Bold>
                       </P>
-                      <P>
-                        <HighlightBold>
-                          結果は <CustomEmoji type="blankNumber" />{' '}
-                          <Emoji>➕</Emoji> <EmojiNumber number={1} />{' '}
-                          に変換できる弁当箱になる
-                        </HighlightBold>
-                        、というわけです！
-                      </P>
+                      <Ul>
+                        <UlLi>
+                          <Highlight>
+                            If you combine <Emoji>👧🏻</Emoji> Saya’s lunchbox…
+                          </Highlight>
+                        </UlLi>
+                        <UlLi>
+                          <Highlight>
+                            …with a lunchbox that can be converted to{' '}
+                            <CustomEmoji type="blankNumber" />,
+                          </Highlight>
+                        </UlLi>
+                        <UlLi>
+                          <Highlight>
+                            After running it, it becomes a lunchbox that can be
+                            converted to <CustomEmoji type="blankNumber" />{' '}
+                            <Emoji>➕</Emoji> <EmojiNumber number={1} />.
+                          </Highlight>
+                        </UlLi>
+                      </Ul>
                     </>
                   )
                 }
@@ -814,11 +843,19 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        <CustomEmoji type="blankNumber" /> が{' '}
-                        <CustomEmoji type="blankNumber" /> <Emoji>➕</Emoji>{' '}
-                        <EmojiNumber number={1} /> になるから、「
-                        <HighlightBold>1を足すことができる</HighlightBold>
-                        」というわけですね。
+                        <Bold>In other words:</Bold>{' '}
+                        <Highlight>
+                          <CustomEmoji type="blankNumber" /> becomes{' '}
+                          <CustomEmoji type="blankNumber" /> <Emoji>➕</Emoji>{' '}
+                          <EmojiNumber number={1} />.
+                        </Highlight>
+                      </P>
+                      <P>
+                        That’s why{' '}
+                        <Italic>
+                          “it can add <EmojiNumber number={1} />
+                          .”
+                        </Italic>
                       </P>
                     </>
                   )
@@ -835,9 +872,9 @@ export default () => (
               ]}
               description={
                 <>
-                  <CustomEmoji type="blankNumber" /> が{' '}
+                  <CustomEmoji type="blankNumber" /> becomes{' '}
                   <CustomEmoji type="blankNumber" /> <Emoji>➕</Emoji>{' '}
-                  <EmojiNumber number={1} /> になる
+                  <EmojiNumber number={1} />
                 </>
               }
             />
@@ -848,7 +885,7 @@ export default () => (
         type: 'summary',
         title: (
           <>
-            計算箱の <CustomEmoji type="plusOne" /> と同じことができる
+            It can “reproduce” <H args={{ name: 'plusOneFeature' }} />
           </>
         ),
         content: (
@@ -1530,7 +1567,7 @@ export default () => (
                   type: 'crying',
                   children: (
                     <>
-                      <P>Hmm… I have no clue!</P>
+                      <P>Hmm… I have no idea!</P>
                     </>
                   )
                 },
