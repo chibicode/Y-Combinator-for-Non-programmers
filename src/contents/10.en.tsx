@@ -383,7 +383,9 @@ export default () => (
               ]}
             />
             <R.Ditw>
-              <H args={{ name: 'minusOneFeature' }} />
+              How can we reproduce
+              <br />
+              <H args={{ name: 'minusOneFeature' }} />?
             </R.Ditw>
             <ExpressionRunnerSeparator />
             <R.Jfgb></R.Jfgb>
@@ -429,8 +431,9 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        Right. If you do it correctly, you can use it to
-                        subtract <EmojiNumber number={1} /> from a number:
+                        It’s complicated, but if you do it correctly, you can
+                        use it to subtract <EmojiNumber number={1} /> from a
+                        number:
                       </P>
                     </>
                   )
@@ -521,8 +524,13 @@ export default () => (
                 }
               ]}
             />
+            <R.Pbop>
+              <Emoji>👧🏻</Emoji> I filled each{' '}
+              <CustomEmoji type="questionFoodGrey" /> icon…
+            </R.Pbop>
+            <ExpressionRunnerSeparator />
             <R.Cldb>
-              <Emoji>👧🏻</Emoji> Saya’s lunchbox
+              <Emoji>👧🏻</Emoji> As follows!
             </R.Cldb>
             <BubbleQuotes
               quotes={[

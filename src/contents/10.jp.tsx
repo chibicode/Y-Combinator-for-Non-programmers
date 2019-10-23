@@ -360,7 +360,10 @@ export default () => (
               ]}
             />
             <R.Ditw>
-              <H args={{ name: 'minusOneFeature' }} />
+              「<H args={{ name: 'minusOneFeature' }} />
+              」を
+              <br />
+              どうやって再現する？
             </R.Ditw>
             <ExpressionRunnerSeparator />
             <R.Jfgb></R.Jfgb>
@@ -412,7 +415,7 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        そうですね。正しく{' '}
+                        複雑ですが、正しく{' '}
                         <CustomEmoji type="questionFoodGrey" />{' '}
                         に料理を当てはめることができれば、以下のように1を引く計算を行うことができます。
                       </P>
@@ -441,8 +444,10 @@ export default () => (
                     <>
                       <P>
                         では、
-                        <CustomEmoji type="questionFoodGrey" />{' '}
-                        にそれぞれ何が入るか考えてみてください！
+                        <Highlight>
+                          <CustomEmoji type="questionFoodGrey" />{' '}
+                          にそれぞれ何が入るか考えてみてください！
+                        </Highlight>
                       </P>
                     </>
                   )
@@ -499,8 +504,13 @@ export default () => (
                 }
               ]}
             />
+            <R.Pbop>
+              <Emoji>👧🏻</Emoji> それぞれの{' '}
+              <CustomEmoji type="questionFoodGrey" /> に…
+            </R.Pbop>
+            <ExpressionRunnerSeparator />
             <R.Cldb>
-              <Emoji>👧🏻</Emoji> サヤちゃんの弁当箱
+              <Emoji>👧🏻</Emoji> 次のように料理を入れてみた！
             </R.Cldb>
             <BubbleQuotes
               quotes={[
@@ -565,7 +575,7 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        では、こちらの
+                        では、こちらの{' '}
                         <Highlight>
                           <EmojiNumber number={1} />{' '}
                           に変換できる弁当箱と合体させて、
@@ -904,20 +914,10 @@ export default () => (
             <BubbleQuotes
               quotes={[
                 {
-                  type: 'smile',
-                  children: (
-                    <>
-                      <P>
-                        よし、
-                        <H args={{ name: 'run' }} /> してみよう！
-                      </P>
-                    </>
-                  )
-                },
-                {
                   type: 'saya',
                   children: (
                     <>
+                      <P>では、実行してみよう！</P>
                       <Ul>
                         <UlLi>
                           今回は、
