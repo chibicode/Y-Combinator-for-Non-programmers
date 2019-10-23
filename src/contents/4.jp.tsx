@@ -1076,8 +1076,8 @@ export default () => (
             <P>
               復習のために、
               <BottomRightBadge inline bottomRightBadgeType="funcArg" /> と{' '}
-              <BottomRightBadge inline bottomRightBadgeType="funcBound" />
-              が一致しなかった場合も、最初から最後まで前ステップ見てみましょう。
+              <BottomRightBadge inline bottomRightBadgeType="funcBound" />{' '}
+              が一致しなかった場合も、最初から最後まで全てのステップを見てみましょう。
             </P>
             <EmojiSeparator
               size="mdsm"
@@ -1090,7 +1090,7 @@ export default () => (
                 <CustomEmoji type="singleArrow" />,
                 <Emoji>🍱</Emoji>
               ]}
-              description={<>前ステップを見てみましょう！</>}
+              description={<>全ステップを見てみましょう！</>}
             />
             <P>
               こちらは、上にひとつの料理がある例です。

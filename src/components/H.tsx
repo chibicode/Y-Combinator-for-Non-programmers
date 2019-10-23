@@ -1175,7 +1175,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
       return (
         <>
           <Highlight highlightType="pink">
-            一回ずつ進める場合は、<Emoji>➡️</Emoji> を押してください。
+            手動で進める場合は、<Emoji>➡️</Emoji> を押してください。
           </Highlight>
         </>
       )
