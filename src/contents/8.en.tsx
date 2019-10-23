@@ -1068,7 +1068,7 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        I got it! First, we’ll use this lunchobx that can be
+                        I got it! First, we’ll use this lunchbox that can be
                         converted to <EmojiNumber number={2} />:
                       </P>
                     </>
@@ -1291,7 +1291,7 @@ export default () => (
                           There are other lunchboxes that can reproduce{' '}
                           <H args={{ name: 'plusOneFeature' }} />.
                         </Highlight>{' '}
-                        <Emoji>👧🏻</Emoji> Saya’s lunchobx is not the only
+                        <Emoji>👧🏻</Emoji> Saya’s lunchbox is not the only
                         solution.
                       </P>
                       <P>
