@@ -1088,6 +1088,12 @@ export const stda: ExpressionRunnerShorthandConfig = {
   showPriorities: true
 }
 
+export const cawa: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.zxji,
+  showPriorities: true
+}
+
 export const fzpz: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   initialExpressionContainer: initialExpressionContainers.mzms,
@@ -2573,4 +2579,11 @@ export const xbki: ExpressionRunnerShorthandConfig = {
   showPriorities: true,
   speed: 4,
   showDefaultAndActiveOnly: true
+}
+
+export const dqdv: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.kgpl,
+  showPriorities: true,
+  bottomRightBadgeOverrides: { g: '🅰️', h: '🅱️' }
 }

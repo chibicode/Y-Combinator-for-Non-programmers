@@ -27,13 +27,13 @@ import CardContent from 'src/components/CardContent'
 
 export const Problem = () => (
   <>
-    <R.Stda>
+    <R.Cawa>
       <HighlightBold>
         問題: それぞれの <CustomEmoji type="questionFoodGrey" /> に、
         <br />
         どんな料理を入れると、
       </HighlightBold>
-    </R.Stda>
+    </R.Cawa>
     <ExpressionRunnerSeparator />
     <R.Jzwg>
       <HighlightBold>
@@ -282,7 +282,7 @@ export default () => (
                       <P>
                         次に、
                         <HighlightBold>
-                          上の弁当箱と、こちらの弁当箱を合体させます。
+                          上の弁当箱と、下の弁当箱を合体させます。
                         </HighlightBold>
                       </P>
                       <P>
@@ -364,11 +364,11 @@ export default () => (
                 }
               ]}
             />
-            <R.Stda>
+            <R.Cawa>
               それぞれの <CustomEmoji type="questionFoodGrey" /> に、
               <br />
               ある法則に基づいて料理を入れ、
-            </R.Stda>
+            </R.Cawa>
             <ExpressionRunnerSeparator />
             <R.Jzwg>
               <H args={{ name: 'run' }} /> すると、
@@ -737,8 +737,8 @@ export default () => (
                           だったら、
                           <EmojiNumber number={1} /> に変換できていたのになあ。
                         </Highlight>
-                        あとちょっとだったのに！
                       </P>
+                      <P>あとちょっとだったのに！</P>
                     </>
                   )
                 }

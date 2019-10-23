@@ -739,12 +739,25 @@ export const pcdb = initializeExpressionContainer({
   }
 })
 
+export const kgpl = initializeExpressionContainer(
+  numberParamsHighlightNumber('g', 'h', 1)
+)
+
 export const epmt = initializeExpressionContainer(
   succParams('questionFoodGrey', 'questionFoodGrey', 'questionFoodGrey')
 )
 
 export const ikrk = initializeExpressionContainer([
   succParams('questionFoodGrey', 'questionFoodGrey', 'questionFoodGrey'),
+  numberParams('d', 'e', 0)
+])
+
+export const zxji = initializeExpressionContainer([
+  succParams(
+    highlighted('questionFoodGrey'),
+    highlighted('questionFoodGrey'),
+    highlighted('questionFoodGrey')
+  ),
   numberParams('d', 'e', 0)
 ])
 

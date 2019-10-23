@@ -28,14 +28,14 @@ import { Beginner5Rules } from 'src/contents/5.en'
 
 export const Problem = () => (
   <>
-    <R.Stda>
+    <R.Cawa>
       <Highlight>
         <Bold>Challenge:</Bold>
         <br />
         Fill each <CustomEmoji type="questionFoodGrey" /> icon in such a way
         that,
       </Highlight>
-    </R.Stda>
+    </R.Cawa>
     <ExpressionRunnerSeparator />
     <R.Jzwg>
       <Highlight>
@@ -370,11 +370,11 @@ export default () => (
                 }
               ]}
             />
-            <R.Stda>
+            <R.Cawa>
               If you fill each <CustomEmoji type="questionFoodGrey" /> icon with
               <br />
               the <Italic>correct</Italic> food item,
-            </R.Stda>
+            </R.Cawa>
             <ExpressionRunnerSeparator />
             <R.Jzwg>
               After running it, it becomes a lunchbox
