@@ -1244,12 +1244,9 @@ export default () => (
                       </UlLi>
                     </Ul>
                     <R.Oykb>
-                      <EmojiForLetter capitalize letter="a" /> for{' '}
-                      <Emoji>🅰️</Emoji>,{' '}
-                      <EmojiForLetter capitalize letter="b" /> for{' '}
-                      <Emoji>🅱️</Emoji>, and{' '}
-                      <EmojiForLetter capitalize letter="c" /> for{' '}
-                      <CustomEmoji type="C" />
+                      <EmojiForLetter letter="a" /> for <Emoji>🅰️</Emoji>,{' '}
+                      <EmojiForLetter letter="b" /> for <Emoji>🅱️</Emoji>, and{' '}
+                      <EmojiForLetter letter="c" /> for <CustomEmoji type="C" />
                     </R.Oykb>
                     <P>
                       Here’s another example that can reproduce{' '}
