@@ -193,7 +193,8 @@ export default () => (
                       <P>
                         これを
                         <H args={{ name: 'run' }} /> して、
-                        <EmojiNumber number={1} /> になればいいんだよな。
+                        <EmojiNumber number={1} />{' '}
+                        に変換できる弁当箱になればいいんだよな。
                       </P>
                     </>
                   )
