@@ -349,7 +349,8 @@ export default () => (
       {
         title: (
           <>
-            <H args={{ name: 'minusOneEffect', capitalize: true }} />
+            A hint for reproducing{' '}
+            <H args={{ name: 'minusOneFeature', capitalize: true }} />
           </>
         ),
         content: (
@@ -372,12 +373,33 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        Yes! <H args={{ name: 'lookAtThisBentoBox' }} />.
+                        Yes. Let me give you a hint for reproducing{' '}
+                        <H args={{ name: 'minusOneFeature' }} />!
                       </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Ditw>
+              <H args={{ name: 'minusOneFeature' }} />
+            </R.Ditw>
+            <ExpressionRunnerSeparator />
+            <R.Jfgb></R.Jfgb>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'dog',
+                  children: (
+                    <>
                       <P>
-                        Just like the last time, each{' '}
-                        <CustomEmoji type="questionFoodGrey" /> icon represents
-                        some food item.
+                        To reproduce <H args={{ name: 'minusOneFeature' }} />{' '}
+                        using a lunchbox,{' '}
+                        <Highlight>
+                          you need to fill each{' '}
+                          <CustomEmoji type="questionFoodGrey" /> icon on the
+                          following lunchbox with a specific pattern.
+                        </Highlight>
                       </P>
                     </>
                   )
@@ -385,8 +407,11 @@ export default () => (
               ]}
             />
             <R.Pbop>
-              Each <CustomEmoji type="questionFoodGrey" /> icon represents some
-              food item
+              If you fill each <CustomEmoji type="questionFoodGrey" /> icon
+              <br />
+              with a specific pattern, you can
+              <br />
+              reproduce <H args={{ name: 'minusOneFeature' }} />
             </R.Pbop>
             <BubbleQuotes
               quotes={[
@@ -403,124 +428,44 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        This time,{' '}
-                        <Highlight>
-                          you must fill each{' '}
-                          <CustomEmoji type="questionFoodGrey" /> in a way such
-                          that, the resulting lunchbox has{' '}
-                          <Bold>
-                            <H args={{ name: 'minusOneEffect' }} />
-                          </Bold>
-                          .
-                        </Highlight>
+                        Right. If you do it correctly, you can use it to
+                        subtract <EmojiNumber number={1} /> from a number:
                       </P>
-                    </>
-                  )
-                }
-              ]}
-            />
-            <R.Skoo>
-              You must fill each <CustomEmoji type="questionFoodGrey" /> in a
-              way
-              <br />
-              such that, the resulting lunchbox has
-              <br />
-              <H args={{ name: 'minusOneEffect' }} />.
-            </R.Skoo>
-            <BubbleQuotes
-              quotes={[
-                {
-                  type: 'thinking',
-                  children: (
-                    <>
-                      <P>
-                        <H
-                          args={{ name: 'minusOneEffect', capitalize: true }}
-                        />
-                        ?
-                      </P>
-                      <P>
-                        Is that the oppposite of{' '}
-                        <H args={{ name: 'plusOneEffect' }} /> we talked about
-                        earlier?
-                      </P>
-                    </>
-                  )
-                },
-                {
-                  type: 'dog',
-                  children: (
-                    <>
-                      <P>Yes! </P>
-                      <Ul>
-                        <UlLi>
-                          <Highlight>
-                            If you combine the above lunchbox with a lunchbox
-                            that can be converted to{' '}
-                            <CustomEmoji type="blankNumber" />,
-                          </Highlight>
-                        </UlLi>
-                        <UlLi>
-                          <Highlight>
-                            The result would be a lunchbox that can be converted
-                            to <CustomEmoji type="blankNumber" />{' '}
-                            <Emoji>➖</Emoji> <EmojiNumber number={1} />.
-                          </Highlight>
-                        </UlLi>
-                      </Ul>
                     </>
                   )
                 }
               ]}
             />
             <R.Xqjd>
-              Combine a lunchbox that can be converted to{' '}
-              <CustomEmoji type="blankNumber" />
+              Combine with a lunchbox
               <br />
-              with a lunchbox with <H args={{ name: 'minusOneEffect' }} />
+              that can be converted to <CustomEmoji type="blankNumber" />…
             </R.Xqjd>
             <ExpressionRunnerSeparator />
             <R.Gvxz>
-              If you <H args={{ name: 'run', lowerCase: true }} /> it, the
-              result would be
-              <br />a lunchbox that can be converted to{' '}
-              <CustomEmoji type="blankNumber" /> <Emoji>➖</Emoji>{' '}
-              <EmojiNumber number={1} />
+              If you <H args={{ name: 'run' }} /> it,
+              <br />
+              it will become a lunchbox
+              <br />
+              that can be converted to <CustomEmoji type="blankNumber" />{' '}
+              <Emoji>➖</Emoji> <EmojiNumber number={1} />
             </R.Gvxz>
             <BubbleQuotes
               quotes={[
                 {
-                  type: 'thinking',
+                  type: 'dog',
                   children: (
                     <>
                       <P>
-                        I see. So this is how you can reproduce{' '}
-                        <H args={{ name: 'minusOneFeature' }} /> using a
-                        lunchbox.
+                        Now,{' '}
+                        <Highlight>
+                          try to guess what goes in each{' '}
+                          <CustomEmoji type="questionFoodGrey" /> icon!
+                        </Highlight>
                       </P>
                     </>
                   )
-                }
-              ]}
-            />
-            <R.Ditw>
-              <CustomEmoji type="mathBox" /> A <Bold>mathbox</Bold> that uses{' '}
-              <CustomEmoji type="minusOne" /> can be <Bold>reproduced</Bold> by…
-            </R.Ditw>
-            <ExpressionRunnerSeparator />
-            <R.Xqjd>
-              <Emoji>🍱</Emoji> A <Bold>lunchbox</Bold> that has{' '}
-              <H args={{ name: 'minusOneEffect' }} />.
-            </R.Xqjd>
-          </>
-        )
-      },
-      {
-        title: <>Saya’s lunchbox, again</>,
-        content: (
-          <>
-            <BubbleQuotes
-              quotes={[
+                },
                 {
                   type: 'crying',
                   children: (
@@ -535,10 +480,13 @@ export default () => (
                 }
               ]}
             />
-            <R.Pbop>
-              Each <CustomEmoji type="questionFoodGrey" /> icon represents some
-              food item
-            </R.Pbop>
+          </>
+        )
+      },
+      {
+        title: <>Saya’s lunchbox, again</>,
+        content: (
+          <>
             <P>
               The villagers were struggling, but looks like Saya’s got an idea:
             </P>
