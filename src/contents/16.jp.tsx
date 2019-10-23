@@ -533,18 +533,31 @@ export default () => (
             <R.Rjho></R.Rjho>
             <P>
               もし <Emoji>🅰️</Emoji> に<EmojiWithText letter="a" /> を、
-              <Emoji>🅱️</Emoji> に<EmojiWithText letter="b" />{' '}
-              を当てはめると、以下のようになります。つまり、先ほどのラムダ計算の記述式は
+              <Emoji>🅱️</Emoji> に<EmojiWithText letter="b" /> を当てはめると、
+              <HighlightBold>
+                上級編で登場したYコンビネータの弁当箱
+              </HighlightBold>
+              になります。
+            </P>
+            <R.Xjzx>
+              <Emoji>🅰️</Emoji> に<EmojiWithText letter="a" /> を、
+              <br />
+              <Emoji>🅱️</Emoji> に<EmojiWithText letter="b" /> を当てはめると、
+              <br />
+              Yコンビネータの弁当箱になる
+            </R.Xjzx>
+            <P>
+              つまり、先ほどのラムダ計算の記述式は
               <HighlightBold>Yコンビネータを表している</HighlightBold>
               のです。
             </P>
             <CenteredCode size="sm">λA.(λB.A(B B))(λB.A(B B))</CenteredCode>
             <ExpressionRunnerSeparator />
-            <R.Xjzx>
-              先ほどのラムダ計算の記述式は、
-              <br />「<HighlightBold>Yコンビネータ</HighlightBold>
-              」を表している
-            </R.Xjzx>
+            <ExpressionRunnerCaptionOnly>
+              先ほどのラムダ計算の記述式は
+              <br />
+              <HighlightBold>Yコンビネータを表している</HighlightBold>
+            </ExpressionRunnerCaptionOnly>
             <P>
               まとめると、本稿では、
               <HighlightBold>

@@ -369,15 +369,15 @@ export default () => (
                       <P>
                         これはもしかして…
                         <Highlight>
-                          中級その3で <Emoji>👧🏻</Emoji> サヤちゃんが考えた、
-                          <H args={{ name: 'plusOneFeature' }} />
+                          中級その3で <Emoji>👧🏻</Emoji> サヤちゃんが考えた、 「
+                          <H args={{ name: 'plusOneFeature' }} />」
                           を再現できる弁当箱かな？
                         </Highlight>
                       </P>
                       <R.Vcqp>
                         <Emoji>👧🏻</Emoji> サヤちゃんが考えた、
                         <br />
-                        <H args={{ name: 'plusOneFeature' }} />
+                        「<H args={{ name: 'plusOneFeature' }} />」
                         を再現できる弁当箱
                       </R.Vcqp>
                       <ExpressionRunnerSeparator />
