@@ -28,16 +28,14 @@ const nest = (
 export const numberParams = (
   f: VariableNames | HighlightedVariableExpressionParams,
   x: VariableNames | HighlightedVariableExpressionParams,
-  n: number,
-  focused?: boolean
+  n: number
 ): FunctionExpressionParams => {
   return {
     arg: f,
     body: {
       arg: x,
       body: nest(f, x, n)
-    },
-    meta: focused ? 'focused' : undefined
+    }
   }
 }
 
@@ -72,9 +70,7 @@ export const numberParamsHighlightNonNumber = (
 export const succParams = (
   a: VariableNames | HighlightedVariableExpressionParams,
   b: VariableNames | HighlightedVariableExpressionParams,
-  c: VariableNames | HighlightedVariableExpressionParams,
-  focused?: boolean,
-  specialEffect?: boolean
+  c: VariableNames | HighlightedVariableExpressionParams
 ): FunctionExpressionParams => {
   return {
     arg: a,
@@ -84,8 +80,7 @@ export const succParams = (
         arg: c,
         body: [b, [a, b, c]]
       }
-    },
-    meta: specialEffect ? 'plusOneEffect' : focused ? 'focused' : undefined
+    }
   }
 }
 
@@ -116,11 +111,9 @@ export const predParams = (
   c: VariableNames | HighlightedVariableExpressionParams,
   d: VariableNames | HighlightedVariableExpressionParams,
   e: VariableNames | HighlightedVariableExpressionParams,
-  f: VariableNames | HighlightedVariableExpressionParams,
-  specialEffect?: boolean
+  f: VariableNames | HighlightedVariableExpressionParams
 ): FunctionExpressionParams => {
   return {
-    meta: specialEffect ? 'minusOneEffect' : undefined,
     arg: a,
     body: {
       arg: b,

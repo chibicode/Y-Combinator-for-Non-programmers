@@ -5,11 +5,14 @@ import {
   HighlightBold,
   Highlight,
   Ul,
-  UlLi
+  Hr,
+  UlLi,
+  Bold
 } from 'src/components/ContentTags'
 import H from 'src/components/H'
 import BubbleQuotes from 'src/components/BubbleQuotes'
 import EmojiNumber from 'src/components/EmojiNumber'
+import CardContent from 'src/components/CardContent'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import CustomEmoji from 'src/components/CustomEmoji'
 import ExpressionRunnerSeparator from 'src/components/ExpressionRunnerSeparator'
@@ -125,9 +128,9 @@ export default () => (
               」を…
             </R.Rhoa>
             <ExpressionRunnerSeparator />
-            <R.Sdta>
+            <R.Vlhb>
               <Emoji>👧🏻</Emoji> 弁当箱で再現してみた！
-            </R.Sdta>
+            </R.Vlhb>
             <BubbleQuotes
               quotes={[
                 {
@@ -218,7 +221,7 @@ export default () => (
                       </R.Elyq>
                       <P>
                         入れてみると次のようになるよ。
-                        <H args={{ name: 'pressFastForward', girl: true }} />
+                        <H args={{ name: 'pressRun', girl: true }} />
                       </P>
                     </>
                   )
@@ -385,7 +388,7 @@ export default () => (
                       </R.Ooya>
                       <P>
                         入れてみると次のようになるよ。
-                        <H args={{ name: 'pressFastForward', girl: true }} />
+                        <H args={{ name: 'pressRun', girl: true }} />
                       </P>
                     </>
                   )
@@ -505,11 +508,11 @@ export default () => (
               」を…
             </R.Rhoa>
             <ExpressionRunnerSeparator />
-            <R.Sdta>
+            <R.Vlhb>
               <Emoji>👧🏻</Emoji> サヤちゃんが弁当箱で再現してみた！
               <br />
               <HighlightBold>果たして、これが正解なのか？</HighlightBold>
-            </R.Sdta>
+            </R.Vlhb>
             <BubbleQuotes
               quotes={[
                 {
@@ -642,7 +645,7 @@ export default () => (
                       </P>
                       <P>
                         これを
-                        <H args={{ name: 'play' }} /> したとき、
+                        <H args={{ name: 'run' }} /> したとき、
                         <Highlight>
                           先ほど同じく結果が <EmojiNumber number={1} /> になれば
                           <HighlightBold>
@@ -655,9 +658,9 @@ export default () => (
                 }
               ]}
             />
-            <R.Sdta>
+            <R.Vlhb>
               <Emoji>👧🏻</Emoji> サヤの弁当箱の…
-            </R.Sdta>
+            </R.Vlhb>
             <ExpressionRunnerSeparator />
             <R.Jbqw>
               <CustomEmoji type="blankNumberRed" /> に{' '}
@@ -744,7 +747,7 @@ export default () => (
                     <>
                       <P>
                         というわけで、
-                        <H args={{ name: 'pressFastForward', girl: true }} />
+                        <H args={{ name: 'pressRun', girl: true }} />
                       </P>
                     </>
                   )
@@ -762,7 +765,7 @@ export default () => (
                         最終的に残ったこちらの弁当箱は、
                         <EmojiNumber number={1} /> に変換できる弁当箱だね。
                       </P>
-                      <R.Oclg>
+                      <R.Ooya>
                         <H
                           args={{
                             name: 'canBeConvertedCaption',
@@ -770,7 +773,7 @@ export default () => (
                             number: 1
                           }}
                         />
-                      </R.Oclg>
+                      </R.Ooya>
                       <P>
                         だから、
                         <EmojiNumber number={1} /> が残ったので、
@@ -825,11 +828,11 @@ export default () => (
               」は…
             </R.Rhoa>
             <ExpressionRunnerSeparator />
-            <R.Sdta>
+            <R.Vlhb>
               <Emoji>👧🏻</Emoji> サヤちゃんの弁当箱で
               <br />
               再現できている！
-            </R.Sdta>
+            </R.Vlhb>
             <BubbleQuotes
               quotes={[
                 {
@@ -840,31 +843,6 @@ export default () => (
                     </>
                   )
                 },
-                {
-                  type: 'dog',
-                  children: (
-                    <>
-                      <P>
-                        ちなみに、
-                        <Highlight>
-                          以下のような <Emoji>🅰️</Emoji> <Emoji>🅱️</Emoji>{' '}
-                          <CustomEmoji type="C" /> <CustomEmoji type="D" />{' '}
-                          <CustomEmoji type="E" />{' '}
-                          の法則に沿っていれば、それぞれに何の料理が入っていても、条件分岐の機能を再現することができます。
-                        </Highlight>
-                      </P>
-                    </>
-                  )
-                }
-              ]}
-            />
-            <R.Fton>
-              以下の法則に当てはまる弁当箱で
-              <br />
-              あれば、条件分岐の機能を再現できる
-            </R.Fton>
-            <BubbleQuotes
-              quotes={[
                 {
                   type: 'dog',
                   children: (
@@ -903,7 +881,65 @@ export default () => (
               }
             />
           </>
-        )
+        ),
+        footer: {
+          content: (
+            <>
+              <CardContent
+                children={
+                  <>
+                    <Hr />
+                    <P>
+                      <Emoji>👧🏻</Emoji> サヤちゃんが考えた弁当箱以外にも、
+                      <HighlightBold>
+                        以下の法則に当てはまる弁当箱であれば、どれでも 「
+                        <H args={{ name: 'conditionFeature' }} />
+                        」を再現できます。
+                      </HighlightBold>
+                    </P>
+                    <R.Fton>
+                      この法則に当てはまる弁当箱であれば、
+                      <br />
+                      「<H args={{ name: 'conditionFeature' }} />
+                      」を再現できる
+                    </R.Fton>
+                    <P>
+                      たとえば、以下のような弁当箱でも、「
+                      <H args={{ name: 'conditionFeature' }} />
+                      」を再現することができます。
+                    </P>
+                    <R.Imhz>
+                      これも「
+                      <H args={{ name: 'conditionFeature' }} />
+                      」を再現できる
+                    </R.Imhz>
+                  </>
+                }
+                preview={{
+                  text: <>続きを読む</>,
+                  content: (
+                    <>
+                      <P>
+                        <Bold>ちなみに:</Bold> 「
+                        <H args={{ name: 'conditionFeature' }} />
+                        」を再現できる弁当箱は、
+                        <HighlightBold>
+                          <Emoji>👧🏻</Emoji>{' '}
+                          サヤちゃんが考えた弁当箱以外にもあります。
+                        </HighlightBold>
+                        つまり、正解は他にもあるのです。
+                      </P>
+                      <P>
+                        気になる方は、↓の「続きを読む」を押してみてください。
+                        (読まなくても先に進めます！)
+                      </P>
+                    </>
+                  )
+                }}
+              />
+            </>
+          )
+        }
       },
       {
         title: <>繰り返しの機能は？</>,

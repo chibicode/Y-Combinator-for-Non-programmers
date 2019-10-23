@@ -24,7 +24,7 @@ import {
   episodeTitles
 } from 'src/lib/titles'
 import EpisodeContext from 'src/components/EpisodeContext'
-import { colors } from 'src/lib/theme'
+import { colors, fontSizes } from 'src/lib/theme'
 import {
   episodeCategory,
   numEpisodesExceptFirstAndLast
@@ -75,10 +75,9 @@ interface HProps {
         postfix?: string
       }
     | { name: 'next' }
-    | { name: 'play'; lowerCase?: true }
-    | { name: 'fastForwarding' }
+    | { name: 'run'; lowerCase?: true }
+    | { name: 'running' }
     | { name: 'pause' }
-    | { name: 'fastForward'; lowerCase?: true }
     | { name: 'reset' }
     | { name: 'previous' }
     | { name: 'done' }
@@ -102,7 +101,7 @@ interface HProps {
     | { name: 'whatHappensAtTheEndQuestion' }
     | { name: 'lookAtThisBentoBox'; lowerCase?: true }
     | {
-        name: 'pressFastForward'
+        name: 'pressRun'
         skipColon?: boolean
         mentionRightArrow?: boolean
         girl?: boolean
@@ -135,12 +134,9 @@ interface HProps {
       }
     | { name: 'lookAtThisBentoBoxPuzzle' }
     | { name: 'convertToMathbox'; lowerCase?: true }
-    | { name: 'runAndConvertToMathbox'; addNewline?: boolean; lowerCase?: true }
-    | { name: 'doneRunAndConvertToMathbox' }
     | { name: 'undoConvertToMathbox' }
     | { name: 'doneConvertToMathbox' }
     | { name: 'canBeConverted' }
-    | { name: 'plusOneEffect'; capitalize?: true }
     | { name: 'plusOneFeature'; capitalize?: true }
     | { name: 'minusOneFeature'; capitalize?: true; addNewline?: true }
     | { name: 'repeatFeature'; capitalize?: true; addNewline?: true }
@@ -150,7 +146,6 @@ interface HProps {
         addNewline?: true
         hideIcon?: true
       }
-    | { name: 'minusOneEffect'; capitalize?: true }
     | { name: 'startWithTwoCaption' }
     | { name: 'startWithLeftMostOneCaption' }
     | { name: 'convertiblePatternCaption'; skipFirst?: true }
@@ -160,14 +155,15 @@ interface HProps {
     | { name: 'canBeConvertedCaption'; letter: VariableNames; number: number }
     | { name: 'skipToTheEnd' }
     | { name: 'skipToTheStoppingPoint' }
-    | { name: 'fastForwardSkippableToTheEnd' }
-    | { name: 'fastForwardSkippableToTheStoppingPoint' }
+    | { name: 'runSkippableToTheEnd' }
+    | { name: 'runSkippableToTheStoppingPoint' }
     | { name: 'slide' }
     | { name: 'testimonialsTitle' }
     | { name: 'testimonialsContent' }
     | { name: 'goToOtherPage' }
     | { name: 'demoTitle' }
     | { name: 'whatTheNumberIsCaption' }
+    | { name: 'runAndShowAllSteps' }
 }
 
 const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
@@ -418,12 +414,12 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
       )
     }
   }
-  if (args.name === 'play') {
+  if (args.name === 'run') {
     if (locale === 'en') {
       return (
         <>
           <HighlightBold highlightType={highlightType}>
-            {args.lowerCase ? 'r' : 'R'}un <Emoji>⏭</Emoji>
+            {args.lowerCase ? 'r' : 'R'}un <Emoji>▶️</Emoji>
           </HighlightBold>
         </>
       )
@@ -437,12 +433,26 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
       )
     }
   }
-  if (args.name === 'fastForward') {
+  if (args.name === 'runAndShowAllSteps') {
     if (locale === 'en') {
       return (
         <>
           <HighlightBold highlightType={highlightType}>
-            {args.lowerCase ? 'p' : 'P'}lay <Emoji>▶️</Emoji>
+            <span
+              css={css`
+                display: block;
+              `}
+            >
+              Run <Emoji>▶️</Emoji>
+            </span>
+            <span
+              css={css`
+                font-size: ${fontSizes(0.7)};
+                display: block;
+              `}
+            >
+              (Show every step)
+            </span>
           </HighlightBold>
         </>
       )
@@ -450,18 +460,32 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
       return (
         <>
           <HighlightBold highlightType={highlightType}>
-            早送り <Emoji>⏩</Emoji>
+            <span
+              css={css`
+                display: block;
+              `}
+            >
+              実行 <Emoji>▶️</Emoji>
+            </span>
+            <span
+              css={css`
+                font-size: ${fontSizes(0.7)};
+                display: block;
+              `}
+            >
+              (全ステップを表示)
+            </span>
           </HighlightBold>
         </>
       )
     }
   }
-  if (args.name === 'fastForwarding') {
+  if (args.name === 'running') {
     if (locale === 'en') {
       return (
         <>
           <HighlightBold highlightType={highlightType}>
-            Playing… <Emoji>▶️</Emoji>
+            Running… <Emoji>▶️</Emoji>
           </HighlightBold>
         </>
       )
@@ -469,7 +493,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
       return (
         <>
           <HighlightBold highlightType={highlightType}>
-            早送り中… <Emoji>⏩</Emoji>
+            実行中… <Emoji>▶️</Emoji>
           </HighlightBold>
         </>
       )
@@ -570,13 +594,13 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
       return (
         <Highlight>
           {args.capitalize ? 'T' : 't'}
-          ry pressing <H args={{ name: 'play' }} />
+          ry pressing <H args={{ name: 'run' }} />
         </Highlight>
       )
     } else {
       return (
         <Highlight>
-          <H args={{ name: 'play' }} /> を押してみてください:
+          <H args={{ name: 'run' }} /> を押してみてください:
         </Highlight>
       )
     }
@@ -688,12 +712,12 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
       )
     }
   }
-  if (args.name === 'pressFastForward') {
+  if (args.name === 'pressRun') {
     if (locale === 'en') {
       return (
         <>
           <Highlight>
-            Press <H args={{ name: 'fastForward' }} />
+            Press <H args={{ name: 'run' }} />
             {args.mentionRightArrow ||
             args.skippable ||
             args.skippableToTheStoppingPoint
@@ -713,13 +737,13 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
           {args.skippable && (
             <>
               {' '}
-              <H args={{ name: 'fastForwardSkippableToTheEnd' }} />
+              <H args={{ name: 'runSkippableToTheEnd' }} />
             </>
           )}
           {args.skippableToTheStoppingPoint && (
             <>
               {' '}
-              <H args={{ name: 'fastForwardSkippableToTheStoppingPoint' }} />
+              <H args={{ name: 'runSkippableToTheStoppingPoint' }} />
             </>
           )}
         </>
@@ -728,7 +752,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
       return (
         <>
           <Highlight>
-            <H args={{ name: 'fastForward' }} /> を押してみて
+            <H args={{ name: 'run' }} /> を押してみて
             {!args.girl && <>ください</>}
             {args.mentionRightArrow ||
             args.skippable ||
@@ -747,12 +771,12 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
           )}
           {args.skippable && (
             <>
-              <H args={{ name: 'fastForwardSkippableToTheEnd' }} />
+              <H args={{ name: 'runSkippableToTheEnd' }} />
             </>
           )}
           {args.skippableToTheStoppingPoint && (
             <>
-              <H args={{ name: 'fastForwardSkippableToTheStoppingPoint' }} />
+              <H args={{ name: 'runSkippableToTheStoppingPoint' }} />
             </>
           )}
         </>
@@ -780,7 +804,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
         <>
           <Bold>Question:</Bold>{' '}
           <Highlight>
-            If we <H args={{ name: 'play', lowerCase: true }} /> the above
+            If we <H args={{ name: 'run', lowerCase: true }} /> the above
             lunchbox, will it eventually become the following?
           </Highlight>
         </>
@@ -789,7 +813,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
       return (
         <>
           <H args={{ name: 'question' }} /> 上の弁当箱を
-          <H args={{ name: 'play' }} /> すると、
+          <H args={{ name: 'run' }} /> すると、
           <HighlightBold>最終的に下のようになるでしょうか？</HighlightBold>
         </>
       )
@@ -1151,7 +1175,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
       return (
         <>
           <Highlight highlightType="pink">
-            一回ずつ進める場合は、<Emoji>➡️</Emoji> を押してください。
+            手動で進める場合は、<Emoji>➡️</Emoji> を押してください。
           </Highlight>
         </>
       )
@@ -1238,42 +1262,6 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
       )
     }
   }
-  if (args.name === 'runAndConvertToMathbox') {
-    if (locale === 'en') {
-      return (
-        <>
-          <Bold>
-            {args.lowerCase ? 'r' : 'R'}un <Emoji>⏭</Emoji>
-          </Bold>{' '}
-          and{args.addNewline ? <br /> : ' '}
-          <H args={{ name: 'convertToMathbox', lowerCase: args.lowerCase }} />
-        </>
-      )
-    } else {
-      return (
-        <Bold>
-          実行してから
-          {args.addNewline ? <br /> : ' '}
-          <H args={{ name: 'convertToMathbox' }} />
-        </Bold>
-      )
-    }
-  }
-  if (args.name === 'doneRunAndConvertToMathbox') {
-    if (locale === 'en') {
-      return (
-        <>
-          Ran and converted to a mathbox! <Emoji>🏁</Emoji>
-        </>
-      )
-    } else {
-      return (
-        <HighlightBold highlightType={highlightType}>
-          実行と変換完了! <Emoji>🏁</Emoji>
-        </HighlightBold>
-      )
-    }
-  }
   if (args.name === 'undoConvertToMathbox') {
     if (locale === 'en') {
       return (
@@ -1315,40 +1303,6 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
       return <>Lunchbox that can be converted to</>
     } else {
       return <>に変換できる弁当箱</>
-    }
-  }
-  if (args.name === 'plusOneEffect') {
-    if (locale === 'en') {
-      return (
-        <>
-          {args.capitalize ? 'T' : 't'}he <Bold>“Plus 1”</Bold> effect{' '}
-          <CustomEmoji type="plusOneOrange" />
-        </>
-      )
-    } else {
-      return (
-        <>
-          「<HighlightBold>1を足す効果</HighlightBold>{' '}
-          <CustomEmoji type="plusOneOrange" />」
-        </>
-      )
-    }
-  }
-  if (args.name === 'minusOneEffect') {
-    if (locale === 'en') {
-      return (
-        <>
-          {args.capitalize ? 'T' : 't'}he <Bold>Minus 1”</Bold> effect{' '}
-          <CustomEmoji type="minusOnePink" />
-        </>
-      )
-    } else {
-      return (
-        <>
-          「<HighlightBold>1を引く効果</HighlightBold>{' '}
-          <CustomEmoji type="minusOnePink" />」
-        </>
-      )
     }
   }
   if (args.name === 'startWithTwoCaption') {
@@ -1516,7 +1470,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
       return <>途中までスキップ</>
     }
   }
-  if (args.name === 'fastForwardSkippableToTheEnd') {
+  if (args.name === 'runSkippableToTheEnd') {
     if (locale === 'en') {
       return (
         <Highlight highlightType="pink">
@@ -1531,7 +1485,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
       )
     }
   }
-  if (args.name === 'fastForwardSkippableToTheStoppingPoint') {
+  if (args.name === 'runSkippableToTheStoppingPoint') {
     if (locale === 'en') {
       return (
         <Highlight highlightType="pink">

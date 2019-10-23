@@ -11,10 +11,10 @@
         "funcPriorityAgg": [],
         "emphasizePriority": false,
         "bound": true,
-        "shorthandNumberPlusOrMinusOne": "minus",
+        "shorthandNumberAfterConvert": "blankMinusOne",
         "maxNestedFunctionDepth": 0
       },
-      "numLeafNodes": 1,
+      "numLeafNodes": 2,
       "containerState": "ready",
       "previouslyChangedExpressionState": "default"
     }
@@ -23,7 +23,7 @@
   "hideControls": true,
   "explanationsVisibility": "hidden",
   "hidePriorities": false,
-  "hidePlayButton": false,
+  "hideRunButton": false,
   "hideBottomRightBadges": false,
   "skipToTheEnd": false,
   "hideFuncUnboundBadgeOnExplanation": false,

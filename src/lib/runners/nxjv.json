@@ -1,0 +1,36 @@
+{
+  "expressionContainers": [
+    {
+      "expression": {
+        "name": "blankNumber",
+        "highlightType": "default",
+        "topLeftBadgeType": "none",
+        "bottomRightBadgeType": "none",
+        "type": "variable",
+        "argPriorityAgg": [],
+        "funcPriorityAgg": [],
+        "emphasizePriority": false,
+        "bound": true,
+        "shorthandNumberAfterConvert": "binaryAdd",
+        "maxNestedFunctionDepth": 0
+      },
+      "numLeafNodes": 2,
+      "containerState": "ready",
+      "previouslyChangedExpressionState": "default"
+    }
+  ],
+  "speed": 1,
+  "hideControls": true,
+  "explanationsVisibility": "hidden",
+  "hidePriorities": false,
+  "hideRunButton": false,
+  "hideBottomRightBadges": false,
+  "skipToTheEnd": false,
+  "hideFuncUnboundBadgeOnExplanation": false,
+  "highlightOverridesCallArgAndFuncUnboundOnly": false,
+  "bottomRightBadgeOverrides": {},
+  "highlightOverrides": {},
+  "highlightOverrideActiveAfterStart": false,
+  "highlightFunctions": false,
+  "showBottomProgressBar": false
+}

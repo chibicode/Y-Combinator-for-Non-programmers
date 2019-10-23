@@ -4,7 +4,7 @@
       "expression": {
         "arg": {
           "arg": {
-            "name": "l",
+            "name": "i",
             "highlightType": "default",
             "topLeftBadgeType": "none",
             "bottomRightBadgeType": "none",
@@ -19,7 +19,7 @@
           },
           "body": {
             "arg": {
-              "name": "m",
+              "name": "j",
               "highlightType": "default",
               "topLeftBadgeType": "none",
               "bottomRightBadgeType": "none",
@@ -34,7 +34,7 @@
               "arg": {
                 "arg": {
                   "arg": {
-                    "name": "m",
+                    "name": "j",
                     "highlightType": "default",
                     "topLeftBadgeType": "none",
                     "bottomRightBadgeType": "none",
@@ -50,7 +50,7 @@
                     "maxNestedFunctionDepth": 0
                   },
                   "func": {
-                    "name": "l",
+                    "name": "i",
                     "highlightType": "default",
                     "topLeftBadgeType": "none",
                     "bottomRightBadgeType": "none",
@@ -69,7 +69,7 @@
                   "maxNestedFunctionDepth": 0
                 },
                 "func": {
-                  "name": "l",
+                  "name": "i",
                   "highlightType": "default",
                   "topLeftBadgeType": "none",
                   "bottomRightBadgeType": "none",
@@ -88,7 +88,7 @@
                 "maxNestedFunctionDepth": 0
               },
               "func": {
-                "name": "l",
+                "name": "i",
                 "highlightType": "default",
                 "topLeftBadgeType": "none",
                 "bottomRightBadgeType": "none",
@@ -146,7 +146,7 @@
               },
               "func": {
                 "arg": {
-                  "name": "i",
+                  "name": "a",
                   "highlightType": "default",
                   "topLeftBadgeType": "none",
                   "bottomRightBadgeType": "none",
@@ -161,7 +161,7 @@
                 },
                 "body": {
                   "arg": {
-                    "name": "j",
+                    "name": "b",
                     "highlightType": "default",
                     "topLeftBadgeType": "none",
                     "bottomRightBadgeType": "none",
@@ -174,7 +174,7 @@
                   },
                   "body": {
                     "arg": {
-                      "name": "k",
+                      "name": "c",
                       "highlightType": "default",
                       "topLeftBadgeType": "none",
                       "bottomRightBadgeType": "none",
@@ -188,7 +188,7 @@
                     "body": {
                       "arg": {
                         "arg": {
-                          "name": "k",
+                          "name": "c",
                           "highlightType": "default",
                           "topLeftBadgeType": "none",
                           "bottomRightBadgeType": "none",
@@ -204,7 +204,7 @@
                         },
                         "func": {
                           "arg": {
-                            "name": "j",
+                            "name": "b",
                             "highlightType": "default",
                             "topLeftBadgeType": "none",
                             "bottomRightBadgeType": "none",
@@ -218,7 +218,7 @@
                             "maxNestedFunctionDepth": 0
                           },
                           "func": {
-                            "name": "i",
+                            "name": "a",
                             "highlightType": "default",
                             "topLeftBadgeType": "none",
                             "bottomRightBadgeType": "none",
@@ -243,7 +243,7 @@
                         "maxNestedFunctionDepth": 0
                       },
                       "func": {
-                        "name": "j",
+                        "name": "b",
                         "highlightType": "default",
                         "topLeftBadgeType": "none",
                         "bottomRightBadgeType": "none",
@@ -529,15 +529,15 @@
   "hideControls": true,
   "explanationsVisibility": "hidden",
   "hidePriorities": false,
-  "hidePlayButton": false,
+  "hideRunButton": false,
   "hideBottomRightBadges": false,
   "skipToTheEnd": false,
   "hideFuncUnboundBadgeOnExplanation": false,
   "highlightOverridesCallArgAndFuncUnboundOnly": false,
   "bottomRightBadgeOverrides": {},
   "highlightOverrides": {
-    "l": "highlighted",
-    "m": "highlighted"
+    "i": "highlighted",
+    "j": "highlighted"
   },
   "highlightOverrideActiveAfterStart": false,
   "highlightFunctions": false,

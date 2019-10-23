@@ -13,6 +13,10 @@ import {
   numberParamsHighlightNonNumber
 } from 'scripts/lib/churchEncodingParams'
 
+export const prxd = initializeExpressionContainer({
+  shorthandFunc: 'add'
+})
+
 export const nyhe = initializeExpressionContainer([
   {
     arg: 'a',
@@ -38,14 +42,6 @@ export const sisf = initializeExpressionContainer([
     arg: 'g',
     body: 'o'
   }
-])
-
-export const zgxp = initializeExpressionContainer([
-  {
-    arg: 'h',
-    body: 'i'
-  },
-  'j'
 ])
 
 export const ysyy = initializeExpressionContainer([
@@ -229,7 +225,26 @@ export const rlzd = initializeExpressionContainer([
 
 export const mzxw = initializeExpressionContainer(numberParams('a', 'b', 0))
 export const irhr = initializeDoneExpressionContainer({ shorthandNumber: 0 })
+export const haeo = initializeDoneExpressionContainer({
+  shorthandNumber: 0,
+  shorthandNumberAfterConvert: 'number'
+})
 export const ntua = initializeDoneExpressionContainer({ shorthandNumber: 1 })
+export const yljj = initializeDoneExpressionContainer({
+  shorthandNumber: 2,
+  shorthandNumberAfterConvert: 'number'
+})
+export const dpvy = initializeDoneExpressionContainer({
+  shorthandNumber: 1,
+  shorthandNumberAfterConvert: 'number'
+})
+export const vzjq = initializeDoneExpressionContainer([
+  succParams('a', 'b', 'c'),
+  {
+    shorthandNumber: 1,
+    shorthandNumberAfterConvert: 'number'
+  }
+])
 export const nskn = initializeExpressionContainer(numberParams('e', 'f', 2))
 export const qbnd = initializeExpressionContainer(numberParams('k', 'l', 2))
 export const tnyj = initializeExpressionContainer(
@@ -245,40 +260,25 @@ export const hzkx = initializeExpressionContainer(
   numberParamsHighlightNumber('i', 'j', 4)
 )
 export const uarl = initializeDoneExpressionContainer({ shorthandNumber: 4 })
+export const kaaf = initializeDoneExpressionContainer({
+  shorthandNumber: 4,
+  shorthandNumberAfterConvert: 'number'
+})
 export const mxkk = initializeDoneExpressionContainer({ shorthandNumber: 5 })
 
-export const sfvk = initializeExpressionContainer(numberParams('e', 'f', 1))
-export const mhbx = initializeExpressionContainer(
-  numberParamsHighlightNumber('e', 'f', 1)
-)
-
-export const okmr = initializeExpressionContainer(numberParams('d', 'e', 1))
-export const dqgs = initializeExpressionContainer(numberParams('f', 'g', 2))
+export const lyet = initializeExpressionContainer(numberParams('d', 'e', 0))
 export const zdlx = initializeExpressionContainer(
   numberParamsHighlightNumber('d', 'e', 1)
+)
+export const aocc = initializeExpressionContainer(
+  numberParamsHighlightNumber('d', 'e', 2)
 )
 export const qyqi = initializeExpressionContainer(
   numberParamsHighlightNumber('d', 'b', 1)
 )
 export const entt = initializeExpressionContainer(
-  numberParamsHighlightNumber('f', 'g', 2)
+  numberParamsHighlightNumber('f', 'g', 1)
 )
-
-export const wowr = initializeExpressionContainer([
-  {
-    arg: 'g',
-    body: numberParams('e', 'f', 1)
-  },
-  'h'
-])
-
-export const elax = initializeExpressionContainer([
-  {
-    arg: 'c',
-    body: numberParams('a', 'b', 0)
-  },
-  'd'
-])
 
 export const dupe = initializeExpressionContainer({
   arg: 'A',
@@ -358,19 +358,6 @@ export const ekyd = initializeExpressionContainer({
   },
   falseCase: {
     shorthandNumber: 2
-  }
-})
-
-export const kysf = initializeExpressionContainer({
-  checkType: 'isZero',
-  condition: {
-    shorthandNumber: 3
-  },
-  trueCase: {
-    shorthandNumber: 2
-  },
-  falseCase: {
-    shorthandNumber: 1
   }
 })
 
@@ -701,42 +688,6 @@ export const gnpv = initializeExpressionContainer([
   }
 ])
 
-export const guxy = initializeExpressionContainer([
-  {
-    count: 4,
-    child: {
-      shorthandFunc: 'add'
-    }
-  },
-  {
-    shorthandNumber: 6
-  }
-])
-
-export const uqte = initializeExpressionContainer([
-  {
-    shorthandFunc: 'add'
-  },
-  [
-    {
-      shorthandFunc: 'add'
-    },
-    [
-      {
-        shorthandFunc: 'add'
-      },
-      [
-        {
-          shorthandFunc: 'add'
-        },
-        {
-          shorthandNumber: 6
-        }
-      ]
-    ]
-  ]
-])
-
 export const zxad = initializeExpressionContainer({
   shorthandNumber: 6
 })
@@ -788,45 +739,27 @@ export const pcdb = initializeExpressionContainer({
   }
 })
 
+export const kgpl = initializeExpressionContainer(
+  numberParamsHighlightNumber('g', 'h', 1)
+)
+
 export const epmt = initializeExpressionContainer(
   succParams('questionFoodGrey', 'questionFoodGrey', 'questionFoodGrey')
 )
 
-export const yrgv = initializeExpressionContainer(
-  succParams(
-    'questionFoodGrey',
-    'questionFoodGrey',
-    'questionFoodGrey',
-    false,
-    true
-  )
-)
-
-export const szos = initializeExpressionContainer([
-  succParams(
-    'questionFoodGrey',
-    'questionFoodGrey',
-    'questionFoodGrey',
-    false,
-    true
-  ),
-  numberParams('d', 'e', 1)
+export const ikrk = initializeExpressionContainer([
+  succParams('questionFoodGrey', 'questionFoodGrey', 'questionFoodGrey'),
+  numberParams('d', 'e', 0)
 ])
 
-export const pxae = initializeExpressionContainer([
+export const zxji = initializeExpressionContainer([
   succParams(
-    'questionFoodGrey',
-    'questionFoodGrey',
-    'questionFoodGrey',
-    false,
-    true
+    highlighted('questionFoodGrey'),
+    highlighted('questionFoodGrey'),
+    highlighted('questionFoodGrey')
   ),
-  numberParams('f', 'g', 2)
+  numberParams('d', 'e', 0)
 ])
-
-export const fyue = initializeExpressionContainer({
-  shorthandFunc: 'add'
-})
 
 export const vemg = initializeExpressionContainer(
   predParams(
@@ -839,57 +772,26 @@ export const vemg = initializeExpressionContainer(
   )
 )
 
-export const glmd = initializeExpressionContainer([
-  succParams(
-    'questionFoodGrey',
-    'questionFoodGrey',
-    'questionFoodGrey',
-    false,
-    true
-  ),
-  {
-    shorthandNumber: 1,
-    shorthandNumberAfterConvert: 'number'
-  }
-])
-
-export const kgoi = initializeExpressionContainer([
-  succParams(
-    'questionFoodGrey',
-    'questionFoodGrey',
-    'questionFoodGrey',
-    false,
-    true
-  ),
-  {
-    shorthandNumber: 2,
-    shorthandNumberAfterConvert: 'number'
-  }
-])
-
-export const cyhx = initializeExpressionContainer([
-  succParams(
-    'questionFoodGrey',
-    'questionFoodGrey',
-    'questionFoodGrey',
-    false,
-    true
-  ),
-  {
-    shorthandNumberAfterConvert: 'blank'
-  }
-])
-
-export const drbs = initializeExpressionContainer([
-  succParams('questionFoodGrey', 'questionFoodGrey', 'questionFoodGrey'),
-  {
-    shorthandNumberAfterConvert: 'blank'
-  }
-])
-
 export const hswh = initializeExpressionContainer({
-  shorthandNumberPlusOrMinusOne: 'plus'
+  shorthandNumberAfterConvert: 'blankPlusOne'
 })
+
+export const mzms = initializeExpressionContainer([
+  {
+    arg: highlighted('a'),
+    body: {
+      arg: highlighted('b'),
+      body: {
+        arg: highlighted('c'),
+        body: [
+          highlighted('b'),
+          [highlighted('a'), highlighted('b'), highlighted('b')]
+        ]
+      }
+    }
+  },
+  numberParams('d', 'e', 0)
+])
 
 export const ktus = initializeExpressionContainer({
   arg: 'a',
@@ -913,94 +815,24 @@ export const kwqc = initializeExpressionContainer([
       }
     }
   },
-  numberParams('d', 'e', 1)
+  numberParams('d', 'e', 0)
 ])
 
 export const iqbf = initializeExpressionContainer({
   arg: 'b',
   body: {
     arg: 'c',
-    body: ['b', ['b', { name: 'b', highlighted: true }]]
+    body: ['b', { name: 'b', highlighted: true }]
   }
 })
 
-export const bjzr = initializeExpressionContainer([
-  {
-    arg: 'a',
-    body: {
-      arg: 'b',
-      body: {
-        arg: 'c',
-        body: ['b', ['a', 'b', 'b']]
-      }
-    }
-  },
-  {
-    shorthandNumberAfterConvert: 'blank'
-  }
-])
-
-export const wgtz = initializeExpressionContainer([
-  {
-    arg: 'a',
-    body: {
-      arg: 'b',
-      body: {
-        arg: 'c',
-        body: ['b', ['a', 'b', 'b']]
-      }
-    }
-  },
-  {
-    shorthandNumberAfterConvert: 'blank',
-    initialHighlight: true
-  }
-])
-
-export const jrur = initializeExpressionContainer([
-  {
-    arg: 'a',
-    body: {
-      arg: 'b',
-      body: {
-        arg: 'c',
-        body: ['b', ['a', 'b', 'b']]
-      }
-    }
-  },
-  {
-    shorthandNumber: 1,
-    shorthandNumberAfterConvert: 'number',
-    initialHighlight: true
-  }
-])
-
-export const utur = initializeExpressionContainer([
-  {
-    arg: 'a',
-    body: {
-      arg: 'b',
-      body: {
-        arg: 'c',
-        body: ['b', ['a', 'b', 'b']]
-      }
-    }
-  },
-  {
-    shorthandNumber: 1,
-    shorthandNumberAfterConvert: 'number'
-  }
-])
-
 export const abbh = initializeExpressionContainer(
-  numberParamsHighlightNonNumber('b', 'c', 2)
+  numberParamsHighlightNonNumber('b', 'c', 1)
 )
-
-export const uzzl = initializeExpressionContainer(succParams('a', 'b', 'c'))
 
 export const uqth = initializeExpressionContainer([
   succParams('a', 'b', 'c'),
-  numberParams('d', 'e', 1)
+  numberParams('d', 'e', 0)
 ])
 
 export const oxuf = initializeExpressionContainer(
@@ -1011,39 +843,23 @@ export const fhyo = initializeExpressionContainer(
   numberParamsHighlightNumber('b', 'c', 3)
 )
 
+export const yywl = initializeExpressionContainer(
+  numberParamsHighlightNumber('b', 'c', 4)
+)
+
 export const ngth = initializeExpressionContainer([
   succParams('a', 'b', 'c'),
-  numberParams('f', 'g', 2)
+  numberParams('f', 'g', 1)
 ])
 
-export const disc = initializeExpressionContainer(
-  succParams('a', 'b', 'c', false, true)
-)
+export const disc = initializeExpressionContainer(succParams('a', 'b', 'c'))
 
-export const blns = initializeExpressionContainer(
-  succParams('A', 'B', 'C', false, true)
-)
+export const blns = initializeExpressionContainer(succParams('A', 'B', 'C'))
 
 export const ojsm = initializeExpressionContainer(succParams('h', 'i', 'j'))
-export const zgad = initializeExpressionContainer(
-  succParams('h', 'i', 'j', false, true)
-)
-
-export const lidn = initializeExpressionContainer(
-  numberParamsHighlightNumber('k', 'l', 3)
-)
-
-export const mtyb = initializeExpressionContainer([
-  succParams('h', 'i', 'j'),
-  numberParams('k', 'l', 3)
-])
-
-export const wwii = initializeExpressionContainer(
-  numberParamsHighlightNumber('i', 'j', 4)
-)
 
 export const orfr = initializeExpressionContainer([
-  succParams('a', 'b', 'c', false, true),
+  succParams(highlighted('a'), highlighted('b'), highlighted('c')),
   numberParams('d', 'b', 1)
 ])
 
@@ -1076,6 +892,9 @@ export const henz = initializeExpressionContainer([
   numberParams('d', { name: 'e', highlighted: true }, 1)
 ])
 
+export const tsms = initializeExpressionContainer('blankNumberPlusOne')
+export const hipa = initializeExpressionContainer('blankNumberMinusOne')
+
 export const kipz = initializeExpressionContainer([
   {
     arg: 'a',
@@ -1088,32 +907,8 @@ export const kipz = initializeExpressionContainer([
   'd'
 ])
 
-export const ycof = initializeExpressionContainer([
-  {
-    arg: 'a',
-    body: {
-      arg: 'b',
-      body: 'a'
-    }
-  },
-  'c',
-  'd'
-])
-
-export const guql = initializeExpressionContainer(
-  predParams(
-    'questionFoodGrey',
-    'questionFoodGrey',
-    'questionFoodGrey',
-    'questionFoodGrey',
-    'questionFoodGrey',
-    'questionFoodGrey',
-    true
-  )
-)
-
 export const jskq = initializeExpressionContainer({
-  shorthandNumberPlusOrMinusOne: 'minus'
+  shorthandNumberAfterConvert: 'blankMinusOne'
 })
 
 export const xwlj = initializeExpressionContainer([
@@ -1123,8 +918,7 @@ export const xwlj = initializeExpressionContainer([
     'questionFoodGrey',
     'questionFoodGrey',
     'questionFoodGrey',
-    'questionFoodGrey',
-    true
+    'questionFoodGrey'
   ),
   {
     shorthandNumberAfterConvert: 'blank'
@@ -1135,13 +929,25 @@ export const smxz = initializeExpressionContainer(
   predParams('a', 'b', 'c', 'd', 'e', 'f')
 )
 
-export const kgpl = initializeExpressionContainer(
-  numberParamsHighlightNumber('g', 'h', 1)
-)
-
 export const udaf = initializeExpressionContainer([
   predParams('a', 'b', 'c', 'd', 'e', 'f'),
   numberParams('g', 'h', 1)
+])
+
+export const nhpm = initializeExpressionContainer([
+  predParams('a', 'b', 'c', 'd', 'e', 'f'),
+  {
+    shorthandNumberAfterConvert: 'number',
+    shorthandNumber: 1
+  }
+])
+
+export const yjhv = initializeExpressionContainer([
+  predParams('a', 'b', 'c', 'd', 'e', 'f'),
+  {
+    shorthandNumberAfterConvert: 'number',
+    shorthandNumber: 2
+  }
 ])
 
 export const csai = initializeExpressionContainer(
@@ -1161,12 +967,12 @@ export const myzx = initializeExpressionContainer(
   numberParamsHighlightNumber('b', 'c', 1)
 )
 
-export const wosn = initializeExpressionContainer(
-  predParams('a', 'b', 'c', 'd', 'e', 'f', true)
+export const vfwt = initializeExpressionContainer(
+  predParams('A', 'B', 'C', 'D', 'E', 'F')
 )
 
-export const vfwt = initializeExpressionContainer(
-  predParams('A', 'B', 'C', 'D', 'E', 'F', true)
+export const ccjv = initializeExpressionContainer(
+  predParams('g', 'h', 'i', 'j', 'k', 'l')
 )
 
 export const yvkr = initializeExpressionContainer([
@@ -1268,10 +1074,6 @@ export const qrvj = initializeExpressionContainer({
   shorthandNumberAfterConvert: 'trueCase'
 })
 
-export const zfym = initializeExpressionContainer(
-  numberParamsHighlightNumber('f', 'g', 1)
-)
-
 export const nnqw = initializeExpressionContainer(
   isZeroParams(
     'a',
@@ -1357,10 +1159,6 @@ export const zmua = initializeExpressionContainer(
   )
 )
 
-export const qzuv = initializeExpressionContainer(
-  numberParamsHighlightNumber('f', 'g', 1)
-)
-
 export const lcce = initializeExpressionContainer(
   isZeroParams(
     'A',
@@ -1368,6 +1166,19 @@ export const lcce = initializeExpressionContainer(
     'C',
     'D',
     'E',
+    { shorthandNumberAfterConvert: 'trueCase' },
+    { shorthandNumberAfterConvert: 'falseCase' },
+    { shorthandNumberAfterConvert: 'condition' }
+  )
+)
+
+export const vwlq = initializeExpressionContainer(
+  isZeroParams(
+    'f',
+    'g',
+    'h',
+    'i',
+    'j',
     { shorthandNumberAfterConvert: 'trueCase' },
     { shorthandNumberAfterConvert: 'falseCase' },
     { shorthandNumberAfterConvert: 'condition' }
@@ -1384,11 +1195,11 @@ export const gbbo = initializeExpressionContainer([
       'd',
       'e',
       numberParams('g', 'h', 2),
-      [succParams('i', 'j', 'k'), 'f'],
+      [succParams('a', 'b', 'c'), 'f'],
       'f'
     )
   },
-  numberParams('l', 'm', 3)
+  numberParams('i', 'j', 3)
 ])
 
 export const nden = initializeExpressionContainer([
@@ -1401,19 +1212,15 @@ export const nden = initializeExpressionContainer([
       highlighted('d'),
       highlighted('e'),
       numberParams(highlighted('g'), highlighted('h'), 2),
-      [succParams(highlighted('i'), highlighted('j'), highlighted('k')), 'f'],
+      [succParams(highlighted('a'), highlighted('b'), highlighted('c')), 'f'],
       'f'
     )
   },
-  numberParams(highlighted('l'), highlighted('m'), 3)
+  numberParams(highlighted('i'), highlighted('j'), 3)
 ])
 
 export const loem = initializeExpressionContainer(
-  numberParamsHighlightNumber('l', 'm', 3)
-)
-
-export const harq = initializeExpressionContainer(
-  numberParamsHighlightNumber('g', 'h', 2)
+  numberParamsHighlightNumber('i', 'j', 3)
 )
 
 export const wvsk = initializeExpressionContainer([
@@ -1426,7 +1233,7 @@ export const wvsk = initializeExpressionContainer([
       'd',
       'e',
       numberParams('g', 'h', 2),
-      [succParams('i', 'j', 'k'), 'f'],
+      [succParams('a', 'b', 'c'), 'f'],
       'f'
     )
   },
@@ -1446,7 +1253,7 @@ export const nuux = initializeExpressionContainer([
       'd',
       'e',
       numberParams('g', 'h', 2),
-      [succParams('i', 'j', 'k'), 'f'],
+      [succParams('a', 'b', 'c'), 'f'],
       'f'
     )
   },
@@ -1468,7 +1275,7 @@ export const aqul = initializeExpressionContainer([
         shorthandNumber: 2,
         initialHighlight: true
       },
-      [succParams('i', 'j', 'k'), 'f'],
+      [succParams('a', 'b', 'c'), 'f'],
       'f'
     )
   },
@@ -1477,7 +1284,7 @@ export const aqul = initializeExpressionContainer([
   }
 ])
 
-export const snye = initializeExpressionContainer([
+export const syvj = initializeExpressionContainer([
   {
     arg: 'f',
     body: isZeroParams(
@@ -1489,7 +1296,7 @@ export const snye = initializeExpressionContainer([
       {
         shorthandNumber: 2
       },
-      [succParams('i', 'j', 'k'), 'f'],
+      [succParams(highlighted('a'), highlighted('b'), highlighted('c')), 'f'],
       'f'
     )
   },
@@ -1498,9 +1305,7 @@ export const snye = initializeExpressionContainer([
   }
 ])
 
-export const aqvq = initializeExpressionContainer(
-  succParams('i', 'j', 'k', false, true)
-)
+export const aqvq = initializeExpressionContainer(succParams('a', 'b', 'c'))
 
 export const abrk = initializeExpressionContainer([
   {
@@ -1637,10 +1442,6 @@ export const mldl = initializeExpressionContainer([
     initialHighlight: true
   }
 ])
-
-export const teba = initializeExpressionContainer(
-  numberParamsHighlightNumber('j', 'k', 4)
-)
 
 export const awxe = initializeExpressionContainer([
   {
@@ -2166,6 +1967,20 @@ export const psxr = initializeExpressionContainer({
   ]
 })
 
+export const mqoa = initializeExpressionContainer({
+  arg: 'c',
+  body: [
+    {
+      arg: 'd',
+      body: ['c', ['d', 'd']]
+    },
+    {
+      arg: 'd',
+      body: ['c', ['d', 'd']]
+    }
+  ]
+})
+
 export const silw = initializeExpressionContainer([
   [
     addParams('a', 'b', 'c', 'd'),
@@ -2282,14 +2097,6 @@ export const nuoh = initializeExpressionContainer([
   'B'
 ])
 
-export const ilbg = initializeDoneExpressionContainer({
-  shorthandNumber: 2
-})
-
-export const zrwn = initializeDoneExpressionContainer({
-  shorthandNumber: 1
-})
-
 export const ntes = initializeExpressionContainer(numberParams('c', 'd', 1))
 
 export const tgxv = initializeExpressionContainer(numberParams('g', 'h', 3))
@@ -2299,14 +2106,20 @@ export const jxur = initializeExpressionContainer([
   [succParams('a', 'b', 'c'), numberParams('d', 'e', 2)]
 ])
 
+export const sqcx = initializeExpressionContainer([
+  succParams('a', 'b', 'c'),
+  [
+    succParams('a', 'b', 'c'),
+    {
+      shorthandNumberAfterConvert: 'number',
+      shorthandNumber: 2
+    }
+  ]
+])
+
 export const rjyq = initializeDoneExpressionContainer({
   shorthandNumber: 6
 })
-
-export const iius = initializeExpressionContainer([
-  predParams('a', 'b', 'c', 'd', 'e', 'f'),
-  numberParams('g', 'h', 3)
-])
 
 export const ptsa = initializeExpressionContainer([
   {
@@ -2324,20 +2137,6 @@ export const qefa = initializeDoneExpressionContainer({
   shorthandNumber: 20
 })
 
-export const nndd = initializeDoneExpressionContainer({
-  shorthandFunc: 'add'
-})
-
-export const roso = initializeExpressionContainer({
-  checkType: 'isZero',
-  condition: 'f',
-  trueCase: { name: 'A', highlighted: true },
-  falseCase: [
-    { shorthandFunc: 'add', initialHighlight: true },
-    ['a', [{ shorthandFunc: 'pred' }, 'f']]
-  ]
-})
-
 export const ygum = initializeExpressionContainer({
   binaryType: 'multiply',
   first: 'blankNumberPurple',
@@ -2351,22 +2150,6 @@ export const babw = initializeExpressionContainer({
   },
   second: {
     shorthandNumber: 3
-  }
-})
-
-export const krin = initializeExpressionContainer({
-  binaryType: 'multiply',
-  first: {
-    binaryType: 'multiply',
-    first: {
-      shorthandNumber: 2
-    },
-    second: {
-      shorthandNumber: 3
-    }
-  },
-  second: {
-    shorthandNumber: 4
   }
 })
 
@@ -2493,3 +2276,11 @@ export const abhd = initializeExpressionContainer([
   },
   { name: 'blankNumber', highlighted: true }
 ])
+
+export const avsj = initializeExpressionContainer({
+  shorthandNumberAfterConvert: 'binaryMultiply'
+})
+
+export const yudv = initializeExpressionContainer({
+  shorthandNumberAfterConvert: 'binaryAdd'
+})

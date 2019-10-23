@@ -36,7 +36,7 @@ export const wwtl: ExpressionRunnerShorthandConfig = {
 }
 
 export const vdhd: ExpressionRunnerShorthandConfig = {
-  runner: 'playButtonOnly',
+  runner: 'runButtonOnly',
   skipToTheEnd: false,
   initialExpressionContainer: initialExpressionContainers.pisd,
   initialState: 'showFuncUnbound',
@@ -65,6 +65,11 @@ export const aezk: ExpressionRunnerShorthandConfig = {
   initialExpressionContainer: initialExpressionContainers.lqti,
   initialState: 'active',
   showPriorities: true
+}
+
+export const qwzy: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.prxd
 }
 
 export const igrl: ExpressionRunnerShorthandConfig = {
@@ -123,7 +128,7 @@ export const mhyv: ExpressionRunnerShorthandConfig = {
 }
 
 export const myjz: ExpressionRunnerShorthandConfig = {
-  runner: 'playButtonOnly',
+  runner: 'runButtonOnly',
   skipToTheEnd: false,
   initialExpressionContainer: initialExpressionContainers.drvy,
   showPriorities: true,
@@ -132,7 +137,7 @@ export const myjz: ExpressionRunnerShorthandConfig = {
 }
 
 export const ayok: ExpressionRunnerShorthandConfig = {
-  runner: 'playButtonOnly',
+  runner: 'runButtonOnly',
   initialExpressionContainer: initialExpressionContainers.drvy,
   showPriorities: true,
   skipToTheEnd: false,
@@ -140,7 +145,7 @@ export const ayok: ExpressionRunnerShorthandConfig = {
 }
 
 export const thkn: ExpressionRunnerShorthandConfig = {
-  runner: 'playButtonOnly',
+  runner: 'runButtonOnly',
   initialExpressionContainer: initialExpressionContainers.oyph,
   showPriorities: true,
   skipToTheEnd: false
@@ -160,13 +165,8 @@ export const bgfl: ExpressionRunnerShorthandConfig = {
 
 export const cpkp: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
-  initialExpressionContainer: initialExpressionContainers.zgxp,
+  initialExpressionContainer: initialExpressionContainers.ysyy,
   isDone: true
-}
-
-export const bhpw: ExpressionRunnerShorthandConfig = {
-  runner: 'simple',
-  initialExpressionContainer: initialExpressionContainers.nndd
 }
 
 export const cvtc: ExpressionRunnerShorthandConfig = {
@@ -183,7 +183,7 @@ export const oork: ExpressionRunnerShorthandConfig = {
 }
 
 export const diis: ExpressionRunnerShorthandConfig = {
-  runner: 'playButtonOnly',
+  runner: 'runButtonOnly',
   initialExpressionContainer: initialExpressionContainers.hrdv,
   initialState: 'showFuncBound',
   skipToTheEnd: false,
@@ -204,7 +204,7 @@ export const dqey: ExpressionRunnerShorthandConfig = {
 }
 
 export const zemy: ExpressionRunnerShorthandConfig = {
-  runner: 'playButtonOnly',
+  runner: 'runButtonOnly',
   skipToTheEnd: false,
   initialExpressionContainer: initialExpressionContainers.hrdv,
   initialState: 'active',
@@ -226,14 +226,14 @@ export const rgta: ExpressionRunnerShorthandConfig = {
 }
 
 export const cuwg: ExpressionRunnerShorthandConfig = {
-  runner: 'playButtonOnly',
+  runner: 'runButtonOnly',
   initialExpressionContainer: initialExpressionContainers.rlzd,
   showPriorities: true,
   skipToTheEnd: false
 }
 
 export const rivc: ExpressionRunnerShorthandConfig = {
-  runner: 'playButtonOnly',
+  runner: 'runButtonOnly',
   initialExpressionContainer: initialExpressionContainers.sisf
 }
 
@@ -268,12 +268,6 @@ export const issq: ExpressionRunnerShorthandConfig = {
   initialExpressionContainer: initialExpressionContainers.sisf,
   initialState: 'betaReducePreviewCrossed',
   explanationsVisibility: 'visible'
-}
-
-export const thbw: ExpressionRunnerShorthandConfig = {
-  runner: 'simple',
-  isDone: true,
-  initialExpressionContainer: initialExpressionContainers.sisf
 }
 
 export const dtzu: ExpressionRunnerShorthandConfig = {
@@ -375,7 +369,7 @@ export const uvmv: ExpressionRunnerShorthandConfig = {
 }
 
 export const mutg: ExpressionRunnerShorthandConfig = {
-  runner: 'playButtonOnly',
+  runner: 'runButtonOnly',
   initialExpressionContainer: initialExpressionContainers.neny
 }
 
@@ -385,14 +379,14 @@ export const hvqh: ExpressionRunnerShorthandConfig = {
 }
 
 export const hdxc: ExpressionRunnerShorthandConfig = {
-  runner: 'playButtonOnly',
+  runner: 'runButtonOnly',
   initialExpressionContainer: initialExpressionContainers.epon,
   showPriorities: true,
   skipToTheEnd: false
 }
 
 export const hykj: ExpressionRunnerShorthandConfig = {
-  runner: 'playButtonOnly',
+  runner: 'runButtonOnly',
   skipToTheEnd: false,
   initialExpressionContainer: initialExpressionContainers.lqti,
   initialState: 'showFuncUnbound',
@@ -404,7 +398,7 @@ export const iatt: ExpressionRunnerShorthandConfig = {
   runner: 'predefined',
   initialExpressionContainers: [
     initialExpressionContainers.ekyd,
-    initialExpressionContainers.zrwn
+    initialExpressionContainers.ntua
   ]
 }
 
@@ -431,12 +425,12 @@ export const imyd: ExpressionRunnerShorthandConfig = {
 }
 
 export const itbm: ExpressionRunnerShorthandConfig = {
-  runner: 'playButtonOnly',
+  runner: 'runButtonOnly',
   initialExpressionContainer: initialExpressionContainers.nyhe
 }
 
 export const izgz: ExpressionRunnerShorthandConfig = {
-  runner: 'playButtonOnly',
+  runner: 'runButtonOnly',
   initialExpressionContainer: initialExpressionContainers.lqti,
   initialState: 'betaReducePreviewAfter',
   showPriorities: true,
@@ -444,14 +438,14 @@ export const izgz: ExpressionRunnerShorthandConfig = {
 }
 
 export const jbam: ExpressionRunnerShorthandConfig = {
-  runner: 'playButtonOnly',
+  runner: 'runButtonOnly',
   initialExpressionContainer: initialExpressionContainers.txbv,
   initialState: 'active',
   skipToTheEnd: false
 }
 
 export const hluq: ExpressionRunnerShorthandConfig = {
-  runner: 'playButtonOnly',
+  runner: 'runButtonOnly',
   initialExpressionContainer: initialExpressionContainers.sisf,
   initialState: 'active',
   skipToTheEnd: false
@@ -483,19 +477,12 @@ export const knhw: ExpressionRunnerShorthandConfig = {
 }
 
 export const kvso: ExpressionRunnerShorthandConfig = {
-  runner: 'playButtonOnly',
+  runner: 'runButtonOnly',
   initialExpressionContainer: initialExpressionContainers.pisd,
   nextIterations: 1,
   initialState: 'showFuncBound',
   showPriorities: true,
   skipToTheEnd: false
-}
-
-export const jwue: ExpressionRunnerShorthandConfig = {
-  runner: 'simple',
-  initialExpressionContainer: initialExpressionContainers.pisd,
-  nextIterations: 1,
-  showPriorities: true
 }
 
 export const sgnp: ExpressionRunnerShorthandConfig = {
@@ -508,7 +495,7 @@ export const sgnp: ExpressionRunnerShorthandConfig = {
 }
 
 export const beiz: ExpressionRunnerShorthandConfig = {
-  runner: 'playButtonOnly',
+  runner: 'runButtonOnly',
   initialExpressionContainer: initialExpressionContainers.pisd,
   showPriorities: true,
   skipToTheEnd: false
@@ -521,18 +508,12 @@ export const laea: ExpressionRunnerShorthandConfig = {
 }
 
 export const nmmz: ExpressionRunnerShorthandConfig = {
-  runner: 'playButtonOnly',
+  runner: 'runButtonOnly',
   initialExpressionContainer: initialExpressionContainers.ysyy
 }
 
 export const ldqk: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
-  initialExpressionContainer: initialExpressionContainers.ysyy
-}
-
-export const fogc: ExpressionRunnerShorthandConfig = {
-  runner: 'simple',
-  isDone: true,
   initialExpressionContainer: initialExpressionContainers.ysyy
 }
 
@@ -747,10 +728,40 @@ export const kizi: ExpressionRunnerShorthandConfig = {
   initialExpressionContainer: initialExpressionContainers.uarl
 }
 
+export const ldcq: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  showPriorities: true,
+  initialExpressionContainer: initialExpressionContainers.kaaf
+}
+
+export const aflw: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  showPriorities: true,
+  initialExpressionContainer: initialExpressionContainers.avsj
+}
+
+export const nxjv: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  showPriorities: true,
+  initialExpressionContainer: initialExpressionContainers.yudv
+}
+
 export const jwah: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   showPriorities: true,
   initialExpressionContainer: initialExpressionContainers.irhr
+}
+
+export const nbck: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  showPriorities: true,
+  initialExpressionContainer: initialExpressionContainers.haeo
+}
+
+export const cawl: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  showPriorities: true,
+  initialExpressionContainer: initialExpressionContainers.yljj
 }
 
 export const vlob: ExpressionRunnerShorthandConfig = {
@@ -769,71 +780,27 @@ export const dubm: ExpressionRunnerShorthandConfig = {
   initialExpressionContainer: initialExpressionContainers.wcdn
 }
 
-export const rlrs: ExpressionRunnerShorthandConfig = {
-  runner: 'simple',
-  showPriorities: true,
-  initialExpressionContainer: initialExpressionContainers.wowr
-}
-
-export const csqj: ExpressionRunnerShorthandConfig = {
-  runner: 'playButtonOnly',
-  showPriorities: true,
-  initialExpressionContainer: initialExpressionContainers.wowr,
-  initialState: 'active',
-  skipToTheEnd: false
-}
-
-export const igpn: ExpressionRunnerShorthandConfig = {
-  runner: 'simple',
-  showPriorities: true,
-  initialExpressionContainer: initialExpressionContainers.sfvk
-}
-
-export const hhdu: ExpressionRunnerShorthandConfig = {
-  runner: 'simple',
-  showPriorities: true,
-  initialExpressionContainer: initialExpressionContainers.mhbx,
-  bottomRightBadgeOverrides: { f: '🅱️', e: '🅰️' }
-}
-
 export const rnug: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   showPriorities: true,
   initialExpressionContainer: initialExpressionContainers.ntua
 }
 
-export const zahd: ExpressionRunnerShorthandConfig = {
-  runner: 'predefined',
-  showPriorities: true,
-  initialExpressionContainers: [
-    initialExpressionContainers.wowr,
-    initialExpressionContainers.ntua
-  ],
-  convert: 'toMathBoxPlay'
-}
-
-export const qsnv: ExpressionRunnerShorthandConfig = {
+export const jzwg: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   showPriorities: true,
-  initialExpressionContainer: initialExpressionContainers.elax
+  initialExpressionContainer: initialExpressionContainers.dpvy
 }
 
-export const dcji: ExpressionRunnerShorthandConfig = {
-  runner: 'predefined',
+export const rqer: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
   showPriorities: true,
-  initialExpressionContainers: [
-    initialExpressionContainers.elax,
-    initialExpressionContainers.irhr
-  ],
-  convert: 'toMathBoxPlay'
-}
-
-export const zlrx: ExpressionRunnerShorthandConfig = {
-  runner: 'playButtonOnly',
-  showPriorities: true,
-  initialExpressionContainer: initialExpressionContainers.elax,
-  skipToTheEnd: false,
-  initialState: 'active'
+  initialExpressionContainer: initialExpressionContainers.vzjq,
+  highlightOverrides: {
+    a: 'highlighted',
+    b: 'highlighted',
+    c: 'highlighted'
+  }
 }
 
 export const duuk: ExpressionRunnerShorthandConfig = {
@@ -841,12 +808,6 @@ export const duuk: ExpressionRunnerShorthandConfig = {
   showPriorities: true,
   initialExpressionContainer: initialExpressionContainers.hzkx,
   bottomRightBadgeOverrides: { j: '🅱️', i: '🅰️' }
-}
-
-export const otbe: ExpressionRunnerShorthandConfig = {
-  runner: 'simple',
-  showPriorities: true,
-  initialExpressionContainer: initialExpressionContainers.uarl
 }
 
 export const ehxq: ExpressionRunnerShorthandConfig = {
@@ -861,8 +822,8 @@ export const ehxq: ExpressionRunnerShorthandConfig = {
 
 export const weoz: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
-  initialExpressionContainer: initialExpressionContainers.sisf,
-  isDone: true
+  isDone: true,
+  initialExpressionContainer: initialExpressionContainers.sisf
 }
 
 export const uwma: ExpressionRunnerShorthandConfig = {
@@ -887,14 +848,14 @@ export const vvjn: ExpressionRunnerShorthandConfig = {
 }
 
 export const wunw: ExpressionRunnerShorthandConfig = {
-  runner: 'playButtonOnly',
+  runner: 'runButtonOnly',
   initialExpressionContainer: initialExpressionContainers.nyhe,
   initialState: 'active',
   skipToTheEnd: false
 }
 
 export const zwpj: ExpressionRunnerShorthandConfig = {
-  runner: 'playButtonOnly',
+  runner: 'runButtonOnly',
   initialExpressionContainer: initialExpressionContainers.txbv
 }
 
@@ -905,7 +866,7 @@ export const zzxj: ExpressionRunnerShorthandConfig = {
 }
 
 export const zzyu: ExpressionRunnerShorthandConfig = {
-  runner: 'playButtonOnly',
+  runner: 'runButtonOnly',
   initialExpressionContainer: initialExpressionContainers.gvjy
 }
 
@@ -920,12 +881,12 @@ export const gnwm: ExpressionRunnerShorthandConfig = {
 }
 
 export const mcug: ExpressionRunnerShorthandConfig = {
-  runner: 'playButtonOnly',
+  runner: 'runButtonOnly',
   initialExpressionContainer: initialExpressionContainers.vibe
 }
 
 export const aovj: ExpressionRunnerShorthandConfig = {
-  runner: 'playButtonOnly',
+  runner: 'runButtonOnly',
   initialExpressionContainer: initialExpressionContainers.kfwf
 }
 
@@ -952,7 +913,7 @@ export const fdig: ExpressionRunnerShorthandConfig = {
 }
 
 export const xmqp: ExpressionRunnerShorthandConfig = {
-  runner: 'playButtonOnly',
+  runner: 'runButtonOnly',
   initialExpressionContainer: initialExpressionContainers.qtns
 }
 
@@ -961,23 +922,28 @@ export const ditw: ExpressionRunnerShorthandConfig = {
   initialExpressionContainer: initialExpressionContainers.ofza
 }
 
+export const tcyv: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.gjyx
+}
+
 export const jiqb: ExpressionRunnerShorthandConfig = {
-  runner: 'playButtonOnly',
+  runner: 'runButtonOnly',
   initialExpressionContainer: initialExpressionContainers.gjyx
 }
 
 export const eagi: ExpressionRunnerShorthandConfig = {
-  runner: 'playButtonOnly',
+  runner: 'runButtonOnly',
   initialExpressionContainer: initialExpressionContainers.qcio
 }
 
 export const yjur: ExpressionRunnerShorthandConfig = {
-  runner: 'playButtonOnly',
+  runner: 'runButtonOnly',
   initialExpressionContainer: initialExpressionContainers.wsia
 }
 
 export const amoq: ExpressionRunnerShorthandConfig = {
-  runner: 'playButtonOnly',
+  runner: 'runButtonOnly',
   initialExpressionContainer: initialExpressionContainers.rnth
 }
 
@@ -987,7 +953,7 @@ export const dfjp: ExpressionRunnerShorthandConfig = {
 }
 
 export const lxrk: ExpressionRunnerShorthandConfig = {
-  runner: 'playButtonOnly',
+  runner: 'runButtonOnly',
   initialExpressionContainer: initialExpressionContainers.bwig
 }
 
@@ -1005,7 +971,7 @@ export const pgxb: ExpressionRunnerShorthandConfig = {
   runner: 'predefined',
   initialExpressionContainers: [
     initialExpressionContainers.bmar,
-    initialExpressionContainers.ilbg
+    initialExpressionContainers.hdpc
   ]
 }
 
@@ -1088,7 +1054,7 @@ export const immq: ExpressionRunnerShorthandConfig = {
 }
 
 export const zuus: ExpressionRunnerShorthandConfig = {
-  runner: 'playButtonOnly',
+  runner: 'runButtonOnly',
   initialExpressionContainer: initialExpressionContainers.zbzu,
   initialState: 'active',
   skipToTheEnd: false
@@ -1116,31 +1082,21 @@ export const envj: ExpressionRunnerShorthandConfig = {
   showPriorities: true
 }
 
-export const jguj: ExpressionRunnerShorthandConfig = {
+export const stda: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
-  initialExpressionContainer: initialExpressionContainers.yrgv,
+  initialExpressionContainer: initialExpressionContainers.ikrk,
   showPriorities: true
 }
 
-export const fljg: ExpressionRunnerShorthandConfig = {
+export const cawa: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
-  initialExpressionContainer: initialExpressionContainers.szos,
+  initialExpressionContainer: initialExpressionContainers.zxji,
   showPriorities: true
 }
 
-export const ezmz: ExpressionRunnerShorthandConfig = {
-  runner: 'predefined',
-  initialExpressionContainers: [
-    initialExpressionContainers.szos,
-    initialExpressionContainers.hdpc
-  ],
-  showPriorities: true,
-  convert: 'toMathBoxPlay'
-}
-
-export const biit: ExpressionRunnerShorthandConfig = {
+export const fzpz: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
-  initialExpressionContainer: initialExpressionContainers.fyue,
+  initialExpressionContainer: initialExpressionContainers.mzms,
   showPriorities: true
 }
 
@@ -1150,15 +1106,29 @@ export const pbop: ExpressionRunnerShorthandConfig = {
   showPriorities: true
 }
 
-export const fxde: ExpressionRunnerShorthandConfig = {
+export const dvfg: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
-  initialExpressionContainer: initialExpressionContainers.okmr,
+  initialExpressionContainer: initialExpressionContainers.lyet,
   showPriorities: true
+}
+
+export const hkbs: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.lyet,
+  showPriorities: true,
+  bottomRightBadgeOverrides: { d: '🅰️', e: '🅱️' }
 }
 
 export const rbup: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   initialExpressionContainer: initialExpressionContainers.zdlx,
+  showPriorities: true,
+  bottomRightBadgeOverrides: { d: '🅰️', e: '🅱️' }
+}
+
+export const ehsw: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.aocc,
   showPriorities: true,
   bottomRightBadgeOverrides: { d: '🅰️', e: '🅱️' }
 }
@@ -1170,68 +1140,21 @@ export const cmla: ExpressionRunnerShorthandConfig = {
   bottomRightBadgeOverrides: { d: '🅰️', b: '🅱️' }
 }
 
-export const ilvq: ExpressionRunnerShorthandConfig = {
+export const ymtp: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
-  initialExpressionContainer: initialExpressionContainers.dqgs,
+  initialExpressionContainer: initialExpressionContainers.tsms,
   showPriorities: true
 }
 
-export const spga: ExpressionRunnerShorthandConfig = {
+export const jfgb: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
-  initialExpressionContainer: initialExpressionContainers.entt,
-  showPriorities: true,
-  bottomRightBadgeOverrides: { f: '🅰️', g: '🅱️' }
-}
-
-export const akug: ExpressionRunnerShorthandConfig = {
-  runner: 'simple',
-  initialExpressionContainer: initialExpressionContainers.pxae,
-  showPriorities: true
-}
-
-export const vfdw: ExpressionRunnerShorthandConfig = {
-  runner: 'predefined',
-  initialExpressionContainers: [
-    initialExpressionContainers.pxae,
-    initialExpressionContainers.qjcv
-  ],
-  showPriorities: true,
-  convert: 'toMathBoxPlay'
-}
-
-export const jiua: ExpressionRunnerShorthandConfig = {
-  runner: 'simple',
-  initialExpressionContainer: initialExpressionContainers.glmd,
-  showPriorities: true
-}
-
-export const aone: ExpressionRunnerShorthandConfig = {
-  runner: 'simple',
-  initialExpressionContainer: initialExpressionContainers.kgoi,
-  showPriorities: true
-}
-
-export const qsoa: ExpressionRunnerShorthandConfig = {
-  runner: 'simple',
-  initialExpressionContainer: initialExpressionContainers.qjcv,
-  showPriorities: true
-}
-
-export const qrgc: ExpressionRunnerShorthandConfig = {
-  runner: 'simple',
-  initialExpressionContainer: initialExpressionContainers.cyhx,
+  initialExpressionContainer: initialExpressionContainers.hipa,
   showPriorities: true
 }
 
 export const jxvy: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   initialExpressionContainer: initialExpressionContainers.hswh,
-  showPriorities: true
-}
-
-export const lwoq: ExpressionRunnerShorthandConfig = {
-  runner: 'simple',
-  initialExpressionContainer: initialExpressionContainers.ktus,
   showPriorities: true
 }
 
@@ -1242,49 +1165,14 @@ export const olyw: ExpressionRunnerShorthandConfig = {
   crossed: true
 }
 
-export const tjaf: ExpressionRunnerShorthandConfig = {
-  runner: 'simple',
-  initialExpressionContainer: initialExpressionContainers.bjzr,
-  showPriorities: true
-}
-
-export const avcu: ExpressionRunnerShorthandConfig = {
-  runner: 'simple',
-  initialExpressionContainer: initialExpressionContainers.wgtz,
-  showPriorities: true
-}
-
-export const dewi: ExpressionRunnerShorthandConfig = {
-  runner: 'simple',
-  initialExpressionContainer: initialExpressionContainers.jrur,
-  showPriorities: true
-}
-
-export const xxan: ExpressionRunnerShorthandConfig = {
-  runner: 'simple',
-  initialExpressionContainer: initialExpressionContainers.utur,
-  showPriorities: true
-}
-
 export const nuco: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   initialExpressionContainer: initialExpressionContainers.kwqc,
   showPriorities: true
 }
 
-export const ufjx: ExpressionRunnerShorthandConfig = {
-  runner: 'simple',
-  initialExpressionContainer: initialExpressionContainers.kwqc,
-  showPriorities: true,
-  highlightOverrides: {
-    a: 'highlighted',
-    b: 'highlighted',
-    c: 'highlighted'
-  }
-}
-
 export const dhiu: ExpressionRunnerShorthandConfig = {
-  runner: 'playButtonOnly',
+  runner: 'runButtonOnly',
   initialExpressionContainer: initialExpressionContainers.kwqc,
   skipToTheEnd: false,
   showPriorities: true,
@@ -1293,7 +1181,7 @@ export const dhiu: ExpressionRunnerShorthandConfig = {
 }
 
 export const akjy: ExpressionRunnerShorthandConfig = {
-  runner: 'playButtonOnly',
+  runner: 'runButtonOnly',
   initialExpressionContainer: initialExpressionContainers.kwqc,
   skipToTheEnd: false,
   showPriorities: true,
@@ -1303,7 +1191,7 @@ export const akjy: ExpressionRunnerShorthandConfig = {
 }
 
 export const hnyn: ExpressionRunnerShorthandConfig = {
-  runner: 'playButtonOnly',
+  runner: 'runButtonOnly',
   initialExpressionContainer: initialExpressionContainers.kwqc,
   skipToTheEnd: false,
   showPriorities: true,
@@ -1340,27 +1228,28 @@ export const bgxi: ExpressionRunnerShorthandConfig = {
   bottomRightBadgeOverrides: { b: '🅰️', c: '🅱️' }
 }
 
-export const qrfw: ExpressionRunnerShorthandConfig = {
-  runner: 'simple',
-  initialExpressionContainer: initialExpressionContainers.uzzl,
-  showPriorities: true
-}
-
 export const plde: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   initialExpressionContainer: initialExpressionContainers.uqth,
   showPriorities: true
 }
 
+export const cpim: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.uqth,
+  showPriorities: true,
+  highlightOverrides: { a: 'highlighted', b: 'highlighted', c: 'highlighted' }
+}
+
 export const rjzw: ExpressionRunnerShorthandConfig = {
-  runner: 'playButtonOnly',
+  runner: 'runButtonOnly',
   initialExpressionContainer: initialExpressionContainers.uqth,
   showPriorities: true,
   skipToTheEnd: false
 }
 
 export const jsvg: ExpressionRunnerShorthandConfig = {
-  runner: 'playButtonOnly',
+  runner: 'runButtonOnly',
   initialExpressionContainer: initialExpressionContainers.uqth,
   showPriorities: true,
   skipToTheEnd: false,
@@ -1369,7 +1258,7 @@ export const jsvg: ExpressionRunnerShorthandConfig = {
 }
 
 export const uexo: ExpressionRunnerShorthandConfig = {
-  runner: 'playButtonOnly',
+  runner: 'runButtonOnly',
   initialExpressionContainer: initialExpressionContainers.uqth,
   showPriorities: true,
   skipToTheEnd: false,
@@ -1379,7 +1268,7 @@ export const uexo: ExpressionRunnerShorthandConfig = {
 }
 
 export const hdhy: ExpressionRunnerShorthandConfig = {
-  runner: 'playButtonOnly',
+  runner: 'runButtonOnly',
   initialExpressionContainer: initialExpressionContainers.uqth,
   showPriorities: true,
   skipToTheEnd: false,
@@ -1405,22 +1294,20 @@ export const rico: ExpressionRunnerShorthandConfig = {
 export const awwn: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   initialExpressionContainer: initialExpressionContainers.ngth,
-  showPriorities: true
+  showPriorities: true,
+  highlightOverrides: {
+    a: 'highlighted',
+    b: 'highlighted',
+    c: 'highlighted'
+  }
 }
 
 export const nlbn: ExpressionRunnerShorthandConfig = {
-  runner: 'playButtonOnly',
+  runner: 'runButtonOnly',
   initialExpressionContainer: initialExpressionContainers.ngth,
   showPriorities: true,
   skipToTheEnd: false,
   speed: 1.25
-}
-
-export const zsxo: ExpressionRunnerShorthandConfig = {
-  runner: 'simple',
-  isDone: true,
-  initialExpressionContainer: initialExpressionContainers.ngth,
-  showPriorities: true
 }
 
 export const nngz: ExpressionRunnerShorthandConfig = {
@@ -1430,10 +1317,11 @@ export const nngz: ExpressionRunnerShorthandConfig = {
   bottomRightBadgeOverrides: { c: '🅱️', b: '🅰️' }
 }
 
-export const nvqu: ExpressionRunnerShorthandConfig = {
+export const ifqp: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
-  initialExpressionContainer: initialExpressionContainers.disc,
-  showPriorities: true
+  initialExpressionContainer: initialExpressionContainers.yywl,
+  showPriorities: true,
+  bottomRightBadgeOverrides: { c: '🅱️', b: '🅰️' }
 }
 
 export const blvt: ExpressionRunnerShorthandConfig = {
@@ -1449,6 +1337,20 @@ export const oykb: ExpressionRunnerShorthandConfig = {
   bottomRightBadgeOverrides: { b: '🅱️', a: '🅰️', c: 'C' }
 }
 
+export const onyr: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.ccjv,
+  showPriorities: true,
+  bottomRightBadgeOverrides: {
+    h: '🅱️',
+    g: '🅰️',
+    i: 'C',
+    j: 'D',
+    k: 'E',
+    l: 'F'
+  }
+}
+
 export const dvpl: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   initialExpressionContainer: initialExpressionContainers.ojsm,
@@ -1456,54 +1358,28 @@ export const dvpl: ExpressionRunnerShorthandConfig = {
   bottomRightBadgeOverrides: { i: '🅱️', h: '🅰️', j: 'C' }
 }
 
-export const udxn: ExpressionRunnerShorthandConfig = {
+export const oifs: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
-  initialExpressionContainer: initialExpressionContainers.zgad,
-  showPriorities: true,
-  bottomRightBadgeOverrides: { i: '🅱️', h: '🅰️', j: 'C' }
+  initialExpressionContainer: initialExpressionContainers.sqcx,
+  showPriorities: true
 }
 
-export const cjxe: ExpressionRunnerShorthandConfig = {
+export const caem: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
-  initialExpressionContainer: initialExpressionContainers.lidn,
+  initialExpressionContainer: initialExpressionContainers.jxur,
   showPriorities: true,
-  bottomRightBadgeOverrides: { l: '🅱️', k: '🅰️' }
+  highlightOverrides: {
+    a: 'highlighted',
+    b: 'highlighted',
+    c: 'highlighted'
+  }
 }
 
-export const oqpi: ExpressionRunnerShorthandConfig = {
-  runner: 'playButtonOnly',
-  initialExpressionContainer: initialExpressionContainers.mtyb,
+export const byaf: ExpressionRunnerShorthandConfig = {
+  runner: 'runButtonOnly',
+  initialExpressionContainer: initialExpressionContainers.jxur,
   showPriorities: true,
-  skipToTheEnd: false,
-  skipActive: true,
-  speed: 1.5
-}
-
-export const zxkq: ExpressionRunnerShorthandConfig = {
-  runner: 'simple',
-  initialExpressionContainer: initialExpressionContainers.wwii,
-  showPriorities: true,
-  bottomRightBadgeOverrides: { j: '🅱️', i: '🅰️' }
-}
-
-export const dyoq: ExpressionRunnerShorthandConfig = {
-  runner: 'predefined',
-  initialExpressionContainers: [
-    initialExpressionContainers.uqth,
-    initialExpressionContainers.hdpc
-  ],
-  showPriorities: true,
-  convert: 'toMathBoxPlay'
-}
-
-export const xhdq: ExpressionRunnerShorthandConfig = {
-  runner: 'predefined',
-  initialExpressionContainers: [
-    initialExpressionContainers.jxur,
-    initialExpressionContainers.uarl
-  ],
-  showPriorities: true,
-  convert: 'toMathBoxPlay'
+  skipAlphaConvert: true
 }
 
 export const nhqo: ExpressionRunnerShorthandConfig = {
@@ -1519,7 +1395,7 @@ export const ybne: ExpressionRunnerShorthandConfig = {
 }
 
 export const akik: ExpressionRunnerShorthandConfig = {
-  runner: 'playButtonOnly',
+  runner: 'runButtonOnly',
   initialExpressionContainer: initialExpressionContainers.qdoh,
   showPriorities: true,
   skipToTheEnd: false,
@@ -1543,7 +1419,7 @@ export const vqwp: ExpressionRunnerShorthandConfig = {
 }
 
 export const exbn: ExpressionRunnerShorthandConfig = {
-  runner: 'playButtonOnly',
+  runner: 'runButtonOnly',
   initialExpressionContainer: initialExpressionContainers.henz,
   showPriorities: true,
   skipToTheEnd: false,
@@ -1571,7 +1447,7 @@ export const kwyy: ExpressionRunnerShorthandConfig = {
 
 export const oukl: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
-  initialExpressionContainer: initialExpressionContainers.ycof,
+  initialExpressionContainer: initialExpressionContainers.pisd,
   showPriorities: true,
   initialState: 'showFuncUnbound',
   highlightOverrides: { b: 'highlighted', c: 'highlighted' },
@@ -1589,7 +1465,7 @@ export const rypq: ExpressionRunnerShorthandConfig = {
 
 export const etae: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
-  initialExpressionContainer: initialExpressionContainers.ycof,
+  initialExpressionContainer: initialExpressionContainers.pisd,
   showPriorities: true,
   initialState: 'betaReducePreviewBefore',
   highlightOverrideActiveAfterStart: true
@@ -1606,7 +1482,7 @@ export const wqml: ExpressionRunnerShorthandConfig = {
 
 export const jwdn: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
-  initialExpressionContainer: initialExpressionContainers.ycof,
+  initialExpressionContainer: initialExpressionContainers.pisd,
   showPriorities: true,
   initialState: 'betaReducePreviewAfter',
   skipAlphaConvert: true
@@ -1622,7 +1498,7 @@ export const abnp: ExpressionRunnerShorthandConfig = {
 
 export const yabb: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
-  initialExpressionContainer: initialExpressionContainers.ycof,
+  initialExpressionContainer: initialExpressionContainers.pisd,
   showPriorities: true,
   initialState: 'betaReducePreviewCrossed',
   skipAlphaConvert: true
@@ -1638,7 +1514,7 @@ export const osff: ExpressionRunnerShorthandConfig = {
 
 export const hbbv: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
-  initialExpressionContainer: initialExpressionContainers.ycof,
+  initialExpressionContainer: initialExpressionContainers.pisd,
   showPriorities: true,
   nextIterations: 1,
   skipAlphaConvert: true
@@ -1654,7 +1530,7 @@ export const fxok: ExpressionRunnerShorthandConfig = {
 
 export const lxhc: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
-  initialExpressionContainer: initialExpressionContainers.ycof,
+  initialExpressionContainer: initialExpressionContainers.pisd,
   showPriorities: true,
   nextIterations: 1,
   skipAlphaConvert: true,
@@ -1672,7 +1548,7 @@ export const hvqy: ExpressionRunnerShorthandConfig = {
 
 export const nntn: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
-  initialExpressionContainer: initialExpressionContainers.ycof,
+  initialExpressionContainer: initialExpressionContainers.pisd,
   showPriorities: true,
   nextIterations: 1,
   skipAlphaConvert: true,
@@ -1699,7 +1575,7 @@ export const bdme: ExpressionRunnerShorthandConfig = {
 
 export const yxel: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
-  initialExpressionContainer: initialExpressionContainers.ycof,
+  initialExpressionContainer: initialExpressionContainers.pisd,
   showPriorities: true,
   skipAlphaConvert: true,
   isDone: true
@@ -1730,19 +1606,13 @@ export const niwv: ExpressionRunnerShorthandConfig = {
 }
 
 export const fsgq: ExpressionRunnerShorthandConfig = {
-  runner: 'playButtonOnly',
+  runner: 'runButtonOnly',
   initialExpressionContainer: initialExpressionContainers.qdoh,
   showPriorities: true,
   initialState: 'alphaConvertDone',
   skipToTheEnd: false,
   skipActive: true,
   speed: 1.25
-}
-
-export const skoo: ExpressionRunnerShorthandConfig = {
-  runner: 'simple',
-  initialExpressionContainer: initialExpressionContainers.guql,
-  showPriorities: true
 }
 
 export const gvxz: ExpressionRunnerShorthandConfig = {
@@ -1763,21 +1633,46 @@ export const cldb: ExpressionRunnerShorthandConfig = {
   showPriorities: true
 }
 
-export const dqdv: ExpressionRunnerShorthandConfig = {
-  runner: 'simple',
-  initialExpressionContainer: initialExpressionContainers.kgpl,
-  showPriorities: true,
-  bottomRightBadgeOverrides: { g: '🅰️', h: '🅱️' }
-}
-
 export const ylav: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   initialExpressionContainer: initialExpressionContainers.udaf,
   showPriorities: true
 }
 
+export const sldg: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.udaf,
+  showPriorities: true,
+  highlightOverrides: {
+    g: 'highlighted',
+    h: 'highlighted'
+  }
+}
+
+export const dtle: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.lwpw,
+  showPriorities: true,
+  highlightOverrides: {
+    g: 'highlighted',
+    h: 'highlighted'
+  }
+}
+
+export const hiag: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.nhpm,
+  showPriorities: true
+}
+
+export const gqct: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.yjhv,
+  showPriorities: true
+}
+
 export const zwut: ExpressionRunnerShorthandConfig = {
-  runner: 'playButtonOnly',
+  runner: 'runButtonOnly',
   initialExpressionContainer: initialExpressionContainers.udaf,
   showPriorities: true,
   skipToTheEnd: false,
@@ -1796,7 +1691,7 @@ export const xusi: ExpressionRunnerShorthandConfig = {
 }
 
 export const lipt: ExpressionRunnerShorthandConfig = {
-  runner: 'playButtonOnly',
+  runner: 'runButtonOnly',
   initialExpressionContainer: initialExpressionContainers.udaf,
   showPriorities: true,
   skipToTheEnd: false,
@@ -1819,14 +1714,8 @@ export const mzys: ExpressionRunnerShorthandConfig = {
   bottomRightBadgeOverrides: { g: '🅰️', h: '🅱️' }
 }
 
-export const zwvj: ExpressionRunnerShorthandConfig = {
-  runner: 'simple',
-  initialExpressionContainer: initialExpressionContainers.lwpw,
-  showPriorities: true
-}
-
 export const ifiq: ExpressionRunnerShorthandConfig = {
-  runner: 'playButtonOnly',
+  runner: 'runButtonOnly',
   initialExpressionContainer: initialExpressionContainers.lwpw,
   showPriorities: true,
   skipToTheEnd: false,
@@ -1841,26 +1730,10 @@ export const joaq: ExpressionRunnerShorthandConfig = {
   bottomRightBadgeOverrides: { b: '🅰️', c: '🅱️' }
 }
 
-export const rdae: ExpressionRunnerShorthandConfig = {
-  runner: 'simple',
-  initialExpressionContainer: initialExpressionContainers.wosn,
-  showPriorities: true
-}
-
 export const cbmn: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   initialExpressionContainer: initialExpressionContainers.vfwt,
   showPriorities: true
-}
-
-export const fhkl: ExpressionRunnerShorthandConfig = {
-  runner: 'predefined',
-  initialExpressionContainers: [
-    initialExpressionContainers.iius,
-    initialExpressionContainers.hdpc
-  ],
-  showPriorities: true,
-  convert: 'toMathBoxPlay'
 }
 
 export const eweo: ExpressionRunnerShorthandConfig = {
@@ -1886,12 +1759,6 @@ export const jehv: ExpressionRunnerShorthandConfig = {
 export const rhoa: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   initialExpressionContainer: initialExpressionContainers.anme
-}
-
-export const sdta: ExpressionRunnerShorthandConfig = {
-  runner: 'simple',
-  initialExpressionContainer: initialExpressionContainers.cmay,
-  showPriorities: true
 }
 
 export const hhjq: ExpressionRunnerShorthandConfig = {
@@ -1928,7 +1795,7 @@ export const elyq: ExpressionRunnerShorthandConfig = {
 }
 
 export const nmrp: ExpressionRunnerShorthandConfig = {
-  runner: 'playButtonOnly',
+  runner: 'runButtonOnly',
   skipToTheEnd: false,
   initialExpressionContainer: initialExpressionContainers.psdd,
   showPriorities: true,
@@ -1950,13 +1817,13 @@ export const bndi: ExpressionRunnerShorthandConfig = {
 
 export const ooya: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
-  initialExpressionContainer: initialExpressionContainers.zfym,
+  initialExpressionContainer: initialExpressionContainers.entt,
   showPriorities: true,
   bottomRightBadgeOverrides: { f: '🅰️', g: '🅱️' }
 }
 
 export const gpat: ExpressionRunnerShorthandConfig = {
-  runner: 'playButtonOnly',
+  runner: 'runButtonOnly',
   skipToTheEnd: false,
   initialExpressionContainer: initialExpressionContainers.nnqw,
   showPriorities: true,
@@ -1994,7 +1861,7 @@ export const kfru: ExpressionRunnerShorthandConfig = {
 }
 
 export const svbd: ExpressionRunnerShorthandConfig = {
-  runner: 'playButtonOnly',
+  runner: 'runButtonOnly',
   skipToTheEnd: false,
   initialExpressionContainer: initialExpressionContainers.exhr,
   showPriorities: true,
@@ -2002,17 +1869,23 @@ export const svbd: ExpressionRunnerShorthandConfig = {
   speed: 2
 }
 
-export const oclg: ExpressionRunnerShorthandConfig = {
-  runner: 'simple',
-  initialExpressionContainer: initialExpressionContainers.qzuv,
-  showPriorities: true,
-  bottomRightBadgeOverrides: { f: '🅰️', g: '🅱️' }
-}
-
 export const fton: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   initialExpressionContainer: initialExpressionContainers.lcce,
   showPriorities: true
+}
+
+export const imhz: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.vwlq,
+  showPriorities: true,
+  bottomRightBadgeOverrides: {
+    g: '🅱️',
+    f: '🅰️',
+    h: 'C',
+    i: 'D',
+    j: 'E'
+  }
 }
 
 export const bnyo: ExpressionRunnerShorthandConfig = {
@@ -2032,8 +1905,8 @@ export const ywpq: ExpressionRunnerShorthandConfig = {
   initialExpressionContainer: initialExpressionContainers.gbbo,
   showPriorities: true,
   highlightOverrides: {
-    l: 'highlighted',
-    m: 'highlighted'
+    i: 'highlighted',
+    j: 'highlighted'
   }
 }
 
@@ -2042,13 +1915,6 @@ export const ayrl: ExpressionRunnerShorthandConfig = {
   initialExpressionContainer: initialExpressionContainers.loem,
   showPriorities: true,
   bottomRightBadgeOverrides: { l: '🅰️', m: '🅱️' }
-}
-
-export const vhte: ExpressionRunnerShorthandConfig = {
-  runner: 'simple',
-  initialExpressionContainer: initialExpressionContainers.harq,
-  showPriorities: true,
-  bottomRightBadgeOverrides: { g: '🅰️', h: '🅱️' }
 }
 
 export const uwgj: ExpressionRunnerShorthandConfig = {
@@ -2075,13 +1941,8 @@ export const wgby: ExpressionRunnerShorthandConfig = {
 
 export const poha: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
-  initialExpressionContainer: initialExpressionContainers.snye,
-  showPriorities: true,
-  highlightOverrides: {
-    i: 'highlighted',
-    j: 'highlighted',
-    k: 'highlighted'
-  }
+  initialExpressionContainer: initialExpressionContainers.syvj,
+  showPriorities: true
 }
 
 export const vcqp: ExpressionRunnerShorthandConfig = {
@@ -2121,11 +1982,6 @@ export const vlhb: ExpressionRunnerShorthandConfig = {
   showPriorities: true
 }
 
-export const ruou: ExpressionRunnerShorthandConfig = {
-  runner: 'simple',
-  initialExpressionContainer: initialExpressionContainers.anme
-}
-
 export const awbq: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   initialExpressionContainer: initialExpressionContainers.exoq,
@@ -2151,7 +2007,7 @@ export const zcwk: ExpressionRunnerShorthandConfig = {
 }
 
 export const gmzn: ExpressionRunnerShorthandConfig = {
-  runner: 'playButtonOnly',
+  runner: 'runButtonOnly',
   skipToTheEnd: false,
   skipActive: true,
   initialExpressionContainer: initialExpressionContainers.aiyb,
@@ -2160,7 +2016,7 @@ export const gmzn: ExpressionRunnerShorthandConfig = {
 }
 
 export const uiwl: ExpressionRunnerShorthandConfig = {
-  runner: 'playButtonOnly',
+  runner: 'runButtonOnly',
   skipToTheEnd: false,
   skipActive: true,
   initialExpressionContainer: initialExpressionContainers.aiyb,
@@ -2169,19 +2025,12 @@ export const uiwl: ExpressionRunnerShorthandConfig = {
 }
 
 export const ynoy: ExpressionRunnerShorthandConfig = {
-  runner: 'playButtonOnly',
+  runner: 'runButtonOnly',
   skipToTheEnd: false,
   speed: 4,
   skipActive: true,
   initialExpressionContainer: initialExpressionContainers.gbbo,
   showPriorities: true
-}
-
-export const gmgs: ExpressionRunnerShorthandConfig = {
-  runner: 'simple',
-  initialExpressionContainer: initialExpressionContainers.teba,
-  showPriorities: true,
-  bottomRightBadgeOverrides: { j: '🅰️', k: '🅱️' }
 }
 
 export const ykqf: ExpressionRunnerShorthandConfig = {
@@ -2209,26 +2058,10 @@ export const kjba: ExpressionRunnerShorthandConfig = {
   showPriorities: true
 }
 
-export const htir: ExpressionRunnerShorthandConfig = {
-  runner: 'playButtonOnly',
-  initialExpressionContainer: initialExpressionContainers.jrfk,
-  showPriorities: true
-}
-
 export const peiy: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   initialExpressionContainer: initialExpressionContainers.aqni,
   showPriorities: true
-}
-
-export const voeb: ExpressionRunnerShorthandConfig = {
-  runner: 'simple',
-  initialExpressionContainer: initialExpressionContainers.guxy
-}
-
-export const deay: ExpressionRunnerShorthandConfig = {
-  runner: 'simple',
-  initialExpressionContainer: initialExpressionContainers.uqte
 }
 
 export const mbje: ExpressionRunnerShorthandConfig = {
@@ -2237,7 +2070,7 @@ export const mbje: ExpressionRunnerShorthandConfig = {
 }
 
 export const ovua: ExpressionRunnerShorthandConfig = {
-  runner: 'playButtonOnly',
+  runner: 'runButtonOnly',
   skipToTheEnd: false,
   skipActive: true,
   initialExpressionContainer: initialExpressionContainers.jrfk,
@@ -2318,7 +2151,7 @@ export const fkvy: ExpressionRunnerShorthandConfig = {
 }
 
 export const dwmc: ExpressionRunnerShorthandConfig = {
-  runner: 'playButtonOnly',
+  runner: 'runButtonOnly',
   skipToTheEnd: false,
   skipActive: true,
   initialExpressionContainer: initialExpressionContainers.jrfk,
@@ -2356,7 +2189,7 @@ export const qgau: ExpressionRunnerShorthandConfig = {
 }
 
 export const uwyn: ExpressionRunnerShorthandConfig = {
-  runner: 'playButtonOnly',
+  runner: 'runButtonOnly',
   skipToTheEnd: false,
   skipActive: true,
   initialExpressionContainer: initialExpressionContainers.jrfk,
@@ -2402,7 +2235,7 @@ export const ysxf: ExpressionRunnerShorthandConfig = {
 }
 
 export const snlf: ExpressionRunnerShorthandConfig = {
-  runner: 'playButtonOnly',
+  runner: 'runButtonOnly',
   skipToTheEnd: false,
   skipActive: true,
   initialExpressionContainer: initialExpressionContainers.jrfk,
@@ -2530,6 +2363,16 @@ export const rjho: ExpressionRunnerShorthandConfig = {
   showPriorities: true
 }
 
+export const beug: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.mqoa,
+  showPriorities: true,
+  bottomRightBadgeOverrides: {
+    c: '🅰️',
+    d: '🅱️'
+  }
+}
+
 export const hvfb: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   initialExpressionContainer: initialExpressionContainers.silw,
@@ -2556,7 +2399,7 @@ export const tpyg: ExpressionRunnerShorthandConfig = {
 }
 
 export const ugvz: ExpressionRunnerShorthandConfig = {
-  runner: 'playButtonOnly',
+  runner: 'runButtonOnly',
   skipToTheEnd: false,
   skipActive: true,
   speed: 2,
@@ -2602,7 +2445,7 @@ export const vqyl: ExpressionRunnerShorthandConfig = {
 }
 
 export const wzqv: ExpressionRunnerShorthandConfig = {
-  runner: 'playButtonOnly',
+  runner: 'runButtonOnly',
   skipToTheEnd: false,
   skipActive: true,
   speed: 2,
@@ -2634,7 +2477,7 @@ export const trwj: ExpressionRunnerShorthandConfig = {
 }
 
 export const potg: ExpressionRunnerShorthandConfig = {
-  runner: 'playButtonOnly',
+  runner: 'runButtonOnly',
   initialExpressionContainer: initialExpressionContainers.babw,
   showPriorities: true
 }
@@ -2659,7 +2502,7 @@ export const gemh: ExpressionRunnerShorthandConfig = {
 }
 
 export const unxf: ExpressionRunnerShorthandConfig = {
-  runner: 'playButtonOnly',
+  runner: 'runButtonOnly',
   skipToTheEnd: false,
   skipActive: true,
   initialExpressionContainer: initialExpressionContainers.glvb,
@@ -2679,7 +2522,7 @@ export const zlfx: ExpressionRunnerShorthandConfig = {
 }
 
 export const rrmc: ExpressionRunnerShorthandConfig = {
-  runner: 'playButtonOnly',
+  runner: 'runButtonOnly',
   skipToTheEnd: false,
   initialExpressionContainer: initialExpressionContainers.jypn,
   showPriorities: true,
@@ -2704,7 +2547,7 @@ export const gzuj: ExpressionRunnerShorthandConfig = {
 }
 
 export const ancc: ExpressionRunnerShorthandConfig = {
-  runner: 'playButtonOnly',
+  runner: 'runButtonOnly',
   skipToTheEnd: false,
   initialExpressionContainer: initialExpressionContainers.jypn,
   showPriorities: true,
@@ -2730,10 +2573,17 @@ export const kmgw: ExpressionRunnerShorthandConfig = {
 }
 
 export const xbki: ExpressionRunnerShorthandConfig = {
-  runner: 'playButtonOnly',
+  runner: 'runButtonOnly',
   skipToTheEnd: false,
   initialExpressionContainer: initialExpressionContainers.jvmi,
   showPriorities: true,
   speed: 4,
   showDefaultAndActiveOnly: true
+}
+
+export const dqdv: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.kgpl,
+  showPriorities: true,
+  bottomRightBadgeOverrides: { g: '🅰️', h: '🅱️' }
 }

@@ -3,19 +3,12 @@ import {
   VariableShorthandNumber,
   VariableShorthandFunc,
   ConditionalExpression,
-  BinaryExpression,
-  FunctionExpression
+  BinaryExpression
 } from 'src/types/ExpressionTypes'
 
 export interface HighlightedVariableExpressionParams {
   readonly name: VariableNames
   readonly highlighted: true
-}
-
-export interface QuestionPlusOrMinusOneParams {
-  readonly shorthandNumberPlusOrMinusOne: NonNullable<
-    VariableShorthandNumber['shorthandNumberPlusOrMinusOne']
-  >
 }
 
 export interface QuestionShorthandNumberAfterConvertParams {
@@ -41,7 +34,6 @@ export type VariableExpressionParams = VariableNames
 export interface FunctionExpressionParams {
   readonly arg: VariableExpressionParams | HighlightedVariableExpressionParams
   readonly body: ExpressionParams
-  readonly meta?: FunctionExpression['meta']
 }
 // https://github.com/Microsoft/TypeScript/issues/3496#issuecomment-128553540
 export interface CallExpressionParams extends ReadonlyArray<ExpressionParams> {}
@@ -74,6 +66,5 @@ export type ExpressionParams =
   | ConditionalExpressionParams
   | RepeatExpressionParams
   | VariableShorthandFuncParams
-  | QuestionPlusOrMinusOneParams
   | QuestionShorthandNumberAfterConvertParams
   | BinaryExpressionParams

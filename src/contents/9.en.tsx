@@ -24,6 +24,7 @@ import BottomRightBadge from 'src/components/BottomRightBadge'
 import TwoColGrid from 'src/components/TwoColGrid'
 import * as R from 'src/components/Runners'
 import NextLessonButton from 'src/components/NextLessonButton'
+import { BlankNumberPlusOne } from 'src/contents/8.en'
 
 export const SpecialRule = () => (
   <>
@@ -48,7 +49,25 @@ export default () => (
   <EpisodeCardList
     cards={[
       {
-        title: <>Saya’s Question</>,
+        type: 'summary',
+        title: <>Quick review</>,
+        content: (
+          <>
+            <P>
+              <Bold>On the last page, we learned that:</Bold> By using{' '}
+              <Emoji>👧🏻</Emoji> Saya’s lunchbox, we can{' '}
+              <HighlightBold>reproduce</HighlightBold>{' '}
+              <H args={{ name: 'plusOneFeature' }} /> of a mathbox.
+            </P>
+            <BlankNumberPlusOne />
+            <P>
+              <Bold>That’s it for the quick review.</Bold> Let’s continue!
+            </P>
+          </>
+        )
+      },
+      {
+        title: <>Saya’s question</>,
         content: (
           <>
             <P>Looks like Saya noticed something strange.</P>
@@ -92,10 +111,11 @@ export default () => (
                   children: (
                     <>
                       <P>
+                        What do you think happens{' '}
                         <Highlight>
-                          What do you think happens if I combined it with a
-                          lunchbox that has{' '}
-                          <H args={{ name: 'plusOneEffect' }} />?
+                          if I combined it with my lunchbox that{' '}
+                          <Bold>reproduces</Bold>{' '}
+                          <H args={{ name: 'plusOneFeature' }} />?
                         </Highlight>
                       </P>
                     </>
@@ -104,19 +124,15 @@ export default () => (
               ]}
             />
             <R.Nhqo>
-              If I combined it with a lunchbox that has
+              If I combined it with my lunchbox that
               <br />
-              <H args={{ name: 'plusOneEffect' }} />, and…
+              reproduces <H args={{ name: 'plusOneFeature' }} />…
             </R.Nhqo>
             <ExpressionRunnerSeparator />
             <ExpressionRunnerCaptionOnly>
-              <Highlight>
-                <H args={{ name: 'runAndConvertToMathbox' }} />
-              </Highlight>
-            </ExpressionRunnerCaptionOnly>
-            <ExpressionRunnerSeparator />
-            <ExpressionRunnerCaptionOnly>
-              What happens?
+              What happens
+              <br />
+              when you <H args={{ name: 'run', lowerCase: true }} /> it?
             </ExpressionRunnerCaptionOnly>
             <BubbleQuotes
               quotes={[
@@ -126,8 +142,11 @@ export default () => (
                     <>
                       <P>
                         Well, because it calculates <EmojiNumber number={1} />{' '}
-                        <Emoji>➕</Emoji> <EmojiNumber number={1} />, the result
-                        should be <EmojiNumber number={2} />, right?
+                        <Emoji>➕</Emoji> <EmojiNumber number={1} />…
+                      </P>
+                      <P>
+                        It should become a lunchbox that can be converted to{' '}
+                        <EmojiNumber number={2} />, right?
                       </P>
                     </>
                   )
@@ -142,7 +161,9 @@ export default () => (
               ]}
               description={
                 <>
-                  The result should be <EmojiNumber number={2} />
+                  Should become a lunchbox
+                  <br />
+                  that can be converted to <EmojiNumber number={2} />
                   …?
                 </>
               }
@@ -167,7 +188,7 @@ export default () => (
         content: (
           <>
             <P>
-              <H args={{ name: 'pressFastForward', skippable: true }} />
+              <H args={{ name: 'pressRun', skippable: true }} />
             </P>
             <R.Akik />
             <BubbleQuotes
@@ -227,10 +248,7 @@ export default () => (
                   type: 'thinking',
                   children: (
                     <>
-                      <P>
-                        Hmm… what’s going on? Last time, we got{' '}
-                        <EmojiNumber number={2} />…
-                      </P>
+                      <P>Hmm… what’s going on? Last time, it worked…</P>
                     </>
                   )
                 }
@@ -265,7 +283,7 @@ export default () => (
               ]}
             />
             <P>
-              <H args={{ name: 'pressFastForward' }} />
+              <H args={{ name: 'pressRun' }} />
             </P>
             <R.Exbn>
               <HighlightBold>What used last time:</HighlightBold>
@@ -548,6 +566,7 @@ export default () => (
               ]}
             />
             <TwoColGrid
+              maxVariableSize="sm"
               left={
                 <>
                   <R.Oukl>
@@ -645,6 +664,7 @@ export default () => (
               ]}
             />
             <TwoColGrid
+              maxVariableSize="sm"
               left={
                 <>
                   <R.Lxhc></R.Lxhc>
@@ -679,6 +699,7 @@ export default () => (
               ]}
             />
             <TwoColGrid
+              maxVariableSize="sm"
               left={
                 <>
                   <R.Oukl>
@@ -1147,8 +1168,7 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        Let’s continue then!{' '}
-                        <H args={{ name: 'pressFastForward' }} />
+                        Let’s continue then! <H args={{ name: 'pressRun' }} />
                       </P>
                     </>
                   )
@@ -1215,14 +1235,14 @@ export default () => (
         content: (
           <>
             <P>
-              If you combine <Emoji>👧🏻</Emoji> Saya’s lunchbox which has{' '}
-              <H args={{ name: 'plusOneEffect' }} />…
+              If you combine <Emoji>👧🏻</Emoji> Saya’s lunchbox which reproduces{' '}
+              <H args={{ name: 'plusOneFeature' }} />…
             </P>
-            <R.Nvqu>
-              <Emoji>👧🏻</Emoji> Saya’s lunchbox which as
+            <R.Vcqp>
+              <Emoji>👧🏻</Emoji> Saya’s lunchbox which reproduces
               <br />
-              <H args={{ name: 'plusOneEffect' }} />
-            </R.Nvqu>
+              <H args={{ name: 'plusOneFeature' }} />
+            </R.Vcqp>
             <P>
               …with the following lunchbox which can be converted to{' '}
               <EmojiNumber number={1} />…
@@ -1333,8 +1353,8 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        <Bold>Anyway:</Bold> We figured out how to do{' '}
-                        <H args={{ name: 'plusOneEffect' }} />!
+                        <Bold>Anyway:</Bold> We figured out how to reproduce{' '}
+                        <H args={{ name: 'plusOneFeature' }} />!
                       </P>
                       <P>
                         The devil! As you promised, give us our mathboxes back!
@@ -1346,7 +1366,7 @@ export default () => (
                   type: 'devil',
                   children: (
                     <>
-                      <P>Ugh…!</P>
+                      <P>Grr…!</P>
                     </>
                   )
                 }

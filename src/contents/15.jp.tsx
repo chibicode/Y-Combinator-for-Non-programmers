@@ -248,7 +248,7 @@ export default () => (
                     <>
                       <P>
                         では、これを
-                        <H args={{ name: 'play' }} />{' '}
+                        <H args={{ name: 'run' }} />{' '}
                         するとどうなるか確かめてみよう！
                       </P>
                     </>
@@ -260,12 +260,12 @@ export default () => (
         )
       },
       {
-        title: <>早送りしてみると…</>,
+        title: <>実行してみると…</>,
         content: (
           <>
             <P>
               では、
-              <H args={{ name: 'pressFastForward', skipColon: true }} />。
+              <H args={{ name: 'pressRun', skipColon: true }} />。
             </P>
             <Ul>
               <UlLi>
@@ -380,18 +380,15 @@ export default () => (
                           <Highlight>
                             <CustomEmoji type="blankNumberPurple" /> と{' '}
                             <CustomEmoji type="blankNumberPink" />{' '}
-                            に数字を入れ、
+                            に数字を入れて実行すると…
                           </Highlight>
                         </UlLi>
                         <UlLi>
-                          <H args={{ name: 'runAndConvertToMathbox' }} />{' '}
-                          すると…
-                        </UlLi>
-                        <UlLi>
                           <HighlightBold>
-                            結果は <CustomEmoji type="blankNumberPurple" />{' '}
+                            <CustomEmoji type="blankNumberPurple" />{' '}
                             <Emoji>➕</Emoji>{' '}
-                            <CustomEmoji type="blankNumberPink" /> になるんだ。
+                            <CustomEmoji type="blankNumberPink" />{' '}
+                            に変換できる弁当箱になるんだ。
                           </HighlightBold>
                         </UlLi>
                       </Ul>
@@ -402,27 +399,16 @@ export default () => (
             />
             <R.Hvfb>
               <CustomEmoji type="blankNumberPurple" /> と{' '}
-              <CustomEmoji type="blankNumberPink" /> に数字を入れ、
+              <CustomEmoji type="blankNumberPink" /> に数字を入れて
               <br />
-              <H args={{ name: 'runAndConvertToMathbox' }} />
-              <br />
-              すると…
+              実行すると…
             </R.Hvfb>
             <ExpressionRunnerSeparator />
-            <EmojiSeparator
-              nodes={[
-                <CustomEmoji type="blankNumberPurple" />,
-                <Emoji>➕</Emoji>,
-                <CustomEmoji type="blankNumberPink" />
-              ]}
-              description={
-                <>
-                  結果は <CustomEmoji type="blankNumberPurple" />{' '}
-                  <Emoji>➕</Emoji> <CustomEmoji type="blankNumberPink" />{' '}
-                  になる
-                </>
-              }
-            />
+            <R.Nxjv>
+              <CustomEmoji type="blankNumberPurple" /> <Emoji>➕</Emoji>{' '}
+              <CustomEmoji type="blankNumberPink" /> に<br />
+              変換できる弁当箱になる
+            </R.Nxjv>
             <BubbleQuotes
               quotes={[
                 {
@@ -504,7 +490,7 @@ export default () => (
                           <EmojiNumber number={3} /> に変換できる弁当箱を{' '}
                           <CustomEmoji type="blankNumberPurple" /> と{' '}
                           <CustomEmoji type="blankNumberPink" /> に入れて、
-                          <H args={{ name: 'fastForward' }} /> してみよう。
+                          <H args={{ name: 'run' }} /> してみよう。
                         </HighlightBold>
                       </P>
                     </>
@@ -621,18 +607,15 @@ export default () => (
                           <Highlight>
                             <CustomEmoji type="blankNumberPurple" /> と{' '}
                             <CustomEmoji type="blankNumberPink" />{' '}
-                            に数字を入れ、
+                            に数字を入れて実行すると…
                           </Highlight>
                         </UlLi>
                         <UlLi>
-                          <H args={{ name: 'runAndConvertToMathbox' }} />{' '}
-                          すると…
-                        </UlLi>
-                        <UlLi>
                           <HighlightBold>
-                            結果は <CustomEmoji type="blankNumberPurple" />{' '}
+                            <CustomEmoji type="blankNumberPurple" />{' '}
                             <Emoji>✖️</Emoji>{' '}
-                            <CustomEmoji type="blankNumberPink" /> になるんだ。
+                            <CustomEmoji type="blankNumberPink" />{' '}
+                            に変換できる弁当箱になるんだ。
                           </HighlightBold>
                         </UlLi>
                       </Ul>
@@ -643,27 +626,16 @@ export default () => (
             />
             <R.Vqyl>
               <CustomEmoji type="blankNumberPurple" /> と{' '}
-              <CustomEmoji type="blankNumberPink" /> に数字を入れ、
+              <CustomEmoji type="blankNumberPink" /> に数字を入れて
               <br />
-              <H args={{ name: 'runAndConvertToMathbox' }} />
-              <br />
-              すると…
+              実行すると…
             </R.Vqyl>
             <ExpressionRunnerSeparator />
-            <EmojiSeparator
-              nodes={[
-                <CustomEmoji type="blankNumberPurple" />,
-                <Emoji>✖️</Emoji>,
-                <CustomEmoji type="blankNumberPink" />
-              ]}
-              description={
-                <>
-                  結果は <CustomEmoji type="blankNumberPurple" />{' '}
-                  <Emoji>✖️</Emoji> <CustomEmoji type="blankNumberPink" />{' '}
-                  になる
-                </>
-              }
-            />
+            <R.Aflw>
+              <CustomEmoji type="blankNumberPurple" /> <Emoji>✖️</Emoji>{' '}
+              <CustomEmoji type="blankNumberPink" /> に<br />
+              変換できる弁当箱になる
+            </R.Aflw>
             <BubbleQuotes
               quotes={[
                 {
@@ -1016,7 +988,7 @@ export default () => (
                         以下のように <MultiplyIcon /> を使って省略表記できる。
                       </P>
                       <P>
-                        <H args={{ name: 'play' }} /> を押してみると、ちゃんと{' '}
+                        <H args={{ name: 'run' }} /> を押してみると、ちゃんと{' '}
                         <EmojiNumber number={2} /> <Emoji>✖️</Emoji>{' '}
                         <EmojiNumber number={3} /> が計算できるぞ。
                       </P>
@@ -1180,17 +1152,17 @@ export default () => (
                     <>
                       <P>
                         これを
-                        <H args={{ name: 'fastForward' }} /> してみよう！
+                        <H args={{ name: 'run' }} /> してみよう！
                       </P>
                       {/* TODO: NOTE - we skip a lot of steps */}
                       <Ul>
                         <UlLi>
                           ステップ数が非常に多いので、途中のいくつかのステップを省略した上で、
-                          <Highlight>3倍速で早送りするぞ。</Highlight>{' '}
+                          <Highlight>3倍速で進めるぞ。</Highlight>{' '}
                           <Emoji>⏩</Emoji> <Emoji>⏩</Emoji> <Emoji>⏩</Emoji>
                         </UlLi>
                         <UlLi>
-                          早送り中は、目に優しくなるように弁当箱を半透明にしている。
+                          実行中は、目に優しくなるように弁当箱を半透明にしている。
                         </UlLi>
                         <UlLi>
                           待てない場合は、「
@@ -1235,8 +1207,8 @@ export default () => (
                         の階乗を自動で計算してくれるんだ。
                       </P>
                       <P>
-                        というわけで、最後まで
-                        <H args={{ name: 'fastForward' }} /> してみよう！
+                        というわけで、
+                        <H args={{ name: 'run' }} /> して最後まで見てみよう！
                       </P>
                     </>
                   )
@@ -1252,8 +1224,8 @@ export default () => (
                     <>
                       <P>
                         というわけで、先ほどの弁当箱は
-                        <H args={{ name: 'fastForward' }} />{' '}
-                        すると以下のように変化することで、
+                        <H args={{ name: 'run' }} />{' '}
+                        すると、以下のように変化することで、
                         <EmojiNumber number={3} />{' '}
                         の階乗を自動で計算してくれるんだ。
                       </P>
@@ -1266,7 +1238,7 @@ export default () => (
               上の部分に <EmojiNumber number={3} /> を追加
               <br />
               して
-              <H args={{ name: 'fastForward' }} /> すると…
+              <H args={{ name: 'run' }} /> すると…
             </R.Zlfx>
             <ExpressionRunnerSeparator />
             <R.Qurt>
@@ -1336,7 +1308,7 @@ export default () => (
                     <>
                       <P>
                         これも
-                        <H args={{ name: 'fastForward' }} /> してみよう！
+                        <H args={{ name: 'run' }} /> してみよう！
                       </P>
                     </>
                   )
@@ -1426,7 +1398,7 @@ export default () => (
             <R.Eijx>
               一番上に <EmojiNumber number={5} /> を入れて
               <br />
-              <H args={{ name: 'play' }} /> すると…
+              <H args={{ name: 'run' }} /> すると…
             </R.Eijx>
             <ExpressionRunnerSeparator />
             <EmojiSeparator

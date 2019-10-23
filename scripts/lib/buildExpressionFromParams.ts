@@ -6,7 +6,6 @@ import {
   isVariableShorthandNumberParams,
   isConditionalParams,
   isVariableShorthandFuncParams,
-  isQuestionPlusOrMinusOneParams,
   isQuestionShorthandNumberAfterConvertParams,
   isRepeatExpressionParams
 } from 'scripts/lib/expressionParamGuards'
@@ -19,7 +18,6 @@ import {
   VariableShorthandNumberParams,
   ConditionalExpressionParams,
   RepeatExpressionParams,
-  QuestionPlusOrMinusOneParams,
   QuestionShorthandNumberAfterConvertParams,
   VariableShorthandFuncParams,
   BinaryExpressionParams
@@ -99,9 +97,6 @@ export default function buildExpressionFromParams(
   expressionParams: RepeatExpressionParams
 ): RepeatExpression
 export default function buildExpressionFromParams(
-  expressionParams: QuestionPlusOrMinusOneParams
-): StepVariable
-export default function buildExpressionFromParams(
   expressionParams: QuestionShorthandNumberAfterConvertParams
 ): StepVariable
 export default function buildExpressionFromParams(
@@ -143,15 +138,13 @@ export default function buildExpressionFromParams(
           'initialHighlighted'
         ),
         body: buildExpressionFromParams(expressionParams.body),
-        type: 'function',
-        meta: expressionParams.meta
+        type: 'function'
       }
     } else {
       return {
         arg: buildVariableExpression(expressionParams.arg, false, 'default'),
         body: buildExpressionFromParams(expressionParams.body),
-        type: 'function',
-        meta: expressionParams.meta
+        type: 'function'
       }
     }
   } else if (isVariableShorthandNumberParams(expressionParams)) {
@@ -182,12 +175,6 @@ export default function buildExpressionFromParams(
         expressionParams.initialHighlight ? 'initialHighlighted' : 'default'
       ),
       shorthandFunc: expressionParams.shorthandFunc
-    }
-  } else if (isQuestionPlusOrMinusOneParams(expressionParams)) {
-    return {
-      ...buildVariableExpression('blankNumber', true, 'default'),
-      shorthandNumberPlusOrMinusOne:
-        expressionParams.shorthandNumberPlusOrMinusOne
     }
   } else if (isQuestionShorthandNumberAfterConvertParams(expressionParams)) {
     return {

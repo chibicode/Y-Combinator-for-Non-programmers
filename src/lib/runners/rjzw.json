@@ -31,37 +31,15 @@
               "maxNestedFunctionDepth": 0
             },
             "body": {
-              "arg": {
-                "name": "e",
-                "highlightType": "default",
-                "topLeftBadgeType": "none",
-                "bottomRightBadgeType": "none",
-                "type": "variable",
-                "argPriorityAgg": [
-                  1
-                ],
-                "funcPriorityAgg": [],
-                "emphasizePriority": false,
-                "bound": true,
-                "maxNestedFunctionDepth": 0
-              },
-              "func": {
-                "name": "d",
-                "highlightType": "default",
-                "topLeftBadgeType": "none",
-                "bottomRightBadgeType": "none",
-                "type": "variable",
-                "argPriorityAgg": [],
-                "funcPriorityAgg": [
-                  1
-                ],
-                "emphasizePriority": false,
-                "bound": true,
-                "maxNestedFunctionDepth": 0
-              },
-              "state": "default",
-              "type": "call",
-              "priority": 1,
+              "name": "e",
+              "highlightType": "default",
+              "topLeftBadgeType": "none",
+              "bottomRightBadgeType": "none",
+              "type": "variable",
+              "argPriorityAgg": [],
+              "funcPriorityAgg": [],
+              "emphasizePriority": false,
+              "bound": true,
               "maxNestedFunctionDepth": 0
             },
             "type": "function",
@@ -201,7 +179,7 @@
         "priority": 1,
         "maxNestedFunctionDepth": 3
       },
-      "numLeafNodes": 6,
+      "numLeafNodes": 5,
       "containerState": "ready",
       "previouslyChangedExpressionState": "default"
     },
@@ -236,37 +214,15 @@
               "maxNestedFunctionDepth": 0
             },
             "body": {
-              "arg": {
-                "name": "e",
-                "highlightType": "active",
-                "topLeftBadgeType": "none",
-                "bottomRightBadgeType": "none",
-                "type": "variable",
-                "argPriorityAgg": [
-                  1
-                ],
-                "funcPriorityAgg": [],
-                "emphasizePriority": false,
-                "bound": true,
-                "maxNestedFunctionDepth": 0
-              },
-              "func": {
-                "name": "d",
-                "highlightType": "active",
-                "topLeftBadgeType": "none",
-                "bottomRightBadgeType": "none",
-                "type": "variable",
-                "argPriorityAgg": [],
-                "funcPriorityAgg": [
-                  1
-                ],
-                "emphasizePriority": false,
-                "bound": true,
-                "maxNestedFunctionDepth": 0
-              },
-              "state": "default",
-              "type": "call",
-              "priority": 1,
+              "name": "e",
+              "highlightType": "active",
+              "topLeftBadgeType": "none",
+              "bottomRightBadgeType": "none",
+              "type": "variable",
+              "argPriorityAgg": [],
+              "funcPriorityAgg": [],
+              "emphasizePriority": false,
+              "bound": true,
               "maxNestedFunctionDepth": 0
             },
             "type": "function",
@@ -409,7 +365,7 @@
       "previouslyChangedExpressionState": "active",
       "activePriority": 1,
       "containerState": "stepped",
-      "numLeafNodes": 6
+      "numLeafNodes": 5
     },
     {
       "expression": {
@@ -442,37 +398,15 @@
               "maxNestedFunctionDepth": 0
             },
             "body": {
-              "arg": {
-                "name": "e",
-                "highlightType": "active",
-                "topLeftBadgeType": "none",
-                "bottomRightBadgeType": "callArg",
-                "type": "variable",
-                "argPriorityAgg": [
-                  1
-                ],
-                "funcPriorityAgg": [],
-                "emphasizePriority": false,
-                "bound": true,
-                "maxNestedFunctionDepth": 0
-              },
-              "func": {
-                "name": "d",
-                "highlightType": "active",
-                "topLeftBadgeType": "none",
-                "bottomRightBadgeType": "callArg",
-                "type": "variable",
-                "argPriorityAgg": [],
-                "funcPriorityAgg": [
-                  1
-                ],
-                "emphasizePriority": false,
-                "bound": true,
-                "maxNestedFunctionDepth": 0
-              },
-              "state": "default",
-              "type": "call",
-              "priority": 1,
+              "name": "e",
+              "highlightType": "active",
+              "topLeftBadgeType": "none",
+              "bottomRightBadgeType": "callArg",
+              "type": "variable",
+              "argPriorityAgg": [],
+              "funcPriorityAgg": [],
+              "emphasizePriority": false,
+              "bound": true,
               "maxNestedFunctionDepth": 0
             },
             "type": "function",
@@ -615,7 +549,7 @@
       "previouslyChangedExpressionState": "showFuncUnbound",
       "activePriority": 1,
       "containerState": "stepped",
-      "numLeafNodes": 6
+      "numLeafNodes": 5
     },
     {
       "expression": {
@@ -648,37 +582,15 @@
               "maxNestedFunctionDepth": 0
             },
             "body": {
-              "arg": {
-                "name": "e",
-                "highlightType": "active",
-                "topLeftBadgeType": "none",
-                "bottomRightBadgeType": "callArg",
-                "type": "variable",
-                "argPriorityAgg": [
-                  1
-                ],
-                "funcPriorityAgg": [],
-                "emphasizePriority": false,
-                "bound": true,
-                "maxNestedFunctionDepth": 0
-              },
-              "func": {
-                "name": "d",
-                "highlightType": "active",
-                "topLeftBadgeType": "none",
-                "bottomRightBadgeType": "callArg",
-                "type": "variable",
-                "argPriorityAgg": [],
-                "funcPriorityAgg": [
-                  1
-                ],
-                "emphasizePriority": false,
-                "bound": true,
-                "maxNestedFunctionDepth": 0
-              },
-              "state": "default",
-              "type": "call",
-              "priority": 1,
+              "name": "e",
+              "highlightType": "active",
+              "topLeftBadgeType": "none",
+              "bottomRightBadgeType": "callArg",
+              "type": "variable",
+              "argPriorityAgg": [],
+              "funcPriorityAgg": [],
+              "emphasizePriority": false,
+              "bound": true,
               "maxNestedFunctionDepth": 0
             },
             "type": "function",
@@ -822,7 +734,7 @@
       "matchExists": true,
       "activePriority": 1,
       "containerState": "stepped",
-      "numLeafNodes": 6
+      "numLeafNodes": 5
     },
     {
       "expression": {
@@ -855,37 +767,15 @@
               "maxNestedFunctionDepth": 0
             },
             "body": {
-              "arg": {
-                "name": "e",
-                "highlightType": "betaReduceCallArgHighlighted",
-                "topLeftBadgeType": "none",
-                "bottomRightBadgeType": "callArg",
-                "type": "variable",
-                "argPriorityAgg": [
-                  1
-                ],
-                "funcPriorityAgg": [],
-                "emphasizePriority": false,
-                "bound": true,
-                "maxNestedFunctionDepth": 0
-              },
-              "func": {
-                "name": "d",
-                "highlightType": "betaReduceCallArgHighlighted",
-                "topLeftBadgeType": "none",
-                "bottomRightBadgeType": "callArg",
-                "type": "variable",
-                "argPriorityAgg": [],
-                "funcPriorityAgg": [
-                  1
-                ],
-                "emphasizePriority": false,
-                "bound": true,
-                "maxNestedFunctionDepth": 0
-              },
-              "state": "default",
-              "type": "call",
-              "priority": 1,
+              "name": "e",
+              "highlightType": "betaReduceCallArgHighlighted",
+              "topLeftBadgeType": "none",
+              "bottomRightBadgeType": "callArg",
+              "type": "variable",
+              "argPriorityAgg": [],
+              "funcPriorityAgg": [],
+              "emphasizePriority": false,
+              "bound": true,
               "maxNestedFunctionDepth": 0
             },
             "type": "function",
@@ -997,37 +887,15 @@
                           "maxNestedFunctionDepth": 0
                         },
                         "body": {
-                          "arg": {
-                            "name": "e",
-                            "highlightType": "highlighted",
-                            "topLeftBadgeType": "betaReduced",
-                            "bottomRightBadgeType": "funcBound",
-                            "type": "variable",
-                            "argPriorityAgg": [
-                              1
-                            ],
-                            "funcPriorityAgg": [],
-                            "emphasizePriority": false,
-                            "bound": true,
-                            "maxNestedFunctionDepth": 0
-                          },
-                          "func": {
-                            "name": "d",
-                            "highlightType": "highlighted",
-                            "topLeftBadgeType": "betaReduced",
-                            "bottomRightBadgeType": "funcBound",
-                            "type": "variable",
-                            "argPriorityAgg": [],
-                            "funcPriorityAgg": [
-                              1
-                            ],
-                            "emphasizePriority": false,
-                            "bound": true,
-                            "maxNestedFunctionDepth": 0
-                          },
-                          "state": "default",
-                          "type": "call",
-                          "priority": 1,
+                          "name": "e",
+                          "highlightType": "highlighted",
+                          "topLeftBadgeType": "betaReduced",
+                          "bottomRightBadgeType": "funcBound",
+                          "type": "variable",
+                          "argPriorityAgg": [],
+                          "funcPriorityAgg": [],
+                          "emphasizePriority": false,
+                          "bound": true,
                           "maxNestedFunctionDepth": 0
                         },
                         "type": "function",
@@ -1082,7 +950,7 @@
       "previouslyChangedExpressionState": "betaReducePreviewAfter",
       "activePriority": 1,
       "containerState": "stepped",
-      "numLeafNodes": 7
+      "numLeafNodes": 5
     },
     {
       "expression": {
@@ -1115,37 +983,15 @@
               "maxNestedFunctionDepth": 0
             },
             "body": {
-              "arg": {
-                "name": "e",
-                "highlightType": "removed",
-                "topLeftBadgeType": "none",
-                "bottomRightBadgeType": "callArg",
-                "type": "variable",
-                "argPriorityAgg": [
-                  1
-                ],
-                "funcPriorityAgg": [],
-                "emphasizePriority": false,
-                "bound": true,
-                "maxNestedFunctionDepth": 0
-              },
-              "func": {
-                "name": "d",
-                "highlightType": "removed",
-                "topLeftBadgeType": "none",
-                "bottomRightBadgeType": "callArg",
-                "type": "variable",
-                "argPriorityAgg": [],
-                "funcPriorityAgg": [
-                  1
-                ],
-                "emphasizePriority": false,
-                "bound": true,
-                "maxNestedFunctionDepth": 0
-              },
-              "state": "default",
-              "type": "call",
-              "priority": 1,
+              "name": "e",
+              "highlightType": "removed",
+              "topLeftBadgeType": "none",
+              "bottomRightBadgeType": "callArg",
+              "type": "variable",
+              "argPriorityAgg": [],
+              "funcPriorityAgg": [],
+              "emphasizePriority": false,
+              "bound": true,
               "maxNestedFunctionDepth": 0
             },
             "type": "function",
@@ -1257,37 +1103,15 @@
                           "maxNestedFunctionDepth": 0
                         },
                         "body": {
-                          "arg": {
-                            "name": "e",
-                            "highlightType": "active",
-                            "topLeftBadgeType": "none",
-                            "bottomRightBadgeType": "none",
-                            "type": "variable",
-                            "argPriorityAgg": [
-                              1
-                            ],
-                            "funcPriorityAgg": [],
-                            "emphasizePriority": false,
-                            "bound": true,
-                            "maxNestedFunctionDepth": 0
-                          },
-                          "func": {
-                            "name": "d",
-                            "highlightType": "active",
-                            "topLeftBadgeType": "none",
-                            "bottomRightBadgeType": "none",
-                            "type": "variable",
-                            "argPriorityAgg": [],
-                            "funcPriorityAgg": [
-                              1
-                            ],
-                            "emphasizePriority": false,
-                            "bound": true,
-                            "maxNestedFunctionDepth": 0
-                          },
-                          "state": "default",
-                          "type": "call",
-                          "priority": 1,
+                          "name": "e",
+                          "highlightType": "active",
+                          "topLeftBadgeType": "none",
+                          "bottomRightBadgeType": "none",
+                          "type": "variable",
+                          "argPriorityAgg": [],
+                          "funcPriorityAgg": [],
+                          "emphasizePriority": false,
+                          "bound": true,
                           "maxNestedFunctionDepth": 0
                         },
                         "type": "function",
@@ -1342,7 +1166,7 @@
       "previouslyChangedExpressionState": "betaReducePreviewCrossed",
       "activePriority": 1,
       "containerState": "stepped",
-      "numLeafNodes": 7
+      "numLeafNodes": 5
     },
     {
       "expression": {
@@ -1433,37 +1257,15 @@
                       "maxNestedFunctionDepth": 0
                     },
                     "body": {
-                      "arg": {
-                        "name": "e",
-                        "highlightType": "default",
-                        "topLeftBadgeType": "none",
-                        "bottomRightBadgeType": "none",
-                        "type": "variable",
-                        "argPriorityAgg": [
-                          1
-                        ],
-                        "funcPriorityAgg": [],
-                        "emphasizePriority": false,
-                        "bound": true,
-                        "maxNestedFunctionDepth": 0
-                      },
-                      "func": {
-                        "name": "d",
-                        "highlightType": "default",
-                        "topLeftBadgeType": "none",
-                        "bottomRightBadgeType": "none",
-                        "type": "variable",
-                        "argPriorityAgg": [],
-                        "funcPriorityAgg": [
-                          1
-                        ],
-                        "emphasizePriority": false,
-                        "bound": true,
-                        "maxNestedFunctionDepth": 0
-                      },
-                      "state": "default",
-                      "type": "call",
-                      "priority": 1,
+                      "name": "e",
+                      "highlightType": "default",
+                      "topLeftBadgeType": "none",
+                      "bottomRightBadgeType": "none",
+                      "type": "variable",
+                      "argPriorityAgg": [],
+                      "funcPriorityAgg": [],
+                      "emphasizePriority": false,
+                      "bound": true,
                       "maxNestedFunctionDepth": 0
                     },
                     "type": "function",
@@ -1510,7 +1312,7 @@
       "previouslyChangedExpressionState": "default",
       "activePriority": 1,
       "containerState": "ready",
-      "numLeafNodes": 5
+      "numLeafNodes": 4
     },
     {
       "expression": {
@@ -1601,37 +1403,15 @@
                       "maxNestedFunctionDepth": 0
                     },
                     "body": {
-                      "arg": {
-                        "name": "e",
-                        "highlightType": "active",
-                        "topLeftBadgeType": "none",
-                        "bottomRightBadgeType": "none",
-                        "type": "variable",
-                        "argPriorityAgg": [
-                          1
-                        ],
-                        "funcPriorityAgg": [],
-                        "emphasizePriority": false,
-                        "bound": true,
-                        "maxNestedFunctionDepth": 0
-                      },
-                      "func": {
-                        "name": "d",
-                        "highlightType": "active",
-                        "topLeftBadgeType": "none",
-                        "bottomRightBadgeType": "none",
-                        "type": "variable",
-                        "argPriorityAgg": [],
-                        "funcPriorityAgg": [
-                          1
-                        ],
-                        "emphasizePriority": false,
-                        "bound": true,
-                        "maxNestedFunctionDepth": 0
-                      },
-                      "state": "default",
-                      "type": "call",
-                      "priority": 1,
+                      "name": "e",
+                      "highlightType": "active",
+                      "topLeftBadgeType": "none",
+                      "bottomRightBadgeType": "none",
+                      "type": "variable",
+                      "argPriorityAgg": [],
+                      "funcPriorityAgg": [],
+                      "emphasizePriority": false,
+                      "bound": true,
                       "maxNestedFunctionDepth": 0
                     },
                     "type": "function",
@@ -1678,7 +1458,7 @@
       "previouslyChangedExpressionState": "active",
       "activePriority": 2,
       "containerState": "stepped",
-      "numLeafNodes": 5
+      "numLeafNodes": 4
     },
     {
       "expression": {
@@ -1769,37 +1549,15 @@
                       "maxNestedFunctionDepth": 0
                     },
                     "body": {
-                      "arg": {
-                        "name": "e",
-                        "highlightType": "active",
-                        "topLeftBadgeType": "none",
-                        "bottomRightBadgeType": "funcBound",
-                        "type": "variable",
-                        "argPriorityAgg": [
-                          1
-                        ],
-                        "funcPriorityAgg": [],
-                        "emphasizePriority": false,
-                        "bound": true,
-                        "maxNestedFunctionDepth": 0
-                      },
-                      "func": {
-                        "name": "d",
-                        "highlightType": "active",
-                        "topLeftBadgeType": "none",
-                        "bottomRightBadgeType": "funcBound",
-                        "type": "variable",
-                        "argPriorityAgg": [],
-                        "funcPriorityAgg": [
-                          1
-                        ],
-                        "emphasizePriority": false,
-                        "bound": true,
-                        "maxNestedFunctionDepth": 0
-                      },
-                      "state": "default",
-                      "type": "call",
-                      "priority": 1,
+                      "name": "e",
+                      "highlightType": "active",
+                      "topLeftBadgeType": "none",
+                      "bottomRightBadgeType": "funcBound",
+                      "type": "variable",
+                      "argPriorityAgg": [],
+                      "funcPriorityAgg": [],
+                      "emphasizePriority": false,
+                      "bound": true,
                       "maxNestedFunctionDepth": 0
                     },
                     "type": "function",
@@ -1846,7 +1604,7 @@
       "previouslyChangedExpressionState": "showFuncUnbound",
       "activePriority": 2,
       "containerState": "stepped",
-      "numLeafNodes": 5
+      "numLeafNodes": 4
     },
     {
       "expression": {
@@ -1911,7 +1669,7 @@
                   "arg": {
                     "name": "d",
                     "highlightType": "highlighted",
-                    "topLeftBadgeType": "match",
+                    "topLeftBadgeType": "unmatch",
                     "bottomRightBadgeType": "funcArg",
                     "type": "variable",
                     "argPriorityAgg": [],
@@ -1937,37 +1695,15 @@
                       "maxNestedFunctionDepth": 0
                     },
                     "body": {
-                      "arg": {
-                        "name": "e",
-                        "highlightType": "highlighted",
-                        "topLeftBadgeType": "unmatch",
-                        "bottomRightBadgeType": "funcBound",
-                        "type": "variable",
-                        "argPriorityAgg": [
-                          1
-                        ],
-                        "funcPriorityAgg": [],
-                        "emphasizePriority": false,
-                        "bound": true,
-                        "maxNestedFunctionDepth": 0
-                      },
-                      "func": {
-                        "name": "d",
-                        "highlightType": "highlighted",
-                        "topLeftBadgeType": "match",
-                        "bottomRightBadgeType": "funcBound",
-                        "type": "variable",
-                        "argPriorityAgg": [],
-                        "funcPriorityAgg": [
-                          1
-                        ],
-                        "emphasizePriority": false,
-                        "bound": true,
-                        "maxNestedFunctionDepth": 0
-                      },
-                      "state": "default",
-                      "type": "call",
-                      "priority": 1,
+                      "name": "e",
+                      "highlightType": "highlighted",
+                      "topLeftBadgeType": "unmatch",
+                      "bottomRightBadgeType": "funcBound",
+                      "type": "variable",
+                      "argPriorityAgg": [],
+                      "funcPriorityAgg": [],
+                      "emphasizePriority": false,
+                      "bound": true,
                       "maxNestedFunctionDepth": 0
                     },
                     "type": "function",
@@ -2012,178 +1748,10 @@
         "maxNestedFunctionDepth": 4
       },
       "previouslyChangedExpressionState": "betaReducePreviewBefore",
-      "matchExists": true,
+      "matchExists": false,
       "activePriority": 2,
       "containerState": "stepped",
-      "numLeafNodes": 5
-    },
-    {
-      "expression": {
-        "arg": {
-          "name": "b",
-          "highlightType": "default",
-          "topLeftBadgeType": "none",
-          "bottomRightBadgeType": "none",
-          "type": "variable",
-          "argPriorityAgg": [],
-          "funcPriorityAgg": [],
-          "emphasizePriority": false,
-          "bound": false,
-          "maxNestedFunctionDepth": 0
-        },
-        "body": {
-          "arg": {
-            "name": "c",
-            "highlightType": "default",
-            "topLeftBadgeType": "none",
-            "bottomRightBadgeType": "none",
-            "type": "variable",
-            "argPriorityAgg": [],
-            "funcPriorityAgg": [],
-            "emphasizePriority": false,
-            "bound": false,
-            "maxNestedFunctionDepth": 0
-          },
-          "body": {
-            "arg": {
-              "arg": {
-                "name": "c",
-                "highlightType": "default",
-                "topLeftBadgeType": "none",
-                "bottomRightBadgeType": "none",
-                "type": "variable",
-                "argPriorityAgg": [
-                  1,
-                  3
-                ],
-                "funcPriorityAgg": [],
-                "emphasizePriority": false,
-                "bound": true,
-                "maxNestedFunctionDepth": 0
-              },
-              "func": {
-                "arg": {
-                  "name": "b",
-                  "highlightType": "betaReduceCallArgHighlighted",
-                  "topLeftBadgeType": "none",
-                  "bottomRightBadgeType": "callArg",
-                  "type": "variable",
-                  "argPriorityAgg": [
-                    2
-                  ],
-                  "funcPriorityAgg": [],
-                  "emphasizePriority": true,
-                  "bound": true,
-                  "maxNestedFunctionDepth": 0
-                },
-                "func": {
-                  "arg": {
-                    "name": "d",
-                    "highlightType": "active",
-                    "topLeftBadgeType": "none",
-                    "bottomRightBadgeType": "funcArg",
-                    "type": "variable",
-                    "argPriorityAgg": [],
-                    "funcPriorityAgg": [
-                      2,
-                      3
-                    ],
-                    "emphasizePriority": true,
-                    "bound": false,
-                    "maxNestedFunctionDepth": 0
-                  },
-                  "body": {
-                    "arg": {
-                      "name": "e",
-                      "highlightType": "active",
-                      "topLeftBadgeType": "none",
-                      "bottomRightBadgeType": "funcUnbound",
-                      "type": "variable",
-                      "argPriorityAgg": [],
-                      "funcPriorityAgg": [],
-                      "emphasizePriority": false,
-                      "bound": false,
-                      "maxNestedFunctionDepth": 0
-                    },
-                    "body": {
-                      "arg": {
-                        "name": "e",
-                        "highlightType": "active",
-                        "topLeftBadgeType": "none",
-                        "bottomRightBadgeType": "funcBound",
-                        "type": "variable",
-                        "argPriorityAgg": [
-                          1
-                        ],
-                        "funcPriorityAgg": [],
-                        "emphasizePriority": false,
-                        "bound": true,
-                        "maxNestedFunctionDepth": 0
-                      },
-                      "func": {
-                        "name": "b",
-                        "highlightType": "highlighted",
-                        "topLeftBadgeType": "betaReduced",
-                        "bottomRightBadgeType": "funcBound",
-                        "type": "variable",
-                        "argPriorityAgg": [],
-                        "funcPriorityAgg": [
-                          1
-                        ],
-                        "emphasizePriority": false,
-                        "bound": true,
-                        "maxNestedFunctionDepth": 0
-                      },
-                      "state": "default",
-                      "type": "call",
-                      "priority": 1,
-                      "maxNestedFunctionDepth": 0
-                    },
-                    "type": "function",
-                    "maxNestedFunctionDepth": 1
-                  },
-                  "type": "function",
-                  "maxNestedFunctionDepth": 2
-                },
-                "state": "betaReducePreviewAfter",
-                "type": "call",
-                "priority": 2,
-                "maxNestedFunctionDepth": 2
-              },
-              "state": "default",
-              "type": "call",
-              "priority": 3,
-              "maxNestedFunctionDepth": 2
-            },
-            "func": {
-              "name": "b",
-              "highlightType": "default",
-              "topLeftBadgeType": "none",
-              "bottomRightBadgeType": "none",
-              "type": "variable",
-              "argPriorityAgg": [],
-              "funcPriorityAgg": [
-                1
-              ],
-              "emphasizePriority": false,
-              "bound": true,
-              "maxNestedFunctionDepth": 0
-            },
-            "state": "default",
-            "type": "call",
-            "priority": 1,
-            "maxNestedFunctionDepth": 2
-          },
-          "type": "function",
-          "maxNestedFunctionDepth": 3
-        },
-        "type": "function",
-        "maxNestedFunctionDepth": 4
-      },
-      "previouslyChangedExpressionState": "betaReducePreviewAfter",
-      "activePriority": 2,
-      "containerState": "stepped",
-      "numLeafNodes": 5
+      "numLeafNodes": 4
     },
     {
       "expression": {
@@ -2274,37 +1842,15 @@
                       "maxNestedFunctionDepth": 0
                     },
                     "body": {
-                      "arg": {
-                        "name": "e",
-                        "highlightType": "active",
-                        "topLeftBadgeType": "none",
-                        "bottomRightBadgeType": "none",
-                        "type": "variable",
-                        "argPriorityAgg": [
-                          1
-                        ],
-                        "funcPriorityAgg": [],
-                        "emphasizePriority": false,
-                        "bound": true,
-                        "maxNestedFunctionDepth": 0
-                      },
-                      "func": {
-                        "name": "b",
-                        "highlightType": "active",
-                        "topLeftBadgeType": "none",
-                        "bottomRightBadgeType": "none",
-                        "type": "variable",
-                        "argPriorityAgg": [],
-                        "funcPriorityAgg": [
-                          1
-                        ],
-                        "emphasizePriority": false,
-                        "bound": true,
-                        "maxNestedFunctionDepth": 0
-                      },
-                      "state": "default",
-                      "type": "call",
-                      "priority": 1,
+                      "name": "e",
+                      "highlightType": "active",
+                      "topLeftBadgeType": "none",
+                      "bottomRightBadgeType": "none",
+                      "type": "variable",
+                      "argPriorityAgg": [],
+                      "funcPriorityAgg": [],
+                      "emphasizePriority": false,
+                      "bound": true,
                       "maxNestedFunctionDepth": 0
                     },
                     "type": "function",
@@ -2351,7 +1897,7 @@
       "previouslyChangedExpressionState": "betaReducePreviewCrossed",
       "activePriority": 2,
       "containerState": "stepped",
-      "numLeafNodes": 5
+      "numLeafNodes": 4
     },
     {
       "expression": {
@@ -2413,37 +1959,15 @@
                   "maxNestedFunctionDepth": 0
                 },
                 "body": {
-                  "arg": {
-                    "name": "e",
-                    "highlightType": "default",
-                    "topLeftBadgeType": "none",
-                    "bottomRightBadgeType": "none",
-                    "type": "variable",
-                    "argPriorityAgg": [
-                      1
-                    ],
-                    "funcPriorityAgg": [],
-                    "emphasizePriority": false,
-                    "bound": true,
-                    "maxNestedFunctionDepth": 0
-                  },
-                  "func": {
-                    "name": "b",
-                    "highlightType": "default",
-                    "topLeftBadgeType": "none",
-                    "bottomRightBadgeType": "none",
-                    "type": "variable",
-                    "argPriorityAgg": [],
-                    "funcPriorityAgg": [
-                      1
-                    ],
-                    "emphasizePriority": false,
-                    "bound": true,
-                    "maxNestedFunctionDepth": 0
-                  },
-                  "state": "default",
-                  "type": "call",
-                  "priority": 1,
+                  "name": "e",
+                  "highlightType": "default",
+                  "topLeftBadgeType": "none",
+                  "bottomRightBadgeType": "none",
+                  "type": "variable",
+                  "argPriorityAgg": [],
+                  "funcPriorityAgg": [],
+                  "emphasizePriority": false,
+                  "bound": true,
                   "maxNestedFunctionDepth": 0
                 },
                 "type": "function",
@@ -2482,7 +2006,7 @@
       "previouslyChangedExpressionState": "default",
       "activePriority": 2,
       "containerState": "ready",
-      "numLeafNodes": 4
+      "numLeafNodes": 3
     },
     {
       "expression": {
@@ -2544,37 +2068,15 @@
                   "maxNestedFunctionDepth": 0
                 },
                 "body": {
-                  "arg": {
-                    "name": "e",
-                    "highlightType": "active",
-                    "topLeftBadgeType": "none",
-                    "bottomRightBadgeType": "none",
-                    "type": "variable",
-                    "argPriorityAgg": [
-                      1
-                    ],
-                    "funcPriorityAgg": [],
-                    "emphasizePriority": false,
-                    "bound": true,
-                    "maxNestedFunctionDepth": 0
-                  },
-                  "func": {
-                    "name": "b",
-                    "highlightType": "active",
-                    "topLeftBadgeType": "none",
-                    "bottomRightBadgeType": "none",
-                    "type": "variable",
-                    "argPriorityAgg": [],
-                    "funcPriorityAgg": [
-                      1
-                    ],
-                    "emphasizePriority": false,
-                    "bound": true,
-                    "maxNestedFunctionDepth": 0
-                  },
-                  "state": "default",
-                  "type": "call",
-                  "priority": 1,
+                  "name": "e",
+                  "highlightType": "active",
+                  "topLeftBadgeType": "none",
+                  "bottomRightBadgeType": "none",
+                  "type": "variable",
+                  "argPriorityAgg": [],
+                  "funcPriorityAgg": [],
+                  "emphasizePriority": false,
+                  "bound": true,
                   "maxNestedFunctionDepth": 0
                 },
                 "type": "function",
@@ -2613,7 +2115,7 @@
       "previouslyChangedExpressionState": "active",
       "activePriority": 2,
       "containerState": "stepped",
-      "numLeafNodes": 4
+      "numLeafNodes": 3
     },
     {
       "expression": {
@@ -2675,37 +2177,15 @@
                   "maxNestedFunctionDepth": 0
                 },
                 "body": {
-                  "arg": {
-                    "name": "e",
-                    "highlightType": "active",
-                    "topLeftBadgeType": "none",
-                    "bottomRightBadgeType": "funcBound",
-                    "type": "variable",
-                    "argPriorityAgg": [
-                      1
-                    ],
-                    "funcPriorityAgg": [],
-                    "emphasizePriority": false,
-                    "bound": true,
-                    "maxNestedFunctionDepth": 0
-                  },
-                  "func": {
-                    "name": "b",
-                    "highlightType": "active",
-                    "topLeftBadgeType": "none",
-                    "bottomRightBadgeType": "funcBound",
-                    "type": "variable",
-                    "argPriorityAgg": [],
-                    "funcPriorityAgg": [
-                      1
-                    ],
-                    "emphasizePriority": false,
-                    "bound": true,
-                    "maxNestedFunctionDepth": 0
-                  },
-                  "state": "default",
-                  "type": "call",
-                  "priority": 1,
+                  "name": "e",
+                  "highlightType": "active",
+                  "topLeftBadgeType": "none",
+                  "bottomRightBadgeType": "funcBound",
+                  "type": "variable",
+                  "argPriorityAgg": [],
+                  "funcPriorityAgg": [],
+                  "emphasizePriority": false,
+                  "bound": true,
                   "maxNestedFunctionDepth": 0
                 },
                 "type": "function",
@@ -2744,7 +2224,7 @@
       "previouslyChangedExpressionState": "showFuncBound",
       "activePriority": 2,
       "containerState": "stepped",
-      "numLeafNodes": 4
+      "numLeafNodes": 3
     },
     {
       "expression": {
@@ -2806,37 +2286,15 @@
                   "maxNestedFunctionDepth": 0
                 },
                 "body": {
-                  "arg": {
-                    "name": "e",
-                    "highlightType": "highlighted",
-                    "topLeftBadgeType": "match",
-                    "bottomRightBadgeType": "funcBound",
-                    "type": "variable",
-                    "argPriorityAgg": [
-                      1
-                    ],
-                    "funcPriorityAgg": [],
-                    "emphasizePriority": false,
-                    "bound": true,
-                    "maxNestedFunctionDepth": 0
-                  },
-                  "func": {
-                    "name": "b",
-                    "highlightType": "highlighted",
-                    "topLeftBadgeType": "unmatch",
-                    "bottomRightBadgeType": "funcBound",
-                    "type": "variable",
-                    "argPriorityAgg": [],
-                    "funcPriorityAgg": [
-                      1
-                    ],
-                    "emphasizePriority": false,
-                    "bound": true,
-                    "maxNestedFunctionDepth": 0
-                  },
-                  "state": "default",
-                  "type": "call",
-                  "priority": 1,
+                  "name": "e",
+                  "highlightType": "highlighted",
+                  "topLeftBadgeType": "match",
+                  "bottomRightBadgeType": "funcBound",
+                  "type": "variable",
+                  "argPriorityAgg": [],
+                  "funcPriorityAgg": [],
+                  "emphasizePriority": false,
+                  "bound": true,
                   "maxNestedFunctionDepth": 0
                 },
                 "type": "function",
@@ -2876,7 +2334,7 @@
       "matchExists": true,
       "activePriority": 2,
       "containerState": "stepped",
-      "numLeafNodes": 4
+      "numLeafNodes": 3
     },
     {
       "expression": {
@@ -2938,37 +2396,15 @@
                   "maxNestedFunctionDepth": 0
                 },
                 "body": {
-                  "arg": {
-                    "name": "c",
-                    "highlightType": "highlighted",
-                    "topLeftBadgeType": "betaReduced",
-                    "bottomRightBadgeType": "funcBound",
-                    "type": "variable",
-                    "argPriorityAgg": [
-                      1
-                    ],
-                    "funcPriorityAgg": [],
-                    "emphasizePriority": false,
-                    "bound": true,
-                    "maxNestedFunctionDepth": 0
-                  },
-                  "func": {
-                    "name": "b",
-                    "highlightType": "active",
-                    "topLeftBadgeType": "none",
-                    "bottomRightBadgeType": "funcBound",
-                    "type": "variable",
-                    "argPriorityAgg": [],
-                    "funcPriorityAgg": [
-                      1
-                    ],
-                    "emphasizePriority": false,
-                    "bound": true,
-                    "maxNestedFunctionDepth": 0
-                  },
-                  "state": "default",
-                  "type": "call",
-                  "priority": 1,
+                  "name": "c",
+                  "highlightType": "highlighted",
+                  "topLeftBadgeType": "betaReduced",
+                  "bottomRightBadgeType": "funcBound",
+                  "type": "variable",
+                  "argPriorityAgg": [],
+                  "funcPriorityAgg": [],
+                  "emphasizePriority": false,
+                  "bound": true,
                   "maxNestedFunctionDepth": 0
                 },
                 "type": "function",
@@ -3007,7 +2443,7 @@
       "previouslyChangedExpressionState": "betaReducePreviewAfter",
       "activePriority": 2,
       "containerState": "stepped",
-      "numLeafNodes": 4
+      "numLeafNodes": 3
     },
     {
       "expression": {
@@ -3069,37 +2505,15 @@
                   "maxNestedFunctionDepth": 0
                 },
                 "body": {
-                  "arg": {
-                    "name": "c",
-                    "highlightType": "active",
-                    "topLeftBadgeType": "none",
-                    "bottomRightBadgeType": "none",
-                    "type": "variable",
-                    "argPriorityAgg": [
-                      1
-                    ],
-                    "funcPriorityAgg": [],
-                    "emphasizePriority": false,
-                    "bound": true,
-                    "maxNestedFunctionDepth": 0
-                  },
-                  "func": {
-                    "name": "b",
-                    "highlightType": "active",
-                    "topLeftBadgeType": "none",
-                    "bottomRightBadgeType": "none",
-                    "type": "variable",
-                    "argPriorityAgg": [],
-                    "funcPriorityAgg": [
-                      1
-                    ],
-                    "emphasizePriority": false,
-                    "bound": true,
-                    "maxNestedFunctionDepth": 0
-                  },
-                  "state": "default",
-                  "type": "call",
-                  "priority": 1,
+                  "name": "c",
+                  "highlightType": "active",
+                  "topLeftBadgeType": "none",
+                  "bottomRightBadgeType": "none",
+                  "type": "variable",
+                  "argPriorityAgg": [],
+                  "funcPriorityAgg": [],
+                  "emphasizePriority": false,
+                  "bound": true,
                   "maxNestedFunctionDepth": 0
                 },
                 "type": "function",
@@ -3138,7 +2552,7 @@
       "previouslyChangedExpressionState": "betaReducePreviewCrossed",
       "activePriority": 2,
       "containerState": "stepped",
-      "numLeafNodes": 4
+      "numLeafNodes": 3
     },
     {
       "expression": {
@@ -3169,38 +2583,17 @@
           },
           "body": {
             "arg": {
-              "arg": {
-                "name": "c",
-                "highlightType": "default",
-                "topLeftBadgeType": "none",
-                "bottomRightBadgeType": "none",
-                "type": "variable",
-                "argPriorityAgg": [
-                  1,
-                  2
-                ],
-                "funcPriorityAgg": [],
-                "emphasizePriority": false,
-                "bound": true,
-                "maxNestedFunctionDepth": 0
-              },
-              "func": {
-                "name": "b",
-                "highlightType": "default",
-                "topLeftBadgeType": "none",
-                "bottomRightBadgeType": "none",
-                "type": "variable",
-                "argPriorityAgg": [],
-                "funcPriorityAgg": [
-                  2
-                ],
-                "emphasizePriority": false,
-                "bound": true,
-                "maxNestedFunctionDepth": 0
-              },
-              "state": "default",
-              "type": "call",
-              "priority": 2,
+              "name": "c",
+              "highlightType": "default",
+              "topLeftBadgeType": "none",
+              "bottomRightBadgeType": "none",
+              "type": "variable",
+              "argPriorityAgg": [
+                1
+              ],
+              "funcPriorityAgg": [],
+              "emphasizePriority": false,
+              "bound": true,
               "maxNestedFunctionDepth": 0
             },
             "func": {
@@ -3231,14 +2624,14 @@
       "previouslyChangedExpressionState": "default",
       "activePriority": 2,
       "containerState": "done",
-      "numLeafNodes": 3
+      "numLeafNodes": 2
     }
   ],
   "speed": 1,
   "hideControls": false,
   "explanationsVisibility": "hiddenInitialPausedOnly",
   "hidePriorities": false,
-  "hidePlayButton": false,
+  "hideRunButton": false,
   "hideBottomRightBadges": false,
   "skipToTheEnd": false,
   "hideFuncUnboundBadgeOnExplanation": true,

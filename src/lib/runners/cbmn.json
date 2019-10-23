@@ -230,7 +230,6 @@
           "maxNestedFunctionDepth": 4
         },
         "type": "function",
-        "meta": "minusOneEffect",
         "maxNestedFunctionDepth": 5
       },
       "numLeafNodes": 6,
@@ -242,7 +241,7 @@
   "hideControls": true,
   "explanationsVisibility": "hidden",
   "hidePriorities": false,
-  "hidePlayButton": false,
+  "hideRunButton": false,
   "hideBottomRightBadges": false,
   "skipToTheEnd": false,
   "hideFuncUnboundBadgeOnExplanation": false,

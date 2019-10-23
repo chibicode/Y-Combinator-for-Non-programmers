@@ -32,7 +32,7 @@ export interface ExpressionRunnerPrecomputedProps {
   hideControls: ExpressionRunnerConfig['hideControls']
   explanationsVisibility: ExpressionRunnerConfig['explanationsVisibility']
   hidePriorities: ExpressionRunnerConfig['hidePriorities']
-  hidePlayButton: ExpressionRunnerConfig['hidePlayButton']
+  hideRunButton: ExpressionRunnerConfig['hideRunButton']
   hideBottomRightBadges: ExpressionRunnerConfig['hideBottomRightBadges']
   skipToTheEnd: ExpressionRunnerConfig['skipToTheEnd']
   hideFuncUnboundBadgeOnExplanation: ExpressionRunnerConfig['hideFuncUnboundBadgeOnExplanation']
@@ -48,11 +48,11 @@ export interface ExpressionRunnerPrecomputedProps {
 }
 
 const autoplaySpeed = (speed: number) => 1000 / speed
-const FASTFORWARDING_THRESHOLD = 2
+const HIGHSPEED_THRESHOLD = 2
 
 interface PlaybackState {
-  isFastForwarding: boolean
-  isPlaying: boolean
+  isHighSpeed: boolean
+  isRunning: boolean
 }
 
 const ExpressionRunnerPrecomputed = ({
@@ -61,7 +61,7 @@ const ExpressionRunnerPrecomputed = ({
   hideControls,
   explanationsVisibility,
   hidePriorities,
-  hidePlayButton,
+  hideRunButton,
   hideBottomRightBadges,
   skipToTheEnd,
   hideFuncUnboundBadgeOnExplanation,
@@ -76,11 +76,11 @@ const ExpressionRunnerPrecomputed = ({
   crossed,
   showBottomProgressBar
 }: ExpressionRunnerPrecomputedProps) => {
-  const [{ isFastForwarding, isPlaying }, setPlaybackStatus] = useState<
+  const [{ isHighSpeed, isRunning }, setPlaybackStatus] = useState<
     PlaybackState
   >({
-    isFastForwarding: false,
-    isPlaying: false
+    isHighSpeed: false,
+    isRunning: false
   })
 
   const [currentIndex, setCurrentIndex] = useState<number>(0)
@@ -99,12 +99,12 @@ const ExpressionRunnerPrecomputed = ({
       // Don't use else: stop immediately if reaches the end
       if (currentIndex + 1 >= expressionContainers.length - 1) {
         setPlaybackStatus({
-          isFastForwarding: false,
-          isPlaying: false
+          isHighSpeed: false,
+          isRunning: false
         })
       }
     },
-    isPlaying ? autoplaySpeed(speed) : null
+    isRunning ? autoplaySpeed(speed) : null
   )
 
   const stepForward = () => {
@@ -132,15 +132,15 @@ const ExpressionRunnerPrecomputed = ({
 
   const autoplay = () => {
     setPlaybackStatus({
-      isPlaying: true,
-      isFastForwarding: speed > FASTFORWARDING_THRESHOLD
+      isRunning: true,
+      isHighSpeed: speed > HIGHSPEED_THRESHOLD
     })
   }
 
   const pause = () => {
     setPlaybackStatus({
-      isPlaying: false,
-      isFastForwarding: false
+      isRunning: false,
+      isHighSpeed: false
     })
   }
 
@@ -157,10 +157,10 @@ const ExpressionRunnerPrecomputed = ({
   const explanationsVisible =
     explanationsVisibility === 'visible' ||
     (explanationsVisibility === 'hiddenInitialPausedOnly' &&
-      !isPlaying &&
+      !isRunning &&
       currentIndex > 0)
   const progessBarVisible =
-    !hidePlayButton && !skipToTheEnd && (isPlaying || atLeastOneStepTaken)
+    !hideRunButton && !skipToTheEnd && (isRunning || atLeastOneStepTaken)
   const containerSize = functionDepthsToContainerSize(
     expressionContainers[currentIndex].expression.maxNestedFunctionDepth || 0
   )
@@ -168,10 +168,17 @@ const ExpressionRunnerPrecomputed = ({
     expressionContainers[currentIndex].numLeafNodes
   )
 
-  const { inTwoCol } = useContext(TwoColContext)
+  const { maxVariableSize } = useContext(TwoColContext)
 
-  if (inTwoCol && (variableSize === 'lg' || variableSize === 'md')) {
-    variableSize = 'sm'
+  if (maxVariableSize) {
+    if (maxVariableSize === 'md' && variableSize === 'lg') {
+      variableSize = 'md'
+    } else if (
+      maxVariableSize === 'sm' &&
+      (variableSize === 'lg' || variableSize === 'md')
+    ) {
+      variableSize = 'sm'
+    }
   }
 
   return (
@@ -203,7 +210,7 @@ const ExpressionRunnerPrecomputed = ({
           {explanationsVisible && (
             <ExpressionRunnerCaptionWrapper>
               <ExpressionRunnerExplanation
-                isPlaying={isPlaying}
+                isRunning={isRunning}
                 expressionContainer={expressionContainers[currentIndex]}
                 isDone={isDone}
                 showAllShowSteps={showAllShowSteps}
@@ -212,14 +219,14 @@ const ExpressionRunnerPrecomputed = ({
               />
             </ExpressionRunnerCaptionWrapper>
           )}
-          {children && !explanationsVisible && !isPlaying && (
+          {children && !explanationsVisible && !isRunning && (
             <ExpressionRunnerCaptionWrapper>
               {children}
             </ExpressionRunnerCaptionWrapper>
           )}
-          {isPlaying && (
+          {isRunning && (
             <ExpressionRunnerCaptionWrapper>
-              <H args={{ name: 'fastForwarding' }} />
+              <H args={{ name: 'running' }} />
             </ExpressionRunnerCaptionWrapper>
           )}
           {progessBarVisible && (
@@ -231,7 +238,7 @@ const ExpressionRunnerPrecomputed = ({
               <ProgressBar
                 percent={percentDone}
                 fromPercent={fromPercent}
-                speed={isPlaying ? autoplaySpeed(speed) : undefined}
+                speed={isRunning ? autoplaySpeed(speed) : undefined}
               />
             </div>
           )}
@@ -246,7 +253,7 @@ const ExpressionRunnerPrecomputed = ({
               css={[
                 css`
                   line-height: ${lineHeights(1.3, { ignoreLocale: true })};
-                  opacity: ${isFastForwarding ? 0.5 : 1};
+                  opacity: ${isHighSpeed ? 0.5 : 1};
                   position: relative;
                   background-color: ${colors('white')};
                 `
@@ -286,7 +293,7 @@ const ExpressionRunnerPrecomputed = ({
               <ProgressBar
                 percent={percentDone}
                 fromPercent={fromPercent}
-                speed={isPlaying ? autoplaySpeed(speed) : undefined}
+                speed={isRunning ? autoplaySpeed(speed) : undefined}
               />
             </div>
           )}
@@ -298,8 +305,8 @@ const ExpressionRunnerPrecomputed = ({
               onPreviousClick={stepBackward}
               canStepForward={canStepForward}
               canStepBackward={atLeastOneStepTaken}
-              showPlayButton={!hidePlayButton}
-              isPlaying={isPlaying}
+              showRunButton={!hideRunButton}
+              isRunning={isRunning}
               onAutoClick={autoplay}
               onSkipToTheEndClick={stepToTheEnd}
               onResetClick={reset}
@@ -313,7 +320,7 @@ const ExpressionRunnerPrecomputed = ({
           size={containerSize === 'xxs' ? 'xs' : 'sm'}
           horizontalPadding={0}
         >
-          {!hidePlayButton &&
+          {!hideRunButton &&
             canStepForward &&
             !skipToTheEnd &&
             (resetClicked || speed > 1) && (
@@ -349,7 +356,7 @@ const ExpressionRunnerPrecomputed = ({
             currentIndex === expressionContainers.length - 1 &&
             expressionContainers[expressionContainers.length - 1]
               .containerState !== 'done' &&
-            !hidePlayButton && (
+            !hideRunButton && (
               <ExpressionRunnerCaptionWrapper
                 css={css`
                   margin-top: ${spaces(0.5)};

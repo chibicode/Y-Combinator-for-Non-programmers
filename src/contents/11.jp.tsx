@@ -638,7 +638,7 @@ export default () => (
                     <>
                       <P>
                         <Bold>質問:</Bold> これを
-                        <H args={{ name: 'play' }} />{' '}
+                        <H args={{ name: 'run' }} />{' '}
                         すると、最終的に以下のようになるでしょうか？
                       </P>
                     </>

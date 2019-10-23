@@ -16,6 +16,7 @@ import {
 } from 'src/components/ContentTags'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import EmojiNumber from 'src/components/EmojiNumber'
+import EmojiWithText from 'src/components/EmojiWithText'
 import ExpressionRunnerSeparator from 'src/components/ExpressionRunnerSeparator'
 import H from 'src/components/H'
 import Emoji from 'src/components/Emoji'
@@ -510,15 +511,14 @@ export default () => (
             </R.Kzkg>
             <P>
               上の弁当箱は、
-              <H args={{ name: 'play' }} /> すると <Emoji>🅱️</Emoji>{' '}
-              になります。
-              <H args={{ name: 'pressFastForward' }} />
+              <H args={{ name: 'run' }} /> すると <Emoji>🅱️</Emoji> になります。
+              <H args={{ name: 'pressRun' }} />
             </P>
             <R.Unxf></R.Unxf>
             <P>
               <Highlight>
                 それと同じで、先ほどの「ラムダ計算」の記述式も、
-                <H args={{ name: 'play' }} /> すると
+                <H args={{ name: 'run' }} /> すると
                 <HighlightBold>B</HighlightBold>が残るのです。
               </Highlight>
             </P>
@@ -529,18 +529,37 @@ export default () => (
               もちろん、もっと複雑なラムダ計算の記述式もあります。たとえば、こちらをご覧ください。この記述式は、何を表しているか分かりますか？
             </P>
             <CenteredCode size="sm">λA.(λB.A(B B))(λB.A(B B))</CenteredCode>
+            <P>これを弁当箱にすると、次のようになります。</P>
+            <R.Rjho></R.Rjho>
             <P>
-              答えを言うと、上の記述式は
-              <HighlightBold>Yコンビネータを表している</HighlightBold>
-              のです。つまり、下の弁当箱とまったく同じです。
+              もし <Emoji>🅰️</Emoji> に<EmojiWithText letter="a" /> を、
+              <Emoji>🅱️</Emoji> に<EmojiWithText letter="b" /> を当てはめると、
+              <HighlightBold>
+                上級編で登場したYコンビネータの弁当箱
+              </HighlightBold>
+              になります。
             </P>
-            <R.Rjho>
-              上のラムダ計算の記述式は、
-              <br />「<HighlightBold>Yコンビネータ</HighlightBold>
-              」の弁当箱と同じ
-            </R.Rjho>
+            <R.Xjzx>
+              <Emoji>🅰️</Emoji> に<EmojiWithText letter="a" /> を、
+              <br />
+              <Emoji>🅱️</Emoji> に<EmojiWithText letter="b" /> を当てはめると、
+              <br />
+              Yコンビネータの弁当箱になる
+            </R.Xjzx>
             <P>
-              つまり本稿では、
+              つまり、先ほどのラムダ計算の記述式は
+              <HighlightBold>Yコンビネータを表している</HighlightBold>
+              のです。
+            </P>
+            <CenteredCode size="sm">λA.(λB.A(B B))(λB.A(B B))</CenteredCode>
+            <ExpressionRunnerSeparator />
+            <ExpressionRunnerCaptionOnly>
+              先ほどのラムダ計算の記述式は
+              <br />
+              <HighlightBold>Yコンビネータを表している</HighlightBold>
+            </ExpressionRunnerCaptionOnly>
+            <P>
+              まとめると、本稿では、
               <HighlightBold>
                 実はみなさんにラムダ計算を教えていたのです。
               </HighlightBold>

@@ -5,12 +5,15 @@ import {
   HighlightBold,
   Highlight,
   Ul,
-  UlLi
+  UlLi,
+  Bold,
+  Hr
 } from 'src/components/ContentTags'
 import H from 'src/components/H'
 import BubbleQuotes from 'src/components/BubbleQuotes'
 import Emoji from 'src/components/Emoji'
 import EmojiNumber from 'src/components/EmojiNumber'
+import CardContent from 'src/components/CardContent'
 import ExpressionRunnerSeparator from 'src/components/ExpressionRunnerSeparator'
 import InlineBorder from 'src/components/InlineBorder'
 import CustomEmoji from 'src/components/CustomEmoji'
@@ -72,30 +75,31 @@ export default () => (
               」を使った計算箱は…
             </R.Qycx>
             <ExpressionRunnerSeparator />
-            <R.Peiy>
+            <R.Kjba>
               以下の弁当箱で再現できている？<Emoji>🤔</Emoji>
-            </R.Peiy>
+            </R.Kjba>
             <P>
-              サヤちゃんの弁当箱は、前回
-              <Highlight>
-                <H args={{ name: 'play' }} /> してみると{' '}
-                <EmojiNumber number={5} /> になりました。
-              </Highlight>
-            </P>
-            <P>
-              つまり、「
+              サヤちゃんが言うには、上の弁当箱は、「
               <H args={{ name: 'repeatFeature' }} />
-              」を使った場合と同じように、
-              <EmojiNumber number={2} /> <Emoji>➕</Emoji>{' '}
-              <EmojiNumber number={3} /> を計算できているかのように見えます。
+              」を使った場合と同じく、
+              <Highlight>
+                <EmojiNumber number={2} /> に対して{' '}
+                <CustomEmoji type="plusOne" /> を3回繰り返す
+              </Highlight>
+              ように変化すると言うのです。
             </P>
-            <R.Kjba>実行すると…</R.Kjba>
+            <R.Kjba>この弁当箱を実行すると…</R.Kjba>
             <ExpressionRunnerSeparator />
-            <R.Seie>
-              <EmojiNumber number={5} /> になる。ということは
-              <br /> <EmojiNumber number={2} /> <Emoji>➕</Emoji>{' '}
-              <EmojiNumber number={3} /> を計算できている？
-            </R.Seie>
+            <R.Jwce>
+              「
+              <H args={{ name: 'repeatFeature' }} />
+              」と同じく、
+              <br />
+              <EmojiNumber number={2} /> に対して <CustomEmoji type="plusOne" />{' '}
+              を3回繰り返す
+            </R.Jwce>
+            <ExpressionRunnerSeparator />
+            <R.Seie></R.Seie>
             <P>
               今回は、本当にこの弁当箱が「
               <H args={{ name: 'repeatFeature' }} />
@@ -105,7 +109,7 @@ export default () => (
         )
       },
       {
-        title: <>途中で何が起きているのか？</>,
+        title: <>途中、何が起きているのか？</>,
         content: (
           <>
             <BubbleQuotes
@@ -116,7 +120,7 @@ export default () => (
                     <>
                       <P>
                         今回は、前回サヤが考えた弁当箱を
-                        <H args={{ name: 'fastForward' }} /> して、
+                        <H args={{ name: 'run' }} /> して、
                         <HighlightBold>
                           途中、弁当箱がどう変化するかを確認してみる
                         </HighlightBold>
@@ -125,8 +129,9 @@ export default () => (
                       <P>
                         そうすることで、
                         <Highlight>
-                          どいうった経緯で最終的に <EmojiNumber number={5} />{' '}
-                          になるのか
+                          どいうった経緯で最終的に「
+                          <H args={{ name: 'repeatFeature' }} />
+                          」と同じになるのか
                         </Highlight>
                         を知ることができるからね。
                       </P>
@@ -137,7 +142,7 @@ export default () => (
             />
             <R.Kjba>
               前回の弁当箱は、
-              <H args={{ name: 'fastForward' }} /> すると…
+              <H args={{ name: 'run' }} /> すると…
             </R.Kjba>
             <ExpressionRunnerSeparator />
             <EmojiSeparator
@@ -149,9 +154,13 @@ export default () => (
               }
             />
             <ExpressionRunnerSeparator />
-            <R.Seie>
-              最終的に <EmojiNumber number={5} /> になるのか？
-            </R.Seie>
+            <R.Jwce>
+              「
+              <H args={{ name: 'repeatFeature' }} />
+              」と同じになるのか？
+            </R.Jwce>
+            <ExpressionRunnerSeparator />
+            <R.Seie></R.Seie>
             <BubbleQuotes
               quotes={[
                 {
@@ -161,7 +170,7 @@ export default () => (
                       <P>
                         なるほど、
                         <Highlight>
-                          早送りをすることで、途中で何が起きているか確かめてみようってことだね。
+                          途中で何が起きているか確かめてみようってことだね。
                         </Highlight>
                       </P>
                     </>
@@ -171,7 +180,7 @@ export default () => (
                   type: 'saya',
                   children: (
                     <>
-                      <P>それじゃあ、早送りしてみよう！</P>
+                      <P>それじゃあ、実行してみよう！</P>
                     </>
                   )
                 }
@@ -181,7 +190,7 @@ export default () => (
         )
       },
       {
-        title: <>早送りしてみる</>,
+        title: <>実行してみる</>,
         content: (
           <>
             <BubbleQuotes
@@ -192,7 +201,7 @@ export default () => (
                     <>
                       <P>
                         というわけで、
-                        <H args={{ name: 'pressFastForward', girl: true }} />
+                        <H args={{ name: 'pressRun', girl: true }} />
                       </P>
                       <Ul>
                         <UlLi>
@@ -370,7 +379,7 @@ export default () => (
                     <>
                       <P>
                         では、続きを見てみよう！
-                        <H args={{ name: 'pressFastForward', girl: true }} />
+                        <H args={{ name: 'pressRun', girl: true }} />
                       </P>
                     </>
                   )
@@ -547,7 +556,7 @@ export default () => (
                     <>
                       <P>
                         再度、<Emoji>🍱</Emoji> を省略する前の状態に戻したよ。
-                        <H args={{ name: 'pressFastForward', girl: true }} />
+                        <H args={{ name: 'pressRun', girl: true }} />
                       </P>
                     </>
                   )
@@ -722,7 +731,7 @@ export default () => (
                       <P>
                         <HighlightBold>これが最後</HighlightBold>だよ！
                         <Emoji>🍱</Emoji> を省略する前の状態に戻したので、
-                        <H args={{ name: 'pressFastForward', girl: true }} />
+                        <H args={{ name: 'pressRun', girl: true }} />
                       </P>
                     </>
                   )
@@ -900,8 +909,8 @@ export default () => (
                       <P>
                         そして
                         <Highlight>
-                          <H args={{ name: 'fastForward' }} />{' '}
-                          していくと、終了直前に以下のようになった
+                          <H args={{ name: 'run' }} />{' '}
+                          すると、終了直前に以下のようになった
                         </Highlight>
                         よね。
                       </P>
@@ -940,7 +949,7 @@ export default () => (
                       <P>
                         そう。つまり上の「
                         <H args={{ name: 'repeatFeature' }} />
-                        」を使った計算箱は、今回早送りした弁当箱で再現できるということなんだ。
+                        」を使った計算箱は、今回実行した弁当箱で再現できるということなんだ。
                       </P>
                     </>
                   )
@@ -1006,7 +1015,7 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        上の弁当箱も早送りすると、先ほどと同じように、終了直前に以下のようになる。だから、繰り返しの機能と同じことができるんだ。
+                        上の弁当箱も実行すると、先ほどと同じように、終了直前に以下のようになる。だから、繰り返しの機能と同じことができるんだ。
                       </P>
                     </>
                   )
@@ -1016,7 +1025,7 @@ export default () => (
             <R.Sskt>
               先ほどと同じように、
               <br />
-              早送りが終わる直前に
+              実行が終わる直前に
               <br />
               以下のようになり…
             </R.Sskt>
@@ -1357,35 +1366,13 @@ export default () => (
                   )
                 },
                 {
-                  type: 'dog',
-                  children: (
-                    <>
-                      <P>
-                        ちなみに、以下のような法則に当てはまる弁当箱は、どれも「
-                        <HighlightBold>Yコンビネータ</HighlightBold>
-                        」と呼べるんですよ。
-                      </P>
-                    </>
-                  )
-                }
-              ]}
-            />
-            <R.Rjho>
-              この法則に当てはまる弁当箱は全部
-              <br />「<HighlightBold>Yコンビネータ</HighlightBold>」
-            </R.Rjho>
-            <BubbleQuotes
-              quotes={[
-                {
                   type: 'saya',
                   children: (
                     <>
                       <P>
                         そうなんだ。でもすごいね。
                         <HighlightBold>
-                          こんなシンプルな、
-                          <Emoji>🅰️</Emoji> と <Emoji>🅱️</Emoji>{' '}
-                          の二種類の料理しかない弁当箱が、繰り返しを可能にするなんて…
+                          こんなシンプルな、二種類の料理しかない弁当箱が、繰り返しを可能にするなんて…
                         </HighlightBold>
                       </P>
                       <P>
@@ -1419,7 +1406,53 @@ export default () => (
               }
             />
           </>
-        )
+        ),
+        footer: {
+          content: (
+            <>
+              <CardContent
+                children={
+                  <>
+                    <Hr />
+                    <P>
+                      <HighlightBold>
+                        以下の法則に当てはまる弁当箱は、どれも 「
+                        <HighlightBold>Yコンビネータ</HighlightBold>
+                        」です。
+                      </HighlightBold>
+                    </P>
+                    <R.Rjho>
+                      この法則に当てはまる弁当箱は全部
+                      <br />「<HighlightBold>Yコンビネータ</HighlightBold>」
+                    </R.Rjho>
+                    <P>
+                      たとえば、以下のような弁当箱も「
+                      <HighlightBold>Yコンビネータ</HighlightBold>
+                      」です。
+                    </P>
+                    <R.Beug>
+                      これも「
+                      <HighlightBold>Yコンビネータ</HighlightBold>」
+                    </R.Beug>
+                  </>
+                }
+                preview={{
+                  text: <>続きを読む</>,
+                  content: (
+                    <>
+                      <P>
+                        <Bold>ちなみに:</Bold> 上の弁当箱以外にも、「
+                        <HighlightBold>Yコンビネータ</HighlightBold>
+                        」の弁当箱は存在します。気になる方は、↓の「続きを読む」を押してみてください。
+                        (読まなくても先に進めます！)
+                      </P>
+                    </>
+                  )
+                }}
+              />
+            </>
+          )
+        }
       },
       {
         title: <>繰り返しの機能を返してもらえる？</>,

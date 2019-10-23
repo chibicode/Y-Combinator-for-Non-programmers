@@ -402,7 +402,7 @@ export default () => (
                         とりあえず今は、
                         <Highlight>
                           <H args={{ name: 'bentoBoxPuzzle' }} />の
-                          <H args={{ name: 'play' }} /> について見ていこう。
+                          <H args={{ name: 'run' }} /> について見ていこう。
                         </Highlight>
                       </P>
                     </>
@@ -417,7 +417,7 @@ export default () => (
         title: (
           <>
             弁当箱を
-            <H args={{ name: 'play' }} />
+            <H args={{ name: 'run' }} />
             する
           </>
         ),
@@ -427,7 +427,7 @@ export default () => (
               <Highlight>
                 <H args={{ name: 'bentoBoxPuzzle' }} />
                 は、計算箱と同じように
-                <H args={{ name: 'play' }} /> することができます。
+                <H args={{ name: 'run' }} /> することができます。
               </Highlight>
               試しに、
               <Highlight>
@@ -442,7 +442,7 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        <H args={{ name: 'play' }} /> すると、
+                        <H args={{ name: 'run' }} /> すると、
                         <Highlight>
                           下のふたつの <EmojiWithText letter="a" /> が消えて、
                           <EmojiWithText letter="b" /> だけが残った！
@@ -454,7 +454,7 @@ export default () => (
               ]}
             />
             <R.Ilpo>
-              <H args={{ name: 'play' }} /> すると…
+              <H args={{ name: 'run' }} /> すると…
             </R.Ilpo>
             <ExpressionRunnerSeparator />
             <R.Osqo>
@@ -487,7 +487,7 @@ export default () => (
                 <>
                   弁当箱は、<HighlightBold>どんな法則</HighlightBold>に則って
                   <br />
-                  <H args={{ name: 'play' }} /> されるでしょう？
+                  <H args={{ name: 'run' }} /> されるでしょう？
                 </>
               }
             />
@@ -611,7 +611,7 @@ export default () => (
                         では、
                         <HighlightBold>
                           弁当箱のパズルは、
-                          <H args={{ name: 'play' }} />
+                          <H args={{ name: 'run' }} />
                           する際にどんな法則に則っているか
                         </HighlightBold>
                         、そろそろ分かったかな？
@@ -656,13 +656,13 @@ export default () => (
             </P>
             <R.Rakk />
             <ExpressionRunnerSeparator />
-            <R.Thbw />
+            <R.Weoz />
             <P>
               <Bold>例その4:</Bold>
             </P>
             <R.Ldqk />
             <ExpressionRunnerSeparator />
-            <R.Fogc />
+            <R.Cpkp />
             <BubbleQuotes
               quotes={[
                 {
@@ -714,7 +714,7 @@ export default () => (
               これまでに4種類の
               <H args={{ name: 'bentoBoxPuzzle' }} />
               を紹介しましたが、どれも
-              <H args={{ name: 'play' }} />{' '}
+              <H args={{ name: 'run' }} />{' '}
               する際にある法則に従っています。それが分かったかどうか、
               <H args={{ name: 'yesNoQuiz' }} />
               でチェックしてみましょう！
@@ -730,7 +730,7 @@ export default () => (
             <R.Loai />
             <P>
               これを
-              <H args={{ name: 'play' }} /> すると、
+              <H args={{ name: 'run' }} /> すると、
               <HighlightBold>最終的に下のようになるでしょうか？</HighlightBold>
               これまでの法則から予想してみてください。
             </P>
@@ -752,7 +752,7 @@ export default () => (
             <P>
               <H args={{ name: 'question' }} /> こちらの
               <H args={{ name: 'bentoBoxPuzzle' }} />を{' '}
-              <H args={{ name: 'play' }} />
+              <H args={{ name: 'run' }} />
               すると、
             </P>
             <R.Uvmv />

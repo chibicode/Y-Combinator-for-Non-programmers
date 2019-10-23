@@ -22,7 +22,28 @@ import EmojiSeparator from 'src/components/EmojiSeparator'
 import * as R from 'src/components/Runners'
 import EmojiWithText from 'src/components/EmojiWithText'
 import NextLessonButton from 'src/components/NextLessonButton'
-import { StepOne, StepTwo, StepThree } from 'src/contents/7.en'
+import { Problem, StepOne, StepTwo, StepThree } from 'src/contents/7.en'
+import CardContent from 'src/components/CardContent'
+
+export const BlankNumberPlusOne = () => (
+  <>
+    <R.Eweo>
+      Combine <Emoji>👧🏻</Emoji> Saya’s lunchbox
+      <br />
+      with a lunchbox that can be converted to{' '}
+      <CustomEmoji type="blankNumber" />
+    </R.Eweo>
+    <ExpressionRunnerSeparator />
+    <R.Jxvy>
+      If you <H args={{ name: 'run' }} /> it,
+      <br />
+      it becomes a lunchobox
+      <br />
+      that can be converted to <CustomEmoji type="blankNumber" />{' '}
+      <Emoji>➕</Emoji> <EmojiNumber number={1} />
+    </R.Jxvy>
+  </>
+)
 
 export default () => (
   <EpisodeCardList
@@ -32,53 +53,20 @@ export default () => (
         content: (
           <>
             <EmojiSeparator
-              nodes={[
-                <Emoji>😭</Emoji>,
-                <CustomEmoji type="plusOneOrange" />,
-                <Emoji>😭</Emoji>
-              ]}
+              nodes={[<Emoji>😭</Emoji>, <Emoji>❓</Emoji>, <Emoji>😭</Emoji>]}
             />
             <P>
               The villagers in Lambda Village were struggling with this
               difficult problem:
             </P>
-            <BubbleQuotes
-              quotes={[
-                {
-                  type: 'dog',
-                  children: (
-                    <>
-                      <P>
-                        <Highlight>
-                          You must fill each{' '}
-                          <CustomEmoji type="questionFoodGrey" /> in a way such
-                          that, the resulting lunchbox has{' '}
-                          <Bold>
-                            <H args={{ name: 'plusOneEffect' }} />
-                          </Bold>
-                          .
-                        </Highlight>
-                      </P>
-                    </>
-                  )
-                }
-              ]}
-            />
-            <R.Jguj>
-              Fill each <CustomEmoji type="questionFoodGrey" /> icon in a way
-              such that,
-              <br />
-              The resulting lunchbox has
-              <br />
-              <H args={{ name: 'plusOneEffect' }} />.
-            </R.Jguj>
+            <Problem />
             <BubbleQuotes
               quotes={[
                 {
                   type: 'crying',
                   children: (
                     <>
-                      <P>Hmm… I have no clue!</P>
+                      <P>Hmm… I have no idea!</P>
                     </>
                   )
                 },
@@ -145,73 +133,6 @@ export default () => (
                   type: 'saya',
                   children: (
                     <>
-                      <P>I see. Can you tell me what the question is?</P>
-                    </>
-                  )
-                },
-                {
-                  type: 'sad',
-                  children: (
-                    <>
-                      <P>
-                        Sure.{' '}
-                        <Highlight>
-                          We must fill each{' '}
-                          <CustomEmoji type="questionFoodGrey" /> in a way such
-                          that, the resulting lunchbox has{' '}
-                          <Bold>
-                            <H args={{ name: 'plusOneEffect' }} />
-                          </Bold>
-                          .
-                        </Highlight>
-                      </P>
-                    </>
-                  )
-                }
-              ]}
-            />
-            <R.Jguj>
-              Fill each <CustomEmoji type="questionFoodGrey" /> icon in a way
-              such that,
-              <br />
-              The resulting lunchbox has
-              <br />
-              <H args={{ name: 'plusOneEffect' }} />.
-            </R.Jguj>
-            <BubbleQuotes
-              quotes={[
-                {
-                  type: 'sad',
-                  children: (
-                    <>
-                      <P>
-                        Which means, it needs to be able to calculate{' '}
-                        <CustomEmoji type="blankNumber" /> <Emoji>➕</Emoji>{' '}
-                        <EmojiNumber number={1} />.
-                      </P>
-                    </>
-                  )
-                }
-              ]}
-            />
-            <R.Qrgc>
-              If you combine it with{' '}
-              <CustomEmoji type="blankNumber" size="mdlg" /> and
-              <br />
-              <H args={{ name: 'runAndConvertToMathbox', lowerCase: true }} />…
-            </R.Qrgc>
-            <ExpressionRunnerSeparator />
-            <R.Jxvy>
-              The result must be <CustomEmoji type="blankNumber" size="mdlg" />{' '}
-              <Emoji size="mdlg">➕</Emoji>{' '}
-              <EmojiNumber number={1} size="mdlg" />
-            </R.Jxvy>
-            <BubbleQuotes
-              quotes={[
-                {
-                  type: 'saya',
-                  children: (
-                    <>
                       <P>I see. I’ll help you then!</P>
                     </>
                   )
@@ -257,9 +178,14 @@ export default () => (
                 }
               ]}
             />
-            <R.Qrfw>
-              <Emoji>👧🏻</Emoji> Saya’s Lunchbox
-            </R.Qrfw>
+            <R.Stda>
+              <Emoji>👧🏻</Emoji> I filled each{' '}
+              <CustomEmoji type="questionFoodGrey" /> icon…
+            </R.Stda>
+            <ExpressionRunnerSeparator />
+            <R.Cpim>
+              <Emoji>👧🏻</Emoji> As follows!
+            </R.Cpim>
             <BubbleQuotes
               quotes={[
                 {
@@ -271,27 +197,11 @@ export default () => (
                         anyway.
                       </P>
                       <P>
-                        We’ll combine it with a lunchbox that can be converted
-                        to <EmojiNumber number={1} />…
-                      </P>
-                      <R.Rbup>
-                        <H
-                          args={{
-                            name: 'canBeConvertedCaption',
-                            letter: 'd',
-                            number: 1
-                          }}
-                        />
-                      </R.Rbup>
-                      <P>
-                        Then{' '}
-                        <H
-                          args={{
-                            name: 'runAndConvertToMathbox',
-                            lowerCase: true
-                          }}
-                        />
-                        , and see if it will become <EmojiNumber number={2} />.
+                        <Highlight>
+                          We’ll <H args={{ name: 'run', lowerCase: true }} />{' '}
+                          this, and see if the result is a lunchbox that can be
+                          converted to <EmojiNumber number={1} />.
+                        </Highlight>
                       </P>
                     </>
                   )
@@ -299,19 +209,13 @@ export default () => (
               ]}
             />
             <R.Plde>
-              Combine <Emoji>👧🏻</Emoji> Saya’s lunchbox with
-              <br />
-              a lunchbox that can be converted to <EmojiNumber number={1} />…
+              We’ll <H args={{ name: 'run' }} /> this lunchbox, and…
             </R.Plde>
             <ExpressionRunnerSeparator />
             <ExpressionRunnerCaptionOnly>
-              <Highlight>
-                <H args={{ name: 'runAndConvertToMathbox' }} />
-              </Highlight>
-            </ExpressionRunnerCaptionOnly>
-            <ExpressionRunnerSeparator />
-            <ExpressionRunnerCaptionOnly>
-              If it becomes <EmojiNumber number={2} size="mdlg" />,{' '}
+              If it becomes a lunchbox that can be
+              <br />
+              converted to <EmojiNumber number={1} size="mdlg" />,{' '}
               <Highlight>success</Highlight>. <Emoji>🎉</Emoji>
               <br />
               Otherwise, <Highlight>failure</Highlight> <Emoji>😭</Emoji>
@@ -324,7 +228,7 @@ export default () => (
                     <>
                       <P>
                         Let’s first{' '}
-                        <H args={{ name: 'play', lowerCase: true }} /> it!
+                        <H args={{ name: 'run', lowerCase: true }} /> it!
                       </P>
                     </>
                   )
@@ -335,7 +239,11 @@ export default () => (
         )
       },
       {
-        title: <>What happens if you run it?</>,
+        title: (
+          <>
+            What happens if you <H args={{ name: 'run' }} /> it?
+          </>
+        ),
         content: (
           <>
             <StepOne />
@@ -362,7 +270,7 @@ export default () => (
                 }
               ]}
             />
-            <R.Rhcv>Final result</R.Rhcv>
+            <R.Rhcv>Final Result</R.Rhcv>
             <BubbleQuotes
               quotes={[
                 {
@@ -372,42 +280,27 @@ export default () => (
                       <P>Wait…! It can’t be…!</P>
                     </>
                   )
-                }
-              ]}
-            />
-          </>
-        )
-      },
-      {
-        title: (
-          <>
-            Can be converted to <EmojiNumber number={2} />
-          </>
-        ),
-        content: (
-          <>
-            <BubbleQuotes
-              quotes={[
+                },
                 {
                   type: 'dog',
                   children: (
                     <>
                       <P>
                         The resulting lunchbox can be converted to{' '}
-                        <EmojiNumber number={2} />!
+                        <EmojiNumber number={1} />!
                       </P>
                     </>
                   )
                 }
               ]}
             />
-            <R.Rico>
+            <R.Joaq>
               <H
-                args={{ name: 'canBeConvertedCaption', number: 2, letter: 'b' }}
+                args={{ name: 'canBeConvertedCaption', number: 1, letter: 'b' }}
               />
-            </R.Rico>
+            </R.Joaq>
             <ExpressionRunnerSeparator />
-            <R.Pmdm />
+            <R.Rnug />
             <BubbleQuotes
               quotes={[
                 {
@@ -415,40 +308,8 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        <Bold>That means:</Bold> Saya’s lunchbox can turn{' '}
-                        <EmojiNumber number={1} /> into{' '}
-                        <EmojiNumber number={2} />.
-                      </P>
-                    </>
-                  )
-                }
-              ]}
-            />
-            <R.Plde>
-              Combine <Emoji>👧🏻</Emoji> Saya’s lunchbox with
-              <br />
-              a lunchbox that can be converted to <EmojiNumber number={1} />…
-            </R.Plde>
-            <ExpressionRunnerSeparator />
-            <R.Pmdm>
-              After
-              <br />
-              <Highlight>
-                <H args={{ name: 'runAndConvertToMathbox' }} />,
-              </Highlight>
-              <br />
-              it became <EmojiNumber number={2} />
-            </R.Pmdm>
-            <BubbleQuotes
-              quotes={[
-                {
-                  type: 'dog',
-                  children: (
-                    <>
-                      <P>
-                        It calculated <EmojiNumber number={1} />{' '}
-                        <Emoji>➕</Emoji> <EmojiNumber number={1} />, so it’s a
-                        success! <Emoji>🎉</Emoji>
+                        So, it’s a <Highlight>success</Highlight>!{' '}
+                        <Emoji>🎉</Emoji>
                       </P>
                     </>
                   )
@@ -476,28 +337,43 @@ export default () => (
         )
       },
       {
-        title: (
-          <>
-            Can it calculate <EmojiNumber number={2} /> <Emoji>➕</Emoji>{' '}
-            <EmojiNumber number={1} />?
-          </>
-        ),
+        title: <>Let’s dive in a little deeper</>,
         content: (
           <>
+            <P>
+              <Bold>Surprise:</Bold> Saya just solved the devil’s difficult
+              problem!
+            </P>
+            <EmojiSeparator
+              emojis={['😮', '👧🏻', '😮']}
+              description={<>Saya solved the devil’s problem!</>}
+            />
             <BubbleQuotes
               quotes={[
                 {
-                  type: 'roll',
+                  type: 'surprised',
                   children: (
                     <>
                       <P>
-                        <Bold>Wait, we still don’t know if Saya is right.</Bold>
+                        Wow, Saya, you’re awesome! Thank you for solving it!
                       </P>
+                    </>
+                  )
+                },
+                {
+                  type: 'saya',
+                  children: (
+                    <>
+                      <P>Hehe, thanks!</P>
+                    </>
+                  )
+                },
+                {
+                  type: 'happy',
+                  children: (
+                    <>
                       <P>
-                        Just because it can calculate <EmojiNumber number={1} />{' '}
-                        <Emoji>➕</Emoji> <EmojiNumber number={1} />,{' '}
-                        <Italic>it doesn’t necessarily mean</Italic> that it has{' '}
-                        <H args={{ name: 'plusOneEffect' }} />.
+                        Anyway, thanks to Saya, we’ll get our mathboxes back!
                       </P>
                     </>
                   )
@@ -506,21 +382,167 @@ export default () => (
                   type: 'dog',
                   children: (
                     <>
-                      <P>That’s a good point!</P>
+                      <P>
+                        <Bold>Yes, but:</Bold> Before we move on,{' '}
+                        <Highlight>let’s dive in a little deeper.</Highlight>
+                      </P>
+                      <P>
+                        We’ll spend a bit of time to talk about some important
+                        stuff.
+                      </P>
                     </>
                   )
                 },
                 {
-                  type: 'roll',
+                  type: 'thinking',
                   children: (
                     <>
-                      <P>We need to try other examples to make sure!</P>
+                      <P>Hmm…?</P>
+                    </>
+                  )
+                },
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>
+                        <Bold>First:</Bold> Here’s what we’ve learned so far.{' '}
+                        <Highlight>
+                          Here’s a lunchbox that can be converted to{' '}
+                          <EmojiNumber number={0} />:
+                        </Highlight>
+                      </P>
+                      <R.Hkbs>
+                        <H
+                          args={{
+                            name: 'canBeConvertedCaption',
+                            letter: 'd',
+                            number: 0
+                          }}
+                        />
+                      </R.Hkbs>
                       <P>
                         <Highlight>
-                          For example, let’s try calculating{' '}
-                          <EmojiNumber number={2} /> <Emoji>➕</Emoji>{' '}
-                          <EmojiNumber number={1} /> with Saya’s lunchbox.
+                          If we combine it with <Emoji>👧🏻</Emoji> Saya’s
+                          lunchbox, it will become a lunchbox that can be
+                          converted to <EmojiNumber number={1} />.
                         </Highlight>
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Cpim>
+              If we combined it with
+              <br />
+              <Emoji>👧🏻</Emoji> Saya’s lunchbox…
+            </R.Cpim>
+            <ExpressionRunnerSeparator />
+            <R.Jzwg>
+              It will become a lunchbox
+              <br />
+              that can be converted to <EmojiNumber number={1} />
+            </R.Jzwg>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>
+                        So, by using <Emoji>👧🏻</Emoji> Saya’s lunchbox,
+                      </P>
+                      <Ul>
+                        <UlLi>
+                          <Highlight>
+                            A lunchbox that can be converted to{' '}
+                            <EmojiNumber number={0} />…
+                          </Highlight>
+                        </UlLi>
+                        <UlLi>
+                          <Highlight>
+                            Becomes a lunchbox that can be converted to{' '}
+                            <EmojiNumber number={1} />.
+                          </Highlight>
+                        </UlLi>
+                      </Ul>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <EmojiSeparator
+              nodes={[
+                <EmojiNumber number={0} />,
+                <CustomEmoji type="singleArrow" />,
+                <EmojiNumber number={1} />
+              ]}
+              description={
+                <>
+                  A lunchbox that can be converted to <EmojiNumber number={0} />
+                  <br />
+                  becomes a lunchbox
+                  <br />
+                  that can be converted to <EmojiNumber number={1} />
+                </>
+              }
+            />
+          </>
+        )
+      },
+      {
+        title: (
+          <>
+            What if we combined it with <EmojiNumber number={1} />?
+          </>
+        ),
+        content: (
+          <>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>
+                        <Bold>Now, here’s a question:</Bold>{' '}
+                        <Highlight>
+                          Suppose that we combine <Emoji>👧🏻</Emoji> Saya’s
+                          lunchbox with a lunchbox that can be converted to{' '}
+                          <EmojiNumber number={1} />.
+                        </Highlight>
+                      </P>
+                      <P>
+                        <Highlight>
+                          What happens when you <H args={{ name: 'run' }} /> it?
+                        </Highlight>
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Rqer>
+              Combine <Emoji>👧🏻</Emoji> Saya’s lunchbox with
+              <br />
+              a lunchbox that can be converted to <EmojiNumber number={1} />
+            </R.Rqer>
+            <ExpressionRunnerSeparator />
+            <ExpressionRunnerCaptionOnly>
+              What happens when you <H args={{ name: 'run' }} /> it?
+            </ExpressionRunnerCaptionOnly>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'thinking',
+                  children: (
+                    <>
+                      <P>Hmm… I have no idea…</P>
+                      <P>
+                        Last time, <EmojiNumber number={0} /> became{' '}
+                        <EmojiNumber number={1} />. Don’t know what will happen
+                        this time…
                       </P>
                     </>
                   )
@@ -529,38 +551,75 @@ export default () => (
             />
             <EmojiSeparator
               nodes={[
-                <EmojiNumber number={2} />,
-                <Emoji>➕</Emoji>,
+                <EmojiNumber number={0} />,
+                <CustomEmoji type="singleArrow" />,
                 <EmojiNumber number={1} />
               ]}
-              description={<>Can Saya’s lunchbox calculate this?</>}
+              description={
+                <>
+                  Last time, <EmojiNumber number={0} /> became{' '}
+                  <EmojiNumber number={1} />.
+                </>
+              }
+            />
+            <EmojiSeparator
+              nodes={[
+                <EmojiNumber number={1} />,
+                <CustomEmoji type="singleArrow" />,
+                <Emoji>❓</Emoji>
+              ]}
+              description={
+                <>
+                  What about this time?
+                  <br />
+                  What will <EmojiNumber number={1} /> become?
+                </>
+              }
             />
             <BubbleQuotes
               quotes={[
                 {
-                  type: 'saya',
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>Let’s check it!</P>
+                    </>
+                  )
+                }
+              ]}
+            />
+          </>
+        )
+      },
+      {
+        title: (
+          <>
+            What will <EmojiNumber number={1} /> become?
+          </>
+        ),
+        content: (
+          <>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'dog',
                   children: (
                     <>
                       <P>
-                        Ok, so let me combine this lunchbox that can be
-                        converted to <EmojiNumber number={2} />…
+                        This time, we’ll use this lunchbox that can be converted
+                        to <EmojiNumber number={1} />.
                       </P>
-                      <R.Spga>
+                      <R.Ooya>
                         <H
                           args={{
                             name: 'canBeConvertedCaption',
                             letter: 'f',
-                            number: 2
+                            number: 1
                           }}
                         />
-                      </R.Spga>
-                      <P>With the lunchbox I came up with earlier!</P>
-                      <R.Qrfw>
-                        <Emoji>👧🏻</Emoji> Saya’s lunchbox
-                      </R.Qrfw>
+                      </R.Ooya>
                       <P>
-                        We want the result to be <EmojiNumber number={3} />,
-                        right?
+                        Let’s combine it with <Emoji>👧🏻</Emoji> Saya’s lunchbox.
                       </P>
                     </>
                   )
@@ -568,34 +627,22 @@ export default () => (
               ]}
             />
             <R.Awwn>
-              Combine <Emoji>👧🏻</Emoji> Saya’s lunchbox with
-              <br />
-              a lunchbox that can be converted to <EmojiNumber number={2} />…
+              Combine with <Emoji>👧🏻</Emoji> Saya’s lunchbox
             </R.Awwn>
-            <ExpressionRunnerSeparator />
-            <ExpressionRunnerCaptionOnly>
-              <Highlight>
-                <H args={{ name: 'runAndConvertToMathbox' }} />
-              </Highlight>
-            </ExpressionRunnerCaptionOnly>
-            <ExpressionRunnerSeparator />
-            <ExpressionRunnerCaptionOnly>
-              If it becomes <EmojiNumber number={3} size="mdlg" />,{' '}
-              <Highlight>success</Highlight>. <Emoji>🎉</Emoji>
-              <br />
-              Otherwise, <Highlight>failure</Highlight> <Emoji>😭</Emoji>
-            </ExpressionRunnerCaptionOnly>
             <BubbleQuotes
               quotes={[
                 {
-                  type: 'saya',
+                  type: 'dog',
                   children: (
                     <>
                       <P>
-                        Let’s run it.{' '}
-                        <H args={{ name: 'pressFastForward', girl: true }} />
+                        Let’s <H args={{ name: 'run' }} /> it! This time, we’ll
+                        continue running until the end.{' '}
                       </P>
-                      <P>This time, we won’t stop until the end!</P>
+                      <P>
+                        If you can’t wait,{' '}
+                        <H args={{ name: 'runSkippableToTheEnd' }} />
+                      </P>
                     </>
                   )
                 }
@@ -605,70 +652,89 @@ export default () => (
             <BubbleQuotes
               quotes={[
                 {
-                  type: 'saya',
-                  children: (
-                    <>
-                      <P>This is the final result!</P>
-                    </>
-                  )
-                }
-              ]}
-            />
-            <R.Zsxo>The final result</R.Zsxo>
-            <BubbleQuotes
-              quotes={[
-                {
                   type: 'dog',
                   children: (
                     <>
                       <P>
-                        This lunchbox can be converted to{' '}
-                        <EmojiNumber number={3} />!
+                        The resulting lunchbox can be converted to{' '}
+                        <EmojiNumber number={2} />!
                       </P>
                     </>
                   )
                 }
               ]}
             />
-            <R.Nngz>
+            <R.Rico>
               <H
-                args={{ name: 'canBeConvertedCaption', number: 3, letter: 'b' }}
+                args={{ name: 'canBeConvertedCaption', number: 2, letter: 'b' }}
               />
-            </R.Nngz>
-            <ExpressionRunnerSeparator />
-            <R.Qsoa />
+            </R.Rico>
             <BubbleQuotes
               quotes={[
-                {
-                  type: 'dog',
-                  children: (
-                    <>
-                      <P>
-                        <Bold>Therefore:</Bold> It calculated{' '}
-                        <EmojiNumber number={2} /> <Emoji>➕</Emoji>{' '}
-                        <EmojiNumber number={1} />, so it’s a success!{' '}
-                        <Emoji>🎉</Emoji>
-                      </P>
-                    </>
-                  )
-                },
-                {
-                  type: 'saya',
-                  children: (
-                    <>
-                      <P>Yay again!</P>
-                    </>
-                  )
-                },
                 {
                   type: 'surprised',
                   children: (
                     <>
-                      <P>Wow…!</P>
+                      <P>That means…</P>
+                      <Ul>
+                        <UlLi>
+                          <Highlight>
+                            A lunchbox that can be converted to{' '}
+                            <EmojiNumber number={1} />…
+                          </Highlight>
+                        </UlLi>
+                        <UlLi>
+                          <Highlight>
+                            Became a lunchbox that can be converted to{' '}
+                            <EmojiNumber number={2} />?
+                          </Highlight>
+                        </UlLi>
+                      </Ul>
                     </>
                   )
                 }
               ]}
+            />
+            <R.Rqer>
+              Combine <Emoji>👧🏻</Emoji> Saya’s lunchbox with
+              <br />
+              a lunchbox that can be converted to <EmojiNumber number={1} />
+            </R.Rqer>
+            <ExpressionRunnerSeparator />
+            <R.Cawl>
+              If we <H args={{ name: 'run' }} /> it,
+              <br />
+              it becomes a lunchbox
+              <br />
+              that can be converted to <EmojiNumber number={2} />
+            </R.Cawl>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>
+                        <Bold>That means:</Bold> By using <Emoji>👧🏻</Emoji>{' '}
+                        Saya’s lunchbox, <EmojiNumber number={1} /> became{' '}
+                        <EmojiNumber number={2} />.
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <EmojiSeparator
+              nodes={[
+                <EmojiNumber number={1} />,
+                <CustomEmoji type="singleArrow" />,
+                <EmojiNumber number={2} />
+              ]}
+              description={
+                <>
+                  <EmojiNumber number={1} /> became <EmojiNumber number={2} />
+                </>
+              }
             />
           </>
         )
@@ -676,7 +742,7 @@ export default () => (
       {
         title: (
           <>
-            The pattern for <H args={{ name: 'plusOneEffect' }} />
+            It can add <EmojiNumber number={1} />
           </>
         ),
         content: (
@@ -688,83 +754,22 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        <Bold>Let me tell you this:</Bold>{' '}
-                        <Highlight>
-                          Saya’s lunchbox <Italic>does</Italic> have{' '}
-                          <H args={{ name: 'plusOneEffect' }} />!
-                        </Highlight>
-                      </P>
-                      <P>
-                        Therefore,{' '}
-                        <HighlightBold>
-                          Saya’s answer was correct.
-                        </HighlightBold>{' '}
-                        Congratulations! <Emoji>🎉</Emoji>
-                      </P>
-                    </>
-                  )
-                }
-              ]}
-            />
-            <R.Nvqu>
-              <Emoji>👧🏻</Emoji> Saya’s lunchbox has{' '}
-              <H args={{ name: 'plusOneEffect' }} />
-            </R.Nvqu>
-            <BubbleQuotes
-              quotes={[
-                {
-                  type: 'saya',
-                  children: (
-                    <>
-                      <P>Thank you, Minion!</P>
-                    </>
-                  )
-                },
-                {
-                  type: 'dog',
-                  children: (
-                    <>
-                      <P>
-                        <Bold>By the way:</Bold> There are{' '}
-                        <Italic>other</Italic> correct answers as well.
-                      </P>
-                      <P>
-                        <Highlight>
-                          Any lunchboxes that have the following pattern have{' '}
-                          <H args={{ name: 'plusOneEffect' }} />.
-                        </Highlight>
-                      </P>
-                    </>
-                  )
-                }
-              ]}
-            />
-            <R.Blvt>
-              Any lunchboxes that have the following pattern
-              <br />
-              have <H args={{ name: 'plusOneEffect' }} />
-            </R.Blvt>
-            <BubbleQuotes
-              quotes={[
-                {
-                  type: 'saya',
-                  children: (
-                    <>
-                      <P>
-                        I see. So the lunchbox I came up with had the following:
+                        <Bold>
+                          So, by using <Emoji>👧🏻</Emoji> Saya’s lunchbox:
+                        </Bold>
                       </P>
                       <Ul>
                         <UlLi>
-                          <EmojiWithText letter="a" capitalize /> for{' '}
-                          <Emoji>🅰️</Emoji>
+                          <Highlight>
+                            <EmojiNumber number={0} /> becomes{' '}
+                            <EmojiNumber number={1} />, and…
+                          </Highlight>
                         </UlLi>
                         <UlLi>
-                          <EmojiWithText letter="b" capitalize /> for{' '}
-                          <Emoji>🅱️</Emoji>
-                        </UlLi>
-                        <UlLi>
-                          <EmojiWithText letter="c" capitalize /> for{' '}
-                          <CustomEmoji type="C" />
+                          <Highlight>
+                            <EmojiNumber number={1} /> becomes{' '}
+                            <EmojiNumber number={2} />.
+                          </Highlight>
                         </UlLi>
                       </Ul>
                     </>
@@ -772,137 +777,58 @@ export default () => (
                 }
               ]}
             />
-            <R.Oykb>
-              <EmojiWithText letter="a" capitalize /> for <Emoji>🅰️</Emoji>,
-              <br />
-              <EmojiWithText letter="b" capitalize /> for <Emoji>🅱️</Emoji>, and
-              <br />
-              <EmojiWithText letter="c" capitalize /> for{' '}
-              <CustomEmoji type="C" />
-            </R.Oykb>
+            <EmojiSeparator
+              nodes={[
+                <EmojiNumber number={0} />,
+                <CustomEmoji type="singleArrow" />,
+                <EmojiNumber number={1} />
+              ]}
+              noBottomMargin
+            />
+            <EmojiSeparator
+              nodes={[
+                <EmojiNumber number={1} />,
+                <CustomEmoji type="singleArrow" />,
+                <EmojiNumber number={2} />
+              ]}
+              noTopMargin
+              description={
+                <>
+                  <EmojiNumber number={0} /> becomes <EmojiNumber number={1} />,
+                  and
+                  <br />
+                  <EmojiNumber number={1} /> becomes <EmojiNumber number={2} />.
+                </>
+              }
+            />{' '}
             <BubbleQuotes
               quotes={[
                 {
                   type: 'dog',
                   children: (
                     <>
-                      <P>
-                        Exactly. Saya’s lunchbox actually fits the following
-                        pattern.
-                      </P>
-                      <R.Blvt>
-                        Any lunchboxes that fit the following
-                        <br />
-                        pattern have <H args={{ name: 'plusOneEffect' }} />.
-                        <br />
-                        <Emoji>👧🏻</Emoji> Saya’s lunchbox fits this pattern!
-                      </R.Blvt>
-                    </>
-                  )
-                }
-              ]}
-            />
-          </>
-        )
-      },
-      {
-        title: <>Let’s try other lunchboxes that have the same pattern</>,
-        content: (
-          <>
-            <BubbleQuotes
-              quotes={[
-                {
-                  type: 'thinking',
-                  children: (
-                    <>
-                      <P>
-                        <Bold>How about this lunchbox?</Bold>{' '}
-                        <Italic>
-                          It is different from Saya’s lunchbox, but has the same
-                          pattern.
-                        </Italic>
-                      </P>
-                      <P>
-                        I used <EmojiForLetter letter="h" /> for{' '}
-                        <Emoji>🅰️</Emoji>, <EmojiForLetter letter="i" /> for{' '}
-                        <Emoji>🅱️</Emoji>, and <EmojiForLetter letter="j" /> for{' '}
-                        <CustomEmoji type="C" />.
-                      </P>
-                      <R.Dvpl>
-                        It is different from Saya’s lunchbox,
-                        <br />
-                        but has the same pattern.
-                      </R.Dvpl>
-                      <P>
-                        <Bold>So you’re saying…</Bold> This one has{' '}
-                        <H args={{ name: 'plusOneEffect' }} /> too?
-                      </P>
+                      <P>Do you see the pattern?</P>
                     </>
                   )
                 },
                 {
-                  type: 'dog',
+                  type: 'saya',
                   children: (
                     <>
                       <P>
-                        Yes, it also has <H args={{ name: 'plusOneEffect' }} />.
-                      </P>
-                      <P>
-                        <Bold>As a test:</Bold>{' '}
+                        Maybe…
                         <Highlight>
-                          Let’s combine it with this lunchbox that can be
-                          converted to <EmojiNumber number={3} /> and see what
-                          happens!
+                          it can add <EmojiNumber number={1} />?
                         </Highlight>
                       </P>
-                      <R.Cjxe>
-                        <H
-                          args={{
-                            name: 'canBeConvertedCaption',
-                            letter: 'k',
-                            number: 3
-                          }}
-                        />
-                      </R.Cjxe>
-                      <P>
-                        If the result is <EmojiNumber number={4} />, then that
-                        means it calculated <EmojiNumber number={3} />{' '}
-                        <Emoji>➕</Emoji> <EmojiNumber number={1} />{' '}
-                        successfully. Let’s check!
-                      </P>
                     </>
                   )
-                }
-              ]}
-            />
-            <P>
-              <H args={{ name: 'pressFastForward', skippable: true }} />
-            </P>
-            <R.Oqpi />
-            <BubbleQuotes
-              quotes={[
+                },
                 {
                   type: 'dog',
                   children: (
                     <>
-                      <P>
-                        The result was a lunchbox that can be converted to{' '}
-                        <EmojiNumber number={4} />!
-                      </P>
-                      <R.Zxkq>
-                        <H
-                          args={{
-                            name: 'canBeConvertedCaption',
-                            letter: 'i',
-                            number: 4
-                          }}
-                        />
-                      </R.Zxkq>
-                      <P>
-                        <Bold>Therefore:</Bold> It calculated{' '}
-                        <EmojiNumber number={3} /> <Emoji>➕</Emoji>{' '}
-                        <EmojiNumber number={1} />.
-                      </P>
+                      <P>Exactly!</P>
                     </>
                   )
                 },
@@ -910,233 +836,423 @@ export default () => (
                   type: 'thinking',
                   children: (
                     <>
+                      <P>What do you mean?</P>
+                    </>
+                  )
+                },
+                {
+                  type: 'dog',
+                  children: (
+                    <>
                       <P>
-                        I see, so this one has{' '}
-                        <H args={{ name: 'plusOneEffect' }} /> as well.
+                        <Bold>Here’s what I mean:</Bold>
                       </P>
-                      <R.Udxn>
-                        Just like <Emoji>👧🏻</Emoji> Saya’s lunchbox,
-                        <br />
-                        This one also has <H args={{ name: 'plusOneEffect' }} />
-                      </R.Udxn>
+                      <Ul>
+                        <UlLi>
+                          <Highlight>
+                            If you combine <Emoji>👧🏻</Emoji> Saya’s lunchbox…
+                          </Highlight>
+                        </UlLi>
+                        <UlLi>
+                          <Highlight>
+                            …with a lunchbox that can be converted to{' '}
+                            <CustomEmoji type="blankNumber" />,
+                          </Highlight>
+                        </UlLi>
+                        <UlLi>
+                          <Highlight>
+                            After running it, it becomes a lunchbox that can be
+                            converted to <CustomEmoji type="blankNumber" />{' '}
+                            <Emoji>➕</Emoji> <EmojiNumber number={1} />.
+                          </Highlight>
+                        </UlLi>
+                      </Ul>
                     </>
                   )
                 }
               ]}
+            />
+            <BlankNumberPlusOne />
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>
+                        <Bold>In other words:</Bold>{' '}
+                        <Highlight>
+                          <CustomEmoji type="blankNumber" /> becomes{' '}
+                          <CustomEmoji type="blankNumber" /> <Emoji>➕</Emoji>{' '}
+                          <EmojiNumber number={1} />.
+                        </Highlight>
+                      </P>
+                      <P>
+                        That’s why{' '}
+                        <Italic>
+                          “it can add <EmojiNumber number={1} />
+                          .”
+                        </Italic>
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <EmojiSeparator
+              nodes={[
+                <CustomEmoji type="blankNumber" />,
+                <CustomEmoji type="singleArrow" />,
+                <CustomEmoji type="blankNumber" />,
+                <Emoji>➕</Emoji>,
+                <EmojiNumber number={1} />
+              ]}
+              description={
+                <>
+                  <CustomEmoji type="blankNumber" /> becomes{' '}
+                  <CustomEmoji type="blankNumber" /> <Emoji>➕</Emoji>{' '}
+                  <EmojiNumber number={1} />
+                </>
+              }
             />
           </>
         )
       },
       {
         type: 'summary',
-        title: <>Let’s Pause and Look Back</>,
+        title: (
+          <>
+            It can “reproduce” <H args={{ name: 'plusOneFeature' }} />
+          </>
+        ),
         content: (
           <>
             <BubbleQuotes
               quotes={[
                 {
-                  type: 'tired',
-                  children: (
-                    <>
-                      <P>That was a lot of information. Can we take a break?</P>
-                    </>
-                  )
-                },
-                {
                   type: 'dog',
                   children: (
                     <>
-                      <P>Sure, let’s take a break!</P>
                       <P>
-                        <Bold>By the way:</Bold>{' '}
-                        <Italic>
-                          We’re halfway done with the intermediate levels.
-                        </Italic>{' '}
-                        And we’re also halfway done with the{' '}
-                        <Italic>entire course.</Italic>
+                        <Bold>Now, let’s recall that:</Bold>{' '}
+                        <Highlight>
+                          Mathboxes <CustomEmoji type="mathBox" /> have{' '}
+                          <H args={{ name: 'plusOneFeature' }} />.
+                        </Highlight>
                       </P>
                       <P>
-                        <Bold>So: </Bold> Let’s pause and look back at what we
-                        just did!
+                        Using a mathbox, you can use{' '}
+                        <H args={{ name: 'plusOneFeature' }} /> to add{' '}
+                        <EmojiNumber number={1} /> to any number.
                       </P>
                     </>
                   )
                 }
               ]}
             />
-            <P>
-              First, take a look at this one. It’s a mathbox that can calculate{' '}
-              <EmojiNumber number={1} /> <Emoji>➕</Emoji>{' '}
-              <EmojiNumber number={1} /> using <CustomEmoji type="plusOne" />.
-            </P>
-            <R.Mcug>
-              A mathbox that can calculate <EmojiNumber number={1} />{' '}
-              <Emoji>➕</Emoji> <EmojiNumber number={1} />
+            <R.Rviy>
+              Using a mathbox, you can use
               <br />
-              using <CustomEmoji type="plusOne" />. If you run it, it becomes{' '}
-              <EmojiNumber number={2} />.
-            </R.Mcug>
-            <P>
-              If we were to summarize what we just did in this page, it’ll be
-              this:
-            </P>
-            <Ul>
-              <UlLi>
-                <Highlight>
-                  <CustomEmoji type="mathBox" /> A <Bold>mathbox</Bold> that
-                  uses <CustomEmoji type="plusOne" /> can be{' '}
-                  <Bold>reproduced</Bold> by…
-                </Highlight>
-              </UlLi>
-              <UlLi>
-                <Highlight>
-                  <Emoji>🍱</Emoji> A <Bold>lunchbox</Bold> that has{' '}
-                  <H args={{ name: 'plusOneEffect' }} />.
-                </Highlight>
-              </UlLi>
-            </Ul>
+              <H args={{ name: 'plusOneFeature' }} />…
+            </R.Rviy>
+            <ExpressionRunnerSeparator />
+            <R.Ymtp>…to add one to a number.</R.Ymtp>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>
+                        <Bold>And on this page, we learned that:</Bold>{' '}
+                        <Highlight>
+                          You can also add <EmojiNumber number={1} /> to a
+                          number using a lunchbox <Emoji>🍱</Emoji>.
+                        </Highlight>
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <EmojiSeparator
+              nodes={[
+                <CustomEmoji type="plusOne" />,
+                <Emoji>🍱</Emoji>,
+                <CustomEmoji type="plusOne" />
+              ]}
+              description={
+                <>
+                  You can add <EmojiNumber number={1} /> to a number
+                  <br />
+                  using a lunchbox
+                </>
+              }
+            />
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>
+                        <Bold>Here’s how:</Bold>{' '}
+                        <Highlight>
+                          Instead of <CustomEmoji type="plusOne" />, by using{' '}
+                          <Emoji>👧🏻</Emoji> Saya’s lunchbox,
+                        </Highlight>{' '}
+                        you can add <EmojiNumber number={1} /> to a number.
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <BlankNumberPlusOne />
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>
+                        <Bold>Therefore:</Bold>{' '}
+                        <Highlight>
+                          A mathbox that uses{' '}
+                          <H args={{ name: 'plusOneFeature' }} /> can be{' '}
+                          <Bold>“reproduced”</Bold> using a lunchbox.
+                        </Highlight>
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
             <EmojiSeparator
               nodes={[
                 <CustomEmoji type="mathBox" />,
                 <CustomEmoji type="plusOne" />,
                 <CustomEmoji type="doubleArrow" />,
                 <Emoji>🍱</Emoji>,
-                <CustomEmoji type="plusOneOrange" />
+                <CustomEmoji type="plusOne" />
               ]}
               description={
                 <>
-                  A <Bold>mathbox</Bold> that uses{' '}
-                  <CustomEmoji type="plusOne" /> can be
+                  A mathbox that uses <H args={{ name: 'plusOneFeature' }} />
                   <br />
-                  <HighlightBold>reproduced</HighlightBold> by…
-                  <br />A <Bold>lunchbox</Bold> that has{' '}
-                  <H args={{ name: 'plusOneEffect' }} />.
+                  can be <HighlightBold>“reproduced”</HighlightBold> using a
+                  lunchbox.
                 </>
               }
             />
-            <P>
-              What does <HighlightBold>“reproduced”</HighlightBold> mean? Let me
-              explain…
-            </P>
-            <Hr />
-            <P>
-              Let’s <HighlightBold>reproduce</HighlightBold> the following
-              mathbox <CustomEmoji type="mathBox" /> using a lunchbox{' '}
-              <Emoji>🍱</Emoji>.
-            </P>
-            <R.Lizi>We’ll reproduce this using a lunchbox</R.Lizi>
-            <P>
-              <Bold>Step 1:</Bold>{' '}
-              <Highlight>
-                First, instead of <EmojiNumber number={1} />, we use a lunchbox
-                that can be converted to <EmojiNumber number={1} />.
-              </Highlight>
-            </P>
-            <R.Rnug>Instead of this…</R.Rnug>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'thinking',
+                  children: (
+                    <>
+                      <P>I see…, so:</P>
+                      <Ul>
+                        <UlLi>
+                          <Highlight>
+                            In a mathbox, we use <CustomEmoji type="plusOne" />,
+                            and…
+                          </Highlight>
+                        </UlLi>
+                        <UlLi>
+                          <Highlight>
+                            In a lunchbox, we use <Emoji>👧🏻</Emoji> Saya’s
+                            lunchbox.
+                          </Highlight>
+                        </UlLi>
+                      </Ul>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Rviy>
+              In a mathbox, we use <CustomEmoji type="plusOne" />
+            </R.Rviy>
             <ExpressionRunnerSeparator />
-            <R.Rbup>
-              Use a lunchbox that can be converted to <EmojiNumber number={1} />
-              :<br />
-              <H
-                args={{
-                  name: 'canBeConvertedCaption',
-                  letter: 'd',
-                  number: 1
-                }}
-              />
-            </R.Rbup>
-            <P>
-              <Bold>Step 2:</Bold>{' '}
-              <Highlight>
-                Next, instead of <CustomEmoji type="plusOne" />, use a lunchbox
-                that has <H args={{ name: 'plusOneEffect' }} />.
-              </Highlight>
-            </P>
-            <R.Bhpw>Instead of this…</R.Bhpw>
-            <ExpressionRunnerSeparator />
-            <R.Qrfw>
-              Use a lunchbox that has
+            <R.Eweo>
+              In a lunchbox, we use
               <br />
-              <H args={{ name: 'plusOneEffect' }} />
-              <br />(<Emoji>👧🏻</Emoji> Saya’s lunchbox)
-            </R.Qrfw>
-            <P>
-              <Bold>Step 3:</Bold> If you combine them and then{' '}
-              <H args={{ name: 'runAndConvertToMathbox', lowerCase: true }} />…
-            </P>
-            <P>
-              <Highlight>
-                It will become <EmojiNumber number={2} />,
-              </Highlight>{' '}
-              as we saw on this page.
-            </P>
-            <R.Dyoq>Combined lunchboxes…</R.Dyoq>
-            <P>Therefore, this mathbox:</P>
-            <R.Lizi></R.Lizi>
-            <P>
-              Can be <HighlightBold>reproduced</HighlightBold> by this lunchbox.
-            </P>
-            <R.Plde>
-              <HighlightBold>Reproduce</HighlightBold>{' '}
-              <EmojiNumber number={1} /> <CustomEmoji type="plusOne" /> using a
-              lunchbox
-            </R.Plde>
-            <P>
-              That’s what we mean by <HighlightBold>reproducing</HighlightBold>{' '}
-              a mathbox <CustomEmoji type="mathBox" /> using a lunchbox{' '}
-              <Emoji>🍱</Emoji>.
-            </P>
+              <Emoji>👧🏻</Emoji> Saya’s lunchbox to{' '}
+              <HighlightBold>reproduce</HighlightBold>
+              <br />
+              <H args={{ name: 'plusOneFeature' }} />.
+            </R.Eweo>
           </>
         )
       },
       {
-        type: 'summary',
         title: <>You can reproduce more complicated mathboxes</>,
         content: (
           <>
-            <P>
-              Of course, you can also reproduce{' '}
-              <Italic>more complicated mathboxes</Italic>.
-            </P>
-            <P>
-              <Highlight>
-                For example, take a look at this mathbox that appeared on
-                Beginner 1.
-              </Highlight>{' '}
-              If you <H args={{ name: 'play', lowerCase: true }} /> it, the
-              result will be <EmojiNumber number={4} />.
-            </P>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>
+                        Of course, you can also reproduce{' '}
+                        <Italic>more complicated mathboxes</Italic>.
+                      </P>
+                      <P>
+                        <Highlight>
+                          For example, take a look at this mathbox that appeared
+                          on Beginner 1.
+                        </Highlight>{' '}
+                        If you <H args={{ name: 'run', lowerCase: true }} /> it,
+                        the result will be <EmojiNumber number={4} />.
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
             <R.Jiqb />
-            <P>To reproduce this using a lunchbox, you’ll need:</P>
-            <Ul>
-              <UlLi>
-                <Highlight>
-                  A lunchbox that can be converted to <EmojiNumber number={2} />
-                  , and…
-                </Highlight>
-              </UlLi>
-              <UlLi>
-                <Highlight>
-                  Two lunchboxes that have{' '}
-                  <H args={{ name: 'plusOneEffect' }} />.
-                </Highlight>
-              </UlLi>
-            </Ul>
-            <R.Xhdq>
-              How to reproduce <EmojiNumber number={2} />{' '}
-              <CustomEmoji type="plusOne" /> <CustomEmoji type="plusOne" />{' '}
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>
+                        Can you figure out how to{' '}
+                        <HighlightBold>reproduce</HighlightBold> this using a
+                        lunchbox?
+                      </P>
+                    </>
+                  )
+                },
+                {
+                  type: 'saya',
+                  children: (
+                    <>
+                      <P>
+                        I got it! First, we’ll use this lunchbox that can be
+                        converted to <EmojiNumber number={2} />:
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Ehsw>
+              <H
+                args={{
+                  name: 'canBeConvertedCaption',
+                  letter: 'f',
+                  number: 2
+                }}
+              />
+            </R.Ehsw>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'saya',
+                  children: (
+                    <>
+                      <P>
+                        Then,{' '}
+                        <Highlight>
+                          use my lunchbox <Italic>twice</Italic>:
+                        </Highlight>
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Caem>
+              Use my lunchbox <Bold>twice</Bold> to reproduce
               <br />
-              using a lunchbox.
-              <br />
-              The final result will be <EmojiNumber number={4} />.
-            </R.Xhdq>
+              <EmojiNumber number={2} /> <CustomEmoji type="plusOne" />{' '}
+              <CustomEmoji type="plusOne" />
+            </R.Caem>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>
+                        <Bold>Correct!</Bold> Let’s <H args={{ name: 'run' }} />{' '}
+                        it to check!
+                      </P>
+                      <P>
+                        (
+                        <Highlight>
+                          To save time, we’ll skip right to the end when you run
+                          it.
+                        </Highlight>
+                        )
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Byaf></R.Byaf>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>
+                        The resulting lunchbox can be converted to{' '}
+                        <EmojiNumber number={4} />!
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Ifqp>
+              <H
+                args={{
+                  name: 'canBeConvertedCaption',
+                  letter: 'b',
+                  number: 4
+                }}
+              />
+            </R.Ifqp>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>
+                        Therefore, we were able to{' '}
+                        <HighlightBold>reproduce</HighlightBold> the earlier
+                        mathbox.
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Tcyv>This mathbox can be reproduced…</R.Tcyv>
+            <ExpressionRunnerSeparator />
+            <R.Kizi></R.Kizi>
+            <Hr />
+            <R.Oifs>…using this lunchbox!</R.Oifs>
+            <ExpressionRunnerSeparator />
+            <R.Ldcq></R.Ldcq>
+            <Hr />
             <P>
               <Bold>Summary:</Bold>{' '}
               <Highlight>
-                A <Bold>mathbox</Bold> that uses <CustomEmoji type="plusOne" />{' '}
-                can be <Bold>reproduced</Bold> by a lunchbox that has{' '}
-                <H args={{ name: 'plusOneEffect' }} />.
-              </Highlight>
+                A mathbox that uses <H args={{ name: 'plusOneFeature' }} /> can
+                be <HighlightBold>“reproduced”</HighlightBold> using a lunchbox.
+              </Highlight>{' '}
+              As long as you understood this, you don’t need to understand all
+              the details!
             </P>
             <EmojiSeparator
               nodes={[
@@ -1144,21 +1260,116 @@ export default () => (
                 <CustomEmoji type="plusOne" />,
                 <CustomEmoji type="doubleArrow" />,
                 <Emoji>🍱</Emoji>,
-                <CustomEmoji type="plusOneOrange" />
+                <CustomEmoji type="plusOne" />
               ]}
               description={
                 <>
-                  A <Bold>mathbox</Bold> that uses{' '}
-                  <CustomEmoji type="plusOne" /> can be
+                  A mathbox that uses <H args={{ name: 'plusOneFeature' }} />
                   <br />
-                  <HighlightBold>reproduced</HighlightBold> by…
-                  <br />A <Bold>lunchbox</Bold> that has{' '}
-                  <H args={{ name: 'plusOneEffect' }} />.
+                  can be <HighlightBold>“reproduced”</HighlightBold> using a
+                  lunchbox.
                 </>
               }
             />
           </>
-        )
+        ),
+        footer: {
+          content: (
+            <>
+              <CardContent
+                children={
+                  <>
+                    <Hr />
+                    <P>
+                      <Highlight>
+                        Any lunchbox that has the following pattern can be used
+                        to reproduce <H args={{ name: 'plusOneFeature' }} />.
+                      </Highlight>
+                    </P>
+                    <R.Blvt>
+                      If it has this pattern, it can reproduce
+                      <br />
+                      <H args={{ name: 'plusOneFeature' }} />
+                    </R.Blvt>
+                    <P>
+                      <Emoji>👧🏻</Emoji> Saya’s lunchbox had the following:
+                    </P>
+                    <Ul>
+                      <UlLi>
+                        <EmojiWithText capitalize letter="a" /> for{' '}
+                        <Emoji>🅰️</Emoji>
+                      </UlLi>
+                      <UlLi>
+                        <EmojiWithText capitalize letter="b" /> for{' '}
+                        <Emoji>🅱️</Emoji>
+                      </UlLi>
+                      <UlLi>
+                        <EmojiWithText capitalize letter="c" /> for{' '}
+                        <CustomEmoji type="C" />
+                      </UlLi>
+                    </Ul>
+                    <R.Oykb>
+                      <EmojiForLetter letter="a" /> for <Emoji>🅰️</Emoji>,{' '}
+                      <EmojiForLetter letter="b" /> for <Emoji>🅱️</Emoji>, and{' '}
+                      <EmojiForLetter letter="c" /> for <CustomEmoji type="C" />
+                    </R.Oykb>
+                    <P>
+                      Here’s another example that can reproduce{' '}
+                      <H args={{ name: 'plusOneFeature' }} />:
+                    </P>
+                    <Ul>
+                      <UlLi>
+                        <EmojiWithText capitalize letter="h" /> for{' '}
+                        <Emoji>🅰️</Emoji>
+                      </UlLi>
+                      <UlLi>
+                        <EmojiWithText capitalize letter="i" /> for{' '}
+                        <Emoji>🅱️</Emoji>
+                      </UlLi>
+                      <UlLi>
+                        <EmojiWithText capitalize letter="j" /> for{' '}
+                        <CustomEmoji type="C" />
+                      </UlLi>
+                    </Ul>
+                    <R.Dvpl>
+                      <EmojiForLetter letter="h" /> for <Emoji>🅰️</Emoji>,
+                      <EmojiForLetter letter="i" /> for <Emoji>🅱️</Emoji>, and{' '}
+                      <EmojiForLetter letter="j" /> for <CustomEmoji type="C" />
+                      .
+                      <br />
+                      This can reproduce <H args={{ name: 'plusOneFeature' }} />
+                      !
+                    </R.Dvpl>
+                    <P>
+                      <Bold>Therefore:</Bold> There are many lunchboxes that can
+                      reproduce <H args={{ name: 'plusOneFeature' }} />.
+                    </P>
+                  </>
+                }
+                preview={{
+                  text: <>Continue reading</>,
+                  content: (
+                    <>
+                      <P>
+                        <Bold>Note:</Bold>{' '}
+                        <Highlight>
+                          There are other lunchboxes that can reproduce{' '}
+                          <H args={{ name: 'plusOneFeature' }} />.
+                        </Highlight>{' '}
+                        <Emoji>👧🏻</Emoji> Saya’s lunchbox is not the only
+                        solution.
+                      </P>
+                      <P>
+                        If you’re curious, press “Continue reading” below! (It’s
+                        optional.)
+                      </P>
+                    </>
+                  )
+                }}
+              />
+            </>
+          )
+        }
       },
       {
         type: 'challengeProblem',
@@ -1171,10 +1382,16 @@ export default () => (
             </P>
             <Ul>
               <UlLi>
-                <H args={{ name: 'minusOneFeature', capitalize: true }} />, and
+                <Highlight>
+                  <H args={{ name: 'minusOneFeature', capitalize: true }} />
+                </Highlight>
+                , and
               </UlLi>
               <UlLi>
-                <H args={{ name: 'repeatFeature', capitalize: true }} />.
+                <Highlight>
+                  <H args={{ name: 'repeatFeature', capitalize: true }} />
+                </Highlight>
+                .
               </UlLi>
             </Ul>
             <R.Xmqp>
@@ -1256,11 +1473,15 @@ export default () => (
                 }
               ]}
             />
-            <R.Qrfw>
+            <R.Envj>The previous problem:</R.Envj>
+            <ExpressionRunnerSeparator />
+            <R.Vcqp>
+              <Emoji>😢</Emoji>
+              <br />
               There’s no way we could’ve come up with
               <br />
-              this answer!
-            </R.Qrfw>
+              this answer as quickly as <Emoji>👧🏻</Emoji> Saya did!
+            </R.Vcqp>
             <BubbleQuotes
               quotes={[
                 {
@@ -1268,13 +1489,15 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        <Bold>Please don’t worry.</Bold> In fact, only a super
+                        <Bold>Please don’t worry!</Bold> In fact, only a super
                         genius would be able to come up with an answer for this
                         question.
                       </P>
                       <P>
-                        And you don’t need to be a super genius to learn about
-                        computer science or Y combinator.
+                        <Highlight>
+                          And you don’t need to be a super genius to learn about
+                          computer science or Y combinator.
+                        </Highlight>
                       </P>
                     </>
                   )

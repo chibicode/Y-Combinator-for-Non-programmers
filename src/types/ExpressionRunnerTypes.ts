@@ -43,7 +43,7 @@ export interface ExpressionRunnerProps {
   initializeInstructions: readonly InitializeInstruction[]
   lastAllowedExpressionState?: ExpressionContainer['previouslyChangedExpressionState']
   lastAllowedExpressionStateAfterIterations?: number
-  hidePlayButton?: boolean
+  hideRunButton?: boolean
   speed: number
   showAllShowSteps?: boolean
   skipAlphaConvert?: boolean
@@ -54,7 +54,7 @@ export interface ExpressionRunnerProps {
   highlightOverrides: ExpressionRunnerContextProps['highlightOverrides']
   highlightOverrideActiveAfterStart: boolean
   highlightFunctions: boolean
-  convert?: 'toMathBox' | 'toMathBoxPlay'
+  convert?: 'toMathBox'
 }
 
 export const expressionRunnerContextDefault: ExpressionRunnerContextProps = {

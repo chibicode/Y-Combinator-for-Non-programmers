@@ -21,19 +21,33 @@ import BottomRightBadge from 'src/components/BottomRightBadge'
 import TwoColGrid from 'src/components/TwoColGrid'
 import * as R from 'src/components/Runners'
 import NextLessonButton from 'src/components/NextLessonButton'
+import { BlankNumberPlusOne } from 'src/contents/8.jp'
+import ExpressionRunnerCaptionOnly from 'src/components/ExpressionRunnerCaptionOnly'
 
 export default () => (
   <EpisodeCardList
     cards={[
       {
-        title: <>サヤちゃんの疑問</>,
+        type: 'summary',
+        title: <>前回の復習</>,
         content: (
           <>
             <P>
-              サヤちゃんは、
-              <H args={{ name: 'plusOneEffect' }} />
-              がある弁当箱について、あることに気が付きました。
+              前回は、<Emoji>👧🏻</Emoji>{' '}
+              サヤちゃんの弁当箱を使うことで、計算箱の「
+              <H args={{ name: 'plusOneFeature' }} />
+              」を再現できることを学びました。
             </P>
+            <BlankNumberPlusOne />
+            <P>それでは、話を進めましょう！</P>
+          </>
+        )
+      },
+      {
+        title: <>サヤちゃんの疑問</>,
+        content: (
+          <>
+            <P>サヤちゃんは、あることに気が付きました。</P>
             <BubbleQuotes
               quotes={[
                 {
@@ -77,11 +91,13 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        これを、前回サヤが考えた
-                        <H args={{ name: 'plusOneEffect' }} />
-                        がある弁当箱と合体させて、
-                        <H args={{ name: 'runAndConvertToMathbox' }} />{' '}
-                        すると、どうなると思う？
+                        これを、
+                        <Highlight>
+                          前回サヤが考えた「
+                          <H args={{ name: 'plusOneFeature' }} />
+                          」を再現できる弁当箱と合体させて、実行するとどうなる
+                        </Highlight>
+                        と思う？
                       </P>
                     </>
                   )
@@ -89,13 +105,16 @@ export default () => (
               ]}
             />
             <R.Nhqo>
-              <H args={{ name: 'plusOneEffect' }} />
-              と合体させて、
+              「
+              <H args={{ name: 'plusOneFeature' }} />
+              」を再現できる
               <br />
-              <H args={{ name: 'runAndConvertToMathbox' }} />
-              <br />
-              するとどうなる？
+              弁当箱と合体させて…
             </R.Nhqo>
+            <ExpressionRunnerSeparator />
+            <ExpressionRunnerCaptionOnly>
+              <H args={{ name: 'run' }} /> するとどうなる？
+            </ExpressionRunnerCaptionOnly>
             <BubbleQuotes
               quotes={[
                 {
@@ -107,7 +126,8 @@ export default () => (
                         <Highlight>
                           <EmojiNumber number={1} /> <Emoji>➕</Emoji>{' '}
                           <EmojiNumber number={1} /> を計算できるんだから、
-                          <EmojiNumber number={2} /> になるに決まっている
+                          <EmojiNumber number={2} />{' '}
+                          に変換できる弁当箱になるに決まっている
                         </Highlight>
                         だろう？
                       </P>
@@ -124,7 +144,9 @@ export default () => (
               ]}
               description={
                 <>
-                  結果は <EmojiNumber number={2} /> になるはず…？
+                  <EmojiNumber number={2} /> に変換できる
+                  <br />
+                  弁当箱になるはず…？
                 </>
               }
             />
@@ -136,7 +158,7 @@ export default () => (
                     <>
                       <P>
                         じゃあ、
-                        <H args={{ name: 'play' }} />
+                        <H args={{ name: 'run' }} />
                         してみてよ！
                       </P>
                     </>
@@ -153,7 +175,7 @@ export default () => (
           <>
             <P>
               それでは、
-              <H args={{ name: 'pressFastForward', skippable: true }} />
+              <H args={{ name: 'pressRun', skippable: true }} />
             </P>
             <R.Akik />
             <BubbleQuotes
@@ -261,7 +283,7 @@ export default () => (
               ]}
             />
             <P>
-              <H args={{ name: 'pressFastForward' }} />
+              <H args={{ name: 'pressRun' }} />
             </P>
             <R.Exbn>
               <HighlightBold>前回実行した弁当箱:</HighlightBold>
@@ -556,6 +578,7 @@ export default () => (
               ]}
             />
             <TwoColGrid
+              maxVariableSize="sm"
               left={
                 <>
                   <R.Oukl>
@@ -642,6 +665,7 @@ export default () => (
               ]}
             />
             <TwoColGrid
+              maxVariableSize="sm"
               left={
                 <>
                   <R.Lxhc></R.Lxhc>
@@ -678,6 +702,7 @@ export default () => (
               ]}
             />
             <TwoColGrid
+              maxVariableSize="sm"
               left={
                 <>
                   <R.Oukl>
@@ -1145,7 +1170,7 @@ export default () => (
                     <>
                       <P>
                         では、最後まで進めてみましょう。
-                        <H args={{ name: 'pressFastForward' }} />
+                        <H args={{ name: 'pressRun' }} />
                       </P>
                     </>
                   )
@@ -1212,20 +1237,25 @@ export default () => (
         content: (
           <>
             <P>
-              前回サヤちゃんが考えた
-              <H args={{ name: 'plusOneEffect' }} />
-              がある弁当箱は、
+              前回サヤちゃんが考えた「
+              <H args={{ name: 'plusOneFeature' }} />
+              」を再現できる弁当箱は、
             </P>
-            <R.Nvqu>
-              <H args={{ name: 'plusOneEffect' }} />
-              がある弁当箱
-            </R.Nvqu>
+            <R.Vcqp>
+              <Emoji>👧🏻</Emoji> サヤちゃんが考えた
+              <br />
+              「
+              <H args={{ name: 'plusOneFeature' }} />
+              」を
+              <br />
+              再現できる弁当箱
+            </R.Vcqp>
             <P>
               次の
               <Highlight>
                 <EmojiNumber number={1} /> に変換できる弁当箱
               </Highlight>
-              と組み合わせた場合、
+              と合体させた場合、
             </P>
             <R.Cmla>
               <H
@@ -1293,7 +1323,7 @@ export default () => (
                         <HighlightBold>
                           暗記する必要はありません。
                         </HighlightBold>
-                        早送り中に自動で行われますから。
+                        実行中に自動で行われますから。
                       </P>
                       <P>
                         なんとなく「
@@ -1319,9 +1349,9 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        いろいろあったけど、これで、
-                        <H args={{ name: 'plusOneEffect' }} />
-                        がある弁当箱は完璧にマスターしたぞ！
+                        いろいろあったけど、これで、 「
+                        <H args={{ name: 'plusOneFeature' }} />」
+                        を再現できる弁当箱は完璧にマスターしたぞ！
                       </P>
                       <P>悪魔よ、約束通り計算箱は返してもらう！</P>
                     </>

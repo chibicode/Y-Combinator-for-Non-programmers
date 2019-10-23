@@ -5,8 +5,7 @@ import {
   HighlightBold,
   Highlight,
   Ul,
-  UlLi,
-  Bold
+  UlLi
 } from 'src/components/ContentTags'
 import H from 'src/components/H'
 import BubbleQuotes from 'src/components/BubbleQuotes'
@@ -19,7 +18,6 @@ import TwoColGrid from 'src/components/TwoColGrid'
 import InlineBorder from 'src/components/InlineBorder'
 import * as R from 'src/components/Runners'
 import ExpressionRunnerCaptionOnly from 'src/components/ExpressionRunnerCaptionOnly'
-import InlineRunAndConvertToMathboxButton from 'src/components/InlineRunAndConvertToMathboxButton'
 import NextLessonButton from 'src/components/NextLessonButton'
 
 export default () => (
@@ -125,10 +123,9 @@ export default () => (
                   type: 'dog',
                   children: (
                     <>
-                      <P>ここで質問です。上の弁当箱を、</P>
-                      <InlineRunAndConvertToMathboxButton />
                       <P>
-                        すると、
+                        ここで質問です。上の弁当箱を
+                        <H args={{ name: 'run' }} /> すると、
                         <HighlightBold>
                           どんな結果になるでしょう？
                         </HighlightBold>
@@ -144,8 +141,7 @@ export default () => (
                         <Highlight>
                           そんなの、すぐ答えられるわけないだろう！
                         </Highlight>
-                        こんな複雑な弁当箱、
-                        <H args={{ name: 'play' }} /> するのもひと苦労だよ！
+                        こんな複雑な弁当箱の実行結果なんて、見当がつかないよ！
                       </P>
                     </>
                   )
@@ -157,14 +153,16 @@ export default () => (
                       <P>
                         サヤはすぐ分かったよ！
                         <HighlightBold>
-                          結果は <EmojiNumber number={4} /> になる
+                          <EmojiNumber number={4} /> に変換できる弁当箱になる
                         </HighlightBold>
                         んじゃない？
                       </P>
-                      <R.Kizi>
-                        <Emoji>👧🏻</Emoji> 結果は <EmojiNumber number={4} />{' '}
-                        になると思う！
-                      </R.Kizi>
+                      <R.Ldcq>
+                        <Emoji>👧🏻</Emoji> 結果は
+                        <br />
+                        <EmojiNumber number={4} />{' '}
+                        に変換できる弁当箱になると思う！
+                      </R.Ldcq>
                     </>
                   )
                 },
@@ -189,7 +187,7 @@ export default () => (
                       <P>
                         <Highlight>
                           サヤちゃん、まさか一瞬で頭の中で
-                          <H args={{ name: 'play' }} /> したのかい？
+                          <H args={{ name: 'run' }} /> したのかい？
                         </Highlight>
                       </P>
                     </>
@@ -247,7 +245,7 @@ export default () => (
                         <H
                           args={{
                             name: 'canBeConvertedCaption',
-                            letter: 'l',
+                            letter: 'i',
                             number: 3
                           }}
                         />
@@ -299,7 +297,7 @@ export default () => (
                           <EmojiNumber number={2} /> に変換できる弁当箱だ！
                         </Highlight>
                       </P>
-                      <R.Vhte>
+                      <R.Mzys>
                         <H
                           args={{
                             name: 'canBeConvertedCaption',
@@ -307,7 +305,7 @@ export default () => (
                             number: 2
                           }}
                         />
-                      </R.Vhte>
+                      </R.Mzys>
                     </>
                   )
                 },
@@ -371,15 +369,19 @@ export default () => (
                       <P>
                         これはもしかして…
                         <Highlight>
-                          中級その3でやった、
-                          <H args={{ name: 'plusOneEffect' }} />
-                          がある弁当箱かな？
+                          中級その3で <Emoji>👧🏻</Emoji> サヤちゃんが考えた、 「
+                          <H args={{ name: 'plusOneFeature' }} />」
+                          を再現できる弁当箱かな？
                         </Highlight>
                       </P>
                       <R.Vcqp>
-                        <H args={{ name: 'plusOneEffect' }} />
-                        がある弁当箱
+                        <Emoji>👧🏻</Emoji> サヤちゃんが考えた、
+                        <br />
+                        「<H args={{ name: 'plusOneFeature' }} />」
+                        を再現できる弁当箱
                       </R.Vcqp>
+                      <ExpressionRunnerSeparator />
+                      <R.Qwzy></R.Qwzy>
                     </>
                   )
                 },
@@ -463,10 +465,10 @@ export default () => (
                         <H args={{ name: 'conditionFeature' }} />
                         」に置き換えるんだ。
                       </P>
-                      <R.Ruou>
+                      <R.Rhoa>
                         「<H args={{ name: 'conditionFeature' }} />
                         」に置き換える
-                      </R.Ruou>
+                      </R.Rhoa>
                       <P>以下のように置き換えてみるよ。</P>
                       <R.Wenx>置き換え前(右下の部分のみ)</R.Wenx>
                       <ExpressionRunnerSeparator />
@@ -509,9 +511,9 @@ export default () => (
                     <>
                       <P>
                         あとは、これを
-                        <H args={{ name: 'play' }} />{' '}
+                        <H args={{ name: 'run' }} />{' '}
                         するだけだよ。というわけで、
-                        <H args={{ name: 'pressFastForward', girl: true }} />
+                        <H args={{ name: 'pressRun', girl: true }} />
                       </P>
                     </>
                   )
@@ -537,7 +539,7 @@ export default () => (
                         んだ。
                       </P>
                       <P>
-                        <H args={{ name: 'pressFastForward', girl: true }} />
+                        <H args={{ name: 'pressRun', girl: true }} />
                       </P>
                     </>
                   )
@@ -620,10 +622,8 @@ export default () => (
                       <P>
                         <HighlightBold>
                           もともとの弁当箱を、そのまま
-                          <H
-                            args={{ name: 'play' }}
-                          /> しても、結果は同じく <EmojiNumber number={4} />{' '}
-                          になっていたのかな？
+                          <H args={{ name: 'run' }} /> しても、結果は同じく{' '}
+                          <EmojiNumber number={4} /> になっていたのかな？
                         </HighlightBold>
                       </P>
                     </>
@@ -635,7 +635,7 @@ export default () => (
               <Emoji>🍱</Emoji> もともとの弁当箱を、
               <br />
               そのまま
-              <H args={{ name: 'play' }} /> しても…
+              <H args={{ name: 'run' }} /> しても…
             </R.Bnyo>
             <ExpressionRunnerSeparator />
             <ExpressionRunnerCaptionOnly>
@@ -670,20 +670,17 @@ export default () => (
                     <>
                       <P>
                         では、もともとの弁当箱を
-                        <H args={{ name: 'fastForward' }} />
-                        してみましょう！
+                        <H args={{ name: 'run' }} /> してみましょう！
                       </P>
                       <Ul>
                         <UlLi>
                           ステップ数が非常に多いので、
-                          <HighlightBold>
-                            3倍速で早送りします！
-                          </HighlightBold>{' '}
+                          <HighlightBold>3倍速で進めます！</HighlightBold>{' '}
                           <Emoji>⏩</Emoji> <Emoji>⏩</Emoji> <Emoji>⏩</Emoji>
                         </UlLi>
                         <UlLi>
                           <Highlight>
-                            早送り中は、目に優しくなるように弁当箱を半透明にしています。
+                            実行中は、目に優しくなるように弁当箱を半透明にしています。
                           </Highlight>
                         </UlLi>
                         <UlLi>
@@ -713,15 +710,15 @@ export default () => (
                         </HighlightBold>
                         ですね。
                       </P>
-                      <R.Gmgs>
+                      <R.Ifqp>
                         <H
                           args={{
                             name: 'canBeConvertedCaption',
-                            letter: 'j',
+                            letter: 'b',
                             number: 4
                           }}
                         />
-                      </R.Gmgs>
+                      </R.Ifqp>
                       <P>
                         つまり、
                         <H
@@ -992,6 +989,82 @@ export default () => (
         )
       },
       {
+        title: (
+          <>
+            <CustomEmoji type="plusOne" /> を3回繰り返す
+          </>
+        ),
+        content: (
+          <>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'saya',
+                  children: (
+                    <>
+                      <P>
+                        まず、この「
+                        <H args={{ name: 'repeatFeature' }} />
+                        」がある計算箱を見てみて！
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Qycx>
+              「
+              <H args={{ name: 'repeatFeature' }} />
+              」がある計算箱
+            </R.Qycx>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'saya',
+                  children: (
+                    <>
+                      <P>
+                        この計算箱は、以下のように{' '}
+                        <CustomEmoji type="plusOne" /> を3回繰り返すことにより、
+                        <EmojiNumber number={3} /> <Emoji>➕</Emoji>{' '}
+                        <EmojiNumber number={2} /> を計算できるわけだよね。
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Qycx></R.Qycx>
+            <ExpressionRunnerSeparator />
+            <R.Jwce>
+              <CustomEmoji type="plusOne" /> を3回繰り返す
+            </R.Jwce>
+            <ExpressionRunnerSeparator />
+            <R.Seie></R.Seie>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'saya',
+                  children: (
+                    <>
+                      <P>これを弁当箱で再現する方法が分かったんだ！</P>
+                    </>
+                  )
+                },
+                {
+                  type: 'surprised',
+                  children: (
+                    <>
+                      <P>なんと！ぜひ教えてくれ！</P>
+                    </>
+                  )
+                }
+              ]}
+            />
+          </>
+        )
+      },
+      {
         title: <>先ほどの弁当箱にいろいろ追加してみる</>,
         content: (
           <>
@@ -1001,13 +1074,20 @@ export default () => (
                   type: 'saya',
                   children: (
                     <>
-                      <P>こちらが、先ほどの弁当箱だけど…</P>
+                      <P>
+                        先ほど登場した、複雑な部分を計算箱に置き換えた弁当箱に注目してみて！
+                      </P>
+                      <P>
+                        これに変更を加えることで、「
+                        <H args={{ name: 'repeatFeature' }} />
+                        」を再現してみるよ。
+                      </P>
                     </>
                   )
                 }
               ]}
             />
-            <R.Ghwe>先ほどの弁当箱</R.Ghwe>
+            <R.Ghwe>先ほど登場した弁当箱</R.Ghwe>
             <BubbleQuotes
               quotes={[
                 {
@@ -1037,239 +1117,49 @@ export default () => (
                       <P>で、これがどうしたっていうの？</P>
                     </>
                   )
-                }
-              ]}
-            />
-          </>
-        )
-      },
-      {
-        title: <>実行してみると</>,
-        content: (
-          <>
-            <BubbleQuotes
-              quotes={[
-                {
-                  type: 'saya',
-                  children: (
-                    <>
-                      <P>
-                        では、この弁当箱を
-                        <H args={{ name: 'play' }} /> してみて！
-                      </P>
-                      <P>
-                        (
-                        <Highlight>
-                          次のページで早送りして詳細に解説するけど、今回は早送りは省略します！
-                        </Highlight>
-                        )
-                      </P>
-                    </>
-                  )
-                }
-              ]}
-            />
-            <P>
-              <H args={{ name: 'pressPlay' }} />
-            </P>
-            <R.Htir></R.Htir>
-            <BubbleQuotes
-              quotes={[
-                {
-                  type: 'thinking',
-                  children: (
-                    <>
-                      <P>
-                        結果は <EmojiNumber number={5} /> になったよ。
-                      </P>
-                      <P>
-                        早送りしてないから、なぜ <EmojiNumber number={5} />{' '}
-                        になったかは分からないけど…
-                      </P>
-                    </>
-                  )
                 },
                 {
                   type: 'saya',
                   children: (
                     <>
                       <P>
-                        うん、早送りは次のページでやるから、今はとりあえず「
-                        <Highlight>
-                          なるほど、結果は <EmojiNumber number={5} /> になるんだ
-                        </Highlight>
-                        」と受け入れてほしい！
-                      </P>
-                    </>
-                  )
-                },
-                {
-                  type: 'thinking',
-                  children: (
-                    <>
-                      <P>
-                        そうか、次のページでまた詳しく説明してくれるんだね。了解だよ。
-                      </P>
-                    </>
-                  )
-                }
-              ]}
-            />
-          </>
-        )
-      },
-      {
-        title: <>ふたつの数字の足し算ができる？</>,
-        content: (
-          <>
-            <BubbleQuotes
-              quotes={[
-                {
-                  type: 'saya',
-                  children: (
-                    <>
-                      <P>
-                        それよりも重要なのは、
-                        <Highlight>
-                          この <EmojiNumber number={5} /> って、
-                          <HighlightBold>
-                            実行前の弁当箱に入っていた、
-                            <EmojiNumber number={2} /> と{' '}
-                            <EmojiNumber number={3} /> を足した数
-                          </HighlightBold>
-                          だよね？
-                        </Highlight>
-                      </P>
-                    </>
-                  )
-                }
-              ]}
-            />
-            <R.Peiy>
-              実行前の弁当箱に入っていた、
-              <br />
-              <EmojiNumber number={2} /> と <EmojiNumber number={3} /> を足すと…
-            </R.Peiy>
-            <ExpressionRunnerSeparator />
-            <R.Seie>
-              <EmojiNumber number={5} /> になる
-            </R.Seie>
-            <BubbleQuotes
-              quotes={[
-                {
-                  type: 'thinking',
-                  children: (
-                    <>
-                      <P>確かにそうだな…</P>
-                    </>
-                  )
-                },
-                {
-                  type: 'saya',
-                  children: (
-                    <>
-                      <P>
-                        ということは、この弁当箱は <EmojiNumber number={2} />{' '}
-                        <Emoji>➕</Emoji> <EmojiNumber number={3} />{' '}
-                        を計算しているんじゃないかな？
-                      </P>
-                    </>
-                  )
-                }
-              ]}
-            />
-            <R.Peiy>
-              <EmojiNumber number={2} /> <Emoji>➕</Emoji>{' '}
-              <EmojiNumber number={3} /> を計算している？
-            </R.Peiy>
-            <BubbleQuotes
-              quotes={[
-                {
-                  type: 'thinking',
-                  children: (
-                    <>
-                      <P>
-                        つまり…
+                        実は、
                         <HighlightBold>
-                          ふたつの数字の足し算ができる
+                          上の弁当箱を実行すると、先ほどの「
+                          <H args={{ name: 'repeatFeature' }} />
+                          」がある計算箱と全く同じように変化する
                         </HighlightBold>
-                        ってこと？
+                        んだ。
                       </P>
+                      <P>つまり、以下のようになるんだよ。</P>
                     </>
                   )
                 }
               ]}
             />
-          </>
-        ),
-        footer: {
-          content: (
-            <>
-              <P>
-                <Bold>補足:</Bold> 「
-                <Highlight>
-                  この弁当箱、本当に実行すると <EmojiNumber number={5} />{' '}
-                  になるの？
-                </Highlight>
-                」と疑われているかもしれませんが、ご安心ください！
-                <Highlight>
-                  次のページでなぜ実行すると <EmojiNumber number={5} />{' '}
-                  になるのかを詳細に説明します
-                </Highlight>
-                ので、とりあえず読み進めてみてください！
-              </P>
-            </>
-          )
-        }
-      },
-      {
-        title: <>繰り返しを再現できた？</>,
-        content: (
-          <>
-            <BubbleQuotes
-              quotes={[
-                {
-                  type: 'thinking',
-                  children: (
-                    <>
-                      <P>待てよ、そういえば…</P>
-                      <P>
-                        以下のように計算箱の「
-                        <H args={{ name: 'repeatFeature' }} />
-                        」を使っても、
-                        <Highlight>
-                          <EmojiNumber number={2} /> <Emoji>➕</Emoji>{' '}
-                          <EmojiNumber number={3} /> を計算できる
-                        </Highlight>
-                        よね。
-                      </P>
-                    </>
-                  )
-                }
-              ]}
-            />
-            <R.Qycx>
-              計算箱の「
-              <H args={{ name: 'repeatFeature' }} />
-              」を使うと
-              <br />
-              <EmojiNumber number={2} /> <Emoji>➕</Emoji>{' '}
-              <EmojiNumber number={3} /> を計算できる
-            </R.Qycx>
+            <R.Kjba>この弁当箱を実行すると…</R.Kjba>
             <ExpressionRunnerSeparator />
-            <R.Jwce></R.Jwce>
+            <R.Jwce>
+              「
+              <H args={{ name: 'repeatFeature' }} />
+              」と同じく、
+              <br />
+              <EmojiNumber number={2} /> に対して <CustomEmoji type="plusOne" />{' '}
+              を3回繰り返す
+            </R.Jwce>
             <ExpressionRunnerSeparator />
             <R.Seie></R.Seie>
             <BubbleQuotes
               quotes={[
                 {
-                  type: 'thinking',
+                  type: 'surprised',
                   children: (
                     <>
+                      <P>えー、まさか！本当なのかい？</P>
                       <P>
-                        ということは…サヤちゃんの弁当箱は、上の「
+                        もし本当だとしたら…これで「
                         <H args={{ name: 'repeatFeature' }} />
-                        」を再現できているのか…？
+                        」を再現できるということになるけど…
                       </P>
                     </>
                   )
@@ -1282,51 +1172,29 @@ export default () => (
               」を使った計算箱は…
             </R.Qycx>
             <ExpressionRunnerSeparator />
-            <R.Peiy>
+            <R.Kjba>
               以下の弁当箱で再現できている？<Emoji>🤔</Emoji>
-            </R.Peiy>
+            </R.Kjba>
             <BubbleQuotes
               quotes={[
                 {
-                  type: 'surprised',
+                  type: 'thinking',
                   children: (
                     <>
                       <P>
-                        もしそうなら…「
-                        <H args={{ name: 'repeatFeature' }} />
-                        」を弁当箱で再現できた、ということになるぞ！
+                        <Highlight>
+                          でも、サヤちゃんが言っていることは正しいのだろうか？
+                        </Highlight>
                       </P>
+                      <P>実行して確かめてみないと分からないなあ…</P>
                     </>
                   )
-                }
-              ]}
-            />
-            <EmojiSeparator
-              nodes={[
-                <CustomEmoji type="mathBox" />,
-                <Emoji>🔁</Emoji>,
-                <CustomEmoji type="doubleArrow" />,
-                <Emoji>🍱</Emoji>,
-                <Emoji>🔁</Emoji>
-              ]}
-              description={
-                <>
-                  「<H args={{ name: 'repeatFeature' }} />
-                  」を
-                  <br />
-                  弁当箱で再現できたかも？
-                </>
-              }
-            />
-            <BubbleQuotes
-              quotes={[
+                },
                 {
                   type: 'saya',
                   children: (
                     <>
-                      <P>
-                        では、本当に再現できたのかどうか、次のページで確かめてみるね！先に進むよ！
-                      </P>
+                      <P>うん、では次のページで実行して確かめてみよう！</P>
                     </>
                   )
                 }
@@ -1334,20 +1202,7 @@ export default () => (
             />
             <NextLessonButton />
           </>
-        ),
-        footer: {
-          content: (
-            <>
-              <P>
-                <Bold>補足:</Bold>{' '}
-                <Highlight>
-                  もし上に書いてあることが腑に落ちなくてもご心配なく！
-                </Highlight>
-                次のページで詳細に解説します。
-              </P>
-            </>
-          )
-        }
+        )
       }
     ]}
   />

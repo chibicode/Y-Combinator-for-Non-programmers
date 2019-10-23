@@ -22,8 +22,8 @@
     "scripts": "outDir/tsconfig.scripts.json/scripts"
   },
   "scripts": {
-    "jp": "IS_DEVELOPMENT=true DEV_LOCALE=jp next -p 9991",
-    "en": "IS_DEVELOPMENT=true DEV_LOCALE=en next -p 9990",
+    "jp": "IS_DEVELOPMENT=true DEV_LOCALE=jp NODE_OPTIONS=--max_old_space_size=4096 next -p 9991",
+    "en": "IS_DEVELOPMENT=true DEV_LOCALE=en NODE_OPTIONS=--max_old_space_size=4096 next -p 9990",
     "jp:production": "PRODUCTION=jp next -p 9993",
     "en:production": "PRODUCTION=en next -p 9992",
     "dev": "cp tsconfig.dev.json tsconfig.json && rm -f report.*.json && rm -f *.log && rm -rf .next && concurrently \"yarn jp\" \"yarn en\"",
@@ -46,7 +46,7 @@
     "@types/jest": "^24.0.18",
     "@types/luxon": "^1.15.2",
     "@types/material-ui": "^0.21.7",
-    "@types/node": "^12.7.12",
+    "@types/node": "^10.14.22",
     "@types/nprogress": "^0.2.0",
     "@types/prettier": "^1.18.3",
     "@types/react": "^16.9.5",
@@ -72,7 +72,6 @@
     "module-alias": "^2.2.2",
     "prettier": "^1.18.2",
     "ts-jest": "^24.0.2",
-    "typescript": "^3.7.0-beta",
-    "url-loader": "^2.2.0"
+    "typescript": "^3.7.0-beta"
   }
 }

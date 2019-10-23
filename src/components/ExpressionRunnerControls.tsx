@@ -10,8 +10,8 @@ import locale from 'src/lib/locale'
 interface ExpressionRunnerControlsProps {
   canStepForward: boolean
   canStepBackward: boolean
-  isPlaying: boolean
-  showPlayButton: boolean
+  isRunning: boolean
+  showRunButton: boolean
   skipToTheEnd: boolean
   onNextClick: () => void
   onPreviousClick: () => void
@@ -54,8 +54,8 @@ const ExpressionRunnerControls = ({
   canStepBackward,
   onNextClick,
   onPreviousClick,
-  showPlayButton,
-  isPlaying,
+  showRunButton,
+  isRunning,
   onAutoClick,
   onResetClick,
   onPauseClick,
@@ -63,7 +63,7 @@ const ExpressionRunnerControls = ({
   skipToTheEnd,
   convert
 }: ExpressionRunnerControlsProps) => {
-  const centerButtonWidth = convert ? 66 : 44
+  const centerButtonWidth = convert ? 66 : 48
   const sideButtonsWidth = (100 - centerButtonWidth) / 2 - 2
   return (
     <div
@@ -73,9 +73,9 @@ const ExpressionRunnerControls = ({
         margin: ${spaces(1)} -2px 0 -2px;
       `}
     >
-      {showPlayButton ? (
+      {showRunButton ? (
         <>
-          {!isPlaying && canStepBackward && !skipToTheEnd ? (
+          {!isRunning && canStepBackward && !skipToTheEnd ? (
             <ExpressionRunnerButton
               onClick={onPreviousClick}
               css={css`
@@ -100,13 +100,13 @@ const ExpressionRunnerControls = ({
       ) : (
         <ButtonPlaceholder flex={1} />
       )}
-      {showPlayButton && (
+      {showRunButton && (
         <ExpressionRunnerButton
           onClick={
             canStepForward
               ? skipToTheEnd
                 ? onSkipToTheEndClick
-                : isPlaying
+                : isRunning
                 ? onPauseClick
                 : onAutoClick
               : onResetClick
@@ -116,7 +116,7 @@ const ExpressionRunnerControls = ({
               width: ${centerButtonWidth}%;
             `,
             canStepForward &&
-              !isPlaying &&
+              !isRunning &&
               css`
                 background: ${colors('yellow100')};
               `,
@@ -132,34 +132,27 @@ const ExpressionRunnerControls = ({
           ]}
         >
           {canStepForward ? (
-            isPlaying ? (
+            isRunning ? (
               <H args={{ name: 'pause' }} highlightType="none" />
             ) : skipToTheEnd ? (
               convert ? (
-                convert === 'toMathBoxPlay' ? (
-                  <H
-                    args={{ name: 'runAndConvertToMathbox', addNewline: true }}
-                    highlightType="none"
-                  />
-                ) : (
-                  <H args={{ name: 'convertToMathbox' }} highlightType="none" />
-                )
+                <H args={{ name: 'convertToMathbox' }} highlightType="none" />
               ) : (
-                <H args={{ name: 'play' }} highlightType="none" />
+                <H args={{ name: 'run' }} highlightType="none" />
               )
             ) : (
-              <H args={{ name: 'fastForward' }} highlightType="none" />
+              <H args={{ name: 'runAndShowAllSteps' }} highlightType="none" />
             )
-          ) : convert && convert !== 'toMathBoxPlay' ? (
+          ) : convert ? (
             <H args={{ name: 'undoConvertToMathbox' }} highlightType="none" />
           ) : (
             <H args={{ name: 'reset' }} highlightType="none" />
           )}
         </ExpressionRunnerButton>
       )}
-      {showPlayButton ? (
+      {showRunButton ? (
         <>
-          {!isPlaying && canStepForward && !skipToTheEnd ? (
+          {!isRunning && canStepForward && !skipToTheEnd ? (
             <ExpressionRunnerButton
               onClick={onNextClick}
               css={css`

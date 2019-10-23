@@ -119,7 +119,7 @@ export default () => (
             />
             <P>
               Next, we’ll talk about how we can{' '}
-              <H args={{ name: 'play', lowerCase: true }} /> this mathbox.
+              <H args={{ name: 'run', lowerCase: true }} /> this mathbox.
             </P>
           </>
         )
@@ -127,7 +127,7 @@ export default () => (
       {
         title: (
           <>
-            The <H args={{ name: 'play' }} /> button
+            The <H args={{ name: 'run' }} /> button
           </>
         ),
         content: (
@@ -135,7 +135,7 @@ export default () => (
             <P>
               Each mathbox has a{' '}
               <HighlightBold>
-                <H args={{ name: 'play' }} /> button
+                <H args={{ name: 'run' }} /> button
               </HighlightBold>
               . If you press it, the mathbox calculates the result.{' '}
               <H args={{ name: 'pressPlay', capitalize: true }} /> on the
@@ -188,18 +188,17 @@ export default () => (
                 means…
               </UlLi>
               <UlLi>
-                If you <H args={{ name: 'play', lowerCase: true }} /> it, the
+                If you <H args={{ name: 'run', lowerCase: true }} /> it, the
                 result will be <CustomEmoji type="blankNumber" />{' '}
                 <Emoji>➕</Emoji> <EmojiNumber number={1} />.
               </UlLi>
             </Ul>
-            <EmojiSeparator
-              nodes={[
-                <CustomEmoji type="blankNumber" />,
-                <Emoji>➕</Emoji>,
-                <EmojiNumber number={1} />
-              ]}
-            />
+            <R.Ymtp>
+              If you <H args={{ name: 'run', lowerCase: true }} /> it,
+              <br />
+              the result will be <CustomEmoji type="blankNumber" />{' '}
+              <Emoji>➕</Emoji> <EmojiNumber number={1} />.
+            </R.Ymtp>
             <P>
               <Bold>This is the first feature of mathbox:</Bold>{' '}
               <Highlight>

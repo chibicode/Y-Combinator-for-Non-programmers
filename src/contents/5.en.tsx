@@ -799,7 +799,7 @@ export default () => (
                 }
               ]}
             />
-            <R.Jwue>We now have a simpler lunchbox</R.Jwue>
+            <R.Hbbv>We now have a simpler lunchbox</R.Hbbv>
             <BubbleQuotes
               quotes={[
                 {
@@ -845,7 +845,7 @@ export default () => (
                     <>
                       <P>
                         Let’s keep going to the end.{' '}
-                        <H args={{ name: 'pressFastForward' }} />
+                        <H args={{ name: 'pressRun' }} />
                       </P>
                     </>
                   )
@@ -853,7 +853,7 @@ export default () => (
               ]}
             />
             <P>
-              <H args={{ name: 'pressFastForward', mentionRightArrow: true }} />
+              <H args={{ name: 'pressRun', mentionRightArrow: true }} />
             </P>
             <R.Kvso />
             <BubbleQuotes
@@ -891,7 +891,7 @@ export default () => (
                       <P>Ok, let’s do a review just in case.</P>
                       <P>
                         We’ll run it from the beginning to the end using the{' '}
-                        <H args={{ name: 'fastForward' }} /> button.
+                        <H args={{ name: 'run' }} /> button.
                       </P>
                     </>
                   )
@@ -899,7 +899,7 @@ export default () => (
               ]}
             />
             <P>
-              <H args={{ name: 'pressFastForward', mentionRightArrow: true }} />
+              <H args={{ name: 'pressRun', mentionRightArrow: true }} />
             </P>
             <R.Beiz />
             <BubbleQuotes
@@ -993,8 +993,7 @@ export default () => (
                         <EmojiWithText letter="h" /> at the end.
                       </P>
                       <P>
-                        Let’s{' '}
-                        <H args={{ name: 'fastForward', lowerCase: true }} /> it
+                        Let’s <H args={{ name: 'run', lowerCase: true }} /> it
                         to check!
                       </P>
                     </>
@@ -1003,7 +1002,7 @@ export default () => (
               ]}
             />
             <P>
-              <H args={{ name: 'pressFastForward', mentionRightArrow: true }} />
+              <H args={{ name: 'pressRun', mentionRightArrow: true }} />
             </P>
             <R.Hdxc />
             <BubbleQuotes
@@ -1428,8 +1427,8 @@ export default () => (
                     <>
                       <P>
                         The rest is simple though. Let’s{' '}
-                        <H args={{ name: 'fastForward', lowerCase: true }} /> it
-                        from here.
+                        <H args={{ name: 'run', lowerCase: true }} /> it from
+                        here to the end.
                       </P>
                     </>
                   )
@@ -1437,7 +1436,7 @@ export default () => (
               ]}
             />
             <P>
-              <H args={{ name: 'pressFastForward' }} />
+              <H args={{ name: 'pressRun' }} />
             </P>
             <R.Izgz />
             <BubbleQuotes
@@ -1515,8 +1514,7 @@ export default () => (
                         instead of <EmojiWithText letter="a" />.
                       </P>
                       <P>
-                        Let’s{' '}
-                        <H args={{ name: 'fastForward', lowerCase: true }} /> it
+                        Let’s <H args={{ name: 'run', lowerCase: true }} /> it
                         to check!
                       </P>
                     </>
@@ -1525,7 +1523,7 @@ export default () => (
               ]}
             />
             <P>
-              <H args={{ name: 'pressFastForward', mentionRightArrow: true }} />
+              <H args={{ name: 'pressRun', mentionRightArrow: true }} />
             </P>
             <R.Thkn />
             <BubbleQuotes
@@ -1601,7 +1599,7 @@ export default () => (
               <InlinePrioritiesLabel>1</InlinePrioritiesLabel>’s
             </R.Mhyv>
             <P>
-              The rest is simple. <H args={{ name: 'pressFastForward' }} />
+              The rest is simple. <H args={{ name: 'pressRun' }} />
             </P>
             <R.Ayok />
             <P>
@@ -1810,7 +1808,7 @@ export default () => (
               <BottomRightBadge inline bottomRightBadgeType="funcBound" />
             </R.Oork>
             <P>
-              The rest is simple. <H args={{ name: 'pressFastForward' }} />
+              The rest is simple. <H args={{ name: 'pressRun' }} />
             </P>
             <R.Diis />
             <BubbleQuotes
@@ -1910,8 +1908,7 @@ export default () => (
                         <EmojiWithText letter="b" />.
                       </P>
                       <P>
-                        Let’s{' '}
-                        <H args={{ name: 'fastForward', lowerCase: true }} /> it
+                        Let’s <H args={{ name: 'run', lowerCase: true }} /> it
                         to check!
                       </P>
                     </>
@@ -1920,7 +1917,7 @@ export default () => (
               ]}
             />
             <P>
-              <H args={{ name: 'pressFastForward', mentionRightArrow: true }} />
+              <H args={{ name: 'pressRun', mentionRightArrow: true }} />
             </P>
             <R.Cuwg />
             <BubbleQuotes

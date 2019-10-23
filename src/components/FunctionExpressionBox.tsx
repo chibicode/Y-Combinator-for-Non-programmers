@@ -5,8 +5,6 @@ import Flex from 'src/components/Flex'
 import FlexCenter from 'src/components/FlexCenter'
 import ExpressionBox from 'src/components/ExpressionBox'
 import { FunctionExpression } from 'src/types/ExpressionTypes'
-import plusOneSvg from 'src/images/plusOne.url.svg'
-import minusOneSvg from 'src/images/minusOne.url.svg'
 
 interface FunctionExpressionBoxProps {
   expression: FunctionExpression
@@ -18,19 +16,7 @@ const FunctionExpressionBox = ({ expression }: FunctionExpressionBoxProps) => {
       css={[
         css`
           flex: 1;
-        `,
-        expression.meta === 'plusOneEffect' &&
-          css`
-            background-image: url(${plusOneSvg});
-            background-size: 4em;
-            background-position: center center;
-          `,
-        expression.meta === 'minusOneEffect' &&
-          css`
-            background-image: url(${minusOneSvg});
-            background-size: 4em;
-            background-position: center center;
-          `
+        `
       ]}
     >
       <FlexCenter

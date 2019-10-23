@@ -56,7 +56,6 @@ const VariableEmoji = ({ expression }: VariableExpressionBoxProps) => {
     return (
       <div
         css={css`
-          margin-top: ${spaces(0.125)};
           padding: 0.25em 0;
         `}
       >
@@ -90,19 +89,41 @@ const VariableEmoji = ({ expression }: VariableExpressionBoxProps) => {
             `}
           >
             {expression.shorthandNumber !== undefined ? (
-              <EmojiNumber number={expression.shorthandNumber} />
+              <EmojiNumber size="sm" number={expression.shorthandNumber} />
             ) : expression.shorthandNumberAfterConvert === 'blank' ? (
-              <CustomEmoji type="blankNumber" />
+              <CustomEmoji size="sm" type="blankNumber" />
+            ) : expression.shorthandNumberAfterConvert === 'blankPlusOne' ? (
+              <>
+                <CustomEmoji size="sm" type="blankNumber" />{' '}
+                <Emoji size="sm">➕</Emoji> <EmojiNumber size="sm" number={1} />
+              </>
+            ) : expression.shorthandNumberAfterConvert === 'blankMinusOne' ? (
+              <>
+                <CustomEmoji size="sm" type="blankNumber" />{' '}
+                <Emoji size="sm">➖</Emoji> <EmojiNumber size="sm" number={1} />
+              </>
             ) : expression.shorthandNumberAfterConvert === 'trueCase' ? (
-              <CustomEmoji type="blankNumberYellow" />
+              <CustomEmoji size="sm" type="blankNumberYellow" />
             ) : expression.shorthandNumberAfterConvert === 'falseCase' ? (
-              <CustomEmoji type="blankNumberRed" />
+              <CustomEmoji size="sm" type="blankNumberRed" />
             ) : expression.shorthandNumberAfterConvert === 'condition' ? (
-              <CustomEmoji type="blankNumberGreen" />
+              <CustomEmoji size="sm" type="blankNumberGreen" />
             ) : expression.shorthandNumberAfterConvert === 'binaryFirst' ? (
-              <CustomEmoji type="blankNumberPurple" />
+              <CustomEmoji size="sm" type="blankNumberPurple" />
             ) : expression.shorthandNumberAfterConvert === 'binarySecond' ? (
-              <CustomEmoji type="blankNumberPink" />
+              <CustomEmoji size="sm" type="blankNumberPink" />
+            ) : expression.shorthandNumberAfterConvert === 'binaryMultiply' ? (
+              <>
+                <CustomEmoji size="sm" type="blankNumberPurple" />{' '}
+                <Emoji size="sm">✖️</Emoji>{' '}
+                <CustomEmoji size="sm" type="blankNumberPink" />
+              </>
+            ) : expression.shorthandNumberAfterConvert === 'binaryAdd' ? (
+              <>
+                <CustomEmoji size="sm" type="blankNumberPurple" />{' '}
+                <Emoji size="sm">➕</Emoji>{' '}
+                <CustomEmoji size="sm" type="blankNumberPink" />
+              </>
             ) : (
               <></>
             )}
@@ -153,19 +174,6 @@ const VariableEmoji = ({ expression }: VariableExpressionBoxProps) => {
             />
           </span>
         )}
-      </div>
-    )
-  } else if (
-    expression.name === 'blankNumber' &&
-    expression.shorthandNumberPlusOrMinusOne
-  ) {
-    return (
-      <div>
-        <CustomEmoji type="blankNumber" size="sm" />{' '}
-        <Emoji size="sm">
-          {expression.shorthandNumberPlusOrMinusOne === 'plus' ? '➕' : '➖'}
-        </Emoji>{' '}
-        <EmojiNumber size="sm" number={1} />
       </div>
     )
   } else if (expression.name === 'Amult') {
@@ -278,6 +286,16 @@ const VariableEmoji = ({ expression }: VariableExpressionBoxProps) => {
         ) : expression.shorthandFunc === 'pred' &&
           expression.highlightType !== 'removed' ? (
           <CustomEmoji type="minusOne" size="sm" />
+        ) : expression.name === 'blankNumberPlusOne' ? (
+          <>
+            <CustomEmoji type="blankNumber" size="sm" />{' '}
+            <Emoji size="sm">➕</Emoji> <EmojiNumber number={1} size="sm" />
+          </>
+        ) : expression.name === 'blankNumberMinusOne' ? (
+          <>
+            <CustomEmoji type="blankNumber" size="sm" />{' '}
+            <Emoji size="sm">➖</Emoji> <EmojiNumber number={1} size="sm" />
+          </>
         ) : customEmojiToComponent[
             expression.name as keyof typeof customEmojiToComponent
           ] && expression.highlightType !== 'removed' ? (

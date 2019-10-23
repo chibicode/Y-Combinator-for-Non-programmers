@@ -51,8 +51,8 @@
               },
               "func": {
                 "arg": {
-                  "name": "i",
-                  "highlightType": "default",
+                  "name": "a",
+                  "highlightType": "initialHighlighted",
                   "topLeftBadgeType": "none",
                   "bottomRightBadgeType": "none",
                   "type": "variable",
@@ -66,8 +66,8 @@
                 },
                 "body": {
                   "arg": {
-                    "name": "j",
-                    "highlightType": "default",
+                    "name": "b",
+                    "highlightType": "initialHighlighted",
                     "topLeftBadgeType": "none",
                     "bottomRightBadgeType": "none",
                     "type": "variable",
@@ -79,8 +79,8 @@
                   },
                   "body": {
                     "arg": {
-                      "name": "k",
-                      "highlightType": "default",
+                      "name": "c",
+                      "highlightType": "initialHighlighted",
                       "topLeftBadgeType": "none",
                       "bottomRightBadgeType": "none",
                       "type": "variable",
@@ -93,8 +93,8 @@
                     "body": {
                       "arg": {
                         "arg": {
-                          "name": "k",
-                          "highlightType": "default",
+                          "name": "c",
+                          "highlightType": "initialHighlighted",
                           "topLeftBadgeType": "none",
                           "bottomRightBadgeType": "none",
                           "type": "variable",
@@ -109,8 +109,8 @@
                         },
                         "func": {
                           "arg": {
-                            "name": "j",
-                            "highlightType": "default",
+                            "name": "b",
+                            "highlightType": "initialHighlighted",
                             "topLeftBadgeType": "none",
                             "bottomRightBadgeType": "none",
                             "type": "variable",
@@ -123,8 +123,8 @@
                             "maxNestedFunctionDepth": 0
                           },
                           "func": {
-                            "name": "i",
-                            "highlightType": "default",
+                            "name": "a",
+                            "highlightType": "initialHighlighted",
                             "topLeftBadgeType": "none",
                             "bottomRightBadgeType": "none",
                             "type": "variable",
@@ -148,8 +148,8 @@
                         "maxNestedFunctionDepth": 0
                       },
                       "func": {
-                        "name": "j",
-                        "highlightType": "default",
+                        "name": "b",
+                        "highlightType": "initialHighlighted",
                         "topLeftBadgeType": "none",
                         "bottomRightBadgeType": "none",
                         "type": "variable",
@@ -360,17 +360,13 @@
   "hideControls": true,
   "explanationsVisibility": "hidden",
   "hidePriorities": false,
-  "hidePlayButton": false,
+  "hideRunButton": false,
   "hideBottomRightBadges": false,
   "skipToTheEnd": false,
   "hideFuncUnboundBadgeOnExplanation": false,
   "highlightOverridesCallArgAndFuncUnboundOnly": false,
   "bottomRightBadgeOverrides": {},
-  "highlightOverrides": {
-    "i": "highlighted",
-    "j": "highlighted",
-    "k": "highlighted"
-  },
+  "highlightOverrides": {},
   "highlightOverrideActiveAfterStart": false,
   "highlightFunctions": false,
   "showBottomProgressBar": true

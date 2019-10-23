@@ -17,6 +17,7 @@ import EmojiSeparator from 'src/components/EmojiSeparator'
 import CustomEmoji from 'src/components/CustomEmoji'
 import ExpressionRunnerSeparator from 'src/components/ExpressionRunnerSeparator'
 import EmojiWithText from 'src/components/EmojiWithText'
+import CardContent from 'src/components/CardContent'
 import Emoji from 'src/components/Emoji'
 import ExpressionRunnerCaptionOnly from 'src/components/ExpressionRunnerCaptionOnly'
 import TwoColGrid from 'src/components/TwoColGrid'
@@ -199,12 +200,13 @@ export default () => (
                 }
               ]}
             />
-            <R.Lizi>
-              <EmojiNumber number={1} /> <CustomEmoji type="plusOne" />{' '}
-              の計算箱を…
-            </R.Lizi>
+            <R.Rviy>
+              計算箱の「
+              <H args={{ name: 'plusOneFeature' }} />
+              」を…
+            </R.Rviy>
             <ExpressionRunnerSeparator />
-            <R.Plde>弁当箱で再現した</R.Plde>
+            <R.Eweo>弁当箱で再現した</R.Eweo>
             <BubbleQuotes
               quotes={[
                 {
@@ -321,8 +323,7 @@ export default () => (
       {
         title: (
           <>
-            <H args={{ name: 'minusOneEffect' }} />
-            がある弁当箱のヒント
+            「<H args={{ name: 'minusOneFeature' }} />」 を再現するヒント
           </>
         ),
         content: (
@@ -344,13 +345,44 @@ export default () => (
                   type: 'dog',
                   children: (
                     <>
-                      <P>わかりました。こちらの弁当箱をご覧ください。</P>
                       <P>
-                        前回と同じく、
+                        わかりました。では、
                         <Highlight>
-                          それぞれの <CustomEmoji type="questionFoodGrey" />{' '}
-                          には何らかの料理が入ります。
+                          「
+                          <H args={{ name: 'minusOneFeature' }} />」
+                          を弁当箱で再現するヒント
                         </Highlight>
+                        を教えましょう！
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Ditw>
+              「<H args={{ name: 'minusOneFeature' }} />
+              」を
+              <br />
+              どうやって再現する？
+            </R.Ditw>
+            <ExpressionRunnerSeparator />
+            <R.Jfgb></R.Jfgb>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>
+                        「
+                        <H args={{ name: 'minusOneFeature' }} />
+                        」を弁当箱で再現するには、
+                        <Highlight>
+                          以下の弁当箱にある{' '}
+                          <CustomEmoji type="questionFoodGrey" />{' '}
+                          に、ある法則に基づいて料理を入れる
+                        </Highlight>
+                        必要があります。
                       </P>
                     </>
                   )
@@ -358,9 +390,15 @@ export default () => (
               ]}
             />
             <R.Pbop>
-              それぞれの <CustomEmoji type="questionFoodGrey" /> には
+              それぞれの <CustomEmoji type="questionFoodGrey" /> に、
               <br />
-              何らかの料理が入る
+              ある法則に基づいて料理を入れると、
+              <br />
+              「
+              <H args={{ name: 'minusOneFeature' }} />
+              」を
+              <br />
+              再現することができる
             </R.Pbop>
             <BubbleQuotes
               quotes={[
@@ -377,137 +415,49 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        そして、
-                        <HighlightBold>
-                          それぞれの <CustomEmoji type="questionFoodGrey" />{' '}
-                          に、ある法則に基づいて料理を入れると、
-                          <H args={{ name: 'minusOneEffect' }} />
-                          がある弁当箱になります。
-                        </HighlightBold>
+                        複雑ですが、正しく{' '}
+                        <CustomEmoji type="questionFoodGrey" />{' '}
+                        に料理を当てはめることができれば、以下のように1を引く計算を行うことができます。
                       </P>
                     </>
                   )
                 }
               ]}
             />
-            <R.Skoo>
-              それぞれの <CustomEmoji type="questionFoodGrey" /> に、
+            <R.Xqjd>
+              <CustomEmoji type="blankNumber" /> に変換できる弁当箱と
               <br />
-              <HighlightBold>ある法則に基づいて</HighlightBold>料理を入れると、
+              合体させ…
+            </R.Xqjd>
+            <ExpressionRunnerSeparator />
+            <R.Gvxz>
+              <H args={{ name: 'run' }} /> すると、
               <br />
-              <H args={{ name: 'minusOneEffect' }} />
-              がある弁当箱になる
-            </R.Skoo>
+              <CustomEmoji type="blankNumber" /> <Emoji>➖</Emoji>{' '}
+              <EmojiNumber number={1} /> に変換できる弁当箱になる
+            </R.Gvxz>
             <BubbleQuotes
               quotes={[
-                {
-                  type: 'thinking',
-                  children: (
-                    <>
-                      <P>
-                        なに、
-                        <H args={{ name: 'minusOneEffect' }} />
-                        だって？
-                      </P>
-                      <P>
-                        前回の
-                        <H args={{ name: 'plusOneEffect' }} />
-                        の真逆なのかな？
-                      </P>
-                    </>
-                  )
-                },
                 {
                   type: 'dog',
                   children: (
                     <>
                       <P>
-                        その通りです。上の
-                        <H args={{ name: 'minusOneEffect' }} />
-                        がある弁当箱を、
-                      </P>
-                      <Ul>
-                        <UlLi>
-                          <Highlight>
-                            ある数字 <CustomEmoji type="blankNumber" />{' '}
-                            に変換できる弁当箱と合体させ、
-                          </Highlight>
-                        </UlLi>
-                        <UlLi>
-                          <Highlight>
-                            <H args={{ name: 'runAndConvertToMathbox' }} />
-                            すると、
-                          </Highlight>
-                        </UlLi>
-                      </Ul>
-                      <P>
+                        では、
                         <Highlight>
-                          結果は <CustomEmoji type="blankNumber" />{' '}
-                          <Emoji>➖</Emoji> <EmojiNumber number={1} /> になる
+                          <CustomEmoji type="questionFoodGrey" />{' '}
+                          にそれぞれ何が入るか考えてみてください！
                         </Highlight>
-                        のです。
                       </P>
                     </>
                   )
-                }
-              ]}
-            />
-            <R.Xqjd>
-              <CustomEmoji type="blankNumber" /> に変換できる弁当箱と、
-              <br />
-              <H args={{ name: 'minusOneEffect' }} />
-              がある弁当箱を合体させ…
-            </R.Xqjd>
-            <ExpressionRunnerSeparator />
-            <R.Gvxz>
-              <H args={{ name: 'runAndConvertToMathbox' }} />
-              <br />
-              すると、結果は <CustomEmoji type="blankNumber" />{' '}
-              <Emoji>➖</Emoji> <EmojiNumber number={1} /> になる
-            </R.Gvxz>
-            <BubbleQuotes
-              quotes={[
-                {
-                  type: 'thinking',
-                  children: (
-                    <>
-                      <P>
-                        つまりこれを使えば、計算箱の「
-                        <H args={{ name: 'minusOneFeature' }} />
-                        」を再現できるというわけだな。
-                      </P>
-                    </>
-                  )
-                }
-              ]}
-            />
-            <R.Ditw>
-              計算箱の「
-              <H args={{ name: 'minusOneFeature' }} />
-              」は…
-            </R.Ditw>
-            <ExpressionRunnerSeparator />
-            <R.Xqjd>
-              <H args={{ name: 'minusOneEffect' }} />
-              がある弁当箱を
-              <br />
-              使えば、再現できる
-            </R.Xqjd>
-          </>
-        )
-      },
-      {
-        title: <>サヤちゃんが考えた弁当箱</>,
-        content: (
-          <>
-            <BubbleQuotes
-              quotes={[
+                },
                 {
                   type: 'crying',
                   children: (
                     <>
                       <P>
-                        しかし…こんな複雑な弁当箱の{' '}
+                        うーん、こんな複雑な弁当箱の{' '}
                         <CustomEmoji type="questionFoodGrey" />{' '}
                         を正しい法則で埋めるなんて…何日かかってもできなさそうだ！
                       </P>
@@ -516,11 +466,13 @@ export default () => (
                 }
               ]}
             />
-            <R.Pbop>
-              それぞれの <CustomEmoji type="questionFoodGrey" /> には
-              <br />
-              何らかの料理が入る
-            </R.Pbop>
+          </>
+        )
+      },
+      {
+        title: <>サヤちゃんが考えた弁当箱</>,
+        content: (
+          <>
             <P>
               村人たちが困っていると、またサヤちゃんが何かひらめいたようです。
             </P>
@@ -552,8 +504,13 @@ export default () => (
                 }
               ]}
             />
+            <R.Pbop>
+              <Emoji>👧🏻</Emoji> それぞれの{' '}
+              <CustomEmoji type="questionFoodGrey" /> に…
+            </R.Pbop>
+            <ExpressionRunnerSeparator />
             <R.Cldb>
-              <Emoji>👧🏻</Emoji> サヤちゃんの弁当箱
+              <Emoji>👧🏻</Emoji> 次のように料理を入れてみた！
             </R.Cldb>
             <BubbleQuotes
               quotes={[
@@ -564,11 +521,65 @@ export default () => (
                       <P>
                         ふむふむ…まさか今回も一発で正解なんてことはありえないと思うけど、とりあえず試してみるか。
                       </P>
+                    </>
+                  )
+                },
+                {
+                  type: 'saya',
+                  children: (
+                    <>
                       <P>
-                        前回もやったように、
+                        まず、
                         <Highlight>
                           <EmojiNumber number={1} />{' '}
-                          に変換できる弁当箱と合体させてみよう。
+                          に変換できる弁当箱と合体させてみよう！
+                        </Highlight>
+                      </P>
+                      <P>
+                        それで、
+                        <HighlightBold>
+                          結果が <EmojiNumber number={0} /> になれば
+                        </HighlightBold>
+                        、
+                        <EmojiNumber number={1} /> <Emoji>➖</Emoji>{' '}
+                        <EmojiNumber number={1} />{' '}
+                        を計算できるということだよね。
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Hiag>
+              <EmojiNumber number={1} /> に変換できる弁当箱と
+              <br />
+              合体させて…
+            </R.Hiag>
+            <ExpressionRunnerSeparator />
+            <ExpressionRunnerCaptionOnly>
+              実行したときに、
+              <EmojiNumber number={0} size="mdlg" /> に変換できる
+              <br />
+              弁当箱になれば、
+              <EmojiNumber number={1} /> <Emoji>➖</Emoji>{' '}
+              <EmojiNumber number={1} />を<br />
+              計算できるので<HighlightBold>成功</HighlightBold>{' '}
+              <Emoji>🎉</Emoji>
+              <br />
+              それ以外なら<HighlightBold>失敗</HighlightBold> <Emoji>😭</Emoji>
+            </ExpressionRunnerCaptionOnly>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'saya',
+                  children: (
+                    <>
+                      <P>
+                        では、こちらの{' '}
+                        <Highlight>
+                          <EmojiNumber number={1} />{' '}
+                          に変換できる弁当箱と合体させて、
+                          <H args={{ name: 'run' }} /> してみよう！
                         </Highlight>
                       </P>
                       <R.Dqdv>
@@ -580,48 +591,15 @@ export default () => (
                           }}
                         />
                       </R.Dqdv>
-                      <P>
-                        今回は
-                        <H args={{ name: 'minusOneEffect' }} />
-                        があるかどうかを確かめたいわけだから、
-                        <EmojiNumber number={1} /> <Emoji>➖</Emoji>{' '}
-                        <EmojiNumber number={1} /> が計算できないといけない。
-                      </P>
-                      <EmojiSeparator
-                        nodes={[
-                          <EmojiNumber number={1} />,
-                          <Emoji>➖</Emoji>,
-                          <EmojiNumber number={1} />
-                        ]}
-                      />
-                      <P>
-                        つまり、
-                        <H args={{ name: 'runAndConvertToMathbox' }} />
-                        した時に、
-                        <Highlight>
-                          結果が <EmojiNumber number={0} />{' '}
-                          になれば成功というわけだ。
-                        </Highlight>
-                      </P>
+                      <P>合体させるとこうなるよ！</P>
                     </>
                   )
                 }
               ]}
             />
-            <R.Ylav>
-              <EmojiNumber number={1} /> に変換できる弁当箱と、
-              <br />
-              <Emoji>👧🏻</Emoji> サヤちゃんの弁当箱を合体させ…
-            </R.Ylav>
-            <ExpressionRunnerSeparator />
-            <ExpressionRunnerCaptionOnly>
-              <H args={{ name: 'runAndConvertToMathbox' }} />
-              <br />
-              して、結果が <EmojiNumber number={0} size="mdlg" /> になれば
-              <HighlightBold>成功</HighlightBold> <Emoji>🎉</Emoji>
-              <br />
-              それ以外なら<HighlightBold>失敗</HighlightBold> <Emoji>😭</Emoji>
-            </ExpressionRunnerCaptionOnly>
+            <R.Sldg>
+              <EmojiNumber number={1} /> に変換できる弁当箱と合体
+            </R.Sldg>
             <BubbleQuotes
               quotes={[
                 {
@@ -629,9 +607,8 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        じゃあ、
-                        <H args={{ name: 'play' }} />
-                        してみよう！
+                        よし、
+                        <H args={{ name: 'run' }} /> してみよう！
                       </P>
                     </>
                   )
@@ -644,16 +621,16 @@ export default () => (
       {
         title: (
           <>
-            <H args={{ name: 'play' }} /> してみると…
+            <H args={{ name: 'run' }} /> してみると…
           </>
         ),
         content: (
           <>
             <P>
-              それでは、上記の弁当箱を実行してみましょう！途中まで早送りしてみますね。
+              それでは、
               <H
                 args={{
-                  name: 'pressFastForward',
+                  name: 'pressRun',
                   skippableToTheStoppingPoint: true
                 }}
               />
@@ -742,9 +719,9 @@ export default () => (
                         <EmojiWithText letter="a" /> に変えました。
                       </P>
                       <P>
-                        では、最後まで
-                        <H args={{ name: 'fastForward' }} />
-                        してみてください！
+                        では、
+                        <H args={{ name: 'run' }} />{' '}
+                        して最後まで見てみましょう！
                       </P>
                     </>
                   )
@@ -783,31 +760,36 @@ export default () => (
                   children: (
                     <>
                       <P>ということは、サヤちゃんの弁当箱は…</P>
-                      <P>
-                        <Highlight>
-                          <EmojiNumber number={1} />{' '}
-                          に変換できる弁当箱と合体させ、
-                          <H args={{ name: 'runAndConvertToMathbox' }} />
-                          すると、結果が <EmojiNumber number={0} /> になる
-                        </Highlight>
-                        ということですね。
-                      </P>
+                      <Ul>
+                        <UlLi>
+                          <Highlight>
+                            <EmojiNumber number={1} />{' '}
+                            に変換できる弁当箱と合体させて実行すると、{' '}
+                          </Highlight>
+                        </UlLi>
+                        <UlLi>
+                          <Highlight>
+                            <EmojiNumber number={0} /> に変換できる弁当箱になる
+                          </Highlight>
+                        </UlLi>
+                      </Ul>
+                      <P>ということですね。</P>
                     </>
                   )
                 }
               ]}
             />
-            <R.Ylav>
-              <EmojiNumber number={1} /> に変換できる弁当箱と、
+            <R.Hiag>
+              <EmojiNumber number={1} /> に変換できる弁当箱と
               <br />
               <Emoji>👧🏻</Emoji> サヤちゃんの弁当箱を合体させ…
-            </R.Ylav>
+            </R.Hiag>
             <ExpressionRunnerSeparator />
-            <R.Jwah>
-              <H args={{ name: 'runAndConvertToMathbox' }} />
+            <R.Nbck>
+              実行すると、
               <br />
-              すると、結果が <EmojiNumber number={0} /> になる
-            </R.Jwah>
+              <EmojiNumber number={0} /> に変換できる弁当箱になる
+            </R.Nbck>
             <BubbleQuotes
               quotes={[
                 {
@@ -865,9 +847,8 @@ export default () => (
                         <EmojiNumber number={1} /> <Emoji>➖</Emoji>{' '}
                         <EmojiNumber number={1} /> が計算できたからといって、
                         <Highlight>
-                          その弁当箱に
-                          <H args={{ name: 'minusOneEffect' }} />
-                          があるとはまだ言い切れない
+                          「<H args={{ name: 'minusOneFeature' }} />
+                          」を再現できたとはまだ言い切れない
                         </Highlight>
                         ぞ。
                       </P>
@@ -883,14 +864,21 @@ export default () => (
                 }
               ]}
             />
-            <EmojiSeparator
-              nodes={[
-                <EmojiNumber number={2} />,
-                <Emoji>➖</Emoji>,
-                <EmojiNumber number={1} />
-              ]}
-              description={<>これも計算できる？</>}
-            />
+            <R.Gqct>
+              <EmojiNumber number={2} /> に変換できる弁当箱と
+              <br />
+              <Emoji>👧🏻</Emoji> サヤちゃんの弁当箱を合体させ…
+            </R.Gqct>
+            <ExpressionRunnerSeparator />
+            <ExpressionRunnerCaptionOnly>
+              実行したときに、
+              <EmojiNumber number={1} size="mdlg" /> に変換できる
+              <br />
+              弁当箱になれば<HighlightBold>成功</HighlightBold>{' '}
+              <Emoji>🎉</Emoji>
+              <br />
+              それ以外なら<HighlightBold>失敗</HighlightBold> <Emoji>😭</Emoji>
+            </ExpressionRunnerCaptionOnly>
             <BubbleQuotes
               quotes={[
                 {
@@ -914,47 +902,26 @@ export default () => (
                           }}
                         />
                       </R.Mzys>
-                      <P>
-                        合体したものを
-                        <H args={{ name: 'runAndConvertToMathbox' }} />
-                        して、
-                        <Highlight>
-                          結果が <EmojiNumber number={1} /> になればいい
-                        </Highlight>
-                        んだよね。
-                      </P>
+                      <P>合体させるとこうなるよ！</P>
                     </>
                   )
                 }
               ]}
             />
-            <R.Zwvj>
-              <EmojiNumber number={2} /> に変換できる弁当箱と、
-              <br />
-              <Emoji>👧🏻</Emoji> サヤちゃんの弁当箱を合体させ…
-            </R.Zwvj>
-            <ExpressionRunnerSeparator />
-            <ExpressionRunnerCaptionOnly>
-              <H args={{ name: 'runAndConvertToMathbox' }} />
-              <br />
-              して、結果が <EmojiNumber number={1} size="mdlg" /> になれば
-              <HighlightBold>成功</HighlightBold> <Emoji>🎉</Emoji>
-              <br />
-              それ以外なら<HighlightBold>失敗</HighlightBold> <Emoji>😭</Emoji>
-            </ExpressionRunnerCaptionOnly>
+            <R.Dtle>
+              <EmojiNumber number={2} /> に変換できる弁当箱と合体
+            </R.Dtle>
             <BubbleQuotes
               quotes={[
                 {
                   type: 'saya',
                   children: (
                     <>
-                      <P>まずは実行してみるね。</P>
+                      <P>では、実行してみよう！</P>
                       <Ul>
                         <UlLi>
                           今回は、
-                          <Highlight>
-                            最後まで止まらずに早送りするね！
-                          </Highlight>
+                          <Highlight>最後まで止まらずに実行するね！</Highlight>
                         </UlLi>
                         <UlLi>
                           複雑なので、
@@ -969,7 +936,7 @@ export default () => (
                         </UlLi>
                       </Ul>
                       <P>
-                        <H args={{ name: 'pressFastForward', girl: true }} />
+                        <H args={{ name: 'pressRun', girl: true }} />
                       </P>
                     </>
                   )
@@ -997,6 +964,43 @@ export default () => (
                 args={{ name: 'canBeConvertedCaption', number: 1, letter: 'b' }}
               />
             </R.Joaq>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>ということは、サヤちゃんの弁当箱は…</P>
+                      <Ul>
+                        <UlLi>
+                          <Highlight>
+                            <EmojiNumber number={2} />{' '}
+                            に変換できる弁当箱と合体させて実行すると、{' '}
+                          </Highlight>
+                        </UlLi>
+                        <UlLi>
+                          <Highlight>
+                            <EmojiNumber number={1} /> に変換できる弁当箱になる
+                          </Highlight>
+                        </UlLi>
+                      </Ul>
+                      <P>ということですね。</P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Gqct>
+              <EmojiNumber number={2} /> に変換できる弁当箱と
+              <br />
+              <Emoji>👧🏻</Emoji> サヤちゃんの弁当箱を合体させ…
+            </R.Gqct>
+            <ExpressionRunnerSeparator />
+            <R.Jzwg>
+              実行すると、
+              <br />
+              <EmojiNumber number={1} /> に変換できる弁当箱になる
+            </R.Jzwg>
             <BubbleQuotes
               quotes={[
                 {
@@ -1035,10 +1039,11 @@ export default () => (
         )
       },
       {
+        type: 'summary',
         title: (
           <>
-            <H args={{ name: 'minusOneEffect' }} />
-            がある法則
+            「<H args={{ name: 'minusOneFeature' }} />
+            」を再現できた！
           </>
         ),
         content: (
@@ -1052,9 +1057,9 @@ export default () => (
                       <P>まさか、こうも簡単に正解されるとは思わなかったが…</P>
                       <P>
                         <HighlightBold>
-                          サヤちゃんが考えた弁当箱は、
-                          <H args={{ name: 'minusOneEffect' }} />
-                          がある弁当箱だ！
+                          サヤちゃんが考えた弁当箱は、 「
+                          <H args={{ name: 'minusOneFeature' }} />」
+                          を再現できる弁当箱だ！
                         </HighlightBold>{' '}
                         <Emoji>🎉</Emoji>
                       </P>
@@ -1063,12 +1068,15 @@ export default () => (
                 }
               ]}
             />
-            <R.Rdae>
-              <Emoji>👧🏻</Emoji> サヤちゃんが考えた弁当箱には
+            <R.Ditw>
+              「<H args={{ name: 'minusOneFeature' }} />」 は…
+            </R.Ditw>
+            <ExpressionRunnerSeparator />
+            <R.Bgko>
+              <Emoji>👧🏻</Emoji> サヤちゃんが考えた弁当箱で、
               <br />
-              <H args={{ name: 'minusOneEffect' }} />
-              がある
-            </R.Rdae>
+              再現できる！
+            </R.Bgko>
             <BubbleQuotes
               quotes={[
                 {
@@ -1080,37 +1088,9 @@ export default () => (
                   )
                 },
                 {
-                  type: 'devil',
-                  children: (
-                    <>
-                      <P>
-                        ちなみに、サヤちゃんが考えた弁当箱以外にも、
-                        <HighlightBold>
-                          以下の法則に当てはまる弁当箱であれば、 どれでも
-                          <H args={{ name: 'minusOneEffect' }} />
-                          があるぞ。
-                        </HighlightBold>
-                      </P>
-                    </>
-                  )
-                }
-              ]}
-            />
-            <R.Cbmn>
-              この法則に当てはまる弁当箱であれば、
-              <br />
-              <H args={{ name: 'minusOneEffect' }} />
-              がある
-            </R.Cbmn>
-            <BubbleQuotes
-              quotes={[
-                {
                   type: 'thinking',
                   children: (
                     <>
-                      <P>
-                        たしかにサヤちゃんの弁当箱は、上の法則に当てはまっている…
-                      </P>
                       <P>
                         よくこんなの分かったなあ。サヤちゃんは天才なのかもしれない！
                       </P>
@@ -1131,104 +1111,19 @@ export default () => (
                 }
               ]}
             />
-          </>
-        )
-      },
-      {
-        type: 'summary',
-        title: (
-          <>
-            「<H args={{ name: 'minusOneFeature' }} />
-            」も再現できた！
-          </>
-        ),
-        content: (
-          <>
-            <P>
-              今回学んだことを一言でまとめると、
-              <HighlightBold>
-                計算箱の「
-                <H args={{ name: 'minusOneFeature' }} />
-                」も、弁当箱で「再現」できる
-              </HighlightBold>
-              、ということです。
-            </P>
             <EmojiSeparator
               nodes={[
                 <CustomEmoji type="mathBox" />,
                 <CustomEmoji type="minusOne" />,
                 <CustomEmoji type="doubleArrow" />,
                 <Emoji>🍱</Emoji>,
-                <CustomEmoji type="minusOnePink" />
+                <CustomEmoji type="minusOne" />
               ]}
               description={
                 <>
                   計算箱の「
                   <H args={{ name: 'minusOneFeature' }} />
                   」は、
-                  <br />
-                  弁当箱で「<HighlightBold>再現</HighlightBold>
-                  」することができる
-                </>
-              }
-            />
-            <P>
-              たとえば、以下のような <EmojiNumber number={3} />{' '}
-              <Emoji>➖</Emoji> <EmojiNumber number={1} />{' '}
-              を計算する計算箱をご覧ください。
-            </P>
-            <R.Xmqp>
-              <EmojiNumber number={3} /> <Emoji>➖</Emoji>{' '}
-              <EmojiNumber number={1} /> を計算できる
-            </R.Xmqp>
-            <P>
-              これを弁当箱で再現するには、
-              <Highlight>
-                <EmojiNumber number={3} /> に変換できる弁当箱と、
-                <H args={{ name: 'minusOneEffect' }} />
-                がある弁当箱を合体すればいい
-              </Highlight>
-              のです。
-            </P>
-            <R.Fhkl>
-              <EmojiNumber number={3} /> に変換できる弁当箱と
-              <br />
-              <H args={{ name: 'minusOneEffect' }} />
-              がある弁当箱を
-              <br />
-              合体すれば、
-              <EmojiNumber number={3} /> <CustomEmoji type="minusOne" />{' '}
-              の計算箱を再現できる
-            </R.Fhkl>
-            <P>
-              上の
-              <H args={{ name: 'runAndConvertToMathbox' }} />
-              ボタンを押すと、答えが <EmojiNumber number={2} />{' '}
-              になるのを確認できます。
-            </P>
-            <Hr />
-            <P>
-              まとめると、
-              <Highlight>
-                計算箱の「
-                <H args={{ name: 'minusOneFeature' }} />
-                」も、弁当箱で再現することができる
-              </Highlight>
-              のです。このポイントさえ覚えていただければ、細かいことは分からなくても大丈夫です！
-            </P>
-            <EmojiSeparator
-              nodes={[
-                <CustomEmoji type="mathBox" />,
-                <CustomEmoji type="minusOne" />,
-                <CustomEmoji type="doubleArrow" />,
-                <Emoji>🍱</Emoji>,
-                <CustomEmoji type="minusOnePink" />
-              ]}
-              description={
-                <>
-                  計算箱の「
-                  <H args={{ name: 'minusOneFeature' }} />
-                  」も、
                   <br />
                   弁当箱で「<HighlightBold>再現</HighlightBold>
                   」することができる
@@ -1242,7 +1137,7 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        今回の「
+                        ちなみに、今回の「
                         <H args={{ name: 'minusOneFeature' }} />
                         」を再現する問題も、超難問です。だから、サヤちゃんのように答えを思いつけなくても大丈夫です。
                       </P>
@@ -1258,161 +1153,65 @@ export default () => (
               ]}
             />
           </>
-        )
-      },
-      {
-        type: 'sideNote',
-        title: (
-          <>
-            余談: Yコンビネータや、コンピュータサイエンスと何の繋がりがあるの？
-          </>
         ),
-        preview: {
+        footer: {
           content: (
             <>
-              <P>
-                ここまで読んで、「パズルは何となく分かるけど、
-                <Highlight>
-                  これってYコンビネータや、コンピュータサイエンスと何の繋がりがあるの？
-                </Highlight>
-                」と思われた方も多いかもしれません。
-              </P>
-              <EmojiSeparator
-                emojis={['💻', '🤔', '💻']}
-                description={
+              <CardContent
+                children={
                   <>
-                    Yコンビネータやコンピュータサイエンスと
-                    <br />
-                    何の繋がりがあるの？
+                    <Hr />
+                    <P>
+                      <Emoji>👧🏻</Emoji> サヤちゃんが考えた弁当箱以外にも、
+                      <HighlightBold>
+                        以下の法則に当てはまる弁当箱であれば、どれでも 「
+                        <H args={{ name: 'minusOneFeature' }} />
+                        」を再現できます。
+                      </HighlightBold>
+                    </P>
+                    <R.Cbmn>
+                      この法則に当てはまる弁当箱であれば、
+                      <br />
+                      「<H args={{ name: 'minusOneFeature' }} />
+                      」を再現できる
+                    </R.Cbmn>
+                    <P>
+                      たとえば、以下のような弁当箱でも、「
+                      <H args={{ name: 'minusOneFeature' }} />
+                      」を再現することができます。
+                    </P>
+                    <R.Onyr>
+                      これも「
+                      <H args={{ name: 'minusOneFeature' }} />
+                      」を再現できる
+                    </R.Onyr>
                   </>
                 }
+                preview={{
+                  text: <>続きを読む</>,
+                  content: (
+                    <>
+                      <P>
+                        <Bold>ちなみに:</Bold> 「
+                        <H args={{ name: 'minusOneFeature' }} />
+                        」を再現できる弁当箱は、
+                        <HighlightBold>
+                          <Emoji>👧🏻</Emoji>{' '}
+                          サヤちゃんが考えた弁当箱以外にもあります。
+                        </HighlightBold>
+                        つまり、正解は他にもあるのです。
+                      </P>
+                      <P>
+                        気になる方は、↓の「続きを読む」を押してみてください。
+                        (読まなくても先に進めます！)
+                      </P>
+                    </>
+                  )
+                }}
               />
-              <P>
-                まず、Yコンビネータについては、次からはじまる上級編で解説します。少しネタバレになりますが、
-                <Highlight>
-                  Yコンビネータは「
-                  <Bold>とある特殊な弁当箱</Bold>
-                  」のことを指します。
-                </Highlight>
-                それがどういう意味かは、上級編のお楽しみです！
-              </P>
-              <EmojiSeparator
-                emojis={['❓', '🍱', '❓']}
-                description={
-                  <>
-                    Yコンビネータは、
-                    <br />「<Bold>とある特殊な弁当箱</Bold>
-                    」のことを指す
-                  </>
-                }
-              />
-              <P>
-                次に、コンピュータサイエンスとの繋がりは、
-                <Highlight>
-                  上級編をすべて終えたあとに詳しく説明します
-                </Highlight>
-                が、「<HighlightBold>いま気になる！</HighlightBold>
-                」という方は、↓の「コンピュータサイエンスとの繋がりについて読む」を押してください。「上級編が終わるまで待ちたい」という方は、読み飛ばしても大丈夫です。
-              </P>
             </>
-          ),
-          text: <>コンピュータサイエンスとの繋がりについて読む</>
-        },
-        content: (
-          <>
-            <Hr />
-            <WhatIsComputer />
-            <Hr />
-            <P>
-              では、ここで <CustomEmoji type="mathBox" /> 計算箱や{' '}
-              <Emoji>🍱</Emoji> 弁当箱の話に戻りましょう。
-            </P>
-            <P>
-              <Bold>
-                <CustomEmoji type="mathBox" />{' '}
-                計算箱も計算機(コンピュータ)である:
-              </Bold>{' '}
-              今まで見てきた
-              <Highlight>
-                計算箱も、簡単な計算ができますから、いちおう「計算機
-                (コンピュータ)」ではあるのです
-              </Highlight>
-              。足し算と引き算だけしかできませんが…
-            </P>
-            <EmojiSeparator
-              nodes={[
-                <Emoji>➕</Emoji>,
-                <CustomEmoji type="mathBox" />,
-                <Emoji>➖</Emoji>
-              ]}
-              description={
-                <>
-                  <CustomEmoji type="mathBox" /> 計算箱も計算機(コンピュータ)
-                </>
-              }
-            />
-            <P>
-              <Bold>
-                <Emoji>🍱</Emoji> 弁当箱も計算機(コンピュータ)かもしれない:
-              </Bold>{' '}
-              では、弁当箱はどうでしょう？ここまで見てきたところ、弁当箱は工夫することで、「1を足す」ことと「1を引く」ことができます。ということは、
-              <Highlight>弁当箱も「計算機(コンピュータ)」</Highlight>
-              なのかもしれません。
-            </P>
-            <EmojiSeparator
-              emojis={['❓', '🍱', '❓']}
-              description={
-                <>
-                  <Emoji>🍱</Emoji> 弁当箱も
-                  <br />
-                  計算機(コンピュータ)かもしれない
-                </>
-              }
-            />
-            <P>
-              ここで重要なポイントなのですが、
-              <Highlight>
-                実はこの弁当箱、今から80年以上も前に、
-                <Bold>とある研究の研究対象になっていた</Bold>のです。
-              </Highlight>
-              それは計算機にまつわる研究で、後のコンピュータサイエンスの発展に大きな影響を与えました。
-            </P>
-            <EmojiSeparator
-              emojis={['🧑🏻', '🍱', '👨🏻‍🦳']}
-              description={
-                <>
-                  弁当箱は、今から80年以上も前に
-                  <br />
-                  計算機にまつわる研究の研究対象になっていた
-                </>
-              }
-            />
-            <P>
-              <Bold>
-                これ以上のことは、上級編をすべて終えたときにお伝えします。
-              </Bold>
-              とりあえず今のところは、
-            </P>
-            <Ul>
-              <UlLi>
-                <Highlight>「コンピュータ＝計算機」であり、</Highlight>
-              </UlLi>
-              <UlLi>
-                <Highlight>
-                  弁当箱は昔、計算機にまつわる研究の対象となっていて、
-                </Highlight>
-              </UlLi>
-              <UlLi>
-                <Highlight>
-                  その研究が、後のコンピュータサイエンスの発展に大きな影響を与えた
-                </Highlight>
-              </UlLi>
-            </Ul>
-            <P>
-              ということだけ頭に入れておいてください！<Emoji>😉</Emoji>
-            </P>
-          </>
-        )
+          )
+        }
       },
       {
         title: <>中級はここまで！</>,
@@ -1551,6 +1350,170 @@ export default () => (
                 }
               ]}
             />
+            <NextLessonButton />
+          </>
+        )
+      },
+      {
+        type: 'sideNote',
+        title: (
+          <>
+            余談: Yコンビネータや、コンピュータサイエンスと何の繋がりがあるの？
+          </>
+        ),
+        preview: {
+          afterText: (
+            <>
+              <P>
+                「上級編が終わるまで説明はいいや」という方は、こちらのボタンから先に進んでください！
+              </P>
+              <NextLessonButton />
+            </>
+          ),
+          content: (
+            <>
+              <P>
+                ここまで読んで、「パズルは何となく分かるけど、
+                <Highlight>
+                  これってYコンビネータや、コンピュータサイエンスと何の繋がりがあるの？
+                </Highlight>
+                」と思われた方も多いかもしれません。
+              </P>
+              <EmojiSeparator
+                emojis={['💻', '🤔', '💻']}
+                description={
+                  <>
+                    Yコンビネータやコンピュータサイエンスと
+                    <br />
+                    何の繋がりがあるの？
+                  </>
+                }
+              />
+              <P>
+                まず、Yコンビネータについては、次からはじまる上級編で解説します。少しネタバレになりますが、
+                <Highlight>
+                  Yコンビネータは「
+                  <Bold>とある特殊な弁当箱</Bold>
+                  」のことを指します。
+                </Highlight>
+                それがどういう意味かは、上級編のお楽しみです！
+              </P>
+              <EmojiSeparator
+                emojis={['❓', '🍱', '❓']}
+                description={
+                  <>
+                    Yコンビネータは、
+                    <br />「<Bold>とある特殊な弁当箱</Bold>
+                    」のことを指す
+                  </>
+                }
+              />
+              <P>
+                次に、コンピュータサイエンスとの繋がりは、
+                <Highlight>
+                  上級編をすべて終えたあとに詳しく説明します
+                </Highlight>
+                が、「<HighlightBold>いま気になる！</HighlightBold>
+                」という方は、↓の「コンピュータサイエンスとの繋がりについて読む」を押してください。
+              </P>
+            </>
+          ),
+          text: <>コンピュータサイエンスとの繋がりについて読む</>
+        },
+        content: (
+          <>
+            <Hr />
+            <WhatIsComputer />
+            <Hr />
+            <P>
+              では、ここで <CustomEmoji type="mathBox" /> 計算箱や{' '}
+              <Emoji>🍱</Emoji> 弁当箱の話に戻りましょう。
+            </P>
+            <P>
+              <Bold>
+                <CustomEmoji type="mathBox" />{' '}
+                計算箱も計算機(コンピュータ)である:
+              </Bold>{' '}
+              今まで見てきた
+              <Highlight>
+                計算箱も、簡単な計算ができますから、いちおう「計算機
+                (コンピュータ)」ではあるのです
+              </Highlight>
+              。足し算と引き算だけしかできませんが…
+            </P>
+            <EmojiSeparator
+              nodes={[
+                <Emoji>➕</Emoji>,
+                <CustomEmoji type="mathBox" />,
+                <Emoji>➖</Emoji>
+              ]}
+              description={
+                <>
+                  <CustomEmoji type="mathBox" /> 計算箱も計算機(コンピュータ)
+                </>
+              }
+            />
+            <P>
+              <Bold>
+                <Emoji>🍱</Emoji> 弁当箱も計算機(コンピュータ)かもしれない:
+              </Bold>{' '}
+              では、弁当箱はどうでしょう？ここまで見てきたところ、弁当箱は工夫することで、「1を足す」ことと「1を引く」ことができます。ということは、
+              <Highlight>弁当箱も「計算機(コンピュータ)」</Highlight>
+              なのかもしれません。
+            </P>
+            <EmojiSeparator
+              emojis={['❓', '🍱', '❓']}
+              description={
+                <>
+                  <Emoji>🍱</Emoji> 弁当箱も
+                  <br />
+                  計算機(コンピュータ)かもしれない
+                </>
+              }
+            />
+            <P>
+              ここで重要なポイントなのですが、
+              <Highlight>
+                実はこの弁当箱、今から80年以上も前に、
+                <Bold>とある研究の研究対象になっていた</Bold>のです。
+              </Highlight>
+              それは計算機にまつわる研究で、後のコンピュータサイエンスの発展に大きな影響を与えました。
+            </P>
+            <EmojiSeparator
+              emojis={['🧑🏻', '🍱', '👨🏻‍🦳']}
+              description={
+                <>
+                  弁当箱は、今から80年以上も前に
+                  <br />
+                  計算機にまつわる研究の研究対象になっていた
+                </>
+              }
+            />
+            <P>
+              <Bold>
+                これ以上のことは、上級編をすべて終えたときにお伝えします。
+              </Bold>
+              とりあえず今のところは、
+            </P>
+            <Ul>
+              <UlLi>
+                <Highlight>「コンピュータ＝計算機」であり、</Highlight>
+              </UlLi>
+              <UlLi>
+                <Highlight>
+                  弁当箱は昔、計算機にまつわる研究の対象となっていて、
+                </Highlight>
+              </UlLi>
+              <UlLi>
+                <Highlight>
+                  その研究が、後のコンピュータサイエンスの発展に大きな影響を与えた
+                </Highlight>
+              </UlLi>
+            </Ul>
+            <P>
+              ということだけ頭に入れておいてください！<Emoji>😉</Emoji>{' '}
+              では、先に進みましょう！
+            </P>
             <NextLessonButton />
           </>
         )

@@ -73,7 +73,7 @@
         "func": {
           "arg": {
             "name": "a",
-            "highlightType": "default",
+            "highlightType": "initialHighlighted",
             "topLeftBadgeType": "none",
             "bottomRightBadgeType": "none",
             "type": "variable",
@@ -88,7 +88,7 @@
           "body": {
             "arg": {
               "name": "b",
-              "highlightType": "default",
+              "highlightType": "initialHighlighted",
               "topLeftBadgeType": "none",
               "bottomRightBadgeType": "none",
               "type": "variable",
@@ -101,7 +101,7 @@
             "body": {
               "arg": {
                 "name": "c",
-                "highlightType": "default",
+                "highlightType": "initialHighlighted",
                 "topLeftBadgeType": "none",
                 "bottomRightBadgeType": "none",
                 "type": "variable",
@@ -115,7 +115,7 @@
                 "arg": {
                   "arg": {
                     "name": "c",
-                    "highlightType": "default",
+                    "highlightType": "initialHighlighted",
                     "topLeftBadgeType": "none",
                     "bottomRightBadgeType": "none",
                     "type": "variable",
@@ -131,7 +131,7 @@
                   "func": {
                     "arg": {
                       "name": "b",
-                      "highlightType": "default",
+                      "highlightType": "initialHighlighted",
                       "topLeftBadgeType": "none",
                       "bottomRightBadgeType": "none",
                       "type": "variable",
@@ -145,7 +145,7 @@
                     },
                     "func": {
                       "name": "a",
-                      "highlightType": "default",
+                      "highlightType": "initialHighlighted",
                       "topLeftBadgeType": "none",
                       "bottomRightBadgeType": "none",
                       "type": "variable",
@@ -170,7 +170,7 @@
                 },
                 "func": {
                   "name": "b",
-                  "highlightType": "default",
+                  "highlightType": "initialHighlighted",
                   "topLeftBadgeType": "none",
                   "bottomRightBadgeType": "none",
                   "type": "variable",
@@ -194,7 +194,6 @@
             "maxNestedFunctionDepth": 2
           },
           "type": "function",
-          "meta": "plusOneEffect",
           "maxNestedFunctionDepth": 3
         },
         "state": "default",
@@ -211,7 +210,7 @@
   "hideControls": true,
   "explanationsVisibility": "hidden",
   "hidePriorities": false,
-  "hidePlayButton": false,
+  "hideRunButton": false,
   "hideBottomRightBadges": false,
   "skipToTheEnd": false,
   "hideFuncUnboundBadgeOnExplanation": false,

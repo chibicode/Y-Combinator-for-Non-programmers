@@ -7,7 +7,8 @@ import {
   Ul,
   UlLi,
   Bold,
-  Italic
+  Italic,
+  Hr
 } from 'src/components/ContentTags'
 import H from 'src/components/H'
 import BubbleQuotes from 'src/components/BubbleQuotes'
@@ -21,11 +22,11 @@ import Emoji from 'src/components/Emoji'
 import InlineBorder from 'src/components/InlineBorder'
 import * as R from 'src/components/Runners'
 import NextLessonButton from 'src/components/NextLessonButton'
+import CardContent from 'src/components/CardContent'
 import { TrueCaseExplanation, FalseCaseExplanation } from 'src/contents/11.en'
 
 export default () => (
   <EpisodeCardList
-    underConstruction
     cards={[
       {
         title: (
@@ -122,9 +123,9 @@ export default () => (
               Reproduce <H args={{ name: 'conditionFeature' }} />…
             </R.Rhoa>
             <ExpressionRunnerSeparator />
-            <R.Sdta>
+            <R.Vlhb>
               <Emoji>👧🏻</Emoji> Using a lunchbox!
-            </R.Sdta>
+            </R.Vlhb>
             <BubbleQuotes
               quotes={[
                 {
@@ -214,7 +215,7 @@ export default () => (
                       </R.Elyq>
                       <P>
                         Let’s try running it!{' '}
-                        <H args={{ name: 'pressFastForward', girl: true }} />
+                        <H args={{ name: 'pressRun', girl: true }} />
                       </P>
                     </>
                   )
@@ -373,7 +374,7 @@ export default () => (
                       </R.Ooya>
                       <P>
                         Let’s try running it!{' '}
-                        <H args={{ name: 'pressFastForward', girl: true }} />
+                        <H args={{ name: 'pressRun', girl: true }} />
                       </P>
                     </>
                   )
@@ -479,11 +480,11 @@ export default () => (
               Reproduce <H args={{ name: 'conditionFeature' }} />…
             </R.Rhoa>
             <ExpressionRunnerSeparator />
-            <R.Sdta>
+            <R.Vlhb>
               <Emoji>👧🏻</Emoji> Using a lunchbox!
               <br />
               <Bold>Question:</Bold> Is this the correct answer?
-            </R.Sdta>
+            </R.Vlhb>
             <BubbleQuotes
               quotes={[
                 {
@@ -625,9 +626,9 @@ export default () => (
                 }
               ]}
             />
-            <R.Sdta>
+            <R.Vlhb>
               <Emoji>👧🏻</Emoji> In Saya’s lunchbox…
-            </R.Sdta>
+            </R.Vlhb>
             <ExpressionRunnerSeparator />
             <R.Jbqw>
               Use <EmojiNumber number={2} /> <EmojiNumber number={1} />{' '}
@@ -714,7 +715,7 @@ export default () => (
                     <>
                       <P>
                         Let’s run it!{' '}
-                        <H args={{ name: 'pressFastForward', girl: true }} />
+                        <H args={{ name: 'pressRun', girl: true }} />
                       </P>
                     </>
                   )
@@ -732,7 +733,7 @@ export default () => (
                         The result is a lunchbox that can be converted to{' '}
                         <EmojiNumber number={1} />!
                       </P>
-                      <R.Oclg>
+                      <R.Ooya>
                         <H
                           args={{
                             name: 'canBeConvertedCaption',
@@ -740,7 +741,7 @@ export default () => (
                             number: 1
                           }}
                         />
-                      </R.Oclg>
+                      </R.Ooya>
                       <P>
                         Because the result is <EmojiNumber number={1} />, it’s a
                         success! <Emoji>🎉</Emoji>
@@ -793,11 +794,11 @@ export default () => (
               <H args={{ name: 'conditionFeature', capitalize: true }} />…
             </R.Rhoa>
             <ExpressionRunnerSeparator />
-            <R.Sdta>
+            <R.Vlhb>
               …can be reproduced by
               <br />
               <Emoji>👧🏻</Emoji> Saya’s lunchbox!
-            </R.Sdta>
+            </R.Vlhb>
             <BubbleQuotes
               quotes={[
                 {
@@ -808,35 +809,6 @@ export default () => (
                     </>
                   )
                 },
-                {
-                  type: 'dog',
-                  children: (
-                    <>
-                      <P>
-                        <Bold>By the way:</Bold> There are{' '}
-                        <Italic>other</Italic> correct answers as well.
-                      </P>
-                      <P>
-                        <Highlight>
-                          Any lunchboxes that have the following pattern can be
-                          used to reproduce{' '}
-                          <H args={{ name: 'conditionFeature' }} />.
-                        </Highlight>
-                      </P>
-                    </>
-                  )
-                }
-              ]}
-            />
-            <R.Fton>
-              Any lunchboxes that have the following
-              <br />
-              pattern can be used to reproduce
-              <br />
-              <H args={{ name: 'conditionFeature' }} />.
-            </R.Fton>
-            <BubbleQuotes
-              quotes={[
                 {
                   type: 'dog',
                   children: (
@@ -880,7 +852,59 @@ export default () => (
               }
             />
           </>
-        )
+        ),
+        footer: {
+          content: (
+            <>
+              <CardContent
+                children={
+                  <>
+                    <Hr />
+                    <P>
+                      <Highlight>
+                        Any lunchbox that has the following pattern can be used
+                        to reproduce <H args={{ name: 'conditionFeature' }} />.
+                      </Highlight>
+                    </P>
+                    <R.Fton>
+                      If it has this pattern, it can reproduce
+                      <br />
+                      <H args={{ name: 'conditionFeature' }} />
+                    </R.Fton>
+                    <P>
+                      Here’s another example that can reproduce{' '}
+                      <H args={{ name: 'conditionFeature' }} />:
+                    </P>
+                    <R.Imhz>
+                      This can reproduce{' '}
+                      <H args={{ name: 'conditionFeature' }} />
+                    </R.Imhz>
+                  </>
+                }
+                preview={{
+                  text: <>Continue reading</>,
+                  content: (
+                    <>
+                      <P>
+                        <Bold>Note:</Bold>{' '}
+                        <Highlight>
+                          There are other lunchboxes that can reproduce{' '}
+                          <H args={{ name: 'conditionFeature' }} />.
+                        </Highlight>{' '}
+                        <Emoji>👧🏻</Emoji> Saya’s lunchbox is not the only
+                        solution.
+                      </P>
+                      <P>
+                        If you’re curious, press “Continue reading” below! (It’s
+                        optional.)
+                      </P>
+                    </>
+                  )
+                }}
+              />
+            </>
+          )
+        }
       },
       {
         title: (
