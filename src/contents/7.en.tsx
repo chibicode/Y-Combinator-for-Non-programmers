@@ -249,12 +249,51 @@ export default () => (
                         />
                         .
                       </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Dvfg></R.Dvfg>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'dog',
+                  children: (
+                    <>
                       <P>
-                        <Bold>Important:</Bold>{' '}
-                        <Italic>
-                          Each <CustomEmoji type="questionFoodGrey" /> icon
-                          represents some food item.
-                        </Italic>
+                        <Bold>We learned on the last page that:</Bold>{' '}
+                        <Highlight>
+                          I can convert this lunchbox to{' '}
+                          <EmojiNumber number={0} />.
+                        </Highlight>
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Hkbs>
+              <H
+                args={{ name: 'canBeConvertedCaption', letter: 'd', number: 0 }}
+              />
+            </R.Hkbs>
+            <ExpressionRunnerSeparator />
+            <R.Jwah />
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>
+                        <Bold>Next:</Bold>{' '}
+                        <Highlight>We combine it with this lunchbox.</Highlight>
+                      </P>
+                      <P>
+                        Each <CustomEmoji type="questionFoodGrey" /> icon{' '}
+                        <Italic>represents some food item</Italic>, but we’ll
+                        talk about that later.
                       </P>
                     </>
                   )
@@ -262,81 +301,31 @@ export default () => (
               ]}
             />
             <R.Envj>
-              Each <CustomEmoji type="questionFoodGrey" /> icon represents some
+              Combine with this lunchbox.
+              <br />
+              Each <CustomEmoji type="questionFoodGrey" /> icon represents a
               food item
             </R.Envj>
             <BubbleQuotes
               quotes={[
                 {
-                  type: 'thinking',
-                  children: (
-                    <>
-                      <P>It looks pretty complicated…</P>
-                      <P>
-                        <Bold>So:</Bold> Which food item goes into each{' '}
-                        <CustomEmoji type="questionFoodGrey" /> icon?
-                      </P>
-                    </>
-                  )
-                },
-                {
                   type: 'dog',
                   children: (
                     <>
-                      <P>
-                        <Bold>That’s what you’ll need to figure out!</Bold>
-                      </P>
-                      <P>
-                        <Highlight>
-                          This question is about figuring out which food item
-                          goes into each <CustomEmoji type="questionFoodGrey" />{' '}
-                          icon.
-                        </Highlight>
-                      </P>
+                      <P>If you combine them, it’ll look like this:</P>
                     </>
                   )
                 }
               ]}
             />
-            <R.Envj>
-              You need to figure out which food item
-              <br />
-              goes into each <CustomEmoji type="questionFoodGrey" /> icon!{' '}
-              <Emoji>🐶</Emoji>
-            </R.Envj>
+            <R.Stda>After combining the two lunchboxes</R.Stda>
             <BubbleQuotes
               quotes={[
-                {
-                  type: 'thinking',
-                  children: (
-                    <>
-                      <P>Hmm… ok, but how can we figure that out?</P>
-                    </>
-                  )
-                },
                 {
                   type: 'dog',
                   children: (
                     <>
-                      <P>
-                        <Bold>I’m not done explaining yet!</Bold>
-                      </P>
-                      <P>
-                        <Highlight>
-                          I’ll give you more information now, and your goal is
-                          to find out what goes into each{' '}
-                          <CustomEmoji type="questionFoodGrey" /> icon based on
-                          that information.
-                        </Highlight>
-                      </P>
-                    </>
-                  )
-                },
-                {
-                  type: 'thinking',
-                  children: (
-                    <>
-                      <P>Okay, keep explaining then!</P>
+                      <P>Now, let me tell you the question!</P>
                     </>
                   )
                 }
