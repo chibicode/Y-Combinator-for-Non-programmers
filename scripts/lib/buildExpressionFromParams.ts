@@ -138,15 +138,13 @@ export default function buildExpressionFromParams(
           'initialHighlighted'
         ),
         body: buildExpressionFromParams(expressionParams.body),
-        type: 'function',
-        meta: expressionParams.meta
+        type: 'function'
       }
     } else {
       return {
         arg: buildVariableExpression(expressionParams.arg, false, 'default'),
         body: buildExpressionFromParams(expressionParams.body),
-        type: 'function',
-        meta: expressionParams.meta
+        type: 'function'
       }
     }
   } else if (isVariableShorthandNumberParams(expressionParams)) {

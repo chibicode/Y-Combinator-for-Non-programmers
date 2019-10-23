@@ -9,13 +9,6 @@ const config = {
       scripts: path.resolve(__dirname, 'scripts')
     })
 
-    config.module.rules.push({
-      test: /\.url.svg$/,
-      use: {
-        loader: 'url-loader'
-      }
-    })
-
     return config
   },
   env: {

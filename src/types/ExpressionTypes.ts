@@ -287,7 +287,6 @@ export interface FunctionExpression {
   readonly type: 'function'
   readonly arg: VariableExpression
   readonly body: Expression
-  readonly meta?: 'plusOneEffect' | 'minusOneEffect'
   readonly maxNestedFunctionDepth?: number
 }
 

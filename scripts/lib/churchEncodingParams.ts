@@ -70,8 +70,7 @@ export const numberParamsHighlightNonNumber = (
 export const succParams = (
   a: VariableNames | HighlightedVariableExpressionParams,
   b: VariableNames | HighlightedVariableExpressionParams,
-  c: VariableNames | HighlightedVariableExpressionParams,
-  specialEffect?: true
+  c: VariableNames | HighlightedVariableExpressionParams
 ): FunctionExpressionParams => {
   return {
     arg: a,
@@ -81,8 +80,7 @@ export const succParams = (
         arg: c,
         body: [b, [a, b, c]]
       }
-    },
-    meta: specialEffect ? 'plusOneEffect' : undefined
+    }
   }
 }
 
@@ -113,11 +111,9 @@ export const predParams = (
   c: VariableNames | HighlightedVariableExpressionParams,
   d: VariableNames | HighlightedVariableExpressionParams,
   e: VariableNames | HighlightedVariableExpressionParams,
-  f: VariableNames | HighlightedVariableExpressionParams,
-  specialEffect?: boolean
+  f: VariableNames | HighlightedVariableExpressionParams
 ): FunctionExpressionParams => {
   return {
-    meta: specialEffect ? 'minusOneEffect' : undefined,
     arg: a,
     body: {
       arg: b,
