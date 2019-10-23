@@ -269,8 +269,10 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        この弁当箱は、
-                        <EmojiNumber number={1} /> に変換できます！
+                        <HighlightBold>
+                          この弁当箱は、
+                          <EmojiNumber number={1} /> に変換できます！
+                        </HighlightBold>
                       </P>
                     </>
                   )
@@ -324,8 +326,31 @@ export default () => (
         title: <>少し掘り下げてみよう</>,
         content: (
           <>
+            <P>
+              なんと、悪魔が出した問題を、サヤちゃんがいきなり問いてしまいました！
+            </P>
+            <EmojiSeparator
+              emojis={['😮', '👧🏻', '😮']}
+              description={<>サヤちゃんが悪魔の問題を問いた！</>}
+            />
             <BubbleQuotes
               quotes={[
+                {
+                  type: 'surprised',
+                  children: (
+                    <>
+                      <P>サヤちゃん、よく分かったなあ…！すごい！</P>
+                    </>
+                  )
+                },
+                {
+                  type: 'saya',
+                  children: (
+                    <>
+                      <P>えへへ、ありがとう！</P>
+                    </>
+                  )
+                },
                 {
                   type: 'happy',
                   children: (
@@ -340,9 +365,9 @@ export default () => (
                     <>
                       <P>
                         そうですね。しかしその前に、
-                        <Highlight>
+                        <HighlightBold>
                           ひとつだけ掘り下げたいことがあります
-                        </Highlight>
+                        </HighlightBold>
                         。少しの間、辛抱してお聞きください！
                       </P>
                     </>
@@ -361,7 +386,7 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        はい。まず、ここまでをまとめると、下のように{' '}
+                        はい。まず復習ですが、下のように{' '}
                         <Highlight>
                           <EmojiNumber number={0} /> に変換できる弁当箱は、
                         </Highlight>
@@ -389,7 +414,9 @@ export default () => (
               ]}
             />
             <R.Cpim>
-              <Emoji>👧🏻</Emoji> サヤちゃんの弁当箱と合体させて実行すると…
+              <Emoji>👧🏻</Emoji> サヤちゃんの弁当箱と
+              <br />
+              合体させて実行すると…
             </R.Cpim>
             <ExpressionRunnerSeparator />
             <R.Jzwg>
@@ -443,7 +470,7 @@ export default () => (
       {
         title: (
           <>
-            <EmojiNumber number={1} /> と組み合わせた場合は？
+            <EmojiNumber number={1} /> と合体させた場合は？
           </>
         ),
         content: (
@@ -458,8 +485,10 @@ export default () => (
                       <P>
                         <Highlight>
                           <Emoji>👧🏻</Emoji> サヤちゃんの弁当箱を、
-                          <EmojiNumber number={1} />{' '}
-                          に変換できる弁当箱と組み合わせて
+                          <Bold>
+                            <EmojiNumber number={1} /> に変換できる弁当箱
+                          </Bold>
+                          と合体させて
                           <H args={{ name: 'run' }} />{' '}
                           すると、結果はどうなるでしょう？
                         </Highlight>
@@ -472,7 +501,7 @@ export default () => (
             <R.Rqer>
               <EmojiNumber number={1} /> に変換できる弁当箱と、
               <br />
-              <Emoji>👧🏻</Emoji> サヤちゃんの弁当箱を組み合わせて…
+              <Emoji>👧🏻</Emoji> サヤちゃんの弁当箱を合体させて…
             </R.Rqer>
             <ExpressionRunnerSeparator />
             <ExpressionRunnerCaptionOnly>
@@ -587,7 +616,10 @@ export default () => (
                       <P>
                         では、
                         <H args={{ name: 'run' }} />{' '}
-                        してみましょう！今回は、途中で止まりません。
+                        してみましょう！今回は、途中で止まらず、最後まで進みます。
+                      </P>
+                      <P>
+                        実行が終わるのを待てない方は、
                         <H args={{ name: 'runSkippableToTheEnd' }} />
                       </P>
                     </>
@@ -604,7 +636,9 @@ export default () => (
                     <>
                       <P>
                         最後に残ったこちらの弁当箱は、
-                        <EmojiNumber number={2} /> に変換できる弁当箱です！
+                        <Highlight>
+                          <EmojiNumber number={2} /> に変換できる弁当箱です！
+                        </Highlight>
                       </P>
                     </>
                   )
@@ -644,7 +678,7 @@ export default () => (
             <R.Rqer>
               <EmojiNumber number={1} /> に変換できる弁当箱と、
               <br />
-              <Emoji>👧🏻</Emoji> サヤちゃんの弁当箱を組み合わせて…
+              <Emoji>👧🏻</Emoji> サヤちゃんの弁当箱を合体させて…
             </R.Rqer>
             <ExpressionRunnerSeparator />
             <R.Cawl>
@@ -661,8 +695,11 @@ export default () => (
                       <P>
                         つまり、<Emoji>👧🏻</Emoji>{' '}
                         サヤちゃんの弁当箱を使うことで、
-                        <EmojiNumber number={1} /> が <EmojiNumber number={2} />{' '}
-                        になった、というわけですね。
+                        <Highlight>
+                          <EmojiNumber number={1} /> が{' '}
+                          <EmojiNumber number={2} /> になった
+                        </Highlight>
+                        、というわけですね。
                       </P>
                     </>
                   )
@@ -686,7 +723,11 @@ export default () => (
         )
       },
       {
-        title: <>1を足すことができる</>,
+        title: (
+          <>
+            <EmojiNumber number={1} /> を足すことができる
+          </>
+        ),
         content: (
           <>
             <BubbleQuotes
@@ -825,7 +866,9 @@ export default () => (
                 <>
                   <CustomEmoji type="blankNumber" /> が{' '}
                   <CustomEmoji type="blankNumber" /> <Emoji>➕</Emoji>{' '}
-                  <EmojiNumber number={1} /> になる
+                  <EmojiNumber number={1} /> になるから
+                  <br />
+                  <HighlightBold>1を足すことができる</HighlightBold>
                 </>
               }
             />
@@ -866,7 +909,8 @@ export default () => (
               ]}
             />
             <R.Rviy>
-              計算箱は、「
+              計算箱は、
+              <br />「
               <H args={{ name: 'plusOneFeature' }} />
               」を使うことで…
             </R.Rviy>
@@ -964,6 +1008,48 @@ export default () => (
                 </>
               }
             />
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'thinking',
+                  children: (
+                    <>
+                      <P>なるほど…</P>
+                      <Ul>
+                        <UlLi>
+                          <Highlight>
+                            計算箱にとっての <CustomEmoji type="plusOne" /> は、
+                          </Highlight>
+                        </UlLi>
+                        <UlLi>
+                          <Highlight>
+                            弁当箱にとっての <Emoji>👧🏻</Emoji>{' '}
+                            サヤちゃんの弁当箱
+                          </Highlight>
+                          だということか。
+                        </UlLi>
+                      </Ul>
+                      <P>
+                        これが「
+                        <HighlightBold>
+                          計算箱を弁当箱で再現できる
+                        </HighlightBold>
+                        」ということなんだね。
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Rviy>
+              計算箱にとっての <CustomEmoji type="plusOne" /> は、
+            </R.Rviy>
+            <ExpressionRunnerSeparator />
+            <R.Eweo>
+              弁当箱にとっての
+              <br />
+              <Emoji>👧🏻</Emoji> サヤちゃんの弁当箱
+            </R.Eweo>
           </>
         )
       },
@@ -1348,8 +1434,12 @@ export default () => (
                 }
               ]}
             />
+            <R.Envj>さっきの問題の…</R.Envj>
+            <ExpressionRunnerSeparator />
             <R.Vcqp>
-              さっきの答えの弁当箱。普通はこんなの、
+              答えの弁当箱。<Emoji>👧🏻</Emoji> サヤちゃんはすぐに
+              <br />
+              思いついたけど、普通はこんなの、
               <br />
               とっさに思いつかないよ！<Emoji>😢</Emoji>
             </R.Vcqp>

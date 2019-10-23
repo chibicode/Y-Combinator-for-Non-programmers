@@ -198,9 +198,9 @@ export default () => (
                       </P>
                       <P>
                         <Highlight>
-                          We’ll <H args={{ name: 'run' }} /> this, and see if
-                          the result is a lunchbox that can be converted to{' '}
-                          <EmojiNumber number={1} />.
+                          We’ll <H args={{ name: 'run', lowerCase: true }} />{' '}
+                          this, and see if the result is a lunchbox that can be
+                          converted to <EmojiNumber number={1} />.
                         </Highlight>
                       </P>
                     </>
@@ -213,12 +213,10 @@ export default () => (
             </R.Plde>
             <ExpressionRunnerSeparator />
             <ExpressionRunnerCaptionOnly>
-              If it becomes a lunchbox
+              If it becomes a lunchbox that can be
               <br />
-              that can be converted to <EmojiNumber
-                number={1}
-                size="mdlg"
-              />, <Highlight>success</Highlight>. <Emoji>🎉</Emoji>
+              converted to <EmojiNumber number={1} size="mdlg" />,{' '}
+              <Highlight>success</Highlight>. <Emoji>🎉</Emoji>
               <br />
               Otherwise, <Highlight>failure</Highlight> <Emoji>😭</Emoji>
             </ExpressionRunnerCaptionOnly>
@@ -342,8 +340,34 @@ export default () => (
         title: <>Let’s dive in a little deeper</>,
         content: (
           <>
+            <P>
+              <Bold>Surprise:</Bold> Saya just solved the devil’s difficult
+              problem!
+            </P>
+            <EmojiSeparator
+              emojis={['😮', '👧🏻', '😮']}
+              description={<>Saya solved the devil’s problem!</>}
+            />
             <BubbleQuotes
               quotes={[
+                {
+                  type: 'surprised',
+                  children: (
+                    <>
+                      <P>
+                        Wow, Saya, you’re awesome! Thank you for solving it!
+                      </P>
+                    </>
+                  )
+                },
+                {
+                  type: 'saya',
+                  children: (
+                    <>
+                      <P>Hehe, thanks!</P>
+                    </>
+                  )
+                },
                 {
                   type: 'happy',
                   children: (
@@ -612,8 +636,11 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        Let’s <H args={{ name: 'run' }} /> it! We’ll continue
-                        running until the end.{' '}
+                        Let’s <H args={{ name: 'run' }} /> it! This time, we’ll
+                        continue running until the end.{' '}
+                      </P>
+                      <P>
+                        If you can’t wait,{' '}
                         <H args={{ name: 'runSkippableToTheEnd' }} />
                       </P>
                     </>
@@ -1018,6 +1045,44 @@ export default () => (
                 </>
               }
             />
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'thinking',
+                  children: (
+                    <>
+                      <P>I see…, so:</P>
+                      <Ul>
+                        <UlLi>
+                          <Highlight>
+                            In a mathbox, we use <CustomEmoji type="plusOne" />,
+                            and…
+                          </Highlight>
+                        </UlLi>
+                        <UlLi>
+                          <Highlight>
+                            In a lunchbox, we use <Emoji>👧🏻</Emoji> Saya’s
+                            lunchbox.
+                          </Highlight>
+                        </UlLi>
+                      </Ul>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Rviy>
+              In a mathbox, we use <CustomEmoji type="plusOne" />
+            </R.Rviy>
+            <ExpressionRunnerSeparator />
+            <R.Eweo>
+              In a lunchbox, we use
+              <br />
+              <Emoji>👧🏻</Emoji> Saya’s lunchbox to{' '}
+              <HighlightBold>reproduce</HighlightBold>
+              <br />
+              <H args={{ name: 'plusOneFeature' }} />.
+            </R.Eweo>
           </>
         )
       },
@@ -1408,10 +1473,14 @@ export default () => (
                 }
               ]}
             />
+            <R.Envj>The previous problem:</R.Envj>
+            <ExpressionRunnerSeparator />
             <R.Vcqp>
+              <Emoji>😢</Emoji>
+              <br />
               There’s no way we could’ve come up with
               <br />
-              this answer!
+              this answer as quickly as <Emoji>👧🏻</Emoji> Saya did!
             </R.Vcqp>
             <BubbleQuotes
               quotes={[
@@ -1420,13 +1489,15 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        <Bold>Please don’t worry.</Bold> In fact, only a super
+                        <Bold>Please don’t worry!</Bold> In fact, only a super
                         genius would be able to come up with an answer for this
                         question.
                       </P>
                       <P>
-                        And you don’t need to be a super genius to learn about
-                        computer science or Y combinator.
+                        <Highlight>
+                          And you don’t need to be a super genius to learn about
+                          computer science or Y combinator.
+                        </Highlight>
                       </P>
                     </>
                   )

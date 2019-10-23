@@ -1252,7 +1252,7 @@ export default () => (
               <Highlight>
                 <EmojiNumber number={1} /> に変換できる弁当箱
               </Highlight>
-              と組み合わせた場合、
+              と合体させた場合、
             </P>
             <R.Cmla>
               <H
