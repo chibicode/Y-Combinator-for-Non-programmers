@@ -1,0 +1,8 @@
+#!/bin/sh
+
+rg -N -o "export const \w+" scripts/lib/initialExpressionContainers.ts | while read line ; do
+  CONTAINER="$(cut -d' ' -f3 <<<$line)"
+  if ! [[ $(rg -i "initialExpressionContainers.${CONTAINER}" scripts/lib/runnerConfigs.ts) ]]; then
+    echo "${CONTAINER}"
+  fi
+done
