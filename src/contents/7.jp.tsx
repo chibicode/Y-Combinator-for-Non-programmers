@@ -569,7 +569,7 @@ export default () => (
                 }
               ]}
             />
-            <R.Whrn>こちらの弁当箱を実行して…</R.Whrn>
+            <R.Nuco>こちらの弁当箱を実行して…</R.Nuco>
             <ExpressionRunnerSeparator />
             <ExpressionRunnerCaptionOnly>
               <EmojiNumber number={1} size="mdlg" /> に変換できる

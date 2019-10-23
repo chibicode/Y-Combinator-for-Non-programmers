@@ -1117,7 +1117,7 @@ export const fzpz: ExpressionRunnerShorthandConfig = {
 
 export const whrn: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
-  initialExpressionContainer: initialExpressionContainers.ipgy,
+  initialExpressionContainer: initialExpressionContainers.kwqc,
   showPriorities: true
 }
 
@@ -1379,7 +1379,7 @@ export const bgxi: ExpressionRunnerShorthandConfig = {
 
 export const qrfw: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
-  initialExpressionContainer: initialExpressionContainers.uzzl,
+  initialExpressionContainer: initialExpressionContainers.aqvq,
   showPriorities: true
 }
 

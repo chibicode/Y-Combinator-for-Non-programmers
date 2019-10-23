@@ -897,20 +897,6 @@ export const mzms = initializeExpressionContainer([
   numberParams('d', 'e', 0)
 ])
 
-export const ipgy = initializeExpressionContainer([
-  {
-    arg: 'a',
-    body: {
-      arg: 'b',
-      body: {
-        arg: 'c',
-        body: ['b', ['a', 'b', 'b']]
-      }
-    }
-  },
-  numberParams('d', 'e', 0)
-])
-
 export const ktus = initializeExpressionContainer({
   arg: 'a',
   body: {
@@ -1015,8 +1001,6 @@ export const utur = initializeExpressionContainer([
 export const abbh = initializeExpressionContainer(
   numberParamsHighlightNonNumber('b', 'c', 1)
 )
-
-export const uzzl = initializeExpressionContainer(succParams('a', 'b', 'c'))
 
 export const uqth = initializeExpressionContainer([
   succParams('a', 'b', 'c'),

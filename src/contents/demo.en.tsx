@@ -243,7 +243,7 @@ const DemoCardList = () => (
         ),
         content: (
           <>
-            <R.Spga>
+            <R.Ooya>
               <H
                 args={{
                   name: 'canBeConvertedCaption',
@@ -251,7 +251,7 @@ const DemoCardList = () => (
                   number: 2
                 }}
               />
-            </R.Spga>
+            </R.Ooya>
             <Hr />
             <R.Nlbn />
             <Hr />

@@ -275,9 +275,9 @@ export default () => (
                 }
               ]}
             />
-            <R.Qrfw>
+            <R.Vcqp>
               <Emoji>👧🏻</Emoji> Saya’s Lunchbox
-            </R.Qrfw>
+            </R.Vcqp>
             <BubbleQuotes
               quotes={[
                 {
@@ -563,7 +563,7 @@ export default () => (
                         Ok, so let me combine this lunchbox that can be
                         converted to <EmojiNumber number={2} />…
                       </P>
-                      <R.Spga>
+                      <R.Ooya>
                         <H
                           args={{
                             name: 'canBeConvertedCaption',
@@ -571,11 +571,11 @@ export default () => (
                             number: 2
                           }}
                         />
-                      </R.Spga>
+                      </R.Ooya>
                       <P>With the lunchbox I came up with earlier!</P>
-                      <R.Qrfw>
+                      <R.Vcqp>
                         <Emoji>👧🏻</Emoji> Saya’s lunchbox
-                      </R.Qrfw>
+                      </R.Vcqp>
                       <P>
                         We want the result to be <EmojiNumber number={3} />,
                         right?
@@ -1072,12 +1072,12 @@ export default () => (
             </P>
             <R.Bhpw>Instead of this…</R.Bhpw>
             <ExpressionRunnerSeparator />
-            <R.Qrfw>
+            <R.Vcqp>
               Use a lunchbox that has
               <br />
               <H args={{ name: 'plusOneEffect' }} />
               <br />(<Emoji>👧🏻</Emoji> Saya’s lunchbox)
-            </R.Qrfw>
+            </R.Vcqp>
             <P>
               <Bold>Step 3:</Bold> If you combine them and then{' '}
               <H args={{ name: 'runAndConvertToMathbox', lowerCase: true }} />…
@@ -1274,11 +1274,11 @@ export default () => (
                 }
               ]}
             />
-            <R.Qrfw>
+            <R.Vcqp>
               There’s no way we could’ve come up with
               <br />
               this answer!
-            </R.Qrfw>
+            </R.Vcqp>
             <BubbleQuotes
               quotes={[
                 {

@@ -557,7 +557,7 @@ export default () => (
                         今回は、こちらの <EmojiNumber number={1} />{' '}
                         に変換できる弁当箱を使ってみます！
                       </P>
-                      <R.Spga>
+                      <R.Ooya>
                         <H
                           args={{
                             name: 'canBeConvertedCaption',
@@ -565,7 +565,7 @@ export default () => (
                             number: 1
                           }}
                         />
-                      </R.Spga>
+                      </R.Ooya>
                       <P>
                         これを <Emoji>👧🏻</Emoji>{' '}
                         サヤちゃんの弁当箱と合体させてみます。
@@ -1344,11 +1344,11 @@ export default () => (
                 }
               ]}
             />
-            <R.Qrfw>
+            <R.Vcqp>
               さっきの答えの弁当箱。普通はこんなの、
               <br />
               とっさに思いつかないよ！<Emoji>😢</Emoji>
-            </R.Qrfw>
+            </R.Vcqp>
             <BubbleQuotes
               quotes={[
                 {

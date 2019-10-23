@@ -605,9 +605,9 @@ export default () => (
                 }
               ]}
             />
-            <R.Whrn>
+            <R.Nuco>
               We’ll <H args={{ name: 'run' }} /> this lunchbox, and…
-            </R.Whrn>
+            </R.Nuco>
             <ExpressionRunnerSeparator />
             <ExpressionRunnerCaptionOnly>
               If it becomes a lunchbox that can be
