@@ -1,0 +1,11 @@
+#!/bin/sh
+
+for f in src/lib/runners/*.json
+do
+  RUNNER="$(cut -d'/' -f4 <<<$f)"
+  RUNNER="$(cut -d'.' -f1 <<<$RUNNER)"
+  if ! [[ $(rg -i "<R.${RUNNER}") ]]; then
+    echo "Removing $RUNNER"
+    remove_runner $RUNNER
+  fi
+done
