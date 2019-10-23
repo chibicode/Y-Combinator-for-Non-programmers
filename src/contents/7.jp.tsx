@@ -370,11 +370,11 @@ export default () => (
               ある法則に基づいて料理を入れ、
             </R.Stda>
             <ExpressionRunnerSeparator />
-            <R.Rnug>
+            <R.Jzwg>
               <H args={{ name: 'run' }} /> すると、
               <br />
               <EmojiNumber number={1} /> に変換できる弁当箱になる
-            </R.Rnug>
+            </R.Jzwg>
             <BubbleQuotes
               quotes={[
                 {
