@@ -17,9 +17,7 @@ import LetterDSvg from 'src/components/CustomEmoji/LetterDSvg'
 import LetterESvg from 'src/components/CustomEmoji/LetterESvg'
 import LetterFSvg from 'src/components/CustomEmoji/LetterFSvg'
 import MathBoxSvg from 'src/components/CustomEmoji/MathBoxSvg'
-import MinusOnePinkSvg from 'src/components/CustomEmoji/MinusOnePinkSvg'
 import MinusOneSvg from 'src/components/CustomEmoji/MinusOneSvg'
-import PlusOneOrangeSvg from 'src/components/CustomEmoji/PlusOneOrangeSvg'
 import PlusOneSvg from 'src/components/CustomEmoji/PlusOneSvg'
 import QuestionFoodGreySvg from 'src/components/CustomEmoji/QuestionFoodGreySvg'
 import SingleArrowSvg from 'src/components/CustomEmoji/SingleArrowSvg'
@@ -41,8 +39,6 @@ export const customEmojiToComponent = {
   questionFoodGrey: QuestionFoodGreySvg,
   twenty: TwentySvg,
   twentyFour: TwentyFourSvg,
-  plusOneOrange: PlusOneOrangeSvg,
-  minusOnePink: MinusOnePinkSvg,
   doubleArrow: DoubleArrowSvg,
   C: LetterCSvg,
   D: LetterDSvg,

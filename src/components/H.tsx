@@ -137,7 +137,6 @@ interface HProps {
     | { name: 'undoConvertToMathbox' }
     | { name: 'doneConvertToMathbox' }
     | { name: 'canBeConverted' }
-    | { name: 'plusOneEffect'; capitalize?: true }
     | { name: 'plusOneFeature'; capitalize?: true }
     | { name: 'minusOneFeature'; capitalize?: true; addNewline?: true }
     | { name: 'repeatFeature'; capitalize?: true; addNewline?: true }
@@ -147,7 +146,6 @@ interface HProps {
         addNewline?: true
         hideIcon?: true
       }
-    | { name: 'minusOneEffect'; capitalize?: true }
     | { name: 'startWithTwoCaption' }
     | { name: 'startWithLeftMostOneCaption' }
     | { name: 'convertiblePatternCaption'; skipFirst?: true }
@@ -1305,40 +1303,6 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
       return <>Lunchbox that can be converted to</>
     } else {
       return <>に変換できる弁当箱</>
-    }
-  }
-  if (args.name === 'plusOneEffect') {
-    if (locale === 'en') {
-      return (
-        <>
-          {args.capitalize ? 'T' : 't'}he <Bold>“Plus 1”</Bold> effect{' '}
-          <CustomEmoji type="plusOneOrange" />
-        </>
-      )
-    } else {
-      return (
-        <>
-          「<HighlightBold>1を足す効果</HighlightBold>{' '}
-          <CustomEmoji type="plusOneOrange" />」
-        </>
-      )
-    }
-  }
-  if (args.name === 'minusOneEffect') {
-    if (locale === 'en') {
-      return (
-        <>
-          {args.capitalize ? 'T' : 't'}he <Bold>Minus 1”</Bold> effect{' '}
-          <CustomEmoji type="minusOnePink" />
-        </>
-      )
-    } else {
-      return (
-        <>
-          「<HighlightBold>1を引く効果</HighlightBold>{' '}
-          <CustomEmoji type="minusOnePink" />」
-        </>
-      )
     }
   }
   if (args.name === 'startWithTwoCaption') {
