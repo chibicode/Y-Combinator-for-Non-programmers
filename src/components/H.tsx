@@ -134,8 +134,6 @@ interface HProps {
       }
     | { name: 'lookAtThisBentoBoxPuzzle' }
     | { name: 'convertToMathbox'; lowerCase?: true }
-    | { name: 'runAndConvertToMathbox'; addNewline?: boolean; lowerCase?: true }
-    | { name: 'doneRunAndConvertToMathbox' }
     | { name: 'undoConvertToMathbox' }
     | { name: 'doneConvertToMathbox' }
     | { name: 'canBeConverted' }
@@ -1263,42 +1261,6 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
         <Bold>
           <CustomEmoji type="mathBox" /> 計算箱に変換 <Emoji>🐶</Emoji>
         </Bold>
-      )
-    }
-  }
-  if (args.name === 'runAndConvertToMathbox') {
-    if (locale === 'en') {
-      return (
-        <>
-          <Bold>
-            {args.lowerCase ? 'r' : 'R'}un <Emoji>▶️</Emoji>
-          </Bold>{' '}
-          and{args.addNewline ? <br /> : ' '}
-          <H args={{ name: 'convertToMathbox', lowerCase: args.lowerCase }} />
-        </>
-      )
-    } else {
-      return (
-        <Bold>
-          実行してから
-          {args.addNewline ? <br /> : ' '}
-          <H args={{ name: 'convertToMathbox' }} />
-        </Bold>
-      )
-    }
-  }
-  if (args.name === 'doneRunAndConvertToMathbox') {
-    if (locale === 'en') {
-      return (
-        <>
-          Ran and converted to a mathbox! <Emoji>🏁</Emoji>
-        </>
-      )
-    } else {
-      return (
-        <HighlightBold highlightType={highlightType}>
-          実行と変換完了! <Emoji>🏁</Emoji>
-        </HighlightBold>
       )
     }
   }

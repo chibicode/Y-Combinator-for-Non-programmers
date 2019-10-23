@@ -54,7 +54,7 @@ export interface ExpressionRunnerProps {
   highlightOverrides: ExpressionRunnerContextProps['highlightOverrides']
   highlightOverrideActiveAfterStart: boolean
   highlightFunctions: boolean
-  convert?: 'toMathBox' | 'toMathBoxPlay'
+  convert?: 'toMathBox'
 }
 
 export const expressionRunnerContextDefault: ExpressionRunnerContextProps = {
