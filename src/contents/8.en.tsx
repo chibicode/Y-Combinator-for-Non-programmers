@@ -1216,92 +1216,90 @@ export default () => (
                   <>
                     <Hr />
                     <P>
-                      <Emoji>👧🏻</Emoji> サヤちゃんが考えた弁当箱以外にも、
-                      <HighlightBold>
-                        以下の法則に当てはまる弁当箱であれば、どれでも 「
-                        <H args={{ name: 'plusOneFeature' }} />
-                        」を再現できます。
-                      </HighlightBold>
+                      <Highlight>
+                        Any lunchbox that has the following pattern can be used
+                        to reproduce <H args={{ name: 'plusOneFeature' }} />.
+                      </Highlight>
                     </P>
                     <R.Blvt>
-                      この法則に当てはまる弁当箱であれば、
+                      If it has this pattern, it can reproduce
                       <br />
-                      「<H args={{ name: 'plusOneFeature' }} />
-                      」を再現できる
+                      <H args={{ name: 'plusOneFeature' }} />
                     </R.Blvt>
                     <P>
-                      <Emoji>👧🏻</Emoji> サヤちゃんが考えた弁当箱の場合、
+                      <Emoji>👧🏻</Emoji> Saya’s lunchbox had the following:
                     </P>
                     <Ul>
                       <UlLi>
-                        <Emoji>🅰️</Emoji> は <EmojiWithText letter="a" />
+                        <EmojiWithText capitalize letter="a" /> for{' '}
+                        <Emoji>🅰️</Emoji>
                       </UlLi>
                       <UlLi>
-                        <Emoji>🅱️</Emoji> は <EmojiWithText letter="b" />
+                        <EmojiWithText capitalize letter="b" /> for{' '}
+                        <Emoji>🅱️</Emoji>
                       </UlLi>
                       <UlLi>
-                        <CustomEmoji type="C" /> は <EmojiWithText letter="c" />
+                        <EmojiWithText capitalize letter="c" /> for{' '}
+                        <CustomEmoji type="C" />
                       </UlLi>
                     </Ul>
-                    <P>でした。</P>
                     <R.Oykb>
-                      <Emoji>🅰️</Emoji> は <EmojiForLetter letter="a" />、
-                      <Emoji>🅱️</Emoji> は <EmojiForLetter letter="b" />、
-                      <CustomEmoji type="C" /> は <EmojiForLetter letter="c" />
+                      <EmojiForLetter capitalize letter="a" /> for{' '}
+                      <Emoji>🅰️</Emoji>,{' '}
+                      <EmojiForLetter capitalize letter="b" /> for{' '}
+                      <Emoji>🅱️</Emoji>, and{' '}
+                      <EmojiForLetter capitalize letter="c" /> for{' '}
+                      <CustomEmoji type="C" />
                     </R.Oykb>
-                    <P>他にも、例えば</P>
+                    <P>
+                      Here’s another example that can reproduce{' '}
+                      <H args={{ name: 'plusOneFeature' }} />:
+                    </P>
                     <Ul>
                       <UlLi>
-                        <Emoji>🅰️</Emoji> は <EmojiWithText letter="h" />
+                        <EmojiWithText capitalize letter="h" /> for{' '}
+                        <Emoji>🅰️</Emoji>
                       </UlLi>
                       <UlLi>
-                        <Emoji>🅱️</Emoji> は <EmojiWithText letter="i" />
+                        <EmojiWithText capitalize letter="i" /> for{' '}
+                        <Emoji>🅱️</Emoji>
                       </UlLi>
                       <UlLi>
-                        <CustomEmoji type="C" /> は <EmojiWithText letter="j" />
+                        <EmojiWithText capitalize letter="j" /> for{' '}
+                        <CustomEmoji type="C" />
                       </UlLi>
                     </Ul>
-                    <P>
-                      にしても、「
-                      <H args={{ name: 'plusOneFeature' }} />
-                      」を再現することができます。
-                    </P>
                     <R.Dvpl>
-                      <Emoji>🅰️</Emoji> は <EmojiForLetter letter="h" />、
-                      <Emoji>🅱️</Emoji> は <EmojiForLetter letter="i" />、
-                      <CustomEmoji type="C" /> は <EmojiForLetter letter="j" />
-                      。<br />
-                      これも「
-                      <H args={{ name: 'plusOneFeature' }} />
-                      」を
+                      <EmojiForLetter letter="h" /> for <Emoji>🅰️</Emoji>,
+                      <EmojiForLetter letter="i" /> for <Emoji>🅱️</Emoji>, and{' '}
+                      <EmojiForLetter letter="j" /> for <CustomEmoji type="C" />
+                      .
                       <br />
-                      再現できる！
+                      This can reproduce <H args={{ name: 'plusOneFeature' }} />
+                      !
                     </R.Dvpl>
                     <P>
-                      つまり、「
-                      <H args={{ name: 'plusOneFeature' }} />
-                      」を再現できる弁当箱は、<Emoji>👧🏻</Emoji>{' '}
-                      サヤちゃんが考えた弁当箱以外にもたくさんあるということですね！
+                      <Bold>Therefore:</Bold> There are many lunchboxes that can
+                      reproduce <H args={{ name: 'plusOneFeature' }} />.
                     </P>
                   </>
                 }
                 preview={{
-                  text: <>続きを読む</>,
+                  text: <>Continue reading</>,
                   content: (
                     <>
                       <P>
-                        <Bold>ちなみに:</Bold> 「
-                        <H args={{ name: 'plusOneFeature' }} />
-                        」を再現できる弁当箱は、
-                        <HighlightBold>
-                          <Emoji>👧🏻</Emoji>{' '}
-                          サヤちゃんが考えた弁当箱以外にもあります。
-                        </HighlightBold>
-                        つまり、正解は他にもあるのです。
+                        <Bold>Note:</Bold>{' '}
+                        <Highlight>
+                          There are other lunchboxes that can reproduce{' '}
+                          <H args={{ name: 'plusOneFeature' }} />.
+                        </Highlight>{' '}
+                        <Emoji>👧🏻</Emoji> Saya’s lunchobx is not the only
+                        solution.
                       </P>
                       <P>
-                        気になる方は、↓の「続きを読む」を押してみてください。
-                        (読まなくても先に進めます！)
+                        If you’re curious, press “Continue reading” below! (It’s
+                        optional.)
                       </P>
                     </>
                   )
@@ -1322,10 +1320,16 @@ export default () => (
             </P>
             <Ul>
               <UlLi>
-                <H args={{ name: 'minusOneFeature', capitalize: true }} />, and
+                <Highlight>
+                  <H args={{ name: 'minusOneFeature', capitalize: true }} />
+                </Highlight>
+                , and
               </UlLi>
               <UlLi>
-                <H args={{ name: 'repeatFeature', capitalize: true }} />.
+                <Highlight>
+                  <H args={{ name: 'repeatFeature', capitalize: true }} />
+                </Highlight>
+                .
               </UlLi>
             </Ul>
             <R.Xmqp>
