@@ -554,8 +554,6 @@ export default () => (
             <CenteredCode size="sm">λA.(λB.A(B B))(λB.A(B B))</CenteredCode>
             <ExpressionRunnerSeparator />
             <ExpressionRunnerCaptionOnly>
-              先ほどのラムダ計算の記述式は
-              <br />
               <HighlightBold>Yコンビネータを表している</HighlightBold>
             </ExpressionRunnerCaptionOnly>
             <P>
