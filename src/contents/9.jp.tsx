@@ -22,6 +22,7 @@ import TwoColGrid from 'src/components/TwoColGrid'
 import * as R from 'src/components/Runners'
 import NextLessonButton from 'src/components/NextLessonButton'
 import { BlankNumberPlusOne } from 'src/contents/8.jp'
+import ExpressionRunnerCaptionOnly from 'src/components/ExpressionRunnerCaptionOnly'
 
 export default () => (
   <EpisodeCardList
@@ -108,10 +109,12 @@ export default () => (
               <H args={{ name: 'plusOneFeature' }} />
               」を再現できる
               <br />
-              弁当箱と合体させて、
-              <br />
-              実行するとどうなる？
+              弁当箱と合体させて…
             </R.Nhqo>
+            <ExpressionRunnerSeparator />
+            <ExpressionRunnerCaptionOnly>
+              <H args={{ name: 'run' }} /> するとどうなる？
+            </ExpressionRunnerCaptionOnly>
             <BubbleQuotes
               quotes={[
                 {
