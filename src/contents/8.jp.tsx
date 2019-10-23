@@ -850,9 +850,12 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        ここで思い出してほしいのですが…計算箱にも「
-                        <H args={{ name: 'plusOneFeature' }} />
-                        」がありますよね。
+                        ここで思い出してほしいのですが…
+                        <Highlight>
+                          <CustomEmoji type="mathBox" /> 計算箱にも「
+                          <H args={{ name: 'plusOneFeature' }} />
+                          」がありますよね。
+                        </Highlight>
                       </P>
                       <P>
                         計算箱ではこれを使うことで、何らかの数字に1を足すことができます。
@@ -878,7 +881,8 @@ export default () => (
                       <P>
                         今回学んだのは、
                         <HighlightBold>
-                          「1を足す」という計算は、弁当箱でも行うことができる
+                          「1を足す」という計算は、弁当箱 <Emoji>🍱</Emoji>{' '}
+                          でも行うことができる
                         </HighlightBold>
                         、ということです。
                       </P>
@@ -1039,8 +1043,6 @@ export default () => (
               ]}
             />
             <R.Caem>
-              <EmojiNumber number={2} /> に変換できる弁当箱を、
-              <br />
               <Emoji>👧🏻</Emoji> サヤちゃんの弁当箱と
               <br />「<HighlightBold>2回</HighlightBold>
               」組み合わせることで、
