@@ -7,7 +7,8 @@ import {
   Ul,
   UlLi,
   Bold,
-  Italic
+  Italic,
+  Hr
 } from 'src/components/ContentTags'
 import H from 'src/components/H'
 import BubbleQuotes from 'src/components/BubbleQuotes'
@@ -21,11 +22,11 @@ import Emoji from 'src/components/Emoji'
 import InlineBorder from 'src/components/InlineBorder'
 import * as R from 'src/components/Runners'
 import NextLessonButton from 'src/components/NextLessonButton'
+import CardContent from 'src/components/CardContent'
 import { TrueCaseExplanation, FalseCaseExplanation } from 'src/contents/11.en'
 
 export default () => (
   <EpisodeCardList
-    underConstruction
     cards={[
       {
         title: (
@@ -813,35 +814,6 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        <Bold>By the way:</Bold> There are{' '}
-                        <Italic>other</Italic> correct answers as well.
-                      </P>
-                      <P>
-                        <Highlight>
-                          Any lunchboxes that have the following pattern can be
-                          used to reproduce{' '}
-                          <H args={{ name: 'conditionFeature' }} />.
-                        </Highlight>
-                      </P>
-                    </>
-                  )
-                }
-              ]}
-            />
-            <R.Fton>
-              Any lunchboxes that have the following
-              <br />
-              pattern can be used to reproduce
-              <br />
-              <H args={{ name: 'conditionFeature' }} />.
-            </R.Fton>
-            <BubbleQuotes
-              quotes={[
-                {
-                  type: 'dog',
-                  children: (
-                    <>
-                      <P>
                         <Bold>So, we now know that:</Bold>{' '}
                         <Highlight>
                           <H
@@ -880,7 +852,59 @@ export default () => (
               }
             />
           </>
-        )
+        ),
+        footer: {
+          content: (
+            <>
+              <CardContent
+                children={
+                  <>
+                    <Hr />
+                    <P>
+                      <Highlight>
+                        Any lunchbox that has the following pattern can be used
+                        to reproduce <H args={{ name: 'conditionFeature' }} />.
+                      </Highlight>
+                    </P>
+                    <R.Fton>
+                      If it has this pattern, it can reproduce
+                      <br />
+                      <H args={{ name: 'conditionFeature' }} />
+                    </R.Fton>
+                    <P>
+                      Here’s another example that can reproduce{' '}
+                      <H args={{ name: 'conditionFeature' }} />:
+                    </P>
+                    <R.Imhz>
+                      This can reproduce{' '}
+                      <H args={{ name: 'conditionFeature' }} />
+                    </R.Imhz>
+                  </>
+                }
+                preview={{
+                  text: <>Continue reading</>,
+                  content: (
+                    <>
+                      <P>
+                        <Bold>Note:</Bold>{' '}
+                        <Highlight>
+                          There are other lunchboxes that can reproduce{' '}
+                          <H args={{ name: 'conditionFeature' }} />.
+                        </Highlight>{' '}
+                        <Emoji>👧🏻</Emoji> Saya’s lunchbox is not the only
+                        solution.
+                      </P>
+                      <P>
+                        If you’re curious, press “Continue reading” below! (It’s
+                        optional.)
+                      </P>
+                    </>
+                  )
+                }}
+              />
+            </>
+          )
+        }
       },
       {
         title: (
