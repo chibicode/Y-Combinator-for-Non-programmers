@@ -404,27 +404,32 @@ const VariableExpressionBox = ({ expression }: VariableExpressionBoxProps) => {
   const { hidePriorities, variableSize } = useContext(ExpressionRunnerContext)
   const { conditionalState } = useContext(ConditionalContext)
   const { binaryState } = useContext(BinaryContext)
-  const { shadeNonNumbers } = useContext(VariableShadeContext)
+  const { shadeNonNumbers, shadeNonHighlightedFunc } = useContext(
+    VariableShadeContext
+  )
 
   return (
     <>
-      {shadeNonNumbers &&
+      {((shadeNonNumbers &&
         (expression.shorthandNumber === undefined &&
           expression.name !== 'A' &&
-          expression.name !== 'B') && (
-          <span
-            css={css`
-              display: block;
-              position: absolute;
-              z-index: ${zIndices('variableShade')};
-              top: 0;
-              left: 0;
-              right: 0;
-              bottom: 0;
-              background: ${colors('grey50033')};
-            `}
-          />
-        )}
+          expression.name !== 'B')) ||
+        (shadeNonHighlightedFunc &&
+          (expression.shorthandFunc === undefined ||
+            expression.highlightType !== 'initialHighlighted'))) && (
+        <span
+          css={css`
+            display: block;
+            position: absolute;
+            z-index: ${zIndices('variableShade')};
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: ${colors('grey50033')};
+          `}
+        />
+      )}
       {!hidePriorities && (
         <ExpressionPrioritiesLabel
           priorities={expression.argPriorityAgg}

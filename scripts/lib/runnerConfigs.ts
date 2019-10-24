@@ -2359,6 +2359,12 @@ export const zkon: ExpressionRunnerShorthandConfig = {
   showPriorities: true
 }
 
+export const irsu: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.oosg,
+  showPriorities: true
+}
+
 export const xjzx: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   initialExpressionContainer: initialExpressionContainers.vazr,

@@ -4,6 +4,7 @@ import { useContext } from 'react'
 import Emoji from 'src/components/Emoji'
 import { zIndices, colors, fontSizes } from 'src/lib/theme'
 import ExpressionRunnerContext from 'src/components/ExpressionRunnerContext'
+import VariableShadeContext from 'src/components/VariableShadeContext'
 import { ExpressionRunnerContextProps } from 'src/types/ExpressionRunnerTypes'
 import EmojiNumber from 'src/components/EmojiNumber'
 import CustomEmoji from 'src/components/CustomEmoji'
@@ -47,6 +48,21 @@ export const trueCaseColor = colors('orange100')
 export const falseCaseColor = colors('red100')
 export const conditionColor = colors('cyan100')
 
+const Shade = () => (
+  <span
+    css={css`
+      display: block;
+      position: absolute;
+      z-index: ${zIndices('conditionalBorderShade')};
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: ${colors('grey50033')};
+    `}
+  />
+)
+
 const ConditionalBorder = ({
   type,
   smallEmoji,
@@ -59,22 +75,12 @@ const ConditionalBorder = ({
     falseCase: falseCaseColor,
     condition: conditionColor
   }[type]
+  const { shadeNonNumbers, shadeNonHighlightedFunc } = useContext(
+    VariableShadeContext
+  )
   return (
     <>
-      {shaded && (
-        <span
-          css={css`
-            display: block;
-            position: absolute;
-            z-index: ${zIndices('conditionalBorderShade')};
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: ${colors('grey50033')};
-          `}
-        />
-      )}
+      {shaded && <Shade />}
       {type && (
         <span
           css={css`
@@ -84,6 +90,7 @@ const ConditionalBorder = ({
             left: 0.3em;
             display: inline-flex;
             font-size: ${fontSize(variableSizeOverrides || variableSize)};
+            opacity: ${shadeNonNumbers || shadeNonHighlightedFunc ? 0.7 : 1};
           `}
         >
           {type === 'trueCase' && (
@@ -111,7 +118,9 @@ const ConditionalBorder = ({
           border-right: 2px solid ${colors('indigo300')};
           border-top: 2px solid ${colors('indigo300')};
         `}
-      />
+      >
+        {(shadeNonNumbers || shadeNonHighlightedFunc) && <Shade />}
+      </span>
     </>
   )
 }

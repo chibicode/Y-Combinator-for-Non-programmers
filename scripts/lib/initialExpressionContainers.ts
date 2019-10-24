@@ -1998,6 +1998,26 @@ export const ykbi = initializeExpressionContainer([
   'B'
 ])
 
+export const oosg = initializeExpressionContainer([
+  yCombinator,
+  {
+    arg: 'a',
+    body: {
+      arg: 'f',
+      body: {
+        checkType: 'isZero',
+        condition: 'f',
+        trueCase: 'A',
+        falseCase: [
+          { shorthandFunc: 'add', initialHighlight: true },
+          ['a', [{ shorthandFunc: 'pred' }, 'f']]
+        ]
+      }
+    }
+  },
+  'B'
+])
+
 export const psxr = initializeExpressionContainer({
   arg: 'A',
   body: [

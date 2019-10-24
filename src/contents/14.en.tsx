@@ -1310,14 +1310,20 @@ export default () => (
                 }
               ]}
             />
-            <R.Zkon>
-              <HighlightBold>
-                先ほどの弁当箱で右上にあった
-                <br />
-                <CustomEmoji type="plusOne" /> を{' '}
-                <CustomEmoji type="minusOne" /> に変えるだけ(黄色の部分)
-              </HighlightBold>
-            </R.Zkon>
+            <VariableShadeContext.Provider
+              value={{ shadeNonHighlightedFunc: true }}
+            >
+              <R.Irsu></R.Irsu>
+              <ExpressionRunnerSeparator />
+              <R.Zkon>
+                <HighlightBold>
+                  先ほどの弁当箱で右上にあった
+                  <br />
+                  <CustomEmoji type="plusOne" /> を{' '}
+                  <CustomEmoji type="minusOne" /> に変えるだけ(黄色の部分)
+                </HighlightBold>
+              </R.Zkon>
+            </VariableShadeContext.Provider>
             <BubbleQuotes
               quotes={[
                 {
