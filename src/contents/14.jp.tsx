@@ -795,6 +795,18 @@ export default () => (
             <BubbleQuotes
               quotes={[
                 {
+                  type: 'surprised',
+                  children: (
+                    <>
+                      <P>
+                        おお！「
+                        <H args={{ name: 'repeatFeature' }} />
+                        」を使った場合と同じようになった！
+                      </P>
+                    </>
+                  )
+                },
+                {
                   type: 'saya',
                   children: (
                     <>
@@ -825,7 +837,7 @@ export default () => (
                   type: 'saya',
                   children: (
                     <>
-                      <P>では、ここまでを振り返ってみよう！</P>
+                      <P>以上です！では、ここまでを振り返ってみよう！</P>
                     </>
                   )
                 }

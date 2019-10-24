@@ -403,10 +403,7 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        <Bold>Let’s ignore this section again:</Bold>{' '}
-                        <Highlight>
-                          What’s different from the last time?
-                        </Highlight>
+                        <Highlight>Let’s ignore this section again:</Highlight>
                       </P>
                     </>
                   )
@@ -417,13 +414,12 @@ export default () => (
             <BubbleQuotes
               quotes={[
                 {
-                  type: 'thinking',
+                  type: 'saya',
                   children: (
                     <>
                       <P>
-                        Compared with the last time, there are some differences.
-                        Those are highlighted in <Highlight>yellow</Highlight>{' '}
-                        below:
+                        I’ve highlighted the differences from the last time in{' '}
+                        <Highlight>yellow</Highlight> below. Take a look!
                       </P>
                     </>
                   )
@@ -455,8 +451,7 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        Yes. Pay attention to these two differences in
-                        particular:
+                        Pay attention to these two differences in particular:
                       </P>
                       <Ul>
                         <UlLi>
@@ -601,6 +596,10 @@ export default () => (
                   children: (
                     <>
                       <P>Let’s compare with the previous iteration again!</P>
+                      <P>
+                        I’ve highlighted the differences from the last time in{' '}
+                        <Highlight>yellow</Highlight> below.
+                      </P>
                     </>
                   )
                 }
@@ -713,7 +712,7 @@ export default () => (
         )
       },
       {
-        title: <>4周目。これが最後！</>,
+        title: <>The fourth and the last time</>,
         content: (
           <>
             <BubbleQuotes
@@ -723,8 +722,10 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        <HighlightBold>これが最後</HighlightBold>だよ！
-                        省略した部分を省略する前の状態に戻したので、
+                        <Bold>We’re almost done!</Bold> Again, we’ll un-ignore
+                        the section we ignored earlier.
+                      </P>
+                      <P>
                         <H args={{ name: 'pressRun', girl: true }} />
                       </P>
                     </>
@@ -740,27 +741,37 @@ export default () => (
                   children: (
                     <>
                       <P>
+                        <Bold>Again:</Bold>{' '}
                         <Highlight>
-                          例によって、真ん中の部分が前回と同じなので、
-                          省略してみる
-                        </Highlight>
-                        ね。
+                          The middle section is exactly the same as before.
+                        </Highlight>{' '}
+                        So we’ll ignore this again:
                       </P>
                     </>
                   )
                 }
               ]}
             />
-            <R.Gngw>黄色の部分は前回と同じなので…</R.Gngw>
+            <R.Gngw>
+              <Highlight>
+                This yellow section is exactly the same
+                <br />
+                as the last time…
+              </Highlight>
+            </R.Gngw>
             <ExpressionRunnerSeparator />
-            <R.Toem>また省略してみた</R.Toem>
+            <R.Toem>So let’s ignore it for now</R.Toem>
             <BubbleQuotes
               quotes={[
                 {
                   type: 'saya',
                   children: (
                     <>
-                      <P>では、前回とまた比べてみよう！</P>
+                      <P>Let’s compare with the previous iteration again!</P>
+                      <P>
+                        I’ve highlighted the differences from the last time in{' '}
+                        <Highlight>yellow</Highlight> below.
+                      </P>
                     </>
                   )
                 }
@@ -791,10 +802,10 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        <HighlightBold>
-                          <InlineBorder type="condition" /> が{' '}
-                          <EmojiNumber number={0} /> になった！
-                        </HighlightBold>
+                        <Highlight>
+                          <InlineBorder type="condition" /> finally became{' '}
+                          <EmojiNumber number={0} />!
+                        </Highlight>
                       </P>
                     </>
                   )
@@ -804,12 +815,9 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        そう！
-                        <Highlight>
-                          だから、
-                          <InlineBorder type="trueCase" /> に入っている{' '}
-                          <EmojiNumber number={2} /> が残ることになるね。
-                        </Highlight>
+                        <Bold>Exactly!</Bold> So it now chooses{' '}
+                        <InlineBorder type="trueCase" />, which is{' '}
+                        <EmojiNumber number={2} />.
                       </P>
                     </>
                   )
@@ -819,27 +827,38 @@ export default () => (
             <R.Afoh></R.Afoh>
             <ExpressionRunnerSeparator />
             <R.Msrk>
-              <InlineBorder type="trueCase" /> に入っている{' '}
-              <EmojiNumber number={2} /> が残る
+              It chooses <InlineBorder type="trueCase" />,<br />
+              which is <EmojiNumber number={2} />
             </R.Msrk>
             <ExpressionRunnerSeparator />
             <R.Jwce></R.Jwce>
             <BubbleQuotes
               quotes={[
                 {
+                  type: 'surprised',
+                  children: (
+                    <>
+                      <P>
+                        Wow! It’s now exactly like using{' '}
+                        <H args={{ name: 'repeatFeature' }} />!
+                      </P>
+                    </>
+                  )
+                },
+                {
                   type: 'saya',
                   children: (
                     <>
                       <P>
-                        あとは、単純に <EmojiNumber number={2} />{' '}
+                        Yes. It then calculates <EmojiNumber number={2} />{' '}
                         <CustomEmoji type="plusOne" />{' '}
                         <CustomEmoji type="plusOne" />{' '}
-                        <CustomEmoji type="plusOne" /> を計算するだけなので…
+                        <CustomEmoji type="plusOne" />, so…
                       </P>
                       <P>
-                        <HighlightBold>
-                          結果は <EmojiNumber number={5} /> になります！
-                        </HighlightBold>
+                        <Highlight>
+                          The final result is <EmojiNumber number={5} />.
+                        </Highlight>
                       </P>
                     </>
                   )
@@ -849,7 +868,7 @@ export default () => (
             <R.Jwce></R.Jwce>
             <ExpressionRunnerSeparator />
             <R.Seie>
-              最終結果は <EmojiNumber number={5} />
+              The final result is <EmojiNumber number={5} />
             </R.Seie>
             <BubbleQuotes
               quotes={[
@@ -857,7 +876,7 @@ export default () => (
                   type: 'saya',
                   children: (
                     <>
-                      <P>では、ここまでを振り返ってみよう！</P>
+                      <P>That’s it! Let’s summarize what we’ve seen so far!</P>
                     </>
                   )
                 }
