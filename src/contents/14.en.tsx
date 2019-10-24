@@ -1339,8 +1339,9 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        Correct! By doing so, you can reproduce a mathbox that
-                        repeats <CustomEmoji type="minusOne" />:
+                        <Emoji>🎉</Emoji> <Bold>Correct!</Bold> By doing so, you
+                        can reproduce a mathbox that repeats{' '}
+                        <CustomEmoji type="minusOne" />:
                       </P>
                     </>
                   )
@@ -1367,7 +1368,7 @@ export default () => (
       },
       {
         type: 'summary',
-        title: <>魔法のYコンビネータ</>,
+        title: <>Y Combinator</>,
         content: (
           <>
             <BubbleQuotes
@@ -1377,9 +1378,8 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        しかし…弁当箱を使って、計算箱の「
-                        <H args={{ name: 'repeatFeature' }} />
-                        」を再現できるのはすごいなあ。
+                        Hmm… it’s very interesting that we can reproduce{' '}
+                        <H args={{ name: 'repeatFeature' }} /> using a lunchbox.
                       </P>
                     </>
                   )
@@ -1388,17 +1388,14 @@ export default () => (
                   type: 'dog',
                   children: (
                     <>
-                      <P>そうですね。ここでひとつ説明したいことがあります。</P>
                       <P>
-                        さきほど登場した、
-                        <Highlight>
-                          <Emoji>🅰️</Emoji> <Emoji>➕</Emoji> <Emoji>🅱️</Emoji>{' '}
-                          を計算できる弁当箱の、
-                          <HighlightBold>
-                            下半分に使われていた部分にご注目ください
-                          </HighlightBold>
-                        </Highlight>
-                        。
+                        Yeah. And now, I want to talk about an important point.
+                      </P>
+                      <P>
+                        Take a look at the{' '}
+                        <HighlightBold>bottom half</HighlightBold> of the
+                        lunchbox that reproduces <Emoji>🅰️</Emoji>{' '}
+                        <Emoji>➕</Emoji> <Emoji>🅱️</Emoji>:
                       </P>
                     </>
                   )
@@ -1406,30 +1403,23 @@ export default () => (
               ]}
             />
             <R.Xhul>
-              <Emoji>🅰️</Emoji> <Emoji>➕</Emoji> <Emoji>🅱️</Emoji>{' '}
-              を計算できる弁当箱の
+              Take a look at the <HighlightBold>bottom half</HighlightBold> of
+              the lunchbox
               <br />
-              下半分(黄色)の部分に注目
+              that reproduces <Emoji>🅰️</Emoji> <Emoji>➕</Emoji>{' '}
+              <Emoji>🅱️</Emoji>:
             </R.Xhul>
             <BubbleQuotes
               quotes={[
-                {
-                  type: 'thinking',
-                  children: (
-                    <>
-                      <P>この下半分の部分がどうかしたの？</P>
-                    </>
-                  )
-                },
                 {
                   type: 'dog',
                   children: (
                     <>
                       <P>
-                        この下半分の部分は、<Emoji>🅰️</Emoji> <Emoji>➕</Emoji>{' '}
-                        <Emoji>🅱️</Emoji> を計算できる弁当箱だけでなく、
-                        <Emoji>🅰️</Emoji> <Emoji>➖</Emoji> <Emoji>🅱️</Emoji>{' '}
-                        を計算できる弁当箱にも使われていましたよね。
+                        Now, take a look at the{' '}
+                        <HighlightBold>bottom half</HighlightBold> of the
+                        lunchbox that reproduces <Emoji>🅰️</Emoji>{' '}
+                        <Emoji>➖</Emoji> <Emoji>🅱️</Emoji>:
                       </P>
                     </>
                   )
@@ -1437,18 +1427,35 @@ export default () => (
               ]}
             />
             <R.Anzh>
-              <Emoji>🅰️</Emoji> <Emoji>➖</Emoji> <Emoji>🅱️</Emoji>{' '}
-              を計算できる弁当箱も
+              Take a look at the <HighlightBold>bottom half</HighlightBold> of
+              the lunchbox
               <br />
-              下半分は同じだった
+              that reproduces <Emoji>🅰️</Emoji> <Emoji>➖</Emoji>{' '}
+              <Emoji>🅱️</Emoji>:
             </R.Anzh>
             <BubbleQuotes
               quotes={[
                 {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>
+                        <Bold>Notice that:</Bold>{' '}
+                        <Highlight>
+                          Both cases have this bottom half in common.
+                        </Highlight>
+                      </P>
+                      <R.Xjzx>
+                        Both cases have this bottom half in common
+                      </R.Xjzx>
+                    </>
+                  )
+                },
+                {
                   type: 'thinking',
                   children: (
                     <>
-                      <P>確かにそうだけど…</P>
+                      <P>Right, but what’s so special about it?</P>
                     </>
                   )
                 },
@@ -1457,9 +1464,11 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        実は、今回登場した弁当箱において、必ず下半分に使われていたこちらの弁当箱が、「
-                        <H args={{ name: 'repeatFeature' }} />
-                        」の再現を可能にしていたのです。
+                        <Bold>In fact:</Bold>{' '}
+                        <Highlight>
+                          This bottom half is what makes reproducing{' '}
+                          <H args={{ name: 'repeatFeature' }} /> possible.
+                        </Highlight>
                       </P>
                     </>
                   )
@@ -1467,15 +1476,9 @@ export default () => (
               ]}
             />
             <R.Xjzx>
-              今回登場した弁当箱において、
+              This bottom half is what makes reproducing
               <br />
-              <HighlightBold>下半分の部分に使われていた</HighlightBold>
-              <br />
-              こちらの弁当箱が、
-              <br />「<H args={{ name: 'repeatFeature' }} />
-              」の再現を
-              <br />
-              可能にしていた
+              <H args={{ name: 'repeatFeature' }} /> possible.
             </R.Xjzx>
             <BubbleQuotes
               quotes={[
@@ -1483,7 +1486,10 @@ export default () => (
                   type: 'surprised',
                   children: (
                     <>
-                      <P>なんと！これが、繰り返しを可能にしていたのかあ…</P>
+                      <P>
+                        I see. So this lunchbox is necessary for reproducing{' '}
+                        <H args={{ name: 'repeatFeature' }} />…
+                      </P>
                     </>
                   )
                 },
@@ -1492,9 +1498,8 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        そうですね。ちなみに、この弁当箱には、
-                        <HighlightBold>特殊な呼び名</HighlightBold>
-                        があるんですよ。
+                        Yes. And this lunchbox has a{' '}
+                        <Highlight>special name</Highlight>, actually.
                       </P>
                     </>
                   )
@@ -1503,7 +1508,7 @@ export default () => (
                   type: 'surprised',
                   children: (
                     <>
-                      <P>へー、そうなんだ。何ていう呼び名なの？</P>
+                      <P>What’s the name?</P>
                     </>
                   )
                 },
@@ -1512,8 +1517,8 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        「<HighlightBold>Yコンビネータ</HighlightBold>
-                        」です。
+                        It’s called “<HighlightBold>Y Combinator</HighlightBold>
+                        ”.
                       </P>
                     </>
                   )
@@ -1521,7 +1526,8 @@ export default () => (
               ]}
             />
             <R.Xjzx>
-              この弁当箱の名は「<HighlightBold>Yコンビネータ</HighlightBold>」
+              This lunchbox is called “
+              <HighlightBold>Y Combinator</HighlightBold>”
             </R.Xjzx>
             <BubbleQuotes
               quotes={[
@@ -1530,8 +1536,8 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        「<HighlightBold>Yコンビネータ</HighlightBold>
-                        」かあ。変な名前だね。
+                        “<HighlightBold>Y Combinator</HighlightBold>”? That’s a
+                        strange name…
                       </P>
                     </>
                   )
@@ -1541,15 +1547,15 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        そうなんだ。でもすごいね。
-                        <HighlightBold>
-                          こんなシンプルな、二種類の料理しかない弁当箱が、繰り返しを可能にするなんて…
-                        </HighlightBold>
+                        But it’s really interesting to think that,{' '}
+                        <Highlight>
+                          such a simple lunchbox (with only two kinds of food
+                          items) is necessary to reproduce{' '}
+                          <H args={{ name: 'repeatFeature' }} />.
+                        </Highlight>
                       </P>
                       <P>
-                        <HighlightBold>まるで、魔法みたい！</HighlightBold>
-                        <Emoji size="mdlg">🧙‍♀️</Emoji>{' '}
-                        <Emoji size="mdlg">✨</Emoji>
+                        <Bold>It’s like magic!</Bold>
                       </P>
                     </>
                   )
@@ -1558,11 +1564,7 @@ export default () => (
                   type: 'smile',
                   children: (
                     <>
-                      <P>
-                        確かに…まさに、「
-                        <HighlightBold>魔法のYコンビネータ</HighlightBold>
-                        」だね！
-                      </P>
+                      <P>Indeed!</P>
                     </>
                   )
                 }
@@ -1572,7 +1574,7 @@ export default () => (
               emojis={['✨', '🧙‍♀️', '✨']}
               description={
                 <>
-                  <HighlightBold>魔法のYコンビネータ</HighlightBold>
+                  <HighlightBold>Y Combinator</HighlightBold> is magical!
                 </>
               }
             />
