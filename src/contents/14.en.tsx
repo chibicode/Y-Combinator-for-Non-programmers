@@ -1016,18 +1016,70 @@ export default () => (
               <H args={{ name: 'repeatFeature' }} />…
             </R.Qycx>
             <ExpressionRunnerSeparator />
-            <R.Peiy>…using this lunchbox!</R.Peiy>
+            <R.Kjba>…using this lunchbox!</R.Kjba>
           </>
         )
       },
       {
-        title: <>?</>,
+        title: <>Reproducing any lunchbox</>,
         content: (
           <>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'saya',
+                  children: (
+                    <>
+                      <P>
+                        <Bold>Now, here’s the important part:</Bold> This
+                        mathbox has:
+                      </P>
+                      <Ul>
+                        <UlLi>
+                          <Highlight>
+                            <EmojiNumber number={2} /> on the top, and…
+                          </Highlight>
+                        </UlLi>
+                        <UlLi>
+                          <Highlight>
+                            <CustomEmoji type="plusOne" /> is repeated{' '}
+                            <EmojiNumber number={3} /> times.
+                          </Highlight>
+                        </UlLi>
+                      </Ul>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Qycx>
+              <EmojiNumber number={2} /> on the top, and
+              <br />
+              <CustomEmoji type="plusOne" /> is repeated{' '}
+              <EmojiNumber number={3} /> times
+            </R.Qycx>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'saya',
+                  children: (
+                    <>
+                      <P>
+                        To reproduce this, we needed to put{' '}
+                        <EmojiNumber number={2} /> and{' '}
+                        <EmojiNumber number={3} /> on these two places:
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
             <VariableShadeContext.Provider value={{ shadeNonNumbers: true }}>
               <R.Peiy>
-                数字の <EmojiNumber number={3} /> と <EmojiNumber number={2} />{' '}
-                が入っていた
+                We needed to put <EmojiNumber number={2} /> and{' '}
+                <EmojiNumber number={3} />
+                <br />
+                on these two places:
               </R.Peiy>
             </VariableShadeContext.Provider>
             <BubbleQuotes
@@ -1037,39 +1089,42 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        そして
+                        <Bold>Now, here’s a question:</Bold>{' '}
                         <Highlight>
-                          <H args={{ name: 'run' }} />{' '}
-                          すると、終了直前に以下のようになった
+                          How can we reproduce this mathbox that calculates{' '}
+                          <Emoji>🅰️</Emoji> <Emoji>➕</Emoji> <Emoji>🅱️</Emoji>?
                         </Highlight>
-                        よね。
                       </P>
                     </>
                   )
                 }
               ]}
             />
-            <R.Jwce>終了直前に以下のようになった</R.Jwce>
+            <R.Nmbt>How can we reproduce this mathbox?</R.Nmbt>
             <BubbleQuotes
               quotes={[
                 {
-                  type: 'surprised',
+                  type: 'thinking',
                   children: (
                     <>
                       <P>
-                        これは…
-                        <CustomEmoji type="plusOne" /> を{' '}
-                        <EmojiNumber number={3} />{' '}
-                        回繰り返すから、以下のように「
-                        <H args={{ name: 'repeatFeature' }} />
-                        」を使った計算箱とまったく同じだ！
+                        <Bold>Maybe:</Bold>{' '}
+                        <Highlight>
+                          We change the previous lunchbox to use{' '}
+                          <Emoji>🅰️</Emoji> and <Emoji>🅱️</Emoji> instead
+                        </Highlight>
+                        , like this?
                       </P>
                     </>
                   )
                 }
               ]}
             />
-            <R.Qycx>これと全く同じ！</R.Qycx>
+            <VariableShadeContext.Provider value={{ shadeNonNumbers: true }}>
+              <R.Bxuv>
+                Put <Emoji>🅰️</Emoji> and <Emoji>🅱️</Emoji> in these two places
+              </R.Bxuv>
+            </VariableShadeContext.Provider>
             <BubbleQuotes
               quotes={[
                 {
@@ -1077,104 +1132,9 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        そう。つまり上の「
-                        <H args={{ name: 'repeatFeature' }} />
-                        」を使った計算箱は、今回実行した弁当箱で再現できるということなんだ。
-                      </P>
-                    </>
-                  )
-                }
-              ]}
-            />
-            <R.Qycx>
-              この「
-              <H args={{ name: 'repeatFeature' }} />
-              」を使った
-              <br />
-              計算箱は…
-            </R.Qycx>
-            <ExpressionRunnerSeparator />
-            <R.Peiy>
-              この弁当箱で「<HighlightBold>再現</HighlightBold>」できる！
-            </R.Peiy>
-            <BubbleQuotes
-              quotes={[
-                {
-                  type: 'surprised',
-                  children: (
-                    <>
-                      <P>なるほど！</P>
-                    </>
-                  )
-                },
-                {
-                  type: 'saya',
-                  children: (
-                    <>
-                      <P>
-                        他にもたとえば、以下のように、
-                        <EmojiNumber number={4} /> <Emoji>➕</Emoji>{' '}
-                        <EmojiNumber number={6} /> を計算できる計算箱でも…
-                      </P>
-                    </>
-                  )
-                }
-              ]}
-            />
-            <R.Owpg>
-              <EmojiNumber number={4} /> <Emoji>➕</Emoji>{' '}
-              <EmojiNumber number={6} /> を計算できる計算箱も…
-            </R.Owpg>
-            <BubbleQuotes
-              quotes={[
-                {
-                  type: 'saya',
-                  children: (
-                    <>
-                      <P>同じように弁当箱で再現することができるよ。</P>
-                    </>
-                  )
-                }
-              ]}
-            />
-            <R.Hafp>この弁当箱で再現できる</R.Hafp>
-            <BubbleQuotes
-              quotes={[
-                {
-                  type: 'saya',
-                  children: (
-                    <>
-                      <P>
-                        上の弁当箱も実行すると、先ほどと同じように、終了直前に以下のようになる。だから、繰り返しの機能と同じことができるんだ。
-                      </P>
-                    </>
-                  )
-                }
-              ]}
-            />
-            <R.Sskt>
-              先ほどと同じように、
-              <br />
-              実行が終わる直前に
-              <br />
-              以下のようになり…
-            </R.Sskt>
-            <ExpressionRunnerSeparator />
-            <R.Mbje>
-              <EmojiNumber number={4} /> <Emoji>➕</Emoji>{' '}
-              <EmojiNumber number={6} /> を計算できる
-            </R.Mbje>
-            <BubbleQuotes
-              quotes={[
-                {
-                  type: 'saya',
-                  children: (
-                    <>
-                      <P>
-                        まとめると、「
-                        <H args={{ name: 'repeatFeature' }} />
-                        」を使って、<Emoji>🅰️</Emoji> <Emoji>➕</Emoji>{' '}
-                        <Emoji>🅱️</Emoji> を計算できる計算箱は…
+                        <Bold>Exactly!</Bold> That’s how you reproduce{' '}
+                        <Emoji>🅰️</Emoji> <Emoji>➕</Emoji> <Emoji>🅱️</Emoji>{' '}
+                        using a lunchbox.
                       </P>
                     </>
                   )
@@ -1182,27 +1142,89 @@ export default () => (
               ]}
             />
             <R.Nmbt>
-              「<H args={{ name: 'repeatFeature' }} />
-              」を使って、
+              We can reproduce this mathbox with
               <br />
-              <Emoji>🅰️</Emoji> <Emoji>➕</Emoji> <Emoji>🅱️</Emoji>{' '}
-              を計算できる計算箱は…
+              <H args={{ name: 'repeatFeature' }} />…
             </R.Nmbt>
+            <ExpressionRunnerSeparator />
+            <R.Bxuv>…using this lunchbox!</R.Bxuv>
             <BubbleQuotes
               quotes={[
                 {
                   type: 'saya',
                   children: (
                     <>
-                      <P>次のように弁当箱で再現することができるんだ。</P>
+                      <P>
+                        <Bold>For example:</Bold> If you wanted to reproduce
+                        this mathbox that calculates <EmojiNumber number={4} />{' '}
+                        <Emoji>➕</Emoji> <EmojiNumber number={6} />…
+                      </P>
                     </>
                   )
                 }
               ]}
             />
-            <R.Bxuv>
-              この弁当箱で「<HighlightBold>再現</HighlightBold>」できる！
-            </R.Bxuv>
+            <R.Owpg>
+              To reproduce this mathbox
+              <br />
+              that calculates <EmojiNumber number={4} /> <Emoji>➕</Emoji>{' '}
+              <EmojiNumber number={6} />…
+            </R.Owpg>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'saya',
+                  children: (
+                    <>
+                      <P>You can use the following lunchbox:</P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Hafp>Use this lunchbox</R.Hafp>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'saya',
+                  children: (
+                    <>
+                      <P>
+                        If you <H args={{ name: 'run', lowerCase: true }} /> the
+                        above lunchbox, it will repeat{' '}
+                        <CustomEmoji type="plusOne" /> six times on{' '}
+                        <EmojiNumber number={4} />:
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Hafp>
+              If you <H args={{ name: 'run', lowerCase: true }} /> this…
+            </R.Hafp>
+            <ExpressionRunnerSeparator />
+            <R.Sskt>
+              It repeats <CustomEmoji type="plusOne" /> six times on{' '}
+              <EmojiNumber number={4} />
+            </R.Sskt>
+            <ExpressionRunnerSeparator />
+            <R.Mbje>
+              And calculates <EmojiNumber number={4} /> <Emoji>➕</Emoji>{' '}
+              <EmojiNumber number={6} />
+            </R.Mbje>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'thinking',
+                  children: (
+                    <>
+                      <P>I see…!</P>
+                    </>
+                  )
+                }
+              ]}
+            />
           </>
         )
       },
