@@ -1619,8 +1619,11 @@ export const twpb = initializeExpressionContainer([
       [
         'ignoreForNow',
         [
-          { shorthandFunc: 'pred', initialHighlight: true },
-          [{ shorthandFunc: 'pred' }, { shorthandNumber: 3 }]
+          { shorthandFunc: 'pred' },
+          [
+            { shorthandFunc: 'pred', initialHighlight: true },
+            { shorthandNumber: 3 }
+          ]
         ]
       ]
     ]
@@ -1698,10 +1701,13 @@ export const zxhp = initializeExpressionContainer([
         [
           'ignoreForNow',
           [
-            { shorthandFunc: 'pred', initialHighlight: true },
+            { shorthandFunc: 'pred' },
             [
               { shorthandFunc: 'pred' },
-              [{ shorthandFunc: 'pred' }, { shorthandNumber: 3 }]
+              [
+                { shorthandFunc: 'pred', initialHighlight: true },
+                { shorthandNumber: 3 }
+              ]
             ]
           ]
         ]
@@ -1765,12 +1771,15 @@ export const npmi = initializeExpressionContainer([
           [
             'ignoreForNow',
             [
-              { shorthandFunc: 'pred', initialHighlight: true },
+              { shorthandFunc: 'pred' },
               [
                 { shorthandFunc: 'pred' },
                 [
                   { shorthandFunc: 'pred' },
-                  [{ shorthandFunc: 'pred' }, { shorthandNumber: 3 }]
+                  [
+                    { shorthandFunc: 'pred', initialHighlight: true },
+                    { shorthandNumber: 3 }
+                  ]
                 ]
               ]
             ]

@@ -64,7 +64,7 @@
                       },
                       "func": {
                         "name": "shorthandFunc",
-                        "highlightType": "default",
+                        "highlightType": "initialHighlighted",
                         "topLeftBadgeType": "none",
                         "bottomRightBadgeType": "none",
                         "type": "variable",
@@ -104,7 +104,7 @@
                   },
                   "func": {
                     "name": "shorthandFunc",
-                    "highlightType": "initialHighlighted",
+                    "highlightType": "default",
                     "topLeftBadgeType": "none",
                     "bottomRightBadgeType": "none",
                     "type": "variable",
