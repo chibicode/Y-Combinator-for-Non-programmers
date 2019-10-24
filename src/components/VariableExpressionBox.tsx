@@ -17,6 +17,7 @@ import H from 'src/components/H'
 import { ExpressionRunnerContextProps } from 'src/types/ExpressionRunnerTypes'
 import CustomEmoji, { customEmojiToComponent } from 'src/components/CustomEmoji'
 import locale from 'src/lib/locale'
+import VariableShadeContext from 'src/components/VariableShadeContext'
 
 interface VariableExpressionBoxProps {
   expression: VariableExpression
@@ -403,8 +404,27 @@ const VariableExpressionBox = ({ expression }: VariableExpressionBoxProps) => {
   const { hidePriorities, variableSize } = useContext(ExpressionRunnerContext)
   const { conditionalState } = useContext(ConditionalContext)
   const { binaryState } = useContext(BinaryContext)
+  const { shadeNonNumbers } = useContext(VariableShadeContext)
+
   return (
     <>
+      {shadeNonNumbers &&
+        (expression.shorthandNumber === undefined &&
+          expression.name !== 'A' &&
+          expression.name !== 'B') && (
+          <span
+            css={css`
+              display: block;
+              position: absolute;
+              z-index: ${zIndices('variableShade')};
+              top: 0;
+              left: 0;
+              right: 0;
+              bottom: 0;
+              background: ${colors('grey50033')};
+            `}
+          />
+        )}
       {!hidePriorities && (
         <ExpressionPrioritiesLabel
           priorities={expression.argPriorityAgg}
@@ -421,6 +441,7 @@ const VariableExpressionBox = ({ expression }: VariableExpressionBoxProps) => {
           flex: 1;
           font-size: ${variableExpressionBoxFontSize(variableSize)};
           padding: ${p(variableSize)} ${spaces(0.5)} ${p(variableSize)};
+          position: relative;
         `}
       >
         <VariableEmoji expression={expression} />

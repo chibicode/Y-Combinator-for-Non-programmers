@@ -6,6 +6,7 @@ export const allZIndices = {
   badge: 102,
   expressionPriorityNumber: 101,
   conditionalBorderShade: 103,
+  variableShade: 103,
   modal: 1000
 }
 

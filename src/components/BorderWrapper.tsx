@@ -117,6 +117,7 @@ const BorderWrapper = ({
   )
   const { conditionalOutermostState } = useContext(ConditionalContext)
   const { inBinaryActive } = useContext(BinaryContext)
+
   return (
     <Flex
       css={[

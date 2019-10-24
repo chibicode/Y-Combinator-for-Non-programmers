@@ -61,18 +61,20 @@ const ConditionalBorder = ({
   }[type]
   return (
     <>
-      <span
-        css={css`
-          display: block;
-          position: absolute;
-          z-index: ${zIndices('conditionalBorderShade')};
-          top: 0;
-          left: 0;
-          right: 0;
-          bottom: 0;
-          background: ${shaded ? colors('grey50033') : 'transparent'};
-        `}
-      />
+      {shaded && (
+        <span
+          css={css`
+            display: block;
+            position: absolute;
+            z-index: ${zIndices('conditionalBorderShade')};
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: ${colors('grey50033')};
+          `}
+        />
+      )}
       {type && (
         <span
           css={css`

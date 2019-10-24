@@ -21,6 +21,23 @@ import EmojiSeparator from 'src/components/EmojiSeparator'
 import TwoColGrid from 'src/components/TwoColGrid'
 import * as R from 'src/components/Runners'
 import NextLessonButton from 'src/components/NextLessonButton'
+import VariableShadeContext from 'src/components/VariableShadeContext'
+
+const ThreeStepsSummary = () => (
+  <>
+    <R.Kjba>
+      If you <H args={{ name: 'run', lowerCase: true }} /> this lunchbox…
+    </R.Kjba>
+    <ExpressionRunnerSeparator />
+    <R.Jwce>
+      Just like <H args={{ name: 'repeatFeature' }} />,<br />
+      it repeats <CustomEmoji type="plusOne" /> three times on{' '}
+      <EmojiNumber number={2} />
+    </R.Jwce>
+    <ExpressionRunnerSeparator />
+    <R.Seie></R.Seie>
+  </>
+)
 
 export default () => (
   <EpisodeCardList
@@ -82,17 +99,7 @@ export default () => (
               </Highlight>
               , just like when using <H args={{ name: 'repeatFeature' }} />.
             </P>
-            <R.Kjba>
-              If you <H args={{ name: 'run', lowerCase: true }} /> this
-              lunchbox…
-            </R.Kjba>
-            <ExpressionRunnerSeparator />
-            <R.Jwce>
-              Just like <H args={{ name: 'repeatFeature' }} />,<br />
-              it repeats <CustomEmoji type="plusOne" /> three times
-            </R.Jwce>
-            <ExpressionRunnerSeparator />
-            <R.Seie></R.Seie>
+            <ThreeStepsSummary />
             <P>Let’s see if this is actually true!</P>
           </>
         )
@@ -890,22 +897,41 @@ export default () => (
         title: <>Summary of the steps it goes through</>,
         content: (
           <>
-            <P>Here’s what happened:</P>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'saya',
+                  children: (
+                    <>
+                      <P>Here’s what happened:</P>
+                    </>
+                  )
+                }
+              ]}
+            />
             <R.Kjba></R.Kjba>
             <ExpressionRunnerSeparator />
             <R.Amjx>
+              After some more steps,
+              <br />
               <InlineBorder type="condition" /> is <EmojiNumber number={3} />
             </R.Amjx>
             <ExpressionRunnerSeparator />
             <R.Kosw>
+              After some more steps,
+              <br />
               <InlineBorder type="condition" /> is <EmojiNumber number={2} />
             </R.Kosw>
             <ExpressionRunnerSeparator />
             <R.Mibj>
+              After some more steps,
+              <br />
               <InlineBorder type="condition" /> is <EmojiNumber number={1} />
             </R.Mibj>
             <ExpressionRunnerSeparator />
             <R.Nphi>
+              After some more steps,
+              <br />
               <InlineBorder type="condition" /> is <EmojiNumber number={0} />,
               <br />
               so it chooses <InlineBorder type="trueCase" />
@@ -921,7 +947,11 @@ export default () => (
       },
       {
         type: 'summary',
-        title: <>ここまでの振り返り</>,
+        title: (
+          <>
+            Reproducing <H args={{ name: 'repeatFeature' }} />
+          </>
+        ),
         content: (
           <>
             <BubbleQuotes
@@ -931,22 +961,75 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        まず、
+                        <Bold>So, we confirmed that:</Bold>{' '}
                         <Highlight>
-                          もともとの弁当箱には数字の <EmojiNumber number={3} />{' '}
-                          と <EmojiNumber number={2} /> が入っていた
+                          If you run the original lunchbox, it repeats{' '}
+                          <CustomEmoji type="plusOne" /> three times on{' '}
+                          <EmojiNumber number={2} />.
                         </Highlight>
-                        よね。
                       </P>
                     </>
                   )
                 }
               ]}
             />
-            <R.Peiy>
-              数字の <EmojiNumber number={3} /> と <EmojiNumber number={2} />{' '}
-              が入っていた
-            </R.Peiy>
+            <ThreeStepsSummary />
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'saya',
+                  children: (
+                    <>
+                      <P>
+                        Therefore, this is exactly the same as this mathbox that
+                        uses <H args={{ name: 'repeatFeature' }} />:
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Qycx>Exactly the same as this!</R.Qycx>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'saya',
+                  children: (
+                    <>
+                      <P>
+                        <Bold>So:</Bold>{' '}
+                        <Highlight>
+                          The above mathbox with{' '}
+                          <H args={{ name: 'repeatFeature' }} /> can be{' '}
+                          <HighlightBold>reproduced</HighlightBold> by the
+                          lunchbox we used on this page.
+                        </Highlight>
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Qycx>
+              We can reproduce this mathbox with
+              <br />
+              <H args={{ name: 'repeatFeature' }} />…
+            </R.Qycx>
+            <ExpressionRunnerSeparator />
+            <R.Peiy>…using this lunchbox!</R.Peiy>
+          </>
+        )
+      },
+      {
+        title: <>?</>,
+        content: (
+          <>
+            <VariableShadeContext.Provider value={{ shadeNonNumbers: true }}>
+              <R.Peiy>
+                数字の <EmojiNumber number={3} /> と <EmojiNumber number={2} />{' '}
+                が入っていた
+              </R.Peiy>
+            </VariableShadeContext.Provider>
             <BubbleQuotes
               quotes={[
                 {
