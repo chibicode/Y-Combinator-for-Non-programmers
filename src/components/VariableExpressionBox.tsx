@@ -271,8 +271,8 @@ const VariableEmoji = ({ expression }: VariableExpressionBoxProps) => {
               font-weight: bold;
               text-align: center;
               display: block;
-              font-size: 0.5em;
-              padding: 0.4em 0;
+              font-size: 0.55em;
+              padding: 0.2em 0;
             `
           ]}
         >

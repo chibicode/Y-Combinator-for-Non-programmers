@@ -409,6 +409,8 @@ export default () => (
               ]}
             />
             <TwoColGrid
+              leftVerticalIndent
+              forceVariableSize="md"
               left={
                 <>
                   <R.Amjx>
@@ -556,6 +558,8 @@ export default () => (
               ]}
             />
             <TwoColGrid
+              leftVerticalIndent
+              forceVariableSize="sm"
               left={
                 <>
                   <R.Kosw>
@@ -729,6 +733,8 @@ export default () => (
               ]}
             />
             <TwoColGrid
+              leftVerticalIndent
+              forceVariableSize="xs"
               left={
                 <>
                   <R.Mibj>

@@ -1656,9 +1656,21 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
   }
   if (args.name === 'ignoreForNow') {
     if (locale === 'en') {
-      return <>(Ignore for Now)</>
+      return (
+        <>
+          Ignore
+          <br />
+          for Now
+        </>
+      )
     } else {
-      return <>(一時的に省略)</>
+      return (
+        <>
+          一時的に
+          <br />
+          省略
+        </>
+      )
     }
   }
   throw new Error()

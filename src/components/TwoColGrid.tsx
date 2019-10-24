@@ -9,17 +9,22 @@ const TwoColGrid = ({
   right,
   noTopNegativeMargin,
   noBottomNegativeMargin,
-  maxVariableSize
+  maxVariableSize,
+  forceVariableSize,
+  leftVerticalIndent
 }: {
   left: React.ReactNode
   right: React.ReactNode
   noTopNegativeMargin?: boolean
   noBottomNegativeMargin?: boolean
   maxVariableSize: TwoColContextProps['maxVariableSize']
+  forceVariableSize?: TwoColContextProps['forceVariableSize']
+  leftVerticalIndent?: TwoColContextProps['leftVerticalIndent']
 }) => (
   <TwoColContext.Provider
     value={{
-      maxVariableSize
+      maxVariableSize,
+      forceVariableSize
     }}
   >
     <Flex
@@ -44,7 +49,15 @@ const TwoColGrid = ({
           flex: 1;
         `}
       >
-        {left}
+        <TwoColContext.Provider
+          value={{
+            maxVariableSize,
+            forceVariableSize,
+            leftVerticalIndent
+          }}
+        >
+          {left}
+        </TwoColContext.Provider>
       </div>
       <div
         css={css`
