@@ -1588,36 +1588,34 @@ export default () => (
                   <>
                     <Hr />
                     <P>
-                      <HighlightBold>
-                        以下の法則に当てはまる弁当箱は、どれも 「
-                        <HighlightBold>Yコンビネータ</HighlightBold>
-                        」です。
-                      </HighlightBold>
+                      <Highlight>
+                        Any lunchbox that has the following pattern is a{' '}
+                        <HighlightBold>Y Combinator</HighlightBold>:
+                      </Highlight>
                     </P>
                     <R.Rjho>
-                      この法則に当てはまる弁当箱は全部
-                      <br />「<HighlightBold>Yコンビネータ</HighlightBold>」
+                      Any lunchbox that has the following pattern is a<br />
+                      <HighlightBold>Y Combinator</HighlightBold>
                     </R.Rjho>
                     <P>
-                      たとえば、以下のような弁当箱も「
-                      <HighlightBold>Yコンビネータ</HighlightBold>
-                      」です。
+                      <Bold>Example:</Bold> This lunchbox is a{' '}
+                      <HighlightBold>Y Combinator</HighlightBold>:
                     </P>
                     <R.Beug>
-                      これも「
-                      <HighlightBold>Yコンビネータ</HighlightBold>」
+                      This lunchbox is a{' '}
+                      <HighlightBold>Y Combinator</HighlightBold>
                     </R.Beug>
                   </>
                 }
                 preview={{
-                  text: <>続きを読む</>,
+                  text: <>Continue reading</>,
                   content: (
                     <>
                       <P>
-                        <Bold>ちなみに:</Bold> 上の弁当箱以外にも、「
-                        <HighlightBold>Yコンビネータ</HighlightBold>
-                        」の弁当箱は存在します。気になる方は、↓の「続きを読む」を押してみてください。
-                        (読まなくても先に進めます！)
+                        <Bold>Note:</Bold> There are other lunchboxes that are
+                        called <HighlightBold>“Y Combinator”</HighlightBold>. If
+                        you’re curious, press “Continue reading” below! (It’s
+                        optional.)
                       </P>
                     </>
                   )
@@ -1628,12 +1626,17 @@ export default () => (
         }
       },
       {
-        title: <>繰り返しの機能を返してもらえる？</>,
+        title: (
+          <>
+            We finally get <H args={{ name: 'repeatFeature' }} /> back?
+          </>
+        ),
         content: (
           <>
             <P>
-              「<H args={{ name: 'repeatFeature' }} />
-              」をみごと弁当箱で再現した村人たちは、悪魔のもとに行きました。
+              After successfully reproducing{' '}
+              <H args={{ name: 'repeatFeature' }} />, the villagers are now
+              demanding the devil to get it back:
             </P>
             <BubbleQuotes
               quotes={[
@@ -1642,15 +1645,10 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        どうだ、「
-                        <H args={{ name: 'repeatFeature' }} />
-                        」を弁当箱で再現したぞ！
+                        The devil! We reproduced{' '}
+                        <H args={{ name: 'repeatFeature' }} /> using a lunchbox!
                       </P>
-                      <P>
-                        約束通り、「
-                        <H args={{ name: 'repeatFeature' }} />
-                        」は返してもらう！これで、計算箱のすべての機能をお前から取り返せるぞ！
-                      </P>
+                      <P>Now, give that back to us!</P>
                     </>
                   )
                 },
@@ -1658,17 +1656,13 @@ export default () => (
                   type: 'devil',
                   children: (
                     <>
-                      <P>うぐぐ…</P>
+                      <P>Grr…</P>
                     </>
                   )
                 }
               ]}
             />
-            <P>
-              村人たちの命運やいかに？次の
-              <HighlightBold>上級最後のページ</HighlightBold>
-              で確かめてみましょう！
-            </P>
+            <P>Will they get it back? Check on the next page!</P>
             <NextLessonButton />
           </>
         )
