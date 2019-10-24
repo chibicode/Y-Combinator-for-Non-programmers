@@ -887,6 +887,17 @@ export default () => (
       },
       {
         type: 'summary',
+        title: <>Summary of the steps it goes through</>,
+        content: (
+          <>
+            <P>Here’s what happened:</P>
+            <R.Kjba></R.Kjba>
+            <ExpressionRunnerSeparator />
+          </>
+        )
+      },
+      {
+        type: 'summary',
         title: <>ここまでの振り返り</>,
         content: (
           <>
