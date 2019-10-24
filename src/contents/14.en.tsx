@@ -1229,7 +1229,11 @@ export default () => (
         )
       },
       {
-        title: <>繰り返しの機能を再現できた！</>,
+        title: (
+          <>
+            We reproduced <H args={{ name: 'repeatFeature' }} />!
+          </>
+        ),
         content: (
           <>
             <BubbleQuotes
@@ -1239,9 +1243,9 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        サヤちゃん、正解です！見事、「
-                        <H args={{ name: 'repeatFeature' }} />
-                        」を弁当箱で再現しましたね！<Emoji>🎉</Emoji>
+                        <Bold>Congratulations!</Bold> You reproduced{' '}
+                        <H args={{ name: 'repeatFeature' }} /> successfully!{' '}
+                        <Emoji>🎉</Emoji>
                       </P>
                     </>
                   )
@@ -1250,7 +1254,7 @@ export default () => (
                   type: 'saya',
                   children: (
                     <>
-                      <P>やったー！</P>
+                      <P>Yay!</P>
                     </>
                   )
                 }
@@ -1266,10 +1270,8 @@ export default () => (
               ]}
               description={
                 <>
-                  「<H args={{ name: 'repeatFeature' }} />
-                  」を
-                  <br />
-                  弁当箱で再現できた！<Emoji>🎉</Emoji>
+                  We reproduced <H args={{ name: 'repeatFeature' }} />!{' '}
+                  <Emoji>🎉</Emoji>
                 </>
               }
             />
@@ -1280,19 +1282,26 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        ちなみにですが…下のように、
-                        <HighlightBold>
-                          <CustomEmoji type="minusOne" />{' '}
-                          を繰り返す計算箱は、どうやって弁当箱で再現すればいいか
-                        </HighlightBold>
-                        分かりますか？
+                        <Bold>By the way, here’s an additional question:</Bold>
+                      </P>
+                      <P>
+                        Can you figure out how to reproduce this mathbox that{' '}
+                        <Highlight>
+                          repeats <CustomEmoji type="minusOne" /> instead of{' '}
+                          <CustomEmoji type="plusOne" />?
+                        </Highlight>
                       </P>
                     </>
                   )
                 }
               ]}
             />
-            <R.Jaqs>これはどうやって弁当箱で再現する？</R.Jaqs>
+            <R.Jaqs>
+              How can we reproduce this mathbox
+              <br />
+              that repeats <CustomEmoji type="minusOne" /> instead of{' '}
+              <CustomEmoji type="plusOne" />?
+            </R.Jaqs>
             <BubbleQuotes
               quotes={[
                 {
@@ -1300,10 +1309,12 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        おそらく、先ほどの弁当箱で右上にあった{' '}
-                        <CustomEmoji type="plusOne" /> を{' '}
-                        <CustomEmoji type="minusOne" />{' '}
-                        に変えるだけでいいんじゃないかな？
+                        <Bold>Hmm… maybe:</Bold>{' '}
+                        <Highlight>
+                          We use the same lunchbox as the last time, but use{' '}
+                          <CustomEmoji type="minusOne" /> instead of{' '}
+                          <CustomEmoji type="plusOne" />?
+                        </Highlight>
                       </P>
                     </>
                   )
@@ -1313,15 +1324,12 @@ export default () => (
             <VariableShadeContext.Provider
               value={{ shadeNonHighlightedFunc: true }}
             >
-              <R.Irsu></R.Irsu>
+              <R.Irsu>
+                Instead of <CustomEmoji type="plusOne" />…
+              </R.Irsu>
               <ExpressionRunnerSeparator />
               <R.Zkon>
-                <HighlightBold>
-                  先ほどの弁当箱で右上にあった
-                  <br />
-                  <CustomEmoji type="plusOne" /> を{' '}
-                  <CustomEmoji type="minusOne" /> に変えるだけ(黄色の部分)
-                </HighlightBold>
+                Use <CustomEmoji type="minusOne" />
               </R.Zkon>
             </VariableShadeContext.Provider>
             <BubbleQuotes
@@ -1331,19 +1339,24 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        サヤちゃん、
-                        <HighlightBold>その通りです！</HighlightBold>これで、
-                        <CustomEmoji type="minusOne" />{' '}
-                        を繰り返す計算箱を再現できます。
+                        Correct! By doing so, you can reproduce a mathbox that
+                        repeats <CustomEmoji type="minusOne" />:
                       </P>
                     </>
                   )
-                },
+                }
+              ]}
+            />
+            <R.Jaqs>You can reproduxe this mathbox…</R.Jaqs>
+            <ExpressionRunnerSeparator />
+            <R.Zkon>…with this lunchbox!</R.Zkon>
+            <BubbleQuotes
+              quotes={[
                 {
                   type: 'surprised',
                   children: (
                     <>
-                      <P>へー、そんなに簡単なんだ！</P>
+                      <P>I see…!</P>
                     </>
                   )
                 }
