@@ -256,7 +256,7 @@ export default () => (
                         </Highlight>
                       </P>
                       <P>
-                        We’ll replace with the <Bold>“Ignore for Now”</Bold>{' '}
+                        We’ll replace it with the <Bold>“Ignore for Now”</Bold>{' '}
                         sign:
                       </P>
                     </>
@@ -280,11 +280,16 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        We’ll undo this later, but let’s ignore this section for
-                        now.
+                        Now, let’s take a look at{' '}
+                        <H
+                          args={{
+                            name: 'conditionSectionName',
+                            type: 'condition'
+                          }}
+                        />
+                        :
                       </P>
                       <P>
-                        <Bold>Anyway, let’s continue:</Bold>{' '}
                         <Highlight>
                           Because <InlineBorder type="condition" /> is{' '}
                           <EmojiNumber number={3} />, it chooses{' '}
@@ -402,14 +407,14 @@ export default () => (
               left={
                 <>
                   <R.Amjx>
-                    <HighlightBold>前回と比べると…</HighlightBold>
+                    <HighlightBold>Before</HighlightBold>
                   </R.Amjx>
                 </>
               }
               right={
                 <>
                   <R.Qgau>
-                    <HighlightBold>黄色の部分が違う</HighlightBold>
+                    <HighlightBold>After</HighlightBold>
                   </R.Qgau>
                 </>
               }
@@ -551,14 +556,14 @@ export default () => (
               left={
                 <>
                   <R.Kosw>
-                    <HighlightBold>前回と比べると…</HighlightBold>
+                    <HighlightBold>Before</HighlightBold>
                   </R.Kosw>
                 </>
               }
               right={
                 <>
                   <R.Ysxf>
-                    <HighlightBold>黄色の部分が違う</HighlightBold>
+                    <HighlightBold>After</HighlightBold>
                   </R.Ysxf>
                 </>
               }
@@ -726,14 +731,14 @@ export default () => (
               left={
                 <>
                   <R.Mibj>
-                    <HighlightBold>前回と比べると…</HighlightBold>
+                    <HighlightBold>Before</HighlightBold>
                   </R.Mibj>
                 </>
               }
               right={
                 <>
                   <R.Kdgv>
-                    <HighlightBold>黄色の部分が違う</HighlightBold>
+                    <HighlightBold>After</HighlightBold>
                   </R.Kdgv>
                 </>
               }
