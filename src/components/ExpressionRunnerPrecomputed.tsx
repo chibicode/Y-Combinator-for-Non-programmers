@@ -24,6 +24,10 @@ import functionDepthsToContainerSize from 'src/lib/functionDepthsToContainerSize
 import CrossSvg from 'src/components/CrossSvg'
 import { LinkButton } from 'src/components/ContentTags/LinkButton'
 import TwoColContext from 'src/components/TwoColContext'
+import {
+  p,
+  variableExpressionBoxFontSize
+} from 'src/components/VariableExpressionBox'
 
 export interface ExpressionRunnerPrecomputedProps {
   expressionContainers: readonly SteppedExpressionContainer[]
@@ -168,7 +172,9 @@ const ExpressionRunnerPrecomputed = ({
     expressionContainers[currentIndex].numLeafNodes
   )
 
-  const { maxVariableSize } = useContext(TwoColContext)
+  const { maxVariableSize, forceVariableSize, leftVerticalIndent } = useContext(
+    TwoColContext
+  )
 
   if (maxVariableSize) {
     if (maxVariableSize === 'md' && variableSize === 'lg') {
@@ -179,6 +185,10 @@ const ExpressionRunnerPrecomputed = ({
     ) {
       variableSize = 'sm'
     }
+  }
+
+  if (forceVariableSize) {
+    variableSize = forceVariableSize
   }
 
   return (
@@ -249,6 +259,23 @@ const ExpressionRunnerPrecomputed = ({
               max-width: 100%;
             `}
           >
+            {leftVerticalIndent && (
+              <div
+                css={css`
+                  line-height: ${lineHeights(1.3, { ignoreLocale: true })};
+                  padding-top: ${p(variableSize)};
+                  padding-bottom: ${p(variableSize)};
+                  font-size: ${variableExpressionBoxFontSize(variableSize)};
+                `}
+              >
+                <div
+                  css={css`
+                    padding-top: 1.25em;
+                    border-top: 1px solid transparent;
+                  `}
+                ></div>
+              </div>
+            )}
             <div
               css={[
                 css`

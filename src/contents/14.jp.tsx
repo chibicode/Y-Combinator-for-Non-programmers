@@ -259,16 +259,10 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        黄色の部分が複雑なので、
-                        <Highlight>
-                          <HighlightBold>
-                            分かりやすくするために、
-                          </HighlightBold>
-                          そこだけを <Emoji>🍱</Emoji>{' '}
-                          のアイコンに置き換えて省略してみると、下のようになる
-                        </Highlight>
-                        よ。
+                        黄色の部分は、今は関係ないので、見やすくするために
+                        <Highlight>一時的に省略してみるね。</Highlight>
                       </P>
+                      <P>すると、下のようになるよ。</P>
                     </>
                   )
                 }
@@ -276,7 +270,7 @@ export default () => (
             />
             <R.Yyfi>
               先ほどの弁当箱の<HighlightBold>黄色の部分</HighlightBold>を<br />
-              <Emoji>🍱</Emoji> と置き換えて省略します
+              一時的に省略します
               <br />
               (複雑なので見やすくするため)
             </R.Yyfi>
@@ -295,9 +289,9 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        この <Emoji>🍱</Emoji> で省略した部分は、
+                        この省略した部分は、
                         <Highlight>
-                          すぐに元に戻すけど、いったん省略したままにしておく
+                          すぐに元に戻すけど、少しの間だけ省略したままにしておく
                         </Highlight>
                         ね。
                       </P>
@@ -332,18 +326,13 @@ export default () => (
                   type: 'saya',
                   children: (
                     <>
-                      <P>
-                        じゃあ、<Emoji>🍱</Emoji> を省略する前の状態(
-                        <Highlight>黄色の部分</Highlight>)に戻すね。
-                      </P>
+                      <P>じゃあ、省略した部分を省略する前の状態に戻すね。</P>
                     </>
                   )
                 }
               ]}
             />
-            <R.Ngxc>
-              <Emoji>🍱</Emoji> の部分を…
-            </R.Ngxc>
+            <R.Ngxc>省略した部分を…</R.Ngxc>
             <ExpressionRunnerSeparator />
             <R.Fkvy>省略前の状態に戻す</R.Fkvy>
             <BubbleQuotes
@@ -396,10 +385,7 @@ export default () => (
                       </P>
                       <P>
                         では、また
-                        <HighlightBold>
-                          黄色の部分を <Emoji>🍱</Emoji>{' '}
-                          のアイコンで省略してみた
-                        </HighlightBold>
+                        <HighlightBold>黄色の部分を省略してみた</HighlightBold>
                         よ。前回と何が違うかな？
                       </P>
                     </>
@@ -408,9 +394,7 @@ export default () => (
               ]}
             />
             <R.Fkat>
-              <HighlightBold>
-                黄色の部分を <Emoji>🍱</Emoji> で省略してみた
-              </HighlightBold>
+              <HighlightBold>黄色の部分を省略してみた</HighlightBold>
             </R.Fkat>
             <BubbleQuotes
               quotes={[
@@ -425,6 +409,8 @@ export default () => (
               ]}
             />
             <TwoColGrid
+              leftVerticalIndent
+              forceVariableSize="md"
               left={
                 <>
                   <R.Amjx>
@@ -530,7 +516,7 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        再度、<Emoji>🍱</Emoji> を省略する前の状態に戻したよ。
+                        再度、省略した部分を省略する前の状態に戻したよ。
                         <H args={{ name: 'pressRun', girl: true }} />
                       </P>
                     </>
@@ -547,8 +533,7 @@ export default () => (
                     <>
                       <P>
                         <Highlight>
-                          また真ん中の部分が前回と同じなので、<Emoji>🍱</Emoji>{' '}
-                          のアイコンで省略してみる
+                          また真ん中の部分が前回と同じなので、省略してみる
                         </Highlight>
                         ね。
                       </P>
@@ -559,9 +544,7 @@ export default () => (
             />
             <R.Jjet>黄色の部分は前回と同じなので…</R.Jjet>
             <ExpressionRunnerSeparator />
-            <R.Cyyp>
-              また <Emoji>🍱</Emoji> で省略してみた
-            </R.Cyyp>
+            <R.Cyyp>また省略してみた</R.Cyyp>
             <BubbleQuotes
               quotes={[
                 {
@@ -575,6 +558,8 @@ export default () => (
               ]}
             />
             <TwoColGrid
+              leftVerticalIndent
+              forceVariableSize="sm"
               left={
                 <>
                   <R.Kosw>
@@ -705,7 +690,7 @@ export default () => (
                     <>
                       <P>
                         <HighlightBold>これが最後</HighlightBold>だよ！
-                        <Emoji>🍱</Emoji> を省略する前の状態に戻したので、
+                        省略した部分を省略する前の状態に戻したので、
                         <H args={{ name: 'pressRun', girl: true }} />
                       </P>
                     </>
@@ -723,7 +708,7 @@ export default () => (
                       <P>
                         <Highlight>
                           例によって、真ん中の部分が前回と同じなので、
-                          <Emoji>🍱</Emoji> のアイコンで省略してみる
+                          省略してみる
                         </Highlight>
                         ね。
                       </P>
@@ -734,9 +719,7 @@ export default () => (
             />
             <R.Gngw>黄色の部分は前回と同じなので…</R.Gngw>
             <ExpressionRunnerSeparator />
-            <R.Toem>
-              また <Emoji>🍱</Emoji> で省略してみた
-            </R.Toem>
+            <R.Toem>また省略してみた</R.Toem>
             <BubbleQuotes
               quotes={[
                 {
@@ -750,6 +733,8 @@ export default () => (
               ]}
             />
             <TwoColGrid
+              leftVerticalIndent
+              forceVariableSize="xs"
               left={
                 <>
                   <R.Mibj>

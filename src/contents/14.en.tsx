@@ -248,29 +248,23 @@ export default () => (
                     <>
                       <P>
                         <Bold>
-                          This yellow section is complicated, so let’s make it
-                          simple:
-                        </Bold>
+                          We don’t need to worry about this yellow section for
+                          now, so:
+                        </Bold>{' '}
+                        <Highlight>
+                          Let’s ignore this section for now.
+                        </Highlight>
                       </P>
                       <P>
-                        <Highlight>
-                          Let’s replace the yellow section with the{' '}
-                          <Emoji>🍱</Emoji> icon
-                        </Highlight>{' '}
-                        to make it look simple.
+                        We’ll replace with the <Bold>“Ignore for Now”</Bold>{' '}
+                        sign:
                       </P>
                     </>
                   )
                 }
               ]}
             />
-            <R.Yyfi>
-              Replace the yellow section
-              <br />
-              with the <Emoji>🍱</Emoji> icon
-              <br />
-              (For simplicity only)
-            </R.Yyfi>
+            <R.Yyfi>Ignore the yellow section for now</R.Yyfi>
             <BubbleQuotes
               quotes={[
                 {
@@ -286,9 +280,8 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        We’ll undo this replacement with the <Emoji>🍱</Emoji>{' '}
-                        icon later, but for now, let’s use the <Emoji>🍱</Emoji>{' '}
-                        icon to make it look simple.
+                        We’ll undo this later, but let’s ignore this section for
+                        now.
                       </P>
                       <P>
                         <Bold>Anyway, let’s continue:</Bold>{' '}
@@ -321,18 +314,13 @@ export default () => (
                   type: 'saya',
                   children: (
                     <>
-                      <P>
-                        じゃあ、<Emoji>🍱</Emoji> を省略する前の状態(
-                        <Highlight>黄色の部分</Highlight>)に戻すね。
-                      </P>
+                      <P>じゃあ、省略した部分を省略する前の状態に戻すね。</P>
                     </>
                   )
                 }
               ]}
             />
-            <R.Ngxc>
-              <Emoji>🍱</Emoji> の部分を…
-            </R.Ngxc>
+            <R.Ngxc>省略した部分を…</R.Ngxc>
             <ExpressionRunnerSeparator />
             <R.Fkvy>省略前の状態に戻す</R.Fkvy>
             <BubbleQuotes
@@ -385,10 +373,7 @@ export default () => (
                       </P>
                       <P>
                         では、また
-                        <HighlightBold>
-                          黄色の部分を <Emoji>🍱</Emoji>{' '}
-                          のアイコンで省略してみた
-                        </HighlightBold>
+                        <HighlightBold>黄色の部分を省略してみた</HighlightBold>
                         よ。前回と何が違うかな？
                       </P>
                     </>
@@ -397,9 +382,7 @@ export default () => (
               ]}
             />
             <R.Fkat>
-              <HighlightBold>
-                黄色の部分を <Emoji>🍱</Emoji> で省略してみた
-              </HighlightBold>
+              <HighlightBold>黄色の部分を省略してみた</HighlightBold>
             </R.Fkat>
             <BubbleQuotes
               quotes={[
@@ -414,6 +397,8 @@ export default () => (
               ]}
             />
             <TwoColGrid
+              leftVerticalIndent
+              forceVariableSize="md"
               left={
                 <>
                   <R.Amjx>
@@ -519,7 +504,7 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        再度、<Emoji>🍱</Emoji> を省略する前の状態に戻したよ。
+                        再度、省略した部分を省略する前の状態に戻したよ。
                         <H args={{ name: 'pressRun', girl: true }} />
                       </P>
                     </>
@@ -536,8 +521,7 @@ export default () => (
                     <>
                       <P>
                         <Highlight>
-                          また真ん中の部分が前回と同じなので、<Emoji>🍱</Emoji>{' '}
-                          のアイコンで省略してみる
+                          また真ん中の部分が前回と同じなので、省略してみる
                         </Highlight>
                         ね。
                       </P>
@@ -548,9 +532,7 @@ export default () => (
             />
             <R.Jjet>黄色の部分は前回と同じなので…</R.Jjet>
             <ExpressionRunnerSeparator />
-            <R.Cyyp>
-              また <Emoji>🍱</Emoji> で省略してみた
-            </R.Cyyp>
+            <R.Cyyp>また省略してみた</R.Cyyp>
             <BubbleQuotes
               quotes={[
                 {
@@ -564,6 +546,8 @@ export default () => (
               ]}
             />
             <TwoColGrid
+              leftVerticalIndent
+              forceVariableSize="sm"
               left={
                 <>
                   <R.Kosw>
@@ -694,7 +678,7 @@ export default () => (
                     <>
                       <P>
                         <HighlightBold>これが最後</HighlightBold>だよ！
-                        <Emoji>🍱</Emoji> を省略する前の状態に戻したので、
+                        省略した部分を省略する前の状態に戻したので、
                         <H args={{ name: 'pressRun', girl: true }} />
                       </P>
                     </>
@@ -712,7 +696,7 @@ export default () => (
                       <P>
                         <Highlight>
                           例によって、真ん中の部分が前回と同じなので、
-                          <Emoji>🍱</Emoji> のアイコンで省略してみる
+                          省略してみる
                         </Highlight>
                         ね。
                       </P>
@@ -723,9 +707,7 @@ export default () => (
             />
             <R.Gngw>黄色の部分は前回と同じなので…</R.Gngw>
             <ExpressionRunnerSeparator />
-            <R.Toem>
-              また <Emoji>🍱</Emoji> で省略してみた
-            </R.Toem>
+            <R.Toem>また省略してみた</R.Toem>
             <BubbleQuotes
               quotes={[
                 {
@@ -739,6 +721,8 @@ export default () => (
               ]}
             />
             <TwoColGrid
+              leftVerticalIndent
+              forceVariableSize="xs"
               left={
                 <>
                   <R.Mibj>

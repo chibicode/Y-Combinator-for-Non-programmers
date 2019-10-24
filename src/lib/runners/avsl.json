@@ -75,7 +75,7 @@
               "maxNestedFunctionDepth": 0
             },
             "func": {
-              "name": "bentoBox",
+              "name": "ignoreForNow",
               "highlightType": "default",
               "topLeftBadgeType": "none",
               "bottomRightBadgeType": "none",

@@ -164,6 +164,7 @@ interface HProps {
     | { name: 'demoTitle' }
     | { name: 'whatTheNumberIsCaption' }
     | { name: 'runAndShowAllSteps' }
+    | { name: 'ignoreForNow' }
 }
 
 const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
@@ -1649,6 +1650,25 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
           右下にある <Emoji>🅰️</Emoji> がついた料理の数が、
           <br />
           変換後の計算箱の数字
+        </>
+      )
+    }
+  }
+  if (args.name === 'ignoreForNow') {
+    if (locale === 'en') {
+      return (
+        <>
+          Ignore
+          <br />
+          for Now
+        </>
+      )
+    } else {
+      return (
+        <>
+          一時的に
+          <br />
+          省略
         </>
       )
     }
