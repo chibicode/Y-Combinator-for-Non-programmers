@@ -1166,7 +1166,9 @@ export default () => (
                         </UlLi>
                         <UlLi>
                           待てない場合は、「
-                          <H args={{ name: 'skipToTheStoppingPoint' }} /> →
+                          <Highlight highlightType="pink">
+                            <H args={{ name: 'skipToTheStoppingPoint' }} /> →
+                          </Highlight>
                           」を押してもいいぞ。
                         </UlLi>
                       </Ul>

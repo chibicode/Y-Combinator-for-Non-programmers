@@ -205,12 +205,6 @@ export default () => (
                       </P>
                       <Ul>
                         <UlLi>
-                          <Highlight>
-                            弁当箱の中身がたくさんあるので、スペースの都合上、ひとつひとつの料理を小さく表示しているよ。
-                          </Highlight>
-                          見にくくてごめん！
-                        </UlLi>
-                        <UlLi>
                           説明のために、何度も止めながらやっていくよ。
                         </UlLi>
                         <UlLi>
@@ -219,9 +213,9 @@ export default () => (
                         </UlLi>
                         <UlLi>
                           ちょっと時間がかかるので、待てない方は下の「
-                          <HighlightBold>
+                          <Highlight highlightType="pink">
                             <H args={{ name: 'skipToTheStoppingPoint' }} /> →
-                          </HighlightBold>
+                          </Highlight>
                           」を押してね！
                         </UlLi>
                       </Ul>

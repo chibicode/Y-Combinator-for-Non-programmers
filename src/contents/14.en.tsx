@@ -98,7 +98,7 @@ export default () => (
         )
       },
       {
-        title: <>途中、何が起きているのか？</>,
+        title: <>What steps does it go through?</>,
         content: (
           <>
             <BubbleQuotes
@@ -108,21 +108,12 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        今回は、前回サヤが考えた弁当箱を
-                        <H args={{ name: 'run' }} /> して、
-                        <HighlightBold>
-                          途中、弁当箱がどう変化するかを確認してみる
-                        </HighlightBold>
-                        よ。
-                      </P>
-                      <P>
-                        そうすることで、
-                        <Highlight>
-                          どいうった経緯で最終的に「
-                          <H args={{ name: 'repeatFeature' }} />
-                          」と同じになるのか
-                        </Highlight>
-                        を知ることができるからね。
+                        On this page, we’ll{' '}
+                        <H args={{ name: 'run', lowerCase: true }} /> the
+                        lunchbox that I came up with, and{' '}
+                        <Highlight>see what steps it goes through</Highlight>{' '}
+                        before it becomes the same as{' '}
+                        <H args={{ name: 'repeatFeature' }} /> at the end.
                       </P>
                     </>
                   )
@@ -130,23 +121,22 @@ export default () => (
               ]}
             />
             <R.Kjba>
-              前回の弁当箱は、
-              <H args={{ name: 'run' }} /> すると…
+              When we <H args={{ name: 'run', lowerCase: true }} /> this…
             </R.Kjba>
             <ExpressionRunnerSeparator />
             <EmojiSeparator
               emojis={['❓', '🍱', '❓']}
               description={
                 <>
-                  <HighlightBold>途中、弁当箱がどう変化した後…</HighlightBold>
+                  <HighlightBold>What steps does it go through…</HighlightBold>
                 </>
               }
             />
             <ExpressionRunnerSeparator />
             <R.Jwce>
-              「
-              <H args={{ name: 'repeatFeature' }} />
-              」と同じになるのか？
+              …before it becomes the same as
+              <br />
+              <H args={{ name: 'repeatFeature' }} />?
             </R.Jwce>
             <ExpressionRunnerSeparator />
             <R.Seie></R.Seie>
@@ -157,9 +147,10 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        なるほど、
+                        I see,{' '}
                         <Highlight>
-                          途中で何が起きているか確かめてみようってことだね。
+                          let’s see what happens in between the beginning and
+                          the end!
                         </Highlight>
                       </P>
                     </>
@@ -169,7 +160,10 @@ export default () => (
                   type: 'saya',
                   children: (
                     <>
-                      <P>それじゃあ、実行してみよう！</P>
+                      <P>
+                        Alright, let’s{' '}
+                        <H args={{ name: 'run', lowerCase: true }} /> it!
+                      </P>
                     </>
                   )
                 }
@@ -179,7 +173,7 @@ export default () => (
         )
       },
       {
-        title: <>実行してみる</>,
+        title: <>Let’s run it!</>,
         content: (
           <>
             <BubbleQuotes
@@ -188,32 +182,28 @@ export default () => (
                   type: 'saya',
                   children: (
                     <>
-                      <P>
-                        というわけで、
-                        <H args={{ name: 'pressRun', girl: true }} />
-                      </P>
+                      <P>Ok, let’s do it!</P>
                       <Ul>
                         <UlLi>
+                          We’ll pause several times in between for explanation.
+                        </UlLi>
+                        <UlLi>
                           <Highlight>
-                            弁当箱の中身がたくさんあるので、スペースの都合上、ひとつひとつの料理を小さく表示しているよ。
+                            You don’t have to follow all the steps!
+                          </Highlight>{' '}
+                          Just glance over it. Save your eyes!
+                        </UlLi>
+                        <UlLi>
+                          If you can’t wait, press{' '}
+                          <Highlight highlightType="pink">
+                            “<H args={{ name: 'skipToTheEnd' }} /> →”
                           </Highlight>
-                          見にくくてごめん！
-                        </UlLi>
-                        <UlLi>
-                          説明のために、何度も止めながらやっていくよ。
-                        </UlLi>
-                        <UlLi>
-                          複雑なので、
-                          <Highlight>目で追わなくても大丈夫だよ！</Highlight>
-                        </UlLi>
-                        <UlLi>
-                          ちょっと時間がかかるので、待てない方は下の「
-                          <HighlightBold>
-                            <H args={{ name: 'skipToTheStoppingPoint' }} /> →
-                          </HighlightBold>
-                          」を押してね！
+                          .
                         </UlLi>
                       </Ul>
+                      <P>
+                        <H args={{ name: 'pressRun', girl: true }} />
+                      </P>
                     </>
                   )
                 }
