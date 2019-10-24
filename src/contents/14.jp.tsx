@@ -259,7 +259,7 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        上の黄色の部分が複雑なので、
+                        黄色の部分が複雑なので、
                         <Highlight>
                           <HighlightBold>
                             分かりやすくするために、
@@ -276,42 +276,17 @@ export default () => (
             />
             <R.Yyfi>
               先ほどの弁当箱の<HighlightBold>黄色の部分</HighlightBold>を<br />
-              <Emoji>🍱</Emoji> と置き換えて省略した
+              <Emoji>🍱</Emoji> と置き換えて省略します
+              <br />
+              (複雑なので見やすくするため)
             </R.Yyfi>
             <BubbleQuotes
               quotes={[
                 {
-                  type: 'saya',
+                  type: 'surprised',
                   children: (
                     <>
-                      <P>この時点で、</P>
-                      <Ul>
-                        <UlLi>
-                          <HighlightBold>
-                            <InlineBorder type="condition" /> には{' '}
-                            <EmojiNumber number={3} /> が入っている
-                          </HighlightBold>
-                        </UlLi>
-                      </Ul>
-                      <P>…ということを覚えておいてね。</P>
-                    </>
-                  )
-                }
-              ]}
-            />
-            <R.Amjx>
-              <HighlightBold>
-                <InlineBorder type="condition" /> には{' '}
-                <EmojiNumber number={3} /> が入っている
-              </HighlightBold>
-            </R.Amjx>
-            <BubbleQuotes
-              quotes={[
-                {
-                  type: 'thinking',
-                  children: (
-                    <>
-                      <P>ん？なんでそれを覚えておく必要があるんだい？</P>
+                      <P>おお、だいぶシンプルになった！</P>
                     </>
                   )
                 },
@@ -319,7 +294,13 @@ export default () => (
                   type: 'saya',
                   children: (
                     <>
-                      <P>後で大事になってくるからだよ。</P>
+                      <P>
+                        この <Emoji>🍱</Emoji> で省略した部分は、
+                        <Highlight>
+                          すぐに元に戻すけど、いったん省略したままにしておく
+                        </Highlight>
+                        ね。
+                      </P>
                       <P>
                         では続きを見てみよう。
                         <HighlightBold>

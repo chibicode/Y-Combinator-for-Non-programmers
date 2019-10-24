@@ -216,7 +216,7 @@ export default () => (
                   type: 'tired',
                   children: (
                     <>
-                      <P>めちゃくちゃ複雑だなあ…</P>
+                      <P>It’s so complicated…</P>
                     </>
                   )
                 },
@@ -224,10 +224,11 @@ export default () => (
                   type: 'saya',
                   children: (
                     <>
+                      <P>It’s not too bad if you look carefully.</P>
                       <P>
-                        でもちょっと立ち止まって考えてみて。まず、この
-                        <Highlight>真ん中の黄色で示した部分</Highlight>
-                        に注目してくれる？
+                        Take a look at this{' '}
+                        <HighlightBold>yellow section</HighlightBold> in the
+                        middle!
                       </P>
                     </>
                   )
@@ -235,7 +236,9 @@ export default () => (
               ]}
             />
             <R.Bras>
-              真ん中の<HighlightBold>黄色の部分</HighlightBold>に注目
+              Take a look at this <HighlightBold>yellow section</HighlightBold>
+              <br />
+              in the middle
             </R.Bras>
             <BubbleQuotes
               quotes={[
@@ -244,15 +247,17 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        上の黄色の部分が複雑なので、
+                        <Bold>
+                          This yellow section is complicated, so let’s make it
+                          simple:
+                        </Bold>
+                      </P>
+                      <P>
                         <Highlight>
-                          <HighlightBold>
-                            分かりやすくするために、
-                          </HighlightBold>
-                          そこだけを <Emoji>🍱</Emoji>{' '}
-                          のアイコンに置き換えて省略してみると、下のようになる
-                        </Highlight>
-                        よ。
+                          Let’s replace the yellow section with the{' '}
+                          <Emoji>🍱</Emoji> icon
+                        </Highlight>{' '}
+                        to make it look simple.
                       </P>
                     </>
                   )
@@ -260,43 +265,19 @@ export default () => (
               ]}
             />
             <R.Yyfi>
-              先ほどの弁当箱の<HighlightBold>黄色の部分</HighlightBold>を<br />
-              <Emoji>🍱</Emoji> と置き換えて省略した
+              Replace the yellow section
+              <br />
+              with the <Emoji>🍱</Emoji> icon
+              <br />
+              (For simplicity only)
             </R.Yyfi>
             <BubbleQuotes
               quotes={[
                 {
-                  type: 'saya',
+                  type: 'surprised',
                   children: (
                     <>
-                      <P>この時点で、</P>
-                      <Ul>
-                        <UlLi>
-                          <HighlightBold>
-                            <InlineBorder type="condition" /> には{' '}
-                            <EmojiNumber number={3} /> が入っている
-                          </HighlightBold>
-                        </UlLi>
-                      </Ul>
-                      <P>…ということを覚えておいてね。</P>
-                    </>
-                  )
-                }
-              ]}
-            />
-            <R.Amjx>
-              <HighlightBold>
-                <InlineBorder type="condition" /> には{' '}
-                <EmojiNumber number={3} /> が入っている
-              </HighlightBold>
-            </R.Amjx>
-            <BubbleQuotes
-              quotes={[
-                {
-                  type: 'thinking',
-                  children: (
-                    <>
-                      <P>ん？なんでそれを覚えておく必要があるんだい？</P>
+                      <P>It’s much simpler now!</P>
                     </>
                   )
                 },
@@ -304,14 +285,18 @@ export default () => (
                   type: 'saya',
                   children: (
                     <>
-                      <P>後で大事になってくるからだよ。</P>
                       <P>
-                        では続きを見てみよう。
-                        <HighlightBold>
-                          <InlineBorder type="condition" /> には{' '}
-                          <EmojiNumber number={3} /> が入っているので、
-                          <InlineBorder type="falseCase" /> が残ります。
-                        </HighlightBold>
+                        We’ll undo this replacement with the <Emoji>🍱</Emoji>{' '}
+                        icon later, but for now, let’s use the <Emoji>🍱</Emoji>{' '}
+                        icon to make it look simple.
+                      </P>
+                      <P>
+                        <Bold>Anyway, let’s continue:</Bold>{' '}
+                        <Highlight>
+                          Because <InlineBorder type="condition" /> is{' '}
+                          <EmojiNumber number={3} />, it chooses{' '}
+                          <InlineBorder type="falseCase" />.
+                        </Highlight>
                       </P>
                     </>
                   )
