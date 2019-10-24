@@ -1561,7 +1561,7 @@ export const reak = initializeExpressionContainer({
   },
   falseCase: [
     { shorthandFunc: 'add' },
-    ['bentoBox', [{ shorthandFunc: 'pred' }, { shorthandNumber: 3 }]]
+    ['ignoreForNow', [{ shorthandFunc: 'pred' }, { shorthandNumber: 3 }]]
   ]
 })
 
@@ -1576,7 +1576,7 @@ export const edye = initializeExpressionContainer({
   },
   falseCase: [
     { shorthandFunc: 'add' },
-    ['bentoBox', [{ shorthandFunc: 'pred' }, { shorthandNumber: 3 }]]
+    ['ignoreForNow', [{ shorthandFunc: 'pred' }, { shorthandNumber: 3 }]]
   ]
 })
 
@@ -1593,7 +1593,7 @@ export const nrff = initializeExpressionContainer([
     falseCase: [
       { shorthandFunc: 'add' },
       [
-        'bentoBox',
+        'ignoreForNow',
         [
           { shorthandFunc: 'pred' },
           [{ shorthandFunc: 'pred' }, { shorthandNumber: 3 }]
@@ -1617,7 +1617,7 @@ export const twpb = initializeExpressionContainer([
     falseCase: [
       { shorthandFunc: 'add' },
       [
-        'bentoBox',
+        'ignoreForNow',
         [
           { shorthandFunc: 'pred', initialHighlight: true },
           [{ shorthandFunc: 'pred' }, { shorthandNumber: 3 }]
@@ -1642,7 +1642,7 @@ export const tsjd = initializeExpressionContainer([
       falseCase: [
         { shorthandFunc: 'add' },
         [
-          'bentoBox',
+          'ignoreForNow',
           [
             { shorthandFunc: 'pred' },
             [
@@ -1670,7 +1670,7 @@ export const qojl = initializeExpressionContainer([
     falseCase: [
       { shorthandFunc: 'add' },
       [
-        'bentoBox',
+        'ignoreForNow',
         [
           { shorthandFunc: 'pred' },
           [{ shorthandFunc: 'pred' }, { shorthandNumber: 3 }]
@@ -1696,7 +1696,7 @@ export const zxhp = initializeExpressionContainer([
       falseCase: [
         { shorthandFunc: 'add' },
         [
-          'bentoBox',
+          'ignoreForNow',
           [
             { shorthandFunc: 'pred', initialHighlight: true },
             [
@@ -1727,7 +1727,7 @@ export const ihdu = initializeExpressionContainer([
         falseCase: [
           { shorthandFunc: 'add' },
           [
-            'bentoBox',
+            'ignoreForNow',
             [
               { shorthandFunc: 'pred' },
               [
@@ -1763,7 +1763,7 @@ export const npmi = initializeExpressionContainer([
         falseCase: [
           { shorthandFunc: 'add' },
           [
-            'bentoBox',
+            'ignoreForNow',
             [
               { shorthandFunc: 'pred', initialHighlight: true },
               [
@@ -1797,7 +1797,7 @@ export const znga = initializeExpressionContainer([
       falseCase: [
         { shorthandFunc: 'add' },
         [
-          'bentoBox',
+          'ignoreForNow',
           [
             { shorthandFunc: 'pred' },
             [

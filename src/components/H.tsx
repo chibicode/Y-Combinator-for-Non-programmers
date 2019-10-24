@@ -164,6 +164,7 @@ interface HProps {
     | { name: 'demoTitle' }
     | { name: 'whatTheNumberIsCaption' }
     | { name: 'runAndShowAllSteps' }
+    | { name: 'ignoreForNow' }
 }
 
 const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
@@ -1651,6 +1652,13 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
           変換後の計算箱の数字
         </>
       )
+    }
+  }
+  if (args.name === 'ignoreForNow') {
+    if (locale === 'en') {
+      return <>(Ignore for Now)</>
+    } else {
+      return <>(一時的に省略)</>
     }
   }
   throw new Error()

@@ -147,7 +147,7 @@
                     "maxNestedFunctionDepth": 0
                   },
                   "func": {
-                    "name": "bentoBox",
+                    "name": "ignoreForNow",
                     "highlightType": "default",
                     "topLeftBadgeType": "none",
                     "bottomRightBadgeType": "none",
@@ -264,7 +264,7 @@
   "highlightOverridesCallArgAndFuncUnboundOnly": false,
   "bottomRightBadgeOverrides": {},
   "highlightOverrides": {
-    "bentoBox": "highlighted"
+    "ignoreForNow": "highlighted"
   },
   "highlightOverrideActiveAfterStart": false,
   "highlightFunctions": false,

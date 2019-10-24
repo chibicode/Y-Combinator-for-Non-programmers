@@ -262,6 +262,24 @@ const VariableEmoji = ({ expression }: VariableExpressionBoxProps) => {
         </span>
       </div>
     )
+  } else if (expression.name === 'ignoreForNow') {
+    return (
+      <div>
+        <span
+          css={[
+            css`
+              font-weight: bold;
+              text-align: center;
+              display: block;
+              font-size: 0.5em;
+              padding: 0.4em 0;
+            `
+          ]}
+        >
+          <H args={{ name: 'ignoreForNow' }} />
+        </span>
+      </div>
+    )
   } else {
     return (
       <span

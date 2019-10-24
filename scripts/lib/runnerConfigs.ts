@@ -2094,7 +2094,7 @@ export const yyfi: ExpressionRunnerShorthandConfig = {
   skipActive: true,
   initialExpressionContainer: initialExpressionContainers.reak,
   showPriorities: true,
-  highlightOverrides: { bentoBox: 'highlighted' }
+  highlightOverrides: { ignoreForNow: 'highlighted' }
 }
 
 export const amjx: ExpressionRunnerShorthandConfig = {
@@ -2137,7 +2137,7 @@ export const ngxc: ExpressionRunnerShorthandConfig = {
   showPriorities: true,
   initialState: 'default',
   nextIterations: 1,
-  highlightOverrides: { bentoBox: 'highlighted' },
+  highlightOverrides: { ignoreForNow: 'highlighted' },
   explanationsVisibility: 'hidden'
 }
 
@@ -2176,7 +2176,7 @@ export const fkat: ExpressionRunnerShorthandConfig = {
   skipActive: true,
   initialExpressionContainer: initialExpressionContainers.nrff,
   showPriorities: true,
-  highlightOverrides: { bentoBox: 'highlighted' },
+  highlightOverrides: { ignoreForNow: 'highlighted' },
   explanationsVisibility: 'hidden'
 }
 
@@ -2215,7 +2215,7 @@ export const cyyp: ExpressionRunnerShorthandConfig = {
   initialExpressionContainer: initialExpressionContainers.tsjd,
   showPriorities: true,
   explanationsVisibility: 'hidden',
-  highlightOverrides: { bentoBox: 'highlighted' }
+  highlightOverrides: { ignoreForNow: 'highlighted' }
 }
 
 export const kosw: ExpressionRunnerShorthandConfig = {
@@ -2261,7 +2261,7 @@ export const toem: ExpressionRunnerShorthandConfig = {
   initialExpressionContainer: initialExpressionContainers.ihdu,
   showPriorities: true,
   explanationsVisibility: 'hidden',
-  highlightOverrides: { bentoBox: 'highlighted' }
+  highlightOverrides: { ignoreForNow: 'highlighted' }
 }
 
 export const kdgv: ExpressionRunnerShorthandConfig = {

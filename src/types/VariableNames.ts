@@ -48,6 +48,7 @@ export type VariableNames =
   | 'bentoBox'
   | 'mathBox'
   | 'blank'
+  | 'ignoreForNow'
 
 export interface VariableNamesWithAlphaConvertCount {
   name: VariableNames
