@@ -310,7 +310,7 @@ export default () => (
         )
       },
       {
-        title: <>2周目は…</>,
+        title: <>The second time</>,
         content: (
           <>
             <BubbleQuotes
@@ -319,15 +319,19 @@ export default () => (
                   type: 'saya',
                   children: (
                     <>
-                      <P>じゃあ、省略した部分を省略する前の状態に戻すね。</P>
+                      <P>
+                        <Highlight>
+                          We’ll now un-ignore the section we ignored earlier:
+                        </Highlight>
+                      </P>
                     </>
                   )
                 }
               ]}
             />
-            <R.Ngxc>省略した部分を…</R.Ngxc>
+            <R.Ngxc>Un-ignore the section we ignored earlier</R.Ngxc>
             <ExpressionRunnerSeparator />
-            <R.Fkvy>省略前の状態に戻す</R.Fkvy>
+            <R.Fkvy></R.Fkvy>
             <BubbleQuotes
               quotes={[
                 {
@@ -335,7 +339,7 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        では、続きを見てみよう！
+                        Let’s continue!{' '}
                         <H args={{ name: 'pressRun', girl: true }} />
                       </P>
                     </>
@@ -351,7 +355,12 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        あれ…この黄色の部分は、前回省略したのとまったく同じだ！
+                        Oh!{' '}
+                        <Highlight>
+                          This yellow section is exactly the same as the last
+                          time!
+                        </Highlight>{' '}
+                        (The one we ignored.)
                       </P>
                     </>
                   )
@@ -360,9 +369,9 @@ export default () => (
             />
             <R.Tfsi>
               <Highlight>
-                黄色の部分は、前回省略したのと
+                This yellow section is exactly the same
                 <br />
-                まったく同じ
+                as the last time
               </Highlight>
             </R.Tfsi>
             <BubbleQuotes
@@ -372,30 +381,50 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        そう、この部分が
-                        <HighlightBold>繰り返される</HighlightBold>んだよね。
-                        <Emoji>🔁</Emoji>
+                        <Bold>Yes:</Bold>{' '}
+                        <Highlight>
+                          This yellow section, which is exactly the same as
+                          before, has appeared again.
+                        </Highlight>
                       </P>
+                    </>
+                  )
+                },
+                {
+                  type: 'thinking',
+                  children: (
+                    <>
+                      <P>Hmm… interesting!</P>
+                    </>
+                  )
+                },
+                {
+                  type: 'saya',
+                  children: (
+                    <>
                       <P>
-                        では、また
-                        <HighlightBold>黄色の部分を省略してみた</HighlightBold>
-                        よ。前回と何が違うかな？
+                        <Bold>Let’s ignore this section again:</Bold>{' '}
+                        <Highlight>
+                          What’s different from the last time?
+                        </Highlight>
                       </P>
                     </>
                   )
                 }
               ]}
             />
-            <R.Fkat>
-              <HighlightBold>黄色の部分を省略してみた</HighlightBold>
-            </R.Fkat>
+            <R.Fkat>Let’s ignore the yellow section again</R.Fkat>
             <BubbleQuotes
               quotes={[
                 {
                   type: 'thinking',
                   children: (
                     <>
-                      <P>前回と比べてみると、下の黄色の部分が違うね！</P>
+                      <P>
+                        Compared with the last time, there are some differences.
+                        Those are highlighted in <Highlight>yellow</Highlight>{' '}
+                        below:
+                      </P>
                     </>
                   )
                 }
@@ -414,7 +443,7 @@ export default () => (
               right={
                 <>
                   <R.Qgau>
-                    <HighlightBold>After</HighlightBold>
+                    <HighlightBold>Now</HighlightBold>
                   </R.Qgau>
                 </>
               }
@@ -425,20 +454,23 @@ export default () => (
                   type: 'saya',
                   children: (
                     <>
-                      <P>そう。特に注目すべきなのは以下の二点だよ。</P>
+                      <P>
+                        Yes. Pay attention to these two differences in
+                        particular:
+                      </P>
                       <Ul>
                         <UlLi>
-                          先ほど <InlineBorder type="condition" /> には{' '}
-                          <EmojiNumber number={3} /> が入っていたが、
-                          <HighlightBold>
-                            今回は <EmojiNumber number={2} /> が入っている
-                          </HighlightBold>
+                          <InlineBorder type="condition" /> was{' '}
+                          <EmojiNumber number={3} /> before, but{' '}
+                          <Highlight>
+                            it’s now <EmojiNumber number={2} />.
+                          </Highlight>
                         </UlLi>
                         <UlLi>
-                          <HighlightBold>
-                            一番下に <CustomEmoji type="plusOne" />{' '}
-                            が追加されている
-                          </HighlightBold>
+                          <Highlight>
+                            There’s now a <CustomEmoji type="plusOne" /> icon on
+                            the bottom.
+                          </Highlight>
                         </UlLi>
                       </Ul>
                     </>
@@ -449,13 +481,13 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        ふむふむ…
-                        <Highlight>
-                          <InlineBorder type="condition" /> に入っていた数字は、
-                          <EmojiNumber number={3} /> から{' '}
-                          <EmojiNumber number={2} /> に「
-                          <HighlightBold>1減った</HighlightBold>」というわけか。
-                        </Highlight>
+                        I also noticed that the number in{' '}
+                        <InlineBorder type="condition" /> went from{' '}
+                        <EmojiNumber number={3} /> to <EmojiNumber number={2} />
+                        .
+                      </P>
+                      <P>
+                        So <Highlight>it decreased by one</Highlight>.
                       </P>
                     </>
                   )
@@ -470,7 +502,8 @@ export default () => (
               ]}
               description={
                 <>
-                  <InlineBorder type="condition" /> が1減った
+                  The number in <InlineBorder type="condition" /> decreased by
+                  one
                 </>
               }
             />
@@ -481,15 +514,14 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        じゃあもしかしたら、
-                        <HighlightBold>
-                          このまま続けたら、次は{' '}
-                          <InlineBorder type="condition" /> の数字が{' '}
-                          <EmojiNumber number={1} /> になる
-                        </HighlightBold>
-                        のかも…？
+                        <Bold>Maybe:</Bold>{' '}
+                        <Highlight>
+                          If we continue, maybe the number in{' '}
+                          <InlineBorder type="condition" /> will become{' '}
+                          <EmojiNumber number={1} /> next?
+                        </Highlight>
                       </P>
-                      <P>続けて確かめてみるか。</P>
+                      <P>Let’s see if that turns out to be true!</P>
                     </>
                   )
                 }
@@ -499,7 +531,7 @@ export default () => (
         )
       },
       {
-        title: <>3周目は…</>,
+        title: <>The third time </>,
         content: (
           <>
             <BubbleQuotes
@@ -509,7 +541,24 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        再度、省略した部分を省略する前の状態に戻したよ。
+                        Let’s continue! We’ll un-ignore the section we ignored
+                        earlier.
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Fkat>Un-ignore the section we ignored earlier</R.Fkat>
+            <ExpressionRunnerSeparator />
+            <R.Tfsi></R.Tfsi>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'saya',
+                  children: (
+                    <>
+                      <P>
                         <H args={{ name: 'pressRun', girl: true }} />
                       </P>
                     </>
@@ -525,26 +574,33 @@ export default () => (
                   children: (
                     <>
                       <P>
+                        <Bold>Again:</Bold>{' '}
                         <Highlight>
-                          また真ん中の部分が前回と同じなので、省略してみる
-                        </Highlight>
-                        ね。
+                          The middle section is exactly the same as before.
+                        </Highlight>{' '}
+                        So we’ll ignore this again:
                       </P>
                     </>
                   )
                 }
               ]}
             />
-            <R.Jjet>黄色の部分は前回と同じなので…</R.Jjet>
+            <R.Jjet>
+              <Highlight>
+                This yellow section is exactly the same
+                <br />
+                as the last time…
+              </Highlight>
+            </R.Jjet>
             <ExpressionRunnerSeparator />
-            <R.Cyyp>また省略してみた</R.Cyyp>
+            <R.Cyyp>So let’s ignore it for now</R.Cyyp>
             <BubbleQuotes
               quotes={[
                 {
                   type: 'saya',
                   children: (
                     <>
-                      <P>では、前回とまた比べてみよう！</P>
+                      <P>Let’s compare with the previous iteration again!</P>
                     </>
                   )
                 }
@@ -563,7 +619,7 @@ export default () => (
               right={
                 <>
                   <R.Ysxf>
-                    <HighlightBold>After</HighlightBold>
+                    <HighlightBold>Now</HighlightBold>
                   </R.Ysxf>
                 </>
               }
@@ -574,20 +630,22 @@ export default () => (
                   type: 'saya',
                   children: (
                     <>
-                      <P>特に注目すべきなのは…</P>
+                      <P>
+                        Pay attention to these two differences in particular:
+                      </P>
                       <Ul>
                         <UlLi>
-                          先ほど <InlineBorder type="condition" /> には{' '}
-                          <EmojiNumber number={2} /> が入っていたが、
-                          <HighlightBold>
-                            今回は <EmojiNumber number={1} /> が入っている
-                          </HighlightBold>
+                          <InlineBorder type="condition" /> was{' '}
+                          <EmojiNumber number={2} /> before, but{' '}
+                          <Highlight>
+                            it’s now <EmojiNumber number={1} />.
+                          </Highlight>
                         </UlLi>
                         <UlLi>
-                          <HighlightBold>
-                            またしても、一番下に <CustomEmoji type="plusOne" />{' '}
-                            が追加されている
-                          </HighlightBold>
+                          <Highlight>
+                            Another <CustomEmoji type="plusOne" /> icon was
+                            added on the bottom.
+                          </Highlight>
                         </UlLi>
                       </Ul>
                     </>
@@ -597,16 +655,13 @@ export default () => (
                   type: 'thinking',
                   children: (
                     <>
-                      <P>なんとなく、パターンが見えてきたかも…</P>
+                      <P>I’m seeing the pattern…</P>
                       <P>
-                        特に、
                         <Highlight>
-                          <InlineBorder type="condition" /> に入っていた数字は、
-                          <EmojiNumber number={3} /> から{' '}
-                          <EmojiNumber number={2} /> に、
-                          <EmojiNumber number={2} /> から{' '}
-                          <EmojiNumber number={1} /> にと、
-                          <HighlightBold>1ずつ減っている</HighlightBold>よね。
+                          The number in <InlineBorder type="condition" /> has
+                          changed from <EmojiNumber number={3} /> to{' '}
+                          <EmojiNumber number={2} /> to{' '}
+                          <EmojiNumber number={1} />. It’s decreasing by one.
                         </Highlight>
                       </P>
                     </>
@@ -624,7 +679,7 @@ export default () => (
               ]}
               description={
                 <>
-                  <InlineBorder type="condition" /> が1ずつ減っている
+                  <InlineBorder type="condition" /> is decreasing by one
                 </>
               }
             />
@@ -635,22 +690,11 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        ということは、次は{' '}
+                        <Bold>So, maybe:</Bold>{' '}
                         <Highlight>
-                          <InlineBorder type="condition" /> が{' '}
-                          <EmojiNumber number={0} /> になるのかな？
+                          <InlineBorder type="condition" /> will become{' '}
+                          <EmojiNumber number={0} /> next?
                         </Highlight>
-                      </P>
-                      <P>
-                        そして、
-                        <HighlightBold>
-                          <InlineBorder type="condition" /> が{' '}
-                          <EmojiNumber number={0} /> になると、
-                          <InlineBorder type="falseCase" /> ではなく{' '}
-                          <InlineBorder type="trueCase" />{' '}
-                          が残るようになるから、繰り返しがストップされる
-                        </HighlightBold>
-                        のかも？
                       </P>
                     </>
                   )
@@ -659,10 +703,7 @@ export default () => (
                   type: 'saya',
                   children: (
                     <>
-                      <P>
-                        では、確かめてみよう！
-                        <HighlightBold>次が最後だよ！</HighlightBold>
-                      </P>
+                      <P>Let’s check!</P>
                     </>
                   )
                 }
@@ -738,7 +779,7 @@ export default () => (
               right={
                 <>
                   <R.Kdgv>
-                    <HighlightBold>After</HighlightBold>
+                    <HighlightBold>Now</HighlightBold>
                   </R.Kdgv>
                 </>
               }

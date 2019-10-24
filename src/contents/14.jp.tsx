@@ -379,13 +379,26 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        そう、この部分が
-                        <HighlightBold>繰り返される</HighlightBold>んだよね。
-                        <Emoji>🔁</Emoji>
+                        そう。前回省略したのと全く同じのが再度出現するんだ。
                       </P>
+                    </>
+                  )
+                },
+                {
+                  type: 'thinking',
+                  children: (
+                    <>
+                      <P>へー、不思議だなあ…</P>
+                    </>
+                  )
+                },
+                {
+                  type: 'saya',
+                  children: (
+                    <>
                       <P>
                         では、また
-                        <HighlightBold>黄色の部分を省略してみた</HighlightBold>
+                        <HighlightBold>この部分を省略してみた</HighlightBold>
                         よ。前回と何が違うかな？
                       </P>
                     </>
@@ -647,17 +660,6 @@ export default () => (
                           <InlineBorder type="condition" /> が{' '}
                           <EmojiNumber number={0} /> になるのかな？
                         </Highlight>
-                      </P>
-                      <P>
-                        そして、
-                        <HighlightBold>
-                          <InlineBorder type="condition" /> が{' '}
-                          <EmojiNumber number={0} /> になると、
-                          <InlineBorder type="falseCase" /> ではなく{' '}
-                          <InlineBorder type="trueCase" />{' '}
-                          が残るようになるから、繰り返しがストップされる
-                        </HighlightBold>
-                        のかも？
                       </P>
                     </>
                   )
