@@ -2272,6 +2272,14 @@ export const kdgv: ExpressionRunnerShorthandConfig = {
   explanationsVisibility: 'hidden'
 }
 
+export const nphi: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  skipActive: true,
+  initialExpressionContainer: initialExpressionContainers.abou,
+  showPriorities: true,
+  explanationsVisibility: 'hidden'
+}
+
 export const mibj: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   skipActive: true,

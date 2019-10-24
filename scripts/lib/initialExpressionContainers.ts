@@ -1751,6 +1751,42 @@ export const ihdu = initializeExpressionContainer([
   ]
 ])
 
+export const abou = initializeExpressionContainer([
+  { shorthandFunc: 'add' },
+  [
+    { shorthandFunc: 'add' },
+    [
+      { shorthandFunc: 'add' },
+      {
+        checkType: 'isZero',
+        condition: {
+          shorthandNumber: 0,
+          initialHighlight: true
+        },
+        trueCase: {
+          shorthandNumber: 2
+        },
+        falseCase: [
+          { shorthandFunc: 'add' },
+          [
+            'ignoreForNow',
+            [
+              { shorthandFunc: 'pred' },
+              [
+                { shorthandFunc: 'pred' },
+                [
+                  { shorthandFunc: 'pred' },
+                  [{ shorthandFunc: 'pred' }, { shorthandNumber: 3 }]
+                ]
+              ]
+            ]
+          ]
+        ]
+      }
+    ]
+  ]
+])
+
 export const npmi = initializeExpressionContainer([
   { shorthandFunc: 'add', initialHighlight: true },
   [

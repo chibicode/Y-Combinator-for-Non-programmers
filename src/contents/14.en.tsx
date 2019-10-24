@@ -893,6 +893,29 @@ export default () => (
             <P>Here’s what happened:</P>
             <R.Kjba></R.Kjba>
             <ExpressionRunnerSeparator />
+            <R.Amjx>
+              <InlineBorder type="condition" /> is <EmojiNumber number={3} />
+            </R.Amjx>
+            <ExpressionRunnerSeparator />
+            <R.Kosw>
+              <InlineBorder type="condition" /> is <EmojiNumber number={2} />
+            </R.Kosw>
+            <ExpressionRunnerSeparator />
+            <R.Mibj>
+              <InlineBorder type="condition" /> is <EmojiNumber number={1} />
+            </R.Mibj>
+            <ExpressionRunnerSeparator />
+            <R.Nphi>
+              <InlineBorder type="condition" /> is <EmojiNumber number={0} />,
+              <br />
+              so it chooses <InlineBorder type="trueCase" />
+            </R.Nphi>
+            <ExpressionRunnerSeparator />
+            <R.Jwce></R.Jwce>
+            <ExpressionRunnerSeparator />
+            <R.Seie>
+              The final result is <EmojiNumber number={5} />
+            </R.Seie>
           </>
         )
       },

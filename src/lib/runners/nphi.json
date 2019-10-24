@@ -1,0 +1,271 @@
+{
+  "expressionContainers": [
+    {
+      "expression": {
+        "arg": {
+          "arg": {
+            "arg": {
+              "type": "conditional",
+              "state": "default",
+              "checkType": "isZero",
+              "condition": {
+                "name": "shorthandNumber",
+                "highlightType": "initialHighlighted",
+                "topLeftBadgeType": "none",
+                "bottomRightBadgeType": "none",
+                "type": "variable",
+                "argPriorityAgg": [],
+                "funcPriorityAgg": [],
+                "emphasizePriority": false,
+                "bound": true,
+                "shorthandNumber": 0,
+                "maxNestedFunctionDepth": 0
+              },
+              "trueCase": {
+                "name": "shorthandNumber",
+                "highlightType": "default",
+                "topLeftBadgeType": "none",
+                "bottomRightBadgeType": "none",
+                "type": "variable",
+                "argPriorityAgg": [],
+                "funcPriorityAgg": [
+                  4
+                ],
+                "emphasizePriority": false,
+                "bound": true,
+                "shorthandNumber": 2,
+                "maxNestedFunctionDepth": 0
+              },
+              "falseCase": {
+                "arg": {
+                  "arg": {
+                    "arg": {
+                      "arg": {
+                        "arg": {
+                          "arg": {
+                            "name": "shorthandNumber",
+                            "highlightType": "default",
+                            "topLeftBadgeType": "none",
+                            "bottomRightBadgeType": "none",
+                            "type": "variable",
+                            "argPriorityAgg": [
+                              1,
+                              2,
+                              3,
+                              4,
+                              5,
+                              6,
+                              7,
+                              8,
+                              9,
+                              10
+                            ],
+                            "funcPriorityAgg": [],
+                            "emphasizePriority": false,
+                            "bound": true,
+                            "shorthandNumber": 3,
+                            "maxNestedFunctionDepth": 0
+                          },
+                          "func": {
+                            "name": "shorthandFunc",
+                            "highlightType": "default",
+                            "topLeftBadgeType": "none",
+                            "bottomRightBadgeType": "none",
+                            "type": "variable",
+                            "argPriorityAgg": [],
+                            "funcPriorityAgg": [
+                              10
+                            ],
+                            "emphasizePriority": false,
+                            "bound": true,
+                            "shorthandFunc": "pred",
+                            "maxNestedFunctionDepth": 0
+                          },
+                          "state": "default",
+                          "type": "call",
+                          "priority": 10,
+                          "maxNestedFunctionDepth": 0
+                        },
+                        "func": {
+                          "name": "shorthandFunc",
+                          "highlightType": "default",
+                          "topLeftBadgeType": "none",
+                          "bottomRightBadgeType": "none",
+                          "type": "variable",
+                          "argPriorityAgg": [],
+                          "funcPriorityAgg": [
+                            9
+                          ],
+                          "emphasizePriority": false,
+                          "bound": true,
+                          "shorthandFunc": "pred",
+                          "maxNestedFunctionDepth": 0
+                        },
+                        "state": "default",
+                        "type": "call",
+                        "priority": 9,
+                        "maxNestedFunctionDepth": 0
+                      },
+                      "func": {
+                        "name": "shorthandFunc",
+                        "highlightType": "default",
+                        "topLeftBadgeType": "none",
+                        "bottomRightBadgeType": "none",
+                        "type": "variable",
+                        "argPriorityAgg": [],
+                        "funcPriorityAgg": [
+                          8
+                        ],
+                        "emphasizePriority": false,
+                        "bound": true,
+                        "shorthandFunc": "pred",
+                        "maxNestedFunctionDepth": 0
+                      },
+                      "state": "default",
+                      "type": "call",
+                      "priority": 8,
+                      "maxNestedFunctionDepth": 0
+                    },
+                    "func": {
+                      "name": "shorthandFunc",
+                      "highlightType": "default",
+                      "topLeftBadgeType": "none",
+                      "bottomRightBadgeType": "none",
+                      "type": "variable",
+                      "argPriorityAgg": [],
+                      "funcPriorityAgg": [
+                        7
+                      ],
+                      "emphasizePriority": false,
+                      "bound": true,
+                      "shorthandFunc": "pred",
+                      "maxNestedFunctionDepth": 0
+                    },
+                    "state": "default",
+                    "type": "call",
+                    "priority": 7,
+                    "maxNestedFunctionDepth": 0
+                  },
+                  "func": {
+                    "name": "ignoreForNow",
+                    "highlightType": "default",
+                    "topLeftBadgeType": "none",
+                    "bottomRightBadgeType": "none",
+                    "type": "variable",
+                    "argPriorityAgg": [],
+                    "funcPriorityAgg": [
+                      6
+                    ],
+                    "emphasizePriority": false,
+                    "bound": true,
+                    "maxNestedFunctionDepth": 0
+                  },
+                  "state": "default",
+                  "type": "call",
+                  "priority": 6,
+                  "maxNestedFunctionDepth": 0
+                },
+                "func": {
+                  "name": "shorthandFunc",
+                  "highlightType": "default",
+                  "topLeftBadgeType": "none",
+                  "bottomRightBadgeType": "none",
+                  "type": "variable",
+                  "argPriorityAgg": [],
+                  "funcPriorityAgg": [
+                    5
+                  ],
+                  "emphasizePriority": false,
+                  "bound": true,
+                  "shorthandFunc": "add",
+                  "maxNestedFunctionDepth": 0
+                },
+                "state": "default",
+                "type": "call",
+                "priority": 5,
+                "maxNestedFunctionDepth": 0
+              },
+              "priority": 4,
+              "maxNestedFunctionDepth": 0
+            },
+            "func": {
+              "name": "shorthandFunc",
+              "highlightType": "default",
+              "topLeftBadgeType": "none",
+              "bottomRightBadgeType": "none",
+              "type": "variable",
+              "argPriorityAgg": [],
+              "funcPriorityAgg": [
+                3
+              ],
+              "emphasizePriority": false,
+              "bound": true,
+              "shorthandFunc": "add",
+              "maxNestedFunctionDepth": 0
+            },
+            "state": "default",
+            "type": "call",
+            "priority": 3,
+            "maxNestedFunctionDepth": 0
+          },
+          "func": {
+            "name": "shorthandFunc",
+            "highlightType": "default",
+            "topLeftBadgeType": "none",
+            "bottomRightBadgeType": "none",
+            "type": "variable",
+            "argPriorityAgg": [],
+            "funcPriorityAgg": [
+              2
+            ],
+            "emphasizePriority": false,
+            "bound": true,
+            "shorthandFunc": "add",
+            "maxNestedFunctionDepth": 0
+          },
+          "state": "default",
+          "type": "call",
+          "priority": 2,
+          "maxNestedFunctionDepth": 0
+        },
+        "func": {
+          "name": "shorthandFunc",
+          "highlightType": "default",
+          "topLeftBadgeType": "none",
+          "bottomRightBadgeType": "none",
+          "type": "variable",
+          "argPriorityAgg": [],
+          "funcPriorityAgg": [
+            1
+          ],
+          "emphasizePriority": false,
+          "bound": true,
+          "shorthandFunc": "add",
+          "maxNestedFunctionDepth": 0
+        },
+        "state": "default",
+        "type": "call",
+        "priority": 1,
+        "maxNestedFunctionDepth": 0
+      },
+      "numLeafNodes": 12,
+      "containerState": "ready",
+      "previouslyChangedExpressionState": "default"
+    }
+  ],
+  "speed": 1,
+  "hideControls": true,
+  "explanationsVisibility": "hidden",
+  "hidePriorities": false,
+  "hideRunButton": false,
+  "hideBottomRightBadges": false,
+  "skipToTheEnd": false,
+  "hideFuncUnboundBadgeOnExplanation": false,
+  "highlightOverridesCallArgAndFuncUnboundOnly": false,
+  "bottomRightBadgeOverrides": {},
+  "highlightOverrides": {},
+  "highlightOverrideActiveAfterStart": false,
+  "highlightFunctions": false,
+  "skipActive": true,
+  "showBottomProgressBar": true
+}
