@@ -2399,12 +2399,6 @@ export const jwsj: ExpressionRunnerShorthandConfig = {
   showPriorities: true
 }
 
-export const zflb: ExpressionRunnerShorthandConfig = {
-  runner: 'simple',
-  initialExpressionContainer: initialExpressionContainers.rcqu,
-  showPriorities: true
-}
-
 export const dmrz: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   initialExpressionContainer: initialExpressionContainers.jpac,

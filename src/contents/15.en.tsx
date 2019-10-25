@@ -195,12 +195,16 @@ export default () => (
                       <P>Ok. Let’s use:</P>
                       <Ul>
                         <UlLi>
-                          <EmojiNumber number={2} /> for{' '}
-                          <CustomEmoji type="blankNumberPurple" /> and…
+                          <Highlight>
+                            <EmojiNumber number={2} /> for{' '}
+                            <CustomEmoji type="blankNumberPurple" />
+                          </Highlight>
                         </UlLi>
                         <UlLi>
-                          <EmojiNumber number={3} /> for{' '}
-                          <CustomEmoji type="blankNumberPink" />.
+                          <Highlight>
+                            <EmojiNumber number={3} /> for{' '}
+                            <CustomEmoji type="blankNumberPink" />
+                          </Highlight>
                         </UlLi>
                       </Ul>
                     </>
@@ -213,9 +217,9 @@ export default () => (
               <CustomEmoji type="blankNumberPink" />…
             </R.Jwsj>
             <ExpressionRunnerSeparator />
-            <R.Zflb>
+            <R.Mlnt>
               With <EmojiNumber number={2} /> and <EmojiNumber number={3} />
-            </R.Zflb>
+            </R.Mlnt>
             <BubbleQuotes
               quotes={[
                 {
@@ -253,7 +257,7 @@ export default () => (
                 }
               ]}
             />
-            <R.Zflb></R.Zflb>
+            <R.Mlnt></R.Mlnt>
             <ExpressionRunnerSeparator />
             <R.Tpyg>
               Use lunchboxes that can be converted to

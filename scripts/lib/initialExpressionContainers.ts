@@ -2072,22 +2072,6 @@ export const ibzy = initializeExpressionContainer([
   }
 ])
 
-export const rcqu = initializeExpressionContainer([
-  [
-    addParams('a', 'b', 'c', 'd'),
-    {
-      shorthandNumberAfterConvert: 'number',
-      shorthandNumber: 3,
-      initialHighlight: true
-    }
-  ],
-  {
-    shorthandNumberAfterConvert: 'number',
-    shorthandNumber: 2,
-    initialHighlight: true
-  }
-])
-
 export const yknu = initializeExpressionContainer([
   addParams('a', 'b', 'c', 'd'),
   numberParams('g', 'h', 3),
