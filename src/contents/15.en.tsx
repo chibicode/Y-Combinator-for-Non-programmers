@@ -335,7 +335,7 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        It became this lunchbox
+                        It became this lunchbox{' '}
                         <Highlight>
                           that can be converted to <EmojiNumber number={5} />!
                         </Highlight>
@@ -368,13 +368,12 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        では、
-                        <HighlightBold>
-                          もともと <CustomEmoji type="blankNumberPurple" /> と{' '}
-                          <CustomEmoji type="blankNumberPink" />{' '}
-                          に入れた数字は何だった
-                        </HighlightBold>
-                        かな？
+                        <Bold>Now:</Bold>{' '}
+                        <Highlight>
+                          What numbers did you use for{' '}
+                          <CustomEmoji type="blankNumberPurple" /> and{' '}
+                          <CustomEmoji type="blankNumberPink" />?
+                        </Highlight>
                       </P>
                     </>
                   )
@@ -385,9 +384,9 @@ export default () => (
                     <>
                       <P>
                         <Highlight>
-                          もともと入れたのは <EmojiNumber number={2} /> と{' '}
-                          <EmojiNumber number={3} /> だった。そして、結果は{' '}
-                          <EmojiNumber number={5} /> になった…
+                          I used <EmojiNumber number={2} /> and{' '}
+                          <EmojiNumber number={3} />, and the final result was{' '}
+                          <EmojiNumber number={5} />…
                         </Highlight>
                       </P>
                     </>
@@ -396,12 +395,12 @@ export default () => (
               ]}
             />
             <R.Mlnt>
-              <EmojiNumber number={2} /> と <EmojiNumber number={3} />{' '}
-              を入れると…
+              If we used <EmojiNumber number={2} /> and{' '}
+              <EmojiNumber number={3} />…
             </R.Mlnt>
             <ExpressionRunnerSeparator />
             <R.Ryqp>
-              <EmojiNumber number={5} /> に変換できる弁当箱に
+              The final result was <EmojiNumber number={5} />
             </R.Ryqp>
             <BubbleQuotes
               quotes={[
@@ -410,9 +409,11 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        ということはもしかして…
-                        <HighlightBold>足し算を計算した</HighlightBold>
-                        のか？
+                        <Bold>Does that mean:</Bold>{' '}
+                        <Highlight>
+                          It calculated <EmojiNumber number={2} />{' '}
+                          <Emoji>➕</Emoji> <EmojiNumber number={3} />?
+                        </Highlight>
                       </P>
                     </>
                   )
@@ -421,22 +422,25 @@ export default () => (
                   type: 'devil',
                   children: (
                     <>
-                      <P>その通りだ！先ほどの弁当箱は、</P>
+                      <P>
+                        <Bold>Exactly!</Bold> Using the above lunchbox,
+                      </P>
                       <Ul>
                         <UlLi>
                           <Highlight>
-                            <CustomEmoji type="blankNumberPurple" /> と{' '}
-                            <CustomEmoji type="blankNumberPink" />{' '}
-                            に数字を入れて実行すると…
+                            If you fill each of{' '}
+                            <CustomEmoji type="blankNumberPurple" /> and{' '}
+                            <CustomEmoji type="blankNumberPink" /> with some
+                            number…
                           </Highlight>
                         </UlLi>
                         <UlLi>
-                          <HighlightBold>
+                          <Highlight>
+                            It calculates{' '}
                             <CustomEmoji type="blankNumberPurple" />{' '}
                             <Emoji>➕</Emoji>{' '}
-                            <CustomEmoji type="blankNumberPink" />{' '}
-                            に変換できる弁当箱になるんだ。
-                          </HighlightBold>
+                            <CustomEmoji type="blankNumberPink" />.
+                          </Highlight>
                         </UlLi>
                       </Ul>
                     </>
@@ -445,16 +449,20 @@ export default () => (
               ]}
             />
             <R.Hvfb>
-              <CustomEmoji type="blankNumberPurple" /> と{' '}
-              <CustomEmoji type="blankNumberPink" /> に数字を入れて
+              If you fill each of <CustomEmoji type="blankNumberPurple" /> and{' '}
+              <CustomEmoji type="blankNumberPink" />
               <br />
-              実行すると…
+              with some number and <H
+                args={{ name: 'run', lowerCase: true }}
+              />{' '}
+              it…
             </R.Hvfb>
             <ExpressionRunnerSeparator />
             <R.Nxjv>
-              <CustomEmoji type="blankNumberPurple" /> <Emoji>➕</Emoji>{' '}
-              <CustomEmoji type="blankNumberPink" /> に<br />
-              変換できる弁当箱になる
+              It will become a lunchbox that can be
+              <br />
+              converted to <CustomEmoji type="blankNumberPurple" />{' '}
+              <Emoji>➕</Emoji> <CustomEmoji type="blankNumberPink" />
             </R.Nxjv>
             <BubbleQuotes
               quotes={[
@@ -463,10 +471,16 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        つまり、
-                        <HighlightBold>足し算ができる弁当箱</HighlightBold>
-                        というわけだな。
+                        <Bold>In summary:</Bold>{' '}
+                        <Highlight>
+                          The above lunchbox can do{' '}
+                          <Bold>addition of two numbers</Bold>.
+                        </Highlight>
                       </P>
+                      <EmojiSeparator
+                        emojis={['✨', '➕', '✨']}
+                        description={<>It can add two numbers!</>}
+                      />
                     </>
                   )
                 },
@@ -474,19 +488,21 @@ export default () => (
                   type: 'surprised',
                   children: (
                     <>
-                      <P>なんてこった…</P>
+                      <P>Oh wow…!</P>
                       <P>
-                        前回、俺らは <Emoji>🅰️</Emoji> <Emoji>➕</Emoji>{' '}
-                        <Emoji>🅱️</Emoji> を計算するのに、以下のように「
-                        <H args={{ name: 'repeatFeature' }} />
-                        」を再現できる弁当箱を使っていたが…
+                        We thought we had to use{' '}
+                        <H args={{ name: 'repeatFeature' }} /> to calculate{' '}
+                        additions like this:
                       </P>
                       <R.Bxuv>
-                        <Emoji>🅰️</Emoji> <Emoji>➕</Emoji> <Emoji>🅱️</Emoji>{' '}
-                        を計算
+                        Calculates <Emoji>🅰️</Emoji> <Emoji>➕</Emoji>{' '}
+                        <Emoji>🅱️</Emoji>
                       </R.Bxuv>
                       <P>
-                        こんな複雑なことをしなくても、弁当箱で足し算をすることができるというわけか。
+                        <Highlight>
+                          But it looks like we can do addition of two numbers
+                          without using <H args={{ name: 'repeatFeature' }} />.
+                        </Highlight>
                       </P>
                     </>
                   )
@@ -495,7 +511,7 @@ export default () => (
                   type: 'devil',
                   children: (
                     <>
-                      <P>まさに、その通りだ！</P>
+                      <P>Exactly!</P>
                     </>
                   )
                 }
@@ -505,7 +521,7 @@ export default () => (
         )
       },
       {
-        title: <>もうひとつの弁当箱</>,
+        title: <>Another lunchbox</>,
         content: (
           <>
             <BubbleQuotes
@@ -515,56 +531,76 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        では、こちらの弁当箱は何ができる弁当箱か分かるかな？
+                        <Bold>Next, how about this lunchbox?</Bold>{' '}
+                        <Highlight>
+                          What do you think this lunchbox can do?
+                        </Highlight>
                       </P>
                     </>
                   )
                 }
               ]}
             />
-            <R.Vqyl></R.Vqyl>
+            <R.Vqyl>What can this lunchbox do?</R.Vqyl>
             <BubbleQuotes
               quotes={[
                 {
                   type: 'thinking',
                   children: (
                     <>
-                      <P>先ほどの弁当箱と似ているけど、微妙に違うなあ…</P>
                       <P>
-                        前回同様、
-                        <HighlightBold>
-                          <EmojiNumber number={2} /> と{' '}
-                          <EmojiNumber number={3} /> に変換できる弁当箱を{' '}
-                          <CustomEmoji type="blankNumberPurple" /> と{' '}
-                          <CustomEmoji type="blankNumberPink" /> に入れて、
-                          <H args={{ name: 'run' }} /> してみよう。
-                        </HighlightBold>
+                        It looks like the previous lunchbox, but it’s slightly
+                        different.
                       </P>
-                    </>
-                  )
-                },
-                {
-                  type: 'devil',
-                  children: (
-                    <>
                       <P>
-                        ちなみに、今回はかなり時間がかかるので、待てない場合は「
-                        <HighlightBold>
-                          <H args={{ name: 'skipToTheEnd' }} /> →
-                        </HighlightBold>
-                        」を押してもいいぞ。
+                        <Highlight>
+                          Let’s fill <CustomEmoji type="blankNumberPurple" />{' '}
+                          and <CustomEmoji type="blankNumberPink" /> with{' '}
+                          <EmojiNumber number={2} /> and{' '}
+                          <EmojiNumber number={3} />
+                        </Highlight>{' '}
+                        like the last time, and see what happens.
                       </P>
                     </>
                   )
                 }
               ]}
             />
-            <R.Wzqv>
-              <EmojiNumber number={2} /> と <EmojiNumber number={3} />{' '}
-              に変換できる
+            <R.Nvdn>
+              Use <EmojiNumber number={2} /> for{' '}
+              <CustomEmoji type="blankNumberPurple" /> and{' '}
+              <EmojiNumber number={3} /> for{' '}
+              <CustomEmoji type="blankNumberPink" />
+            </R.Nvdn>
+            <ExpressionRunnerSeparator />
+            <R.Yiet>
+              Use lunchboxes that can be converted to
               <br />
-              弁当箱を入れてみた
-            </R.Wzqv>
+              <EmojiNumber number={2} /> and <EmojiNumber number={3} />
+            </R.Yiet>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'devil',
+                  children: (
+                    <>
+                      <P>
+                        Ok, let’s <H args={{ name: 'run', lowerCase: true }} />{' '}
+                        it!
+                      </P>
+                      <P>
+                        This one takes time, so if you can’t wait, press{' '}
+                        <Highlight highlightType="pink">
+                          “<H args={{ name: 'skipToTheEnd' }} /> →”
+                        </Highlight>
+                        .
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Wzqv></R.Wzqv>
             <BubbleQuotes
               quotes={[
                 {
@@ -572,10 +608,9 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        結果は…
+                        It became a lunchbox{' '}
                         <Highlight>
-                          <EmojiNumber number={6} />{' '}
-                          に変換できる弁当箱になった！
+                          that can be converted to <EmojiNumber number={6} />!
                         </Highlight>
                       </P>
                       <R.Edzu>
@@ -596,7 +631,7 @@ export default () => (
         )
       },
       {
-        title: <>掛け算ができる</>,
+        title: <>It can do multiplication</>,
         content: (
           <>
             <BubbleQuotes

@@ -408,7 +408,8 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        ということはもしかして…
+                        ということはもしかして… <EmojiNumber number={2} />{' '}
+                        <Emoji>➕</Emoji> <EmojiNumber number={3} /> という
                         <HighlightBold>足し算を計算した</HighlightBold>
                         のか？
                       </P>
@@ -462,9 +463,15 @@ export default () => (
                     <>
                       <P>
                         つまり、
-                        <HighlightBold>足し算ができる弁当箱</HighlightBold>
+                        <HighlightBold>
+                          ふたつの数字の足し算ができる弁当箱
+                        </HighlightBold>
                         というわけだな。
                       </P>
+                      <EmojiSeparator
+                        emojis={['✨', '➕', '✨']}
+                        description={<>ふたつの数字の足し算ができる！</>}
+                      />
                     </>
                   )
                 },
@@ -474,8 +481,7 @@ export default () => (
                     <>
                       <P>なんてこった…</P>
                       <P>
-                        前回、俺らは <Emoji>🅰️</Emoji> <Emoji>➕</Emoji>{' '}
-                        <Emoji>🅱️</Emoji> を計算するのに、以下のように「
+                        前回、俺らは足し算を計算するのに、以下のように「
                         <H args={{ name: 'repeatFeature' }} />
                         」を再現できる弁当箱を使っていたが…
                       </P>
@@ -520,7 +526,7 @@ export default () => (
                 }
               ]}
             />
-            <R.Vqyl></R.Vqyl>
+            <R.Vqyl>こちらの弁当箱は何ができる弁当箱か？</R.Vqyl>
             <BubbleQuotes
               quotes={[
                 {
@@ -534,17 +540,38 @@ export default () => (
                           <EmojiNumber number={2} /> と{' '}
                           <EmojiNumber number={3} /> に変換できる弁当箱を{' '}
                           <CustomEmoji type="blankNumberPurple" /> と{' '}
-                          <CustomEmoji type="blankNumberPink" /> に入れて、
-                          <H args={{ name: 'run' }} /> してみよう。
+                          <CustomEmoji type="blankNumberPink" />{' '}
+                          に入れてみよう。
                         </HighlightBold>
                       </P>
                     </>
                   )
-                },
+                }
+              ]}
+            />
+            <R.Nvdn>
+              <CustomEmoji type="blankNumberPurple" /> に{' '}
+              <EmojiNumber number={2} /> を、
+              <CustomEmoji type="blankNumberPink" /> に{' '}
+              <EmojiNumber number={3} /> を入れる
+            </R.Nvdn>
+            <ExpressionRunnerSeparator />
+            <R.Yiet>
+              <EmojiNumber number={2} /> と <EmojiNumber number={3} />{' '}
+              にそれぞれ変換できる
+              <br />
+              弁当箱を用意
+            </R.Yiet>
+            <BubbleQuotes
+              quotes={[
                 {
                   type: 'devil',
                   children: (
                     <>
+                      <P>
+                        では、
+                        <H args={{ name: 'run' }} /> してみよう！
+                      </P>
                       <P>
                         ちなみに、今回はかなり時間がかかるので、待てない場合は「
                         <HighlightBold>
@@ -557,12 +584,7 @@ export default () => (
                 }
               ]}
             />
-            <R.Wzqv>
-              <EmojiNumber number={2} /> と <EmojiNumber number={3} />{' '}
-              に変換できる
-              <br />
-              弁当箱を入れてみた
-            </R.Wzqv>
+            <R.Wzqv></R.Wzqv>
             <BubbleQuotes
               quotes={[
                 {

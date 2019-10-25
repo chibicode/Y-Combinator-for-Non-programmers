@@ -2464,6 +2464,12 @@ export const vqyl: ExpressionRunnerShorthandConfig = {
   showPriorities: true
 }
 
+export const yiet: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.ndtm,
+  showPriorities: true
+}
+
 export const wzqv: ExpressionRunnerShorthandConfig = {
   runner: 'runButtonOnly',
   skipToTheEnd: false,
