@@ -851,7 +851,8 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        ちなみに弁当箱は四則演算だけじゃなく、さらに複雑な計算をすることもできるぞ。
+                        Furthermore, lunchboxes can do even more complicated
+                        calculations.
                       </P>
                     </>
                   )
@@ -860,7 +861,7 @@ export default () => (
                   type: 'thinking',
                   children: (
                     <>
-                      <P>へえ、たとえば何ができるの？</P>
+                      <P>Like what?</P>
                     </>
                   )
                 },
@@ -869,15 +870,54 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        たとえば、「<HighlightBold>階乗</HighlightBold>
-                        」という計算がある。これは「
-                        <HighlightBold>
-                          ある数からはじめて、1を引いていき、
-                          <EmojiNumber number={1} />{' '}
-                          になるまで繰り返し掛け算をする
-                        </HighlightBold>
-                        」という計算だ。
+                        <Bold>For example</Bold>:{' '}
+                        <Highlight>
+                          Lunchboxes can calculate <Bold>factorials</Bold>.
+                        </Highlight>
                       </P>
+                    </>
+                  )
+                },
+                {
+                  type: 'thinking',
+                  children: (
+                    <>
+                      <P>
+                        <HighlightBold>Factorials?</HighlightBold> What’s that?
+                      </P>
+                    </>
+                  )
+                },
+                {
+                  type: 'devil',
+                  children: (
+                    <>
+                      <P>
+                        <Bold>
+                          The factorial of a number can be calculated as
+                          follows:
+                        </Bold>
+                      </P>
+                      <Ul>
+                        <UlLi>
+                          <Highlight>
+                            Start with a number, say{' '}
+                            <CustomEmoji type="blankNumber" />, and…
+                          </Highlight>
+                        </UlLi>
+                        <UlLi>
+                          <Highlight>
+                            <Bold>Keep multiplying</Bold> it with smaller
+                            numbers (each number is <Bold>1 less</Bold> than the
+                            previous number)…
+                          </Highlight>
+                        </UlLi>
+                        <UlLi>
+                          <Highlight>
+                            Until you reach <EmojiNumber number={1} />.
+                          </Highlight>
+                        </UlLi>
+                      </Ul>
                       <EmojiSeparator
                         size="sm"
                         nodes={[
@@ -891,11 +931,11 @@ export default () => (
                         ]}
                         description={
                           <>
-                            <HighlightBold>階乗</HighlightBold>:<br />
-                            ある数からはじめて、1を引いていき、
+                            <HighlightBold>Factorial</HighlightBold>:<br />
+                            Start with a number and keep multiplying
                             <br />
-                            <EmojiNumber number={1} />{' '}
-                            になるまで繰り返し掛け算をする
+                            with smaller numbers until you reach{' '}
+                            <EmojiNumber number={1} />.
                           </>
                         }
                       />
@@ -906,7 +946,7 @@ export default () => (
                   type: 'thinking',
                   children: (
                     <>
-                      <P>うーん、具体的に説明してくれる？</P>
+                      <P>Hmm… Can you give me an example?</P>
                     </>
                   )
                 },
@@ -915,12 +955,12 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        たとえば、「
+                        <Bold>For example:</Bold> This is{' '}
                         <Highlight>
-                          <EmojiNumber number={3} /> の階乗
+                          the factorial of <EmojiNumber number={3} />
                         </Highlight>
-                        」は、以下のようになる。実際に計算すると{' '}
-                        <EmojiNumber number={6} /> になるぞ。
+                        . If you actually calculate it, the result will be{' '}
+                        <EmojiNumber number={6} />.
                       </P>
                       <EmojiSeparator
                         size="sm"
@@ -933,19 +973,20 @@ export default () => (
                         ]}
                         description={
                           <>
-                            <EmojiNumber number={3} /> の階乗。
+                            The factorial of <EmojiNumber number={3} />.
                             <br />
-                            実際に計算すると <EmojiNumber number={6} /> になる
+                            If you calculate it, the result is{' '}
+                            <EmojiNumber number={6} />.
                           </>
                         }
                       />
                       <P>
-                        同じように、「
+                        <Bold>Another example:</Bold> This is{' '}
                         <Highlight>
-                          <EmojiNumber number={4} /> の階乗
+                          the factorial of <EmojiNumber number={4} />
                         </Highlight>
-                        」は、以下のようになる。実際に計算すると{' '}
-                        <EmojiNumber number={24} /> になるぞ。
+                        . If you actually calculate it, the result will be{' '}
+                        <EmojiNumber number={24} />.
                       </P>
                       <EmojiSeparator
                         size="sm"
@@ -960,16 +1001,13 @@ export default () => (
                         ]}
                         description={
                           <>
-                            <EmojiNumber number={4} /> の階乗。
+                            The factorial of <EmojiNumber number={4} />.
                             <br />
-                            実際に計算すると <EmojiNumber number={24} /> になる
+                            If you calculate it, the result is{' '}
+                            <EmojiNumber number={24} />.
                           </>
                         }
                       />
-                      <P>
-                        <HighlightBold>階段</HighlightBold>
-                        みたいに1ずつ数字が減っていくから「階」乗、と覚えておけばいい。
-                      </P>
                     </>
                   )
                 },
@@ -977,7 +1015,7 @@ export default () => (
                   type: 'thinking',
                   children: (
                     <>
-                      <P>ふむふむ…</P>
+                      <P>Ok, I think I got it…</P>
                     </>
                   )
                 },
@@ -985,8 +1023,12 @@ export default () => (
                   type: 'devil',
                   children: (
                     <>
-                      <P>こういった計算も、弁当箱で行うことができるんだ。</P>
-                      <P>どういうことか説明しよう！</P>
+                      <P>
+                        <Bold>Now, I will show you that…:</Bold>{' '}
+                        <Highlight>
+                          Lunchboxes can calculate factorials.
+                        </Highlight>
+                      </P>
                     </>
                   )
                 }
