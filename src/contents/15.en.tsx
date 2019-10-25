@@ -683,7 +683,9 @@ export default () => (
                     <>
                       <P>
                         <Bold>Maybe:</Bold>{' '}
-                        <Highlight>It can do multiplication?</Highlight>
+                        <Highlight>
+                          It can do <Bold>multiplication</Bold>?
+                        </Highlight>
                       </P>
                       <EmojiSeparator
                         nodes={[
@@ -691,7 +693,7 @@ export default () => (
                           <Emoji>✖️</Emoji>,
                           <EmojiNumber number={3} />
                         ]}
-                        description={<>掛け算ができる？</>}
+                        description={<>It can do multiplication?</>}
                       />
                     </>
                   )
@@ -700,22 +702,25 @@ export default () => (
                   type: 'devil',
                   children: (
                     <>
-                      <P>その通りだ！先ほどの弁当箱は、</P>
+                      <P>
+                        <Bold>Exactly!</Bold> Using the above lunchbox,
+                      </P>
                       <Ul>
                         <UlLi>
                           <Highlight>
-                            <CustomEmoji type="blankNumberPurple" /> と{' '}
-                            <CustomEmoji type="blankNumberPink" />{' '}
-                            に数字を入れて実行すると…
+                            If you fill each of{' '}
+                            <CustomEmoji type="blankNumberPurple" /> and{' '}
+                            <CustomEmoji type="blankNumberPink" /> with some
+                            number…
                           </Highlight>
                         </UlLi>
                         <UlLi>
-                          <HighlightBold>
+                          <Highlight>
+                            It calculates{' '}
                             <CustomEmoji type="blankNumberPurple" />{' '}
                             <Emoji>✖️</Emoji>{' '}
-                            <CustomEmoji type="blankNumberPink" />{' '}
-                            に変換できる弁当箱になるんだ。
-                          </HighlightBold>
+                            <CustomEmoji type="blankNumberPink" />.
+                          </Highlight>
                         </UlLi>
                       </Ul>
                     </>
@@ -724,16 +729,20 @@ export default () => (
               ]}
             />
             <R.Vqyl>
-              <CustomEmoji type="blankNumberPurple" /> と{' '}
-              <CustomEmoji type="blankNumberPink" /> に数字を入れて
+              If you fill each of <CustomEmoji type="blankNumberPurple" /> and{' '}
+              <CustomEmoji type="blankNumberPink" />
               <br />
-              実行すると…
+              with some number and <H
+                args={{ name: 'run', lowerCase: true }}
+              />{' '}
+              it…
             </R.Vqyl>
             <ExpressionRunnerSeparator />
             <R.Aflw>
-              <CustomEmoji type="blankNumberPurple" /> <Emoji>✖️</Emoji>{' '}
-              <CustomEmoji type="blankNumberPink" /> に<br />
-              変換できる弁当箱になる
+              It will become a lunchbox that can be
+              <br />
+              converted to <CustomEmoji type="blankNumberPurple" />{' '}
+              <Emoji>✖️</Emoji> <CustomEmoji type="blankNumberPink" />
             </R.Aflw>
             <BubbleQuotes
               quotes={[
@@ -742,9 +751,7 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        つまり、
-                        <HighlightBold>掛け算ができる弁当箱</HighlightBold>
-                        というわけだな。
+                        So, it’s a lunchbox that can calculate multiplication.
                       </P>
                     </>
                   )
@@ -757,13 +764,13 @@ export default () => (
                 <Emoji>✖️</Emoji>,
                 <CustomEmoji type="blankNumberPink" />
               ]}
-              description={<>掛け算ができる弁当箱が存在した！</>}
+              description={<>It can calculate multiplication!</>}
             />
           </>
         )
       },
       {
-        title: <>四則演算ができる</>,
+        title: <>It can do other calculations</>,
         content: (
           <>
             <BubbleQuotes
@@ -773,10 +780,9 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        すごい…！
-                        <HighlightBold>
-                          計算箱では掛け算ができなかったけど、弁当箱を使えば掛け算ができるのか！
-                        </HighlightBold>
+                        This is amazing! Mathboxes could only do additions and
+                        subtractions, but lunchboxes can also do
+                        multiplications!
                       </P>
                     </>
                   )
@@ -786,18 +792,19 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        そうだ。ちなみに今回は紹介する時間がないが、
-                        <HighlightBold>
-                          ふたつの数字の引き算や割り算
-                        </HighlightBold>
-                        も弁当箱で行うことができるぞ。
+                        Yeah. By the way, we don’t have time to explain this,
+                        but{' '}
+                        <Highlight>
+                          lunchboxes can also do <Bold>subtractions</Bold> and{' '}
+                          <Bold>divisions</Bold> of two numbers.
+                        </Highlight>
                       </P>
                       <P>
-                        つまり、
+                        <Bold>So:</Bold>{' '}
                         <Highlight>
-                          弁当箱は四則演算の全てを行うことができる
+                          Lunchboxes can do addition, multiplication,
+                          subtraction, and division.
                         </Highlight>
-                        んだ。
                       </P>
                     </>
                   )
@@ -806,26 +813,35 @@ export default () => (
             />
             <EmojiSeparator
               emojis={['➕', '✖️', '🍱', '➖', '➗']}
-              description={<>弁当箱は四則演算の全てができる</>}
+              description={
+                <>
+                  Lunchboxes can do addition, multiplication,
+                  <br />
+                  subtraction, and division.
+                </>
+              }
             />
           </>
         )
       },
       {
         type: 'summary',
-        title: <>次が最後の題材です！</>,
+        title: <>This is the final topic!</>,
         content: (
           <>
-            <P>次が最後の題材です！あと少しだけお付き合いください！</P>
+            <P>
+              What’s coming up next is the final topic we’ll cover. You’re so
+              close to the finish!
+            </P>
             <EmojiSeparator
               emojis={['✨', '🤗', '✨']}
-              description={<>もうすぐ終わります！</>}
+              description={<>You’re so close to the finish!</>}
             />
           </>
         )
       },
       {
-        title: <>階乗</>,
+        title: <>Factorials</>,
         content: (
           <>
             <BubbleQuotes
