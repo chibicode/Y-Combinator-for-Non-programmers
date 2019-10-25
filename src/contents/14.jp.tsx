@@ -11,6 +11,7 @@ import {
 } from 'src/components/ContentTags'
 import H from 'src/components/H'
 import BubbleQuotes from 'src/components/BubbleQuotes'
+import VariableShadeContext from 'src/components/VariableShadeContext'
 import Emoji from 'src/components/Emoji'
 import EmojiNumber from 'src/components/EmojiNumber'
 import CardContent from 'src/components/CardContent'
@@ -21,6 +22,23 @@ import EmojiSeparator from 'src/components/EmojiSeparator'
 import TwoColGrid from 'src/components/TwoColGrid'
 import * as R from 'src/components/Runners'
 import NextLessonButton from 'src/components/NextLessonButton'
+
+const ThreeStepsSummary = () => (
+  <>
+    <R.Kjba>この弁当箱を実行すると…</R.Kjba>
+    <ExpressionRunnerSeparator />
+    <R.Jwce>
+      「
+      <H args={{ name: 'repeatFeature' }} />
+      」と同じく、
+      <br />
+      <EmojiNumber number={2} /> に対して <CustomEmoji type="plusOne" />{' '}
+      を3回繰り返す
+    </R.Jwce>
+    <ExpressionRunnerSeparator />
+    <R.Seie></R.Seie>
+  </>
+)
 
 export default () => (
   <EpisodeCardList
@@ -88,18 +106,7 @@ export default () => (
               </Highlight>
               ように変化すると言うのです。
             </P>
-            <R.Kjba>この弁当箱を実行すると…</R.Kjba>
-            <ExpressionRunnerSeparator />
-            <R.Jwce>
-              「
-              <H args={{ name: 'repeatFeature' }} />
-              」と同じく、
-              <br />
-              <EmojiNumber number={2} /> に対して <CustomEmoji type="plusOne" />{' '}
-              を3回繰り返す
-            </R.Jwce>
-            <ExpressionRunnerSeparator />
-            <R.Seie></R.Seie>
+            <ThreeStepsSummary />
             <P>
               今回は、本当にこの弁当箱が「
               <H args={{ name: 'repeatFeature' }} />
@@ -857,23 +864,58 @@ export default () => (
                   type: 'saya',
                   children: (
                     <>
-                      <P>
-                        まず、
-                        <Highlight>
-                          もともとの弁当箱には数字の <EmojiNumber number={3} />{' '}
-                          と <EmojiNumber number={2} /> が入っていた
-                        </Highlight>
-                        よね。
-                      </P>
+                      <P>ここまでのステップを要約すると、次のようになるよ！</P>
                     </>
                   )
                 }
               ]}
             />
-            <R.Peiy>
-              数字の <EmojiNumber number={3} /> と <EmojiNumber number={2} />{' '}
-              が入っていた
-            </R.Peiy>
+            <R.Kjba></R.Kjba>
+            <ExpressionRunnerSeparator />
+            <R.Amjx>
+              いくつかのステップを経て、
+              <br />
+              <InlineBorder type="condition" /> が <EmojiNumber number={3} />{' '}
+              になります
+            </R.Amjx>
+            <ExpressionRunnerSeparator />
+            <R.Kosw>
+              またいくつかのステップを経た後に、
+              <br />
+              <InlineBorder type="condition" /> が <EmojiNumber number={2} />{' '}
+              になります
+            </R.Kosw>
+            <ExpressionRunnerSeparator />
+            <R.Mibj>
+              またいくつかのステップを経た後に、
+              <br />
+              <InlineBorder type="condition" /> が <EmojiNumber number={1} />{' '}
+              になります
+            </R.Mibj>
+            <ExpressionRunnerSeparator />
+            <R.Nphi>
+              またいくつかのステップを経た後に、
+              <br />
+              <InlineBorder type="condition" /> が <EmojiNumber number={0} />{' '}
+              になるので、
+              <br />
+              <InlineBorder type="trueCase" /> が残ります
+            </R.Nphi>
+            <ExpressionRunnerSeparator />
+            <R.Jwce>
+              <CustomEmoji type="plusOne" /> が3回繰り返され…
+            </R.Jwce>
+            <ExpressionRunnerSeparator />
+            <R.Seie>
+              最終的に <EmojiNumber number={5} /> が残ります
+            </R.Seie>
+          </>
+        )
+      },
+      {
+        title: <>繰り返しの機能を再現</>,
+        content: (
+          <>
             <BubbleQuotes
               quotes={[
                 {
@@ -881,32 +923,30 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        そして
+                        つまり、
                         <Highlight>
-                          <H args={{ name: 'run' }} />{' '}
-                          すると、終了直前に以下のようになった
+                          もともとの弁当箱を実行すると、
+                          <EmojiNumber number={2} /> に対して{' '}
+                          <CustomEmoji type="plusOne" /> が3回繰り返される
                         </Highlight>
-                        よね。
+                        ということが明らかになったね。
                       </P>
                     </>
                   )
                 }
               ]}
             />
-            <R.Jwce>終了直前に以下のようになった</R.Jwce>
+            <ThreeStepsSummary />
             <BubbleQuotes
               quotes={[
                 {
-                  type: 'surprised',
+                  type: 'saya',
                   children: (
                     <>
                       <P>
-                        これは…
-                        <CustomEmoji type="plusOne" /> を{' '}
-                        <EmojiNumber number={3} />{' '}
-                        回繰り返すから、以下のように「
+                        つまり、こちらの「
                         <H args={{ name: 'repeatFeature' }} />
-                        」を使った計算箱とまったく同じだ！
+                        」を使った計算箱と全く同じことが起きるというわけだよね。
                       </P>
                     </>
                   )
@@ -921,9 +961,14 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        そう。つまり上の「
-                        <H args={{ name: 'repeatFeature' }} />
-                        」を使った計算箱は、今回実行した弁当箱で再現できるということなんだ。
+                        つまり、
+                        <Highlight>
+                          上の「
+                          <H args={{ name: 'repeatFeature' }} />
+                          」を使った計算箱は、今回登場した弁当箱で「
+                          <HighlightBold>再現</HighlightBold>
+                          」できるというわけだね。
+                        </Highlight>
                       </P>
                     </>
                   )
@@ -938,76 +983,115 @@ export default () => (
               計算箱は…
             </R.Qycx>
             <ExpressionRunnerSeparator />
-            <R.Peiy>
+            <R.Kjba>
               この弁当箱で「<HighlightBold>再現</HighlightBold>」できる！
-            </R.Peiy>
+            </R.Kjba>
+          </>
+        )
+      },
+      {
+        type: 'summary',
+        title: <>どんな繰り返しの機能も再現できる</>,
+        content: (
+          <>
             <BubbleQuotes
               quotes={[
-                {
-                  type: 'surprised',
-                  children: (
-                    <>
-                      <P>なるほど！</P>
-                    </>
-                  )
-                },
                 {
                   type: 'saya',
                   children: (
                     <>
                       <P>
-                        他にもたとえば、以下のように、
-                        <EmojiNumber number={4} /> <Emoji>➕</Emoji>{' '}
-                        <EmojiNumber number={6} /> を計算できる計算箱でも…
+                        そして、これが重要なポイントなのだけれど…
+                        こちらの計算箱は、
+                      </P>
+                      <Ul>
+                        <UlLi>
+                          <Highlight>
+                            上の数字が <EmojiNumber number={2} /> で、
+                          </Highlight>
+                        </UlLi>
+                        <UlLi>
+                          <Highlight>
+                            <CustomEmoji type="plusOne" /> を{' '}
+                            <EmojiNumber number={3} /> 回繰り返すものだよね。
+                          </Highlight>
+                        </UlLi>
+                      </Ul>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Qycx>
+              上の数字が <EmojiNumber number={2} /> で、
+              <br />
+              <CustomEmoji type="plusOne" /> を <EmojiNumber number={3} />{' '}
+              回繰り返す
+            </R.Qycx>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'saya',
+                  children: (
+                    <>
+                      <P>
+                        そして、これを弁当箱で再現するのに、
+                        <HighlightBold>
+                          <EmojiNumber number={2} /> と{' '}
+                          <EmojiNumber number={3} /> を次のように配置したよね。
+                        </HighlightBold>
                       </P>
                     </>
                   )
                 }
               ]}
             />
-            <R.Owpg>
-              <EmojiNumber number={4} /> <Emoji>➕</Emoji>{' '}
-              <EmojiNumber number={6} /> を計算できる計算箱も…
-            </R.Owpg>
+            <VariableShadeContext.Provider value={{ shadeNonNumbers: true }}>
+              <R.Peiy>
+                <EmojiNumber number={2} /> と <EmojiNumber number={3} />{' '}
+                を次のように配置した
+              </R.Peiy>
+            </VariableShadeContext.Provider>
             <BubbleQuotes
               quotes={[
                 {
                   type: 'saya',
                   children: (
                     <>
-                      <P>同じように弁当箱で再現することができるよ。</P>
-                    </>
-                  )
-                }
-              ]}
-            />
-            <R.Hafp>この弁当箱で再現できる</R.Hafp>
-            <BubbleQuotes
-              quotes={[
-                {
-                  type: 'saya',
-                  children: (
-                    <>
+                      <P>それでは、ここで疑問なんだけど…</P>
                       <P>
-                        上の弁当箱も実行すると、先ほどと同じように、終了直前に以下のようになる。だから、繰り返しの機能と同じことができるんだ。
+                        <HighlightBold>
+                          以下のように、 <Emoji>🅰️</Emoji> <Emoji>➕</Emoji>{' '}
+                          <Emoji>🅱️</Emoji>{' '}
+                          を計算する計算箱は、どうすれば弁当箱で再現できるだろう？
+                        </HighlightBold>
                       </P>
                     </>
                   )
                 }
               ]}
             />
-            <R.Sskt>
-              先ほどと同じように、
-              <br />
-              実行が終わる直前に
-              <br />
-              以下のようになり…
-            </R.Sskt>
-            <ExpressionRunnerSeparator />
-            <R.Mbje>
-              <EmojiNumber number={4} /> <Emoji>➕</Emoji>{' '}
-              <EmojiNumber number={6} /> を計算できる
-            </R.Mbje>
+            <R.Nmbt>この計算箱を弁当箱で再現するには？</R.Nmbt>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'thinking',
+                  children: (
+                    <>
+                      <P>
+                        うーん。おそらく、<Emoji>🅰️</Emoji> と <Emoji>🅱️</Emoji>{' '}
+                        を次のように配置すればいいんじゃないかな？
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <VariableShadeContext.Provider value={{ shadeNonNumbers: true }}>
+              <R.Bxuv>
+                <Emoji>🅰️</Emoji> と <Emoji>🅱️</Emoji> を次のように配置する
+              </R.Bxuv>
+            </VariableShadeContext.Provider>
             <BubbleQuotes
               quotes={[
                 {
@@ -1015,10 +1099,9 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        まとめると、「
-                        <H args={{ name: 'repeatFeature' }} />
-                        」を使って、<Emoji>🅰️</Emoji> <Emoji>➕</Emoji>{' '}
-                        <Emoji>🅱️</Emoji> を計算できる計算箱は…
+                        その通り！そうすることで、<Emoji>🅰️</Emoji>{' '}
+                        <Emoji>➕</Emoji> <Emoji>🅱️</Emoji>{' '}
+                        を再現することができるんだ。
                       </P>
                     </>
                   )
@@ -1026,27 +1109,107 @@ export default () => (
               ]}
             />
             <R.Nmbt>
-              「<H args={{ name: 'repeatFeature' }} />
-              」を使って、
+              この「
+              <H args={{ name: 'repeatFeature' }} />
+              」を使った
               <br />
-              <Emoji>🅰️</Emoji> <Emoji>➕</Emoji> <Emoji>🅱️</Emoji>{' '}
-              を計算できる計算箱は…
+              計算箱は…
             </R.Nmbt>
+            <ExpressionRunnerSeparator />
+            <R.Bxuv>
+              この弁当箱で「<HighlightBold>再現</HighlightBold>」できる！
+            </R.Bxuv>
             <BubbleQuotes
               quotes={[
                 {
                   type: 'saya',
                   children: (
                     <>
-                      <P>次のように弁当箱で再現することができるんだ。</P>
+                      <P>
+                        つまり、たとえばこちらの <EmojiNumber number={4} />{' '}
+                        <Emoji>➕</Emoji> <EmojiNumber number={6} />{' '}
+                        を計算する計算箱を再現したかったら…
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Owpg>
+              こちらの <EmojiNumber number={4} /> <Emoji>➕</Emoji>{' '}
+              <EmojiNumber number={6} /> を計算する
+              <br />
+              計算箱を再現するには…
+            </R.Owpg>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'saya',
+                  children: (
+                    <>
+                      <P>
+                        先ほどの弁当箱の <Emoji>🅰️</Emoji> に{' '}
+                        <EmojiNumber number={4} /> を、<Emoji>🅱️</Emoji> に{' '}
+                        <EmojiNumber number={6} /> を当てはめればいいんだ。
+                      </P>
                     </>
                   )
                 }
               ]}
             />
             <R.Bxuv>
-              この弁当箱で「<HighlightBold>再現</HighlightBold>」できる！
+              こちらの <Emoji>🅰️</Emoji> と <Emoji>🅱️</Emoji> に…
             </R.Bxuv>
+            <ExpressionRunnerSeparator />
+            <R.Hafp>
+              それぞれ <EmojiNumber number={4} /> と <EmojiNumber number={6} />{' '}
+              を当てはめる
+            </R.Hafp>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'saya',
+                  children: (
+                    <>
+                      <P>
+                        上の計算箱を
+                        <H args={{ name: 'run' }} /> すれば、
+                        <EmojiNumber number={4} /> に対して
+                        <CustomEmoji type="plusOne" />{' '}
+                        を6回繰り返してくれるんだ。
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Hafp>
+              こちらを
+              <H args={{ name: 'run' }} /> すると…
+            </R.Hafp>
+            <ExpressionRunnerSeparator />
+            <R.Sskt>
+              <EmojiNumber number={4} /> に対して <CustomEmoji type="plusOne" />{' '}
+              を6回繰り返す
+            </R.Sskt>
+            <ExpressionRunnerSeparator />
+            <R.Mbje>
+              結果、
+              <EmojiNumber number={4} /> <Emoji>➕</Emoji>{' '}
+              <EmojiNumber number={6} /> を計算できる
+            </R.Mbje>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'thinking',
+                  children: (
+                    <>
+                      <P>へー、なるほど！</P>
+                    </>
+                  )
+                }
+              ]}
+            />
           </>
         )
       },
@@ -1101,8 +1264,10 @@ export default () => (
                   type: 'dog',
                   children: (
                     <>
+                      <P>ちなみに、もう一つ質問があります。</P>
                       <P>
-                        ちなみにですが…下のように、
+                        下のように、
+                        <CustomEmoji type="plusOne" /> ではなく、
                         <HighlightBold>
                           <CustomEmoji type="minusOne" />{' '}
                           を繰り返す計算箱は、どうやって弁当箱で再現すればいいか
@@ -1114,7 +1279,12 @@ export default () => (
                 }
               ]}
             />
-            <R.Jaqs>これはどうやって弁当箱で再現する？</R.Jaqs>
+            <R.Jaqs>
+              <CustomEmoji type="plusOne" /> ではなく、
+              <CustomEmoji type="minusOne" /> を繰り返す計算箱は、
+              <br />
+              どうやって弁当箱で再現すればいい？
+            </R.Jaqs>
             <BubbleQuotes
               quotes={[
                 {
@@ -1122,7 +1292,7 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        おそらく、先ほどの弁当箱で右上にあった{' '}
+                        うーん。おそらく、先ほどの弁当箱で右上にあった{' '}
                         <CustomEmoji type="plusOne" /> を{' '}
                         <CustomEmoji type="minusOne" />{' '}
                         に変えるだけでいいんじゃないかな？
@@ -1132,14 +1302,23 @@ export default () => (
                 }
               ]}
             />
-            <R.Zkon>
-              <HighlightBold>
-                先ほどの弁当箱で右上にあった
-                <br />
-                <CustomEmoji type="plusOne" /> を{' '}
-                <CustomEmoji type="minusOne" /> に変えるだけ(黄色の部分)
-              </HighlightBold>
-            </R.Zkon>
+            <VariableShadeContext.Provider
+              value={{ shadeNonHighlightedFunc: true }}
+            >
+              <R.Irsu>
+                <HighlightBold>
+                  先ほどの弁当箱で右上にあった
+                  <br />
+                  <CustomEmoji type="plusOne" /> を…
+                </HighlightBold>
+              </R.Irsu>
+              <ExpressionRunnerSeparator />
+              <R.Zkon>
+                <HighlightBold>
+                  <CustomEmoji type="minusOne" /> に変えるだけ
+                </HighlightBold>
+              </R.Zkon>
+            </VariableShadeContext.Provider>
             <BubbleQuotes
               quotes={[
                 {
@@ -1154,7 +1333,16 @@ export default () => (
                       </P>
                     </>
                   )
-                },
+                }
+              ]}
+            />
+            <R.Jaqs>
+              <CustomEmoji type="minusOne" /> を繰り返す計算箱は…
+            </R.Jaqs>
+            <ExpressionRunnerSeparator />
+            <R.Zkon>この弁当箱で再現できる！</R.Zkon>
+            <BubbleQuotes
+              quotes={[
                 {
                   type: 'surprised',
                   children: (
@@ -1217,22 +1405,15 @@ export default () => (
             <BubbleQuotes
               quotes={[
                 {
-                  type: 'thinking',
-                  children: (
-                    <>
-                      <P>この下半分の部分がどうかしたの？</P>
-                    </>
-                  )
-                },
-                {
                   type: 'dog',
                   children: (
                     <>
                       <P>
-                        この下半分の部分は、<Emoji>🅰️</Emoji> <Emoji>➕</Emoji>{' '}
-                        <Emoji>🅱️</Emoji> を計算できる弁当箱だけでなく、
-                        <Emoji>🅰️</Emoji> <Emoji>➖</Emoji> <Emoji>🅱️</Emoji>{' '}
-                        を計算できる弁当箱にも使われていましたよね。
+                        次に、
+                        <Highlight>
+                          <Emoji>🅰️</Emoji> <Emoji>➖</Emoji> <Emoji>🅱️</Emoji>{' '}
+                          を計算できる弁当箱の下半分にも注目してみてください。
+                        </Highlight>
                       </P>
                     </>
                   )
@@ -1241,12 +1422,25 @@ export default () => (
             />
             <R.Anzh>
               <Emoji>🅰️</Emoji> <Emoji>➖</Emoji> <Emoji>🅱️</Emoji>{' '}
-              を計算できる弁当箱も
+              を計算できる弁当箱の
               <br />
-              下半分は同じだった
+              下半分(黄色)の部分にも注目
             </R.Anzh>
             <BubbleQuotes
               quotes={[
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>
+                        <HighlightBold>
+                          両方の弁当箱は、下半分のこちらの部分が共通していますよね？
+                        </HighlightBold>
+                      </P>
+                      <R.Xjzx>こちらの部分が共通している</R.Xjzx>
+                    </>
+                  )
+                },
                 {
                   type: 'thinking',
                   children: (

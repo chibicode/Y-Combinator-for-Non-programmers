@@ -937,7 +937,9 @@ export default () => (
               so it chooses <InlineBorder type="trueCase" />
             </R.Nphi>
             <ExpressionRunnerSeparator />
-            <R.Jwce></R.Jwce>
+            <R.Jwce>
+              It repeats <CustomEmoji type="plusOne" /> three times…
+            </R.Jwce>
             <ExpressionRunnerSeparator />
             <R.Seie>
               The final result is <EmojiNumber number={5} />
@@ -946,7 +948,6 @@ export default () => (
         )
       },
       {
-        type: 'summary',
         title: (
           <>
             Reproducing <H args={{ name: 'repeatFeature' }} />
@@ -1021,7 +1022,12 @@ export default () => (
         )
       },
       {
-        title: <>Reproducing any lunchbox</>,
+        type: 'summary',
+        title: (
+          <>
+            Reproducing any mathbox with <H args={{ name: 'repeatFeature' }} />
+          </>
+        ),
         content: (
           <>
             <BubbleQuotes
@@ -1065,9 +1071,11 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        To reproduce this, we needed to put{' '}
-                        <EmojiNumber number={2} /> and{' '}
-                        <EmojiNumber number={3} /> on these two places:
+                        To reproduce this,{' '}
+                        <Highlight>
+                          we needed to put <EmojiNumber number={2} /> and{' '}
+                          <EmojiNumber number={3} /> on these two places:
+                        </Highlight>
                       </P>
                     </>
                   )
@@ -1176,13 +1184,26 @@ export default () => (
                   type: 'saya',
                   children: (
                     <>
-                      <P>You can use the following lunchbox:</P>
+                      <P>
+                        <Bold>You can reuse the earlier lunchbox:</Bold>{' '}
+                        <Highlight>
+                          Just use <EmojiNumber number={4} /> for{' '}
+                          <Emoji>🅰️</Emoji> and <EmojiNumber number={6} /> for{' '}
+                          <Emoji>🅱️</Emoji>.
+                        </Highlight>
+                      </P>
                     </>
                   )
                 }
               ]}
             />
-            <R.Hafp>Use this lunchbox</R.Hafp>
+            <R.Bxuv>
+              Instead of <Emoji>🅰️</Emoji> and <Emoji>🅱️</Emoji>…
+            </R.Bxuv>
+            <ExpressionRunnerSeparator />
+            <R.Hafp>
+              Use <EmojiNumber number={4} /> and <EmojiNumber number={6} />
+            </R.Hafp>
             <BubbleQuotes
               quotes={[
                 {
