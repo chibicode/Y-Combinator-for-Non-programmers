@@ -996,7 +996,7 @@ export default () => (
             <BubbleQuotes
               quotes={[
                 {
-                  type: 'surprised',
+                  type: 'devil',
                   children: (
                     <>
                       <P>
@@ -1004,7 +1004,7 @@ export default () => (
                           真ん中にある <MultiplyIcon />{' '}
                           のアイコンが、掛け算を示す
                         </HighlightBold>
-                        ということか。
+                        ということだな。
                       </P>
                       <EmojiSeparator
                         nodes={[
@@ -1022,17 +1022,25 @@ export default () => (
                   )
                 },
                 {
+                  type: 'thinking',
+                  children: (
+                    <>
+                      <P>ふむふむ…でも、なぜこの省略表記を使う必要があるの？</P>
+                    </>
+                  )
+                },
+                {
                   type: 'devil',
                   children: (
                     <>
                       <P>
-                        そうだ。
                         <Highlight>
-                          次に紹介する、階乗を計算できる弁当箱は複雑なので、こういった省略表記を使わないとスペースが足りなくなる。
+                          この省略表記を使う理由は、次に紹介する、階乗を計算できる弁当箱が複雑だからだ。
                         </Highlight>
                       </P>
                       <P>
-                        だから、 掛け算を <MultiplyIcon />{' '}
+                        こういった省略表記を使わないとスペースが足りなくなる。だから、
+                        掛け算を <MultiplyIcon />{' '}
                         のアイコンで省略表記することにしたというわけだ。
                       </P>
                     </>
@@ -1050,7 +1058,7 @@ export default () => (
                   type: 'devil',
                   children: (
                     <>
-                      <P>ここで具体例を見てみよう。</P>
+                      <P>先に進む前に、省略表記を使う具体例を見てみよう。</P>
                       <P>
                         たとえば、こちらの <EmojiNumber number={2} />{' '}
                         <Emoji>✖️</Emoji> <EmojiNumber number={3} />{' '}

@@ -1038,7 +1038,7 @@ export default () => (
         )
       },
       {
-        title: <>掛け算の省略表記</>,
+        title: <>A simpler notation for multiplication</>,
         content: (
           <>
             <BubbleQuotes
@@ -1048,37 +1048,37 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        階乗を計算するためには、先ほど紹介した
-                        <Highlight>掛け算を計算できる弁当箱</Highlight>
-                        を使う必要があるわけだが…
+                        To calculate factorials,{' '}
+                        <Highlight>
+                          we need to use the lunchbox that can do{' '}
+                          <Bold>multiplication</Bold>
+                        </Highlight>{' '}
+                        (which we saw earlier).
                       </P>
                       <P>
-                        まず、
-                        <HighlightBold>
-                          掛け算を計算できる弁当箱を、以下のように省略表記してみる。
-                        </HighlightBold>
-                        こうしたほうがひと目で見て分かりやすいからな。
+                        <Bold>But this time:</Bold>{' '}
+                        <Highlight>
+                          Instead of using the actual lunchbox, we’ll use the
+                          following notation:
+                        </Highlight>
                       </P>
                     </>
                   )
                 }
               ]}
             />
-            <R.Vqyl>掛け算を計算できる弁当箱を…</R.Vqyl>
+            <R.Vqyl>Instead of the actual lunchbox…</R.Vqyl>
             <ExpressionRunnerSeparator />
-            <R.Trwj>以下のように省略表記してみる</R.Trwj>
+            <R.Trwj>We’ll use this notation</R.Trwj>
             <BubbleQuotes
               quotes={[
                 {
-                  type: 'surprised',
+                  type: 'devil',
                   children: (
                     <>
                       <P>
-                        <HighlightBold>
-                          真ん中にある <MultiplyIcon />{' '}
-                          のアイコンが、掛け算を示す
-                        </HighlightBold>
-                        ということか。
+                        In this notation, the <MultiplyIcon /> icon in the
+                        middle indicates multiplication.
                       </P>
                       <EmojiSeparator
                         nodes={[
@@ -1088,10 +1088,21 @@ export default () => (
                         ]}
                         description={
                           <>
-                            <MultiplyIcon /> のアイコンが掛け算を示す
+                            The <MultiplyIcon /> icon indicates multiplication
                           </>
                         }
                       />
+                    </>
+                  )
+                },
+                {
+                  type: 'thinking',
+                  children: (
+                    <>
+                      <P>
+                        Hmm… ok, but why do we need to use this instead of the
+                        original lunchbox?
+                      </P>
                     </>
                   )
                 },
@@ -1100,14 +1111,15 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        そうだ。
+                        <Bold>It’s because:</Bold>{' '}
                         <Highlight>
-                          次に紹介する、階乗を計算できる弁当箱は複雑なので、こういった省略表記を使わないとスペースが足りなくなる。
-                        </Highlight>
+                          The lunchbox that calculates factorials is going to be
+                          very complicated.
+                        </Highlight>{' '}
                       </P>
                       <P>
-                        だから、 掛け算を <MultiplyIcon />{' '}
-                        のアイコンで省略表記することにしたというわけだ。
+                        Therefore, if we don’t use this simpler notation to
+                        describe multiplications, we’ll run out of space.
                       </P>
                     </>
                   )
@@ -1116,7 +1128,7 @@ export default () => (
                   type: 'thinking',
                   children: (
                     <>
-                      <P>そうか、了解！</P>
+                      <P>I see…</P>
                     </>
                   )
                 },
@@ -1124,11 +1136,14 @@ export default () => (
                   type: 'devil',
                   children: (
                     <>
-                      <P>ここで具体例を見てみよう。</P>
                       <P>
-                        たとえば、こちらの <EmojiNumber number={2} />{' '}
-                        <Emoji>✖️</Emoji> <EmojiNumber number={3} />{' '}
-                        を計算できる弁当箱は…
+                        Before we move on, let’s take a look at an example that
+                        uses this simpler notation.
+                      </P>
+                      <P>
+                        <Bold>For example:</Bold> This is the earlier lunchbox
+                        that calculates <EmojiNumber number={2} />{' '}
+                        <Emoji>✖️</Emoji> <EmojiNumber number={3} />:
                       </P>
                     </>
                   )
