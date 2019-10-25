@@ -88,7 +88,17 @@ ${Object.keys(runnerConfigs)
   .join('\n')}
 `)
 
+  const fakeIndexContents = prettierFormat(`
+${Object.keys(runnerConfigs)
+  .map(key => {
+    const componentName = `${key[0].toUpperCase()}${key.slice(1)}`
+    return `export { default as ${componentName} } from 'src/components/FakeRunner'`
+  })
+  .join('\n')}
+`)
+
   fs.writeFileSync('src/components/Runners/index.ts', indexContents)
+  fs.writeFileSync('src/components/Runners/fakeIndex.ts', fakeIndexContents)
 }
 
 const precomputeAll = () => {

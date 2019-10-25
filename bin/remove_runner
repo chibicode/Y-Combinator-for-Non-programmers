@@ -3,3 +3,4 @@
 find src/components/Runners/ -iname "$1.tsx" -exec rm {} \;
 rm -f src/lib/runners/$1.json
 sed -i "/$1/Id" src/components/Runners/index.ts
+sed -i "/$1/Id" src/components/Runners/fakeIndex.ts
