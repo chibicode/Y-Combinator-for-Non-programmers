@@ -302,23 +302,29 @@ export default () => (
         )
       },
       {
-        title: <>実行してみると…</>,
+        title: (
+          <>
+            If you <H args={{ name: 'run', lowerCase: true }} /> it…
+          </>
+        ),
         content: (
           <>
             <P>
-              では、
-              <H args={{ name: 'pressRun', skipColon: true }} />。
+              Let’s <H args={{ name: 'run', lowerCase: true }} /> it!
             </P>
             <Ul>
               <UlLi>
-                複雑なので、<Highlight>目で追わなくても大丈夫です！</Highlight>
+                <Highlight>
+                  It’s complicated, so you don’t need to follow all the steps!
+                </Highlight>{' '}
+                Save your eyes!
               </UlLi>
               <UlLi>
-                ちょっと時間がかかるので、待てない方は下の「
-                <HighlightBold>
-                  <H args={{ name: 'skipToTheEnd' }} /> →
-                </HighlightBold>
-                」を押してください！
+                If you can’t wait, press{' '}
+                <Highlight highlightType="pink">
+                  “<H args={{ name: 'skipToTheEnd' }} /> →”
+                </Highlight>
+                .
               </UlLi>
             </Ul>
             <R.Ugvz></R.Ugvz>
@@ -329,10 +335,9 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        結果は…
+                        It became this lunchbox
                         <Highlight>
-                          <EmojiNumber number={5} />{' '}
-                          に変換できる弁当箱になった！
+                          that can be converted to <EmojiNumber number={5} />!
                         </Highlight>
                       </P>
                       <R.Xkcm>
@@ -353,7 +358,7 @@ export default () => (
         )
       },
       {
-        title: <>足し算ができる</>,
+        title: <>It can do addition</>,
         content: (
           <>
             <BubbleQuotes
