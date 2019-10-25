@@ -4,6 +4,7 @@ import {
   P,
   HighlightBold,
   Highlight,
+  Italic,
   Ul,
   UlLi,
   Bold
@@ -18,8 +19,7 @@ import VariableShadeContext from 'src/components/VariableShadeContext'
 import ExpressionRunnerSeparator from 'src/components/ExpressionRunnerSeparator'
 import CustomEmoji from 'src/components/CustomEmoji'
 import TwoColGrid from 'src/components/TwoColGrid'
-// import * as R from 'src/components/Runners'
-import * as R from 'src/components/Runners/fakeIndex'
+import * as R from 'src/components/Runners'
 import NextLessonButton from 'src/components/NextLessonButton'
 import MultiplyIcon from 'src/components/MultiplyIcon'
 
@@ -1706,7 +1706,7 @@ export default () => (
         )
       },
       {
-        title: <>弁当箱にできない計算はあるの？</>,
+        title: <>Is there any calculations that lunchboxes cannot do?</>,
         content: (
           <>
             <BubbleQuotes
@@ -1716,11 +1716,11 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        以上をまとめると…
-                        <HighlightBold>
-                          弁当箱は、計算箱よりもっと複雑な計算ができるということだ
-                        </HighlightBold>
-                        。
+                        What we learned here is that,{' '}
+                        <Italic>
+                          lunchboxes can do complicated calculations.
+                        </Italic>{' '}
+                        They’re more powerful than mathboxes.
                       </P>
                     </>
                   )
@@ -1733,7 +1733,7 @@ export default () => (
                 <Emoji size="semilg">🍱</Emoji>,
                 <CustomEmoji type="mathBox" size="sm" />
               ]}
-              description={<>弁当箱は、計算箱以上にパワフル！</>}
+              description={<>Lunchboxes are more powerful than mathboxes!</>}
             />
             <BubbleQuotes
               quotes={[
@@ -1742,10 +1742,10 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        じゃあ逆に質問するけど…
-                        <HighlightBold>
-                          弁当箱にできない計算はあるのかい？
-                        </HighlightBold>
+                        <Bold>Well, I have a question:</Bold>{' '}
+                        <Highlight>
+                          Is there any calculations that lunchboxes cannot do?
+                        </Highlight>
                       </P>
                     </>
                   )
@@ -1754,11 +1754,13 @@ export default () => (
                   type: 'devil',
                   children: (
                     <>
-                      <P>いい質問だな。それは、次のページで説明しよう！</P>
                       <P>
-                        <HighlightBold>
-                          次が最後のページ、エピローグだ！
-                        </HighlightBold>
+                        That’s a very good question. Let’s talk about it on the
+                        next page!
+                      </P>
+                      <P>
+                        <Bold>The next page is the final page:</Bold>{' '}
+                        <Highlight>Epilogue!</Highlight>
                       </P>
                     </>
                   )
@@ -1767,7 +1769,7 @@ export default () => (
                   type: 'crying',
                   children: (
                     <>
-                      <P>長かった…やっと終わるのか！じゃあ、先に進もう！</P>
+                      <P>Finally… we’re almost done!</P>
                     </>
                   )
                 }
