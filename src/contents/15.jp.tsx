@@ -8,6 +8,7 @@ import {
   UlLi
 } from 'src/components/ContentTags'
 import H from 'src/components/H'
+import VariableShadeContext from 'src/components/VariableShadeContext'
 import BubbleQuotes from 'src/components/BubbleQuotes'
 import Emoji from 'src/components/Emoji'
 import EmojiSeparator from 'src/components/EmojiSeparator'
@@ -187,8 +188,43 @@ export default () => (
                   type: 'thinking',
                   children: (
                     <>
+                      <P>分かった。では、</P>
+                      <Ul>
+                        <UlLi>
+                          <Highlight>
+                            <CustomEmoji type="blankNumberPurple" /> に{' '}
+                            <EmojiNumber number={2} /> を、
+                          </Highlight>
+                        </UlLi>
+                        <UlLi>
+                          <Highlight>
+                            <CustomEmoji type="blankNumberPink" /> に{' '}
+                            <EmojiNumber number={3} /> を当てはめてみよう。
+                          </Highlight>
+                        </UlLi>
+                      </Ul>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Jwsj>
+              <CustomEmoji type="blankNumberPurple" /> と{' '}
+              <CustomEmoji type="blankNumberPink" /> に…
+            </R.Jwsj>
+            <ExpressionRunnerSeparator />
+            <R.Mlnt>
+              <EmojiNumber number={2} /> と <EmojiNumber number={3} />{' '}
+              を当てはめてみる
+            </R.Mlnt>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'thinking',
+                  children: (
+                    <>
                       <P>
-                        分かった。じゃあ、こちらの{' '}
+                        では、こちらの{' '}
                         <HighlightBold>
                           <EmojiNumber number={2} /> に変換できる弁当箱
                         </HighlightBold>
@@ -219,20 +255,13 @@ export default () => (
                           }}
                         />
                       </R.Dmrz>
-                      <P>
-                        <CustomEmoji type="blankNumberPurple" /> と{' '}
-                        <CustomEmoji type="blankNumberPink" />{' '}
-                        の部分に入れてみよう。
-                      </P>
+                      <P>それぞれ使ってみよう！</P>
                     </>
                   )
                 }
               ]}
             />
-            <R.Hvfb>
-              <CustomEmoji type="blankNumberPurple" /> と{' '}
-              <CustomEmoji type="blankNumberPink" /> の部分に…
-            </R.Hvfb>
+            <R.Mlnt></R.Mlnt>
             <ExpressionRunnerSeparator />
             <R.Tpyg>
               <EmojiNumber number={2} /> と <EmojiNumber number={3} />{' '}
@@ -1133,17 +1162,28 @@ export default () => (
                         }
                       />
                       <P>
-                        先ほどの弁当箱の上の部分に <EmojiNumber number={3} />{' '}
-                        を追加してみたぞ。
+                        これを計算するには、
+                        <HighlightBold>
+                          先ほどの弁当箱の上の{' '}
+                          <CustomEmoji type="blankNumber" /> の部分を{' '}
+                          <EmojiNumber number={3} /> にして実行すればいい
+                        </HighlightBold>
+                        んだ。
                       </P>
                     </>
                   )
                 }
               ]}
             />
-            <R.Zlfx>
-              上の部分に <EmojiNumber number={3} /> を追加
-            </R.Zlfx>
+            <VariableShadeContext.Provider value={{ shadeNonFactorial: true }}>
+              <R.Kmgw>
+                <CustomEmoji type="blankNumber" /> の部分を…
+              </R.Kmgw>
+              <ExpressionRunnerSeparator />
+              <R.Zlfx>
+                <EmojiNumber number={3} /> に変えて実行すればいい
+              </R.Zlfx>
+            </VariableShadeContext.Provider>
             <BubbleQuotes
               quotes={[
                 {
@@ -1237,7 +1277,7 @@ export default () => (
               ]}
             />
             <R.Zlfx>
-              上の部分に <EmojiNumber number={3} /> を追加
+              上の部分を <EmojiNumber number={3} /> に
               <br />
               して
               <H args={{ name: 'run' }} /> すると…
@@ -1291,17 +1331,19 @@ export default () => (
                         }
                       />
                       <P>
-                        先ほどの弁当箱の上の部分に <EmojiNumber number={4} />{' '}
-                        を追加してみたぞ。
+                        先ほどの弁当箱の上の部分を <EmojiNumber number={4} />{' '}
+                        にしてみたぞ。
                       </P>
                     </>
                   )
                 }
               ]}
             />
-            <R.Txxw>
-              上の部分に <EmojiNumber number={4} /> を追加
-            </R.Txxw>
+            <VariableShadeContext.Provider value={{ shadeNonFactorial: true }}>
+              <R.Txxw>
+                上の部分を <EmojiNumber number={4} /> に
+              </R.Txxw>
+            </VariableShadeContext.Provider>
             <BubbleQuotes
               quotes={[
                 {

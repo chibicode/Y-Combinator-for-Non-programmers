@@ -75,9 +75,11 @@ const ConditionalBorder = ({
     falseCase: falseCaseColor,
     condition: conditionColor
   }[type]
-  const { shadeNonNumbers, shadeNonHighlightedFunc } = useContext(
-    VariableShadeContext
-  )
+  const {
+    shadeNonNumbers,
+    shadeNonHighlightedFunc,
+    shadeNonFactorial
+  } = useContext(VariableShadeContext)
   return (
     <>
       {shaded && <Shade />}
@@ -90,7 +92,11 @@ const ConditionalBorder = ({
             left: 0.3em;
             display: inline-flex;
             font-size: ${fontSize(variableSizeOverrides || variableSize)};
-            opacity: ${shadeNonNumbers || shadeNonHighlightedFunc ? 0.7 : 1};
+            opacity: ${shadeNonNumbers ||
+            shadeNonHighlightedFunc ||
+            shadeNonFactorial
+              ? 0.7
+              : 1};
           `}
         >
           {type === 'trueCase' && (
@@ -119,7 +125,9 @@ const ConditionalBorder = ({
           border-top: 2px solid ${colors('indigo300')};
         `}
       >
-        {(shadeNonNumbers || shadeNonHighlightedFunc) && <Shade />}
+        {(shadeNonNumbers || shadeNonHighlightedFunc || shadeNonFactorial) && (
+          <Shade />
+        )}
       </span>
     </>
   )

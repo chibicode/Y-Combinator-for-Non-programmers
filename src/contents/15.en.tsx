@@ -14,6 +14,7 @@ import Emoji from 'src/components/Emoji'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import EmojiForLetter from 'src/components/EmojiForLetter'
 import EmojiNumber from 'src/components/EmojiNumber'
+import VariableShadeContext from 'src/components/VariableShadeContext'
 import ExpressionRunnerSeparator from 'src/components/ExpressionRunnerSeparator'
 import CustomEmoji from 'src/components/CustomEmoji'
 import TwoColGrid from 'src/components/TwoColGrid'
@@ -1156,17 +1157,28 @@ export default () => (
                         }
                       />
                       <P>
-                        先ほどの弁当箱の上の部分に <EmojiNumber number={3} />{' '}
-                        を追加してみたぞ。
+                        これを計算するには、
+                        <HighlightBold>
+                          先ほどの弁当箱の上の{' '}
+                          <CustomEmoji type="blankNumber" /> の部分を{' '}
+                          <EmojiNumber number={3} /> にして実行すればいい
+                        </HighlightBold>
+                        んだ。
                       </P>
                     </>
                   )
                 }
               ]}
             />
-            <R.Zlfx>
-              上の部分に <EmojiNumber number={3} /> を追加
-            </R.Zlfx>
+            <VariableShadeContext.Provider value={{ shadeNonFactorial: true }}>
+              <R.Kmgw>
+                <CustomEmoji type="blankNumber" /> の部分を…
+              </R.Kmgw>
+              <ExpressionRunnerSeparator />
+              <R.Zlfx>
+                <EmojiNumber number={3} /> に変えて実行すればいい
+              </R.Zlfx>
+            </VariableShadeContext.Provider>
             <BubbleQuotes
               quotes={[
                 {
@@ -1260,7 +1272,7 @@ export default () => (
               ]}
             />
             <R.Zlfx>
-              上の部分に <EmojiNumber number={3} /> を追加
+              上の部分を <EmojiNumber number={3} /> に
               <br />
               して
               <H args={{ name: 'run' }} /> すると…
@@ -1314,17 +1326,19 @@ export default () => (
                         }
                       />
                       <P>
-                        先ほどの弁当箱の上の部分に <EmojiNumber number={4} />{' '}
-                        を追加してみたぞ。
+                        先ほどの弁当箱の上の部分を <EmojiNumber number={4} />{' '}
+                        にしてみたぞ。
                       </P>
                     </>
                   )
                 }
               ]}
             />
-            <R.Txxw>
-              上の部分に <EmojiNumber number={4} /> を追加
-            </R.Txxw>
+            <VariableShadeContext.Provider value={{ shadeNonFactorial: true }}>
+              <R.Txxw>
+                上の部分を <EmojiNumber number={4} /> に
+              </R.Txxw>
+            </VariableShadeContext.Provider>
             <BubbleQuotes
               quotes={[
                 {
