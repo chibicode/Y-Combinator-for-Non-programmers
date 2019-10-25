@@ -413,6 +413,14 @@ export default () => (
                         <HighlightBold>足し算を計算した</HighlightBold>
                         のか？
                       </P>
+                      <EmojiSeparator
+                        nodes={[
+                          <EmojiNumber number={2} />,
+                          <Emoji>➕</Emoji>,
+                          <EmojiNumber number={3} />
+                        ]}
+                        description={<>足し算ができる？</>}
+                      />
                     </>
                   )
                 },
@@ -470,6 +478,9 @@ export default () => (
                       </P>
                       <EmojiSeparator
                         emojis={['✨', '➕', '✨']}
+                          <Emoji>➕</Emoji>,
+                          <CustomEmoji type="blankNumberPink" />
+                        ]}
                         description={<>ふたつの数字の足し算ができる！</>}
                       />
                     </>
@@ -658,7 +669,11 @@ export default () => (
                         のか？
                       </P>
                       <EmojiSeparator
-                        emojis={['✨', '✖️', '✨']}
+                        nodes={[
+                          <EmojiNumber number={2} />,
+                          '✖️',
+                          <EmojiNumber number={3} />
+                        ]}
                         description={<>掛け算ができる？</>}
                       />
                     </>
@@ -720,7 +735,11 @@ export default () => (
               ]}
             />
             <EmojiSeparator
-              emojis={['🍱', '✖️', '🍱']}
+              nodes={[
+                <CustomEmoji type="blankNumberPurple" />,
+                <Emoji>✖️</Emoji>,
+                <CustomEmoji type="blankNumberPink" />
+              ]}
               description={<>掛け算ができる弁当箱が存在した！</>}
             />
           </>

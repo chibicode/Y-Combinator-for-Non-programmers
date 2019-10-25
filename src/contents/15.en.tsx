@@ -416,6 +416,14 @@ export default () => (
                           <Emoji>➕</Emoji> <EmojiNumber number={3} />?
                         </Highlight>
                       </P>
+                      <EmojiSeparator
+                        nodes={[
+                          <EmojiNumber number={2} />,
+                          <Emoji>➕</Emoji>,
+                          <EmojiNumber number={3} />
+                        ]}
+                        description={<>It can do addition?</>}
+                      />
                     </>
                   )
                 },
@@ -479,7 +487,11 @@ export default () => (
                         </Highlight>
                       </P>
                       <EmojiSeparator
-                        emojis={['✨', '➕', '✨']}
+                        nodes={[
+                          <CustomEmoji type="blankNumberPurple" />,
+                          <Emoji>➕</Emoji>,
+                          <CustomEmoji type="blankNumberPink" />
+                        ]}
                         description={<>It can add two numbers!</>}
                       />
                     </>
@@ -642,12 +654,13 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        今回は、もともと{' '}
-                        <CustomEmoji type="blankNumberPurple" /> と{' '}
-                        <CustomEmoji type="blankNumberPink" /> に入れたのは{' '}
-                        <EmojiNumber number={2} /> と <EmojiNumber number={3} />{' '}
-                        だった。そして、結果は <EmojiNumber number={6} />{' '}
-                        になった…
+                        We started out with <EmojiNumber number={2} /> for{' '}
+                        <CustomEmoji type="blankNumberPurple" /> and{' '}
+                        <EmojiNumber number={3} /> for{' '}
+                        <CustomEmoji type="blankNumberPink" />…
+                      </P>
+                      <P>
+                        And the result was <EmojiNumber number={6} />.
                       </P>
                     </>
                   )
@@ -655,12 +668,12 @@ export default () => (
               ]}
             />
             <R.Nvdn>
-              <EmojiNumber number={2} /> と <EmojiNumber number={3} />{' '}
-              を入れると…
+              We started out with <EmojiNumber number={2} /> and{' '}
+              <EmojiNumber number={3} />…
             </R.Nvdn>
             <ExpressionRunnerSeparator />
             <R.Uhqo>
-              <EmojiNumber number={6} /> に変換できる弁当箱に
+              And the result was <EmojiNumber number={6} />
             </R.Uhqo>
             <BubbleQuotes
               quotes={[
@@ -669,12 +682,15 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        これはもしかして…
-                        <HighlightBold>掛け算を計算できる</HighlightBold>
-                        のか？
+                        <Bold>Maybe:</Bold>{' '}
+                        <Highlight>It can do multiplication?</Highlight>
                       </P>
                       <EmojiSeparator
-                        emojis={['✨', '✖️', '✨']}
+                        nodes={[
+                          <EmojiNumber number={2} />,
+                          <Emoji>✖️</Emoji>,
+                          <EmojiNumber number={3} />
+                        ]}
                         description={<>掛け算ができる？</>}
                       />
                     </>
@@ -736,7 +752,11 @@ export default () => (
               ]}
             />
             <EmojiSeparator
-              emojis={['🍱', '✖️', '🍱']}
+              nodes={[
+                <CustomEmoji type="blankNumberPurple" />,
+                <Emoji>✖️</Emoji>,
+                <CustomEmoji type="blankNumberPink" />
+              ]}
               description={<>掛け算ができる弁当箱が存在した！</>}
             />
           </>
