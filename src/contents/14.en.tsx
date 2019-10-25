@@ -41,7 +41,6 @@ const ThreeStepsSummary = () => (
 
 export default () => (
   <EpisodeCardList
-    underConstruction
     cards={[
       {
         type: 'summary',
