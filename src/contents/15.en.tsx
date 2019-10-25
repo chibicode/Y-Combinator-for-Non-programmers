@@ -1193,7 +1193,7 @@ export default () => (
         )
       },
       {
-        title: <>階乗の計算</>,
+        title: <>Calculating factorials</>,
         content: (
           <>
             <BubbleQuotes
@@ -1202,15 +1202,21 @@ export default () => (
                   type: 'devil',
                   children: (
                     <>
-                      <P>それでは、階乗を計算する方法をお見せしよう。</P>
                       <P>
-                        まず、こちらの弁当箱を見てみよう。
+                        Let me explain how to calculate factorials using a
+                        lunchbox.
+                      </P>
+                      <P>
+                        <Bold>First:</Bold> Take a look at this lunchbox.{' '}
                         <Highlight>
-                          上の <EmojiForLetter letter="a" /> と{' '}
-                          <EmojiForLetter letter="f" /> の間に掛け算のアイコン{' '}
-                          <MultiplyIcon /> が使われている
-                        </Highlight>
-                        のに注目だ。
+                          Notice that there’s a <MultiplyIcon /> sign between{' '}
+                          <EmojiForLetter letter="a" /> and{' '}
+                          <EmojiForLetter letter="f" />.
+                        </Highlight>{' '}
+                      </P>
+                      <P>
+                        So it uses a lunchbox that can calculate
+                        multiplications.
                       </P>
                     </>
                   )
@@ -1218,10 +1224,9 @@ export default () => (
               ]}
             />
             <R.Zick>
-              <EmojiForLetter letter="a" /> と <EmojiForLetter letter="f" />{' '}
-              の間に
+              There’s a <MultiplyIcon /> sign between
               <br />
-              掛け算のアイコン <MultiplyIcon /> が使われている
+              <EmojiForLetter letter="a" /> and <EmojiForLetter letter="f" />{' '}
             </R.Zick>
             <BubbleQuotes
               quotes={[
@@ -1230,12 +1235,16 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        次に、上の弁当箱に、下の黄色の部分を追加してみよう。
+                        <Bold>Next:</Bold>{' '}
+                        <Highlight>
+                          We’ll add more items to the above lunchbox like this
+                          (sections in yellow background).
+                        </Highlight>
                       </P>
                       <P>
-                        ちなみに下半分は、前回も紹介した、 「
-                        <H args={{ name: 'repeatFeature' }} />」 を再現できる
-                        <HighlightBold>Yコンビネータの弁当箱</HighlightBold>だ。
+                        By the way, the bottom half is{' '}
+                        <HighlightBold>Y Combinator</HighlightBold> which we
+                        used on the last page.
                       </P>
                     </>
                   )
@@ -1243,9 +1252,9 @@ export default () => (
               ]}
             />
             <R.Olqy>
-              黄色の部分を追加。
+              We add more items (yellow background).
               <br />
-              下半分は<HighlightBold>Yコンビネータの弁当箱</HighlightBold>
+              The bottom half is <HighlightBold>Y Combinator</HighlightBold>
             </R.Olqy>
             <BubbleQuotes
               quotes={[
@@ -1254,7 +1263,8 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        この弁当箱を使うと、どんな数字の階乗も計算できるんだ。
+                        By using this lunchbox, you can calculate the factorial
+                        of any number.
                       </P>
                     </>
                   )
@@ -1263,7 +1273,7 @@ export default () => (
                   type: 'thinking',
                   children: (
                     <>
-                      <P>えー、本当かなあ？</P>
+                      <P>Hmm… really?</P>
                     </>
                   )
                 }
@@ -1275,7 +1285,7 @@ export default () => (
       {
         title: (
           <>
-            <EmojiNumber number={3} /> の階乗
+            The factorial of <EmojiNumber number={3} />
           </>
         ),
         content: (
@@ -1442,7 +1452,7 @@ export default () => (
       {
         title: (
           <>
-            <EmojiNumber number={4} /> の階乗
+            The factorial of <EmojiNumber number={4} />
           </>
         ),
         content: (
