@@ -477,7 +477,8 @@ export default () => (
                         というわけだな。
                       </P>
                       <EmojiSeparator
-                        emojis={['✨', '➕', '✨']}
+                        nodes={[
+                          <CustomEmoji type="blankNumberPurple" />,
                           <Emoji>➕</Emoji>,
                           <CustomEmoji type="blankNumberPink" />
                         ]}
