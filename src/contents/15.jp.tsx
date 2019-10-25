@@ -25,6 +25,22 @@ export default () => (
   <EpisodeCardList
     cards={[
       {
+        type: 'summary',
+        title: <>これが上級編最後！</>,
+        content: (
+          <>
+            <P>
+              <Highlight>これが上級編最後のページです！</Highlight>
+              あと少しです！
+            </P>
+            <EmojiSeparator
+              emojis={['✨', '🤗', '✨']}
+              description={<>あと少し！</>}
+            />
+          </>
+        )
+      },
+      {
         title: <>勝利！</>,
         content: (
           <>

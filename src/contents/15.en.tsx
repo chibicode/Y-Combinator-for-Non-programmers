@@ -27,6 +27,24 @@ export default () => (
     underConstruction
     cards={[
       {
+        type: 'summary',
+        title: <>This is the last advanced episode!</>,
+        content: (
+          <>
+            <P>
+              <Highlight>
+                This is the last page for the advanced levels!
+              </Highlight>{' '}
+              You’re almost there!
+            </P>
+            <EmojiSeparator
+              emojis={['✨', '🤗', '✨']}
+              description={<>You’re almost there!</>}
+            />
+          </>
+        )
+      },
+      {
         title: <>We won!</>,
         content: (
           <>
