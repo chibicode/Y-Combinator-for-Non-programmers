@@ -1151,8 +1151,8 @@ export default () => (
               ]}
             />
             <R.Ochk>
-              <EmojiNumber number={2} /> <Emoji>✖️</Emoji>{' '}
-              <EmojiNumber number={3} /> を計算できる弁当箱
+              A lunchbox that calculates <EmojiNumber number={2} />{' '}
+              <Emoji>✖️</Emoji> <EmojiNumber number={3} />
             </R.Ochk>
             <BubbleQuotes
               quotes={[
@@ -1161,12 +1161,13 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        以下のように <MultiplyIcon /> を使って省略表記できる。
+                        If we use the <MultiplyIcon /> notation to simplify the
+                        above lunchbox, it will look like below.
                       </P>
                       <P>
-                        <H args={{ name: 'run' }} /> を押してみると、ちゃんと{' '}
-                        <EmojiNumber number={2} /> <Emoji>✖️</Emoji>{' '}
-                        <EmojiNumber number={3} /> が計算できるぞ。
+                        You can <H args={{ name: 'run', lowerCase: true }} /> it
+                        to calculate <EmojiNumber number={2} />{' '}
+                        <Emoji>✖️</Emoji> <EmojiNumber number={3} />.
                       </P>
                     </>
                   )
@@ -1174,7 +1175,7 @@ export default () => (
               ]}
             />
             <R.Potg>
-              上の弁当箱を <MultiplyIcon /> で省略表記してみた
+              Using the <MultiplyIcon /> notation
             </R.Potg>
             <BubbleQuotes
               quotes={[
@@ -1182,9 +1183,7 @@ export default () => (
                   type: 'thinking',
                   children: (
                     <>
-                      <P>
-                        なるほど。で、この省略表記をどう使って階乗を計算するんだい？
-                      </P>
+                      <P>Ok. But how do we use this to calculate factorials?</P>
                     </>
                   )
                 }
