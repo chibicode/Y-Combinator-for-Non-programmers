@@ -1024,7 +1024,7 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        <Bold>Now, I will show you that…:</Bold>{' '}
+                        <Bold>Now, I will show you that:</Bold>{' '}
                         <Highlight>
                           Lunchboxes can calculate factorials.
                         </Highlight>
