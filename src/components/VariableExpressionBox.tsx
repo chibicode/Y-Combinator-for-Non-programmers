@@ -404,9 +404,11 @@ const VariableExpressionBox = ({ expression }: VariableExpressionBoxProps) => {
   const { hidePriorities, variableSize } = useContext(ExpressionRunnerContext)
   const { conditionalState } = useContext(ConditionalContext)
   const { binaryState } = useContext(BinaryContext)
-  const { shadeNonNumbers, shadeNonHighlightedFunc } = useContext(
-    VariableShadeContext
-  )
+  const {
+    shadeNonNumbers,
+    shadeNonHighlightedFunc,
+    shadeNonFactorial
+  } = useContext(VariableShadeContext)
 
   return (
     <>
@@ -416,7 +418,12 @@ const VariableExpressionBox = ({ expression }: VariableExpressionBoxProps) => {
           expression.name !== 'B')) ||
         (shadeNonHighlightedFunc &&
           (expression.shorthandFunc === undefined ||
-            expression.highlightType !== 'initialHighlighted'))) && (
+            expression.highlightType !== 'initialHighlighted')) ||
+        (shadeNonFactorial &&
+          expression.shorthandNumber !== 3 &&
+          expression.shorthandNumber !== 4 &&
+          expression.shorthandNumber !== 5 &&
+          expression.name !== 'blankNumber')) && (
         <span
           css={css`
             display: block;

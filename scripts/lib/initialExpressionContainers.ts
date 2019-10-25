@@ -2260,7 +2260,8 @@ export const bgid = initializeExpressionContainer([
         }
       }
     }
-  }
+  },
+  { name: 'blankNumber', highlighted: true }
 ])
 
 export const jypn = initializeExpressionContainer([

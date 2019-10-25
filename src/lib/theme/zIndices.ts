@@ -1,12 +1,12 @@
 export const allZIndices = {
-  variableShade: 99,
   border: 100,
-  conditionalBorder: 101,
   multiplySign: 101,
   expressionPriorityNumber: 101,
-  borderToplevel: 102,
-  badge: 102,
-  conditionalBorderShade: 103,
+  variableShade: 102,
+  conditionalBorder: 103,
+  badge: 104,
+  borderToplevel: 105,
+  conditionalBorderShade: 106,
   modal: 1000
 }
 
