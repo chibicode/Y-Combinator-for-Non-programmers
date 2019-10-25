@@ -2312,30 +2312,6 @@ export const jvmi = initializeExpressionContainer([
   }
 ])
 
-export const bzpj = initializeExpressionContainer([
-  yCombinator,
-  {
-    arg: 'a',
-    body: {
-      arg: 'f',
-      body: {
-        checkType: 'isZero',
-        condition: [{ shorthandFunc: 'pred' }, 'f'],
-        trueCase: { shorthandNumber: 1 },
-        falseCase: {
-          binaryType: 'multiply',
-          first: ['a', [{ shorthandFunc: 'pred' }, 'f']],
-          second: 'f'
-        }
-      }
-    }
-  },
-  {
-    shorthandNumber: 5,
-    initialHighlight: true
-  }
-])
-
 export const abhd = initializeExpressionContainer([
   yCombinator,
   {

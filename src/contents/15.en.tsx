@@ -1297,8 +1297,8 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        では、先ほどの弁当箱を使って <EmojiNumber number={3} />{' '}
-                        の階乗を計算してみよう。
+                        Let’s use this to calculate the factorial of{' '}
+                        <EmojiNumber number={3} />.
                       </P>
                       <EmojiSeparator
                         size="sm"
@@ -1311,20 +1311,18 @@ export default () => (
                         ]}
                         description={
                           <>
-                            <EmojiNumber number={3} /> の階乗。
+                            The factorial of <EmojiNumber number={3} />:
                             <br />
-                            実際に計算すると <EmojiNumber number={6} /> になる
+                            The result will be <EmojiNumber number={6} />.
                           </>
                         }
                       />
                       <P>
-                        これを計算するには、
-                        <HighlightBold>
-                          先ほどの弁当箱の上の{' '}
-                          <CustomEmoji type="blankNumber" /> の部分を{' '}
-                          <EmojiNumber number={3} /> にして実行すればいい
-                        </HighlightBold>
-                        んだ。
+                        To calculate this, we just need to{' '}
+                        <Highlight>
+                          change <CustomEmoji type="blankNumber" /> on the
+                          earlier lunchbox to <EmojiNumber number={3} />.
+                        </Highlight>
                       </P>
                     </>
                   )
@@ -1333,11 +1331,11 @@ export default () => (
             />
             <VariableShadeContext.Provider value={{ shadeNonFactorial: true }}>
               <R.Kmgw>
-                <CustomEmoji type="blankNumber" /> の部分を…
+                Change <CustomEmoji type="blankNumber" />…
               </R.Kmgw>
               <ExpressionRunnerSeparator />
               <R.Zlfx>
-                <EmojiNumber number={3} /> に変えて実行すればいい
+                …to <EmojiNumber number={3} />
               </R.Zlfx>
             </VariableShadeContext.Provider>
             <BubbleQuotes
@@ -1347,25 +1345,28 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        これを
-                        <H args={{ name: 'run' }} /> してみよう！
+                        Let’s <H args={{ name: 'run', lowerCase: true }} />
                       </P>
-                      {/* TODO: NOTE - we skip a lot of steps */}
                       <Ul>
                         <UlLi>
-                          ステップ数が非常に多いので、途中のいくつかのステップを省略した上で、
-                          <Highlight>3倍速で進めるぞ。</Highlight>{' '}
+                          Because there are so many steps,{' '}
+                          <Highlight>
+                            we’ll skip some steps, and increase the playback
+                            speed to 3x.
+                          </Highlight>{' '}
                           <Emoji>⏩</Emoji> <Emoji>⏩</Emoji> <Emoji>⏩</Emoji>
                         </UlLi>
                         <UlLi>
-                          実行中は、目に優しくなるように弁当箱を半透明にしている。
+                          While it’s running, we’ll{' '}
+                          <Highlight>dim the lunchbox</Highlight> so it’s easier
+                          for your eyes.
                         </UlLi>
                         <UlLi>
-                          待てない場合は、「
+                          If you can’t wait, press{' '}
                           <Highlight highlightType="pink">
-                            <H args={{ name: 'skipToTheStoppingPoint' }} /> →
+                            “<H args={{ name: 'skipToTheStoppingPoint' }} /> →”
                           </Highlight>
-                          」を押してもいいぞ。
+                          .
                         </UlLi>
                       </Ul>
                     </>
@@ -1380,7 +1381,10 @@ export default () => (
                   type: 'devil',
                   children: (
                     <>
-                      <P>まだ最後まで終わっていないが…気づいたかな？</P>
+                      <P>
+                        It’s not finished yet, but do you see what just
+                        happened?
+                      </P>
                     </>
                   )
                 },
@@ -1389,9 +1393,9 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        <EmojiNumber number={3} /> <Emoji>✖️</Emoji>{' '}
+                        It became <EmojiNumber number={3} /> <Emoji>✖️</Emoji>{' '}
                         <EmojiNumber number={2} /> <Emoji>✖️</Emoji>{' '}
-                        <EmojiNumber number={1} /> になった！
+                        <EmojiNumber number={1} />!
                       </P>
                     </>
                   )
@@ -1401,12 +1405,12 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        そう。こうやって <EmojiNumber number={3} />{' '}
-                        の階乗を自動で計算してくれるんだ。
+                        Yes. So it does calculate the factorial of{' '}
+                        <EmojiNumber number={3} />.
                       </P>
                       <P>
-                        というわけで、
-                        <H args={{ name: 'run' }} /> して最後まで見てみよう！
+                        Let’s <H args={{ name: 'run', lowerCase: true }} />{' '}
+                        until the end!
                       </P>
                     </>
                   )
@@ -1421,11 +1425,9 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        というわけで、先ほどの弁当箱は
-                        <H args={{ name: 'run' }} />{' '}
-                        すると、以下のように変化することで、
-                        <EmojiNumber number={3} />{' '}
-                        の階乗を自動で計算してくれるんだ。
+                        <Bold>In summary:</Bold> By running this lunchbox, it
+                        calculates the factorial of <EmojiNumber number={3} />{' '}
+                        automatically.
                       </P>
                     </>
                   )
@@ -1433,16 +1435,15 @@ export default () => (
               ]}
             />
             <R.Zlfx>
-              上の部分を <EmojiNumber number={3} /> に
+              If you put <EmojiNumber number={3} /> at the top
               <br />
-              して
-              <H args={{ name: 'run' }} /> すると…
+              and <H args={{ name: 'run', lowerCase: true }} /> it…
             </R.Zlfx>
             <ExpressionRunnerSeparator />
             <R.Qurt>
-              以下のように変化することで、
+              It becomes like this and automatically calculates
               <br />
-              <EmojiNumber number={3} /> の階乗を計算してくれる
+              the factorial of <EmojiNumber number={3} />
             </R.Qurt>
             <ExpressionRunnerSeparator />
             <R.Gzuj></R.Gzuj>
@@ -1464,8 +1465,8 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        では最後に、先ほどの弁当箱を使って{' '}
-                        <EmojiNumber number={4} /> の階乗を計算してみよう。
+                        <Bold>Before we finish this page:</Bold> Let’s calculate
+                        the factorial of <EmojiNumber number={4} />.
                       </P>
                       <EmojiSeparator
                         size="sm"
@@ -1480,15 +1481,18 @@ export default () => (
                         ]}
                         description={
                           <>
-                            <EmojiNumber number={4} /> の階乗。
+                            The factorial of <EmojiNumber number={4} />:
                             <br />
-                            実際に計算すると <EmojiNumber number={24} /> になる
+                            The result will be <EmojiNumber number={24} />
                           </>
                         }
                       />
                       <P>
-                        先ほどの弁当箱の上の部分を <EmojiNumber number={4} />{' '}
-                        にしてみたぞ。
+                        To calculate this, we just need to{' '}
+                        <Highlight>
+                          change <CustomEmoji type="blankNumber" /> on the
+                          earlier lunchbox to <EmojiNumber number={4} />.
+                        </Highlight>
                       </P>
                     </>
                   )
@@ -1497,7 +1501,8 @@ export default () => (
             />
             <VariableShadeContext.Provider value={{ shadeNonFactorial: true }}>
               <R.Txxw>
-                上の部分を <EmojiNumber number={4} /> に
+                Change <CustomEmoji type="blankNumber" /> to{' '}
+                <EmojiNumber number={4} />…
               </R.Txxw>
             </VariableShadeContext.Provider>
             <BubbleQuotes
@@ -1507,8 +1512,7 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        これも
-                        <H args={{ name: 'run' }} /> してみよう！
+                        Let’s <H args={{ name: 'run', lowerCase: true }} /> it!
                       </P>
                     </>
                   )
@@ -1523,7 +1527,7 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        <EmojiNumber number={24} /> になった！
+                        It became <EmojiNumber number={24} />!
                       </P>
                     </>
                   )
@@ -1533,8 +1537,8 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        どうだ、
-                        <EmojiNumber number={4} /> の階乗を計算できただろう？
+                        See, it calculated the factorial of{' '}
+                        <EmojiNumber number={4} />, right?
                       </P>
                       <EmojiSeparator
                         size="sm"
@@ -1549,9 +1553,9 @@ export default () => (
                         ]}
                         description={
                           <>
-                            <EmojiNumber number={4} /> の階乗。
+                            The factorial of <EmojiNumber number={4} />:
                             <br />
-                            実際に計算すると <EmojiNumber number={24} /> になる
+                            The result will be <EmojiNumber number={24} />
                           </>
                         }
                       />
@@ -1562,7 +1566,7 @@ export default () => (
                   type: 'thinking',
                   children: (
                     <>
-                      <P>確かに…！</P>
+                      <P>I see. Very interesting!</P>
                     </>
                   )
                 }
@@ -1572,7 +1576,7 @@ export default () => (
         )
       },
       {
-        title: <>Yコンビネータのおかげ</>,
+        title: <>Thanks to Y Combinator</>,
         content: (
           <>
             <BubbleQuotes
@@ -1582,67 +1586,17 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        このように、先ほどの弁当箱は一番上の部分に入れた数字の階乗を計算できるんだ。
-                      </P>
-                      <P>
-                        たとえば <EmojiNumber number={5} /> を入れると、
-                        <EmojiNumber number={5} />{' '}
-                        の階乗を計算してくれるというわけだ。
+                        So, by using this lunchbox,{' '}
+                        <Highlight>
+                          you can calculate the factorial of any number.
+                        </Highlight>
                       </P>
                     </>
                   )
                 }
               ]}
             />
-
-            <R.Eijx>
-              一番上に <EmojiNumber number={5} /> を入れて
-              <br />
-              <H args={{ name: 'run' }} /> すると…
-            </R.Eijx>
-            <ExpressionRunnerSeparator />
-            <EmojiSeparator
-              size="xs"
-              nodes={[
-                <EmojiNumber number={5} />,
-                <Emoji>✖️</Emoji>,
-                <EmojiNumber number={4} />,
-                <Emoji>✖️</Emoji>,
-                <EmojiNumber number={3} />,
-                <Emoji>✖️</Emoji>,
-                <EmojiNumber number={2} />,
-                <Emoji>✖️</Emoji>,
-                <EmojiNumber number={1} />
-              ]}
-              description={
-                <>
-                  <EmojiNumber number={5} /> の階乗を計算してくれる
-                </>
-              }
-            />
-            <BubbleQuotes
-              quotes={[
-                {
-                  type: 'devil',
-                  children: (
-                    <>
-                      <P>
-                        つまり、先ほどの弁当箱を使うことで、
-                        <HighlightBold>
-                          どんな大きな数字の階乗でも計算することができる
-                        </HighlightBold>
-                        んだ。
-                      </P>
-                    </>
-                  )
-                }
-              ]}
-            />
-            <R.Kmgw>
-              どんな大きな数字の階乗でも
-              <br />
-              計算することができる！
-            </R.Kmgw>
+            <R.Kmgw>By using this lunchbox…</R.Kmgw>
             <ExpressionRunnerSeparator />
             <EmojiSeparator
               size="sm"
@@ -1655,11 +1609,7 @@ export default () => (
                 <Emoji>✖️</Emoji>,
                 <EmojiNumber number={1} />
               ]}
-              description={
-                <>
-                  <CustomEmoji type="blankNumber" /> の階乗を計算してくれる
-                </>
-              }
+              description={<>You can calculate the factorial of any number.</>}
             />
             <BubbleQuotes
               quotes={[
@@ -1667,7 +1617,7 @@ export default () => (
                   type: 'thinking',
                   children: (
                     <>
-                      <P>なるほど、すごいなあ…</P>
+                      <P>It’s amazing!</P>
                     </>
                   )
                 },
@@ -1676,45 +1626,40 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        もちろん、こういった複雑な計算ができるのも、
-                        <HighlightBold>Yコンビネータ</HighlightBold>
-                        の弁当箱のおかげだ。
+                        This is possible because of{' '}
+                        <HighlightBold>Y Combinator</HighlightBold>, which is
+                        used in the bottom half of the above lunchobx.
                       </P>
                       <Ul>
                         <UlLi>
                           <Highlight>
-                            <HighlightBold>Yコンビネータ</HighlightBold>
-                            の弁当箱は、
+                            By combining{' '}
+                            <HighlightBold>Y Combinator</HighlightBold> with a
+                            lunchbox that can calculate multiplications,
                           </Highlight>
                         </UlLi>
                         <UlLi>
                           <Highlight>
-                            掛け算を計算できる弁当箱と組み合わせることによって、
-                          </Highlight>
-                        </UlLi>
-                        <UlLi>
-                          <Highlight>
-                            階乗のように複雑な計算を行うこともできる
+                            You can do complicated calculations like factorials.
                           </Highlight>
                         </UlLi>
                       </Ul>
-                      <P>ということだ。</P>
                     </>
                   )
                 }
               ]}
             />
             <R.Xjzx>
-              <HighlightBold>Yコンビネータ</HighlightBold>の弁当箱は…
+              By combining <HighlightBold>Y Combinator</HighlightBold>…
             </R.Xjzx>
             <ExpressionRunnerSeparator />
             <EmojiSeparator
               emojis={['🍱', '✖️', '🍱']}
               description={
                 <>
-                  掛け算を計算できる弁当箱と
+                  …with a lunchbox that can
                   <br />
-                  組み合わせることによって…
+                  calculate multiplications…
                 </>
               }
             />
@@ -1731,10 +1676,7 @@ export default () => (
                 <EmojiNumber number={1} />
               ]}
               description={
-                <>
-                  <HighlightBold>階乗</HighlightBold>
-                  のような複雑な計算もできる！
-                </>
+                <>You can do complicated calculations like factorials</>
               }
             />
             <BubbleQuotes
@@ -1744,9 +1686,8 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        まさに、「
-                        <HighlightBold>魔法のYコンビネータ</HighlightBold>
-                        」だな！
+                        I see. <HighlightBold>Y Combinator</HighlightBold> is
+                        indeed magical!
                       </P>
                     </>
                   )
@@ -1757,7 +1698,7 @@ export default () => (
               emojis={['✨', '🧙‍♀️', '✨']}
               description={
                 <>
-                  <HighlightBold>魔法のYコンビネータ</HighlightBold>
+                  <HighlightBold>Y Combinator</HighlightBold> is magical!
                 </>
               }
             />

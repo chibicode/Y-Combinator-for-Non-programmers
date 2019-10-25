@@ -1260,7 +1260,6 @@ export default () => (
                         これを
                         <H args={{ name: 'run' }} /> してみよう！
                       </P>
-                      {/* TODO: NOTE - we skip a lot of steps */}
                       <Ul>
                         <UlLi>
                           ステップ数が非常に多いので、途中のいくつかのステップを省略した上で、
@@ -1492,51 +1491,6 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        このように、先ほどの弁当箱は一番上の部分に入れた数字の階乗を計算できるんだ。
-                      </P>
-                      <P>
-                        たとえば <EmojiNumber number={5} /> を入れると、
-                        <EmojiNumber number={5} />{' '}
-                        の階乗を計算してくれるというわけだ。
-                      </P>
-                    </>
-                  )
-                }
-              ]}
-            />
-
-            <R.Eijx>
-              一番上に <EmojiNumber number={5} /> を入れて
-              <br />
-              <H args={{ name: 'run' }} /> すると…
-            </R.Eijx>
-            <ExpressionRunnerSeparator />
-            <EmojiSeparator
-              size="xs"
-              nodes={[
-                <EmojiNumber number={5} />,
-                <Emoji>✖️</Emoji>,
-                <EmojiNumber number={4} />,
-                <Emoji>✖️</Emoji>,
-                <EmojiNumber number={3} />,
-                <Emoji>✖️</Emoji>,
-                <EmojiNumber number={2} />,
-                <Emoji>✖️</Emoji>,
-                <EmojiNumber number={1} />
-              ]}
-              description={
-                <>
-                  <EmojiNumber number={5} /> の階乗を計算してくれる
-                </>
-              }
-            />
-            <BubbleQuotes
-              quotes={[
-                {
-                  type: 'devil',
-                  children: (
-                    <>
-                      <P>
                         つまり、先ほどの弁当箱を使うことで、
                         <HighlightBold>
                           どんな大きな数字の階乗でも計算することができる
@@ -1586,7 +1540,7 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        もちろん、こういった複雑な計算ができるのも、
+                        もちろん、こういった複雑な計算ができるのも、上の弁当箱の下半分に使われている
                         <HighlightBold>Yコンビネータ</HighlightBold>
                         の弁当箱のおかげだ。
                       </P>

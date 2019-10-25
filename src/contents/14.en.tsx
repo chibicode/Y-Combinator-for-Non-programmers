@@ -202,7 +202,7 @@ export default () => (
                         <UlLi>
                           If you can’t wait, press{' '}
                           <Highlight highlightType="pink">
-                            “<H args={{ name: 'skipToTheEnd' }} /> →”
+                            “<H args={{ name: 'skipToTheStoppingPoint' }} /> →”
                           </Highlight>
                           .
                         </UlLi>

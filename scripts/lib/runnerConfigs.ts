@@ -2586,12 +2586,6 @@ export const txxw: ExpressionRunnerShorthandConfig = {
   showPriorities: true
 }
 
-export const eijx: ExpressionRunnerShorthandConfig = {
-  runner: 'simple',
-  initialExpressionContainer: initialExpressionContainers.bzpj,
-  showPriorities: true
-}
-
 export const kmgw: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   initialExpressionContainer: initialExpressionContainers.abhd,
