@@ -163,14 +163,11 @@ export default () => (
                   type: 'thinking',
                   children: (
                     <>
-                      <P>なんだ、この弁当箱は？</P>
+                      <P>Hmm… what is this?</P>
                       <P>
-                        <Highlight>
-                          上のほうに、
-                          <CustomEmoji type="blankNumberPurple" /> と{' '}
-                          <CustomEmoji type="blankNumberPink" />{' '}
-                          を入れる部分があるけれど…
-                        </Highlight>
+                        It looks like you can fill each of{' '}
+                        <CustomEmoji type="blankNumberPurple" /> and{' '}
+                        <CustomEmoji type="blankNumberPink" /> with a number…
                       </P>
                     </>
                   )
@@ -180,10 +177,13 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        とりあえず、
-                        <CustomEmoji type="blankNumberPurple" /> と{' '}
-                        <CustomEmoji type="blankNumberPink" />{' '}
-                        に適当な数字を当てはめてみな！
+                        <Bold>Well:</Bold>{' '}
+                        <Highlight>
+                          Try filling each of{' '}
+                          <CustomEmoji type="blankNumberPurple" /> and{' '}
+                          <CustomEmoji type="blankNumberPink" /> with a random
+                          number!
+                        </Highlight>
                       </P>
                     </>
                   )
@@ -192,12 +192,39 @@ export default () => (
                   type: 'thinking',
                   children: (
                     <>
+                      <P>Ok. Let’s use:</P>
+                      <Ul>
+                        <UlLi>
+                          <EmojiNumber number={2} /> for{' '}
+                          <CustomEmoji type="blankNumberPurple" /> and…
+                        </UlLi>
+                        <UlLi>
+                          <EmojiNumber number={3} /> for{' '}
+                          <CustomEmoji type="blankNumberPink" />.
+                        </UlLi>
+                      </Ul>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Jwsj>
+              Fill each of <CustomEmoji type="blankNumberPurple" /> and{' '}
+              <CustomEmoji type="blankNumberPink" />…
+            </R.Jwsj>
+            <ExpressionRunnerSeparator />
+            <R.Zflb>
+              With <EmojiNumber number={2} /> and <EmojiNumber number={3} />
+            </R.Zflb>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'thinking',
+                  children: (
+                    <>
                       <P>
-                        分かった。じゃあ、こちらの{' '}
-                        <HighlightBold>
-                          <EmojiNumber number={2} /> に変換できる弁当箱
-                        </HighlightBold>
-                        と…
+                        Now, let’s use this lunchbox that can be converted to{' '}
+                        <EmojiNumber number={2} />…
                       </P>
                       <R.Wopl>
                         <H
@@ -209,11 +236,8 @@ export default () => (
                         />
                       </R.Wopl>
                       <P>
-                        こちらの{' '}
-                        <HighlightBold>
-                          <EmojiNumber number={3} /> に変換できる弁当箱
-                        </HighlightBold>
-                        を…
+                        And this lunchbox that can be converted to{' '}
+                        <EmojiNumber number={3} />:
                       </P>
                       <R.Dmrz>
                         <H
@@ -224,26 +248,17 @@ export default () => (
                           }}
                         />
                       </R.Dmrz>
-                      <P>
-                        <CustomEmoji type="blankNumberPurple" /> と{' '}
-                        <CustomEmoji type="blankNumberPink" />{' '}
-                        の部分に入れてみよう。
-                      </P>
                     </>
                   )
                 }
               ]}
             />
-            <R.Hvfb>
-              <CustomEmoji type="blankNumberPurple" /> と{' '}
-              <CustomEmoji type="blankNumberPink" /> の部分に…
-            </R.Hvfb>
+            <R.Zflb></R.Zflb>
             <ExpressionRunnerSeparator />
             <R.Tpyg>
-              <EmojiNumber number={2} /> と <EmojiNumber number={3} />{' '}
-              に変換できる
+              Use lunchboxes that can be converted to
               <br />
-              弁当箱を入れてみた
+              <EmojiNumber number={2} /> and <EmojiNumber number={3} />
             </R.Tpyg>
             <BubbleQuotes
               quotes={[
@@ -252,9 +267,8 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        では、これを
-                        <H args={{ name: 'run' }} />{' '}
-                        するとどうなるか確かめてみよう！
+                        Ok, let’s see what happens when you{' '}
+                        <H args={{ name: 'run', lowerCase: true }} /> it!
                       </P>
                     </>
                   )

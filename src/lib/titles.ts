@@ -29,9 +29,9 @@ export const episodeTitles = {
     11: 'The “Conditional” Feature',
     12: 'Reproducing the “Conditional” Feature',
     13: 'Replace Parts of a Lunchbox',
-    14: '?',
-    15: '?',
-    16: '?'
+    14: 'Y Combinator',
+    15: 'Additions, Multiplications, and Factorials',
+    16: 'Computer Science'
   },
   jp: {
     1: '計算箱',
