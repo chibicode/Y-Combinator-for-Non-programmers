@@ -486,21 +486,16 @@ export default () => (
         )
       },
       {
-        title: <>工夫すること</>,
+        title: <>Building a complex thing from simple things</>,
         content: (
           <>
             <P>
-              そろそろ終わりが近づいてきましたが、最後に「
-              <Bold>コンピュータサイエンス＝計算機科学</Bold>
-              」についてもう一言だけお話をさせてください。
+              We’re almost done, but let me say a few things about computer
+              science and Y Combinator.
             </P>
             <P>
-              それは、
-              <Highlight>
-                「<HighlightBold>計算機を工夫すること</HighlightBold>
-                」が、コンピュータサイエンスではとても大事
-              </Highlight>
-              というお話です。
+              One of the most important things in computer science is to{' '}
+              <Highlight>build a complex thing from simple things.</Highlight>
             </P>
             <ExpressionRunnerCaptionOnly>
               <HighlightBold>重要:</HighlightBold> 計算機を工夫することが、
