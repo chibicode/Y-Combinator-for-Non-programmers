@@ -6,8 +6,6 @@ import {
   Bold,
   Italic,
   Highlight,
-  ExternalLink,
-  Img,
   CenteredCode,
   Pre,
   Code,
