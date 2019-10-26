@@ -569,16 +569,13 @@ export default () => (
               <HighlightBold>Y Combinator</HighlightBold>
             </ExpressionRunnerCaptionOnly>
             <P>
-              まとめると、本稿では、
-              <HighlightBold>
-                実はみなさんにラムダ計算を教えていたのです。
-              </HighlightBold>
+              We had been talking about lunchboxes in this course.{' '}
               <Highlight>
-                ラムダ計算の記述式は見た目が複雑なので、
-                <H args={{ name: 'bentoBoxPuzzle' }} />
-                という形で教えることで、とっつきやすくしていた
-              </Highlight>
-              というわけですね。
+                But in reality, we really were talking about{' '}
+                <HighlightBold>lambda calculus</HighlightBold>.
+              </Highlight>{' '}
+              We used lunchboxes to make lambda calculus more approachable for
+              non-programmers.
             </P>
             <EmojiSeparator
               nodes={[
@@ -588,21 +585,12 @@ export default () => (
               ]}
               description={
                 <>
-                  本稿では、実はラムダ計算を教えていた。
+                  We used lunchboxes to make
                   <br />
-                  ラムダ計算の記述式は見た目が複雑なので、
-                  <br />
-                  <H args={{ name: 'bentoBoxPuzzle' }} />
-                  という形で教える
-                  <br />
-                  ことで、とっつきやすくしていた。
+                  lambda calculus more approachable
                 </>
               }
             />
-            <P>
-              そして繰り返しますが、このラムダ計算は、1930年代に考えられた「
-              <HighlightBold>空想上の計算機</HighlightBold>」というわけです。
-            </P>
           </>
         )
       },

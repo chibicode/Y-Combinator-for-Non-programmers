@@ -592,15 +592,11 @@ export default () => (
                 </>
               }
             />
-            <P>
-              そして繰り返しますが、このラムダ計算は、1930年代に考えられた「
-              <HighlightBold>空想上の計算機</HighlightBold>」というわけです。
-            </P>
           </>
         )
       },
       {
-        title: <>村人の質問に戻ると…</>,
+        title: <>Back to the villager’s question</>,
         content: (
           <>
             <P>ここで、ラムダ村の村人の質問に戻りましょう。</P>
