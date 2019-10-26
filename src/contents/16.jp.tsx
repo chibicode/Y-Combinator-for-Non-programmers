@@ -596,7 +596,7 @@ export default () => (
         )
       },
       {
-        title: <>Back to the villager’s question</>,
+        title: <>村人の質問に戻ると…</>,
         content: (
           <>
             <P>ここで、ラムダ村の村人の質問に戻りましょう。</P>
