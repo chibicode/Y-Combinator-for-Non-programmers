@@ -74,6 +74,6 @@
     "module-alias": "^2.2.2",
     "prettier": "^1.18.2",
     "ts-jest": "^24.0.2",
-    "typescript": "^3.7.0-beta"
+    "typescript": "^3.7.1-rc"
   }
 }
