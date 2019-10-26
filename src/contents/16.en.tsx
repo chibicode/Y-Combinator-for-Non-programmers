@@ -6,8 +6,6 @@ import {
   Bold,
   Italic,
   Highlight,
-  ExternalLink,
-  Img,
   CenteredCode,
   Pre,
   Code,
@@ -28,68 +26,6 @@ import BubbleQuotes from 'src/components/BubbleQuotes'
 import * as R from 'src/components/Runners/fakeIndex'
 import ExpressionRunnerCaptionOnly from 'src/components/ExpressionRunnerCaptionOnly'
 import CardContent from 'src/components/CardContent'
-
-export const WhatIsComputer = () => (
-  <>
-    <P>
-      <Bold>
-        Before we talk about computer science, let’s ask ourselves this
-        question:
-      </Bold>{' '}
-      <Italic>“What is a computer?”</Italic>
-    </P>
-    <EmojiSeparator
-      emojis={['🤔', '💻', '❓']}
-      description={<>What is a computer?</>}
-    />
-    <P>
-      If you see the word “computer”, you might think about:{' '}
-      <Italic>a desktop/laptop computer, smartphone, or even a robot.</Italic>
-    </P>
-    <EmojiSeparator emojis={['💻', '📱', '🤖']} />
-    <P>
-      <Bold>However:</Bold>{' '}
-      <Highlight>
-        A computer, at its core, is a <Bold>computing device</Bold>. It’s a
-        device that can <Italic>compute</Italic>.
-      </Highlight>
-    </P>
-    <EmojiSeparator
-      emojis={['➕', '✖️', '💻', '➖', '➗']}
-      description={
-        <>
-          A computer, at its core, is a<br />
-          <Bold>computing device</Bold>.
-        </>
-      }
-    />
-    <P>
-      Computers can search for information quickly, draw beautiful graphics,
-      recognize faces, or have conversations with humans.{' '}
-    </P>
-    <P>
-      <Bold>
-        This is possible because computers can do a large amount of computations
-        very quickly:
-      </Bold>{' '}
-      Search engines do a lot of computations to rank search results. Face
-      recognition engines do a lot of computations to process image data.
-    </P>
-    <EmojiSeparator
-      emojis={['🔢', '🔢', '💻', '🔢', '🔢']}
-      description={
-        <>
-          Computers can do a large amount of
-          <br />
-          computations very quickly
-        </>
-      }
-    />
-    <P>
-      This is why a computer, at its core, is a <Bold>computing device.</Bold>
-    </P>
-  </>
-)
 
 export default () => (
   <EpisodeCardList
@@ -150,338 +86,52 @@ export default () => (
               description={<>Who invented lunchboxes?</>}
             />
             <P>
-              To answer that question,{' '}
-              <Highlight>
-                we need to talk briefly about the history of computing.
-              </Highlight>
-            </P>
-            <EmojiSeparator
-              emojis={['📜', '🧐', '📚']}
-              description={
-                <>
-                  We need to talk about
-                  <br />
-                  the history of computing
-                </>
-              }
-            />
-            <P>
-              <Bold>So:</Bold> Let’s talk about history! We’ll come back to the
-              original question later.
-            </P>
-          </>
-        ),
-        footer: {
-          content: (
-            <>
-              <P>
-                <Bold>Note:</Bold> We’ll talk about the history of computing and
-                computer science in an{' '}
-                <Highlight>extremely simplified way</Highlight>, in order to
-                make it easier to understand for non-technical people.
-              </P>
-              <P>
-                So if you’re a history nerd, you might be angry at me for not
-                being comprehensive. Hope you understand that it was a tough
-                tradeoff.
-              </P>
-            </>
-          )
-        }
-      },
-      {
-        title: <>What is a computer?</>,
-        content: (
-          <>
-            <WhatIsComputer />
-          </>
-        )
-      },
-      {
-        title: <>History of computers</>,
-        content: (
-          <>
-            <P>
-              Let’s now talk about the history of computers, or computing
-              devices!
-            </P>
-            <P>
-              One of the key breakthroughs in the history of computers is the{' '}
-              <Bold>tabulating machine</Bold>, which was invented in the 1880s
-              in the United States.
-            </P>
-            <P>
-              <Img
-                src="/static/images/Hollerith_census_machine_at_the_Computer_History_Museum.jpg"
-                alt="Hollerith_census_machine_at_the_Computer_History_Museum"
-                size="medium"
-                caption={
-                  <>
-                    The tabulating machine on display at Computer History Museum
-                    in Silicon Valley, California. (
-                    <ExternalLink href="https://commons.wikimedia.org/wiki/File:Hollerith_census_machine_at_the_Computer_History_Museum.jpg">
-                      Photo: Anton Chiang, CC BY 2.0
-                    </ExternalLink>
-                    )
-                  </>
-                }
-              />
-            </P>
-            <P>
-              <Bold>Tabulating machines</Bold> were computing devices designed
-              to help process data for the 1890s U.S. Census. It summarized
-              information stored on punched cards. It’s kind of like Microsoft
-              Excel or Google Spreadsheets.
-            </P>
-            <EmojiSeparator
-              emojis={['📈', '📊', '📉']}
-              description={
-                <>
-                  Tabulating machines were computing devices to
-                  <br />
-                  process data for the 1890s U.S. Census
-                </>
-              }
-            />
-          </>
-        ),
-        footer: {
-          content: (
-            <>
-              <P>
-                <Bold>Side Note:</Bold> Herman Hollerith, who invented
-                tabulating machines, later founded a company that became part of
-                IBM. IBM continued to develop better tabulating machines, and
-                eventually became the top computer company in 1960s.
-              </P>
-            </>
-          )
-        }
-      },
-      {
-        title: <>History of computer science</>,
-        content: (
-          <>
-            <P>
-              In the 20th century, computers evolved from tabulating machines to
-              digital computers.
-            </P>
-            <EmojiSeparator
-              emojis={['✨', '💻', '✨']}
-              description={<>Computers kept evolving in the 20th century</>}
-            />
-            <P>
-              Also in the 20th century, <Bold>Computer Science</Bold>, which is
-              the study of computing and computers, started to emerge.
-            </P>
-            <P>
-              <Bold>Computer scientists asked themselves this question:</Bold>{' '}
-              <Highlight>
-                How can we improve the way we build or use computers so that, we
-                can solve computing problems more efficiently?
-              </Highlight>
-            </P>
-            <EmojiSeparator
-              emojis={['💻', '🤔', '💻']}
-              description={
-                <>
-                  <Bold>An important question in computer science:</Bold>
-                  <br />
-                  How can we improve the way we build
-                  <br />
-                  or use computers so that, we can solve
-                  <br />
-                  computing problems more efficiently?
-                </>
-              }
-            />
-            <P>
-              And there were two famous computer scientists who built
-              foundations of modern computer science. One was{' '}
-              <Bold>Alan Turing</Bold> <Emoji>🧑🏻</Emoji> from the United
-              Kingdom, and the other was <Bold>Alonzo Church</Bold>{' '}
-              <Emoji>👨🏻‍🦳</Emoji> from the United States.
-            </P>
-            <EmojiSeparator
-              emojis={['🧑🏻', '👨🏻‍🦳']}
-              description={
-                <>
-                  The research done by <Bold>Alan Turing</Bold> and
-                  <br />
-                  <Bold>Alonzo Church</Bold> became the foundation of
-                  <br />
-                  modern computer science
-                </>
-              }
-            />
-          </>
-        )
-      },
-      {
-        title: <>A hypothetical computer</>,
-        content: (
-          <>
-            <P>
-              <Bold>In the 1930s,</Bold> Alan Turing and Alonzo Church were both
-              working (separately) on a very difficult math problem called{' '}
-              <Italic>“Hilbert’s decision problem”</Italic>.{' '}
-            </P>
-            <P>
-              We won’t talk about what this problem is about - it’s too
-              difficult to explain. However, we’ll talk briefly about{' '}
-              <Highlight>how Turing and Church solved this problem</Highlight>,
-              which is very interesting.
-            </P>
-            <EmojiSeparator
-              emojis={['🧑🏻', '❓', '👨🏻‍🦳']}
-              description={
-                <>
-                  <Bold>Turing</Bold> and <Bold>Church</Bold> worked on
-                  <br />a difficult math problem separately
-                </>
-              }
-            />
-            <P>
-              In order to solve this problem, Turing and Church both came up
-              with an idea of a{' '}
-              <HighlightBold>hypothetical computer</HighlightBold>. A{' '}
-              <Bold>hypothetical computer</Bold> is{' '}
-              <Highlight>
-                an imaginary computing device that doesn’t exist in real life
-              </Highlight>{' '}
-              (at least in the 1930s),{' '}
-              <Highlight>but if it did exist, it’s very powerful.</Highlight>
-            </P>
-            <EmojiSeparator
-              emojis={['❓', '💭', '💻', '❓']}
-              description={
-                <>
-                  A <HighlightBold>hypothetical computer</HighlightBold> is
-                  <br />a powerful but imaginary computing device
-                </>
-              }
-            />
-            <P>
-              <Bold>Then:</Bold> Turing and Church each solved{' '}
-              <Italic>Hilbert’s decision problem</Italic> by using this
-              hypothetical computer as part of the proof.
-            </P>
-            <EmojiSeparator emojis={['🧑🏻', '💭', '💻']} noBottomMargin />
-            <EmojiSeparator
-              emojis={['👨🏻‍🦳', '💭', '💻']}
-              noTopMargin
-              description={
-                <>
-                  They solved <Italic>Hilbert’s decision problem</Italic>
-                  <br />
-                  by using a hypothetical computer
-                  <br />
-                  as part of the proof
-                </>
-              }
-            />
-            <P>
-              <Bold>Now, here’s the important point:</Bold>{' '}
-              <Highlight>
-                The hypothetical computers Turing and Church imagined became
-                very influential in the development of modern computers and
-                programming languages.
-              </Highlight>
-            </P>
-            <P>
-              <Bold>In other words:</Bold> They were solving{' '}
-              <Italic>Hilbert’s decision problem</Italic>, but{' '}
-              <Highlight>the method they used</Highlight> - using a hypothetical
-              computer - accidentally became the foundation of modern computer
-              science.
-            </P>
-            <Hr />
-            <P>
-              <Bold>Next:</Bold> Let’s talk about what those hypothetical
-              computers are.
-            </P>
-            <P>
-              In 1930s, <Bold>Alan Turing</Bold> came up with an idea of a
-              hypothetical computer called a{' '}
-              <HighlightBold>Turing machine.</HighlightBold> He used this Turing
-              machine in his solution to{' '}
-              <Italic>Hilbert’s decision problem</Italic>.
-            </P>
-            <P>
-              We won’t talk about how a Turing machine works here (you should
-              search on Google), but we’ll say this:{' '}
-              <Highlight>
-                A Turing machine is very similar to modern computers, and
-                therefore was very influential in the evolution of modern
-                computer science.
-              </Highlight>
-            </P>
-            <EmojiSeparator
-              emojis={['🧑🏻', '💭', '💻']}
-              description={
-                <>
-                  Turing came up with a{' '}
-                  <HighlightBold>Turing machine</HighlightBold>,<br />
-                  a hypothetical computer that’s similar to
-                  <br />
-                  modern computers. He used this to
-                  <br />
-                  solve <Italic>Hilbert’s decision problem</Italic>.
-                </>
-              }
-            />
-            <P>
-              Around the same time, <Bold>Alonzo Church</Bold> came up with a{' '}
-              <Italic>different</Italic> hypothetical computer called{' '}
-              <HighlightBold>Lambda Calculus.</HighlightBold> He used Lambda
-              Calculus in his solution to{' '}
-              <Italic>Hilbert’s decision problem</Italic>.
-            </P>
-            <EmojiSeparator
-              emojis={['👨🏻‍🦳', '💭', '💻']}
-              description={
-                <>
-                  Church came up with{' '}
-                  <HighlightBold>Lambda Calculus</HighlightBold>,<br />
-                  a hypothetical computer. He used this to
-                  <br />
-                  solve <Italic>Hilbert’s decision problem</Italic>.
-                </>
-              }
-            />
-            <P>
-              <Bold>Now, here’s the question:</Bold>{' '}
-              <Highlight>How does Lambda Calculus work?</Highlight>
-            </P>
-            <P>
-              <Bold>In fact, you already know the answer:</Bold>{' '}
-              <Highlight>
-                Lambda Calculus works exactly like the <Bold>lunchboxes</Bold>{' '}
-                we’ve seen so far <Emoji>🍱</Emoji>.
-              </Highlight>
+              <Bold>Answer:</Bold> Lunchboxes were invented in the 1930s by a
+              mathematician <Bold>Alonzo Church</Bold>.
             </P>
             <EmojiSeparator
               emojis={['👨🏻‍🦳', '💭', '🍱']}
+              noTopMargin
               description={
                 <>
-                  Church’s <Bold>Lambda Calculus</Bold> works
+                  Lunchboxes were invented in the 1930s
                   <br />
-                  exactly like <HighlightBold>lunchboxes!</HighlightBold>{' '}
-                  <Emoji>🍱</Emoji>
+                  by a mathematician <Bold>Alonzo Church</Bold>
                 </>
               }
             />
+            <P>
+              <Bold>However:</Bold> Alonzo Church <Italic>did not</Italic> call
+              it “lunchbox” when he invented it. Instead, he called it “
+              <HighlightBold>Lambda calculus</HighlightBold>”.
+            </P>
+            <EmojiSeparator
+              nodes={[
+                <Emoji>👨🏻‍🦳</Emoji>,
+                <Emoji>💭</Emoji>,
+                <CustomEmoji type="lambda" />
+              ]}
+              noTopMargin
+              description={
+                <>
+                  It was called <HighlightBold>“Lambda calculus”</HighlightBold>
+                  <br />
+                  instead of “lunchbox”
+                </>
+              }
+            />
+            <P>Let’s now talk about lambda calculus!</P>
           </>
         )
       },
       {
-        title: <>Lambda Calculus and Lunchboxes</>,
+        title: <>Lambda calculus and lunchboxes</>,
         content: (
           <>
             <P>
-              <Bold>Lambda Calculus</Bold>, Church’s hypothetical computer,
-              works exactly like a lunchbox - although they{' '}
-              <Italic>look</Italic> different.
+              <Bold>Lambda calculus</Bold>, invented by Alonzo Church, works
+              exactly like a lunchbox - although they <Italic>look</Italic>{' '}
+              different.
             </P>
             <EmojiSeparator
               nodes={[
@@ -491,7 +141,7 @@ export default () => (
               ]}
               description={
                 <>
-                  Lambda Calculus works exactly like
+                  Lambda calculus works exactly like
                   <br />a lunchbox
                 </>
               }
@@ -499,7 +149,8 @@ export default () => (
             <P>
               <Bold>Here is an example of lambda calculus.</Bold> The leftmost
               letter, <HighlightBold>λ</HighlightBold>, is a Greek letter
-              “lambda”.
+              <Italic>“lambda”</Italic>. That’s why it’s called{' '}
+              <Italic>“lambda calculus.”</Italic>
             </P>
             <CenteredCode size="md">λA.B C</CenteredCode>
             <P>
@@ -520,7 +171,7 @@ export default () => (
             </P>
             <R.Unxf></R.Unxf>
             <P>
-              <Bold>Similarly:</Bold> If you compute the earlier lambda calculus
+              <Bold>Similarly:</Bold> If you “run” the earlier lambda calculus
               expression,{' '}
               <Highlight>
                 the result will also be <Emoji>🅱️</Emoji>.
@@ -560,7 +211,7 @@ export default () => (
             <P>
               <Bold>So:</Bold>{' '}
               <Highlight>
-                The previous lambda expression is{' '}
+                The previous lambda expression represents{' '}
                 <HighlightBold>Y Combinator</HighlightBold>.
               </Highlight>
             </P>
@@ -572,7 +223,7 @@ export default () => (
             <P>
               We had been talking about lunchboxes in this course.{' '}
               <Highlight>
-                But in reality, we really were talking about{' '}
+                But in reality, we actually were talking about{' '}
                 <HighlightBold>lambda calculus</HighlightBold>.
               </Highlight>{' '}
               We used lunchboxes to make lambda calculus more approachable for
@@ -617,9 +268,24 @@ export default () => (
             <P>
               <Bold>Earlier, we said that:</Bold>{' '}
               <Highlight>
-                Lunchboxes are actually the same as lambda calculus.
-              </Highlight>{' '}
-              So we can rephrase the above question as follows:
+                Lambda calculus works exactly like a lunchbox.
+              </Highlight>
+            </P>
+            <EmojiSeparator
+              nodes={[
+                <CustomEmoji type="lambda" />,
+                <CustomEmoji type="doubleArrow" />,
+                <Emoji>🍱</Emoji>
+              ]}
+              description={
+                <>
+                  Lambda calculus works exactly like
+                  <br />a lunchbox
+                </>
+              }
+            />
+            <P>
+              So we can <Italic>rephrase</Italic> the above question as follows:
             </P>
             <BubbleQuotes
               quotes={[
@@ -663,42 +329,30 @@ export default () => (
               }
             />
             <P>
-              <Bold>In 1930s, it was proven that:</Bold>{' '}
-              <Highlight>
-                No matter how powerful the computers become, anything they can
-                compute will also be computable by lambda calculus
-              </Highlight>
-              .
-            </P>
-            <EmojiSeparator
-              nodes={[
-                <CustomEmoji type="lambda" />,
-                <Emoji>🆚</Emoji>,
-                <Emoji>💻</Emoji>
-              ]}
-              description={
-                <>
-                  <Bold>Proven in 1930s:</Bold>
-                  <br />
-                  No matter how powerful
-                  <br />
-                  the computers become,
-                  <br />
-                  anything they can compute will
-                  <br />
-                  also be computable by lambda calculus
-                </>
-              }
-            />
-            <P>
               <Bold>
                 And because lunchboxes are the same as lambda calculus:
               </Bold>{' '}
               <Highlight>
                 If something can be calculated by today’s computer, it can also
-                be done using a lunchbox.
+                be done using a lunchbox. <Emoji>🍱</Emoji>
               </Highlight>
             </P>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'devil',
+                  children: (
+                    <>
+                      <P>
+                        <Bold>So, to answer the villager’s question:</Bold>{' '}
+                        <Emoji>🍱</Emoji> Lunchboxes can do any calculations
+                        that can be done by today’s computers.
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
             <EmojiSeparator
               nodes={[
                 <Emoji>🍱</Emoji>,
@@ -716,17 +370,7 @@ export default () => (
               }
             />
           </>
-        ),
-        footer: {
-          content: (
-            <>
-              <P>
-                <Bold>Note:</Bold> Like lambda calculus, Turing’s Turing machine
-                can also do any computations that a computer can do.
-              </P>
-            </>
-          )
-        }
+        )
       },
       {
         title: <>ラムダ計算の影響</>,
