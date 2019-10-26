@@ -492,9 +492,9 @@ export default () => (
             </P>
             <EmojiSeparator
               nodes={[
-                <Emoji>✨</Emoji>,
                 <CustomEmoji type="lambda" />,
-                <Emoji>✨</Emoji>
+                <CustomEmoji type="doubleArrow" />,
+                <Emoji>🍱</Emoji>
               ]}
               description={<>ラムダ計算。弁当箱と仕組みは同じ</>}
             />

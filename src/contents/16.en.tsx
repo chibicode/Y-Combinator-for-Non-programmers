@@ -408,7 +408,7 @@ export default () => (
             </P>
             <P>
               We won’t talk about how a Turing machine works here (you should
-              search on YouTube), but we’ll say this:{' '}
+              search on Google), but we’ll say this:{' '}
               <Highlight>
                 A Turing machine is very similar to modern computers, and
                 therefore was very influential in modern computer science.
@@ -429,42 +429,43 @@ export default () => (
               }
             />
             <P>
-              一方、ほぼ時を同じくして、<HighlightBold>チャーチ</HighlightBold>
-              は先述の問題を解くために「
-              <HighlightBold>ラムダ計算</HighlightBold>
-              」という空想上の計算機を考案しました。では、この「
-              <HighlightBold>ラムダ計算</HighlightBold>
-              」とはどんな仕組みだったのでしょうか。
+              Around the same time, <Bold>Alonzo Church</Bold> came up with a{' '}
+              <Italic>different</Italic> hypothetical computer called{' '}
+              <HighlightBold>Lambda Calculus.</HighlightBold> He used Lambda
+              Calculus in his solution to{' '}
+              <Italic>Hilbert’s decision problem</Italic>.
             </P>
             <EmojiSeparator
               emojis={['👨🏻‍🦳', '💭', '💻']}
               description={
                 <>
-                  チャーチは、「
-                  <Bold>ラムダ計算</Bold>」という
+                  Church came up with{' '}
+                  <HighlightBold>Lambda Calculus</HighlightBold>,<br />
+                  a hypothetical computer. He used this to
                   <br />
-                  空想上の計算機を頭の中で考えた
+                  solve <Italic>Hilbert’s decision problem</Italic>.
                 </>
               }
             />
             <P>
+              <Bold>Now, here’s the question:</Bold>{' '}
+              <Highlight>How does Lambda Calculus work?</Highlight>
+            </P>
+            <P>
+              <Bold>In fact, you already know the answer:</Bold>{' '}
               <Highlight>
-                実は、みなさんはすでに「
-                <HighlightBold>ラムダ計算</HighlightBold>
-                」がどんな仕組みかを知っています。
+                Lambda Calculus works exactly like the <Bold>lunchboxes</Bold>{' '}
+                we’ve seen so far <Emoji>🍱</Emoji>.
               </Highlight>
-              そう、
-              <HighlightBold>
-                <Emoji>🍱</Emoji> 弁当箱のことです。
-              </HighlightBold>
             </P>
             <EmojiSeparator
               emojis={['👨🏻‍🦳', '💭', '🍱']}
               description={
                 <>
-                  チャーチが考えた空想上の計算機
-                  <br />「<Bold>ラムダ計算</Bold>
-                  」は、<HighlightBold>弁当箱と仕組みが同じ</HighlightBold>
+                  Church’s <Bold>Lambda Calculus</Bold> works
+                  <br />
+                  exactly like <HighlightBold>lunchboxes!</HighlightBold>{' '}
+                  <Emoji>🍱</Emoji>
                 </>
               }
             />
@@ -484,9 +485,9 @@ export default () => (
             </P>
             <EmojiSeparator
               nodes={[
-                <Emoji>✨</Emoji>,
                 <CustomEmoji type="lambda" />,
-                <Emoji>✨</Emoji>
+                <CustomEmoji type="doubleArrow" />,
+                <Emoji>🍱</Emoji>
               ]}
               description={<>ラムダ計算。弁当箱と仕組みは同じ</>}
             />
