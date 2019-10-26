@@ -1,4 +1,5 @@
-import React from 'react'
+/** @jsx jsx */
+import { css, jsx } from '@emotion/core'
 import EpisodeCardList from 'src/components/EpisodeCardList'
 import {
   P,
@@ -26,6 +27,12 @@ import BubbleQuotes from 'src/components/BubbleQuotes'
 import * as R from 'src/components/Runners/fakeIndex'
 import ExpressionRunnerCaptionOnly from 'src/components/ExpressionRunnerCaptionOnly'
 import CardContent from 'src/components/CardContent'
+import { colors } from 'src/lib/theme'
+
+const pythonCss = css`
+  background: ${colors('green800')};
+  color: ${colors('white')};
+`
 
 export default () => (
   <EpisodeCardList
@@ -373,75 +380,91 @@ export default () => (
         )
       },
       {
-        title: <>ラムダ計算の影響</>,
+        title: <>Legacy of lambda calculus</>,
         content: (
           <>
             <P>
-              先ほど説明したように、ラムダ計算はもともと、とある数学の問題を解くためにチャーチが考案したものでした。しかし、ラムダ計算もまた、
-              <Highlight>
-                コンピュータサイエンスの発展に大きな影響を与えた
-              </Highlight>
-              のです。
+              Lambda calculus, invented by Alonzo Church in the 1930s, had a big
+              impact in the evolution of modern computer science.
             </P>
             <EmojiSeparator
               nodes={[
-                <Emoji>✨</Emoji>,
                 <CustomEmoji type="lambda" />,
-                <Emoji>✨</Emoji>
+                <CustomEmoji type="singleArrow" />,
+                <Emoji>🍱</Emoji>
               ]}
               description={
                 <>
-                  ラムダ計算は、コンピュータサイエンスの
+                  Lambda calculus had a big impact
                   <br />
-                  発展に大きな影響を与えた
+                  in the evolution of modern computer science
                 </>
               }
             />
             <P>
-              特に、ラムダ計算は
-              <HighlightBold>数々のプログラミング言語</HighlightBold>
-              に影響を与えました。現存するプログラミング言語の多くには、ラムダ計算の名残が残っています。
+              <Bold>Specifically:</Bold>{' '}
+              <Highlight>
+                Lambda calculus influenced many programming languages.
+              </Highlight>{' '}
+              Popular programming languages people use today usually have a
+              feature inspired by lambda calculus.
             </P>
             <P>
-              たとえば、執筆時点で世界で最も人気のプログラミング言語のひとつである、
-              <HighlightBold>Python (パイソン)</HighlightBold>
-              という言語があります。ちなみにパイソンとは大蛇のことで、Python言語のロゴにもヘビの絵が描かれています。
+              <Bold>Example:</Bold> <HighlightBold>Python</HighlightBold> is one
+              of the most popular programming languages today, especially in the
+              field of AI.
             </P>
             <EmojiSeparator
               emojis={['🐍', '🐍', '🐍']}
-              description={<>Python言語</>}
+              description={<>Python Programming Language</>}
             />
             <P>
-              このPython言語にも、「<HighlightBold>lambda</HighlightBold>{' '}
-              (ラムダ)」という機能があります。たとえば、以下のPython言語のコードをご覧ください。
+              The python language has a feature called{' '}
+              <HighlightBold>“lambda”</HighlightBold>, which is inspired by
+              lambda calculus.
             </P>
-            <CenteredCode size="sm">(lambda A: A)('B')</CenteredCode>
             <P>
-              上のPython言語のコードは、以下のラムダ計算とほぼ同じ意味です。
+              <Bold>Here’s an example of python’s “lambda” feature:</Bold> Take
+              a look at the python code below (we’ll use{' '}
+              <span css={pythonCss}>
+                <Bold>green</Bold>
+              </span>{' '}
+              for Python code).
+            </P>
+            <CenteredCode python size="sm">
+              (lambda A: A)('B')
+            </CenteredCode>
+            <P>
+              The above python code is pretty much the same as the lambda
+              calculus expression below:
             </P>
             <CenteredCode size="md">λA.A B</CenteredCode>
             <P>
-              これは、弁当箱に例えると以下のようになり、実行結果は{' '}
-              <Emoji>🅱️</Emoji> になります。
+              If we represent this using a lunchbox, the final result will be{' '}
+              <Emoji>🅱️</Emoji>.
             </P>
-            <R.Aklf>下が左右とも同じなので…</R.Aklf>
+            <R.Aklf>Because the bottom two are the same…</R.Aklf>
             <ExpressionRunnerSeparator />
             <R.Gemh>
-              上にあった <Emoji>🅱️</Emoji> が残る
+              <Emoji>🅱️</Emoji> on the top remains
             </R.Gemh>
             <P>
-              だから同じように、今回紹介したPythonのコードも、実行すると結果は{' '}
-              <Code>B</Code> になります。
+              Similarly, if you run the earlier python code, the result will be{' '}
+              <Code css={pythonCss}>'B'</Code> as well.
             </P>
-            <CenteredCode size="sm">(lambda A: A)('B')</CenteredCode>
+            <CenteredCode python size="sm">
+              (lambda A: A)('B')
+            </CenteredCode>
             <ExpressionRunnerSeparator />
-            <CenteredCode size="sm">'B'</CenteredCode>
+            <CenteredCode python size="sm">
+              'B'
+            </CenteredCode>
             <P>
-              まとめると、
+              <Bold>Summary:</Bold>{' '}
               <Highlight>
-                Python言語のような人気のプログラミング言語も、1930年代に考えられたラムダ計算の影響を間接的に受けている
+                Today’s popular programming languages like Python have a feature
+                inspired by lambda calculus.
               </Highlight>
-              のです。
             </P>
             <EmojiSeparator
               nodes={[
@@ -451,13 +474,11 @@ export default () => (
               ]}
               description={
                 <>
-                  Python言語のような
+                  Popular programming languages
                   <br />
-                  人気のプログラミング言語も、
+                  like Python have a feature
                   <br />
-                  1930年代に考えられた
-                  <br />
-                  ラムダ計算の影響を間接的に受けている
+                  inspired by lambda calculus.
                 </>
               }
             />

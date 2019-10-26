@@ -35,10 +35,12 @@ export const Code = styled.code`
 
 export const CenteredCode = ({
   size,
-  children
+  children,
+  python
 }: {
   size: 'md' | 'sm'
   children: React.ReactNode
+  python?: true
 }) => (
   <div
     css={css`
@@ -51,7 +53,8 @@ export const CenteredCode = ({
     <Code
       css={css`
         padding: ${spaces(0.25)};
-        background: ${colors('white')};
+        background: ${python ? colors('green800') : colors('white')};
+        color: ${python ? colors('white') : 'inherit'};
       `}
     >
       {children}

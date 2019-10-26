@@ -1,4 +1,5 @@
-import React from 'react'
+/** @jsx jsx */
+import { css, jsx } from '@emotion/core'
 import EpisodeCardList from 'src/components/EpisodeCardList'
 import {
   P,
@@ -25,6 +26,12 @@ import BubbleQuotes from 'src/components/BubbleQuotes'
 import * as R from 'src/components/Runners'
 import ExpressionRunnerCaptionOnly from 'src/components/ExpressionRunnerCaptionOnly'
 import CardContent from 'src/components/CardContent'
+import { colors } from 'src/lib/theme'
+
+const pythonCss = css`
+  background: ${colors('green800')};
+  color: ${colors('white')};
+`
 
 export const WhatIsComputer = () => (
   <>
@@ -725,9 +732,9 @@ export default () => (
             </P>
             <EmojiSeparator
               nodes={[
-                <Emoji>✨</Emoji>,
                 <CustomEmoji type="lambda" />,
-                <Emoji>✨</Emoji>
+                <CustomEmoji type="singleArrow" />,
+                <Emoji>🍱</Emoji>
               ]}
               description={
                 <>
@@ -753,9 +760,12 @@ export default () => (
             />
             <P>
               このPython言語にも、「<HighlightBold>lambda</HighlightBold>{' '}
-              (ラムダ)」という機能があります。たとえば、以下のPython言語のコードをご覧ください。
+              (ラムダ)」という機能があります。たとえば、以下のPython言語のコードをご覧ください。(
+              <span css={pythonCss}>緑色</span>で示しています)
             </P>
-            <CenteredCode size="sm">(lambda A: A)('B')</CenteredCode>
+            <CenteredCode python size="sm">
+              (lambda A: A)('B')
+            </CenteredCode>
             <P>
               上のPython言語のコードは、以下のラムダ計算とほぼ同じ意味です。
             </P>
@@ -771,11 +781,15 @@ export default () => (
             </R.Gemh>
             <P>
               だから同じように、今回紹介したPythonのコードも、実行すると結果は{' '}
-              <Code>B</Code> になります。
+              <Code css={pythonCss}>'B'</Code> になります。
             </P>
-            <CenteredCode size="sm">(lambda A: A)('B')</CenteredCode>
+            <CenteredCode python size="sm">
+              (lambda A: A)('B')
+            </CenteredCode>
             <ExpressionRunnerSeparator />
-            <CenteredCode size="sm">'B'</CenteredCode>
+            <CenteredCode python size="sm">
+              'B'
+            </CenteredCode>
             <P>
               まとめると、
               <Highlight>

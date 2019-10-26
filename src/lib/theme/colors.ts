@@ -58,6 +58,7 @@ export const allColors = {
   green300: green[300],
   green400: green[400],
   green600: green[600],
+  green800: green[800],
   blue50: blue[50],
   blue100: blue[100],
   blue400: blue[400],
