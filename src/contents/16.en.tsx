@@ -206,8 +206,8 @@ export default () => (
             </P>
             <P>
               One of the key breakthroughs in the history of computers is the{' '}
-              <Bold>tabulating machine</Bold>, which was invented in 1880s in
-              the United States.
+              <Bold>tabulating machine</Bold>, which was invented in the 1880s
+              in the United States.
             </P>
             <P>
               <Img
@@ -317,61 +317,53 @@ export default () => (
         )
       },
       {
-        title: <>空想上の計算機</>,
+        title: <>A hypothetical computer</>,
         content: (
           <>
             <P>
-              <Highlight>
-                チューリングとチャーチは1930年代に、「
-                <HighlightBold>ヒルベルトの決定問題</HighlightBold>
-                」という、とある難しい数学の問題に別々に取り組んでいました。
-              </Highlight>
-              それがどんな問題かを説明するのは非常に難しいので省略しますが、ふたりが
-              <HighlightBold>その問題をどのようにして解いたか</HighlightBold>
-              が興味深かったのです。
+              <Bold>In the 1930s,</Bold> Alan Turing and Alonzo Church were both
+              working (separately) on a very difficult math problem called{' '}
+              <Italic>“Hilbert’s decision problem”</Italic>.{' '}
+            </P>
+            <P>
+              We won’t talk about what this problem is about - it’s too
+              difficult to explain. However, we’ll talk briefly about{' '}
+              <Highlight>how Turing and Church solved this problem</Highlight>,
+              which is very interesting.
             </P>
             <EmojiSeparator
               emojis={['🧑🏻', '❓', '👨🏻‍🦳']}
               description={
                 <>
-                  <Bold>チューリング</Bold>と<Bold>チャーチ</Bold>は、
-                  <br />
-                  とある数学の問題に別々に取り組んでいた
+                  <Bold>Turing</Bold> and <Bold>Church</Bold> worked on
+                  <br />a difficult math problem separately
                 </>
               }
             />
             <P>
-              その問題を解くために、ふたりはそれぞれ別々の「
-              <HighlightBold>空想上の計算機</HighlightBold>
-              」を考案する必要がありました。「
-              <Bold>空想上の計算機</Bold>
-              」とはすなわち、
+              In order to solve this problem, Turing and Church both came up
+              with an idea of a{' '}
+              <HighlightBold>hypothetical computer</HighlightBold>. A{' '}
+              <Bold>hypothetical computer</Bold> is{' '}
               <Highlight>
-                実際には(少なくとも1930年代の当時は)存在しないけど、もし存在したとしたら非常に複雑な計算ができる、
-                <HighlightBold>仮想上の計算機</HighlightBold>
-              </Highlight>
-              のことです。
+                an imaginary computing device that doesn’t exist in real life
+              </Highlight>{' '}
+              (at least in the 1930s),{' '}
+              <Highlight>but if it did exist, it’s very powerful.</Highlight>
             </P>
             <EmojiSeparator
               emojis={['❓', '💭', '💻', '❓']}
               description={
                 <>
-                  <HighlightBold>空想上の計算機</HighlightBold>とは、
-                  <br />
-                  実際には存在しないが、もしも存在したら
-                  <br />
-                  非常に複雑な計算ができる
-                  <br />
-                  <HighlightBold>仮想上の計算機</HighlightBold>のこと。
+                  A <HighlightBold>hypothetical computer</HighlightBold> is
+                  <br />a powerful but imaginary computing device
                 </>
               }
             />
             <P>
-              「
-              <HighlightBold>
-                もし仮にそんな計算機がこの世に存在したら…
-              </HighlightBold>
-              」と仮定したうえで理論を展開することで、ふたりはそれぞれ別々に、先述の問題を解くことができたのです。
+              <Bold>Then:</Bold> Turing and Church each solved{' '}
+              <Italic>Hilbert’s decision problem</Italic> by using this
+              hypothetical computer as part of the proof.
             </P>
             <EmojiSeparator emojis={['🧑🏻', '💭', '💻']} noBottomMargin />
             <EmojiSeparator
@@ -379,32 +371,34 @@ export default () => (
               noTopMargin
               description={
                 <>
-                  先述の問題を解くために、ふたりはそれぞれ
-                  <br />「<HighlightBold>空想上の計算機</HighlightBold>
-                  」を頭の中で設計した。
-                  <br />「
-                  <Highlight>もしこういった計算機が存在したら…</Highlight>」と
+                  They solved <Italic>Hilbert’s decision problem</Italic>
                   <br />
-                  仮定した上で理論を展開して問題を解いた
+                  by using a hypothetical computer
+                  <br />
+                  as part of the proof
                 </>
               }
             />
             <P>
-              実は、この時にふたりが別々に考案した、当時の技術では作ることができない「
-              <HighlightBold>空想上の計算機</HighlightBold>
-              」が、
+              <Bold>Now, here’s the important point:</Bold>{' '}
               <Highlight>
-                その後のコンピュータの開発や、プログラミング言語の開発、ひいてはコンピュータサイエンスそのものに大きな影響を与えました。
+                The hypothetical computers Turing and Church imagined became
+                very influential in the development of modern computers and
+                programming languages
               </Highlight>
             </P>
             <P>
-              言い換えると、このふたりは「ヒルベルトの決定問題」という数学の問題を解いていたのですが、
-              <Highlight>
-                その問題を解くためにふたりが考えたアイデアが偶然にも、近代のコンピュータサイエンスの土台になった
-              </Highlight>
-              のです。
+              <Bold>In other words:</Bold> They were solving{' '}
+              <Italic>Hilbert’s decision problem</Italic>, but{' '}
+              <Highlight>the method they used</Highlight> - using a hypothetical
+              computer - accidentally became the foundation of modern computer
+              science.
             </P>
             <Hr />
+            <P>
+              <Bold>Next:</Bold> Let’s talk about what those hypothetical
+              computers are.
+            </P>
             <P>
               1930年代半ばに、<HighlightBold>チューリング</HighlightBold>
               は先述の問題を解くために「

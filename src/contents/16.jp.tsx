@@ -405,6 +405,11 @@ export default () => (
             </P>
             <Hr />
             <P>
+              では次に、それぞれが考えた「
+              <HighlightBold>空想上の計算機</HighlightBold>
+              」について見ていきましょう。
+            </P>
+            <P>
               1930年代半ばに、<HighlightBold>チューリング</HighlightBold>
               は先述の問題を解くために「
               <Bold>チューリングマシン</Bold>
