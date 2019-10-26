@@ -654,27 +654,6 @@ export default () => (
               }
             />
             <P>
-              ということはつまり、
-              <HighlightBold>
-                弁当箱も、現代のコンピュータが行えるすべての計算を行うことができる
-              </HighlightBold>
-              というわけですね。
-            </P>
-            <EmojiSeparator
-              nodes={[
-                <Emoji>🍱</Emoji>,
-                <CustomEmoji type="doubleArrow" />,
-                <Emoji>💻</Emoji>
-              ]}
-              description={
-                <>
-                  弁当箱も、現代のコンピュータが行える
-                  <br />
-                  すべての計算を行うことができる
-                </>
-              }
-            />
-            <P>
               このことは、1930年代に証明されました。「
               <Highlight>
                 これから先にどれほど強力な計算機が登場しても、その計算機ができる計算は、理論上はラムダ計算にもできる
@@ -696,6 +675,27 @@ export default () => (
                   理論上はラムダ計算にもできる」と
                   <br />
                   1930年代に証明された
+                </>
+              }
+            />
+            <P>
+              そして、弁当箱とラムダ計算は同じなので、
+              <HighlightBold>
+                弁当箱も、現代のコンピュータが行えるすべての計算を行うことができる
+              </HighlightBold>
+              というわけですね。
+            </P>
+            <EmojiSeparator
+              nodes={[
+                <Emoji>🍱</Emoji>,
+                <CustomEmoji type="doubleArrow" />,
+                <Emoji>💻</Emoji>
+              ]}
+              description={
+                <>
+                  弁当箱も、現代のコンピュータが行える
+                  <br />
+                  すべての計算を行うことができる
                 </>
               }
             />

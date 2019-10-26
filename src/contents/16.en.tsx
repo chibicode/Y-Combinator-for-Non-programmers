@@ -595,25 +595,30 @@ export default () => (
         )
       },
       {
-        title: <>村人の質問に戻ると…</>,
+        title: <>Back to the villager’s question</>,
         content: (
           <>
-            <P>ここで、ラムダ村の村人の質問に戻りましょう。</P>
+            <P>Now, let’s revisit the villager’s question:</P>
             <BubbleQuotes
               quotes={[
                 {
                   type: 'thinking',
                   children: (
                     <>
-                      <P>弁当箱にできない計算はあるのかな？</P>
+                      <P>
+                        Is there any calculations that lunchboxes cannot do?
+                      </P>
                     </>
                   )
                 }
               ]}
             />
             <P>
-              先ほど、「<HighlightBold>弁当箱とラムダ計算は同じ</HighlightBold>
-              」という話をしましたね。つまり、上の質問は以下のように言い換えることができます。
+              <Bold>Earlier, we said that:</Bold>{' '}
+              <Highlight>
+                Lunchboxes are actually the same as lambda calculus.
+              </Highlight>{' '}
+              So we can rephrase the above question as follows:
             </P>
             <BubbleQuotes
               quotes={[
@@ -622,21 +627,23 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        <HighlightBold>ラムダ計算にできない計算</HighlightBold>
-                        はあるのかな？
+                        Is there any calculations that{' '}
+                        <HighlightBold>lambda calculus</HighlightBold> cannot
+                        do?
                       </P>
                     </>
                   )
                 }
               ]}
             />
-            <P>では、ラムダ計算にできない計算はあるのでしょうか？</P>
             <P>
-              結論から言うと、
-              <HighlightBold>
-                ラムダ計算は、現代のコンピュータが行うことができるすべての計算を行うことができます。
-              </HighlightBold>
-              つまり、あなたのパソコンやスマホができる計算はすべて、ラムダ計算にもできるということです。
+              <Bold>And here’s the answer:</Bold>{' '}
+              <Highlight>
+                Lambda calculus can do any calculations that can be done by
+                today’s computers.
+              </Highlight>{' '}
+              Therefore, any calculations that your computer or smartphone can
+              do are also possible for lambda calculus.
             </P>
             <EmojiSeparator
               nodes={[
@@ -646,39 +653,21 @@ export default () => (
               ]}
               description={
                 <>
-                  ラムダ計算は、現代のコンピュータが行える
+                  Lambda calculus can do
                   <br />
-                  すべての計算を行うことができる
+                  any calculations that can be
+                  <br />
+                  done by today’s computers.
                 </>
               }
             />
             <P>
-              ということはつまり、
-              <HighlightBold>
-                弁当箱も、現代のコンピュータが行えるすべての計算を行うことができる
-              </HighlightBold>
-              というわけですね。
-            </P>
-            <EmojiSeparator
-              nodes={[
-                <Emoji>🍱</Emoji>,
-                <CustomEmoji type="doubleArrow" />,
-                <Emoji>💻</Emoji>
-              ]}
-              description={
-                <>
-                  弁当箱も、現代のコンピュータが行える
-                  <br />
-                  すべての計算を行うことができる
-                </>
-              }
-            />
-            <P>
-              このことは、1930年代に証明されました。「
+              <Bold>In 1930s, it was proven that:</Bold>{' '}
               <Highlight>
-                これから先にどれほど強力な計算機が登場しても、その計算機ができる計算は、理論上はラムダ計算にもできる
+                No matter how powerful the computers become, anything they can
+                compute will also be computable by lambda calculus
               </Highlight>
-              」ということが数学的に証明されたのです。もちろん、この証明は難しすぎるので省略します。
+              .
             </P>
             <EmojiSeparator
               nodes={[
@@ -688,13 +677,40 @@ export default () => (
               ]}
               description={
                 <>
-                  「どれほど強力な計算機が登場しても、
+                  <Bold>Proven in 1930s:</Bold>
                   <br />
-                  その計算機ができる計算は、
+                  No matter how powerful
                   <br />
-                  理論上はラムダ計算にもできる」と
+                  the computers become,
                   <br />
-                  1930年代に証明された
+                  anything they can compute will
+                  <br />
+                  also be computable by lambda calculus
+                </>
+              }
+            />
+            <P>
+              <Bold>
+                And because lunchboxes are the same as lambda calculus:
+              </Bold>{' '}
+              <Highlight>
+                If something can be calculated by today’s computer, it can also
+                be done using a lunchbox.
+              </Highlight>
+            </P>
+            <EmojiSeparator
+              nodes={[
+                <Emoji>🍱</Emoji>,
+                <CustomEmoji type="doubleArrow" />,
+                <Emoji>💻</Emoji>
+              ]}
+              description={
+                <>
+                  Lunchboxes can also do
+                  <br />
+                  any calculations that can be
+                  <br />
+                  done by today’s computers.
                 </>
               }
             />
@@ -704,8 +720,9 @@ export default () => (
           content: (
             <>
               <P>
-                <Bold>ちなみに:</Bold>{' '}
-                チャーチが考案したラムダ計算だけでなく、チューリングが考案した空想上の計算機「チューリングマシン」も、現代のコンピュータが行えるすべての計算を(理論上は)行うことができます。このことも、1930年代に証明されました。
+                <Bold>Note:</Bold> Like lambda calculus, Turing’s Turing machine
+                can also do any computations that a computer can do. This was
+                also proven in 1930s.
               </P>
             </>
           )
