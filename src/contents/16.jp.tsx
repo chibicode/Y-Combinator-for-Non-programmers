@@ -523,8 +523,8 @@ export default () => (
             <P>
               <Highlight>
                 それと同じで、先ほどの「ラムダ計算」の記述式も、
-                <H args={{ name: 'run' }} /> すると
-                <HighlightBold>B</HighlightBold>が残るのです。
+                <H args={{ name: 'run' }} /> すると <Emoji>🅱️</Emoji>{' '}
+                が残るのです。
               </Highlight>
             </P>
             <CenteredCode size="md">λA.B C</CenteredCode>

@@ -473,15 +473,13 @@ export default () => (
         )
       },
       {
-        title: <>ラムダ計算と弁当箱</>,
+        title: <>Lambda Calculus and Lunchboxes</>,
         content: (
           <>
             <P>
-              チャーチが考えた空想上の計算機「
-              <HighlightBold>ラムダ計算</HighlightBold>
-              」は、
-              <Highlight>見た目は弁当箱とは違いますが、仕組みは同じ</Highlight>
-              でした。
+              <Bold>Lambda Calculus</Bold>, Church’s hypothetical computer,
+              works exactly like a lunchbox - although they{' '}
+              <Italic>look</Italic> different.
             </P>
             <EmojiSeparator
               nodes={[
@@ -489,35 +487,41 @@ export default () => (
                 <CustomEmoji type="doubleArrow" />,
                 <Emoji>🍱</Emoji>
               ]}
-              description={<>ラムダ計算。弁当箱と仕組みは同じ</>}
+              description={
+                <>
+                  Lambda Calculus works exactly like
+                  <br />a lunchbox
+                </>
+              }
             />
             <P>
-              たとえば、こちらが「<Bold>ラムダ計算</Bold>
-              」の記述式です。一番左にある「<HighlightBold>λ</HighlightBold>
-              」の記号はギリシャ文字で「
-              <HighlightBold>ラムダ</HighlightBold>
-              」と呼ぶことから、「ラムダ計算」と呼ばれています。
+              <Bold>Here is an example of lambda calculus.</Bold> The leftmost
+              letter, <HighlightBold>λ</HighlightBold>, is a Greek letter
+              “lambda”.
             </P>
             <CenteredCode size="md">λA.B C</CenteredCode>
             <P>
-              上のラムダ計算の記述式は、以下の弁当箱とまったく同じことを表しています。
+              <Highlight>
+                The above lambda calculus expression is exactly the same as the
+                following lunchbox:
+              </Highlight>
             </P>
             <R.Kzkg>
-              上のラムダ計算の記述式は、
+              The above lambda calculus expression is
               <br />
-              この弁当箱とまったく同じ
+              exactly the same as this lunchbox:
             </R.Kzkg>
             <P>
-              上の弁当箱は、
-              <H args={{ name: 'run' }} /> すると <Emoji>🅱️</Emoji> になります。
+              If you <H args={{ name: 'run', lowerCase: true }} /> the above
+              lunchbox, it will become <Emoji>🅱️</Emoji>.{' '}
               <H args={{ name: 'pressRun' }} />
             </P>
             <R.Unxf></R.Unxf>
             <P>
+              <Bold>Similarly:</Bold> If you compute the earlier lambda calculus
+              expression,{' '}
               <Highlight>
-                それと同じで、先ほどの「ラムダ計算」の記述式も、
-                <H args={{ name: 'run' }} /> すると
-                <HighlightBold>B</HighlightBold>が残るのです。
+                the result will also be <Emoji>🅱️</Emoji>.
               </Highlight>
             </P>
             <CenteredCode size="md">λA.B C</CenteredCode>
