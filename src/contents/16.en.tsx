@@ -189,7 +189,7 @@ export default () => (
         }
       },
       {
-        title: <>そもそもコンピュータとは何か</>,
+        title: <>What is a computer?</>,
         content: (
           <>
             <WhatIsComputer />
@@ -197,34 +197,17 @@ export default () => (
         )
       },
       {
-        title: <>計算機の歴史</>,
+        title: <>History of computers</>,
         content: (
           <>
             <P>
-              コンピュータは計算機であるからこそ、
-              <HighlightBold>
-                コンピュータの歴史はすなわち、計算機の歴史
-              </HighlightBold>
-              なのです。
+              Let’s now talk about the history of computers, or computing
+              devices!
             </P>
             <P>
-              歴史を振り返ると、たとえば昔の日本では、中国から伝わった
-              <Bold>そろばん</Bold> <Emoji>🧮</Emoji> が計算機の主役でしたね。
-            </P>
-            <EmojiSeparator
-              emojis={['🧮', '🏯', '🧮']}
-              description={
-                <>
-                  昔の日本で「計算機」といえば
-                  <br />
-                  そろばんだった
-                </>
-              }
-            />
-            <P>
-              一方、海の向こうのアメリカでは、1890年に「
-              <Bold>タビュレーティングマシン</Bold>
-              」という計算機が台頭しました。
+              One of the key breakthroughs in the history of computers is the{' '}
+              <Bold>tabulating machine</Bold>, which was invented in 1880s in
+              the United States.
             </P>
             <P>
               <Img
@@ -233,9 +216,10 @@ export default () => (
                 size="medium"
                 caption={
                   <>
-                    シリコンバレーのコンピュータ歴史博物館に展示されているタビュレーティングマシン(
+                    The tabulating machine on display at Computer History Museum
+                    in Silicon Valley, California. (
                     <ExternalLink href="https://commons.wikimedia.org/wiki/File:Hollerith_census_machine_at_the_Computer_History_Museum.jpg">
-                      撮影: Anton Chiang, CC BY 2.0
+                      Photo: Anton Chiang, CC BY 2.0
                     </ExternalLink>
                     )
                   </>
