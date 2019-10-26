@@ -18,6 +18,7 @@ import {
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import EmojiNumber from 'src/components/EmojiNumber'
 import EmojiWithText from 'src/components/EmojiWithText'
+import EmojiForLetter from 'src/components/EmojiForLetter'
 import ExpressionRunnerSeparator from 'src/components/ExpressionRunnerSeparator'
 import H from 'src/components/H'
 import Emoji from 'src/components/Emoji'
@@ -528,35 +529,44 @@ export default () => (
             <ExpressionRunnerSeparator />
             <CenteredCode size="md">B</CenteredCode>
             <P>
-              もちろん、もっと複雑なラムダ計算の記述式もあります。たとえば、こちらをご覧ください。この記述式は、何を表しているか分かりますか？
+              Of course, there are more complicated lambda calculus expressions.
+              Take a look at this one:
             </P>
             <CenteredCode size="sm">λA.(λB.A(B B))(λB.A(B B))</CenteredCode>
-            <P>これを弁当箱にすると、次のようになります。</P>
+            <P>
+              <Highlight>
+                The above lambda calculus expression is exactly the same as this
+                lunchbox:
+              </Highlight>
+            </P>
             <R.Rjho></R.Rjho>
             <P>
-              もし <Emoji>🅰️</Emoji> に<EmojiWithText letter="a" /> を、
-              <Emoji>🅱️</Emoji> に<EmojiWithText letter="b" /> を当てはめると、
-              <HighlightBold>
-                上級編で登場したYコンビネータの弁当箱
-              </HighlightBold>
-              になります。
+              If you replace <Emoji>🅰️</Emoji> with <EmojiWithText letter="a" />
+              , and replace <Emoji>🅱️</Emoji> with a{' '}
+              <EmojiWithText letter="b" />, it will be the same as the{' '}
+              <HighlightBold>Y Combinator</HighlightBold> lunchbox we used on
+              previous pages.
             </P>
             <R.Xjzx>
-              <Emoji>🅰️</Emoji> に<EmojiWithText letter="a" /> を、
+              If you replace <Emoji>🅰️</Emoji> with{' '}
+              <EmojiForLetter letter="a" />, and
               <br />
-              <Emoji>🅱️</Emoji> に<EmojiWithText letter="b" /> を当てはめると、
+              <Emoji>🅱️</Emoji> with <EmojiForLetter letter="b" />, it’s the
+              same as
               <br />
-              Yコンビネータの弁当箱になる
+              the <HighlightBold>Y Combinator</HighlightBold> lunchbox
             </R.Xjzx>
             <P>
-              つまり、先ほどのラムダ計算の記述式は
-              <HighlightBold>Yコンビネータを表している</HighlightBold>
-              のです。
+              <Bold>So:</Bold>{' '}
+              <Highlight>
+                The previous lambda expression is{' '}
+                <HighlightBold>Y Combinator</HighlightBold>.
+              </Highlight>
             </P>
             <CenteredCode size="sm">λA.(λB.A(B B))(λB.A(B B))</CenteredCode>
             <ExpressionRunnerSeparator />
             <ExpressionRunnerCaptionOnly>
-              <HighlightBold>Yコンビネータを表している</HighlightBold>
+              <HighlightBold>Y Combinator</HighlightBold>
             </ExpressionRunnerCaptionOnly>
             <P>
               まとめると、本稿では、
