@@ -385,7 +385,7 @@ export default () => (
               <Highlight>
                 The hypothetical computers Turing and Church imagined became
                 very influential in the development of modern computers and
-                programming languages
+                programming languages.
               </Highlight>
             </P>
             <P>
@@ -412,7 +412,8 @@ export default () => (
               search on Google), but we’ll say this:{' '}
               <Highlight>
                 A Turing machine is very similar to modern computers, and
-                therefore was very influential in modern computer science.
+                therefore was very influential in the evolution of modern
+                computer science.
               </Highlight>
             </P>
             <EmojiSeparator
@@ -721,8 +722,7 @@ export default () => (
             <>
               <P>
                 <Bold>Note:</Bold> Like lambda calculus, Turing’s Turing machine
-                can also do any computations that a computer can do. This was
-                also proven in 1930s.
+                can also do any computations that a computer can do.
               </P>
             </>
           )
@@ -919,7 +919,73 @@ export default () => (
               }
             />
           </>
-        )
+        ),
+        footer: {
+          content: (
+            <>
+              <CardContent
+                preview={{
+                  text: <>プログラミングで試してみる</>,
+                  content: (
+                    <>
+                      <P>
+                        <Bold>ちなみに:</Bold> プログラマの方で、「
+                        <Highlight>
+                          Yコンビネータを実際にプログラミングで試してみたい
+                        </Highlight>
+                        」と思った方は、↓の「プログラミングで試してみる」を押してみてください。
+                      </P>
+                    </>
+                  )
+                }}
+              >
+                <Hr />
+                <P>
+                  下のコードは、
+                  <Highlight>
+                    JavaScriptでYコンビネータを使って「
+                    <EmojiNumber number={4} /> の階乗」、すなわち{' '}
+                    <EmojiNumber number={4} /> <Emoji>✖️</Emoji>{' '}
+                    <EmojiNumber number={3} /> <Emoji>✖️</Emoji>{' '}
+                    <EmojiNumber number={2} /> <Emoji>✖️</Emoji>{' '}
+                    <EmojiNumber number={1} /> を計算するコード
+                  </Highlight>
+                  です。
+                </P>
+                <Pre>
+                  <Code
+                    children={`console.log(
+  (a =>
+    (b => a(c => b(b)(c)))(b =>
+      a(c => b(b)(c))
+    ))(f => n =>
+    n === 0 ? 1 : n * f(n - 1)
+  )(4)
+)`}
+                  ></Code>
+                </Pre>
+                <P>
+                  上のコードをブラウザの開発者ツールにコピーして実行すると、「
+                  <EmojiNumber number={4} /> の階乗」である「
+                  <Code>24</Code>
+                  」が出力されます。また、下から2行目にある <Code>4</Code>{' '}
+                  をたとえば <Code>5</Code> に変えると、
+                  <EmojiNumber number={5} /> の階乗である「<Code>120</Code>
+                  」が出力されます。
+                </P>
+                <P>
+                  ふつう、JavaScriptで階乗を計算するには <Code>for</Code> や{' '}
+                  <Code>while</Code> といったループ機能、<Code>reduce</Code>{' '}
+                  といった関数、または関数の再帰を使います。しかし、
+                  <Highlight>
+                    Yコンビネータを使えば、それらを一切使わずに階乗を計算できる
+                  </Highlight>
+                  のです。
+                </P>
+              </CardContent>
+            </>
+          )
+        }
       },
       {
         title: <>コンピュータサイエンスの他の分野でも同じ</>,
@@ -996,302 +1062,6 @@ export default () => (
               </OlLi>
             </Ol>
             <EmojiSeparator emojis={['✨', '🍱', '✨']} />
-          </>
-        )
-      },
-      {
-        title: <>その後: チューリング</>,
-        content: (
-          <>
-            <P>最後に、「その後」の話をしましょう。</P>
-            <P>
-              まず、先述したイギリスの数学者で、空想上の計算機「
-              <Bold>チューリングマシン</Bold>」を考案した
-              <HighlightBold>アラン・チューリング</HighlightBold>
-              。彼はチューリングマシンを考案したのち、イギリスからアメリカに渡り、
-              <Highlight>
-                ラムダ計算(弁当箱)を考案したチャーチのもとで学びました。
-              </Highlight>
-            </P>
-            <EmojiSeparator
-              emojis={['🧑🏻', '🎓', '👨🏻‍🦳']}
-              description={
-                <>
-                  <Bold>チューリングマシン</Bold>を考案した
-                  <br />
-                  <HighlightBold>アラン・チューリング</HighlightBold>は、
-                  <br />
-                  <Bold>ラムダ計算(弁当箱)</Bold>を考案した
-                  <br />
-                  <HighlightBold>チャーチ</HighlightBold>に弟子入りした
-                </>
-              }
-            />
-            <P>
-              その後チューリングはイギリスに戻り、第2次世界大戦でドイツ軍の暗号通信「エニグマ」を解読しました。その後、彼は人工知能の分野でも先駆的な役割を果たし、「人工知能の父」とも呼ばれるようになりました。
-            </P>
-            <EmojiSeparator
-              emojis={['✨', '🧑🏻', '✨']}
-              description={<>チューリングは「人工知能の父」に</>}
-            />
-            <P>
-              チューリングは同性愛者で、当時のイギリスでは同性愛行為が違法でした。ある日、若い男性との性的関係を持ったことが発覚し、チューリングは有罪になりました。彼は薬品投与による「化学的去勢」を受け続け、42歳になる直前に毒物を服用して亡くなってしまいました。
-            </P>
-            <P>
-              チューリングが亡くなってから55年後の2009年、英政府はチューリングに対する迫害を謝罪し、2013年には亡きチューリングに恩赦が与えられました。
-            </P>
-            <P>
-              <Highlight>
-                そしてこの記事の執筆中、2019年7月15日に、イギリスの新しい50ポンド紙幣の肖像にチューリングが採用されることになったのです。
-              </Highlight>
-              その50ポンド紙幣には、彼が考えた空想上の計算機「チューリングマシン」のイラストが載っています。(参考:{' '}
-              <ExternalLink href="https://www.bbc.com/japanese/48991921">
-                BBC
-              </ExternalLink>
-              )
-            </P>
-          </>
-        )
-      },
-      {
-        title: <>その後: ラムダ村</>,
-        content: (
-          <>
-            <P>ではその後、ラムダ村はどうなったかというと…</P>
-            <EmojiSeparator emojis={['🐶', '🙂', '😈', '👧🏻']} />
-            <P>
-              <Bold>村人たち</Bold>
-              は、何でも計算できる弁当箱を村の外の人たちに売りさばき、大金持ちになろうと悪巧み中です。
-            </P>
-            <EmojiSeparator
-              emojis={['🍱', '💰', '🤑', '💰', '🍱']}
-              description={
-                <>
-                  弁当箱は何でも計算できるから、
-                  <br />
-                  高く売れる！がっぽり稼ぐぞ！
-                </>
-              }
-            />
-            <P>
-              <Bold>悪魔</Bold>
-              は暇になったので、日々<Bold>ミニオン</Bold>
-              に新しい芸を覚えさせようとしていますが、なかなかうまくいっていません。
-            </P>
-            <EmojiSeparator
-              emojis={['😈', '🐶', '❓']}
-              description={
-                <>
-                  ミニオン、「おすわり」しなさい！
-                  <br />
-                  何度言ったらわかるんだ！
-                </>
-              }
-            />
-            <P>
-              そして、年頃になった<Bold>サヤちゃん</Bold>
-              は、好きなアーティストのコンサートにもっと参戦したいからと言って、ラムダ村を出ていきました。
-            </P>
-            <EmojiSeparator
-              emojis={['👧🏻', '❤️', '👨‍🎤']}
-              description={<>今日も自担が尊い〜</>}
-            />
-            <P>
-              以上でおしまいです！ラムダ村の名前の由来も、今回お分かりになったかと思います。ここまでお付き合いくださり、本当にありがとうございました。
-            </P>
-          </>
-        )
-      },
-      {
-        type: 'sideNote',
-        title: <>プログラマの方へのメッセージ</>,
-        preview: {
-          text: <>続きを読む</>,
-          content: (
-            <>
-              <P>
-                本稿をお読みになったプログラマの方の中には、「
-                <Highlight>
-                  これはプログラミング未経験者にとっては難しすぎるのではないか
-                </Highlight>
-                」と思われた方もいるかもしれません。そんな方に伝えたいことがあります。
-              </P>
-            </>
-          )
-        },
-        content: (
-          <>
-            <CardContent
-              preview={{
-                text: <>プログラミングで試してみる</>,
-                content: (
-                  <>
-                    <Hr />
-                    <P>
-                      個人的な話で恐縮ですが、わたしは今まで「
-                      <Highlight>
-                        この人はほんとうに頭がいいな、知的好奇心が旺盛だな
-                      </Highlight>
-                      」と思った方に数多く出会いました。たとえば、わたしは20代のときに母を癌で亡くしているのですが、母がお世話になったお医者様の方々と話したときは、「こんなに賢い人に出会ったのは初めてだ」と思ったものです。
-                    </P>
-                    <EmojiSeparator
-                      emojis={['💉', '👩🏽‍⚕️', '💊']}
-                      description={
-                        <>
-                          冒頭でコンピュータサイエンスを
-                          <br />
-                          医学に例えたのも、そんなお医者様に
-                          <br />
-                          出会ったことが理由です
-                        </>
-                      }
-                    />
-                    <P>
-                      そして、今までわたしが「
-                      <Highlight>
-                        この人はほんとうに頭がいいな、知的好奇心が旺盛だな
-                      </Highlight>
-                      」と思った人々の内訳を見てみると、
-                      <Highlight>
-                        プログラマの方よりも、プログラマでない方のほうが遥かに多い
-                      </Highlight>
-                      のです。もちろん、これは当たり前ですね。プログラマは世の中では圧倒的少数派ですから、母数のケタが違います。
-                    </P>
-                    <P>
-                      そういった、「
-                      <HighlightBold>
-                        世の中にたくさんいる、プログラマではない、とても知的好奇心が旺盛な人々向けにコンピュータサイエンスの入門書を書くとしたら、どういう教材がいいだろう？
-                      </HighlightBold>
-                      」と考えた結果、完成したのが本稿です。
-                    </P>
-                    <P>
-                      だから、そういう方々に「
-                      <Highlight>知的に面白い</Highlight>
-                      」と思っていただくために、難易度はあえて高めに設定しました。本稿は
-                      <Highlight>
-                        「プログラミング未経験者向けの入門書」とは謳っていますが、「誰にでも、何ならサルにでも分かる入門書」だとは謳っていない
-                      </Highlight>
-                      理由は、そういうところにあります。
-                    </P>
-                    <P>
-                      しかし同時に、
-                      <Highlight>
-                        せっかく時間をかけて書くのであれば、できるかぎり読者層の裾野を広げたい
-                      </Highlight>
-                      とも思いました。どうせなら、たくさんの人に読んでもらいたい。だから、難易度は妥協しないけれど、説明はできる限り平易にしようと心がけました。
-                    </P>
-                    <P>
-                      また、冒頭でも書いた通り、いきなり高度な内容を理解することができれば、「
-                      <Highlight>
-                        これが理解できたんだから、他の内容も学べるだろう
-                      </Highlight>
-                      」と自信がつきます。高度な内容を分かりやすく書くことができれば、こういったメリットもあります。
-                    </P>
-                    <P>
-                      努力はしたものの、それでも本稿がまだまだ難しいのは承知しております。本稿はあくまで、「
-                      <Highlight>邪道な</Highlight>
-                      」入門書なのです。ただ、その上でひとこと言わせていただくと、
-                      <Highlight>
-                        内容を完全には理解できなくても、雰囲気だけでも楽しんでくださった方や、「よくわからないけど、コンピュータサイエンスって面白そう」と感じてくださった方が、ひとりでも多くいればいいな
-                      </Highlight>
-                      と思っています。
-                    </P>
-                    <BubbleQuotes
-                      quotes={[
-                        {
-                          type: 'devil',
-                          children: (
-                            <>
-                              <P>
-                                悪魔のわたしに言わせれば…「
-                                <Highlight>
-                                  入門書を必要以上に難しくしたら、その分野に苦手意識を持つ人が増える
-                                </Highlight>
-                                」というのは確かにそうだと思う。
-                              </P>
-                              <P>
-                                一方、「
-                                <Highlight>
-                                  ある分野の入門書や入門コースが知的に面白かったから、その分野に興味を持つようになった
-                                </Highlight>
-                                」という人も、一定数いると思う。大抵は、知的好奇心が旺盛な人たちだ。わたしはどうせ発信するなら、そういう人たちに好かれるものを作りたい。
-                              </P>
-                              <P>
-                                そして、
-                                <Highlight>
-                                  「知的に面白い」と思ってもらえる入門書には、ある程度の難しさは欠かせない
-                                </Highlight>
-                                と思う。簡単すぎたら退屈だからだ。
-                              </P>
-                              <P>
-                                「難しすぎて敬遠してしまう人」の数を抑えつつ、「難しくて面白いと思ってくれる人」の数を増やす、というのは
-                                <HighlightBold>トレードオフ</HighlightBold>
-                                だ。どこでバランスを取るかは教材作成者が自由に決めるべきで、
-                                <Highlight>
-                                  「これが正解」というのは無い
-                                </Highlight>
-                                と思うんだ。
-                              </P>
-                            </>
-                          )
-                        }
-                      ]}
-                    />
-                    <P>
-                      <Bold>ちなみに:</Bold> プログラマの方で、「
-                      <Highlight>
-                        Yコンビネータを実際にプログラミングで試してみたい
-                      </Highlight>
-                      」と思った方は、↓の「プログラミングで試してみる」を押してみてください。
-                    </P>
-                  </>
-                )
-              }}
-            >
-              <Hr />
-              <P>
-                下のコードは、
-                <Highlight>
-                  JavaScriptでYコンビネータを使って「
-                  <EmojiNumber number={4} /> の階乗」、すなわち{' '}
-                  <EmojiNumber number={4} /> <Emoji>✖️</Emoji>{' '}
-                  <EmojiNumber number={3} /> <Emoji>✖️</Emoji>{' '}
-                  <EmojiNumber number={2} /> <Emoji>✖️</Emoji>{' '}
-                  <EmojiNumber number={1} /> を計算するコード
-                </Highlight>
-                です。
-              </P>
-              <Pre>
-                <Code
-                  children={`console.log(
-  (a =>
-    (b => a(c => b(b)(c)))(b =>
-      a(c => b(b)(c))
-    ))(f => n =>
-    n === 0 ? 1 : n * f(n - 1)
-  )(4)
-)`}
-                ></Code>
-              </Pre>
-              <P>
-                上のコードをブラウザの開発者ツールにコピーして実行すると、「
-                <EmojiNumber number={4} /> の階乗」である「
-                <Code>24</Code>
-                」が出力されます。また、下から2行目にある <Code>4</Code>{' '}
-                をたとえば <Code>5</Code> に変えると、
-                <EmojiNumber number={5} /> の階乗である「<Code>120</Code>
-                」が出力されます。
-              </P>
-              <P>
-                ふつう、JavaScriptで階乗を計算するには <Code>for</Code> や{' '}
-                <Code>while</Code> といったループ機能、<Code>reduce</Code>{' '}
-                といった関数、または関数の再帰を使います。しかし、
-                <Highlight>
-                  Yコンビネータを使えば、それらを一切使わずに階乗を計算できる
-                </Highlight>
-                のです。
-              </P>
-            </CardContent>
           </>
         )
       }
