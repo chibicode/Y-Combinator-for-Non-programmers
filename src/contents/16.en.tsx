@@ -400,29 +400,31 @@ export default () => (
               computers are.
             </P>
             <P>
-              1930年代半ばに、<HighlightBold>チューリング</HighlightBold>
-              は先述の問題を解くために「
-              <Bold>チューリングマシン</Bold>
-              」という空想上の計算機を考案しました。「このチューリングマシンが仮に存在したら…」と論を展開することで、彼は先述の数学の問題を解くことができたのです。
+              In 1930s, <Bold>Alan Turing</Bold> came up with an idea of a
+              hypothetical computer called a{' '}
+              <HighlightBold>Turing machine.</HighlightBold> He used this Turing
+              machine in his solution to{' '}
+              <Italic>Hilbert’s decision problem</Italic>.
             </P>
             <P>
-              そして、ここでは詳しく説明しませんが、
+              We won’t talk about how a Turing machine works here (you should
+              search on YouTube), but we’ll say this:{' '}
               <Highlight>
-                このチューリングマシンの仕組みはシンプルながら、現代のコンピュータの仕組みと非常に似ており、近代的なコンピュータの発展に大きな影響を与えたのです。
+                A Turing machine is very similar to modern computers, and
+                therefore was very influential in modern computer science.
               </Highlight>
             </P>
             <EmojiSeparator
               emojis={['🧑🏻', '💭', '💻']}
               description={
                 <>
-                  チューリングは、「
-                  <Bold>チューリングマシン</Bold>」
+                  Turing came up with a{' '}
+                  <HighlightBold>Turing machine</HighlightBold>,<br />
+                  a hypothetical computer that’s similar to
                   <br />
-                  という、現代のコンピュータに似ている
+                  modern computers. He used this to
                   <br />
-                  空想上の計算機を頭の中で考え、
-                  <br />
-                  それを使って先述の問題を解いた
+                  solve <Italic>Hilbert’s decision problem</Italic>.
                 </>
               }
             />
