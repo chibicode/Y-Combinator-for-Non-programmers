@@ -227,85 +227,89 @@ export default () => (
               />
             </P>
             <P>
-              <Highlight>
-                タビュレーティングマシンは、アメリカの国勢調査、すなわち国全体のアンケート調査を集計するために使われた計算機でした。
-              </Highlight>
-              マークシートのような紙に空いた穴を読み取って計算することで、大量のデータをすばやく集計できたのです。
-              <Highlight>現代のエクセルのようなもの</Highlight>ですね。
+              <Bold>Tabulating machines</Bold> were computing devices designed
+              to help process data for the 1890s U.S. Census. It summarized
+              information stored on punched cards. It’s kind of like Microsoft
+              Excel or Google Spreadsheets.
             </P>
             <EmojiSeparator
               emojis={['📈', '📊', '📉']}
               description={
                 <>
-                  アメリカでは「タビュレーティングマシン」
+                  Tabulating machines were computing devices to
                   <br />
-                  という計算機が国勢調査で使われた
+                  process data for the 1890s U.S. Census
                 </>
               }
             />
-            <P>
-              ちなみに、
-              <Highlight>
-                この計算機の発明者であるホレリスは、IBMの前身となる会社を創業しました。
-              </Highlight>
-              IBMはさらに強力な計算機を開発し続け、1960年代に世界一のコンピュータ企業になったのです。
-            </P>
           </>
-        )
+        ),
+        footer: {
+          content: (
+            <>
+              <P>
+                <Bold>Side Note:</Bold> Herman Hollerith, who invented
+                tabulating machines, later founded a company that became part of
+                IBM. IBM continued to develop better tabulating machines, and
+                eventually became the top computer company in 1960s.
+              </P>
+            </>
+          )
+        }
       },
       {
-        title: <>計算機「科学」のはじまり</>,
+        title: <>History of computer science</>,
         content: (
           <>
             <P>
-              上記の「タビュレーティングマシン」を皮切りに、計算機は20世紀に入ってどんどん進化していきました。やがて計算機は電子化され、今の「コンピュータ」と呼ばれるような機械になっていきました。
+              In the 20th century, computers evolved from tabulating machines to
+              digital computers.
             </P>
             <EmojiSeparator
               emojis={['✨', '💻', '✨']}
-              description={<>計算機は20世紀にどんどん進化した</>}
+              description={<>Computers kept evolving in the 20th century</>}
             />
             <P>
-              いっぽう同時期に、
-              <HighlightBold>計算機について科学する学問</HighlightBold>
-              である「
-              <Bold>コンピュータサイエンス＝計算機科学</Bold>」
-              も生まれ、進化していきました。
+              Also in the 20th century, <Bold>Computer Science</Bold>, which is
+              the study of computing and computers, started to emerge.
             </P>
             <P>
-              そんなコンピュータサイエンスの研究者たちは、「
+              <Bold>Computer scientists asked themselves this question:</Bold>{' '}
               <Highlight>
-                コンピュータ＝計算機の作り方や使い方をどう工夫すれば、より効率的に問題を解けるのか
+                How can we improve the way we build or use computers so that, we
+                can solve computing problems more efficiently?
               </Highlight>
-              」といった問いに取り組んだのです。
             </P>
             <EmojiSeparator
               emojis={['💻', '🤔', '💻']}
               description={
                 <>
-                  <Bold>コンピュータサイエンス: </Bold>
+                  <Bold>An important question in computer science:</Bold>
                   <br />
-                  計算機の作り方や使い方をどう工夫
+                  How can we improve the way we build
                   <br />
-                  すれば、より効率的に問題を解けるのか
+                  or use computers so that, we can solve
+                  <br />
+                  computing problems more efficiently?
                 </>
               }
             />
             <P>
-              そして、<Highlight>コンピュータサイエンスの礎を築いた</Highlight>
-              と言われているのが、英国の数学者だった
-              <Bold>アラン・チューリング</Bold> <Emoji>🧑🏻</Emoji>{' '}
-              と、米国の数学者だった
-              <Bold>アロンゾ・チャーチ</Bold> <Emoji>👨🏻‍🦳</Emoji>{' '}
-              です。ふたりの研究が、学問としてのコンピュータサイエンスの大本になっているのです。
+              And there were two famous computer scientists who built
+              foundations of modern computer science. One was{' '}
+              <Bold>Alan Turing</Bold> <Emoji>🧑🏻</Emoji> from the United
+              Kingdom, and the other was <Bold>Alonzo Church</Bold>{' '}
+              <Emoji>👨🏻‍🦳</Emoji> from the United States.
             </P>
             <EmojiSeparator
               emojis={['🧑🏻', '👨🏻‍🦳']}
               description={
                 <>
-                  <Bold>アラン・チューリング</Bold>と<br />
-                  <Bold>アロンゾ・チャーチ</Bold>による
+                  The research done by <Bold>Alan Turing</Bold> and
                   <br />
-                  研究が、コンピュータサイエンスの礎となった
+                  <Bold>Alonzo Church</Bold> became the foundation of
+                  <br />
+                  modern computer science
                 </>
               }
             />
