@@ -25,7 +25,6 @@ import MultiplyIcon from 'src/components/MultiplyIcon'
 
 export default () => (
   <EpisodeCardList
-    underConstruction
     cards={[
       {
         type: 'summary',
