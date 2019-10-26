@@ -8,6 +8,7 @@ import BlankNumberGreySvg from 'src/components/CustomEmoji/BlankNumberGreySvg'
 import BlankNumberSvg from 'src/components/CustomEmoji/BlankNumberSvg'
 import ConditionSvg from 'src/components/CustomEmoji/ConditionSvg'
 import DoubleArrowSvg from 'src/components/CustomEmoji/DoubleArrowSvg'
+import ZeroOneSvg from 'src/components/CustomEmoji/ZeroOneSvg'
 import HorizontalDotDotDotRedSvg from 'src/components/CustomEmoji/HorizontalDotDotDotRedSvg'
 import HorizontalDotDotDotSvg from 'src/components/CustomEmoji/HorizontalDotDotDotSvg'
 import IndexSvg from 'src/components/CustomEmoji/IndexSvg'
@@ -28,6 +29,7 @@ import MultiplyWhiteSvg from 'src/components/CustomEmoji/MultiplyWhiteSvg'
 import TwentyFourSvg from 'src/components/CustomEmoji/TwentyFourSvg'
 import QuestionMinusOne from 'src/components/CustomEmoji/QuestionMinusOne'
 import TwentySvg from 'src/components/CustomEmoji/TwentySvg'
+import FourLunchboxesSvg from 'src/components/CustomEmoji/FourLunchboxesSvg'
 import Emoji, { EmojiProps } from 'src/components/Emoji'
 
 export const customEmojiToComponent = {
@@ -59,7 +61,9 @@ export const customEmojiToComponent = {
   condition: ConditionSvg,
   multiply: MultiplySvg,
   multiplyWhite: MultiplyWhiteSvg,
-  questionMinusOne: QuestionMinusOne
+  questionMinusOne: QuestionMinusOne,
+  zeroOne: ZeroOneSvg,
+  fourLunchboxes: FourLunchboxesSvg
 }
 
 const CustomEmoji = ({

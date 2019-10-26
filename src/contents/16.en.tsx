@@ -368,7 +368,7 @@ export default () => (
               ]}
               description={
                 <>
-                  Lunchboxes can also do
+                  Lunchboxes can do
                   <br />
                   any calculations that can be
                   <br />
@@ -491,23 +491,49 @@ export default () => (
           <>
             <P>
               We’re almost done, but let me say a few things about computer
-              science and Y Combinator.
+              science and Y Combinator. <Emoji>😉</Emoji>
             </P>
+            <Hr />
             <P>
-              One of the most important things in computer science is to{' '}
-              <Highlight>build a complex thing from simple things.</Highlight>
+              <Bold>One of the most important ideas in computer science</Bold>{' '}
+              is to{' '}
+              <Highlight>build a complex thing from simple things.</Highlight>{' '}
+              After all, computers are made of very simple things: 0’s and 1’s.
             </P>
-            <ExpressionRunnerCaptionOnly>
-              <HighlightBold>重要:</HighlightBold> 計算機を工夫することが、
+            <EmojiSeparator
+              nodes={[
+                <CustomEmoji type="zeroOne" />,
+                <CustomEmoji type="singleArrow" />,
+                <Emoji>💻</Emoji>
+              ]}
+              description={
+                <>
+                  <Bold>
+                    One of the most important ideas
+                    <br />
+                    in computer science:
+                  </Bold>
+                  <br />
+                  <Highlight>
+                    Build a complex thing from
+                    <br />
+                    simple things
+                  </Highlight>
+                </>
+              }
+            />
+            <P>
+              In this course, we learned about lunchboxes (or lambda calculus).{' '}
+              And <Highlight>lunchboxes are simple</Highlight>. There are only a
+              few rules you need to know:
+            </P>
+            <R.Zzxj>
+              <Bold>Lunchboxes are simple:</Bold>
               <br />
-              コンピュータサイエンスではとても大事
-            </ExpressionRunnerCaptionOnly>
-            <P>
-              今回紹介したラムダ計算、すなわち弁当箱は、
-              <Highlight>仕組みはとてもシンプルです</Highlight>
-              。弁当箱の基本の法則は、初級その3〜5で紹介したように、非常にシンプルです。
-            </P>
-            <R.Zzxj>弁当箱の基本の法則は非常にシンプル</R.Zzxj>
+              There are only a few rules
+              <br />
+              you need to know
+            </R.Zzxj>
             <ExpressionRunnerSeparator />
             <R.Keck />
             <ExpressionRunnerSeparator />
@@ -517,34 +543,66 @@ export default () => (
             <ExpressionRunnerSeparator />
             <R.Osqo />
             <P>
-              しかし、こんなシンプルな弁当箱でも、現代のコンピュータが行えるすべての計算を行うことができるのです。
-              <HighlightBold>
-                それができる理由は、弁当箱を工夫すれば、四則演算や、条件分岐や、繰り返しを行うことができるからです。
-              </HighlightBold>
+              Even though lunchboxes are very simple, they can do any
+              calculations that can be done by today’s computers.
             </P>
             <EmojiSeparator
               nodes={[
+                <Emoji>🍱</Emoji>,
+                <CustomEmoji type="doubleArrow" />,
+                <Emoji>💻</Emoji>
+              ]}
+              description={
+                <>
+                  Lunchboxes can do
+                  <br />
+                  any calculations that can be
+                  <br />
+                  done by today’s computers.
+                </>
+              }
+            />
+            <P>
+              <Bold>Why is that possible?</Bold> Because, as we’ve seen so far,{' '}
+              <Highlight>
+                by combining simple lunchboxes, you can build a complex lunchbox
+                that can do <Bold>additions/multiplications</Bold> or have the{' '}
+                <Bold>conditional/repeat</Bold> feature.
+              </Highlight>
+            </P>
+            <EmojiSeparator
+              nodes={[
+                <CustomEmoji type="fourLunchboxes" />,
+                <CustomEmoji type="singleArrow" />,
                 <Emoji>➕</Emoji>,
                 <Emoji>✖️</Emoji>,
-                <Emoji>🍱</Emoji>,
                 <CustomEmoji type="condition" />,
                 <Emoji>🔁</Emoji>
               ]}
               description={
                 <>
-                  弁当箱を工夫すれば、四則演算や、
+                  By combining simple lunchboxes,
                   <br />
-                  条件分岐や、繰り返しを行うことができる
+                  you can build a complex lunchbox
+                  <br />
+                  that can do <Bold>additions/multiplications</Bold> or
+                  <br />
+                  have the <Bold>conditional/repeat</Bold> feature.
                 </>
               }
             />
             <P>
-              たとえば今回紹介した通り、Yコンビネータの弁当箱を使えば、繰り返しを行うことができますよね。他にも工夫次第で、さまざまな計算を行うことができます。
+              We learned that, by using the{' '}
+              <HighlightBold>Y Combinator</HighlightBold> lunchbox, we can
+              create a lunchbox that can repeat <Emoji>🔁</Emoji> some
+              operations.
             </P>
             <R.Rjho>
-              「<HighlightBold>Yコンビネータ</HighlightBold>」の弁当箱を使えば
+              By using the <HighlightBold>Y Combinator</HighlightBold> lunchbox,
               <br />
-              繰り返しを行うことができる
+              we can create a lunchbox that can
+              <br />
+              repeat <Emoji>🔁</Emoji> some operations.
             </R.Rjho>
             <P>
               コンピュータサイエンスは、「
