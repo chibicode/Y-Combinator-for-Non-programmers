@@ -1,9 +1,9 @@
+import locale from 'src/lib/locale'
+
 export const allFontWeights = {
-  300: 300,
   400: 400,
-  600: 600,
   700: 700,
-  800: 800,
+  800: locale === 'en' ? 900 : 800,
   900: 900
 }
 

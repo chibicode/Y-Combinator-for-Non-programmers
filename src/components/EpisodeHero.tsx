@@ -6,6 +6,8 @@ import EmojiSeparator from 'src/components/EmojiSeparator'
 import EpisodeContext from 'src/components/EpisodeContext'
 import episodeEmojis from 'src/lib/episodeEmojis'
 import CustomEmoji from 'src/components/CustomEmoji'
+import { description } from 'src/lib/titles'
+import locale from 'src/lib/locale'
 import Emoji from 'src/components/Emoji'
 import {
   colors,
@@ -88,25 +90,47 @@ const EpisodeHero = ({
             </h1>
           </>
         ) : (
-          <h1
-            css={[
-              commonTitleClasses,
-              css`
-                color: ${colors('grey900')};
-                padding-top: ${spaces(0.5)};
-                font-size: ${fontSizes(1.6)};
-                margin: 0 auto ${spaces(0.5)};
-                font-weight: ${fontWeights(800)};
+          <>
+            <h1
+              css={[
+                commonTitleClasses,
+                css`
+                  color: ${colors('grey900')};
+                  padding-top: ${spaces(0.5)};
+                  font-size: ${fontSizes(1.6)};
+                  margin: 0 auto ${spaces(0.5)};
+                  font-weight: ${fontWeights(800)};
 
-                ${ns} {
-                  font-size: ${fontSizes(2.5)};
-                  font-weight: ${fontWeights(900)};
-                }
-              `
-            ]}
-          >
-            <H args={{ name: 'titleSplit' }} />
-          </h1>
+                  ${ns} {
+                    font-size: ${fontSizes(2.5)};
+                    font-weight: ${fontWeights(900)};
+                  }
+                `
+              ]}
+            >
+              <H args={{ name: 'titleSplit' }} />
+            </h1>
+            {locale === 'en' && (
+              <h3
+                css={[
+                  commonTitleClasses,
+                  css`
+                    color: ${colors('grey700')};
+                    padding-top: ${spaces(0.5)};
+                    font-size: ${fontSizes(1)};
+                    margin: 0 auto ${spaces(0.5)};
+                    font-weight: ${fontWeights(700)};
+
+                    ${ns} {
+                      font-size: ${fontSizes(1.6)};
+                    }
+                  `
+                ]}
+              >
+                {description}
+              </h3>
+            )}
+          </>
         )}
       </>
       <EmojiSeparator

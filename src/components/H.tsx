@@ -220,7 +220,13 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
   }
   if (args.name === 'titleSplit') {
     if (locale === 'en') {
-      return <>{lessonTitle}</>
+      return (
+        <>
+          Y Combinator for
+          <br />
+          Non-programmers
+        </>
+      )
     } else {
       return (
         <>

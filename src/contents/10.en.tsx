@@ -1410,7 +1410,7 @@ export default () => (
                   <Bold>Y combinator</Bold>, which is in the title of this
                   course
                 </Highlight>{' '}
-                (<Italic>Y Combinator for Non-Programmers</Italic>)?”
+                (<Italic>Y Combinator for Non-programmers</Italic>)?”
               </P>
               <EmojiSeparator
                 emojis={['❓', '🤔', '❓']}
