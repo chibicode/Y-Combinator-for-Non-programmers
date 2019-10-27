@@ -36,6 +36,7 @@
     "eslint:fix": "eslint --ext .js,.ts,.tsx --fix .",
     "build": "cp tsconfig.prod.json tsconfig.json && next build",
     "build:jp": "cp tsconfig.prod.json tsconfig.json && PRODUCTION_LOCALE=jp next build && PRODUCTION_LOCALE=jp next export",
+    "build:en": "cp tsconfig.prod.json tsconfig.json && PRODUCTION_LOCALE=en next build && PRODUCTION_LOCALE=en next export",
     "twemoji": "mkdir -p .twemoji && rm -f src/components/Twemoji/* && rm -f .twemoji/* && cp `yarn --silent ts-node outDir/tsconfig.scripts.json/scripts/copyUsedEmojis.js` .twemoji && svgr --ext tsx --no-svgo --filename-case kebab --no-dimensions -d src/components/Twemoji .twemoji && eslint --ext .tsx --fix src/components/Twemoji && yarn twemoji:bundle",
     "twemoji:bundle": "yarn ts-node outDir/tsconfig.scripts.json/scripts/generateEmojisBundle.js",
     "test": "jest"
