@@ -11,8 +11,10 @@ declare global {
 // https://developers.google.com/analytics/devguides/collection/gtagjs/pages
 // https://github.com/zeit/next.js/pull/6787
 export const pageview = (path: string) => {
-  window.gtag('config', GA_TRACKING_ID_JP, {
-    page_path: path,
-    anonymize_ip: true
-  })
+  if (window.gtag) {
+    window.gtag('config', GA_TRACKING_ID_JP, {
+      page_path: path,
+      anonymize_ip: true
+    })
+  }
 }
