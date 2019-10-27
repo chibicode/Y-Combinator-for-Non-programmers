@@ -30,15 +30,17 @@ const EpisodePageFooter = () => {
         font-size: ${fontSizes(0.7)};
       `}
     >
-      <ExternalLink
-        href={`${githubRepo}/tree/master/docs/privacy-policy${
-          locale === 'jp' ? '-jp' : ''
-        }.md`}
-        css={linkClasses}
-      >
-        <H args={{ name: 'privacyPolicy' }} />
-      </ExternalLink>{' '}
-      &middot;{' '}
+      {locale === 'jp' && (
+        <>
+          <ExternalLink
+            href={`${githubRepo}/tree/master/docs/privacy-policy-jp.md`}
+            css={linkClasses}
+          >
+            <H args={{ name: 'privacyPolicy' }} />
+          </ExternalLink>{' '}
+          &middot;{' '}
+        </>
+      )}
       <ExternalLink
         href={`${githubRepo}/tree/master/README${
           locale === 'jp' ? '-jp' : ''

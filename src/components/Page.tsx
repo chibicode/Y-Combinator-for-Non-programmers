@@ -2,12 +2,11 @@ import Head from 'next/head'
 import React from 'react'
 import Favicon from 'src/components/Favicon'
 import GlobalStyles from 'src/components/GlobalStyles'
-import { GA_TRACKING_ID } from 'src/lib/gtag'
+import { GA_TRACKING_ID_JP } from 'src/lib/gtag'
 import { dateSchemaString } from 'src/lib/date'
-import { ogLocale } from 'src/lib/locale'
+import locale, { ogLocale } from 'src/lib/locale'
 import { ogImageUrl } from 'src/lib/meta'
 import { description } from 'src/lib/titles'
-import locale from 'src/lib/locale'
 
 const Page = ({ children }: { children: React.ReactNode }) => (
   <GlobalStyles>
@@ -36,19 +35,23 @@ const Page = ({ children }: { children: React.ReactNode }) => (
       <meta name="twitter:site" content="@chibicode" />
       <meta name="twitter:creator" content="@chibicode" />
       <meta property="fb:admins" content="1227210274" />
-      <script
-        async
-        src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
-      />
-      <script
-        dangerouslySetInnerHTML={{
-          __html: `window.dataLayer = window.dataLayer || [];
+      {locale === 'jp' && (
+        <>
+          <script
+            async
+            src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID_JP}`}
+          />
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
 
-        gtag('config', '${GA_TRACKING_ID}', { 'anonymize_ip': true });`
-        }}
-      />
+        gtag('config', '${GA_TRACKING_ID_JP}', { 'anonymize_ip': true });`
+            }}
+          />
+        </>
+      )}
       <script async src="https://platform.twitter.com/widgets.js" />
     </Head>
     <Favicon />
