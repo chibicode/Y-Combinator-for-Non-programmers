@@ -14,6 +14,7 @@ declare global {
 // https://github.com/zeit/next.js/pull/6787
 export const pageview = (path: string) => {
   window.gtag('config', GA_TRACKING_ID, {
-    page_path: path
+    page_path: path,
+    anonymize_ip: true
   })
 }
