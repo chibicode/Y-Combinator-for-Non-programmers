@@ -12,7 +12,9 @@ import {
   Code,
   Ol,
   OlLi,
-  Hr
+  Hr,
+  Ul,
+  UlLi
 } from 'src/components/ContentTags'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import EmojiNumber from 'src/components/EmojiNumber'
@@ -685,27 +687,33 @@ export default () => (
         title: <>Conclusion</>,
         content: (
           <>
-            <P>本稿で学んだことを短くまとめると、以下のようになります。</P>
+            <P>Here’s a quick summary of what we learned in this course:</P>
             <Ol>
               <OlLi>
                 <Highlight>
-                  弁当箱は、工夫次第で四則演算や、条件分岐や、繰り返しといった複雑な計算ができる。また、繰り返しを行う弁当箱を
-                  <HighlightBold>Yコンビネータ</HighlightBold>と呼ぶ。
+                  <Bold>Lunchboxes</Bold> are simple, but by combining them, you
+                  can create a lunchbox that can do complex calculations.
                 </Highlight>
               </OlLi>
               <OlLi>
                 <Highlight>
-                  弁当箱は、1930年代に考案された空想上の計算機「ラムダ計算」が基になっている。ラムダ計算は、現代のコンピュータが行えるすべての計算を行うことができ、また多くのプログラミング言語に影響を与えた。
+                  <Bold>Y Combinator</Bold> is a special kind of a lunchbox that
+                  allows you to repeat some calculations.
                 </Highlight>
               </OlLi>
               <OlLi>
                 <Highlight>
-                  コンピュータサイエンスは「
-                  <HighlightBold>
-                    計算機(コンピュータ)をどう工夫して問題を解くか
-                  </HighlightBold>
-                  」を考える学問。工夫次第で複雑な計算ができる弁当箱には、そのエッセンスが詰まっている。
+                  Lunchboxes are the same thing as <Bold>lambda calculus</Bold>
                 </Highlight>
+                , which was invented in the 1930s and influenced many
+                programming languages.
+              </OlLi>
+              <OlLi>
+                <Highlight>
+                  <Bold>Computer science</Bold> is all about building a complex
+                  thing from simple things
+                </Highlight>
+                , and lunchboxes are a great example of this.
               </OlLi>
             </Ol>
             <EmojiSeparator emojis={['✨', '🍱', '✨']} />
@@ -716,15 +724,14 @@ export default () => (
             <>
               <CardContent
                 preview={{
-                  text: <>プログラミングで試してみる</>,
+                  text: <>Try Y Combinator in the browser</>,
                   content: (
                     <>
                       <P>
-                        <Bold>ちなみに:</Bold> プログラマの方で、「
-                        <Highlight>
-                          Yコンビネータを実際にプログラミングで試してみたい
-                        </Highlight>
-                        」と思った方は、↓の「プログラミングで試してみる」を押してみてください。
+                        <Bold>Are you a programmer?</Bold> If you’re a
+                        programmer and are interested in trying out{' '}
+                        <HighlightBold>Y Combinator</HighlightBold>, press “Try
+                        Y Combinator in the browser” below!
                       </P>
                     </>
                   )
@@ -732,16 +739,14 @@ export default () => (
               >
                 <Hr />
                 <P>
-                  下のコードは、
-                  <Highlight>
-                    JavaScriptでYコンビネータを使って「
-                    <EmojiNumber number={4} /> の階乗」、すなわち{' '}
-                    <EmojiNumber number={4} /> <Emoji>✖️</Emoji>{' '}
-                    <EmojiNumber number={3} /> <Emoji>✖️</Emoji>{' '}
-                    <EmojiNumber number={2} /> <Emoji>✖️</Emoji>{' '}
-                    <EmojiNumber number={1} /> を計算するコード
-                  </Highlight>
-                  です。
+                  The JavaScript code below uses Y Combinator to calculate the{' '}
+                  <HighlightBold>
+                    factorial of <EmojiNumber number={4} />
+                  </HighlightBold>
+                  , which is equal to <EmojiNumber number={4} />{' '}
+                  <Emoji>✖️</Emoji> <EmojiNumber number={3} /> <Emoji>✖️</Emoji>{' '}
+                  <EmojiNumber number={2} /> <Emoji>✖️</Emoji>{' '}
+                  <EmojiNumber number={1} />.
                 </P>
                 <Pre>
                   <Code
@@ -755,23 +760,35 @@ export default () => (
 )`}
                   ></Code>
                 </Pre>
+                <Ul>
+                  <UlLi>
+                    <Bold>
+                      Paste the above code on your desktop browser’s developer
+                      tools
+                    </Bold>
+                    , and{' '}
+                    <Highlight>
+                      it will show <Code>24</Code>
+                    </Highlight>
+                    , which is the factorial of <EmojiNumber number={4} />.
+                  </UlLi>
+                  <UlLi>
+                    <Bold>Also:</Bold> If you change <Code>4</Code> on the
+                    bottom to <Code>5</Code>, it will calculate the factorial of{' '}
+                    <EmojiNumber number={5} />, which is <Code>120</Code>.
+                  </UlLi>
+                </Ul>
                 <P>
-                  上のコードをブラウザの開発者ツールにコピーして実行すると、「
-                  <EmojiNumber number={4} /> の階乗」である「
-                  <Code>24</Code>
-                  」が出力されます。また、下から2行目にある <Code>4</Code>{' '}
-                  をたとえば <Code>5</Code> に変えると、
-                  <EmojiNumber number={5} /> の階乗である「<Code>120</Code>
-                  」が出力されます。
+                  Usually, to calculate the factorial of a number in JavaScript,
+                  you’d use loops like <Code>for</Code>, <Code>while</Code>, or{' '}
+                  <Code>reduce</Code>. Or you might use recursion.
                 </P>
                 <P>
-                  ふつう、JavaScriptで階乗を計算するには <Code>for</Code> や{' '}
-                  <Code>while</Code> といったループ機能、<Code>reduce</Code>{' '}
-                  といった関数、または関数の再帰を使います。しかし、
                   <Highlight>
-                    Yコンビネータを使えば、それらを一切使わずに階乗を計算できる
-                  </Highlight>
-                  のです。
+                    However, the above code does not use any of them because it
+                    uses Y Combinator.
+                  </Highlight>{' '}
+                  Interesting, right? <Emoji>😉</Emoji>
                 </P>
               </CardContent>
             </>
