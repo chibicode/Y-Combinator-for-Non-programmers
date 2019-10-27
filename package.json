@@ -1,7 +1,7 @@
 {
   "private": true,
   "engines": {
-    "node": "10.x"
+    "node": "13.x"
   },
   "dependencies": {
     "@emotion/core": "^10.0.22",
