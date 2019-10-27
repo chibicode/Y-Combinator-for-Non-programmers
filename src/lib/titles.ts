@@ -10,7 +10,7 @@ export const lessonTitle = {
 }[locale]
 
 export const description = {
-  en: 'A Terrible Introduction to Computer Science',
+  en: 'A Wild Introduction to Computer Science',
   jp: 'プログラミング未経験者向けの、邪道なコンピュータサイエンスの入門書'
 }[locale]
 
