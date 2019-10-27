@@ -31,7 +31,7 @@ export const episodeTitles = {
     13: 'Replace Parts of a Lunchbox',
     14: 'Y Combinator',
     15: 'Additions, Multiplications, and Factorials',
-    16: 'Computer Science and Y Combinator'
+    16: 'Computer Science, Lambda Calculus, and Y Combinator'
   },
   jp: {
     1: '計算箱',

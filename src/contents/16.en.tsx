@@ -23,8 +23,8 @@ import H from 'src/components/H'
 import Emoji from 'src/components/Emoji'
 import CustomEmoji from 'src/components/CustomEmoji'
 import BubbleQuotes from 'src/components/BubbleQuotes'
-// import * as R from 'src/components/Runners'
-import * as R from 'src/components/Runners/fakeIndex'
+import * as R from 'src/components/Runners'
+// import * as R from 'src/components/Runners/fakeIndex'
 import ExpressionRunnerCaptionOnly from 'src/components/ExpressionRunnerCaptionOnly'
 import CardContent from 'src/components/CardContent'
 import { colors } from 'src/lib/theme'
@@ -543,8 +543,9 @@ export default () => (
             <ExpressionRunnerSeparator />
             <R.Osqo />
             <P>
-              Even though lunchboxes are very simple, they can do any
-              calculations that can be done by today’s computers.
+              <Bold>But we learned that:</Bold> Even though lunchboxes are very
+              simple, they can do any calculations that can be done by today’s
+              computers.
             </P>
             <EmojiSeparator
               nodes={[
@@ -566,18 +567,14 @@ export default () => (
               <Bold>Why is that possible?</Bold> Because, as we’ve seen so far,{' '}
               <Highlight>
                 by combining simple lunchboxes, you can build a complex lunchbox
-                that can do <Bold>additions/multiplications</Bold> or have the{' '}
-                <Bold>conditional/repeat</Bold> feature.
+                that can do complex calculations.
               </Highlight>
             </P>
             <EmojiSeparator
               nodes={[
                 <CustomEmoji type="fourLunchboxes" />,
                 <CustomEmoji type="singleArrow" />,
-                <Emoji>➕</Emoji>,
-                <Emoji>✖️</Emoji>,
-                <CustomEmoji type="condition" />,
-                <Emoji>🔁</Emoji>
+                <CustomEmoji type="complexCalculations" />
               ]}
               description={
                 <>
@@ -585,57 +582,133 @@ export default () => (
                   <br />
                   you can build a complex lunchbox
                   <br />
-                  that can do <Bold>additions/multiplications</Bold> or
-                  <br />
-                  have the <Bold>conditional/repeat</Bold> feature.
+                  that can do complex calculations.
                 </>
               }
             />
             <P>
-              We learned that, by using the{' '}
-              <HighlightBold>Y Combinator</HighlightBold> lunchbox, we can
-              create a lunchbox that can repeat <Emoji>🔁</Emoji> some
-              operations.
+              <Bold>For example:</Bold> We learned that a lunchbox can calculate{' '}
+              <Bold>multiplications</Bold>:
             </P>
-            <R.Rjho>
-              By using the <HighlightBold>Y Combinator</HighlightBold> lunchbox,
+            <R.Vqyl>
+              A lunchbox that can calculate
               <br />
-              we can create a lunchbox that can
-              <br />
-              repeat <Emoji>🔁</Emoji> some operations.
-            </R.Rjho>
+              multiplications
+            </R.Vqyl>
+            <ExpressionRunnerSeparator />
+            <R.Aflw></R.Aflw>
             <P>
-              コンピュータサイエンスは、「
-              <Highlight>
-                計算機(コンピュータ)の作り方や使い方をどう工夫すれば、より効率的に問題を解けるのか
-              </Highlight>
-              」について考える学問です。
+              <Bold>Most importantly:</Bold> We learned that we can use{' '}
+              <HighlightBold>Y Combinator</HighlightBold> to repeat some
+              calculations.
             </P>
-            <P>
-              そして、今回学んだ弁当箱は、
-              <Highlight>
-                シンプルでも工夫次第で複雑な計算ができる計算機です。
-              </Highlight>
-              そんな弁当箱には、
-              <HighlightBold>
-                コンピュータサイエンスのエッセンスが詰まっている
-              </HighlightBold>
-              と思うのです。
-            </P>
+            <R.Xjzx>
+              By using the <HighlightBold>Y Combinator</HighlightBold> lunchbox…
+            </R.Xjzx>
+            <ExpressionRunnerSeparator />
             <EmojiSeparator
-              emojis={['✨', '🍱', '✨']}
+              emojis={['✨', '🔁', '✨']}
               description={
                 <>
-                  弁当箱は、シンプルでも工夫次第で
+                  We can create a lunchbox that can
                   <br />
-                  複雑な計算ができる計算機。だからこそ
-                  <br />
-                  コンピュータサイエンスのエッセンスが
-                  <br />
-                  詰まっている
+                  repeat <Emoji>🔁</Emoji> some operations.
                 </>
               }
             />
+            <P>
+              <Bold>Again:</Bold> Computer science is all about building a
+              complex thing from simple things.{' '}
+              <Highlight>
+                I think lunchboxes - especially Y Combinator - are a great
+                example of this idea.
+              </Highlight>{' '}
+              <Emoji>😉</Emoji>
+            </P>
+            <EmojiSeparator
+              nodes={[
+                <CustomEmoji type="fourLunchboxes" />,
+                <CustomEmoji type="singleArrow" />,
+                <CustomEmoji type="complexCalculations" />
+              ]}
+              description={
+                <>
+                  Computer science is all about
+                  <br />
+                  building a complex thing from simple things.
+                  <br />
+                  Lunchboxes are a great example.
+                </>
+              }
+            />
+            <P>
+              We didn’t have time to talk about any other topics in computer
+              science.{' '}
+              <Highlight>
+                But in every sub-field of computer science, you’ll learn to
+                build a complex thing from simple things.
+              </Highlight>
+            </P>
+            <P>
+              <Bold>For example</Bold>: If you study artificial intelligence,
+              you’ll learn to build a <Bold>“neural network”</Bold>{' '}
+              <Emoji>🧠</Emoji> - a complex thing that can be used to process
+              images - by combining simple things called <Bold>“neurons”</Bold>{' '}
+              <CustomEmoji type="nodes" />.
+            </P>
+            <EmojiSeparator
+              nodes={[
+                <CustomEmoji type="nodes" />,
+                <CustomEmoji type="singleArrow" />,
+                <Emoji>🧠</Emoji>
+              ]}
+              description={
+                <>
+                  In AI, you’ll learn to build
+                  <br />a <Bold>neural network</Bold> (a complex thing)
+                  <br />
+                  using <Bold>neurons</Bold> (a simple thing)
+                </>
+              }
+            />
+            <P>
+              So hopefully this course gave you an idea of what learning
+              computer science is like. As you learn it, you’ll be surprised how
+              many innovations in computer science are built on lots of simple
+              things!
+            </P>
+          </>
+        )
+      },
+      {
+        type: 'summary',
+        title: <>Conclusion</>,
+        content: (
+          <>
+            <P>本稿で学んだことを短くまとめると、以下のようになります。</P>
+            <Ol>
+              <OlLi>
+                <Highlight>
+                  弁当箱は、工夫次第で四則演算や、条件分岐や、繰り返しといった複雑な計算ができる。また、繰り返しを行う弁当箱を
+                  <HighlightBold>Yコンビネータ</HighlightBold>と呼ぶ。
+                </Highlight>
+              </OlLi>
+              <OlLi>
+                <Highlight>
+                  弁当箱は、1930年代に考案された空想上の計算機「ラムダ計算」が基になっている。ラムダ計算は、現代のコンピュータが行えるすべての計算を行うことができ、また多くのプログラミング言語に影響を与えた。
+                </Highlight>
+              </OlLi>
+              <OlLi>
+                <Highlight>
+                  コンピュータサイエンスは「
+                  <HighlightBold>
+                    計算機(コンピュータ)をどう工夫して問題を解くか
+                  </HighlightBold>
+                  」を考える学問。工夫次第で複雑な計算ができる弁当箱には、そのエッセンスが詰まっている。
+                </Highlight>
+              </OlLi>
+            </Ol>
+            <EmojiSeparator emojis={['✨', '🍱', '✨']} />
           </>
         ),
         footer: {
@@ -704,84 +777,6 @@ export default () => (
             </>
           )
         }
-      },
-      {
-        title: <>コンピュータサイエンスの他の分野でも同じ</>,
-        content: (
-          <>
-            <P>
-              今回は時間の都合で、たくさんあるコンピュータサイエンスの題材のうち、ラムダ計算(弁当箱)しか紹介できませんでした。
-            </P>
-            <P>
-              とはいえ、コンピュータサイエンスの他の分野を学ぶときも、やることは弁当箱のときと同じです。なぜならどの分野でも、弁当箱のように「
-              <Highlight>
-                計算機(コンピュータ)を<HighlightBold>工夫して</HighlightBold>
-                、問題を解く」ことが大事になってくるからです。
-              </Highlight>
-            </P>
-            <P>
-              コンピュータサイエンスのどの分野でも、
-              <HighlightBold>キーワードは「工夫」</HighlightBold>
-              なのです。たとえば、「
-              <Highlight>
-                コンピュータを<HighlightBold>どう工夫して</HighlightBold>
-                使えば、美しいCGや、人工知能や、仮想通貨が作れるだろう？
-              </Highlight>
-              」といった感じですね。
-            </P>
-            <EmojiSeparator
-              emojis={['✨', '🤖', '💰']}
-              description={
-                <>
-                  コンピュータをどう工夫して使えば、
-                  <br />
-                  美しいCGや、人工知能や、
-                  <br />
-                  仮想通貨が作れるだろう？
-                </>
-              }
-            />
-            <P>
-              長くなりましたが、本稿を読んで、「
-              <Highlight>
-                コンピュータサイエンスの他の分野でも、コンピュータの工夫の仕方を学んでみたい
-              </Highlight>
-              」と思ってくだされば嬉しいです。
-            </P>
-          </>
-        )
-      },
-      {
-        type: 'summary',
-        title: <>まとめ</>,
-        content: (
-          <>
-            <P>本稿で学んだことを短くまとめると、以下のようになります。</P>
-            <Ol>
-              <OlLi>
-                <Highlight>
-                  弁当箱は、工夫次第で四則演算や、条件分岐や、繰り返しといった複雑な計算ができる。また、繰り返しを行う弁当箱を
-                  <HighlightBold>Yコンビネータ</HighlightBold>と呼ぶ。
-                </Highlight>
-              </OlLi>
-              <OlLi>
-                <Highlight>
-                  弁当箱は、1930年代に考案された空想上の計算機「ラムダ計算」が基になっている。ラムダ計算は、現代のコンピュータが行えるすべての計算を行うことができ、また多くのプログラミング言語に影響を与えた。
-                </Highlight>
-              </OlLi>
-              <OlLi>
-                <Highlight>
-                  コンピュータサイエンスは「
-                  <HighlightBold>
-                    計算機(コンピュータ)をどう工夫して問題を解くか
-                  </HighlightBold>
-                  」を考える学問。工夫次第で複雑な計算ができる弁当箱には、そのエッセンスが詰まっている。
-                </Highlight>
-              </OlLi>
-            </Ol>
-            <EmojiSeparator emojis={['✨', '🍱', '✨']} />
-          </>
-        )
       }
     ]}
   />

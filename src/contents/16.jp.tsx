@@ -879,11 +879,11 @@ export default () => (
             <P>
               たとえば今回紹介した通り、Yコンビネータの弁当箱を使えば、繰り返しを行うことができますよね。他にも工夫次第で、さまざまな計算を行うことができます。
             </P>
-            <R.Rjho>
+            <R.Xjzx>
               「<HighlightBold>Yコンビネータ</HighlightBold>」の弁当箱を使えば
               <br />
               繰り返しを行うことができる
-            </R.Rjho>
+            </R.Xjzx>
             <P>
               コンピュータサイエンスは、「
               <Highlight>
