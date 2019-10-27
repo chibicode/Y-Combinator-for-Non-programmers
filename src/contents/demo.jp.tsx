@@ -200,35 +200,6 @@ const DemoCardList = () => (
         ),
         content: (
           <>
-            <R.Rbup>
-              <H
-                args={{
-                  name: 'canBeConvertedCaption',
-                  letter: 'd',
-                  number: 1
-                }}
-              />
-            </R.Rbup>
-            <Hr />
-            <R.Rjzw></R.Rjzw>
-            <Hr />
-            <R.Rico>
-              <H
-                args={{ name: 'canBeConvertedCaption', number: 2, letter: 'b' }}
-              />
-            </R.Rico>
-          </>
-        )
-      },
-      {
-        title: (
-          <>
-            <EmojiNumber number={2} /> <Emoji>➕</Emoji>{' '}
-            <EmojiNumber number={1} /> を計算
-          </>
-        ),
-        content: (
-          <>
             <R.Ooya>
               <H
                 args={{
@@ -241,11 +212,11 @@ const DemoCardList = () => (
             <Hr />
             <R.Nlbn />
             <Hr />
-            <R.Nngz>
+            <R.Rico>
               <H
-                args={{ name: 'canBeConvertedCaption', number: 3, letter: 'b' }}
+                args={{ name: 'canBeConvertedCaption', number: 2, letter: 'b' }}
               />
-            </R.Nngz>
+            </R.Rico>
           </>
         )
       },
@@ -254,10 +225,6 @@ const DemoCardList = () => (
         content: (
           <>
             <R.Lizi></R.Lizi>
-            <ExpressionRunnerSeparator />
-            <R.Plde></R.Plde>
-            <Hr />
-            <R.Gnwm></R.Gnwm>
             <ExpressionRunnerSeparator />
             <R.Awwn></R.Awwn>
           </>
@@ -313,7 +280,7 @@ const DemoCardList = () => (
         )
       },
       {
-        title: <>パート5: 階乗</>,
+        title: <>パート6: 階乗</>,
         type: 'sideNote',
         content: (
           <>

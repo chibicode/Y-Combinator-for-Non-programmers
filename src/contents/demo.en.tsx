@@ -214,17 +214,17 @@ const DemoCardList = () => (
         ),
         content: (
           <>
-            <R.Rbup>
+            <R.Ooya>
               <H
                 args={{
                   name: 'canBeConvertedCaption',
-                  letter: 'd',
+                  letter: 'f',
                   number: 1
                 }}
               />
-            </R.Rbup>
+            </R.Ooya>
             <Hr />
-            <R.Rjzw></R.Rjzw>
+            <R.Nlbn />
             <Hr />
             <R.Rico>
               <H
@@ -235,43 +235,10 @@ const DemoCardList = () => (
         )
       },
       {
-        title: (
-          <>
-            Calculating <EmojiNumber number={2} /> <Emoji>➕</Emoji>{' '}
-            <EmojiNumber number={1} />
-          </>
-        ),
-        content: (
-          <>
-            <R.Ooya>
-              <H
-                args={{
-                  name: 'canBeConvertedCaption',
-                  letter: 'f',
-                  number: 2
-                }}
-              />
-            </R.Ooya>
-            <Hr />
-            <R.Nlbn />
-            <Hr />
-            <R.Nngz>
-              <H
-                args={{ name: 'canBeConvertedCaption', number: 3, letter: 'b' }}
-              />
-            </R.Nngz>
-          </>
-        )
-      },
-      {
         title: <>Mathboxes can be replicated by Lunchboxes</>,
         content: (
           <>
             <R.Lizi></R.Lizi>
-            <ExpressionRunnerSeparator />
-            <R.Plde></R.Plde>
-            <Hr />
-            <R.Gnwm></R.Gnwm>
             <ExpressionRunnerSeparator />
             <R.Awwn></R.Awwn>
           </>
@@ -327,7 +294,7 @@ const DemoCardList = () => (
         )
       },
       {
-        title: <>Part 5: Factorials</>,
+        title: <>Part 6: Factorials</>,
         type: 'sideNote',
         content: (
           <>
