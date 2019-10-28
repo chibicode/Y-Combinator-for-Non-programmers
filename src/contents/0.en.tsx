@@ -151,7 +151,7 @@ export default () => (
         }
       },
       {
-        title: <>Start now, or read the introduction</>,
+        title: <>Start now or read the introduction</>,
         content: (
           <>
             <P>
@@ -165,7 +165,8 @@ export default () => (
             <P>
               <Emoji>🤔</Emoji>{' '}
               <Bold>If you want to read the introduction</Bold> before you get
-              started, <Highlight>scroll down and keep reading!</Highlight>
+              started, <Highlight>scroll down and keep reading!</Highlight> The
+              introduction only takes a few minutes to read.
             </P>
             <EmojiSeparator
               nodes={[
@@ -215,7 +216,7 @@ export default () => (
               NOT talk about this startup investing firm.{' '}
               <Highlight>
                 Y Combinator is actually the name of{' '}
-                <Bold>an important concept in computer science</Bold>, and
+                <Bold>an interesting concept in computer science</Bold>, and
                 that’s what we’re going to talk about.
               </Highlight>
             </P>
@@ -225,7 +226,7 @@ export default () => (
                 <>
                   Y Combinator is actually the name of
                   <br />
-                  <Italic>an important concept in computer science</Italic>
+                  <Italic>an interesting concept in computer science</Italic>
                 </>
               }
             />
@@ -253,12 +254,12 @@ export default () => (
                         we wanted.
                       </P>
                       <P>
-                        Hackers would look at this and think,{' '}
+                        <Bold>Hackers</Bold> would look at this and think,{' '}
                         <Italic>
                           “That’s so cool. They’re named after the Y Combinator.
                           There must be something going on here.”
                         </Italic>{' '}
-                        And suits would look at it and think,{' '}
+                        And <Bold>suits</Bold> would look at it and think,{' '}
                         <Italic>“Y Combinator, what’s that?”</Italic>
                       </P>
                       <P>
@@ -274,8 +275,8 @@ export default () => (
               <Emoji>👨🏻‍🦳</Emoji> <Bold>Explanation of the above quote:</Bold>{' '}
               Paul Graham, a computer scientist,{' '}
               <Highlight>
-                wanted to invest in entrepreneurs who are also programmers
-                (“hackers” <Emoji>😎</Emoji>)
+                wanted to invest in entrepreneurs who are also programmers (“
+                <Bold>hackers</Bold>” <Emoji>😎</Emoji>)
               </Highlight>
               . So he named his investing firm “Y Combinator”, which is a
               computer science (programming) term, in order to attract hackers.
@@ -284,9 +285,10 @@ export default () => (
               And because Y Combinator is a very technical computer science
               concept,{' '}
               <Highlight>
-                he assumed businesspeople (“suits” <Emoji>👔</Emoji>) won’t
-                understand what it means.
-              </Highlight>
+                he assumed businesspeople (“<Bold>suits</Bold>”{' '}
+                <Emoji>👔</Emoji>) won’t understand what it means
+              </Highlight>{' '}
+              and therefore won’t be attracted.
             </P>
             <EmojiSeparator
               emojis={['😎', '🆚', '👔']}
@@ -294,11 +296,13 @@ export default () => (
                 <>
                   <Bold>Hackers vs Suits:</Bold>
                   <br />
-                  To attract programmers, Paul Graham
+                  To attract programmers
                   <br />
-                  named his investing firm “Y Combinator”,
+                  but not businesspeople,
                   <br />
-                  an important computer science concept.
+                  Paul Graham named his investing firm
+                  <br />
+                  “Y Combinator”
                 </>
               }
             />
@@ -314,8 +318,38 @@ export default () => (
         )
       },
       {
-        title: <>Y Combinator for Non-programmers</>,
-        content: <></>
+        title: <>Why teach Y Combinator for non-programmers?</>,
+        content: <></>,
+        footer: {
+          content: (
+            <>
+              <P>For programmers</P>
+              <P>Please ★ star it on GitHub!</P>
+            </>
+          )
+        }
+      },
+      {
+        title: <>How to teach Y Combinator for non-programmers</>,
+        content: <></>,
+        footer: {
+          content: (
+            <>
+              <P>Travel</P>
+            </>
+          )
+        }
+      },
+      {
+        title: <>Let’s begin!</>,
+        content: <></>,
+        footer: {
+          content: (
+            <>
+              <P>About me</P>
+            </>
+          )
+        }
       }
     ]}
   />
