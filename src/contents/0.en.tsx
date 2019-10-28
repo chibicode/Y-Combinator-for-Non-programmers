@@ -17,6 +17,7 @@ import {
   Hr
 } from 'src/components/ContentTags'
 import Emoji from 'src/components/Emoji'
+import EmojiNumber from 'src/components/EmojiNumber'
 import CustomEmoji from 'src/components/CustomEmoji'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import BubbleQuotes from 'src/components/BubbleQuotes'
@@ -27,7 +28,7 @@ import H from 'src/components/H'
 // import { lessonTitle } from 'src/lib/titles'
 import YoutubeEmbed from 'src/components/YoutubeEmbed'
 import { githubRepo } from 'src/lib/meta'
-// import * as R from 'src/components/Runners'
+import * as R from 'src/components/Runners'
 
 const StarOnGitHub = () => (
   <>
@@ -443,15 +444,25 @@ export default () => (
               </Highlight>
             </P>
             <P>
-              <Bold>And that’s important because…</Bold> I know many of my
-              non-programmer friends want to{' '}
-              <Italic>actually understand</Italic> difficult computer science
-              concepts, such as AI or blockchain,{' '}
+              <Bold>And that’s important because…</Bold> I know that{' '}
               <Highlight>
-                but they can’t because they don’t have programming knowledge
+                many of my non-programmer friends want to{' '}
+                <Italic>actually understand</Italic> difficult computer science
+                concepts
               </Highlight>
-              .
+              , such as AI or blockchain. They <Italic>genuinely</Italic> want
+              to understand how the software they’re using works.
             </P>
+            <P>
+              But they can’t learn it because{' '}
+              <Highlight>
+                they don’t have necessary programming knowledge
+              </Highlight>
+              . Pretty much all learning resources that teach difficult computer
+              science concepts <Italic>assume</Italic> that you know
+              programming.
+            </P>
+            <Hr />
             <P>
               <Emoji>😠</Emoji> <Bold>I want to change this.</Bold>{' '}
               <Highlight>
@@ -480,7 +491,7 @@ export default () => (
               computer science.
             </P>
             <P>
-              <Bold>The ideal way to teach computer science</Bold> would be to{' '}
+              The ideal way to teach computer science would be to{' '}
               <Highlight>teach programming first.</Highlight> However, learning
               to code takes time, and{' '}
               <Highlight>
@@ -550,14 +561,75 @@ export default () => (
       },
       {
         title: <>How to teach Y Combinator for non-programmers</>,
-        content: <></>,
-        footer: {
-          content: (
-            <>
-              <P>Why free? Why smartphone?</P>
-            </>
-          )
-        }
+        content: (
+          <>
+            <P>
+              <Bold>Puzzles, not programming:</Bold> In this course, I will
+              teach you Y Combinator using{' '}
+              <HighlightBold>puzzles</HighlightBold>. There’s no programming
+              involved.
+            </P>
+            <EmojiSeparator
+              emojis={['✨', '🧩', '✨']}
+              description={
+                <>
+                  Learn Y Combinator using puzzles.
+                  <br />
+                  No programming required!
+                </>
+              }
+            />
+            <P>
+              <Bold>The puzzles look like this:</Bold> I’ll explain how it works
+              on the next page, but for now,{' '}
+              <Highlight>
+                try pressing the <H args={{ name: 'run' }} /> button.
+              </Highlight>{' '}
+              It will calculate <EmojiNumber number={1} /> <Emoji>➕</Emoji>{' '}
+              <EmojiNumber number={1} />.
+            </P>
+            <R.Mcug>
+              You’ll be solving puzzles like this:
+              <br />
+              Try pressing <H args={{ name: 'run' }} />!
+            </R.Mcug>
+            <P>
+              These puzzles are great also because{' '}
+              <Highlight>they are optimized for smartphones</Highlight>. A lot
+              of “learn to code” resources are either (1){' '}
+              <Italic>great, but not smartphone-ready</Italic> or (2){' '}
+              <Italic>smartphone-ready, but not great.</Italic> I tried to fix
+              that. <Emoji>😉</Emoji>
+            </P>
+            <EmojiSeparator
+              emojis={['📱', '🧩', '💻']}
+              description={
+                <>
+                  Puzzles are optimized for smartphones.
+                  <br />
+                  They can be done on a computer too.
+                </>
+              }
+            />
+            <P>
+              <Bold>100% free, takes 2 to 3 hours:</Bold> Finally, this course
+              is <HighlightBold>100% free</HighlightBold> (no signup required)
+              and should take about <HighlightBold>2 to 3 hours</HighlightBold>{' '}
+              to read for most people.
+            </P>
+            <EmojiSeparator
+              emojis={['🆓', '🤗', '🆓']}
+              description={<>100% free!</>}
+            />
+            <P>
+              I had to pack a lot of materials so it can be read in under 3
+              hours, so <Highlight>it’s fast-paced and challenging.</Highlight>{' '}
+              You might find it difficult if you don’t enjoy puzzles, but{' '}
+              <Highlight>you’ll never get stuck</Highlight>. I made it so that
+              you can keep reading even if you don’t understand everything.
+            </P>
+          </>
+        )
       },
       {
         title: <>Let’s begin!</>,
