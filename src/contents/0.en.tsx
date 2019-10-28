@@ -632,8 +632,19 @@ export default () => (
         )
       },
       {
-        title: <>Let’s begin!</>,
-        content: <></>,
+        title: <>Let’s get started!</>,
+        content: (
+          <>
+            <EmojiSeparator emojis={['✨', '🙂', '✨']} />
+            <P>
+              <Bold>Let’s get started!</Bold>{' '}
+              <Highlight>
+                Press the button below to go to the next page!
+              </Highlight>
+            </P>
+            <NextLessonButton />
+          </>
+        ),
         footer: {
           content: (
             <>
