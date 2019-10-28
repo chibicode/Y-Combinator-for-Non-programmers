@@ -58,7 +58,7 @@ export default () => (
                 non-programmers can learn learn about{' '}
                 <HighlightBold>Y Combinator</HighlightBold>.
               </Highlight>{' '}
-              It’s <HighlightBold>100% free</HighlightBold> (no signup
+              It’s <HighlightBold>100% FREE</HighlightBold> (no signup
               required), and you can do it from your smartphone, tablet, or
               computer.
             </P>
@@ -66,7 +66,7 @@ export default () => (
               emojis={['📱', '🆓', '💻']}
               description={
                 <>
-                  It’s <HighlightBold>100% free</HighlightBold>, and you can do
+                  It’s <HighlightBold>100% FREE</HighlightBold>, and you can do
                   it from
                   <br />
                   your smartphone, tablet, or computer.
@@ -561,14 +561,14 @@ export default () => (
               }
             />
             <P>
-              <Bold>100% free, takes 2 to 3 hours:</Bold> Finally, this course
-              is <HighlightBold>100% free</HighlightBold> (no signup required)
+              <Bold>100% FREE, takes 2 to 3 hours:</Bold> Finally, this course
+              is <HighlightBold>100% FREE</HighlightBold> (no signup required)
               and should take about <HighlightBold>2 to 3 hours</HighlightBold>{' '}
               to read for most people.
             </P>
             <EmojiSeparator
               emojis={['🆓', '🤗', '🆓']}
-              description={<>100% free!</>}
+              description={<>100% FREE!</>}
             />
             <P>
               I had to pack a lot of materials so it can be read in under 3
