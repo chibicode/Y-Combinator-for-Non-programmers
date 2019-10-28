@@ -122,6 +122,7 @@ interface HProps {
     | {
         name: 'categoryNameColored'
         category: keyof typeof episodePrefixes
+        text?: React.ReactNode
       }
     | { name: 'stoppedForExplanation' }
     | { name: 'pageNotFound' }
@@ -203,7 +204,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
           color: ${prefixColors[args.category]};
         `}
       >
-        {episodePrefixes[args.category]}
+        {args.text || episodePrefixes[args.category]}
       </span>
     )
   }
@@ -1088,7 +1089,31 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
   }
   if (args.name === 'dateAndSource') {
     if (locale === 'en') {
-      return <>?</>
+      return (
+        <>
+          <P>
+            {args.includeAboutMe && (
+              <>
+                <Bold>Author:</Bold> <HighlightBold>Shu Uesugi</HighlightBold> (
+                <ExternalLink href="https://chibicode.com">
+                  Website
+                </ExternalLink>{' '}
+                &middot;{' '}
+                <ExternalLink href="https://twitter.com/chibicode">
+                  Twitter
+                </ExternalLink>
+                )
+                <br />
+              </>
+            )}
+            <Bold>Published on:</Bold>{' '}
+            <time dateTime={dateSchemaString}>{dateString}</time>
+            <br />
+            <Bold>Source code:</Bold>{' '}
+            <ExternalLink href={githubRepo}>Available on GitHub</ExternalLink>
+          </P>
+        </>
+      )
     } else {
       return (
         <>
