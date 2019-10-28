@@ -333,8 +333,23 @@ export default () => (
         content: (
           <>
             <P>
-              <Bold>You might be wondering:</Bold>
+              <Emoji>🤔</Emoji> <Bold>You might be wondering:</Bold>{' '}
+              <Highlight>
+                Why did I decide to teach Y Combinator for non-programmers?
+              </Highlight>{' '}
+              <Italic>Why not other topic? Why non-programmers?</Italic> Well,
+              here’s my answer.
             </P>
+            <EmojiSeparator
+              emojis={['❓', '🤔', '❓']}
+              description={
+                <>
+                  Why not other topic?
+                  <br />
+                  Why non-programmers?
+                </>
+              }
+            />
           </>
         ),
         footer: {
