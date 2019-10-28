@@ -519,7 +519,10 @@ export default () => (
             >
               <Hr />
               <P>
-                <Bold>For programmers, I recommend this video:</Bold>{' '}
+                <Bold>
+                  For programmers interested in learning about Y Combinator, I
+                  recommend this video:
+                </Bold>{' '}
                 <ExternalLink href="https://www.youtube.com/watch?v=FITJMJjASUs">
                   “Y Not- Adventures in Functional Programming”
                 </ExternalLink>
