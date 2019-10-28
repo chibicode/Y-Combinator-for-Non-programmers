@@ -35,7 +35,7 @@ import EmojiNumber from 'src/components/EmojiNumber'
 import TwitterEmbed from 'src/components/TwitterEmbed'
 import { shareId, shareVisible } from 'src/lib/twitter'
 import { dateString, dateSchemaString } from 'src/lib/date'
-import { githubRepo, jpBaseUrl, enBaseUrl } from 'src/lib/meta'
+import { githubRepo, jpBaseUrl } from 'src/lib/meta'
 import CustomEmoji from 'src/components/CustomEmoji'
 import InlinePrioritiesLabel from 'src/components/InlinePrioritiesLabel'
 import { VariableNames } from 'src/types/VariableNames'
@@ -166,6 +166,7 @@ interface HProps {
     | { name: 'whatTheNumberIsCaption' }
     | { name: 'runAndShowAllSteps' }
     | { name: 'ignoreForNow' }
+    | { name: 'aboutMe' }
 }
 
 const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
@@ -1136,9 +1137,9 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
             <br />
             <Bold>ソースコード:</Bold>{' '}
             <ExternalLink href={githubRepo}>GitHubで公開中</ExternalLink>
-            <br />
+            {/*<br />
             <Bold>英語版:</Bold>{' '}
-            <ExternalLink href={enBaseUrl}>英語版はこちら</ExternalLink>
+            <ExternalLink href={enBaseUrl}>英語版はこちら</ExternalLink>*/}
             {args.includeTwitter && (
               <>
                 <br />
@@ -1708,6 +1709,17 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
           省略
         </>
       )
+    }
+  }
+  if (args.name === 'aboutMe') {
+    if (locale === 'en') {
+      return (
+        <>
+          <P>?</P>
+        </>
+      )
+    } else {
+      return <></>
     }
   }
   throw new Error()

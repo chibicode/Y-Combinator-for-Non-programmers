@@ -11,10 +11,10 @@ import {
   P,
   HighlightBold,
   Bold,
-  Italic
+  Italic,
   // Ol,
   // OlLi,
-  // Hr
+  Hr
 } from 'src/components/ContentTags'
 import Emoji from 'src/components/Emoji'
 import CustomEmoji from 'src/components/CustomEmoji'
@@ -151,7 +151,7 @@ export default () => (
         }
       },
       {
-        title: <>Start now, or read the introduction</>,
+        title: <>Start now or read the introduction</>,
         content: (
           <>
             <P>
@@ -165,7 +165,8 @@ export default () => (
             <P>
               <Emoji>🤔</Emoji>{' '}
               <Bold>If you want to read the introduction</Bold> before you get
-              started, <Highlight>scroll down and keep reading!</Highlight>
+              started, <Highlight>scroll down and keep reading!</Highlight> The
+              introduction only takes a few minutes to read.
             </P>
             <EmojiSeparator
               nodes={[
@@ -215,7 +216,7 @@ export default () => (
               NOT talk about this startup investing firm.{' '}
               <Highlight>
                 Y Combinator is actually the name of{' '}
-                <Bold>an important concept in computer science</Bold>, and
+                <Bold>an interesting concept in computer science</Bold>, and
                 that’s what we’re going to talk about.
               </Highlight>
             </P>
@@ -225,14 +226,15 @@ export default () => (
                 <>
                   Y Combinator is actually the name of
                   <br />
-                  <Italic>an important concept in computer science</Italic>
+                  <Italic>an interesting concept in computer science</Italic>
                 </>
               }
             />
             <P>
               <Bold>In fact:</Bold> The startup investing firm Y Combinator was{' '}
-              <Italic>named after</Italic> this computer science concept. Paul
-              Graham, a co-founder of the firm, said this in{' '}
+              <Italic>named after</Italic> this computer science concept.{' '}
+              <Emoji>👨🏻‍🦳</Emoji> Paul Graham, a co-founder of the firm, said this
+              in{' '}
               <ExternalLink href="https://mixergy.com/interviews/y-combinator-paul-graham/">
                 his 2010 interview
               </ExternalLink>
@@ -245,19 +247,19 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        [Y Combinator is] a programming trick. … I wanted to
-                        call it Y Combinator just because I thought the Y
-                        Combinator was a really cool thing. So it would be the
-                        perfect name for picking out the kind of people that we
-                        wanted.
+                        [<Bold>Y Combinator is</Bold>] a programming trick. … I
+                        wanted to call it Y Combinator just because I thought
+                        the Y Combinator was a really cool thing. So it would be
+                        the perfect name for picking out the kind of people that
+                        we wanted.
                       </P>
                       <P>
-                        Hackers would look at this and think,{' '}
+                        <Bold>Hackers</Bold> would look at this and think,{' '}
                         <Italic>
                           “That’s so cool. They’re named after the Y Combinator.
                           There must be something going on here.”
                         </Italic>{' '}
-                        And suits would look at it and think,{' '}
+                        And <Bold>suits</Bold> would look at it and think,{' '}
                         <Italic>“Y Combinator, what’s that?”</Italic>
                       </P>
                       <P>
@@ -270,11 +272,11 @@ export default () => (
               ]}
             />
             <P>
-              <Bold>Explanation of the above quote:</Bold> Paul Graham, a
-              computer scientist,{' '}
+              <Emoji>👨🏻‍🦳</Emoji> <Bold>Explanation of the above quote:</Bold>{' '}
+              Paul Graham, a computer scientist,{' '}
               <Highlight>
-                wanted to invest in entrepreneurs who are also programmers
-                (“hackers” <Emoji>😎</Emoji>)
+                wanted to invest in entrepreneurs who are also programmers (“
+                <Bold>hackers</Bold>” <Emoji>😎</Emoji>)
               </Highlight>
               . So he named his investing firm “Y Combinator”, which is a
               computer science (programming) term, in order to attract hackers.
@@ -283,9 +285,10 @@ export default () => (
               And because Y Combinator is a very technical computer science
               concept,{' '}
               <Highlight>
-                he assumed businesspeople (“suits” <Emoji>👔</Emoji>), who he
-                didn’t care about, won’t understand what it means.
-              </Highlight>
+                he assumed businesspeople (“<Bold>suits</Bold>”{' '}
+                <Emoji>👔</Emoji>) won’t understand what it means
+              </Highlight>{' '}
+              and therefore won’t be attracted.
             </P>
             <EmojiSeparator
               emojis={['😎', '🆚', '👔']}
@@ -293,16 +296,88 @@ export default () => (
                 <>
                   <Bold>Hackers vs Suits:</Bold>
                   <br />
-                  To attract programmers, Paul Graham
+                  To attract programmers
                   <br />
-                  named his investing firm “Y Combinator”,
+                  but not businesspeople,
                   <br />
-                  an important computer science concept.
+                  Paul Graham named his investing firm
+                  <br />
+                  “Y Combinator”
                 </>
               }
             />
+            <P>
+              <Emoji>😉</Emoji> <Bold>But don’t worry:</Bold>{' '}
+              <Highlight>
+                Even if you have no programming background, by the time you
+                finish this course, you’ll understand what Y Combinator is.
+              </Highlight>
+            </P>
+            <P>Let’s now talk about this course!</P>
           </>
         )
+      },
+      {
+        title: <>Why teach Y Combinator for non-programmers?</>,
+        content: <></>,
+        footer: {
+          content: (
+            <>
+              <P>For programmers</P>
+              <P>Please ★ star it on GitHub!</P>
+            </>
+          )
+        }
+      },
+      {
+        title: <>How to teach Y Combinator for non-programmers</>,
+        content: <></>,
+        footer: {
+          content: (
+            <>
+              <P>Travel</P>
+            </>
+          )
+        }
+      },
+      {
+        title: <>Let’s begin!</>,
+        content: <></>,
+        footer: {
+          content: (
+            <>
+              <CardContent
+                preview={{
+                  text: <>Continue reading</>,
+                  content: (
+                    <>
+                      <P>
+                        <Emoji>👨🏻‍💻</Emoji> <Bold>About me:</Bold> Sorry for not
+                        introducing myself earlier!{' '}
+                        <Highlight>
+                          I’m <Bold>Shu Uesugi</Bold>, a full-stack developer
+                          based in San Francisco Bay Area, USA.
+                        </Highlight>
+                      </P>
+                      <P>
+                        <Emoji>👋</Emoji> <Bold>Available for hire:</Bold>{' '}
+                        <Highlight>
+                          I’m looking for a{' '}
+                          <Bold>full-time senior engineering position</Bold>.
+                        </Highlight>{' '}
+                        Press “Continue reading” below to learn more about me!{' '}
+                        <Emoji>😉</Emoji>
+                      </P>
+                    </>
+                  )
+                }}
+              >
+                <Hr />
+                <P>?</P>
+              </CardContent>
+            </>
+          )
+        }
       }
     ]}
   />
