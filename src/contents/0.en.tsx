@@ -25,9 +25,22 @@ import CardContent from 'src/components/CardContent'
 import Toc from 'src/components/Toc'
 import H from 'src/components/H'
 // import { lessonTitle } from 'src/lib/titles'
-// import YoutubeEmbed from 'src/components/YoutubeEmbed'
-// import { githubRepo } from 'src/lib/meta'
+import YoutubeEmbed from 'src/components/YoutubeEmbed'
+import { githubRepo } from 'src/lib/meta'
 // import * as R from 'src/components/Runners'
+
+const StarOnGitHub = () => (
+  <>
+    <P>
+      <Bold>Also, for programmers:</Bold> This course is written in TypeScript
+      and React, and{' '}
+      <ExternalLink href={githubRepo}>
+        the source is available on GitHub
+      </ExternalLink>
+      . Please ★ star it! <Emoji>😉</Emoji>
+    </P>
+  </>
+)
 
 export default () => (
   <EpisodeCardList
@@ -467,7 +480,7 @@ export default () => (
               computer science.
             </P>
             <P>
-              <Bold>An ideal way to teach computer science</Bold> would be to{' '}
+              <Bold>The ideal way to teach computer science</Bold> would be to{' '}
               <Highlight>teach programming first.</Highlight> However, learning
               to code takes time, and{' '}
               <Highlight>
@@ -485,10 +498,50 @@ export default () => (
         ),
         footer: {
           content: (
-            <>
-              <P>For programmers</P>
-              <P>Please ★ star it on GitHub!</P>
-            </>
+            <CardContent
+              preview={{
+                text: <>Continue reading</>,
+                content: (
+                  <>
+                    <P>
+                      <Bold>For programmers:</Bold> This course is optimized for
+                      non-programmers,{' '}
+                      <Highlight>
+                        so if you’re a programmer and want to learn Y
+                        Combinator, there are other better resources.
+                      </Highlight>{' '}
+                      Press “Continue reading” below to learn more.
+                    </P>
+                  </>
+                ),
+                afterText: <StarOnGitHub />
+              }}
+            >
+              <Hr />
+              <P>
+                <Bold>For programmers, I recommend this video:</Bold>{' '}
+                <ExternalLink href="https://www.youtube.com/watch?v=FITJMJjASUs">
+                  “Y Not- Adventures in Functional Programming”
+                </ExternalLink>
+                .
+              </P>
+              <P>
+                This is a talk by{' '}
+                <ExternalLink href="https://en.wikipedia.org/wiki/Jim_Weirich">
+                  Jim Weirich
+                </ExternalLink>
+                , a legendary Ruby programmer who passed away in 2014. He gave
+                this talk at RubyConf 2012, and I was in the audience. It was an
+                amazing talk.
+              </P>
+              <YoutubeEmbed
+                width={560}
+                height={315}
+                src="https://www.youtube.com/embed/FITJMJjASUs"
+              />
+              <Hr />
+              <StarOnGitHub />
+            </CardContent>
           )
         }
       },
