@@ -1096,12 +1096,8 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
             {args.includeAboutMe && (
               <>
                 <Bold>Author:</Bold> <HighlightBold>Shu Uesugi</HighlightBold> (
-                <ExternalLink href="https://chibicode.com">
-                  Website
-                </ExternalLink>{' '}
-                &middot;{' '}
                 <ExternalLink href="https://twitter.com/chibicode">
-                  Twitter
+                  Twitter: @chibicode
                 </ExternalLink>
                 )
                 <br />
