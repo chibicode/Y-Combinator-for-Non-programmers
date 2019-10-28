@@ -1,7 +1,8 @@
 import locale from 'src/lib/locale'
 
-export const baseUrl =
-  locale === 'en' ? 'https://yc.chibicode.com' : 'https://yj.chibicode.com'
+export const jpBaseUrl = 'https://yj.chibicode.com'
+export const enBaseUrl = 'https://ycombinator.chibicode.com'
+export const baseUrl = locale === 'en' ? enBaseUrl : jpBaseUrl
 
 export const githubRepo = 'https://github.com/chibicode/yc'
 

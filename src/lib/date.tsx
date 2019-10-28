@@ -3,7 +3,7 @@ import { DateTime } from 'luxon'
 
 export const date = {
   jp: DateTime.fromISO('2019-09-09T00:00:00Z'),
-  en: DateTime.fromISO('2019-10-07T00:00:00Z')
+  en: DateTime.fromISO('2019-10-31T12:00:00Z')
 }[locale]
 
 export const dateString = {

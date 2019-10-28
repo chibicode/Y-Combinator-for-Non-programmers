@@ -23,6 +23,7 @@ interface EmojiSeparatorProps {
   description?: React.ReactNode
   noBottomMargin: boolean
   noTopMargin: boolean
+  topDescription?: React.ReactNode
 }
 
 const fontSize = (size: EmojiSeparatorProps['size']) =>
@@ -63,6 +64,7 @@ const EmojiSeparator = ({
   alignCenter,
   cssOverrides,
   description,
+  topDescription,
   noBottomMargin,
   noTopMargin
 }: EmojiSeparatorProps) => (
@@ -81,6 +83,21 @@ const EmojiSeparator = ({
     ]}
   >
     <>
+      {topDescription && (
+        <div
+          css={[
+            css`
+              font-size: ${fontSizes(0.85)};
+              color: ${colors('grey700')};
+              padding-top: ${spaces(0.5)};
+              max-width: ${fitWithinMobileWidth};
+              margin: 0 auto;
+            `
+          ]}
+        >
+          {topDescription}
+        </div>
+      )}
       <span
         css={css`
           display: flex;

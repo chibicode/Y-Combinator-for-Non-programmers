@@ -5,7 +5,7 @@ import ExpressionRunnerScrollAdjuster from 'src/components/ExpressionRunnerScrol
 export interface CardContentProps {
   children: React.ReactNode
   preview?: {
-    content: React.ReactNode
+    content?: React.ReactNode
     text: React.ReactNode
     afterText?: React.ReactNode
   }
