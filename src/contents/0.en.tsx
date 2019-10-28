@@ -283,8 +283,8 @@ export default () => (
               And because Y Combinator is a very technical computer science
               concept,{' '}
               <Highlight>
-                he assumed businesspeople (“suits” <Emoji>👔</Emoji>), who he
-                didn’t care about, won’t understand what it means.
+                he assumed businesspeople (“suits” <Emoji>👔</Emoji>) won’t
+                understand what it means.
               </Highlight>
             </P>
             <EmojiSeparator
