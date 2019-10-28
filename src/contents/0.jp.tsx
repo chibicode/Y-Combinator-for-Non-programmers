@@ -165,6 +165,20 @@ export default () => (
               </HighlightBold>
               」という方は、そのまま下に読み進めてみてください。
             </P>
+            <EmojiSeparator
+              nodes={[
+                <CustomEmoji type="singleArrowDown" />,
+                <CustomEmoji type="singleArrowDown" />,
+                <CustomEmoji type="singleArrowDown" />
+              ]}
+              topDescription={
+                <>
+                  説明を読んでから始めるには
+                  <br />
+                  下にスクロールしてください！
+                </>
+              }
+            />
           </>
         )
       },
