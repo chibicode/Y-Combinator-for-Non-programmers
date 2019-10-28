@@ -232,9 +232,20 @@ export default () => (
             />
             <P>
               <Bold>In fact:</Bold> The startup investing firm Y Combinator was{' '}
-              <Italic>named after</Italic> this computer science concept.{' '}
-              <Emoji>👨🏻‍🦳</Emoji> Paul Graham, a co-founder of the firm, said this
-              in{' '}
+              <Italic>named after</Italic> this computer science concept. On
+              their{' '}
+              <ExternalLink href="https://www.ycombinator.com/faq">
+                FAQ page
+              </ExternalLink>
+              , they say they chose the name “Y Combinator” because it’s{' '}
+              <Italic>“one of the coolest ideas in computer science.”</Italic>
+            </P>
+            <P>
+              <Bold>Furthermore:</Bold>{' '}
+              <HighlightBold>
+                <Emoji>👨🏻‍🦳</Emoji> Paul Graham
+              </HighlightBold>
+              , a co-founder of the firm, said this in{' '}
               <ExternalLink href="https://mixergy.com/interviews/y-combinator-paul-graham/">
                 his 2010 interview
               </ExternalLink>
@@ -319,7 +330,13 @@ export default () => (
       },
       {
         title: <>Why teach Y Combinator for non-programmers?</>,
-        content: <></>,
+        content: (
+          <>
+            <P>
+              <Bold>You might be wondering:</Bold>
+            </P>
+          </>
+        ),
         footer: {
           content: (
             <>
