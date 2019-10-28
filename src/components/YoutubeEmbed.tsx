@@ -12,7 +12,7 @@ const YoutubeEmbed = ({
   src: string
   width: number
   height: number
-  caption: React.ReactNode
+  caption?: React.ReactNode
 }) => (
   <div
     css={css`

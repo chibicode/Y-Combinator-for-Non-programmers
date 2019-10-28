@@ -17,6 +17,7 @@ import {
   Hr
 } from 'src/components/ContentTags'
 import Emoji from 'src/components/Emoji'
+import EmojiNumber from 'src/components/EmojiNumber'
 import CustomEmoji from 'src/components/CustomEmoji'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import BubbleQuotes from 'src/components/BubbleQuotes'
@@ -25,9 +26,22 @@ import CardContent from 'src/components/CardContent'
 import Toc from 'src/components/Toc'
 import H from 'src/components/H'
 // import { lessonTitle } from 'src/lib/titles'
-// import YoutubeEmbed from 'src/components/YoutubeEmbed'
-// import { githubRepo } from 'src/lib/meta'
-// import * as R from 'src/components/Runners'
+import YoutubeEmbed from 'src/components/YoutubeEmbed'
+import { githubRepo } from 'src/lib/meta'
+import * as R from 'src/components/Runners'
+
+const StarOnGitHub = () => (
+  <>
+    <P>
+      <Bold>Also, for programmers:</Bold> This course is written in TypeScript
+      and React, and{' '}
+      <ExternalLink href={githubRepo}>
+        the source is available on GitHub
+      </ExternalLink>
+      . Please ★ star it! <Emoji>😉</Emoji>
+    </P>
+  </>
+)
 
 export default () => (
   <EpisodeCardList
@@ -166,7 +180,7 @@ export default () => (
               <Emoji>🤔</Emoji>{' '}
               <Bold>If you want to read the introduction</Bold> before you get
               started, <Highlight>scroll down and keep reading!</Highlight> The
-              introduction only takes a few minutes to read.
+              introduction shouldn’t take much time to read.
             </P>
             <EmojiSeparator
               nodes={[
@@ -326,7 +340,22 @@ export default () => (
             </P>
             <P>Let’s now talk about this course!</P>
           </>
-        )
+        ),
+        footer: {
+          content: (
+            <>
+              <P>
+                <Bold>If you just want to get started:</Bold> Press the button
+                below to go to the next page!
+              </P>
+              <NextLessonButton />
+              <P>
+                <Bold>Or,</Bold> if you want to keep reading the introduction,
+                scroll down below!
+              </P>
+            </>
+          )
+        }
       },
       {
         title: <>Why teach Y Combinator for non-programmers?</>,
@@ -350,31 +379,272 @@ export default () => (
                 </>
               }
             />
+            <P>
+              <Bold>First:</Bold> I studied computer science at Carnegie Mellon
+              University (one of the top schools), and I can also say that{' '}
+              <Italic>
+                Y Combinator is one of the coolest concepts in computer science
+                I learned.
+              </Italic>
+            </P>
+            <P>
+              <Bold>So:</Bold>{' '}
+              <Highlight>From non-programmers’ point of view,</Highlight> by
+              taking this course,{' '}
+              <Highlight>
+                they can learn one of the coolest ideas in computer science as
+                quickly as possible
+              </Highlight>
+              , without having to learn to code or study other boring stuff
+              along the way. It could be the fastest way for non-programmers to
+              understand why computer science is interesting. <Emoji>😉</Emoji>
+            </P>
+            <EmojiSeparator
+              nodes={[
+                <Emoji>😒</Emoji>,
+                <CustomEmoji type="singleArrow" />,
+                <Emoji>😮</Emoji>
+              ]}
+              description={
+                <>
+                  Non-programmers can quickly understand
+                  <br />
+                  why computer science is interesting
+                </>
+              }
+            />
+            <P>But that’s not the only reason.</P>
+            <P>
+              <Bold>Y Combinator is a difficult concept.</Bold> If you ask a
+              random programmer in San Francisco to write the Y Combinator
+              program without looking it up,{' '}
+              <Highlight>I bet 95% of them won’t be able to do it.</Highlight>{' '}
+              It’s not easy.
+            </P>
+            <EmojiSeparator
+              emojis={['❌', '😭', '❌']}
+              description={
+                <>
+                  Most programmers won’t be able to
+                  <br />
+                  write the Y Combinator program
+                  <br />
+                  without looking it up
+                </>
+              }
+            />
+            <P>
+              <Emoji>🤔</Emoji> <Bold>So I thought:</Bold> If I could teach a
+              difficult computer science concept like Y Combinator to
+              non-programmers in 2 to 3 hours, that means{' '}
+              <Highlight>
+                I’d be able to teach{' '}
+                <Italic>other difficult computer science concepts</Italic> to
+                non-programmers too.
+              </Highlight>
+            </P>
+            <P>
+              <Bold>And that’s important because…</Bold> I know that{' '}
+              <Highlight>
+                many of my non-programmer friends want to{' '}
+                <Italic>actually understand</Italic> difficult computer science
+                concepts
+              </Highlight>
+              , such as AI or blockchain. They <Italic>genuinely</Italic> want
+              to understand how the software they’re using works.
+            </P>
+            <P>
+              But they can’t learn it because{' '}
+              <Highlight>
+                they don’t have necessary programming knowledge
+              </Highlight>
+              . Pretty much all learning resources that teach difficult computer
+              science concepts <Italic>assume</Italic> that you know
+              programming.
+            </P>
+            <Hr />
+            <P>
+              <Emoji>😠</Emoji> <Bold>I want to change this.</Bold>{' '}
+              <Highlight>
+                I want to make it easier for non-programmers to learn difficult
+                computer science concepts as quickly as possible
+              </Highlight>{' '}
+              - without having to learn to code. This course is my first step in
+              this direction.
+            </P>
+            <EmojiSeparator
+              emojis={['🙂', '✨', '🙂']}
+              description={
+                <>
+                  I want to make it easier for
+                  <br />
+                  non-programmers to learn
+                  <br />
+                  difficult computer science concepts
+                </>
+              }
+            />
+            <P>
+              <Bold>Downside:</Bold> I admit that this is not the best way to
+              introduce computer science to non-programmers. That’s why I’m
+              calling this course a <Italic>“wild”</Italic> introduction to
+              computer science.
+            </P>
+            <P>
+              The ideal way to teach computer science would be to{' '}
+              <Highlight>teach programming first.</Highlight> However, learning
+              to code takes time, and{' '}
+              <Highlight>
+                most people - especially adults - won’t ever learn to code.
+              </Highlight>{' '}
+              As{' '}
+              <ExternalLink href="https://a16z.com/2011/08/20/why-software-is-eating-the-world/">
+                software is eating the world
+              </ExternalLink>
+              , I believe there needs to be more ways to teach computer science
+              without requiring programming knowledge -{' '}
+              <Italic>even if they’re not ideal.</Italic>
+            </P>
           </>
         ),
         footer: {
           content: (
-            <>
-              <P>For programmers</P>
-              <P>Please ★ star it on GitHub!</P>
-            </>
+            <CardContent
+              preview={{
+                text: <>Continue reading</>,
+                content: (
+                  <>
+                    <P>
+                      <Bold>For programmers:</Bold> This course is optimized for
+                      non-programmers,{' '}
+                      <Highlight>
+                        so if you’re a programmer and want to learn Y
+                        Combinator, there are other better resources.
+                      </Highlight>{' '}
+                      Press “Continue reading” below to learn more.
+                    </P>
+                  </>
+                ),
+                afterText: <StarOnGitHub />
+              }}
+            >
+              <Hr />
+              <P>
+                <Bold>
+                  For programmers interested in learning about Y Combinator, I
+                  recommend this video:
+                </Bold>{' '}
+                <ExternalLink href="https://www.youtube.com/watch?v=FITJMJjASUs">
+                  “Y Not- Adventures in Functional Programming”
+                </ExternalLink>
+                .
+              </P>
+              <P>
+                This is a talk by{' '}
+                <ExternalLink href="https://en.wikipedia.org/wiki/Jim_Weirich">
+                  Jim Weirich
+                </ExternalLink>
+                , a legendary Ruby programmer who passed away in 2014. He gave
+                this talk at RubyConf 2012, and I was in the audience. It was an
+                amazing talk.
+              </P>
+              <YoutubeEmbed
+                width={560}
+                height={315}
+                src="https://www.youtube.com/embed/FITJMJjASUs"
+              />
+              <Hr />
+              <StarOnGitHub />
+            </CardContent>
           )
         }
       },
       {
         title: <>How to teach Y Combinator for non-programmers</>,
-        content: <></>,
-        footer: {
-          content: (
-            <>
-              <P>Travel</P>
-            </>
-          )
-        }
+        content: (
+          <>
+            <P>
+              <Bold>Puzzles, not programming:</Bold> In this course, I will
+              teach you Y Combinator using{' '}
+              <HighlightBold>puzzles</HighlightBold>. There’s no programming
+              involved.
+            </P>
+            <EmojiSeparator
+              emojis={['✨', '🧩', '✨']}
+              description={
+                <>
+                  Learn Y Combinator using puzzles.
+                  <br />
+                  No programming required!
+                </>
+              }
+            />
+            <P>
+              <Bold>The puzzles look like this:</Bold> I’ll explain how it works
+              on the next page, but for now,{' '}
+              <Highlight>
+                try pressing the <H args={{ name: 'run' }} /> button.
+              </Highlight>{' '}
+              It will calculate <EmojiNumber number={1} /> <Emoji>➕</Emoji>{' '}
+              <EmojiNumber number={1} />.
+            </P>
+            <R.Mcug>
+              You’ll be solving puzzles like this:
+              <br />
+              Try pressing <H args={{ name: 'run' }} />!
+            </R.Mcug>
+            <P>
+              These puzzles are great also because{' '}
+              <Highlight>they are optimized for smartphones</Highlight>. A lot
+              of “learn to code” resources are either (1){' '}
+              <Italic>great, but not smartphone-ready</Italic> or (2){' '}
+              <Italic>smartphone-ready, but not great.</Italic> I tried to fix
+              that. <Emoji>😉</Emoji>
+            </P>
+            <EmojiSeparator
+              emojis={['📱', '🧩', '💻']}
+              description={
+                <>
+                  Puzzles are optimized for smartphones.
+                  <br />
+                  They can be done on a computer too.
+                </>
+              }
+            />
+            <P>
+              <Bold>100% free, takes 2 to 3 hours:</Bold> Finally, this course
+              is <HighlightBold>100% free</HighlightBold> (no signup required)
+              and should take about <HighlightBold>2 to 3 hours</HighlightBold>{' '}
+              to read for most people.
+            </P>
+            <EmojiSeparator
+              emojis={['🆓', '🤗', '🆓']}
+              description={<>100% free!</>}
+            />
+            <P>
+              I had to pack a lot of materials so it can be read in under 3
+              hours, so <Highlight>it’s fast-paced and challenging.</Highlight>{' '}
+              You might find it difficult if you don’t enjoy puzzles, but{' '}
+              <Highlight>you’ll never get stuck</Highlight>. I made it so that
+              you can keep reading even if you don’t understand everything.
+            </P>
+          </>
+        )
       },
       {
-        title: <>Let’s begin!</>,
-        content: <></>,
+        title: <>Let’s get started!</>,
+        content: (
+          <>
+            <EmojiSeparator emojis={['✨', '🙂', '✨']} />
+            <P>
+              <Bold>Let’s get started!</Bold>{' '}
+              <Highlight>
+                Press the button below to go to the next page!
+              </Highlight>
+            </P>
+            <NextLessonButton />
+          </>
+        ),
         footer: {
           content: (
             <>
