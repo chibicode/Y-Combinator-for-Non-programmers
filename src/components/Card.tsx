@@ -177,14 +177,13 @@ const Card = ({
         {footer && (
           <div
             css={css`
-              margin-top: ${spaces('-0.5')};
               padding-top: ${spaces(0.75)};
               padding-left: ${spaces(1)};
               padding-right: ${spaces(1)};
               padding-bottom: ${spaces(0.5)};
 
               ${ns} {
-                margin-top: ${spaces('-0.75')};
+                margin-top: ${spaces('-0.25')};
                 padding-top: ${spaces(1.25)};
                 padding-left: ${spaces(2)};
                 padding-right: ${spaces(2)};
