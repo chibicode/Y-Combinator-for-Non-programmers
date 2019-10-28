@@ -50,8 +50,8 @@ export const allColors = {
   pink600: pink[600],
   transparent: 'transparent',
   white: 'white',
-  white66: Color('#fff')
-    .alpha(0.66)
+  white75: Color('#fff')
+    .alpha(0.75)
     .hsl()
     .string(),
   green50: green[50],

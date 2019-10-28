@@ -111,7 +111,7 @@ const Card = ({
           <>
             <span
               css={css`
-                color: ${colors('white66')};
+                color: ${colors('white75')};
               `}
             >
               <H args={{ name: 'slide' }} />{' '}
@@ -125,7 +125,7 @@ const Card = ({
             </span>{' '}
             <span
               css={css`
-                color: ${colors('white66')};
+                color: ${colors('white75')};
                 font-weight: bold;
               `}
             >
