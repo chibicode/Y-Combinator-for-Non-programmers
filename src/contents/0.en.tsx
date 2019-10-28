@@ -166,7 +166,7 @@ export default () => (
               <Emoji>🤔</Emoji>{' '}
               <Bold>If you want to read the introduction</Bold> before you get
               started, <Highlight>scroll down and keep reading!</Highlight> The
-              introduction only takes a few minutes to read.
+              introduction shouldn’t take much time to read.
             </P>
             <EmojiSeparator
               nodes={[
@@ -352,7 +352,7 @@ export default () => (
             />
             <P>
               <Bold>First:</Bold> I studied computer science at Carnegie Mellon
-              University, and I can also say that{' '}
+              University (one of the top schools), and I can also say that{' '}
               <Italic>
                 Y Combinator is one of the coolest concepts in computer science
                 I learned.
@@ -366,8 +366,8 @@ export default () => (
                 they can learn one of the coolest ideas in computer science as
                 quickly as possible
               </Highlight>
-              , without having to learn other boring or difficult stuff along
-              the way. It could be the fastest way for non-programmers to
+              , without having to learn to code or study other boring stuff
+              along the way. It could be the fastest way for non-programmers to
               understand why computer science is interesting. <Emoji>😉</Emoji>
             </P>
             <EmojiSeparator
@@ -384,6 +384,88 @@ export default () => (
                 </>
               }
             />
+            <P>But that’s not the only reason.</P>
+            <P>
+              <Bold>Y Combinator is a difficult concept.</Bold> If you ask a
+              random programmer in San Francisco to write the Y Combinator
+              program without looking it up,{' '}
+              <Highlight>I bet 95% of them won’t be able to do it.</Highlight>{' '}
+              It’s not easy.
+            </P>
+            <EmojiSeparator
+              emojis={['❌', '😭', '❌']}
+              description={
+                <>
+                  Most programmers won’t be able to
+                  <br />
+                  write the Y Combinator program
+                  <br />
+                  without looking it up
+                </>
+              }
+            />
+            <P>
+              <Emoji>🤔</Emoji> <Bold>So I thought:</Bold> If I could teach a
+              difficult computer science concept like Y Combinator to
+              non-programmers in 2 to 3 hours, that means{' '}
+              <Highlight>
+                I’d be able to teach{' '}
+                <Italic>other difficult computer science concepts</Italic> to
+                non-programmers too.
+              </Highlight>
+            </P>
+            <P>
+              <Bold>And that’s important because…</Bold> I know many of my
+              non-programmer friends want to{' '}
+              <Italic>actually understand</Italic> difficult computer science
+              concepts, such as AI or blockchain,{' '}
+              <Highlight>
+                but they can’t because they don’t have programming knowledge
+              </Highlight>
+              .
+            </P>
+            <P>
+              <Emoji>😠</Emoji> <Bold>I want to change this.</Bold>{' '}
+              <Highlight>
+                I want to make it easier for non-programmers to learn difficult
+                computer science concepts as quickly as possible
+              </Highlight>{' '}
+              - without having to learn to code. This course is my first step in
+              this direction.
+            </P>
+            <EmojiSeparator
+              emojis={['🙂', '✨', '🙂']}
+              description={
+                <>
+                  I want to make it easier for
+                  <br />
+                  non-programmers to learn
+                  <br />
+                  difficult computer science concepts
+                </>
+              }
+            />
+            <P>
+              <Bold>Downside:</Bold> I admit that this is not the best way to
+              introduce computer science to non-programmers. That’s why I’m
+              calling this course a <Italic>“wild”</Italic> introduction to
+              computer science.
+            </P>
+            <P>
+              <Bold>An ideal way to teach computer science</Bold> would be to{' '}
+              <Highlight>teach programming first.</Highlight> However, learning
+              to code takes time, and{' '}
+              <Highlight>
+                most people - especially adults - won’t ever learn to code.
+              </Highlight>{' '}
+              As{' '}
+              <ExternalLink href="https://a16z.com/2011/08/20/why-software-is-eating-the-world/">
+                software is eating the world
+              </ExternalLink>
+              , I believe there needs to be more ways to teach computer science
+              without requiring programming knowledge -{' '}
+              <Italic>even if they’re not ideal.</Italic>
+            </P>
           </>
         ),
         footer: {
