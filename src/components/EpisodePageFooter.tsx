@@ -48,7 +48,7 @@ const EpisodePageFooter = () => {
         css={linkClasses}
       >
         <H args={{ name: 'aboutThisSite' }} />
-      </ExternalLink>
+      </ExternalLink>{' '}
       &middot;{' '}
       <ExternalLink href="https://github.com/twitter/twemoji" css={linkClasses}>
         Twemoji

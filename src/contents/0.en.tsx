@@ -7,10 +7,11 @@ import EpisodeCardList from 'src/components/EpisodeCardList'
 import {
   Highlight,
   // Img,
-  // ExternalLink,
+  ExternalLink,
   P,
   HighlightBold,
-  Bold
+  Bold,
+  Italic
   // Ol,
   // OlLi,
   // Hr
@@ -43,8 +44,9 @@ export default () => (
                 non-programmers can learn learn about{' '}
                 <HighlightBold>Y Combinator</HighlightBold>.
               </Highlight>{' '}
-              It’s <HighlightBold>100% free</HighlightBold>, and you can do it
-              from your smartphone, tablet, or computer.
+              It’s <HighlightBold>100% free</HighlightBold> (no signup
+              required), and you can do it from your smartphone, tablet, or
+              computer.
             </P>
             <EmojiSeparator
               emojis={['📱', '🆓', '💻']}
@@ -147,6 +149,60 @@ export default () => (
             </>
           )
         }
+      },
+      {
+        title: <>Have you heard of “Y Combinator”?</>,
+        content: (
+          <>
+            <P>
+              <Emoji>🤔</Emoji> <Bold>Have you heard of “Y Combinator”?</Bold>{' '}
+              If you’re into technology, you might have heard that{' '}
+              <Highlight>
+                Y Combinator is the name of a startup investing firm.
+              </Highlight>{' '}
+            </P>
+            <P>
+              <ExternalLink href="https://www.ycombinator.com/">
+                Y Combinator
+              </ExternalLink>
+              , the startup investing firm, has invested in more than 2000
+              startups since 2005.{' '}
+              <ExternalLink href="https://www.ycombinator.com/topcompanies/">
+                The combined valuation of top companies
+              </ExternalLink>{' '}
+              (such as AirBnB) is more than $150 billion dollars as of October
+              2019.
+            </P>
+            <EmojiSeparator
+              emojis={['💰', '😎', '💰']}
+              description={
+                <>
+                  Y Combinator is the name of
+                  <br />a startup investing firm
+                </>
+              }
+            />
+            <P>
+              <Emoji>⚠️</Emoji> <Bold>However:</Bold> In this course, we will
+              NOT talk about this startup investing firm.{' '}
+              <Highlight>
+                Y Combinator is actually the name of{' '}
+                <Bold>an important concept in computer science</Bold>, and
+                that’s what we’re going to talk about in this course.
+              </Highlight>
+            </P>
+            <EmojiSeparator
+              emojis={['✨', '💻', '✨']}
+              description={
+                <>
+                  Y Combinator is actually the name of
+                  <br />
+                  <Italic>an important concept in computer science</Italic>
+                </>
+              }
+            />
+          </>
+        )
       }
     ]}
   />
