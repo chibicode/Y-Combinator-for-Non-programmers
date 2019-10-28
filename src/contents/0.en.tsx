@@ -326,7 +326,22 @@ export default () => (
             </P>
             <P>Let’s now talk about this course!</P>
           </>
-        )
+        ),
+        footer: {
+          content: (
+            <>
+              <P>
+                <Bold>If you just want to get started:</Bold> Press the button
+                below to go to the next page!
+              </P>
+              <NextLessonButton />
+              <P>
+                <Bold>Or,</Bold> if you want to keep reading the introduction,
+                scroll down below!
+              </P>
+            </>
+          )
+        }
       },
       {
         title: <>Why teach Y Combinator for non-programmers?</>,
@@ -483,7 +498,7 @@ export default () => (
         footer: {
           content: (
             <>
-              <P>Travel</P>
+              <P>Why free? Why smartphone?</P>
             </>
           )
         }
