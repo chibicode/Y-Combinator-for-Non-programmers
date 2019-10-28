@@ -11,10 +11,10 @@ import {
   P,
   HighlightBold,
   Bold,
-  Italic
+  Italic,
   // Ol,
   // OlLi,
-  // Hr
+  Hr
 } from 'src/components/ContentTags'
 import Emoji from 'src/components/Emoji'
 import CustomEmoji from 'src/components/CustomEmoji'
@@ -346,7 +346,35 @@ export default () => (
         footer: {
           content: (
             <>
-              <P>About me</P>
+              <CardContent
+                preview={{
+                  text: <>Continue reading</>,
+                  content: (
+                    <>
+                      <P>
+                        <Emoji>👨🏻‍💻</Emoji> <Bold>About me:</Bold> Sorry for not
+                        introducing myself earlier!{' '}
+                        <Highlight>
+                          I’m <Bold>Shu Uesugi</Bold>, a full-stack developer
+                          based in San Francisco Bay Area, USA.
+                        </Highlight>
+                      </P>
+                      <P>
+                        <Emoji>👋</Emoji> <Bold>Available for hire:</Bold>{' '}
+                        <Highlight>
+                          I’m looking for a{' '}
+                          <Bold>full-time senior engineering position</Bold>.
+                        </Highlight>{' '}
+                        Press “Continue reading” below to learn more about me!{' '}
+                        <Emoji>😉</Emoji>
+                      </P>
+                    </>
+                  )
+                }}
+              >
+                <Hr />
+                <P>?</P>
+              </CardContent>
             </>
           )
         }
