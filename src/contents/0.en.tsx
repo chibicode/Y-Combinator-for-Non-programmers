@@ -231,8 +231,9 @@ export default () => (
             />
             <P>
               <Bold>In fact:</Bold> The startup investing firm Y Combinator was{' '}
-              <Italic>named after</Italic> this computer science concept. Paul
-              Graham, a co-founder of the firm, said this in{' '}
+              <Italic>named after</Italic> this computer science concept.{' '}
+              <Emoji>👨🏻‍🦳</Emoji> Paul Graham, a co-founder of the firm, said this
+              in{' '}
               <ExternalLink href="https://mixergy.com/interviews/y-combinator-paul-graham/">
                 his 2010 interview
               </ExternalLink>
@@ -270,8 +271,8 @@ export default () => (
               ]}
             />
             <P>
-              <Bold>Explanation of the above quote:</Bold> Paul Graham, a
-              computer scientist,{' '}
+              <Emoji>👨🏻‍🦳</Emoji> <Bold>Explanation of the above quote:</Bold>{' '}
+              Paul Graham, a computer scientist,{' '}
               <Highlight>
                 wanted to invest in entrepreneurs who are also programmers
                 (“hackers” <Emoji>😎</Emoji>)
@@ -302,16 +303,19 @@ export default () => (
               }
             />
             <P>
-              <Bold>But don’t worry:</Bold>{' '}
+              <Emoji>😉</Emoji> <Bold>But don’t worry:</Bold>{' '}
               <Highlight>
                 Even if you have no programming background, by the time you
                 finish this course, you’ll understand what Y Combinator is.
-              </Highlight>{' '}
-              <Emoji>😉</Emoji>
+              </Highlight>
             </P>
             <P>Let’s now talk about this course!</P>
           </>
         )
+      },
+      {
+        title: <>Y Combinator for Non-programmers</>,
+        content: <></>
       }
     ]}
   />
