@@ -279,11 +279,11 @@ export default () => (
                 <Bold>hackers</Bold>” <Emoji>😎</Emoji>)
               </Highlight>
               . So he named his investing firm “Y Combinator”, which is a
-              computer science (programming) term, in order to attract hackers.
+              computer science (programming) concept, in order to attract
+              hackers.
             </P>
             <P>
-              And because Y Combinator is a very technical computer science
-              concept,{' '}
+              And because Y Combinator is a very technical concept,{' '}
               <Highlight>
                 he assumed businesspeople (“<Bold>suits</Bold>”{' '}
                 <Emoji>👔</Emoji>) won’t understand what it means
