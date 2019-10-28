@@ -245,11 +245,11 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        [Y Combinator is] a programming trick. … I wanted to
-                        call it Y Combinator just because I thought the Y
-                        Combinator was a really cool thing. So it would be the
-                        perfect name for picking out the kind of people that we
-                        wanted.
+                        [<Bold>Y Combinator is</Bold>] a programming trick. … I
+                        wanted to call it Y Combinator just because I thought
+                        the Y Combinator was a really cool thing. So it would be
+                        the perfect name for picking out the kind of people that
+                        we wanted.
                       </P>
                       <P>
                         Hackers would look at this and think,{' '}
@@ -301,6 +301,15 @@ export default () => (
                 </>
               }
             />
+            <P>
+              <Bold>But don’t worry:</Bold>{' '}
+              <Highlight>
+                Even if you have no programming background, by the time you
+                finish this course, you’ll understand what Y Combinator is.
+              </Highlight>{' '}
+              <Emoji>😉</Emoji>
+            </P>
+            <P>Let’s now talk about this course!</P>
           </>
         )
       }
