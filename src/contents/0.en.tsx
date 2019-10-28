@@ -506,58 +506,7 @@ export default () => (
               <Italic>even if they’re not ideal.</Italic>
             </P>
           </>
-        ),
-        footer: {
-          content: (
-            <CardContent
-              preview={{
-                text: <>Continue reading</>,
-                content: (
-                  <>
-                    <P>
-                      <Bold>For programmers:</Bold> This course is optimized for
-                      non-programmers,{' '}
-                      <Highlight>
-                        so if you’re a programmer and want to learn Y
-                        Combinator, there are other better resources.
-                      </Highlight>{' '}
-                      Press “Continue reading” below to learn more.
-                    </P>
-                  </>
-                ),
-                afterText: <StarOnGitHub />
-              }}
-            >
-              <Hr />
-              <P>
-                <Bold>
-                  For programmers interested in learning about Y Combinator, I
-                  recommend this video:
-                </Bold>{' '}
-                <ExternalLink href="https://www.youtube.com/watch?v=FITJMJjASUs">
-                  “Y Not- Adventures in Functional Programming”
-                </ExternalLink>
-                .
-              </P>
-              <P>
-                This is a talk by{' '}
-                <ExternalLink href="https://en.wikipedia.org/wiki/Jim_Weirich">
-                  Jim Weirich
-                </ExternalLink>
-                , a legendary Ruby programmer who passed away in 2014. He gave
-                this talk at RubyConf 2012, and I was in the audience. It was an
-                amazing talk.
-              </P>
-              <YoutubeEmbed
-                width={560}
-                height={315}
-                src="https://www.youtube.com/embed/FITJMJjASUs"
-              />
-              <Hr />
-              <StarOnGitHub />
-            </CardContent>
-          )
-        }
+        )
       },
       {
         title: <>How to teach Y Combinator for non-programmers</>,
@@ -629,7 +578,58 @@ export default () => (
               you can keep reading even if you don’t understand everything.
             </P>
           </>
-        )
+        ),
+        footer: {
+          content: (
+            <CardContent
+              preview={{
+                text: <>Continue reading</>,
+                content: (
+                  <>
+                    <P>
+                      <Bold>For programmers:</Bold> This course is optimized for
+                      non-programmers,{' '}
+                      <Highlight>
+                        so if you’re a programmer and want to learn Y
+                        Combinator, there are other better resources.
+                      </Highlight>{' '}
+                      Press “Continue reading” below to learn more.
+                    </P>
+                  </>
+                ),
+                afterText: <StarOnGitHub />
+              }}
+            >
+              <Hr />
+              <P>
+                <Bold>
+                  For programmers interested in learning about Y Combinator, I
+                  recommend this video:
+                </Bold>{' '}
+                <ExternalLink href="https://www.youtube.com/watch?v=FITJMJjASUs">
+                  “Y Not- Adventures in Functional Programming”
+                </ExternalLink>
+                .
+              </P>
+              <P>
+                This is a talk by{' '}
+                <ExternalLink href="https://en.wikipedia.org/wiki/Jim_Weirich">
+                  Jim Weirich
+                </ExternalLink>
+                , a legendary Ruby programmer who passed away in 2014. He gave
+                this talk at RubyConf 2012, and I was in the audience. It was an
+                amazing talk.
+              </P>
+              <YoutubeEmbed
+                width={560}
+                height={315}
+                src="https://www.youtube.com/embed/FITJMJjASUs"
+              />
+              <Hr />
+              <StarOnGitHub />
+            </CardContent>
+          )
+        }
       },
       {
         title: <>Let’s get started!</>,
