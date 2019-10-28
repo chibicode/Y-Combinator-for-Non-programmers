@@ -350,6 +350,40 @@ export default () => (
                 </>
               }
             />
+            <P>
+              <Bold>First:</Bold> I studied computer science at Carnegie Mellon
+              University, and I can also say that{' '}
+              <Italic>
+                Y Combinator is one of the coolest concepts in computer science
+                I learned.
+              </Italic>
+            </P>
+            <P>
+              <Bold>So:</Bold>{' '}
+              <Highlight>From non-programmers’ point of view,</Highlight> by
+              taking this course,{' '}
+              <Highlight>
+                they can learn one of the coolest ideas in computer science as
+                quickly as possible
+              </Highlight>
+              , without having to learn other boring or difficult stuff along
+              the way. It could be the fastest way for non-programmers to
+              understand why computer science is interesting. <Emoji>😉</Emoji>
+            </P>
+            <EmojiSeparator
+              nodes={[
+                <Emoji>😒</Emoji>,
+                <CustomEmoji type="singleArrow" />,
+                <Emoji>😮</Emoji>
+              ]}
+              description={
+                <>
+                  Non-programmers can quickly understand
+                  <br />
+                  why computer science is interesting
+                </>
+              }
+            />
           </>
         ),
         footer: {
