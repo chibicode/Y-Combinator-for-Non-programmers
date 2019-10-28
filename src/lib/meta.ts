@@ -6,7 +6,10 @@ export const baseUrl = locale === 'en' ? enBaseUrl : jpBaseUrl
 
 export const githubRepo = 'https://github.com/chibicode/ycombinator'
 
-export const ogImageUrl = `${baseUrl}/static/images/og-image-${locale}-v5.png`
+export const ogImageUrl =
+  locale === 'en'
+    ? `${baseUrl}/static/images/og-image-en.png`
+    : `${baseUrl}/static/images/og-image-jp-v5.png`
 
 export const ogUrl = (episodeNumber: number) =>
   `${baseUrl}${episodeNumber > 0 ? `/${episodeNumber}/` : ''}`
