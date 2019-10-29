@@ -392,7 +392,7 @@ export default () => (
               nodes={[
                 <CustomEmoji type="lambda" />,
                 <CustomEmoji type="singleArrow" />,
-                <Emoji>🍱</Emoji>
+                <Emoji>💻</Emoji>
               ]}
               description={
                 <>
