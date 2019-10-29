@@ -32,7 +32,7 @@ import {
   InstructionTwo
 } from 'src/contents/4.en'
 
-const WillReturnQuote = () => (
+const WillReturnQuote = ({ covered }: { covered?: true }) => (
   <>
     <Ul>
       <UlLi>
@@ -42,7 +42,8 @@ const WillReturnQuote = () => (
         </Highlight>
       </UlLi>
       <UlLi>
-        You’ll be able to solve it by applying the rules we cover on this page.
+        You’ll be able to solve it by applying the rules we cover
+        {covered && <>ed</>} on this page.
       </UlLi>
     </Ul>
     <P>
@@ -142,7 +143,7 @@ export const Beginner5Rules = () => (
   </>
 )
 
-const WillReturn = () => (
+const WillReturn = ({ covered }: { covered?: true }) => (
   <>
     <EmojiSeparator
       emojis={['❓', '😈', '❓']}
@@ -154,7 +155,7 @@ const WillReturn = () => (
           <br />
           It can be solved by applying the rules
           <br />
-          we cover on this page.
+          we cover{covered && <>ed</>} on this page.
         </>
       }
     />
@@ -2023,17 +2024,32 @@ export default () => (
                         <Bold>Good for you!</Bold> And you’ve just completed the
                         beginner levels.
                       </P>
+                    </>
+                  )
+                },
+                {
+                  type: 'celebrate',
+                  children: (
+                    <>
+                      <P>Yay!</P>
+                    </>
+                  )
+                },
+                {
+                  type: 'devil',
+                  children: (
+                    <>
                       <P>
                         <Bold>Next up: Intermediate levels.</Bold> As I
                         mentioned earlier:
                       </P>
-                      <WillReturnQuote />
+                      <WillReturnQuote covered />
                     </>
                   )
                 }
               ]}
             />
-            <WillReturn />
+            <WillReturn covered />
             <BubbleQuotes
               quotes={[
                 {
