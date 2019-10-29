@@ -1954,7 +1954,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
             </Ul>
             <Hr />
             <P>
-              <Bold>Again:</Bold> Contact me at{' '}
+              <Bold>If you’re interested:</Bold> Contact me at{' '}
               <ExternalLink href="mailto:shu@chibicode.com">
                 <Highlight>shu@chibicode.com</Highlight>
               </ExternalLink>{' '}
