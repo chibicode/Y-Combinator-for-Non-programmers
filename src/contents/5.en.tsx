@@ -181,16 +181,16 @@ export default () => (
     cards={[
       {
         type: 'summary',
-        title: <>The last page of beginner levels</>,
+        title: <>This is the final beginner episode!</>,
         content: (
           <>
             <P>
-              <Bold>This is the last page of beginner levels.</Bold> Thank you
-              for following along so far!
+              <Bold>This is the final page of the beginner levels.</Bold> Thank
+              you for following along so far!
             </P>
             <EmojiSeparator
               emojis={['✨', '🤗', '✨']}
-              description={<>The last page of beginner levels!</>}
+              description={<>The final page of the beginner levels!</>}
             />
             <P>
               <Emoji>⚠️</Emoji> <Bold>Warning:</Bold>{' '}

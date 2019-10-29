@@ -28,12 +28,12 @@ export default () => (
     cards={[
       {
         type: 'summary',
-        title: <>This is the last advanced episode!</>,
+        title: <>This is the final advanced episode!</>,
         content: (
           <>
             <P>
               <Highlight>
-                This is the last page for the advanced levels!
+                This is the final page for the advanced levels!
               </Highlight>{' '}
               You’re almost there!
             </P>
