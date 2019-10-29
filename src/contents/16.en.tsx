@@ -111,7 +111,7 @@ export default () => (
             />
             <P>
               <Bold>However:</Bold> Alonzo Church <Italic>did not</Italic> call
-              it “lunchbox” when he invented it. Instead, he called it “
+              it a “lunchbox” when he invented it. Instead, he called it “
               <HighlightBold>Lambda calculus</HighlightBold>”.
             </P>
             <EmojiSeparator
@@ -125,7 +125,7 @@ export default () => (
                 <>
                   It was called <HighlightBold>“Lambda calculus”</HighlightBold>
                   <br />
-                  instead of “lunchbox”
+                  instead of a “lunchbox”
                 </>
               }
             />
@@ -157,9 +157,9 @@ export default () => (
             />
             <P>
               <Bold>Here is an example of lambda calculus.</Bold> The leftmost
-              letter, <HighlightBold>λ</HighlightBold>, is a Greek letter
-              <Italic>“lambda”</Italic>. That’s why it’s called{' '}
-              <Italic>“lambda calculus.”</Italic>
+              letter, <HighlightBold>λ</HighlightBold>, is a Greek letter “
+              <Italic>lambda</Italic>”. That’s why it’s called “
+              <Italic>lambda calculus.</Italic>”
             </P>
             <CenteredCode size="md">λA.B C</CenteredCode>
             <P>

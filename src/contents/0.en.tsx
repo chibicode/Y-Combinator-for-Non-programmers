@@ -242,8 +242,8 @@ export default () => (
               <ExternalLink href="https://www.ycombinator.com/faq">
                 FAQ page
               </ExternalLink>
-              , they say they chose the name “Y Combinator” because it’s{' '}
-              <Italic>“one of the coolest ideas in computer science.”</Italic>
+              , they say they chose the name “Y Combinator” because it’s “
+              <Italic>one of the coolest ideas in computer science.</Italic>”
             </P>
             <P>
               <Bold>Furthermore:</Bold>{' '}
@@ -275,8 +275,8 @@ export default () => (
                           “That’s so cool. They’re named after the Y Combinator.
                           There must be something going on here.”
                         </Italic>{' '}
-                        And <Bold>suits</Bold> would look at it and think,{' '}
-                        <Italic>“Y Combinator, what’s that?”</Italic>
+                        And <Bold>suits</Bold> would look at it and think, “
+                        <Italic>Y Combinator, what’s that?</Italic>”
                       </P>
                       <P>
                         That was what we wanted. We wanted hackers to notice us,
@@ -477,7 +477,7 @@ export default () => (
             <P>
               <Bold>Downside:</Bold> I admit that this is not the best way to
               introduce computer science to non-programmers. That’s why I’m
-              calling this course a <Italic>“wild”</Italic> introduction to
+              calling this course a “<Italic>wild</Italic>” introduction to
               computer science.
             </P>
             <P>
