@@ -119,7 +119,7 @@ export default () => (
                     <>
                       <P>
                         Hi Saya. Well, we have some bad news. The devil{' '}
-                        <Emoji>😈</Emoji> has stolen our mathboxes{' '}
+                        <Emoji>😈</Emoji> has taken our mathboxes{' '}
                         <CustomEmoji type="mathBox" />.
                       </P>
                       <P>

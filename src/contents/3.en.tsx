@@ -68,10 +68,10 @@ export default () => (
                       <P>Don’t worry. I’m not here to take your lives away…</P>
                       <P>
                         <Highlight>
-                          <Italic>
+                          <Bold>
                             However, I will take all of your mathboxes{' '}
                             <CustomEmoji type="mathBox" />.
-                          </Italic>{' '}
+                          </Bold>{' '}
                           They’re all mine now!
                         </Highlight>
                       </P>
@@ -80,11 +80,14 @@ export default () => (
                 },
                 {
                   type: 'scared',
+                  children: <P>What? No way!</P>
+                },
+                {
+                  type: 'crying',
                   children: (
-                    <P>
-                      What? No way! You can’t take our mathboxes! That’s too
-                      cruel!
-                    </P>
+                    <>
+                      <P>You can’t take our mathboxes! That’s too cruel!</P>
+                    </>
                   )
                 }
               ]}
@@ -97,8 +100,11 @@ export default () => (
         content: (
           <>
             <P>
-              <Bold>And just like that:</Bold> The devil has stolen{' '}
-              <Italic>every single mathbox</Italic> in Lambda Village.
+              <Bold>And just like that:</Bold>{' '}
+              <Highlight>
+                The devil has taken <Italic>every single mathbox</Italic> in
+                Lambda Village.
+              </Highlight>
             </P>
             <EmojiSeparator
               nodes={[
@@ -147,13 +153,14 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        That’s exactly why I took away your mathboxes.{' '}
+                        <Bold>
+                          That’s exactly why I took away your mathboxes.
+                        </Bold>{' '}
                         <Italic>It’s because you all are bad at math.</Italic>
                       </P>
                       <P>
                         You see, your math skill hasn’t improved because you’re
-                        relying on mathboxes to do even simple additions and
-                        subtractions.
+                        relying on mathboxes to do everything.
                       </P>
                     </>
                   )
@@ -175,8 +182,9 @@ export default () => (
                         <Italic>
                           I’m giving you an opportunity to finally study math
                         </Italic>
-                        . You should thank me for it!
+                        .
                       </P>
+                      <P>You should thank me for it!</P>
                     </>
                   )
                 },
@@ -227,18 +235,17 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        <Highlight>
-                          I’ll give you{' '}
-                          <Italic>
-                            a bunch of puzzles that require lots of thinking.
-                          </Italic>{' '}
-                          If you can solve <Italic>all</Italic> of them, I’ll
-                          give your mathboxes back.
-                        </Highlight>
+                        <Bold>How about … the puzzle challenge?</Bold>
                       </P>
                       <P>
-                        Since you all hadn’t spent much time studying, those
-                        puzzles might be too hard for you. Haha!
+                        <Highlight>
+                          <Bold>
+                            I’ll give you some puzzles that require lots of
+                            thinking.
+                          </Bold>{' '}
+                          If you can solve <Italic>all</Italic> of them, I’ll
+                          give your mathboxes back!
+                        </Highlight>
                       </P>
                     </>
                   )
@@ -255,9 +262,7 @@ export default () => (
                   type: 'brave',
                   children: (
                     <>
-                      <P>
-                        But…we have to solve them to get our mathboxes back!
-                      </P>
+                      <P>But…we have to get our mathboxes back!</P>
                       <P>We’ll accept your challenge, the devil!</P>
                     </>
                   )
@@ -274,11 +279,11 @@ export default () => (
             />
             <P>
               <Bold>So:</Bold> The villagers are now on a mission to solve the
-              devil’s puzzles and get the stolen mathboxes back.
+              devil’s puzzles and get the mathboxes back.
             </P>
             <EmojiSeparator
               emojis={['😠', '🆚', '😈']}
-              description={<>Gotta get the mathboxes back!</>}
+              description={<>Let’s take back the mathboxes!</>}
             />
           </>
         )
@@ -348,10 +353,11 @@ export default () => (
                       </P>
                       <P>
                         As you can see,{' '}
-                        <Italic>
-                          each lunchbox has several sections, and each section
-                          has some type of a food item.
-                        </Italic>
+                        <Highlight>
+                          each lunchbox has several <Bold>sections</Bold>, and
+                          each section has some type of a <Bold>food item</Bold>
+                          .
+                        </Highlight>
                       </P>
                     </>
                   )
@@ -394,11 +400,15 @@ export default () => (
                   type: 'surprised',
                   children: (
                     <>
-                      <P>It looks like a Japanese lunchbox!</P>
                       <P>
-                        <Italic>
+                        <Bold>It looks like a Japanese lunchbox!</Bold>
+                      </P>
+                      <P>
+                        <Highlight>
                           It has 3 sections, each containing a food item.
-                        </Italic>
+                        </Highlight>{' '}
+                        It has <EmojiWithText letter="a" /> and a{' '}
+                        <EmojiWithText letter="b" />.
                       </P>
                     </>
                   )
@@ -473,13 +483,9 @@ export default () => (
                   type: 'devil',
                   children: (
                     <>
+                      <P>Yeah, they’re similar.</P>
                       <P>
-                        Actually, <H args={{ name: 'bentoBoxPuzzle' }} /> is{' '}
-                        <Italic>related</Italic> to mathboxes, but we’ll talk
-                        about that later.
-                      </P>
-                      <P>
-                        For now, let’s talk about how we can{' '}
+                        Now, let’s talk about how we can{' '}
                         <H args={{ name: 'run', lowerCase: true }} />{' '}
                         <H
                           args={{ name: 'bentoBoxPuzzle', indefinite: true }}
@@ -517,11 +523,11 @@ export default () => (
                     <>
                       <P>
                         After running it,{' '}
-                        <Italic>
+                        <Highlight>
                           the bottom two <EmojiWithText letter="a" />{' '}
                           disappeared, and only the <EmojiWithText letter="b" />{' '}
                           is left!
-                        </Italic>
+                        </Highlight>
                       </P>
                     </>
                   )
@@ -542,11 +548,14 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        There is actually a{' '}
-                        <Italic>specific set of rules</Italic> that determines
-                        what happens when you{' '}
-                        <H args={{ name: 'run', lowerCase: true }} /> a
-                        lunchbox.
+                        Yes, and{' '}
+                        <Highlight>
+                          there is actually a{' '}
+                          <Italic>specific set of rules</Italic> that determines
+                          what happens when you{' '}
+                          <H args={{ name: 'run', lowerCase: true }} /> a
+                          lunchbox.
+                        </Highlight>
                       </P>
                       <P>
                         <Bold>Your task</Bold> is to{' '}
@@ -561,11 +570,13 @@ export default () => (
               emojis={['❓', '🍱', '❓']}
               description={
                 <>
-                  There’s a specific set of rules for
-                  <br />
-                  <H args={{ name: 'bentoBoxPuzzle' }} />.
-                  <br />
-                  Your task is to figure out what that is!
+                  <Highlight>
+                    There’s a specific set of rules for
+                    <br />
+                    <H args={{ name: 'bentoBoxPuzzle' }} />.
+                    <br />
+                    Your task is to figure out what that is!
+                  </Highlight>
                 </>
               }
             />
@@ -579,6 +590,14 @@ export default () => (
                         Hmm… I can’t tell what the rules are yet.{' '}
                         <Italic>Can we look at more examples?</Italic>
                       </P>
+                    </>
+                  )
+                },
+                {
+                  type: 'devil',
+                  children: (
+                    <>
+                      <P>Sure, let’s look at more examples.</P>
                     </>
                   )
                 }
@@ -601,9 +620,10 @@ export default () => (
             </P>
             <Hr />
             <P>
-              This one has <EmojiWithText letter="e" /> on the top and a{' '}
+              This one has <EmojiWithText letter="e" /> on the top row and a{' '}
               <EmojiWithText letter="c" /> and <EmojiWithText letter="d" /> on
-              the bottom. <H args={{ name: 'pressPlay', capitalize: true }} />:
+              the bottom row.{' '}
+              <H args={{ name: 'pressPlay', capitalize: true }} />:
             </P>
             <R.Zwpj />
             <P>
@@ -627,8 +647,10 @@ export default () => (
             />
             <Hr />
             <P>
-              Next, we’ll talk about the cases where there are{' '}
-              <Italic>more than one item on the top row</Italic>.
+              <Bold>Next,</Bold> we’ll talk about the cases where{' '}
+              <Highlight>
+                there are <Italic>more than one item on the top row</Italic>.
+              </Highlight>
             </P>
             <P>
               This one has <EmojiWithText letter="g" /> and{' '}
@@ -656,7 +678,7 @@ export default () => (
             </P>
             <Hr />
             <P>
-              They all follow <Italic>a pattern</Italic>.{' '}
+              <Bold>They all follow a pattern</Bold>.{' '}
               <Highlight>Can you guess what that is?</Highlight>
             </P>
             <EmojiSeparator
@@ -699,8 +721,9 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        Just for your reference, here are the four lunchboxes
-                        we’ve seen so far, and what happened when we ran them.
+                        <Bold>For your reference:</Bold> Here are the four
+                        lunchboxes we’ve seen so far, and what happened when we
+                        ran them.
                       </P>
                     </>
                   )
@@ -749,7 +772,9 @@ export default () => (
                         Alright.{' '}
                         <Highlight>
                           Let’s do a <H args={{ name: 'yesNoQuiz' }} /> then.
-                        </Highlight>{' '}
+                        </Highlight>
+                      </P>
+                      <P>
                         I’ll check if you’ve figured out the pattern correctly!
                       </P>
                     </>
