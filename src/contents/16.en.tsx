@@ -780,7 +780,7 @@ export default () => (
                     , which is the factorial of <EmojiNumber number={4} />.
                   </UlLi>
                   <UlLi>
-                    <Bold>Also:</Bold> If you change <Code>4</Code> on the
+                    <Bold>Also:</Bold> If you change the <Code>4</Code> on the
                     bottom to <Code>5</Code>, it will calculate the factorial of{' '}
                     <EmojiNumber number={5} />, which is <Code>120</Code>.
                   </UlLi>
