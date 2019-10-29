@@ -446,7 +446,7 @@ export default () => (
             </R.Xqjd>
             <ExpressionRunnerSeparator />
             <R.Gvxz>
-              If you <H args={{ name: 'run' }} /> it,
+              If you <H args={{ name: 'run', lowerCase: true }} /> it,
               <br />
               it will become a lunchbox
               <br />

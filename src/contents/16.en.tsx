@@ -76,7 +76,7 @@ export default () => (
                     <>
                       <P>
                         <Highlight>
-                          Is there any calculations that lunchboxes cannot do?
+                          Are there any calculations that lunchboxes cannot do?
                         </Highlight>
                       </P>
                     </>
@@ -267,7 +267,7 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        Is there any calculations that lunchboxes cannot do?
+                        Are there any calculations that lunchboxes cannot do?
                       </P>
                     </>
                   )
@@ -303,7 +303,7 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        Is there any calculations that{' '}
+                        Are there any calculations that{' '}
                         <HighlightBold>lambda calculus</HighlightBold> cannot
                         do?
                       </P>
@@ -427,7 +427,7 @@ export default () => (
             </P>
             <P>
               <Bold>Here’s an example of python’s “lambda” feature:</Bold> Take
-              a look at the python code below (we’ll use{' '}
+              a look at the Python code below (we’ll use{' '}
               <span css={pythonCss}>
                 <Bold>green</Bold>
               </span>{' '}
@@ -437,7 +437,7 @@ export default () => (
               (lambda A: A)('B')
             </CenteredCode>
             <P>
-              The above python code is pretty much the same as the lambda
+              The above Python code is pretty much the same as the lambda
               calculus expression below:
             </P>
             <CenteredCode size="md">λA.A B</CenteredCode>
@@ -451,7 +451,7 @@ export default () => (
               <Emoji>🅱️</Emoji> on the top remains
             </R.Gemh>
             <P>
-              Similarly, if you run the earlier python code, the result will be{' '}
+              Similarly, if you run the earlier Python code, the result will be{' '}
               <Code css={pythonCss}>'B'</Code> as well.
             </P>
             <CenteredCode python size="sm">

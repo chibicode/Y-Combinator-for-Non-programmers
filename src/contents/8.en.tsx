@@ -35,7 +35,7 @@ export const BlankNumberPlusOne = () => (
     </R.Eweo>
     <ExpressionRunnerSeparator />
     <R.Jxvy>
-      If you <H args={{ name: 'run' }} /> it,
+      If you <H args={{ name: 'run', lowerCase: true }} /> it,
       <br />
       it becomes a lunchobox
       <br />

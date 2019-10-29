@@ -601,7 +601,7 @@ export default () => (
                   type: 'saya',
                   children: (
                     <>
-                      <P>Let’s compare with the previous iteration again!</P>
+                      <P>Let’s compare it with the previous iteration again!</P>
                       <P>
                         I’ve highlighted the differences from the last time in{' '}
                         <Highlight>yellow</Highlight> below.
@@ -649,7 +649,7 @@ export default () => (
                         <UlLi>
                           <Highlight>
                             Another <CustomEmoji type="plusOne" /> icon was
-                            added on the bottom.
+                            added to the bottom.
                           </Highlight>
                         </UlLi>
                       </Ul>
@@ -773,7 +773,7 @@ export default () => (
                   type: 'saya',
                   children: (
                     <>
-                      <P>Let’s compare with the previous iteration again!</P>
+                      <P>Let’s compare it with the previous iteration again!</P>
                       <P>
                         I’ve highlighted the differences from the last time in{' '}
                         <Highlight>yellow</Highlight> below.
@@ -1368,7 +1368,7 @@ export default () => (
                 }
               ]}
             />
-            <R.Jaqs>You can reproduxe this mathbox…</R.Jaqs>
+            <R.Jaqs>You can reproduce this mathbox…</R.Jaqs>
             <ExpressionRunnerSeparator />
             <R.Zkon>…with this lunchbox!</R.Zkon>
             <BubbleQuotes

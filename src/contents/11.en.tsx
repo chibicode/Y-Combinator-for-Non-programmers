@@ -311,8 +311,8 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        Hey guys, looks like you’re struggling. Do you want some{' '}
-                        hint?
+                        Hey guys, it looks like you’re struggling. Do you want
+                        some hint?
                       </P>
                     </>
                   )
@@ -321,7 +321,7 @@ export default () => (
                   type: 'crying',
                   children: (
                     <>
-                      <P>Oh, thank you Minion! Please, give us a hint!</P>
+                      <P>Oh, thank you, Minion! Please, give us a hint!</P>
                     </>
                   )
                 },
@@ -622,7 +622,8 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        I see, that’s why it becomes <EmojiNumber number={1} />!
+                        I see - that’s why it becomes <EmojiNumber number={1} />
+                        !
                       </P>
                     </>
                   )

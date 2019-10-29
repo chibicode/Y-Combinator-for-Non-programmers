@@ -147,7 +147,7 @@ export default () => (
                     <>
                       <P>
                         <Bold>Now, here’s a question:</Bold> What happens when
-                        you <H args={{ name: 'run' }} /> it?
+                        you <H args={{ name: 'run', lowerCase: true }} /> it?
                       </P>
                     </>
                   )
@@ -758,7 +758,8 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        <Bold>Yes!</Bold> Saya’s method was a correct approach.
+                        <Bold>Yes!</Bold> Saya’s method was the correct
+                        approach.
                       </P>
                     </>
                   )
@@ -845,7 +846,7 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        Right. That’s what happened on the earlier example - the
+                        Right. That’s what happened in the earlier example - the
                         result was <EmojiNumber number={4} /> in either case.
                       </P>
                     </>
@@ -858,7 +859,7 @@ export default () => (
                       <P>
                         Yes. And I{' '}
                         <Highlight>
-                          <Bold>encourage</Bold> you to replace parts of
+                          <Bold>encourage</Bold> you to replace parts of a
                           lunchbox as much as possible
                         </Highlight>{' '}
                         to make it simpler. (like <Emoji>👧🏻</Emoji> Saya did)
@@ -1044,7 +1045,7 @@ export default () => (
                     <>
                       <P>
                         This mathbox repeats <CustomEmoji type="plusOne" />{' '}
-                        three times, and calculates <EmojiNumber number={3} />{' '}
+                        three times and calculates <EmojiNumber number={3} />{' '}
                         <Emoji>➕</Emoji> <EmojiNumber number={2} />.
                       </P>
                     </>
@@ -1194,7 +1195,7 @@ export default () => (
             </R.Qycx>
             <ExpressionRunnerSeparator />
             <R.Kjba>
-              Can be reproduced by this lunchbox?<Emoji>🤔</Emoji>
+              …can be reproduced by this lunchbox?<Emoji>🤔</Emoji>
             </R.Kjba>
             <BubbleQuotes
               quotes={[

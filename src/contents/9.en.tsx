@@ -258,7 +258,7 @@ export default () => (
         )
       },
       {
-        title: <>Let’s compare with the last time</>,
+        title: <>Let’s compare it with the last time</>,
         content: (
           <>
             <BubbleQuotes
@@ -268,7 +268,7 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        Let’s compare with the last time. Previously, we used
+                        Let’s compare it with the last time. Previously, we used
                         the following lunchbox:
                       </P>
                       <P>

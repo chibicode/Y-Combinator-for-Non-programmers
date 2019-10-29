@@ -721,7 +721,7 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        I see, that’s why we can ignore{' '}
+                        I see - that’s why we can ignore{' '}
                         <BottomRightBadge
                           inline
                           bottomRightBadgeType="funcUnbound"

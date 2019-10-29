@@ -81,7 +81,7 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        Yes! We’ve gotten all the features back. We won!{' '}
+                        Yes! We’ve got all the features back. We won!{' '}
                         <Emoji>🎉</Emoji>
                       </P>
                     </>
@@ -95,7 +95,7 @@ export default () => (
                 <CustomEmoji type="minusOne" />,
                 <Emoji>🔁</Emoji>
               ]}
-              description={<>We’ve gotten all the features back!</>}
+              description={<>We’ve got all the features back!</>}
             />
             <BubbleQuotes
               quotes={[
@@ -1627,7 +1627,7 @@ export default () => (
                       <P>
                         This is possible because of{' '}
                         <HighlightBold>Y Combinator</HighlightBold>, which is
-                        used in the bottom half of the above lunchobx.
+                        used in the bottom half of the above lunchbox.
                       </P>
                       <Ul>
                         <UlLi>
@@ -1705,7 +1705,7 @@ export default () => (
         )
       },
       {
-        title: <>Is there any calculations that lunchboxes cannot do?</>,
+        title: <>Are there any calculations that lunchboxes cannot do?</>,
         content: (
           <>
             <BubbleQuotes
@@ -1743,7 +1743,7 @@ export default () => (
                       <P>
                         <Bold>Well, I have a question:</Bold>{' '}
                         <Highlight>
-                          Is there any calculations that lunchboxes cannot do?
+                          Are there any calculations that lunchboxes cannot do?
                         </Highlight>
                       </P>
                     </>
