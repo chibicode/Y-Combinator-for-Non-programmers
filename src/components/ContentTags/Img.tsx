@@ -16,11 +16,11 @@ export const Img = ({
       {...props}
       alt={alt}
       css={
-        size === 'small' || size === 'medium'
+        size
           ? css`
-              max-width: ${size === 'small' ? 7 : 21}em;
+              max-width: ${size === 'small' ? 7 : 15}em;
               width: 100%;
-              margin: 0 auto;
+              margin: ${spaces(1.5)} auto ${caption ? 0 : spaces(1.5)};
               display: block;
             `
           : css`
