@@ -29,7 +29,7 @@ const useConditionalCards = (cards: EpisodeCardListType) => {
     }
   }
 
-  if (process.env.isDevelopment || locale === 'en') {
+  if (process.env.isDevelopment) {
     return {
       lastVisibleCardIndex: cards.length - 1,
       setLastVisibleCardIndex: () => {}
