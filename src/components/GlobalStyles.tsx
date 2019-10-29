@@ -22,7 +22,7 @@ const GlobalStyles = ({ children }: { children: React.ReactNode }) => {
             html {
               font-size: 18px;
               color: ${colors('grey900')};
-              line-height: ${lineHeights(1.5)};
+              line-height: ${lineHeights(1.55)};
             }
 
             body {
