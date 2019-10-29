@@ -1852,9 +1852,13 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
                 <Highlight>I’m looking at a wide range of areas</Highlight>. I
                 like companies that think machine learning is the new SQL (see{' '}
                 <ExternalLink href="https://www.ben-evans.com/benedictevans/2019/10/4/machine-learning-deployment">
-                  Benedict Evans’s article
-                </ExternalLink>
-                ). I don’t like whiteboard interviews, but{' '}
+                  this article
+                </ExternalLink>{' '}
+                and{' '}
+                <ExternalLink href="https://www.ben-evans.com/benedictevans/2018/06/22/ways-to-think-about-machine-learning-8nefy">
+                  this article
+                </ExternalLink>{' '}
+                by Benedict Evans). I don’t like whiteboard interviews, but{' '}
                 <Italic>
                   if you ask me to implement Y Combinator on a whiteboard
                 </Italic>
