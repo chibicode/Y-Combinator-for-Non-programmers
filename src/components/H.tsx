@@ -1924,9 +1924,9 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
                 )
               </UlLi>
               <UlLi>
-                <Bold>Current interests:</Bold>{' '}
-                <Highlight>Machine translation</Highlight> (I’m a professional
-                EN → JP translator) and{' '}
+                <Bold>Current interests:</Bold> As a professional EN → JP
+                translator, I’m interested in{' '}
+                <Highlight>machine translation</Highlight> and{' '}
                 <ExternalLink href="https://distill.pub/2017/aia/">
                   using AI to augment human intelligence
                 </ExternalLink>
