@@ -543,7 +543,7 @@ export default () => (
               emojis={['📱', '🧩', '💻']}
               description={
                 <>
-                  Puzzles are optimized for smartphones.
+                  The puzzles are optimized for smartphones.
                   <br />
                   They can be done on a computer too.
                 </>
@@ -562,9 +562,9 @@ export default () => (
             <P>
               I had to pack a lot of materials so it can be read in under 3
               hours, so <Highlight>it’s fast-paced and challenging.</Highlight>{' '}
-              You might find it difficult if you don’t enjoy puzzles, but{' '}
-              <Highlight>you’ll never get stuck</Highlight>. I made it so that
-              you can keep reading even if you don’t understand everything.
+              However, <Highlight>you’ll never get stuck</Highlight> - I made it
+              so that you can finish the course even if you don’t understand
+              everything (and that’s okay! <Emoji>🤗</Emoji>).
             </P>
           </>
         ),
