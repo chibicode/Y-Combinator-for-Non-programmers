@@ -229,9 +229,9 @@ export default () => (
               <HighlightBold>Y Combinator</HighlightBold>
             </ExpressionRunnerCaptionOnly>
             <P>
-              We had been talking about lunchboxes in this course.{' '}
+              We have been talking about lunchboxes in this course.{' '}
               <Highlight>
-                But in reality, we actually were talking about{' '}
+                But we really were talking about{' '}
                 <HighlightBold>lambda calculus</HighlightBold>.
               </Highlight>{' '}
               We used lunchboxes to make lambda calculus more approachable for
