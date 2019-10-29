@@ -48,8 +48,8 @@ export default () => (
         content: (
           <>
             <P>
-              In this episode, I’ll show you the most complicated lunchbox
-              you’ve seen.
+              In this page, I’ll show you the most complicated lunchbox you’ve
+              seen.
             </P>
             <EmojiSeparator
               emojis={['⚠️', '🍱', '⚠️']}

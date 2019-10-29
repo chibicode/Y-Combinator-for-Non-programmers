@@ -181,7 +181,7 @@ export default () => (
     cards={[
       {
         type: 'summary',
-        title: <>This is the final beginner episode!</>,
+        title: <>This is the final beginner level!</>,
         content: (
           <>
             <P>

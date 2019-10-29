@@ -65,7 +65,7 @@ export default () => (
         content: (
           <>
             <P>
-              In the last episode, a villager from Lambda Village asked the
+              In the last page, a villager from Lambda Village asked the
               following question:
             </P>
             <BubbleQuotes

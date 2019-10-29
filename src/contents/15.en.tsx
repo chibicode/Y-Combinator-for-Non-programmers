@@ -28,7 +28,7 @@ export default () => (
     cards={[
       {
         type: 'summary',
-        title: <>This is the final advanced episode!</>,
+        title: <>This is the final advanced level!</>,
         content: (
           <>
             <P>

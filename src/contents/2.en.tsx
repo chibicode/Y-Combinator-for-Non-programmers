@@ -179,7 +179,7 @@ export default () => (
           <>
             <P>
               <Bold>
-                We’ll start this episode with a{' '}
+                We’ll start this page with a{' '}
                 <Highlight>
                   <H args={{ name: 'yesNoQuiz' }} />
                 </Highlight>
