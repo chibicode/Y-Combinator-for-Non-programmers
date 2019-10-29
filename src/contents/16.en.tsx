@@ -174,8 +174,7 @@ export default () => (
               exactly the same as this lunchbox:
             </R.Kzkg>
             <P>
-              If you <H args={{ name: 'run', lowerCase: true }} /> the above
-              lunchbox, it will become <Emoji>🅱️</Emoji>.{' '}
+              If you run the above lunchbox, it will become <Emoji>🅱️</Emoji>.{' '}
               <H args={{ name: 'pressRun' }} />
             </P>
             <R.Unxf></R.Unxf>
@@ -183,7 +182,7 @@ export default () => (
               <Bold>Similarly:</Bold> If you “run” the earlier lambda calculus
               expression,{' '}
               <Highlight>
-                the result will also be <Emoji>🅱️</Emoji>.
+                the result will also be <Code>B</Code>.
               </Highlight>
             </P>
             <CenteredCode size="md">λA.B C</CenteredCode>
