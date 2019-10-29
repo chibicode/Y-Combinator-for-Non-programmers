@@ -613,7 +613,7 @@ export default () => (
                 <>
                   We can create a lunchbox that can
                   <br />
-                  repeat <Emoji>🔁</Emoji> some operations
+                  repeat <Emoji>🔁</Emoji> some calculations
                 </>
               }
             />
@@ -674,9 +674,9 @@ export default () => (
             />
             <P>
               So hopefully this course gave you an idea of what learning
-              computer science is like. As you learn it, you’ll be surprised how
-              many innovations in computer science are built on lots of simple
-              things!
+              computer science is like. As you learn it, you’ll be surprised
+              that most innovative ideas in computer science are based on lots
+              of simple ideas!
             </P>
           </>
         )
