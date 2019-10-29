@@ -690,14 +690,16 @@ export default () => (
             <Ol>
               <OlLi>
                 <Highlight>
-                  <Bold>Lunchboxes</Bold> are simple, but by combining them, you
-                  can create a lunchbox that can do complex calculations.
+                  <Emoji>🍱</Emoji> <Bold>Lunchboxes</Bold> are simple, but by
+                  combining them, you can create a lunchbox that can do complex
+                  calculations.
                 </Highlight>
               </OlLi>
               <OlLi>
                 <Highlight>
                   <Bold>Y Combinator</Bold> is a special kind of a lunchbox that
-                  allows you to repeat some calculations.
+                  allows you to <Emoji>🔁</Emoji> <Bold>repeat</Bold> any
+                  calculations.
                 </Highlight>
               </OlLi>
               <OlLi>
@@ -710,12 +712,16 @@ export default () => (
               <OlLi>
                 <Highlight>
                   <Bold>Computer science</Bold> is all about building a complex
-                  thing from simple things
-                </Highlight>
-                , and lunchboxes are a great example of this.
+                  thing from simple things.
+                </Highlight>{' '}
+                Lunchboxes - especially Y Combinator - are a great example of
+                this.
               </OlLi>
             </Ol>
             <EmojiSeparator emojis={['✨', '🍱', '✨']} />
+            <P>
+              That’s it for this course! <Emoji>🤗</Emoji>
+            </P>
           </>
         ),
         footer: {
@@ -723,14 +729,16 @@ export default () => (
             <>
               <CardContent
                 preview={{
-                  text: <>Try Y Combinator in the browser</>,
+                  text: <>Test Y Combinator in devtools</>,
                   content: (
                     <>
                       <P>
-                        <Bold>Are you a programmer?</Bold> If you’re a
-                        programmer and are interested in trying out{' '}
-                        <HighlightBold>Y Combinator</HighlightBold>, press “Try
-                        Y Combinator in the browser” below!
+                        <Bold>If you’re a programmer</Bold> and are interested
+                        in trying out the{' '}
+                        <HighlightBold>Y Combinator</HighlightBold> program,
+                        press “Test Y Combinator in devtools” below. You need to
+                        be on a desktop browser though - you can’t do it on a
+                        smartphone.
                       </P>
                     </>
                   )
@@ -778,9 +786,9 @@ export default () => (
                   </UlLi>
                 </Ul>
                 <P>
-                  Usually, to calculate the factorial of a number in JavaScript,
-                  you’d use loops like <Code>for</Code>, <Code>while</Code>, or{' '}
-                  <Code>reduce</Code>. Or you might use recursion.
+                  To calculate the factorial of a number in JavaScript, you’d
+                  usually use loops like <Code>for</Code>, <Code>while</Code>,
+                  or <Code>reduce</Code>. Or you might use recursion.
                 </P>
                 <P>
                   <Highlight>
