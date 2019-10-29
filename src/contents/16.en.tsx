@@ -407,8 +407,8 @@ export default () => (
               <Highlight>
                 Lambda calculus influenced many programming languages.
               </Highlight>{' '}
-              Popular programming languages people use today usually have a
-              feature inspired by lambda calculus.
+              Today’s popular programming languages usually have a feature that
+              originated from lambda calculus.
             </P>
             <P>
               <Bold>Example:</Bold> <HighlightBold>Python</HighlightBold> is one
@@ -421,7 +421,7 @@ export default () => (
             />
             <P>
               The python language has a feature called{' '}
-              <HighlightBold>“lambda”</HighlightBold>, which is inspired by
+              <HighlightBold>“lambda”</HighlightBold>, which is similar to
               lambda calculus.
             </P>
             <P>
@@ -430,7 +430,7 @@ export default () => (
               <span css={pythonCss}>
                 <Bold>green</Bold>
               </span>{' '}
-              for Python code).
+              for the Python code).
             </P>
             <CenteredCode python size="sm">
               (lambda A: A)('B')
@@ -464,7 +464,7 @@ export default () => (
               <Bold>Summary:</Bold>{' '}
               <Highlight>
                 Today’s popular programming languages like Python have a feature
-                inspired by lambda calculus.
+                that originated from lambda calculus.
               </Highlight>
             </P>
             <EmojiSeparator
@@ -479,7 +479,7 @@ export default () => (
                   <br />
                   like Python have a feature
                   <br />
-                  inspired by lambda calculus.
+                  that originated from lambda calculus.
                 </>
               }
             />
