@@ -1835,7 +1835,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
               <UlLi>
                 <Bold>I’m mainly looking for</Bold>{' '}
                 <Highlight>a senior engineering position</Highlight>. But I’m
-                also interested in product-leaning positions (Product design,
+                also interested in product-leaning positions (product design,
                 PM, DevRel, etc.) for developer-facing products. I’m better at
                 front-end than back-end, but can do both.
               </UlLi>
@@ -1843,8 +1843,22 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
                 <Bold>Location preference:</Bold>{' '}
                 <HighlightBold>Remote</HighlightBold> would be ideal. 2nd
                 preference is <Highlight>Los Angeles</Highlight>. I’m currently
-                in SF Bay Area, but my wife and I are looking to relocate to LA
-                or other more affordable places.
+                in SF Bay Area (3rd preference), but my wife and I are looking
+                to relocate to LA or other more affordable places.
+              </UlLi>
+              <UlLi>
+                <Bold>Other preferences:</Bold> My last full-time job was in
+                edtech/media, but{' '}
+                <Highlight>I’m looking at a wide range of areas</Highlight>. I
+                like companies that think machine learning is the new SQL (see{' '}
+                <ExternalLink href="https://www.ben-evans.com/benedictevans/2019/10/4/machine-learning-deployment">
+                  Benedict Evans’s article
+                </ExternalLink>
+                ). I don’t like whiteboard interviews, but{' '}
+                <Italic>
+                  if you ask me to implement Y Combinator on a whiteboard
+                </Italic>
+                , I think I’ll do well. <Emoji>😉</Emoji>
               </UlLi>
             </Ul>
             <Hr />
@@ -1912,13 +1926,15 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
                 a full-time job.
               </UlLi>
               <UlLi>
-                <Bold>Things I enjoy:</Bold>{' '}
-                <Highlight>Expository writing</Highlight> (like this course) and{' '}
+                <Bold>Things I’m pretty good at:</Bold>{' '}
+                <Highlight>Expository writing</Highlight> (like this course),{' '}
                 <Highlight>React/TypeScript</Highlight> (
                 <ExternalLink href="https://github.com/chibicode/ycombinator">
                   see the repo for this course
                 </ExternalLink>
-                )
+                ), and <Highlight>product design</Highlight> (but not visual
+                design). I’ve also worked with <Highlight>Rails</Highlight> from
+                version 1 to version 6.
               </UlLi>
               <UlLi>
                 <Bold>Current interests:</Bold> As a professional EN → JP
@@ -1927,7 +1943,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
                 <ExternalLink href="https://distill.pub/2017/aia/">
                   using AI to augment human intelligence
                 </ExternalLink>
-                .
+                . I try to read about deep learning in my spare time.
               </UlLi>
             </Ul>
             <Hr />
