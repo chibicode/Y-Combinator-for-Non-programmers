@@ -1883,7 +1883,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
                   </ExternalLink>{' '}
                   by Hans Rosling and others into Japanese.
                 </Highlight>{' '}
-                It went on sale in 2019 and became one of Japan’s top selling
+                It went on sale in 2019 and became one of Japan’s top-selling
                 nonfiction books of the year. It’s a great book -{' '}
                 <ExternalLink href="https://www.gatesnotes.com/Books/Factfulness">
                   take Bill Gates’s word for it

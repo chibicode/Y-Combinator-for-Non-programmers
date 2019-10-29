@@ -46,7 +46,7 @@ export default () => (
               <Emoji>🤗</Emoji> <Bold>Welcome!</Bold> This is an interactive
               online course where{' '}
               <Highlight>
-                non-programmers can learn learn about{' '}
+                non-programmers can learn about{' '}
                 <HighlightBold>Y Combinator</HighlightBold>.
               </Highlight>{' '}
               It’s <HighlightBold>100% FREE</HighlightBold> (no signup
@@ -253,8 +253,8 @@ export default () => (
               , a co-founder of the firm, said this in{' '}
               <ExternalLink href="https://mixergy.com/interviews/y-combinator-paul-graham/">
                 his 2010 interview
-              </ExternalLink>
-              , when asked why he named his firm “Y Combinator”:
+              </ExternalLink>{' '}
+              when asked why he named his firm “Y Combinator”:
             </P>
             <BubbleQuotes
               quotes={[
@@ -357,14 +357,14 @@ export default () => (
               <Highlight>
                 Why did I decide to teach Y Combinator for non-programmers?
               </Highlight>{' '}
-              <Italic>Why not other topic? Why non-programmers?</Italic> Well,
+              <Italic>Why not other topics? Why non-programmers?</Italic> Well,
               here’s my answer.
             </P>
             <EmojiSeparator
               emojis={['❓', '🤔', '❓']}
               description={
                 <>
-                  Why not other topic?
+                  Why not other topics?
                   <br />
                   Why non-programmers?
                 </>
@@ -380,7 +380,7 @@ export default () => (
             </P>
             <P>
               <Bold>So:</Bold>{' '}
-              <Highlight>From non-programmers’ point of view,</Highlight> by
+              <Highlight>From a non-programmer’s point of view,</Highlight> by
               taking this course,{' '}
               <Highlight>
                 they can learn one of the coolest ideas in computer science as
@@ -447,7 +447,7 @@ export default () => (
             <P>
               But they can’t learn it because{' '}
               <Highlight>
-                they don’t have necessary programming knowledge
+                they don’t have the necessary programming knowledge
               </Highlight>
               . Pretty much all learning resources that teach difficult computer
               science concepts <Italic>assume</Italic> that you know
@@ -492,7 +492,7 @@ export default () => (
               <ExternalLink href="https://a16z.com/2011/08/20/why-software-is-eating-the-world/">
                 software is eating the world
               </ExternalLink>
-              , I believe there needs to be more ways to teach computer science
+              , I believe there need to be more ways to teach computer science
               without requiring programming knowledge -{' '}
               <Italic>even if they’re not ideal.</Italic>
             </P>
