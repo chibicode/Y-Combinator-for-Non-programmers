@@ -106,6 +106,7 @@ const Card = ({
             background: ${slideLabelBgColor(color)};
             padding: ${spaces(0.25)} ${spaces(0.5)};
             border-radius: 9999px;
+            user-select: none;
           `}
         >
           <>

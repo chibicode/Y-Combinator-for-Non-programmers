@@ -118,7 +118,7 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        Oh, hey Saya. Well, we have some bad news. The devil{' '}
+                        Hi Saya. Well, we have some bad news. The devil{' '}
                         <Emoji>😈</Emoji> has stolen our mathboxes{' '}
                         <CustomEmoji type="mathBox" />.
                       </P>
@@ -143,8 +143,7 @@ export default () => (
                     <>
                       <P>We appreciate it, but this isn’t for kids.</P>
                       <P>
-                        We adults tried hard but couldn’t solve it. So I doubt
-                        you can.
+                        We tried hard but couldn’t solve it. So I doubt you can.
                       </P>
                     </>
                   )
@@ -241,7 +240,8 @@ export default () => (
       {
         title: (
           <>
-            What happens if you <H args={{ name: 'run' }} /> it?
+            What happens if you <H args={{ name: 'run', lowerCase: true }} />{' '}
+            it?
           </>
         ),
         content: (
@@ -515,7 +515,8 @@ export default () => (
                       </P>
                       <P>
                         <Highlight>
-                          What happens when you <H args={{ name: 'run' }} /> it?
+                          What happens when you{' '}
+                          <H args={{ name: 'run', lowerCase: true }} /> it?
                         </Highlight>
                       </P>
                     </>
@@ -530,7 +531,8 @@ export default () => (
             </R.Rqer>
             <ExpressionRunnerSeparator />
             <ExpressionRunnerCaptionOnly>
-              What happens when you <H args={{ name: 'run' }} /> it?
+              What happens when you{' '}
+              <H args={{ name: 'run', lowerCase: true }} /> it?
             </ExpressionRunnerCaptionOnly>
             <BubbleQuotes
               quotes={[
@@ -1461,7 +1463,7 @@ export default () => (
                       <P>
                         <Italic>Wasn’t that problem too difficult?</Italic>{' '}
                         There’s no way we could’ve come up with an answer
-                        quickly like Saya did.
+                        quickly as Saya did.
                       </P>
                       <P>
                         <Highlight>

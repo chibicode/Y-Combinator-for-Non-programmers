@@ -39,7 +39,7 @@ export const Problem = () => (
     <ExpressionRunnerSeparator />
     <R.Jzwg>
       <Highlight>
-        After you <H args={{ name: 'run' }} /> it,
+        After you <H args={{ name: 'run', lowerCase: true }} /> it,
         <br />
         the resulting lunchbox can be converted to <EmojiNumber number={1} />.
       </Highlight>
@@ -457,7 +457,8 @@ export default () => (
                         </UlLi>
                         <UlLi>
                           <Highlight>
-                            After you <H args={{ name: 'run' }} /> it,
+                            After you{' '}
+                            <H args={{ name: 'run', lowerCase: true }} /> it,
                           </Highlight>
                         </UlLi>
                         <UlLi>
@@ -813,7 +814,7 @@ export default () => (
               ]}
             />
             <R.Nuco>
-              When you <H args={{ name: 'run' }} /> it…
+              When you <H args={{ name: 'run', lowerCase: true }} /> it…
             </R.Nuco>
             <ExpressionRunnerSeparator />
             <R.Xwzc>
@@ -880,7 +881,8 @@ export default () => (
                         </UlLi>
                         <UlLi>
                           <Highlight>
-                            After you <H args={{ name: 'run' }} /> it,
+                            After you{' '}
+                            <H args={{ name: 'run', lowerCase: true }} /> it,
                           </Highlight>
                         </UlLi>
                         <UlLi>

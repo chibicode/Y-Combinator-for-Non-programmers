@@ -119,6 +119,7 @@ const ExpressionPrioritiesLabel = ({
           position: absolute;
           z-index: ${zIndices('expressionPriorityNumber')};
           left: ${left(variableSize)}em;
+          user-select: none;
         `,
         position === 'topleft'
           ? css`

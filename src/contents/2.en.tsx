@@ -545,7 +545,7 @@ export default () => (
                 to the left of <CustomEmoji type="plusOne" />, then…
               </UlLi>
               <UlLi>
-                When you <H args={{ name: 'run' }} /> it,{' '}
+                When you <H args={{ name: 'run', lowerCase: true }} /> it,{' '}
                 <CustomEmoji type="plusOne" /> gets repeated for{' '}
                 <CustomEmoji type="blankNumber" /> times.
               </UlLi>

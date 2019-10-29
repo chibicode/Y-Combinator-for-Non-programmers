@@ -123,7 +123,7 @@ export default () => (
               <Highlight>
                 <H args={{ name: 'bentoBoxPuzzle', postfix: 's' }} />
               </Highlight>
-              . A bentobox works as follows:
+              . A lunchbox works as follows:
             </P>
             <BasicRules includeFuncUnbound />
             <Hr />
@@ -198,7 +198,7 @@ export default () => (
                     <>
                       <P>
                         But before I give you the question, let me introduce you{' '}
-                        <Italic>my partner</Italic>.
+                        to <Italic>my partner</Italic>.
                       </P>
                     </>
                   )
@@ -610,7 +610,7 @@ export default () => (
               description={
                 <>
                   I’ll show you exactly how to convert
-                  <br />a luncbox into a mathbox!
+                  <br />a lunchbox into a mathbox!
                 </>
               }
             />
@@ -700,7 +700,7 @@ export default () => (
                         <H args={{ name: 'convertiblePatternFirstCaption' }} />
                       </R.Mgku>
                       <P>
-                        First, because there’s <EmojiWithText letter="e" /> on
+                        First, because there are <EmojiWithText letter="e" /> on
                         the left, we label all <EmojiWithText letter="e" /> as{' '}
                         <Emoji>🅰️</Emoji>.
                       </P>

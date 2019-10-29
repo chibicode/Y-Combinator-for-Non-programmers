@@ -191,8 +191,7 @@ export default () => (
                     <>
                       <P>
                         So… what do we need to do to get{' '}
-                        <Italic>all of the features</Italic>
-                        back?
+                        <Italic>all of the features</Italic> back?
                       </P>
                     </>
                   )
@@ -225,8 +224,9 @@ export default () => (
                     <>
                       <P>
                         <Highlight>
-                          So, if want <H args={{ name: 'minusOneFeature' }} />{' '}
-                          or <H args={{ name: 'repeatFeature' }} /> back…
+                          So, if you want{' '}
+                          <H args={{ name: 'minusOneFeature' }} /> or{' '}
+                          <H args={{ name: 'repeatFeature' }} /> back…
                         </Highlight>
                       </P>
                       <P>
@@ -856,7 +856,7 @@ export default () => (
                       <P>
                         <Bold>Well:</Bold> Just because you were able to
                         calculate <EmojiNumber number={1} /> <Emoji>➖</Emoji>{' '}
-                        <EmojiNumber number={1} />, it doesn’t necessary mean
+                        <EmojiNumber number={1} />, it doesn’t necessarily mean
                         that your lunchbox has reproduced{' '}
                         <H args={{ name: 'minusOneFeature' }} />.
                       </P>

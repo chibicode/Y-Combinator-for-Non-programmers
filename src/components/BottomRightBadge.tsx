@@ -76,6 +76,7 @@ const BottomRightBadge = ({
         css`
           display: flex;
           font-size: 0.35em;
+          user-select: none;
         `,
       inline &&
         css`
