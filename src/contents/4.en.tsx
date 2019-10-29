@@ -11,6 +11,7 @@ import {
 } from 'src/components/ContentTags'
 import BottomRightBadge from 'src/components/BottomRightBadge'
 import TopLeftBadgeWrapper from 'src/components/TopLeftBadgeWrapper'
+import TopLeftBadge from 'src/components/TopLeftBadge'
 import BubbleQuotes from 'src/components/BubbleQuotes'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import Emoji from 'src/components/Emoji'
@@ -97,11 +98,13 @@ export const BasicRules = ({
 export const Unmatched = () => (
   <>
     <P>
-      If none of <BottomRightBadge inline bottomRightBadgeType="funcArg" />
-      ’s and <BottomRightBadge inline bottomRightBadgeType="funcBound" />
-      ’s match,{' '}
+      <Bold>
+        If none of <BottomRightBadge inline bottomRightBadgeType="funcArg" />
+        ’s and <BottomRightBadge inline bottomRightBadgeType="funcBound" />
+        ’s match:
+      </Bold>{' '}
       <Highlight>
-        don’t do the copy step and simply remove{' '}
+        Skip the copy step and simply remove{' '}
         <BottomRightBadge inline bottomRightBadgeType="callArg" />
         ’s and <BottomRightBadge inline bottomRightBadgeType="funcArg" />
         ’s
@@ -208,7 +211,7 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        Let me explain. First,{' '}
+                        Let me explain. <Bold>First</Bold>,{' '}
                         <Highlight>you compare the bottom two items</Highlight>.
                       </P>
                       <P>
@@ -218,7 +221,7 @@ export default () => (
                         , then when you{' '}
                         <H args={{ name: 'run', lowerCase: true }} /> it,{' '}
                         <Highlight>
-                          we’re left with the <Italic>top item</Italic>
+                          we’re left with the <Italic>top row</Italic>
                         </Highlight>{' '}
                         at the end.
                       </P>
@@ -381,12 +384,8 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        <Italic>You’re exactly right!</Italic> Good job!{' '}
+                        <Bold>You’re exactly right!</Bold> Good job!{' '}
                         <Emoji>🎉</Emoji> <Emoji>🎉</Emoji> <Emoji>🎉</Emoji>
-                      </P>
-                      <P>
-                        I thought you’ll do much worse on these quizzes because
-                        you haven’t been studying math seriously. Not too bad!
                       </P>
                     </>
                   )
@@ -413,7 +412,7 @@ export default () => (
                   type: 'scared',
                   children: (
                     <>
-                      <P>Huh? Why?</P>
+                      <P>Huh? Why not?</P>
                     </>
                   )
                 },
@@ -422,9 +421,12 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        Before going to the next page, we still need to{' '}
-                        <Bold>formalize</Bold> the rules of{' '}
-                        <H args={{ name: 'bentoBoxPuzzle' }} />.
+                        <Bold>Because:</Bold>{' '}
+                        <Highlight>
+                          Before going to the next page, we still need to{' '}
+                          <Bold>formalize</Bold> the rules of{' '}
+                          <H args={{ name: 'bentoBoxPuzzle' }} />.
+                        </Highlight>
                       </P>
                     </>
                   )
@@ -455,17 +457,29 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        <Bold>Here’s what you stated:</Bold>
+                        <Bold>Here are the patterns you discovered:</Bold>
                       </P>
                       <Ul>
-                        <UlLi>Compare the bottom two items.</UlLi>
-                        <UlLi>If they’re the same, the top item remains.</UlLi>
-                        <UlLi>Otherwise, the bottom-right item remains.</UlLi>
+                        <UlLi>
+                          <Highlight>Compare the bottom two items.</Highlight>
+                        </UlLi>
+                        <UlLi>
+                          <Highlight>
+                            If they’re the same, the top item remains.
+                          </Highlight>
+                        </UlLi>
+                        <UlLi>
+                          <Highlight>
+                            Otherwise, the bottom-right item remains.
+                          </Highlight>
+                        </UlLi>
                       </Ul>
                       <P>
-                        This is <Italic>not wrong</Italic> but it also is{' '}
-                        <Italic>not detailed enough</Italic> to solve more
-                        difficult puzzles.
+                        <Highlight>
+                          They’re <Italic>not wrong</Italic>, but they are{' '}
+                          <Italic>not detailed enough</Italic> to solve more
+                          difficult puzzles.
+                        </Highlight>
                       </P>
                     </>
                   )
@@ -498,7 +512,7 @@ export default () => (
                 <>
                   We have to <Italic>formalize</Italic> the rules.
                   <br />
-                  We must be more <Italic>detailed</Italic>
+                  We must be more <Italic>detailed</Italic>.
                 </>
               }
             />
@@ -509,9 +523,12 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        <Bold>So:</Bold> I’ll explain to you the{' '}
-                        <Italic>formal</Italic>, more detailed rules of{' '}
-                        <H args={{ name: 'bentoBoxPuzzle' }} />.
+                        <Bold>So:</Bold>{' '}
+                        <Highlight>
+                          I’ll explain to you the <Italic>formal</Italic>, more
+                          detailed rules of{' '}
+                          <H args={{ name: 'bentoBoxPuzzle' }} />.
+                        </Highlight>
                       </P>
                       <P>
                         Once you understand it, I’ll give you more complex
@@ -525,8 +542,8 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        Okay… could you show me what the{' '}
-                        <Italic>formal rules</Italic> look like?
+                        Okay… show me what the <Italic>formal rules</Italic>{' '}
+                        look like!
                       </P>
                     </>
                   )
@@ -580,7 +597,8 @@ export default () => (
       {
         title: (
           <>
-            1. Label <BottomRightBadge inline bottomRightBadgeType="callArg" />{' '}
+            Step 1. Label:{' '}
+            <BottomRightBadge inline bottomRightBadgeType="callArg" />{' '}
             <BottomRightBadge inline bottomRightBadgeType="funcArg" />{' '}
             <BottomRightBadge inline bottomRightBadgeType="funcBound" />
           </>
@@ -674,7 +692,8 @@ export default () => (
       {
         title: (
           <>
-            2. Match <BottomRightBadge inline bottomRightBadgeType="funcArg" />{' '}
+            Step 2. Match:{' '}
+            <BottomRightBadge inline bottomRightBadgeType="funcArg" />{' '}
             <BottomRightBadge inline bottomRightBadgeType="funcBound" />{' '}
             <Emoji>✅</Emoji>
           </>
@@ -734,7 +753,7 @@ export default () => (
       {
         title: (
           <>
-            3. <Bold>Copy:</Bold>{' '}
+            Step 3. Copy:{' '}
             <BottomRightBadge inline bottomRightBadgeType="callArg" />{' '}
             <Emoji>↘️</Emoji>{' '}
             <TopLeftBadgeWrapper topLeftBadgeType="match">
@@ -782,12 +801,11 @@ export default () => (
                           bottomRightBadgeType="callArg"
                         />
                         ) is copied to where the matched{' '}
-                        <TopLeftBadgeWrapper topLeftBadgeType="match">
-                          <BottomRightBadge
-                            inline
-                            bottomRightBadgeType="funcBound"
-                          />
-                        </TopLeftBadgeWrapper>{' '}
+                        <TopLeftBadge topLeftBadgeType="match" inline />{' '}
+                        <BottomRightBadge
+                          inline
+                          bottomRightBadgeType="funcBound"
+                        />{' '}
                         is!
                       </P>
                     </>
@@ -801,7 +819,7 @@ export default () => (
       {
         title: (
           <>
-            4. <Bold>Remove:</Bold> <Emoji>💥</Emoji>{' '}
+            Step 4. Remove: <Emoji>💥</Emoji>{' '}
             <BottomRightBadge inline bottomRightBadgeType="callArg" />{' '}
             <BottomRightBadge inline bottomRightBadgeType="funcArg" />
           </>
@@ -903,21 +921,22 @@ export default () => (
               <BottomRightBadge inline bottomRightBadgeType="callArg" />
             </R.Ycxr>
             <P>
-              Then, the <EmojiWithText letter="f" postfix="s" /> match{' '}
-              <Emoji>✅</Emoji>…
+              <Bold>Then:</Bold> The <EmojiWithText letter="f" postfix="s" />{' '}
+              match <Emoji>✅</Emoji>…
             </P>
             <R.Dkdt />
             <P>
-              And therefore, both <EmojiWithText letter="g" /> and
-              <EmojiWithText letter="o" /> get copied to where the matched{' '}
-              <TopLeftBadgeWrapper topLeftBadgeType="match">
-                <BottomRightBadge inline bottomRightBadgeType="funcBound" />
-              </TopLeftBadgeWrapper>{' '}
-              is.
+              <Bold>Therefore:</Bold>{' '}
+              <Highlight>
+                Both <EmojiWithText letter="g" /> and{' '}
+                <EmojiWithText letter="o" /> get copied to where the matched{' '}
+                <TopLeftBadge topLeftBadgeType="match" inline />{' '}
+                <BottomRightBadge inline bottomRightBadgeType="funcBound" /> is.
+              </Highlight>
             </P>
             <R.Sxnt />
             <P>
-              Finally,{' '}
+              <Bold>Finally:</Bold>{' '}
               <BottomRightBadge inline bottomRightBadgeType="callArg" />
               ’s and <BottomRightBadge inline bottomRightBadgeType="funcArg" />
               ’s disappear…
@@ -991,7 +1010,7 @@ export default () => (
         ),
         content: (
           <>
-            <P>Let’s recap what we’ve learned so far:</P>
+            <P>Let’s review what we’ve learned so far:</P>
             <BasicRules />
             <BubbleQuotes
               quotes={[
@@ -999,7 +1018,7 @@ export default () => (
                   type: 'surprised',
                   children: (
                     <>
-                      <P>I see, now I understand fully what was going on.</P>
+                      <P>I see, now I understand everything clearly!</P>
                     </>
                   )
                 },
@@ -1009,10 +1028,10 @@ export default () => (
                     <>
                       <P>
                         Good. And{' '}
-                        <Italic>
+                        <Highlight>
                           by formalizing the rules in detail like this, we’ll be
-                          able to solve more complex puzzles later.
-                        </Italic>
+                          able to solve more complex puzzles.
+                        </Highlight>
                       </P>
                     </>
                   )
@@ -1051,8 +1070,8 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        But wait.{' '}
-                        <Italic>
+                        <Bold>But wait</Bold>.{' '}
+                        <Highlight>
                           What happens if{' '}
                           <BottomRightBadge
                             inline
@@ -1064,7 +1083,7 @@ export default () => (
                             bottomRightBadgeType="funcBound"
                           />
                           ’s don’t match?
-                        </Italic>{' '}
+                        </Highlight>{' '}
                         <Emoji>❌</Emoji>
                       </P>
                       <P>
@@ -1129,16 +1148,18 @@ export default () => (
         )
       },
       {
-        title: <>Let’s show all the steps</>,
+        title: <>Let’s go through all the steps</>,
         content: (
           <>
             <P>
-              <Bold>Review Time:</Bold> Let’s show all the steps again—this time
-              for cases where{' '}
-              <BottomRightBadge inline bottomRightBadgeType="funcArg" />
-              ’s and{' '}
-              <BottomRightBadge inline bottomRightBadgeType="funcBound" />
-              ’s don’t match.
+              <Bold>Review:</Bold> Let’s go through all the steps again—
+              <Highlight>
+                this time for cases where{' '}
+                <BottomRightBadge inline bottomRightBadgeType="funcArg" />
+                ’s and{' '}
+                <BottomRightBadge inline bottomRightBadgeType="funcBound" />
+                ’s don’t match.
+              </Highlight>
             </P>
             <EmojiSeparator
               size="mdsm"
@@ -1175,7 +1196,7 @@ export default () => (
       {
         title: (
           <>
-            <H args={{ name: 'summary' }} />: 一致しなかった場合
+            <H args={{ name: 'summary' }} />: If they don’t match
           </>
         ),
         type: 'summary',
@@ -1206,8 +1227,9 @@ export default () => (
                   type: 'thinking',
                   children: (
                     <>
+                      <P>Ok…</P>
                       <P>
-                        Alright. I understood them,{' '}
+                        I understood them,{' '}
                         <Italic>but I haven’t fully memorized them yet.</Italic>
                       </P>
                     </>
@@ -1218,9 +1240,10 @@ export default () => (
                   children: (
                     <>
                       <P>
+                        <Bold>It’s ok.</Bold> Don’t worry if you haven’t
+                        memorized the rules.{' '}
                         <Highlight>
-                          Don’t worry if you haven’t memorized them. We’ll
-                          review them again when we need them.
+                          We’ll do a review when we use them later.
                         </Highlight>
                       </P>
                     </>
@@ -1230,9 +1253,10 @@ export default () => (
                   type: 'relieved',
                   children: (
                     <>
+                      <P>Oh, that’s good to hear.</P>
                       <P>
-                        Oh, that’s good to hear. (Maybe the devil isn’t so evil
-                        after all… <Emoji>🤔</Emoji>)
+                        (Maybe the devil isn’t so evil after all…{' '}
+                        <Emoji>🤔</Emoji>)
                       </P>
                     </>
                   )
@@ -1245,7 +1269,9 @@ export default () => (
                         <Highlight>
                           On the next page, I’ll give you more challenging
                           puzzles.
-                        </Highlight>{' '}
+                        </Highlight>
+                      </P>
+                      <P>
                         If you want your mathboxes back, you better solve all of
                         them!
                       </P>
