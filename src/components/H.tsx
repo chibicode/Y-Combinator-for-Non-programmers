@@ -1879,9 +1879,9 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
                 <Highlight>
                   I co-translated a book called{' '}
                   <ExternalLink href="https://www.amazon.com/dp/B0756J1LLV/ref=cm_sw_r_tw_dp_U_x_256TDbEEVPQ98">
-                    “Factfulness”
+                    <Bold>“Factfulness”</Bold>
                   </ExternalLink>{' '}
-                  by Hans Rosling and others into Japanese.
+                  (by Hans Rosling and others) into Japanese.
                 </Highlight>{' '}
                 It went on sale in 2019 and became one of Japan’s top-selling
                 nonfiction books of the year. It’s a great book -{' '}
@@ -1897,9 +1897,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
                 src="/static/images/shu-uesugi-factfulness-square.jpg"
                 caption={
                   <>
-                    <Bold>The Japanese edition of “Factfulness”:</Bold>
-                    <br />
-                    Photo taken at Bạch Mai Hospital in Hanoi, Vietnam,
+                    Me at Bạch Mai Hospital in Hanoi, Vietnam,
                     <br />
                     where Hans Rosling (the author) had worked.
                   </>
