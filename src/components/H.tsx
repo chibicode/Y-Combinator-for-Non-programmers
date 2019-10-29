@@ -1829,8 +1829,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
                   Twitter: <Bold>@chibicode</Bold>
                 </Highlight>
               </ExternalLink>
-              . I’d also appreciate it if you could read until the end of this
-              course before emailing me - let me know what you think!
+              .
             </P>
             <Ul>
               <UlLi>
