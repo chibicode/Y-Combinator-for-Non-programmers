@@ -425,9 +425,8 @@ export default () => (
               }
             />
             <P>
-              <Emoji>🤔</Emoji> <Bold>So I thought:</Bold> If I could teach a
-              difficult computer science concept like Y Combinator to
-              non-programmers in 2 to 3 hours, that means{' '}
+              <Emoji>🤔</Emoji> <Bold>So I thought:</Bold> If I could teach Y
+              Combinator to non-programmers, that means{' '}
               <Highlight>
                 I’d be able to teach{' '}
                 <Italic>other difficult computer science concepts</Italic> to
@@ -493,8 +492,7 @@ export default () => (
                 software is eating the world
               </ExternalLink>
               , I believe there need to be more ways to teach computer science
-              without requiring programming knowledge -{' '}
-              <Italic>even if they’re not ideal.</Italic>
+              without requiring programming knowledge.
             </P>
           </>
         )
