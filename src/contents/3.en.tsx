@@ -237,8 +237,8 @@ export default () => (
                         </Highlight>
                       </P>
                       <P>
-                        Since you villagers hadn’t spent much time studying,
-                        those puzzles might be too hard for you. Haha!
+                        Since you all hadn’t spent much time studying, those
+                        puzzles might be too hard for you. Haha!
                       </P>
                     </>
                   )
@@ -397,7 +397,7 @@ export default () => (
                       <P>It looks like a Japanese lunchbox!</P>
                       <P>
                         <Italic>
-                          It has 3 sections, each containing some food item.
+                          It has 3 sections, each containing a food item.
                         </Italic>
                       </P>
                     </>
@@ -628,7 +628,7 @@ export default () => (
             <Hr />
             <P>
               Next, we’ll talk about the cases where there are{' '}
-              <Italic>more than one items on the top row</Italic>.
+              <Italic>more than one item on the top row</Italic>.
             </P>
             <P>
               This one has <EmojiWithText letter="g" /> and{' '}
@@ -699,7 +699,7 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        Just for your reference, here’s the four lunchboxes
+                        Just for your reference, here are the four lunchboxes
                         we’ve seen so far, and what happened when we ran them.
                       </P>
                     </>

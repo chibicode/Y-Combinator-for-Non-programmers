@@ -290,8 +290,8 @@ export default () => (
                       </P>
                       <P>
                         Each <CustomEmoji type="questionFoodGrey" /> icon{' '}
-                        <Italic>represents some food item</Italic>, but we’ll
-                        talk about that later.
+                        <Italic>represents a food item</Italic>, but we’ll talk
+                        about that later.
                       </P>
                     </>
                   )

@@ -71,7 +71,7 @@ export default () => (
               ]}
               description={
                 <>
-                  <Bold>Mathbox</Bold> is a magical tool that can do math.
+                  <Bold>Mathbox</Bold> is a magical tool that can do the math.
                 </>
               }
             />
@@ -106,7 +106,7 @@ export default () => (
                 There’s <EmojiNumber number={1} /> on the top, and
               </UlLi>
               <UlLi>
-                There’s an “plus 1” icon <CustomEmoji type="plusOne" /> on the
+                There’s a “plus 1” icon <CustomEmoji type="plusOne" /> on the
                 bottom.
               </UlLi>
             </Ul>

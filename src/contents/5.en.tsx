@@ -190,7 +190,7 @@ export default () => (
             </P>
             <EmojiSeparator
               emojis={['✨', '🤗', '✨']}
-              description={<>THe last page of beginner levels!</>}
+              description={<>The last page of beginner levels!</>}
             />
             <P>
               <Emoji>⚠️</Emoji> <Bold>Warning:</Bold>{' '}
@@ -1129,7 +1129,7 @@ export default () => (
               ]}
             />
             <R.Gtdu>
-              There’s only item (a <EmojiWithText letter="b" />)<br />
+              There’s only ONE item (a <EmojiWithText letter="b" />)<br />
               on the bottom row
             </R.Gtdu>
             <BubbleQuotes
@@ -1141,7 +1141,7 @@ export default () => (
                       <P>
                         This one looks new too.{' '}
                         <Italic>
-                          There’s only one item (a <EmojiWithText letter="b" />)
+                          There’s only ONE item (a <EmojiWithText letter="b" />)
                           on the bottom row.
                         </Italic>
                       </P>
@@ -2025,7 +2025,7 @@ export default () => (
                       </P>
                       <P>
                         <Bold>Next up: Intermediate levels.</Bold> As I
-                        mentionred earlier:
+                        mentioned earlier:
                       </P>
                       <WillReturnQuote />
                     </>
@@ -2052,7 +2052,7 @@ export default () => (
                   type: 'devil',
                   children: (
                     <>
-                      <P>Of course I will.</P>
+                      <P>Of course, I will.</P>
                     </>
                   )
                 },

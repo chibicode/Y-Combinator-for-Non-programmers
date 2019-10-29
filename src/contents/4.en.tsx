@@ -463,7 +463,7 @@ export default () => (
                         <UlLi>Otherwise, the bottom-right item remains.</UlLi>
                       </Ul>
                       <P>
-                        This is <Italic>not wrong</Italic>, but also is{' '}
+                        This is <Italic>not wrong</Italic> but it also is{' '}
                         <Italic>not detailed enough</Italic> to solve more
                         difficult puzzles.
                       </P>
@@ -525,8 +525,8 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        Okay… could you show me what that{' '}
-                        <Italic>formal rules</Italic> looks like?
+                        Okay… could you show me what the{' '}
+                        <Italic>formal rules</Italic> look like?
                       </P>
                     </>
                   )
@@ -865,7 +865,7 @@ export default () => (
         )
       },
       {
-        title: <>What if there are more than one items on the top?</>,
+        title: <>What if there are more than one item on the top?</>,
         content: (
           <>
             <BubbleQuotes
@@ -876,8 +876,8 @@ export default () => (
                     <>
                       <P>
                         <Bold>Question:</Bold> What happens if there are{' '}
-                        <Italic>more than one items on the top</Italic>, like
-                        the example below?
+                        <Italic>more than one item on the top</Italic>, like the
+                        example below?
                       </P>
                     </>
                   )

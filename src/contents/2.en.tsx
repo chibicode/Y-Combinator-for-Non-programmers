@@ -216,7 +216,7 @@ export default () => (
               <Highlight>
                 Will the above mathbox correctly calculate{' '}
                 <EmojiNumber number={10} /> <Emoji>➖</Emoji>{' '}
-                <EmojiNumber number={8} />？ Select{' '}
+                <EmojiNumber number={8} />? Select{' '}
                 <H args={{ name: 'yesNoQuizYes' }} /> or{' '}
                 <H args={{ name: 'yesNoQuizNo' }} />.
               </Highlight>
@@ -276,7 +276,7 @@ export default () => (
               The reason it calculated <EmojiNumber number={10} />{' '}
               <Emoji>➖</Emoji> <EmojiNumber number={7} /> instead of{' '}
               <EmojiNumber number={10} /> <Emoji>➖</Emoji>{' '}
-              <EmojiNumber number={8} /> is because{' '}
+              <EmojiNumber number={8} /> is that{' '}
               <Italic>
                 there was the wrong number of <CustomEmoji type="minusOne" />
                 ’s
