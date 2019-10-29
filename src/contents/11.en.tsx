@@ -622,8 +622,7 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        I see - that’s why it becomes <EmojiNumber number={1} />
-                        !
+                        I see—that’s why it becomes <EmojiNumber number={1} />!
                       </P>
                     </>
                   )

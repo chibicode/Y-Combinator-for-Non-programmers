@@ -1133,8 +1133,8 @@ export default () => (
         content: (
           <>
             <P>
-              <Bold>Review Time:</Bold> Let’s show all the steps again - this
-              time for cases where{' '}
+              <Bold>Review Time:</Bold> Let’s show all the steps again—this time
+              for cases where{' '}
               <BottomRightBadge inline bottomRightBadgeType="funcArg" />
               ’s and{' '}
               <BottomRightBadge inline bottomRightBadgeType="funcBound" />

@@ -105,7 +105,7 @@ export default () => (
                     <>
                       <P>
                         Finally, we can use mathboxes to do additions and
-                        subtractions - no matter how difficult they are!
+                        subtractions—no matter how difficult they are!
                       </P>
                     </>
                   )

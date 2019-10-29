@@ -846,7 +846,7 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        Right. That’s what happened in the earlier example - the
+                        Right. That’s what happened in the earlier example—the
                         result was <EmojiNumber number={4} /> in either case.
                       </P>
                     </>

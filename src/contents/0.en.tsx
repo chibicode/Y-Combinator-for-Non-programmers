@@ -458,8 +458,8 @@ export default () => (
               <Highlight>
                 I want to make it easier for non-programmers to learn difficult
                 computer science concepts as quickly as possible
-              </Highlight>{' '}
-              - without having to learn to code. This course is my first step in
+              </Highlight>
+              —without having to learn to code. This course is my first step in
               this direction.
             </P>
             <EmojiSeparator
@@ -485,7 +485,7 @@ export default () => (
               <Highlight>teach programming first.</Highlight> However, learning
               to code takes time, and{' '}
               <Highlight>
-                most people - especially adults - won’t ever learn to code.
+                most people—especially adults—won’t ever learn to code.
               </Highlight>{' '}
               As{' '}
               <ExternalLink href="https://a16z.com/2011/08/20/why-software-is-eating-the-world/">
@@ -562,7 +562,7 @@ export default () => (
             <P>
               I had to pack a lot of materials so it can be read in under 3
               hours, so <Highlight>it’s fast-paced and challenging.</Highlight>{' '}
-              However, <Highlight>you’ll never get stuck</Highlight> - I made it
+              However, <Highlight>you’ll never get stuck</Highlight>—I made it
               so that you can finish the course even if you don’t understand
               everything (and that’s okay! <Emoji>🤗</Emoji>).
             </P>

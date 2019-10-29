@@ -139,7 +139,7 @@ export default () => (
           <>
             <P>
               <Bold>Lambda calculus</Bold>, invented by Alonzo Church, works
-              exactly like a lunchbox - although they <Italic>look</Italic>{' '}
+              exactly like a lunchbox—although they <Italic>look</Italic>{' '}
               different.
             </P>
             <EmojiSeparator
@@ -621,8 +621,8 @@ export default () => (
               <Bold>Again:</Bold> Computer science is all about building a
               complex thing from simple things.{' '}
               <Highlight>
-                I think lunchboxes - especially Y Combinator - are a great
-                example of this idea.
+                I think lunchboxes—especially Y Combinator—are a great example
+                of this idea.
               </Highlight>{' '}
               <Emoji>😉</Emoji>
             </P>
@@ -653,8 +653,8 @@ export default () => (
             <P>
               <Bold>For example</Bold>: If you study artificial intelligence,
               you’ll learn to build a <Bold>“neural network”</Bold>{' '}
-              <Emoji>🧠</Emoji> - a complex thing that can be used to process
-              images - by combining simple things called <Bold>“neurons”</Bold>{' '}
+              <Emoji>🧠</Emoji>—a complex thing that can be used to process
+              images—by combining simple things called <Bold>“neurons”</Bold>{' '}
               <CustomEmoji type="nodes" />.
             </P>
             <EmojiSeparator
@@ -714,8 +714,7 @@ export default () => (
                   <Bold>Computer science</Bold> is all about building a complex
                   thing from simple things.
                 </Highlight>{' '}
-                Lunchboxes - especially Y Combinator - are a great example of
-                this.
+                Lunchboxes—especially Y Combinator—are a great example of this.
               </OlLi>
             </Ol>
             <EmojiSeparator emojis={['✨', '🍱', '✨']} />
@@ -737,7 +736,7 @@ export default () => (
                         in trying out the{' '}
                         <HighlightBold>Y Combinator</HighlightBold> program,
                         press “Test Y Combinator in devtools” below. You need to
-                        be on a desktop browser though - you can’t do it on a
+                        be on a desktop browser though—you can’t do it on a
                         smartphone.
                       </P>
                     </>

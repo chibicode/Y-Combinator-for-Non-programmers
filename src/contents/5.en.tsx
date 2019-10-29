@@ -721,7 +721,7 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        I see - that’s why we can ignore{' '}
+                        I see—that’s why we can ignore{' '}
                         <BottomRightBadge
                           inline
                           bottomRightBadgeType="funcUnbound"
@@ -1829,7 +1829,7 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        Yes - we can’t take any more steps, so that’s where we
+                        Yes. We can’t take any more steps, so that’s where we
                         stop.
                       </P>
                     </>
