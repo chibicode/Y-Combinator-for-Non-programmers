@@ -2,14 +2,11 @@ import React from 'react'
 import EpisodeCardList from 'src/components/EpisodeCardList'
 import {
   Highlight,
-  Img,
   ExternalLink,
   P,
   HighlightBold,
   Bold,
   Italic,
-  Ul,
-  UlLi,
   Hr
 } from 'src/components/ContentTags'
 import Emoji from 'src/components/Emoji'
@@ -642,161 +639,7 @@ export default () => (
         footer: {
           content: (
             <>
-              <CardContent
-                preview={{
-                  text: <>Continue reading</>,
-                  content: (
-                    <>
-                      <P>
-                        <Emoji>👨🏻‍💻</Emoji> <Bold>About me:</Bold> Sorry for not
-                        introducing myself earlier!{' '}
-                        <Highlight>
-                          I’m <Bold>Shu Uesugi</Bold>, a full-stack developer
-                          based in San Francisco Bay Area, USA.
-                        </Highlight>
-                      </P>
-                      <P>
-                        <Emoji>👋</Emoji> <Bold>Available for hire:</Bold>{' '}
-                        <Highlight>
-                          I’m looking for a{' '}
-                          <Bold>full-time senior engineering position</Bold>.
-                        </Highlight>{' '}
-                        Press “Continue reading” below to learn more about me!{' '}
-                        <Emoji>😉</Emoji>
-                      </P>
-                    </>
-                  )
-                }}
-              >
-                <Hr />
-                <P>
-                  <Img
-                    size="medium"
-                    src="/static/images/shu-uesugi-machupicchu.jpg"
-                    caption={<>Me coding in Machu Picchu.</>}
-                  />
-                </P>
-                <P>
-                  Please read below and if you’re interested, contact me (Shu
-                  Uesugi) at{' '}
-                  <ExternalLink href="mailto:shu@chibicode.com">
-                    <HighlightBold>shu@chibicode.com</HighlightBold>
-                  </ExternalLink>
-                  . I’d also appreciate it if you could read until the end of
-                  this course before emailing me - let me know what you think!
-                </P>
-                <Ul>
-                  <UlLi>
-                    <Bold>I’m mainly looking for</Bold>{' '}
-                    <Highlight>a senior engineering position</Highlight>. But
-                    I’m also interested in product-leaning positions (Product
-                    design, PM, DevRel, etc.) for developer-facing products. I’m
-                    better at front-end than back-end, but can do both.
-                  </UlLi>
-                  <UlLi>
-                    <Bold>Location preference:</Bold>{' '}
-                    <HighlightBold>Remote</HighlightBold> would be ideal. 2nd
-                    preference is <Highlight>Los Angeles</Highlight>. I’m
-                    currently in SF Bay Area, but my wife and I are looking to
-                    relocate to LA or other more affordable places.
-                  </UlLi>
-                  <UlLi>
-                    <Bold>Work experience (2010-2017):</Bold>{' '}
-                    <Highlight>
-                      I worked as a lead full-stack (Rails) developer at{' '}
-                      <ExternalLink href="https://www.edsurge.com/">
-                        EdSurge
-                      </ExternalLink>
-                      , an edtech media startup in Silicon Valley, from 2012 to
-                      2017
-                    </Highlight>
-                    . I was the first engineering hire and was involved in
-                    architecting pretty much all of the projects. Before that, I
-                    was a product designer at Quora (2011-2012) and an engineer
-                    at Palantir (2010-2011).
-                  </UlLi>
-                  <UlLi>
-                    <Bold>In 2017:</Bold> After 4.5 years at EdSurge, I spent
-                    almost a year traveling to{' '}
-                    <ExternalLink href="https://2018.chibicode.com/posts/world-travel-2017-2018/">
-                      36 countries and 94 cities.
-                    </ExternalLink>{' '}
-                    I met my wife along the way.
-                  </UlLi>
-                  <UlLi>
-                    <Bold>In 2018:</Bold> While working as a freelance engineer
-                    in Silicon Valley,{' '}
-                    <Highlight>
-                      I co-translated a book called{' '}
-                      <ExternalLink href="https://www.amazon.com/dp/B0756J1LLV/ref=cm_sw_r_tw_dp_U_x_256TDbEEVPQ98">
-                        “Factfulness”
-                      </ExternalLink>{' '}
-                      by Hans Rosling and others into Japanese.
-                    </Highlight>{' '}
-                    It went on sale in 2019 and became one of Japan’s top
-                    selling nonfiction books of the year. It’s a great book -{' '}
-                    <ExternalLink href="https://www.gatesnotes.com/Books/Factfulness">
-                      take Bill Gates’s word for it
-                    </ExternalLink>
-                    .
-                  </UlLi>
-                </Ul>
-                <P>
-                  <Img
-                    size="medium"
-                    src="/static/images/shu-uesugi-factfulness-square.jpg"
-                    caption={
-                      <>
-                        <Bold>The Japanese edition of “Factfulness”:</Bold>
-                        <br />
-                        Photo taken at Bạch Mai Hospital in Hanoi, Vietnam,
-                        <br />
-                        where Hans Rosling (the author) had worked.
-                      </>
-                    }
-                  />
-                </P>
-                <Ul>
-                  <UlLi>
-                    <Bold>In 2019:</Bold> I spent time marketing the Japanese
-                    edition of “Factfulness”, freelancing (Rails dev), and
-                    working on this course. I got married and spent a lot of
-                    time with my wife, who moved to the U.S. from Japan. And I’m
-                    now looking for a full-time job.
-                  </UlLi>
-                  <UlLi>
-                    <Bold>Things I enjoy:</Bold>{' '}
-                    <Highlight>Expository writing</Highlight> (like this course)
-                    and <Highlight>React/TypeScript</Highlight> (
-                    <ExternalLink href="https://github.com/chibicode/ycombinator">
-                      see the repo for this course
-                    </ExternalLink>
-                    )
-                  </UlLi>
-                  <UlLi>
-                    <Bold>Current interests:</Bold>{' '}
-                    <Highlight>Machine translation</Highlight> (I’m a
-                    professional EN → JP translator) and{' '}
-                    <ExternalLink href="https://distill.pub/2017/aia/">
-                      <Highlight>
-                        using AI to augment human intelligence
-                      </Highlight>
-                    </ExternalLink>
-                    .
-                  </UlLi>
-                </Ul>
-                <P>
-                  <Bold>Again:</Bold> Contact me at{' '}
-                  <ExternalLink href="mailto:shu@chibicode.com">
-                    <Highlight>shu@chibicode.com</Highlight>
-                  </ExternalLink>
-                  . I’m also on{' '}
-                  <ExternalLink href="https://www.linkedin.com/in/chibicode">
-                    LinkedIn
-                  </ExternalLink>
-                  .
-                </P>
-              </CardContent>
+              <H args={{ name: 'aboutMe' }} />
             </>
           )
         }

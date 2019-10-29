@@ -129,40 +129,55 @@ const EpisodeCardList = ({
               <CardWrapper
                 type="meta"
                 isLast={
-                  episodeNumber > 0 &&
-                  episodeNumber <= numEpisodesExceptFirstAndLast
+                  locale === 'en'
+                    ? true
+                    : episodeNumber > 0 &&
+                      episodeNumber <= numEpisodesExceptFirstAndLast
                 }
                 title={<H args={{ name: 'shareTitle' }} />}
-                footer={{
-                  color: 'indigo',
-                  content: (
-                    <>
-                      <H
-                        args={{
-                          name: 'dateAndSource',
-                          includeAboutMe: true
-                        }}
-                      />
-                    </>
-                  )
-                }}
+                footer={
+                  locale === 'jp'
+                    ? {
+                        color: 'indigo',
+                        content: (
+                          <>
+                            <H
+                              args={{
+                                name: 'dateAndSource',
+                                includeAboutMe: true
+                              }}
+                            />
+                          </>
+                        )
+                      }
+                    : episodeNumber > 0
+                    ? {
+                        content: (
+                          <>
+                            <H args={{ name: 'aboutMe' }} />
+                          </>
+                        )
+                      }
+                    : undefined
+                }
               >
                 <H args={{ name: 'shareContent' }} />
                 {episodeNumber <= numEpisodesExceptFirstAndLast && (
-                  <NextLessonButton halfMargin />
+                  <NextLessonButton halfMargin={locale === 'jp'} />
                 )}
               </CardWrapper>
               {(episodeNumber === 0 ||
-                episodeNumber > numEpisodesExceptFirstAndLast) && (
-                <CardWrapper
-                  type="meta"
-                  isLast
-                  title={<H args={{ name: 'testimonialsTitle' }} />}
-                >
-                  <H args={{ name: 'testimonialsContent' }} />
-                  {episodeNumber === 0 && <NextLessonButton halfMargin />}
-                </CardWrapper>
-              )}
+                episodeNumber > numEpisodesExceptFirstAndLast) &&
+                locale === 'jp' && (
+                  <CardWrapper
+                    type="meta"
+                    isLast
+                    title={<H args={{ name: 'testimonialsTitle' }} />}
+                  >
+                    <H args={{ name: 'testimonialsContent' }} />
+                    {episodeNumber === 0 && <NextLessonButton halfMargin />}
+                  </CardWrapper>
+                )}
             </div>
           )}
       </>
