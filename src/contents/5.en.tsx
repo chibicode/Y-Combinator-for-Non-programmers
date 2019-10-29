@@ -606,7 +606,7 @@ export default () => (
             <P>
               <Bold>Answer:</Bold>{' '}
               <Highlight>
-                You can ignore{' '}
+                You can <Bold>ignore</Bold>{' '}
                 <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />
                 ’s for now.
               </Highlight>
@@ -650,19 +650,19 @@ export default () => (
               </UlLi>
             </Ul>
             <P>
-              <Italic>
+              <Bold>
                 None of them involves{' '}
                 <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />
-              </Italic>
+              </Bold>
               .{' '}
               <Highlight>
-                So, while we do these next steps, you can ignore{' '}
+                So, while we do these next steps, you can <Bold>ignore</Bold>{' '}
                 <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />
                 ’s.
               </Highlight>
             </P>
             <R.Pbhg>
-              Ignore the <EmojiWithText letter="b" /> labeled as{' '}
+              <Bold>Ignore</Bold> the <EmojiWithText letter="b" /> labeled as{' '}
               <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />
               <br />
               for the next several steps
