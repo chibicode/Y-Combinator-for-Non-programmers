@@ -356,9 +356,7 @@ export default () => (
                           <InlinePrioritiesLabel revert>
                             1
                           </InlinePrioritiesLabel>{' '}
-                          のペアの部分、すなわち下の2つの段に注目し、上の段{' '}
-                          <InlineBackground bgColor={'indigo50'} />{' '}
-                          の部分は無視する
+                          のペアの部分、すなわち下の2つの段に注目し、上の段は無視する
                         </Highlight>
                         ということだ。
                       </P>
@@ -367,6 +365,7 @@ export default () => (
                 }
               ]}
             />
+            <R.Bcgp>下の2つの段に注目し、上の段は無視する</R.Bcgp>
           </>
         )
       },
@@ -410,7 +409,20 @@ export default () => (
                       </P>
                     </>
                   )
-                },
+                }
+              ]}
+            />
+            <R.Pbhg>
+              下段真ん中の <EmojiWithText letter="b" /> には、
+              <br />
+              <BottomRightBadge
+                inline
+                bottomRightBadgeType="funcUnbound"
+              />{' '}
+              の印がついた！
+            </R.Pbhg>
+            <BubbleQuotes
+              quotes={[
                 {
                   type: 'devil',
                   children: (
@@ -447,8 +459,8 @@ export default () => (
             />
             <EmojiSeparator
               nodes={[
-                <EmojiForLetter letter="b" />,
                 <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />,
+                <CustomEmoji type="singleArrow" />,
                 <EmojiForLetter letter="b" />
               ]}
               description={

@@ -1,5 +1,6 @@
 export { default as Aaov } from 'src/components/FakeRunner'
 export { default as Qxob } from 'src/components/FakeRunner'
+export { default as Bcgp } from 'src/components/FakeRunner'
 export { default as Pbhg } from 'src/components/FakeRunner'
 export { default as Wwtl } from 'src/components/FakeRunner'
 export { default as Vdhd } from 'src/components/FakeRunner'

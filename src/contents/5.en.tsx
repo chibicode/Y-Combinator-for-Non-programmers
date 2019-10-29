@@ -223,8 +223,10 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        From now on, you’ll be solving much harder puzzles like
-                        this one:
+                        <Bold>
+                          From now on, you’ll be solving much harder puzzles
+                          like this one:
+                        </Bold>
                       </P>
                     </>
                   )
@@ -246,7 +248,9 @@ export default () => (
                         rows.
                       </P>
                       <P>
-                        But <Italic>this one has 3 rows</Italic> vertically.
+                        <Highlight>
+                          But <Italic>this one has 3 rows</Italic> vertically.
+                        </Highlight>
                       </P>
                     </>
                   )
@@ -257,8 +261,10 @@ export default () => (
                     <>
                       <P>
                         Also,{' '}
-                        <Italic>there are 3 items on the bottom row</Italic>:{' '}
-                        <EmojiWithText letter="a" />, a{' '}
+                        <Highlight>
+                          there are 3 items on the bottom row
+                        </Highlight>
+                        : <EmojiWithText letter="a" />, a{' '}
                         <EmojiWithText letter="b" />, and another{' '}
                         <EmojiWithText letter="a" />.
                       </P>
@@ -275,12 +281,12 @@ export default () => (
                     <>
                       <P>
                         Right. Also, did you realize that{' '}
-                        <Italic>
+                        <Highlight>
                           there are numbers like{' '}
                           <InlinePrioritiesLabel>1</InlinePrioritiesLabel> and{' '}
                           <InlinePrioritiesLabel>2</InlinePrioritiesLabel> on
                           the left edge?
-                        </Italic>
+                        </Highlight>
                       </P>
                     </>
                   )
@@ -309,21 +315,24 @@ export default () => (
                   type: 'devil',
                   children: (
                     <>
-                      <P>
-                        <Bold>So, first:</Bold>{' '}
-                        <Italic>
-                          I’ll explain how to solve lunchbox puzzles with 3
-                          rows.
-                        </Italic>
-                      </P>
-                      <P>
-                        <Bold>Then:</Bold>{' '}
-                        <Italic>
-                          I will give you{' '}
-                          <H args={{ name: 'yesNoQuiz', postfix: 'zes' }} /> to
-                          solve.
-                        </Italic>
-                      </P>
+                      <P>I’ll show you!</P>
+                      <Ol>
+                        <OlLi>
+                          <Bold>First:</Bold>{' '}
+                          <Highlight>
+                            I’ll explain how to solve lunchbox puzzles with 3
+                            rows.
+                          </Highlight>
+                        </OlLi>
+                        <OlLi>
+                          <Bold>Then:</Bold>{' '}
+                          <Highlight>
+                            I will give you{' '}
+                            <H args={{ name: 'yesNoQuiz', postfix: 'zes' }} />{' '}
+                            to solve.
+                          </Highlight>
+                        </OlLi>
+                      </Ol>
                     </>
                   )
                 },
@@ -350,13 +359,11 @@ export default () => (
         content: (
           <>
             <P>
-              <Bold>
-                The first step in solving{' '}
-                <H args={{ name: 'bentoBoxPuzzle', indefinite: true }} /> with 3
-                rows:
-              </Bold>{' '}
+              <Bold>The first step</Bold> in solving{' '}
+              <H args={{ name: 'bentoBoxPuzzle', indefinite: true }} /> with 3
+              rows is to{' '}
               <Highlight>
-                Focus on the pair of{' '}
+                focus on the pair of{' '}
                 <InlinePrioritiesLabel>1</InlinePrioritiesLabel>’s.
               </Highlight>
             </P>
@@ -374,14 +381,11 @@ export default () => (
               }
             />
             <P>
-              <Bold>More specifically:</Bold>{' '}
+              <Bold>More specifically:</Bold> You need to{' '}
               <Highlight>
-                Take a look at the{' '}
-                <Italic>
-                  sections that have a{' '}
-                  <InlinePrioritiesLabel>1</InlinePrioritiesLabel> on its
-                  top-left corner or bottom-left corner.
-                </Italic>
+                take a look at the sections that have a{' '}
+                <InlinePrioritiesLabel>1</InlinePrioritiesLabel> on their{' '}
+                <Bold>top-left</Bold> corner or <Bold>bottom-left</Bold> corner.
               </Highlight>
             </P>
             <P>
@@ -412,23 +416,37 @@ export default () => (
                   type: 'devil',
                   children: (
                     <>
-                      <P>
-                        Right. This means{' '}
-                        <Highlight>
-                          focus on <Italic>the bottom 2 rows</Italic>, which
-                          correspond to the pair of{' '}
-                          <InlinePrioritiesLabel revert>
-                            1
-                          </InlinePrioritiesLabel>
-                          ’s, and <Italic>ignore</Italic> the top row{' '}
-                          <InlineBackground bgColor={'indigo50'} /> for now.
-                        </Highlight>
-                      </P>
+                      <P>Right. This means: </P>
+                      <Ul>
+                        <UlLi>
+                          <Highlight>
+                            <Bold>Focus</Bold> on{' '}
+                            <Italic>the bottom 2 rows</Italic>, which correspond
+                            to the pair of{' '}
+                            <InlinePrioritiesLabel revert>
+                              1
+                            </InlinePrioritiesLabel>
+                            ’s,
+                          </Highlight>{' '}
+                          and
+                        </UlLi>
+                        <UlLi>
+                          <Highlight>
+                            <Bold>Ignore</Bold> the <Italic>top row</Italic> for
+                            now.
+                          </Highlight>
+                        </UlLi>
+                      </Ul>
                     </>
                   )
                 }
               ]}
             />
+            <R.Bcgp>
+              <Bold>Focus</Bold> on <Italic>the bottom 2 rows</Italic>, and
+              <br />
+              <Bold>Ignore</Bold> the <Italic>top row</Italic> for now
+            </R.Bcgp>
           </>
         )
       },
@@ -444,7 +462,7 @@ export default () => (
         content: (
           <>
             <P>
-              Next, <Highlight>we add the labels.</Highlight>{' '}
+              <Bold>Next:</Bold> <Highlight>we add the labels.</Highlight>{' '}
               <H args={{ name: 'pressNext' }} />
             </P>
             <R.Qxob />
@@ -485,7 +503,17 @@ export default () => (
                       </P>
                     </>
                   )
-                },
+                }
+              ]}
+            />
+            <R.Pbhg>
+              There’s a new label{' '}
+              <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />
+              <br />
+              for the <EmojiWithText letter="b" />!
+            </R.Pbhg>
+            <BubbleQuotes
+              quotes={[
                 {
                   type: 'devil',
                   children: (
@@ -529,8 +557,8 @@ export default () => (
             />
             <EmojiSeparator
               nodes={[
-                <EmojiForLetter letter="b" />,
                 <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />,
+                <CustomEmoji type="singleArrow" />,
                 <EmojiForLetter letter="b" />
               ]}
               description={
