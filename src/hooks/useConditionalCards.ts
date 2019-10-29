@@ -2,7 +2,6 @@ import { useState, useContext } from 'react'
 import GlobalContext from 'src/components/GlobalContext'
 import EpisodeContext from 'src/components/EpisodeContext'
 import { EpisodeCardListType } from 'src/components/EpisodeCardList'
-import locale from 'src/lib/locale'
 
 const getNextYesNoQuizIndex = (cards: EpisodeCardListType, fromIndex = 0) => {
   for (let i = fromIndex; i < cards.length; i++) {
