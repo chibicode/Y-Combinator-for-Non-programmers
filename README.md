@@ -18,9 +18,8 @@ yarn dev:en
 
 ## Stack
 
-- [TypeScript](https://www.typescriptlang.org/), [React](https://reactjs.org/), and [Next.js](https://nextjs.org/).
+- [TypeScript](https://www.typescriptlang.org/), [React](https://reactjs.org/), [Emotion](https://emotion.sh/) and [Next.js](https://nextjs.org/).
 - [Netlify](https://netlify.com/) for deployment
-- No Google Analytics!
 
 ## License & Credits
 
