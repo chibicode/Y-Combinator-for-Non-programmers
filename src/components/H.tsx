@@ -1865,7 +1865,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
             <P>More about me:</P>
             <Ul>
               <UlLi>
-                <Bold>Work experience (2010-2017):</Bold>{' '}
+                <Bold>Work experience (pre-2017):</Bold>{' '}
                 <Highlight>
                   I worked as a lead full-stack (Rails) developer at{' '}
                   <ExternalLink href="https://www.edsurge.com/">
@@ -1876,7 +1876,9 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
                 . I was the first engineering hire and was involved in
                 architecting pretty much all of the projects. Before that, I was
                 a product designer at Quora (2011-2012) and an engineer at
-                Palantir (2010-2011).
+                Palantir (2010-2011). I studied Computer Science (undergrad) and
+                Human-Computer Interaction (grad) at Carnegie Mellon and won the
+                best teaching assistant award upon graduation.
               </UlLi>
               <UlLi>
                 <Bold>In 2017:</Bold> After 4.5 years at EdSurge, I spent almost
@@ -1920,10 +1922,10 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
             <Ul>
               <UlLi>
                 <Bold>In 2019:</Bold> I spent time marketing the Japanese
-                edition of “Factfulness”, freelancing (Rails dev), and working
-                on this course. I got married and spent a lot of time with my
-                wife, who moved to the U.S. from Japan. And I’m now looking for
-                a full-time job.
+                edition of “Factfulness”, freelancing (Rails dev for small
+                startups), and working on this course. I got married and spent a
+                lot of time with my wife, who moved to the U.S. from Japan. And
+                I’m now looking for a full-time job.
               </UlLi>
               <UlLi>
                 <Bold>Things I’m pretty good at:</Bold>{' '}

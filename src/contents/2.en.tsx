@@ -159,17 +159,12 @@ export default () => (
               nodes={[<Emoji>✨</Emoji>, <Emoji>🔁</Emoji>, <Emoji>✨</Emoji>]}
               description={
                 <>
-                  <H args={{ name: 'repeatFeature', capitalize: true }} />
+                  <Highlight>
+                    <H args={{ name: 'repeatFeature', capitalize: true }} />
+                  </Highlight>
                 </>
               }
             />
-            <P>
-              Let’s start with a{' '}
-              <Highlight>
-                <H args={{ name: 'yesNoQuiz' }} />
-              </Highlight>
-              !
-            </P>
           </>
         )
       },
@@ -182,6 +177,21 @@ export default () => (
         ),
         content: (
           <>
+            <P>
+              <Bold>
+                We’ll start this episode with a{' '}
+                <Highlight>
+                  <H args={{ name: 'yesNoQuiz' }} />
+                </Highlight>
+                .
+              </Bold>{' '}
+              It doesn’t matter if you get it right or wrong, so don’t worry too
+              much!
+            </P>
+            <EmojiSeparator
+              emojis={['👍', '🤔', '👎']}
+              description={<>We’ll do a Yes/No quiz!</>}
+            />
             <P>
               The villagers living in Lambda Village were all bad at math, so
               they had to rely on mathboxes to solve even the simplest problems.
