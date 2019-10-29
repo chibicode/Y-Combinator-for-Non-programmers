@@ -60,7 +60,7 @@ export default () => (
                   It’s <HighlightBold>100% FREE</HighlightBold>, and you can do
                   it from
                   <br />
-                  your smartphone, tablet, or computer.
+                  your smartphone, tablet, or computer
                 </>
               }
             />
@@ -545,7 +545,7 @@ export default () => (
                 <>
                   The puzzles are optimized for smartphones.
                   <br />
-                  They can be done on a computer too.
+                  They can be done on a computer too
                 </>
               }
             />

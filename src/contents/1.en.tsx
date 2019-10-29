@@ -71,7 +71,7 @@ export default () => (
               ]}
               description={
                 <>
-                  <Bold>Mathbox</Bold> is a magical tool that can do the math.
+                  <Bold>Mathbox</Bold> is a magical tool that can do the math
                 </>
               }
             />
@@ -551,7 +551,7 @@ export default () => (
                   We suck at math, so we must use mathboxes
                   <br />
                   to do simple additions like <EmojiNumber number={2} />{' '}
-                  <Emoji>➕</Emoji> <EmojiNumber number={3} />.
+                  <Emoji>➕</Emoji> <EmojiNumber number={3} />
                 </>
               }
             />

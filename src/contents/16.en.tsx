@@ -332,7 +332,7 @@ export default () => (
                   <br />
                   any calculations that can be
                   <br />
-                  done by today’s computers.
+                  done by today’s computers
                 </>
               }
             />
@@ -373,7 +373,7 @@ export default () => (
                   <br />
                   any calculations that can be
                   <br />
-                  done by today’s computers.
+                  done by today’s computers
                 </>
               }
             />
@@ -479,7 +479,7 @@ export default () => (
                   <br />
                   like Python have a feature
                   <br />
-                  that originated from lambda calculus.
+                  that originated from lambda calculus
                 </>
               }
             />
@@ -560,7 +560,7 @@ export default () => (
                   <br />
                   any calculations that can be
                   <br />
-                  done by today’s computers.
+                  done by today’s computers
                 </>
               }
             />
@@ -583,7 +583,7 @@ export default () => (
                   <br />
                   you can build a complex lunchbox
                   <br />
-                  that can do complex calculations.
+                  that can do complex calculations
                 </>
               }
             />
@@ -613,7 +613,7 @@ export default () => (
                 <>
                   We can create a lunchbox that can
                   <br />
-                  repeat <Emoji>🔁</Emoji> some operations.
+                  repeat <Emoji>🔁</Emoji> some operations
                 </>
               }
             />
@@ -638,7 +638,7 @@ export default () => (
                   <br />
                   building a complex thing from simple things.
                   <br />
-                  Lunchboxes are a great example.
+                  Lunchboxes are a great example
                 </>
               }
             />

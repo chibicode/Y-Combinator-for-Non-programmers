@@ -498,7 +498,7 @@ export default () => (
                 <>
                   We have to <Italic>formalize</Italic> the rules.
                   <br />
-                  We must be more <Italic>detailed</Italic>.
+                  We must be more <Italic>detailed</Italic>
                 </>
               }
             />
@@ -823,7 +823,7 @@ export default () => (
                   <BottomRightBadge inline bottomRightBadgeType="callArg" />
                   ’s and{' '}
                   <BottomRightBadge inline bottomRightBadgeType="funcArg" />
-                  ’s.
+                  ’s
                 </>
               }
             />

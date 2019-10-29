@@ -816,7 +816,7 @@ export default () => (
                 <>
                   Lunchboxes can do addition, multiplication,
                   <br />
-                  subtraction, and division.
+                  subtraction, and division
                 </>
               }
             />

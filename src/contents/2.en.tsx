@@ -253,7 +253,7 @@ export default () => (
               description={
                 <>
                   Oops! It didn’t calculate <EmojiNumber number={10} />{' '}
-                  <Emoji>➖</Emoji> <EmojiNumber number={8} />.
+                  <Emoji>➖</Emoji> <EmojiNumber number={8} />
                 </>
               }
             />
@@ -697,7 +697,7 @@ export default () => (
                   <br />
                   of a mathbox, you can do
                   <br />
-                  additions and subtractions accurately.
+                  additions and subtractions accurately
                 </>
               }
             />
