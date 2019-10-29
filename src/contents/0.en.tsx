@@ -40,7 +40,6 @@ const StarOnGitHub = () => (
 
 export default () => (
   <EpisodeCardList
-    underConstruction
     cards={[
       {
         title: <>Welcome!</>,
