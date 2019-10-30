@@ -1950,14 +1950,14 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
               </UlLi>
               <UlLi>
                 <Bold>Things I’m pretty good at:</Bold>{' '}
-                <Highlight>Expository writing</Highlight> (like this course) and{' '}
+                <Highlight>Expository writing</Highlight> (like this course),{' '}
                 <Highlight>React/TypeScript</Highlight> (
                 <ExternalLink href="https://github.com/chibicode/ycombinator">
                   see the repo for this course
                 </ExternalLink>
-                ). I’m okay at <Highlight>product design</Highlight>. I’ve also
-                worked with <Highlight>Rails</Highlight> from version 2 to
-                version 6.
+                ), and learning new things quickly. I’m okay at{' '}
+                <Highlight>product design</Highlight>. I’ve also worked with{' '}
+                <Highlight>Rails</Highlight> from version 2 to version 6.
               </UlLi>
               <UlLi>
                 <Bold>Current interests:</Bold> As a professional EN → JP
