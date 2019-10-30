@@ -25,7 +25,7 @@ import NextLessonButton from 'src/components/NextLessonButton'
 import { Problem, StepOne, StepTwo, StepThree } from 'src/contents/7.en'
 import CardContent from 'src/components/CardContent'
 
-export const BlankNumberPlusOne = () => (
+const BlankNumberPlusOne = () => (
   <>
     <R.Eweo>
       Combine <Emoji>👧🏻</Emoji> Saya’s lunchbox
@@ -42,6 +42,23 @@ export const BlankNumberPlusOne = () => (
       that can be converted to <CustomEmoji type="blankNumber" />{' '}
       <Emoji>➕</Emoji> <EmojiNumber number={1} />
     </R.Jxvy>
+  </>
+)
+
+export const ReproducePlusOne = () => (
+  <>
+    <R.Rviy>
+      In a mathbox, we use <CustomEmoji type="plusOne" />
+    </R.Rviy>
+    <ExpressionRunnerSeparator />
+    <R.Eweo>
+      In a lunchbox, we use
+      <br />
+      <Emoji>👧🏻</Emoji> Saya’s lunchbox to{' '}
+      <HighlightBold>reproduce</HighlightBold>
+      <br />
+      <H args={{ name: 'plusOneFeature' }} />.
+    </R.Eweo>
   </>
 )
 
@@ -1061,18 +1078,7 @@ export default () => (
                 }
               ]}
             />
-            <R.Rviy>
-              In a mathbox, we use <CustomEmoji type="plusOne" />
-            </R.Rviy>
-            <ExpressionRunnerSeparator />
-            <R.Eweo>
-              In a lunchbox, we use
-              <br />
-              <Emoji>👧🏻</Emoji> Saya’s lunchbox to{' '}
-              <HighlightBold>reproduce</HighlightBold>
-              <br />
-              <H args={{ name: 'plusOneFeature' }} />.
-            </R.Eweo>
+            <ReproducePlusOne />
           </>
         )
       },

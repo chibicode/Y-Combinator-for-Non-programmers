@@ -1294,6 +1294,8 @@ export default () => (
                 </HighlightBold>
               </UlLi>
             </Ul>
+            <R.Smdm />
+            <ExpressionRunnerSeparator />
             <R.Niwv />
             <P>
               これにより、正しく <EmojiNumber number={1} /> <Emoji>➕</Emoji>{' '}
