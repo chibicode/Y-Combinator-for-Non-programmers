@@ -771,8 +771,7 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        つまり、実行しても{' '}
-                        <EmojiNumber number={1} size="mdlg" />{' '}
+                        つまり、実行しても <EmojiNumber number={1} />{' '}
                         に変換できる弁当箱にならなかったので…
                       </P>
                     </>
@@ -784,8 +783,7 @@ export default () => (
             <ExpressionRunnerSeparator />
             <R.Xwzc>
               <HighlightBold>
-                <EmojiNumber number={1} size="mdlg" />{' '}
-                に変換できる弁当箱にならなかった
+                <EmojiNumber number={1} /> に変換できる弁当箱にならなかった
               </HighlightBold>
             </R.Xwzc>
             <BubbleQuotes

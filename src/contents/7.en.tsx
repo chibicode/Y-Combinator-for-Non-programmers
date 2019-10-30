@@ -811,8 +811,9 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        <Bold>So:</Bold> Because it didn’t become{' '}
-                        <EmojiNumber number={1} size="mdlg" /> at the end…
+                        <Bold>So:</Bold> Because it didn’t become a lunchbox
+                        that can be converted to <EmojiNumber number={1} /> at
+                        the end…
                       </P>
                     </>
                   )
@@ -826,7 +827,7 @@ export default () => (
             <R.Xwzc>
               It didn’t become a lunchbox
               <br />
-              that can be converted to <EmojiNumber number={1} size="mdlg" />
+              that can be converted to <EmojiNumber number={1} />
             </R.Xwzc>
             <BubbleQuotes
               quotes={[
@@ -834,7 +835,7 @@ export default () => (
                   type: 'dog',
                   children: (
                     <>
-                      <P>Therefore, your answer was incorrect!</P>
+                      <P>Your answer was incorrect!</P>
                     </>
                   )
                 }
@@ -875,7 +876,7 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        Hopefully you understand what the problem is asking. So
+                        Hopefully you understood what the problem is asking. So
                         let’s state it again:
                       </P>
                       <Ul>
@@ -950,7 +951,7 @@ export default () => (
           <>
             <P>
               The villagers are so close to getting their mathboxes back, but
-              they’re struggling with such a difficult problem.
+              they’re struggling with the difficult problem.
             </P>
             <EmojiSeparator
               emojis={['❓', '😭', '❓']}
