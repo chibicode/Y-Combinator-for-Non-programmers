@@ -909,8 +909,14 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
     if (locale === 'en') {
       return (
         <>
-          <Highlight>
-            <Bold>We’re not done yet:</Bold>
+          <Highlight highlightType="pink">
+            <Bold
+              css={css`
+                font-size: ${fontSizes(1)};
+              `}
+            >
+              We’re not done yet:
+            </Bold>
             <br />
             Just pausing here for an explanation.
           </Highlight>
@@ -918,7 +924,17 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
       )
     } else {
       return (
-        <HighlightBold>まだ途中ですが、解説のため一旦止めます！</HighlightBold>
+        <Highlight highlightType="pink">
+          <Bold
+            css={css`
+              font-size: ${fontSizes(1)};
+            `}
+          >
+            まだ途中ですが、
+            <br />
+            解説のため一旦止めます！
+          </Bold>
+        </Highlight>
       )
     }
   }
@@ -1934,14 +1950,14 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
               </UlLi>
               <UlLi>
                 <Bold>Things I’m pretty good at:</Bold>{' '}
-                <Highlight>Expository writing</Highlight> (like this course) and{' '}
+                <Highlight>Expository writing</Highlight> (like this course),{' '}
                 <Highlight>React/TypeScript</Highlight> (
                 <ExternalLink href="https://github.com/chibicode/ycombinator">
                   see the repo for this course
                 </ExternalLink>
-                ). I’m okay at <Highlight>product design</Highlight>. I’ve also
-                worked with <Highlight>Rails</Highlight> from version 2 to
-                version 6.
+                ), and learning new things quickly. I’m okay at{' '}
+                <Highlight>product design</Highlight>. I’ve also worked with{' '}
+                <Highlight>Rails</Highlight> from version 2 to version 6.
               </UlLi>
               <UlLi>
                 <Bold>Current interests:</Bold> As a professional EN → JP
@@ -1950,7 +1966,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
                 <ExternalLink href="https://distill.pub/2017/aia/">
                   using AI to augment human intelligence
                 </ExternalLink>
-                . I try to read about deep learning in my spare time.
+                .
               </UlLi>
             </Ul>
             <Hr />

@@ -1043,6 +1043,20 @@ export default () => (
                         掛け算を <MultiplyIcon />{' '}
                         のアイコンで省略表記することにしたというわけだ。
                       </P>
+                      <EmojiSeparator
+                        nodes={[
+                          <Emoji>✨</Emoji>,
+                          <MultiplyIcon />,
+                          <Emoji>✨</Emoji>
+                        ]}
+                        description={
+                          <>
+                            スペースの節約のために
+                            <br />
+                            こちらのアイコンを使います
+                          </>
+                        }
+                      />
                     </>
                   )
                 },

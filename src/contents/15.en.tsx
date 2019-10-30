@@ -4,7 +4,6 @@ import {
   P,
   HighlightBold,
   Highlight,
-  Italic,
   Ul,
   UlLi,
   Bold
@@ -233,7 +232,7 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        <Bold>Well:</Bold>{' '}
+                        Yeah.{' '}
                         <Highlight>
                           Try filling each of{' '}
                           <CustomEmoji type="blankNumberPurple" /> and{' '}
@@ -516,7 +515,7 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        <Bold>In summary:</Bold>{' '}
+                        <Bold>So:</Bold>{' '}
                         <Highlight>
                           The above lunchbox can do{' '}
                           <Bold>addition of two numbers</Bold>.
@@ -598,7 +597,7 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        It looks like the previous lunchbox, but it’s slightly
+                        It’s similar to the previous lunchbox but slightly
                         different.
                       </P>
                       <P>
@@ -816,9 +815,12 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        This is amazing! Mathboxes could only do additions and
-                        subtractions, but lunchboxes can also do
-                        multiplications!
+                        <Bold>This is amazing!</Bold>{' '}
+                        <CustomEmoji type="mathBox" /> Mathboxes could only do
+                        additions and subtractions, but{' '}
+                        <Highlight>
+                          <Emoji>🍱</Emoji> lunchboxes can do multiplications!
+                        </Highlight>
                       </P>
                     </>
                   )
@@ -995,7 +997,7 @@ export default () => (
                         <Highlight>
                           the factorial of <EmojiNumber number={3} />
                         </Highlight>
-                        . If you actually calculate it, the result will be{' '}
+                        . If you do the math, the result will be{' '}
                         <EmojiNumber number={6} />.
                       </P>
                       <EmojiSeparator
@@ -1011,7 +1013,7 @@ export default () => (
                           <>
                             The factorial of <EmojiNumber number={3} />.
                             <br />
-                            If you calculate it, the result is{' '}
+                            If you do the math, the result will be{' '}
                             <EmojiNumber number={6} />.
                           </>
                         }
@@ -1021,7 +1023,7 @@ export default () => (
                         <Highlight>
                           the factorial of <EmojiNumber number={4} />
                         </Highlight>
-                        . If you actually calculate it, the result will be{' '}
+                        . If you do the math, the result will be{' '}
                         <EmojiNumber number={24} />.
                       </P>
                       <EmojiSeparator
@@ -1039,7 +1041,7 @@ export default () => (
                           <>
                             The factorial of <EmojiNumber number={4} />.
                             <br />
-                            If you calculate it, the result is{' '}
+                            If you do the math, the result will be{' '}
                             <EmojiNumber number={24} />.
                           </>
                         }
@@ -1062,7 +1064,7 @@ export default () => (
                       <P>
                         <Bold>Now, I will show you that:</Bold>{' '}
                         <Highlight>
-                          Lunchboxes can calculate factorials.
+                          <Emoji>🍱</Emoji> Lunchboxes can calculate factorials.
                         </Highlight>
                       </P>
                     </>
@@ -1095,7 +1097,7 @@ export default () => (
                         <Bold>But this time:</Bold>{' '}
                         <Highlight>
                           Instead of using the actual lunchbox, we’ll use the
-                          following notation:
+                          following notation (abbreviation):
                         </Highlight>
                       </P>
                     </>
@@ -1105,7 +1107,7 @@ export default () => (
             />
             <R.Vqyl>Instead of the actual lunchbox…</R.Vqyl>
             <ExpressionRunnerSeparator />
-            <R.Trwj>We’ll use this notation</R.Trwj>
+            <R.Trwj>We’ll use this notation (abbreviation)</R.Trwj>
             <BubbleQuotes
               quotes={[
                 {
@@ -1136,8 +1138,8 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        Hmm… ok, but why do we need to use this instead of the
-                        original lunchbox?
+                        Hmm… ok, but why do we need to use this notation instead
+                        of the original lunchbox?
                       </P>
                     </>
                   )
@@ -1154,9 +1156,24 @@ export default () => (
                         </Highlight>{' '}
                       </P>
                       <P>
-                        Therefore, if we don’t use this simpler notation to
-                        describe multiplications, we’ll run out of space.
+                        <Bold>Therefore:</Bold> We need to use this simpler
+                        notation to describe multiplications in order to save
+                        some space. Otherwise, the lunchbox will be too big.
                       </P>
+                      <EmojiSeparator
+                        nodes={[
+                          <Emoji>✨</Emoji>,
+                          <MultiplyIcon />,
+                          <Emoji>✨</Emoji>
+                        ]}
+                        description={
+                          <>
+                            We’ll use this notation to
+                            <br />
+                            save some space
+                          </>
+                        }
+                      />
                     </>
                   )
                 },
@@ -1250,10 +1267,6 @@ export default () => (
                           <EmojiForLetter letter="f" />.
                         </Highlight>{' '}
                       </P>
-                      <P>
-                        So it uses a lunchbox that can calculate
-                        multiplications.
-                      </P>
                     </>
                   )
                 }
@@ -1279,7 +1292,7 @@ export default () => (
                       </P>
                       <P>
                         By the way, the bottom half is{' '}
-                        <HighlightBold>Y Combinator</HighlightBold> which we
+                        <HighlightBold>Y Combinator</HighlightBold>, which we
                         used on the last page.
                       </P>
                     </>
@@ -1299,8 +1312,8 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        By using this lunchbox, you can calculate the factorial
-                        of any number.
+                        <Bold>That’s it!</Bold> By using this lunchbox, you can
+                        calculate the factorial of any number.
                       </P>
                     </>
                   )
@@ -1333,8 +1346,8 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        Let’s use this to calculate the factorial of{' '}
-                        <EmojiNumber number={3} />.
+                        Let’s use the above lunchbox to calculate the factorial
+                        of <EmojiNumber number={3} />.
                       </P>
                       <EmojiSeparator
                         size="sm"
@@ -1357,7 +1370,7 @@ export default () => (
                         To calculate this, we just need to{' '}
                         <Highlight>
                           change <CustomEmoji type="blankNumber" /> on the
-                          earlier lunchbox to <EmojiNumber number={3} />.
+                          lunchbox to <EmojiNumber number={3} />.
                         </Highlight>
                       </P>
                     </>
@@ -1381,7 +1394,7 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        Let’s <H args={{ name: 'run', lowerCase: true }} />
+                        Let’s <H args={{ name: 'run', lowerCase: true }} /> it!
                       </P>
                       <Ul>
                         <UlLi>
@@ -1461,8 +1474,8 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        <Bold>In summary:</Bold> By running this lunchbox, it
-                        calculates the factorial of <EmojiNumber number={3} />{' '}
+                        <Bold>So:</Bold> By running this lunchbox, it calculates
+                        the factorial of <EmojiNumber number={3} />{' '}
                         automatically.
                       </P>
                     </>
@@ -1477,9 +1490,9 @@ export default () => (
             </R.Zlfx>
             <ExpressionRunnerSeparator />
             <R.Qurt>
-              It becomes like this and automatically calculates
+              It becomes like this and automatically
               <br />
-              the factorial of <EmojiNumber number={3} />
+              calculates the factorial of <EmojiNumber number={3} />
             </R.Qurt>
             <ExpressionRunnerSeparator />
             <R.Gzuj></R.Gzuj>
@@ -1538,7 +1551,7 @@ export default () => (
             <VariableShadeContext.Provider value={{ shadeNonFactorial: true }}>
               <R.Txxw>
                 Change <CustomEmoji type="blankNumber" /> to{' '}
-                <EmojiNumber number={4} />…
+                <EmojiNumber number={4} />
               </R.Txxw>
             </VariableShadeContext.Provider>
             <BubbleQuotes
@@ -1589,9 +1602,9 @@ export default () => (
                         ]}
                         description={
                           <>
-                            The factorial of <EmojiNumber number={4} />:
+                            The factorial of <EmojiNumber number={4} />,
                             <br />
-                            The result will be <EmojiNumber number={24} />
+                            which is <EmojiNumber number={24} />
                           </>
                         }
                       />
@@ -1650,7 +1663,7 @@ export default () => (
             <BubbleQuotes
               quotes={[
                 {
-                  type: 'thinking',
+                  type: 'surprised',
                   children: (
                     <>
                       <P>It’s amazing!</P>
@@ -1753,9 +1766,9 @@ export default () => (
                     <>
                       <P>
                         What we learned here is that,{' '}
-                        <Italic>
+                        <Highlight>
                           lunchboxes can do complicated calculations.
-                        </Italic>{' '}
+                        </Highlight>{' '}
                         They’re more powerful than mathboxes.
                       </P>
                     </>
@@ -1769,7 +1782,13 @@ export default () => (
                 <Emoji size="semilg">🍱</Emoji>,
                 <CustomEmoji type="mathBox" size="sm" />
               ]}
-              description={<>Lunchboxes are more powerful than mathboxes!</>}
+              description={
+                <>
+                  Lunchboxes are more powerful
+                  <br />
+                  than mathboxes!
+                </>
+              }
             />
             <BubbleQuotes
               quotes={[

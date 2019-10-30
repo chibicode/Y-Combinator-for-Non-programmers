@@ -6,8 +6,7 @@ import {
   Highlight,
   Ul,
   UlLi,
-  Bold,
-  Italic
+  Bold
 } from 'src/components/ContentTags'
 import H from 'src/components/H'
 import BubbleQuotes from 'src/components/BubbleQuotes'
@@ -146,8 +145,11 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        <Bold>Now, here’s a question:</Bold> What happens when
-                        you <H args={{ name: 'run', lowerCase: true }} /> it?
+                        <Bold>Now, here’s a question:</Bold>{' '}
+                        <Highlight>
+                          What happens when you{' '}
+                          <H args={{ name: 'run', lowerCase: true }} /> it?
+                        </Highlight>
                       </P>
                     </>
                   )
@@ -168,9 +170,11 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        <Bold>I figured it out!</Bold> I think the result will
-                        be a lunchbox that can be converted to{' '}
-                        <EmojiNumber number={4} />.
+                        <Bold>I figured it out!</Bold>{' '}
+                        <Highlight>
+                          I think the result will be a lunchbox that can be
+                          converted to <EmojiNumber number={4} />.
+                        </Highlight>
                       </P>
                       <R.Ldcq>
                         <Emoji>👧🏻</Emoji> I think the result will be <br />a
@@ -185,8 +189,10 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        <Bold>Yes! Correct!</Bold> Saya, You’re exactly right!{' '}
-                        <Emoji>🎉</Emoji>
+                        <Bold>Yes! Correct!</Bold>{' '}
+                        <Highlight>
+                          Saya, You’re exactly right! <Emoji>🎉</Emoji>
+                        </Highlight>
                       </P>
                     </>
                   )
@@ -196,8 +202,8 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        What? How is it possible that you figured it out so
-                        quickly?
+                        <Bold>What?</Bold> How is it possible that you figured
+                        it out so quickly?
                       </P>
                       <P>Saya, did you solve it all in your head?</P>
                     </>
@@ -208,8 +214,8 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        Not really. Actually, <Italic>I used a trick.</Italic>{' '}
-                        Let me explain!
+                        Not really. Actually, I used a{' '}
+                        <HighlightBold>trick.</HighlightBold> Let me explain!
                       </P>
                     </>
                   )
@@ -250,8 +256,8 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        Oh! The top section is actually a lunchbox that can be
-                        converted to <EmojiNumber number={3} />!
+                        Oh! The <Bold>top section</Bold> is actually a lunchbox
+                        that can be converted to <EmojiNumber number={3} />!
                       </P>
                       <R.Ayrl>
                         <H
@@ -308,8 +314,9 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        The middle-right section is actually a lunchbox that can
-                        be converted to <EmojiNumber number={2} />!
+                        The <Bold>middle-right</Bold> section is actually a
+                        lunchbox that can be converted to{' '}
+                        <EmojiNumber number={2} />!
                       </P>
                       <R.Mzys>
                         <H
@@ -460,8 +467,11 @@ export default () => (
                     <>
                       <P>
                         Oh! This looks exactly like the one we saw on the last
-                        page: a lunchbox that reproduces{' '}
-                        <H args={{ name: 'conditionFeature' }} />.
+                        page:{' '}
+                        <Highlight>
+                          a lunchbox that reproduces{' '}
+                          <H args={{ name: 'conditionFeature' }} />.
+                        </Highlight>
                       </P>
                       <R.Vlhb>
                         A lunchbox that reproduces
@@ -608,7 +618,7 @@ export default () => (
                         <Bold>But… isn’t that cheating?</Bold>
                       </P>
                       <P>
-                        Saya’s strategy was to replace each section with the
+                        Saya’s method was to replace each section with the
                         corresponding mathbox features…
                       </P>
                     </>
@@ -731,13 +741,7 @@ export default () => (
                           }}
                         />
                       </R.Ifqp>
-                      <P>
-                        If you{' '}
-                        <H
-                          args={{ name: 'convertToMathbox', lowerCase: true }}
-                        />
-                        , the result will be <EmojiNumber number={4} />.
-                      </P>
+                      <ExpressionRunnerSeparator />
                       <R.Kizi></R.Kizi>
                     </>
                   )
@@ -746,7 +750,7 @@ export default () => (
                   type: 'surprised',
                   children: (
                     <>
-                      <P>This result is the same as Saya’s method!</P>
+                      <P>The result is the same as using Saya’s method!</P>
                       <P>
                         <Bold>So…</Bold> I guess Saya’s method was right…?
                       </P>
@@ -758,8 +762,10 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        <Bold>Yes!</Bold> Saya’s method was the correct
-                        approach.
+                        <Bold>Yes!</Bold>{' '}
+                        <Highlight>
+                          Saya’s method was the correct approach.
+                        </Highlight>
                       </P>
                     </>
                   )
@@ -780,13 +786,17 @@ export default () => (
                   type: 'dog',
                   children: (
                     <>
-                      <P>Let’s step back and review what we learned so far.</P>
                       <P>
-                        Saya solved the problem by{' '}
-                        <Italic>
+                        <Bold>
+                          Let’s step back and review what we learned so far.
+                        </Bold>
+                      </P>
+                      <P>
+                        <Emoji>👧🏻</Emoji> Saya solved the problem by{' '}
+                        <Highlight>
                           replacing parts of a lunchbox with the corresponding
                           mathbox features
-                        </Italic>
+                        </Highlight>
                         , like this:
                       </P>
                     </>
@@ -812,8 +822,8 @@ export default () => (
                         <Bold>As we saw earlier:</Bold>{' '}
                         <Highlight>
                           If you replace parts of a lunchbox with the
-                          corresponding mathbox features, the result will be the
-                          same.
+                          corresponding mathbox features,{' '}
+                          <Bold>the result will be the same.</Bold>
                         </Highlight>
                       </P>
                     </>
@@ -837,27 +847,16 @@ export default () => (
             />
             <ExpressionRunnerSeparator />
             <ExpressionRunnerCaptionOnly>
-              <Highlight>the result will be the same.</Highlight>
+              <HighlightBold>The result will be the same.</HighlightBold>
             </ExpressionRunnerCaptionOnly>
             <BubbleQuotes
               quotes={[
-                {
-                  type: 'thinking',
-                  children: (
-                    <>
-                      <P>
-                        Right. That’s what happened in the earlier example—the
-                        result was <EmojiNumber number={4} /> in either case.
-                      </P>
-                    </>
-                  )
-                },
                 {
                   type: 'dog',
                   children: (
                     <>
                       <P>
-                        Yes. And I{' '}
+                        And I{' '}
                         <Highlight>
                           <Bold>encourage</Bold> you to replace parts of a
                           lunchbox as much as possible
@@ -1045,8 +1044,8 @@ export default () => (
                     <>
                       <P>
                         This mathbox repeats <CustomEmoji type="plusOne" />{' '}
-                        three times and calculates <EmojiNumber number={3} />{' '}
-                        <Emoji>➕</Emoji> <EmojiNumber number={2} />.
+                        three times and calculates <EmojiNumber number={2} />{' '}
+                        <Emoji>➕</Emoji> <EmojiNumber number={3} />.
                       </P>
                     </>
                   )
@@ -1077,7 +1076,7 @@ export default () => (
                   type: 'surprised',
                   children: (
                     <>
-                      <P>Reall? Please show me how!</P>
+                      <P>Really? Please show me how!</P>
                     </>
                   )
                 }
@@ -1098,8 +1097,10 @@ export default () => (
                     <>
                       <P>Here’s the lunchbox we used earlier on this page.</P>
                       <P>
-                        We’ll make some changes to this lunchbox to reproduce{' '}
-                        <H args={{ name: 'repeatFeature' }} />.
+                        <Highlight>
+                          We’ll make some changes to this lunchbox to reproduce{' '}
+                          <H args={{ name: 'repeatFeature' }} />.
+                        </Highlight>
                       </P>
                     </>
                   )
@@ -1114,9 +1115,11 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        I just added some items to this lunchbox. The{' '}
-                        <Highlight>yellow section</Highlight> is the added
-                        items.
+                        <Bold>
+                          Here, I just added some items to this lunchbox.
+                        </Bold>{' '}
+                        The <Highlight>yellow background</Highlight> indicates
+                        the added items.
                       </P>
                     </>
                   )
@@ -1124,7 +1127,8 @@ export default () => (
               ]}
             />
             <R.Cefx>
-              The <Highlight>yellow section</Highlight> is the added items.
+              The <Highlight>yellow background</Highlight> indicates the added
+              items.
             </R.Cefx>
             <BubbleQuotes
               quotes={[
@@ -1132,7 +1136,7 @@ export default () => (
                   type: 'thinking',
                   children: (
                     <>
-                      <P>Hmm… ok, whats’s so special about this lunchbox?</P>
+                      <P>Hmm… ok, what’s so special about this lunchbox?</P>
                     </>
                   )
                 },
@@ -1140,7 +1144,9 @@ export default () => (
                   type: 'saya',
                   children: (
                     <>
-                      <P>It turns out that:</P>
+                      <P>
+                        <Bold>It turns out that:</Bold>
+                      </P>
                       <Ul>
                         <UlLi>
                           <Highlight>
@@ -1173,7 +1179,10 @@ export default () => (
               <EmojiNumber number={2} />
             </R.Jwce>
             <ExpressionRunnerSeparator />
-            <R.Seie></R.Seie>
+            <R.Seie>
+              And calculates <EmojiNumber number={2} /> <Emoji>➕</Emoji>{' '}
+              <EmojiNumber number={3} />
+            </R.Seie>
             <BubbleQuotes
               quotes={[
                 {

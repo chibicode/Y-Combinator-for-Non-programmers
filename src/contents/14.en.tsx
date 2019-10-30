@@ -35,7 +35,10 @@ const ThreeStepsSummary = () => (
       <EmojiNumber number={2} />
     </R.Jwce>
     <ExpressionRunnerSeparator />
-    <R.Seie></R.Seie>
+    <R.Seie>
+      And calculates <EmojiNumber number={2} /> <Emoji>➕</Emoji>{' '}
+      <EmojiNumber number={3} />
+    </R.Seie>
   </>
 )
 
@@ -117,9 +120,7 @@ export default () => (
                         On this page, we’ll{' '}
                         <H args={{ name: 'run', lowerCase: true }} /> the
                         lunchbox that I came up with, and{' '}
-                        <Highlight>see what steps it goes through</Highlight>{' '}
-                        before it becomes the same as{' '}
-                        <H args={{ name: 'repeatFeature' }} /> at the end.
+                        <Highlight>see what steps it goes through</Highlight>.
                       </P>
                     </>
                   )
@@ -153,22 +154,10 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        I see,{' '}
+                        Yeah, we need to see{' '}
                         <Highlight>
-                          let’s see what happens in between the beginning and
-                          the end!
+                          what happens in between the beginning and the end!
                         </Highlight>
-                      </P>
-                    </>
-                  )
-                },
-                {
-                  type: 'saya',
-                  children: (
-                    <>
-                      <P>
-                        Alright, let’s{' '}
-                        <H args={{ name: 'run', lowerCase: true }} /> it!
                       </P>
                     </>
                   )
@@ -254,13 +243,8 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        <Bold>
-                          We don’t need to worry about this yellow section for
-                          now, so:
-                        </Bold>{' '}
-                        <Highlight>
-                          Let’s ignore this section for now.
-                        </Highlight>
+                        <Bold>Let’s ignore this section for now.</Bold> We don’t
+                        need to worry about it until later.
                       </P>
                       <P>
                         We’ll replace it with the <Bold>“Ignore for Now”</Bold>{' '}
@@ -293,14 +277,14 @@ export default () => (
                             name: 'conditionSectionName',
                             type: 'condition'
                           }}
-                        />
-                        :
+                        />{' '}
+                        of <H args={{ name: 'conditionFeature' }} />:
                       </P>
                       <P>
                         <Highlight>
                           Because <InlineBorder type="condition" /> is{' '}
-                          <EmojiNumber number={3} />, it chooses{' '}
-                          <InlineBorder type="falseCase" />.
+                          <EmojiNumber number={3} />, which is NOT zero, it
+                          chooses <InlineBorder type="falseCase" />.
                         </Highlight>
                       </P>
                     </>
@@ -364,10 +348,9 @@ export default () => (
                       <P>
                         Oh!{' '}
                         <Highlight>
-                          This yellow section is exactly the same as the last
-                          time!
-                        </Highlight>{' '}
-                        (The one we ignored.)
+                          This yellow section is exactly the same as the one we
+                          ignored last time!
+                        </Highlight>
                       </P>
                     </>
                   )
@@ -390,8 +373,7 @@ export default () => (
                       <P>
                         <Bold>Yes:</Bold>{' '}
                         <Highlight>
-                          This yellow section, which is exactly the same as
-                          before, has appeared again.
+                          This yellow section has appeared again.
                         </Highlight>
                       </P>
                     </>
@@ -439,14 +421,14 @@ export default () => (
               left={
                 <>
                   <R.Amjx>
-                    <HighlightBold>Before</HighlightBold>
+                    <HighlightBold>Last time</HighlightBold>
                   </R.Amjx>
                 </>
               }
               right={
                 <>
                   <R.Qgau>
-                    <HighlightBold>Now</HighlightBold>
+                    <HighlightBold>This time</HighlightBold>
                   </R.Qgau>
                 </>
               }
@@ -483,10 +465,9 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        I also noticed that the number in{' '}
-                        <InlineBorder type="condition" /> went from{' '}
-                        <EmojiNumber number={3} /> to <EmojiNumber number={2} />
-                        .
+                        I see, the number in <InlineBorder type="condition" />{' '}
+                        went from <EmojiNumber number={3} /> to{' '}
+                        <EmojiNumber number={2} />.
                       </P>
                       <P>
                         So <Highlight>it decreased by one</Highlight>.
@@ -618,14 +599,14 @@ export default () => (
               left={
                 <>
                   <R.Kosw>
-                    <HighlightBold>Before</HighlightBold>
+                    <HighlightBold>Last time</HighlightBold>
                   </R.Kosw>
                 </>
               }
               right={
                 <>
                   <R.Ysxf>
-                    <HighlightBold>Now</HighlightBold>
+                    <HighlightBold>This time</HighlightBold>
                   </R.Ysxf>
                 </>
               }
@@ -729,8 +710,8 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        <Bold>We’re almost done!</Bold> Again, we’ll un-ignore
-                        the section we ignored earlier.
+                        <Bold>We’re almost done!</Bold> I just un-ignored the
+                        section we ignored earlier.
                       </P>
                       <P>
                         <H args={{ name: 'pressRun', girl: true }} />
@@ -790,14 +771,14 @@ export default () => (
               left={
                 <>
                   <R.Mibj>
-                    <HighlightBold>Before</HighlightBold>
+                    <HighlightBold>Last time</HighlightBold>
                   </R.Mibj>
                 </>
               }
               right={
                 <>
                   <R.Kdgv>
-                    <HighlightBold>Now</HighlightBold>
+                    <HighlightBold>This time</HighlightBold>
                   </R.Kdgv>
                 </>
               }
@@ -932,10 +913,13 @@ export default () => (
             <R.Nphi>
               After some more steps,
               <br />
-              <InlineBorder type="condition" /> is <EmojiNumber number={0} />,
-              <br />
-              so it chooses <InlineBorder type="trueCase" />
+              <InlineBorder type="condition" /> is <EmojiNumber number={0} />
             </R.Nphi>
+            <ExpressionRunnerSeparator />
+            <R.Msrk>
+              It chooses <InlineBorder type="trueCase" />,<br />
+              which is <EmojiNumber number={2} />
+            </R.Msrk>
             <ExpressionRunnerSeparator />
             <R.Jwce>
               It repeats <CustomEmoji type="plusOne" /> three times…
@@ -1037,7 +1021,7 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        <Bold>Now, here’s the important part:</Bold> This
+                        <Bold>Now, here’s the important part.</Bold> This
                         mathbox has:
                       </P>
                       <Ul>
@@ -1499,7 +1483,7 @@ export default () => (
             <R.Xjzx>
               This bottom half is what makes reproducing
               <br />
-              <H args={{ name: 'repeatFeature' }} /> possible.
+              <H args={{ name: 'repeatFeature' }} /> possible
             </R.Xjzx>
             <BubbleQuotes
               quotes={[
@@ -1520,7 +1504,7 @@ export default () => (
                     <>
                       <P>
                         Yes. And this lunchbox has a{' '}
-                        <Highlight>special name</Highlight>, actually.
+                        <HighlightBold>special name</HighlightBold>, actually.
                       </P>
                     </>
                   )
@@ -1571,7 +1555,7 @@ export default () => (
                         But it’s really interesting to think that,{' '}
                         <Highlight>
                           such a simple lunchbox (with only two kinds of food
-                          items) is necessary to reproduce{' '}
+                          items) can reproduce{' '}
                           <H args={{ name: 'repeatFeature' }} />.
                         </Highlight>
                       </P>
@@ -1649,7 +1633,7 @@ export default () => (
       {
         title: (
           <>
-            We finally get <H args={{ name: 'repeatFeature' }} /> back?
+            Will we get <H args={{ name: 'repeatFeature' }} /> back?
           </>
         ),
         content: (
@@ -1657,7 +1641,7 @@ export default () => (
             <P>
               After successfully reproducing{' '}
               <H args={{ name: 'repeatFeature' }} />, the villagers are now
-              demanding the devil to get it back:
+              demanding the devil to return it:
             </P>
             <BubbleQuotes
               quotes={[
@@ -1669,7 +1653,7 @@ export default () => (
                         The devil! We reproduced{' '}
                         <H args={{ name: 'repeatFeature' }} /> using a lunchbox!
                       </P>
-                      <P>Now, give that back to us!</P>
+                      <P>Now, give it back to us!</P>
                     </>
                   )
                 },
@@ -1683,7 +1667,7 @@ export default () => (
                 }
               ]}
             />
-            <P>Will they get it back? Check on the next page!</P>
+            <P>Will the villagers get it back? Check on the next page!</P>
             <NextLessonButton />
           </>
         )
