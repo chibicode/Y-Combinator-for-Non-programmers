@@ -47,11 +47,14 @@ export default () => (
               online course where{' '}
               <Highlight>
                 non-programmers can learn about{' '}
-                <HighlightBold>Y Combinator</HighlightBold>.
-              </Highlight>{' '}
-              It’s <HighlightBold>100% FREE</HighlightBold> (no signup
-              required), and you can do it from your smartphone, tablet, or
-              computer.
+                <HighlightBold>Y Combinator</HighlightBold>
+              </Highlight>
+              , one of the coolest ideas in computer science.
+            </P>
+            <P>
+              <Emoji>🆓</Emoji> This course is{' '}
+              <HighlightBold>100% FREE</HighlightBold> (no signup required), and
+              you can do it from your smartphone, tablet, or computer.
             </P>
             <EmojiSeparator
               emojis={['📱', '🆓', '💻']}
@@ -65,10 +68,10 @@ export default () => (
               }
             />
             <P>
-              <Emoji>🍱</Emoji> <Bold>Quick demo:</Bold> In this course,{' '}
+              <Emoji>🍱</Emoji> <Bold>Quick demo:</Bold> In this course, you’ll
+              learn computer science concepts by{' '}
               <Highlight>
-                you’ll learn <Bold>computer science</Bold> concepts by solving{' '}
-                <Bold>emoji puzzles</Bold>—no coding required
+                solving <Bold>emoji puzzles</Bold>—no coding required
               </Highlight>
               . Here’s a quick demo. I’ll explain how this puzzle works later,
               but for now,{' '}
@@ -78,7 +81,7 @@ export default () => (
             </P>
             <R.Wunw />
             <P>
-              <CustomEmoji type="index" /> <Bold>Overview:</Bold> This course
+              <CustomEmoji type="index" /> <Bold>Roadmap:</Bold> This course
               consists of{' '}
               <Bold>
                 <H
