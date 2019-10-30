@@ -27,7 +27,7 @@ const HighlightContext = React.createContext<HighlightContextProps>(
 
 const mix = (color: CardProps['color'], base: string) =>
   Color(base)
-    .mix(Color(backgroundColor(color)), color === 'grey' ? 0.3 : 0.4)
+    .mix(Color(backgroundColor(color)), color === 'grey' ? 0.4 : 0.5)
     .hsl()
     .string()
 
