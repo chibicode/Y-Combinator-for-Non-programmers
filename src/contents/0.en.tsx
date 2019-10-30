@@ -13,7 +13,6 @@ import Emoji from 'src/components/Emoji'
 import EmojiNumber from 'src/components/EmojiNumber'
 import CustomEmoji from 'src/components/CustomEmoji'
 import EmojiSeparator from 'src/components/EmojiSeparator'
-import EmojiWithText from 'src/components/EmojiWithText'
 import BubbleQuotes from 'src/components/BubbleQuotes'
 import NextLessonButton from 'src/components/NextLessonButton'
 import CardContent from 'src/components/CardContent'
@@ -65,6 +64,19 @@ export default () => (
                 </>
               }
             />
+            <P>
+              <Emoji>🍱</Emoji> <Bold>Quick demo:</Bold> In this course,{' '}
+              <Highlight>
+                you’ll learn <Bold>computer science</Bold> concepts by solving{' '}
+                <Bold>emoji puzzles</Bold>—no coding required
+              </Highlight>
+              . Here’s a quick demo. I’ll explain how this puzzle works later,
+              but for now,{' '}
+              <Highlight>
+                try pressing <H args={{ name: 'run' }} /> and see what happens:
+              </Highlight>
+            </P>
+            <R.Wunw />
             <P>
               <CustomEmoji type="index" /> <Bold>Overview:</Bold> This course
               consists of{' '}
@@ -137,6 +149,7 @@ export default () => (
                 </>
               }
             />
+            <Hr />
             <CardContent
               preview={{
                 text: <>Press here to view the table of contents.</>
@@ -548,17 +561,8 @@ export default () => (
               Try pressing <H args={{ name: 'run' }} />!
             </R.Mcug>
             <P>
-              This one has <HighlightBold>emojis</HighlightBold> instead of
-              numbers - <EmojiWithText letter="a" /> and a{' '}
-              <EmojiWithText letter="b" />.{' '}
-              <Highlight>
-                Try pressing <H args={{ name: 'run' }} /> and see what happens:
-              </Highlight>
-            </P>
-            <R.Wunw />
-            <P>
-              <Bold>Eventually,</Bold> you’ll be solving complex puzzles like
-              this. Again,{' '}
+              <Bold>Eventually,</Bold> you’ll be solving complex puzzles that
+              involve <Bold>emojis</Bold> like below. Again,{' '}
               <Highlight>
                 I’ll explain how these puzzles work later, but for now, try
                 pressing <H args={{ name: 'run' }} />:
