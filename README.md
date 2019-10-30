@@ -2,7 +2,7 @@
 
 > A Wild Introduction to Computer Science
 
-![Y Combinator for Non-programmers](public/static/images/og-image-en.png)
+[![Y Combinator for Non-programmers](public/static/images/og-image-en@2x.png)](https://ycombinator.chibicode.com/)
 
 This is the repository for the website: **[Y Combinator for Non-programmers](https://ycombinator.chibicode.com/)** by Shu Uesugi.
 
@@ -18,9 +18,8 @@ yarn dev:en
 
 ## Stack
 
-- [TypeScript](https://www.typescriptlang.org/), [React](https://reactjs.org/), and [Next.js](https://nextjs.org/).
+- [TypeScript](https://www.typescriptlang.org/), [React](https://reactjs.org/), [Emotion](https://emotion.sh/) and [Next.js](https://nextjs.org/).
 - [Netlify](https://netlify.com/) for deployment
-- No Google Analytics!
 
 ## License & Credits
 

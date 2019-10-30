@@ -119,7 +119,7 @@ export default () => (
                     <>
                       <P>
                         Hi Saya. Well, we have some bad news. The devil{' '}
-                        <Emoji>😈</Emoji> has stolen our mathboxes{' '}
+                        <Emoji>😈</Emoji> has taken our mathboxes{' '}
                         <CustomEmoji type="mathBox" />.
                       </P>
                       <P>
@@ -560,7 +560,7 @@ export default () => (
               description={
                 <>
                   Last time, <EmojiNumber number={0} /> became{' '}
-                  <EmojiNumber number={1} />.
+                  <EmojiNumber number={1} />
                 </>
               }
             />
@@ -799,7 +799,7 @@ export default () => (
                   <EmojiNumber number={0} /> becomes <EmojiNumber number={1} />,
                   and
                   <br />
-                  <EmojiNumber number={1} /> becomes <EmojiNumber number={2} />.
+                  <EmojiNumber number={1} /> becomes <EmojiNumber number={2} />
                 </>
               }
             />{' '}
@@ -1043,7 +1043,7 @@ export default () => (
                   A mathbox that uses <H args={{ name: 'plusOneFeature' }} />
                   <br />
                   can be <HighlightBold>“reproduced”</HighlightBold> using a
-                  lunchbox.
+                  lunchbox
                 </>
               }
             />
@@ -1269,7 +1269,7 @@ export default () => (
                   A mathbox that uses <H args={{ name: 'plusOneFeature' }} />
                   <br />
                   can be <HighlightBold>“reproduced”</HighlightBold> using a
-                  lunchbox.
+                  lunchbox
                 </>
               }
             />

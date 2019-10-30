@@ -60,7 +60,7 @@ export default () => (
                   It’s <HighlightBold>100% FREE</HighlightBold>, and you can do
                   it from
                   <br />
-                  your smartphone, tablet, or computer.
+                  your smartphone, tablet, or computer
                 </>
               }
             />
@@ -242,8 +242,8 @@ export default () => (
               <ExternalLink href="https://www.ycombinator.com/faq">
                 FAQ page
               </ExternalLink>
-              , they say they chose the name “Y Combinator” because it’s{' '}
-              <Italic>“one of the coolest ideas in computer science.”</Italic>
+              , they say they chose the name “Y Combinator” because it’s “
+              <Italic>one of the coolest ideas in computer science.</Italic>”
             </P>
             <P>
               <Bold>Furthermore:</Bold>{' '}
@@ -275,8 +275,8 @@ export default () => (
                           “That’s so cool. They’re named after the Y Combinator.
                           There must be something going on here.”
                         </Italic>{' '}
-                        And <Bold>suits</Bold> would look at it and think,{' '}
-                        <Italic>“Y Combinator, what’s that?”</Italic>
+                        And <Bold>suits</Bold> would look at it and think, “
+                        <Italic>Y Combinator, what’s that?</Italic>”
                       </P>
                       <P>
                         That was what we wanted. We wanted hackers to notice us,
@@ -425,9 +425,8 @@ export default () => (
               }
             />
             <P>
-              <Emoji>🤔</Emoji> <Bold>So I thought:</Bold> If I could teach a
-              difficult computer science concept like Y Combinator to
-              non-programmers in 2 to 3 hours, that means{' '}
+              <Emoji>🤔</Emoji> <Bold>So I thought:</Bold> If I could teach Y
+              Combinator to non-programmers, that means{' '}
               <Highlight>
                 I’d be able to teach{' '}
                 <Italic>other difficult computer science concepts</Italic> to
@@ -459,8 +458,8 @@ export default () => (
               <Highlight>
                 I want to make it easier for non-programmers to learn difficult
                 computer science concepts as quickly as possible
-              </Highlight>{' '}
-              - without having to learn to code. This course is my first step in
+              </Highlight>
+              —without having to learn to code. This course is my first step in
               this direction.
             </P>
             <EmojiSeparator
@@ -478,7 +477,7 @@ export default () => (
             <P>
               <Bold>Downside:</Bold> I admit that this is not the best way to
               introduce computer science to non-programmers. That’s why I’m
-              calling this course a <Italic>“wild”</Italic> introduction to
+              calling this course a “<Italic>wild</Italic>” introduction to
               computer science.
             </P>
             <P>
@@ -486,15 +485,14 @@ export default () => (
               <Highlight>teach programming first.</Highlight> However, learning
               to code takes time, and{' '}
               <Highlight>
-                most people - especially adults - won’t ever learn to code.
+                most people—especially adults—won’t ever learn to code.
               </Highlight>{' '}
               As{' '}
               <ExternalLink href="https://a16z.com/2011/08/20/why-software-is-eating-the-world/">
                 software is eating the world
               </ExternalLink>
               , I believe there need to be more ways to teach computer science
-              without requiring programming knowledge -{' '}
-              <Italic>even if they’re not ideal.</Italic>
+              without requiring programming knowledge.
             </P>
           </>
         )
@@ -545,9 +543,9 @@ export default () => (
               emojis={['📱', '🧩', '💻']}
               description={
                 <>
-                  Puzzles are optimized for smartphones.
+                  The puzzles are optimized for smartphones.
                   <br />
-                  They can be done on a computer too.
+                  They can be done on a computer too
                 </>
               }
             />
@@ -564,9 +562,9 @@ export default () => (
             <P>
               I had to pack a lot of materials so it can be read in under 3
               hours, so <Highlight>it’s fast-paced and challenging.</Highlight>{' '}
-              You might find it difficult if you don’t enjoy puzzles, but{' '}
-              <Highlight>you’ll never get stuck</Highlight>. I made it so that
-              you can keep reading even if you don’t understand everything.
+              However, <Highlight>you’ll never get stuck</Highlight>—I made it
+              so that you can finish the course even if you don’t understand
+              everything (and that’s okay! <Emoji>🤗</Emoji>).
             </P>
           </>
         ),
@@ -639,7 +637,10 @@ export default () => (
         footer: {
           content: (
             <>
+              <P>Also, sorry for not introducing myself earlier…</P>
               <H args={{ name: 'aboutMe' }} />
+              <P>To go to the next page, press this button:</P>
+              <NextLessonButton />
             </>
           )
         }

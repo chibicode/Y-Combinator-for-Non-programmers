@@ -1,5 +1,6 @@
 export { default as Aaov } from 'src/components/Runners/Aaov'
 export { default as Qxob } from 'src/components/Runners/Qxob'
+export { default as Bcgp } from 'src/components/Runners/Bcgp'
 export { default as Pbhg } from 'src/components/Runners/Pbhg'
 export { default as Wwtl } from 'src/components/Runners/Wwtl'
 export { default as Vdhd } from 'src/components/Runners/Vdhd'

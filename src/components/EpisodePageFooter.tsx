@@ -5,7 +5,7 @@ import H from 'src/components/H'
 import Emoji from 'src/components/Emoji'
 import { spaces, colors, fontSizes } from 'src/lib/theme'
 import locale from 'src/lib/locale'
-import { githubRepo } from 'src/lib/meta'
+import { githubRepo, jpBaseUrl } from 'src/lib/meta'
 
 const linkClasses = css`
   text-decoration: none;
@@ -30,13 +30,20 @@ const EpisodePageFooter = () => {
         font-size: ${fontSizes(0.7)};
       `}
     >
-      {locale === 'jp' && (
+      {locale === 'jp' ? (
         <>
           <ExternalLink
             href={`${githubRepo}/tree/master/docs/privacy-policy-jp.md`}
             css={linkClasses}
           >
             <H args={{ name: 'privacyPolicy' }} />
+          </ExternalLink>{' '}
+          &middot;{' '}
+        </>
+      ) : (
+        <>
+          <ExternalLink href={jpBaseUrl} css={linkClasses}>
+            Japanese Site (日本語版)
           </ExternalLink>{' '}
           &middot;{' '}
         </>

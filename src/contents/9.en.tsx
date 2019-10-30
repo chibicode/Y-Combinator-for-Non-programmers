@@ -492,7 +492,7 @@ export default () => (
                   <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />
                   ,
                   <br />
-                  then the results change.
+                  then the results change
                 </>
               }
             />
@@ -787,7 +787,7 @@ export default () => (
                   <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />
                   ,
                   <br />
-                  then the results change.
+                  then the results change
                 </>
               }
             />
@@ -937,7 +937,7 @@ export default () => (
               ]}
               description={
                 <>
-                  <Bold>Can we use this special rule:</Bold>
+                  <Bold>Can we use this special rule?</Bold>
                   <br />
                   If the same item appears in
                   <br />
@@ -948,7 +948,7 @@ export default () => (
                   /> and{' '}
                   <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />
                   ,<br />
-                  change one of them to something different.
+                  change one of them to something different
                 </>
               }
             />

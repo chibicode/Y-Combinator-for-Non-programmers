@@ -1147,7 +1147,7 @@ export default () => (
                   A mathbox that uses <H args={{ name: 'minusOneFeature' }} />
                   <br />
                   can be <HighlightBold>“reproduced”</HighlightBold> using a
-                  lunchbox.
+                  lunchbox
                 </>
               }
             />

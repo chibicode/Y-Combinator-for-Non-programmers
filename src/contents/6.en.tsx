@@ -118,7 +118,7 @@ export default () => (
             </R.Ednv>
             <Hr />
             <P>
-              <Bold>But:</Bold> The mathboxes were stolen by the devil{' '}
+              <Bold>But:</Bold> The mathboxes were taken by the devil{' '}
               <Emoji>😈</Emoji>. To take them back, we must solve{' '}
               <Highlight>
                 <H args={{ name: 'bentoBoxPuzzle', postfix: 's' }} />

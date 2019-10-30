@@ -65,7 +65,7 @@ export default () => (
         content: (
           <>
             <P>
-              In the last episode, a villager from Lambda Village asked the
+              In the last page, a villager from Lambda Village asked the
               following question:
             </P>
             <BubbleQuotes
@@ -111,7 +111,7 @@ export default () => (
             />
             <P>
               <Bold>However:</Bold> Alonzo Church <Italic>did not</Italic> call
-              it “lunchbox” when he invented it. Instead, he called it “
+              it a “lunchbox” when he invented it. Instead, he called it “
               <HighlightBold>Lambda calculus</HighlightBold>”.
             </P>
             <EmojiSeparator
@@ -125,7 +125,7 @@ export default () => (
                 <>
                   It was called <HighlightBold>“Lambda calculus”</HighlightBold>
                   <br />
-                  instead of “lunchbox”
+                  instead of a “lunchbox”
                 </>
               }
             />
@@ -139,7 +139,7 @@ export default () => (
           <>
             <P>
               <Bold>Lambda calculus</Bold>, invented by Alonzo Church, works
-              exactly like a lunchbox - although they <Italic>look</Italic>{' '}
+              exactly like a lunchbox—although they <Italic>look</Italic>{' '}
               different.
             </P>
             <EmojiSeparator
@@ -157,9 +157,9 @@ export default () => (
             />
             <P>
               <Bold>Here is an example of lambda calculus.</Bold> The leftmost
-              letter, <HighlightBold>λ</HighlightBold>, is a Greek letter
-              <Italic>“lambda”</Italic>. That’s why it’s called{' '}
-              <Italic>“lambda calculus.”</Italic>
+              letter, <HighlightBold>λ</HighlightBold>, is a Greek letter “
+              <Italic>lambda</Italic>”. That’s why it’s called “
+              <Italic>lambda calculus.</Italic>”
             </P>
             <CenteredCode size="md">λA.B C</CenteredCode>
             <P>
@@ -174,8 +174,7 @@ export default () => (
               exactly the same as this lunchbox:
             </R.Kzkg>
             <P>
-              If you <H args={{ name: 'run', lowerCase: true }} /> the above
-              lunchbox, it will become <Emoji>🅱️</Emoji>.{' '}
+              If you run the above lunchbox, it will become <Emoji>🅱️</Emoji>.{' '}
               <H args={{ name: 'pressRun' }} />
             </P>
             <R.Unxf></R.Unxf>
@@ -183,7 +182,7 @@ export default () => (
               <Bold>Similarly:</Bold> If you “run” the earlier lambda calculus
               expression,{' '}
               <Highlight>
-                the result will also be <Emoji>🅱️</Emoji>.
+                the result will also be <Code>B</Code>.
               </Highlight>
             </P>
             <CenteredCode size="md">λA.B C</CenteredCode>
@@ -230,9 +229,9 @@ export default () => (
               <HighlightBold>Y Combinator</HighlightBold>
             </ExpressionRunnerCaptionOnly>
             <P>
-              We had been talking about lunchboxes in this course.{' '}
+              We have been talking about lunchboxes in this course.{' '}
               <Highlight>
-                But in reality, we actually were talking about{' '}
+                But we really were talking about{' '}
                 <HighlightBold>lambda calculus</HighlightBold>.
               </Highlight>{' '}
               We used lunchboxes to make lambda calculus more approachable for
@@ -333,7 +332,7 @@ export default () => (
                   <br />
                   any calculations that can be
                   <br />
-                  done by today’s computers.
+                  done by today’s computers
                 </>
               }
             />
@@ -374,7 +373,7 @@ export default () => (
                   <br />
                   any calculations that can be
                   <br />
-                  done by today’s computers.
+                  done by today’s computers
                 </>
               }
             />
@@ -393,7 +392,7 @@ export default () => (
               nodes={[
                 <CustomEmoji type="lambda" />,
                 <CustomEmoji type="singleArrow" />,
-                <Emoji>🍱</Emoji>
+                <Emoji>💻</Emoji>
               ]}
               description={
                 <>
@@ -408,8 +407,8 @@ export default () => (
               <Highlight>
                 Lambda calculus influenced many programming languages.
               </Highlight>{' '}
-              Popular programming languages people use today usually have a
-              feature inspired by lambda calculus.
+              Today’s popular programming languages usually have a feature that
+              originated from lambda calculus.
             </P>
             <P>
               <Bold>Example:</Bold> <HighlightBold>Python</HighlightBold> is one
@@ -422,7 +421,7 @@ export default () => (
             />
             <P>
               The python language has a feature called{' '}
-              <HighlightBold>“lambda”</HighlightBold>, which is inspired by
+              <HighlightBold>“lambda”</HighlightBold>, which is similar to
               lambda calculus.
             </P>
             <P>
@@ -431,7 +430,7 @@ export default () => (
               <span css={pythonCss}>
                 <Bold>green</Bold>
               </span>{' '}
-              for Python code).
+              for the Python code).
             </P>
             <CenteredCode python size="sm">
               (lambda A: A)('B')
@@ -465,7 +464,7 @@ export default () => (
               <Bold>Summary:</Bold>{' '}
               <Highlight>
                 Today’s popular programming languages like Python have a feature
-                inspired by lambda calculus.
+                that originated from lambda calculus.
               </Highlight>
             </P>
             <EmojiSeparator
@@ -480,7 +479,7 @@ export default () => (
                   <br />
                   like Python have a feature
                   <br />
-                  inspired by lambda calculus.
+                  that originated from lambda calculus
                 </>
               }
             />
@@ -561,7 +560,7 @@ export default () => (
                   <br />
                   any calculations that can be
                   <br />
-                  done by today’s computers.
+                  done by today’s computers
                 </>
               }
             />
@@ -584,7 +583,7 @@ export default () => (
                   <br />
                   you can build a complex lunchbox
                   <br />
-                  that can do complex calculations.
+                  that can do complex calculations
                 </>
               }
             />
@@ -614,7 +613,7 @@ export default () => (
                 <>
                   We can create a lunchbox that can
                   <br />
-                  repeat <Emoji>🔁</Emoji> some operations.
+                  repeat <Emoji>🔁</Emoji> some calculations
                 </>
               }
             />
@@ -622,8 +621,8 @@ export default () => (
               <Bold>Again:</Bold> Computer science is all about building a
               complex thing from simple things.{' '}
               <Highlight>
-                I think lunchboxes - especially Y Combinator - are a great
-                example of this idea.
+                I think lunchboxes—especially Y Combinator—are a great example
+                of this idea.
               </Highlight>{' '}
               <Emoji>😉</Emoji>
             </P>
@@ -639,7 +638,7 @@ export default () => (
                   <br />
                   building a complex thing from simple things.
                   <br />
-                  Lunchboxes are a great example.
+                  Lunchboxes are a great example
                 </>
               }
             />
@@ -654,8 +653,8 @@ export default () => (
             <P>
               <Bold>For example</Bold>: If you study artificial intelligence,
               you’ll learn to build a <Bold>“neural network”</Bold>{' '}
-              <Emoji>🧠</Emoji> - a complex thing that can be used to process
-              images - by combining simple things called <Bold>“neurons”</Bold>{' '}
+              <Emoji>🧠</Emoji>—a complex thing that can be used to process
+              images—by combining simple things called <Bold>“neurons”</Bold>{' '}
               <CustomEmoji type="nodes" />.
             </P>
             <EmojiSeparator
@@ -675,9 +674,9 @@ export default () => (
             />
             <P>
               So hopefully this course gave you an idea of what learning
-              computer science is like. As you learn it, you’ll be surprised how
-              many innovations in computer science are built on lots of simple
-              things!
+              computer science is like. As you learn it, you’ll be surprised
+              that most innovative ideas in computer science are based on lots
+              of simple ideas!
             </P>
           </>
         )
@@ -691,14 +690,16 @@ export default () => (
             <Ol>
               <OlLi>
                 <Highlight>
-                  <Bold>Lunchboxes</Bold> are simple, but by combining them, you
-                  can create a lunchbox that can do complex calculations.
+                  <Emoji>🍱</Emoji> <Bold>Lunchboxes</Bold> are simple, but by
+                  combining them, you can create a lunchbox that can do complex
+                  calculations.
                 </Highlight>
               </OlLi>
               <OlLi>
                 <Highlight>
                   <Bold>Y Combinator</Bold> is a special kind of a lunchbox that
-                  allows you to repeat some calculations.
+                  allows you to <Emoji>🔁</Emoji> <Bold>repeat</Bold> any
+                  calculations.
                 </Highlight>
               </OlLi>
               <OlLi>
@@ -711,12 +712,15 @@ export default () => (
               <OlLi>
                 <Highlight>
                   <Bold>Computer science</Bold> is all about building a complex
-                  thing from simple things
-                </Highlight>
-                , and lunchboxes are a great example of this.
+                  thing from simple things.
+                </Highlight>{' '}
+                Lunchboxes—especially Y Combinator—are a great example of this.
               </OlLi>
             </Ol>
             <EmojiSeparator emojis={['✨', '🍱', '✨']} />
+            <P>
+              That’s it for this course! <Emoji>🤗</Emoji>
+            </P>
           </>
         ),
         footer: {
@@ -724,14 +728,16 @@ export default () => (
             <>
               <CardContent
                 preview={{
-                  text: <>Try Y Combinator in the browser</>,
+                  text: <>Test Y Combinator in devtools</>,
                   content: (
                     <>
                       <P>
-                        <Bold>Are you a programmer?</Bold> If you’re a
-                        programmer and are interested in trying out{' '}
-                        <HighlightBold>Y Combinator</HighlightBold>, press “Try
-                        Y Combinator in the browser” below!
+                        <Bold>If you’re a programmer</Bold> and are interested
+                        in trying out the{' '}
+                        <HighlightBold>Y Combinator</HighlightBold> program,
+                        press “Test Y Combinator in devtools” below. You need to
+                        be on a desktop browser though—you can’t do it on a
+                        smartphone.
                       </P>
                     </>
                   )
@@ -773,15 +779,15 @@ export default () => (
                     , which is the factorial of <EmojiNumber number={4} />.
                   </UlLi>
                   <UlLi>
-                    <Bold>Also:</Bold> If you change <Code>4</Code> on the
+                    <Bold>Also:</Bold> If you change the <Code>4</Code> on the
                     bottom to <Code>5</Code>, it will calculate the factorial of{' '}
                     <EmojiNumber number={5} />, which is <Code>120</Code>.
                   </UlLi>
                 </Ul>
                 <P>
-                  Usually, to calculate the factorial of a number in JavaScript,
-                  you’d use loops like <Code>for</Code>, <Code>while</Code>, or{' '}
-                  <Code>reduce</Code>. Or you might use recursion.
+                  To calculate the factorial of a number in JavaScript, you’d
+                  usually use loops like <Code>for</Code>, <Code>while</Code>,
+                  or <Code>reduce</Code>. Or you might use recursion.
                 </P>
                 <P>
                   <Highlight>

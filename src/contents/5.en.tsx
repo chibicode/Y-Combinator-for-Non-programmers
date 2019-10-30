@@ -32,17 +32,18 @@ import {
   InstructionTwo
 } from 'src/contents/4.en'
 
-const WillReturnQuote = () => (
+const WillReturnQuote = ({ covered }: { covered?: true }) => (
   <>
     <Ul>
       <UlLi>
         <Highlight>
-          On the <Bold>intermediate levels</Bold>, which start from the next
-          page, I’ll give you a <Italic>very difficult question</Italic>.
+          On the <Bold>intermediate levels</Bold>, which will start from the
+          next page, I’ll give you a <Italic>very difficult question</Italic>.
         </Highlight>
       </UlLi>
       <UlLi>
-        You’ll be able to solve it by applying the rules we cover on this page.
+        You’ll be able to solve it by applying the rules we cover
+        {covered && <>ed</>} on this page.
       </UlLi>
     </Ul>
     <P>
@@ -82,13 +83,13 @@ export const ThreeRowRules = () => (
     <Ol>
       <OlLi>
         <Highlight>
-          Start with the pair of{' '}
+          <Bold>Start</Bold> with the pair of{' '}
           <InlinePrioritiesLabel>1</InlinePrioritiesLabel>’s.
         </Highlight>
       </OlLi>
       <OlLi>
         <Highlight>
-          Label the middle item on the bottom row as{' '}
+          <Bold>Label</Bold> the middle item on the bottom row as{' '}
           <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />, and
           ignore it.
         </Highlight>
@@ -98,7 +99,8 @@ export const ThreeRowRules = () => (
           After finishing the pair of{' '}
           <InlinePrioritiesLabel>1</InlinePrioritiesLabel>’s, the pair of{' '}
           <InlinePrioritiesLabel>2</InlinePrioritiesLabel>’s becomes{' '}
-          <InlinePrioritiesLabel>1</InlinePrioritiesLabel>’s. Then, repeat.
+          <InlinePrioritiesLabel>1</InlinePrioritiesLabel>’s.{' '}
+          <Bold>Then, repeat</Bold>.
         </Highlight>
       </OlLi>
     </Ol>
@@ -142,7 +144,7 @@ export const Beginner5Rules = () => (
   </>
 )
 
-const WillReturn = () => (
+const WillReturn = ({ covered }: { covered?: true }) => (
   <>
     <EmojiSeparator
       emojis={['❓', '😈', '❓']}
@@ -154,7 +156,7 @@ const WillReturn = () => (
           <br />
           It can be solved by applying the rules
           <br />
-          we cover on this page.
+          we cover{covered && <>ed</>} on this page.
         </>
       }
     />
@@ -181,16 +183,16 @@ export default () => (
     cards={[
       {
         type: 'summary',
-        title: <>The last page of beginner levels</>,
+        title: <>This is the final beginner level!</>,
         content: (
           <>
             <P>
-              <Bold>This is the last page of beginner levels.</Bold> Thank you
-              for following along so far!
+              <Bold>This is the final page of the beginner levels.</Bold> Thank
+              you for following along so far!
             </P>
             <EmojiSeparator
               emojis={['✨', '🤗', '✨']}
-              description={<>The last page of beginner levels!</>}
+              description={<>The final page of the beginner levels!</>}
             />
             <P>
               <Emoji>⚠️</Emoji> <Bold>Warning:</Bold>{' '}
@@ -222,8 +224,10 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        From now on, you’ll be solving much harder puzzles like
-                        this one:
+                        <Bold>
+                          From now on, you’ll be solving much harder puzzles
+                          like this one:
+                        </Bold>
                       </P>
                     </>
                   )
@@ -245,7 +249,9 @@ export default () => (
                         rows.
                       </P>
                       <P>
-                        But <Italic>this one has 3 rows</Italic> vertically.
+                        <Highlight>
+                          But <Italic>this one has 3 rows</Italic> vertically.
+                        </Highlight>
                       </P>
                     </>
                   )
@@ -256,8 +262,10 @@ export default () => (
                     <>
                       <P>
                         Also,{' '}
-                        <Italic>there are 3 items on the bottom row</Italic>:{' '}
-                        <EmojiWithText letter="a" />, a{' '}
+                        <Highlight>
+                          there are 3 items on the bottom row
+                        </Highlight>
+                        : <EmojiWithText letter="a" />, a{' '}
                         <EmojiWithText letter="b" />, and another{' '}
                         <EmojiWithText letter="a" />.
                       </P>
@@ -274,12 +282,12 @@ export default () => (
                     <>
                       <P>
                         Right. Also, did you realize that{' '}
-                        <Italic>
+                        <Highlight>
                           there are numbers like{' '}
                           <InlinePrioritiesLabel>1</InlinePrioritiesLabel> and{' '}
                           <InlinePrioritiesLabel>2</InlinePrioritiesLabel> on
                           the left edge?
-                        </Italic>
+                        </Highlight>
                       </P>
                     </>
                   )
@@ -308,21 +316,24 @@ export default () => (
                   type: 'devil',
                   children: (
                     <>
-                      <P>
-                        <Bold>So, first:</Bold>{' '}
-                        <Italic>
-                          I’ll explain how to solve lunchbox puzzles with 3
-                          rows.
-                        </Italic>
-                      </P>
-                      <P>
-                        <Bold>Then:</Bold>{' '}
-                        <Italic>
-                          I will give you{' '}
-                          <H args={{ name: 'yesNoQuiz', postfix: 'zes' }} /> to
-                          solve.
-                        </Italic>
-                      </P>
+                      <P>I’ll show you!</P>
+                      <Ol>
+                        <OlLi>
+                          <Bold>First:</Bold>{' '}
+                          <Highlight>
+                            I’ll explain how to solve lunchbox puzzles with 3
+                            rows.
+                          </Highlight>
+                        </OlLi>
+                        <OlLi>
+                          <Bold>Then:</Bold>{' '}
+                          <Highlight>
+                            I will give you{' '}
+                            <H args={{ name: 'yesNoQuiz', postfix: 'zes' }} />{' '}
+                            to solve.
+                          </Highlight>
+                        </OlLi>
+                      </Ol>
                     </>
                   )
                 },
@@ -349,13 +360,11 @@ export default () => (
         content: (
           <>
             <P>
-              <Bold>
-                The first step in solving{' '}
-                <H args={{ name: 'bentoBoxPuzzle', indefinite: true }} /> with 3
-                rows:
-              </Bold>{' '}
+              <Bold>The first step</Bold> in solving{' '}
+              <H args={{ name: 'bentoBoxPuzzle', indefinite: true }} /> with 3
+              rows is to{' '}
               <Highlight>
-                Focus on the pair of{' '}
+                focus on the pair of{' '}
                 <InlinePrioritiesLabel>1</InlinePrioritiesLabel>’s.
               </Highlight>
             </P>
@@ -373,14 +382,11 @@ export default () => (
               }
             />
             <P>
-              <Bold>More specifically:</Bold>{' '}
+              <Bold>More specifically:</Bold> You need to{' '}
               <Highlight>
-                Take a look at the{' '}
-                <Italic>
-                  sections that have a{' '}
-                  <InlinePrioritiesLabel>1</InlinePrioritiesLabel> on its
-                  top-left corner or bottom-left corner.
-                </Italic>
+                take a look at the sections that have a{' '}
+                <InlinePrioritiesLabel>1</InlinePrioritiesLabel> on their{' '}
+                <Bold>top-left</Bold> corner or <Bold>bottom-left</Bold> corner.
               </Highlight>
             </P>
             <P>
@@ -411,23 +417,37 @@ export default () => (
                   type: 'devil',
                   children: (
                     <>
-                      <P>
-                        Right. This means{' '}
-                        <Highlight>
-                          focus on <Italic>the bottom 2 rows</Italic>, which
-                          correspond to the pair of{' '}
-                          <InlinePrioritiesLabel revert>
-                            1
-                          </InlinePrioritiesLabel>
-                          ’s, and <Italic>ignore</Italic> the top row{' '}
-                          <InlineBackground bgColor={'indigo50'} /> for now.
-                        </Highlight>
-                      </P>
+                      <P>Right. This means: </P>
+                      <Ul>
+                        <UlLi>
+                          <Highlight>
+                            <Bold>Focus</Bold> on{' '}
+                            <Italic>the bottom 2 rows</Italic>, which correspond
+                            to the pair of{' '}
+                            <InlinePrioritiesLabel revert>
+                              1
+                            </InlinePrioritiesLabel>
+                            ’s,
+                          </Highlight>{' '}
+                          and
+                        </UlLi>
+                        <UlLi>
+                          <Highlight>
+                            <Bold>Ignore</Bold> the <Italic>top row</Italic> for
+                            now.
+                          </Highlight>
+                        </UlLi>
+                      </Ul>
                     </>
                   )
                 }
               ]}
             />
+            <R.Bcgp>
+              <Bold>Focus</Bold> on <Italic>the bottom 2 rows</Italic>, and
+              <br />
+              <Bold>Ignore</Bold> the <Italic>top row</Italic> for now
+            </R.Bcgp>
           </>
         )
       },
@@ -443,7 +463,7 @@ export default () => (
         content: (
           <>
             <P>
-              Next, <Highlight>we add the labels.</Highlight>{' '}
+              <Bold>Next:</Bold> <Highlight>we add the labels.</Highlight>{' '}
               <H args={{ name: 'pressNext' }} />
             </P>
             <R.Qxob />
@@ -454,7 +474,7 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        <Bold>Wait a minute:</Bold> In addition to{' '}
+                        In addition to{' '}
                         <BottomRightBadge
                           inline
                           bottomRightBadgeType="callArg"
@@ -484,7 +504,17 @@ export default () => (
                       </P>
                     </>
                   )
-                },
+                }
+              ]}
+            />
+            <R.Pbhg>
+              There’s a new label{' '}
+              <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />
+              <br />
+              for the <EmojiWithText letter="b" />!
+            </R.Pbhg>
+            <BubbleQuotes
+              quotes={[
                 {
                   type: 'devil',
                   children: (
@@ -528,8 +558,8 @@ export default () => (
             />
             <EmojiSeparator
               nodes={[
-                <EmojiForLetter letter="b" />,
                 <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />,
+                <CustomEmoji type="singleArrow" />,
                 <EmojiForLetter letter="b" />
               ]}
               description={
@@ -577,7 +607,7 @@ export default () => (
             <P>
               <Bold>Answer:</Bold>{' '}
               <Highlight>
-                You can ignore{' '}
+                You can <Bold>ignore</Bold>{' '}
                 <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />
                 ’s for now.
               </Highlight>
@@ -621,19 +651,19 @@ export default () => (
               </UlLi>
             </Ul>
             <P>
-              <Italic>
+              <Bold>
                 None of them involves{' '}
                 <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />
-              </Italic>
+              </Bold>
               .{' '}
               <Highlight>
-                So, while we do these next steps, you can ignore{' '}
+                So, while we do these next steps, you can <Bold>ignore</Bold>{' '}
                 <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />
                 ’s.
               </Highlight>
             </P>
             <R.Pbhg>
-              Ignore the <EmojiWithText letter="b" /> labeled as{' '}
+              <Bold>Ignore</Bold> the <EmojiWithText letter="b" /> labeled as{' '}
               <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />
               <br />
               for the next several steps
@@ -721,7 +751,7 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        I see - that’s why we can ignore{' '}
+                        I see—that’s why we can ignore{' '}
                         <BottomRightBadge
                           inline
                           bottomRightBadgeType="funcUnbound"
@@ -791,9 +821,7 @@ export default () => (
                   type: 'surprised',
                   children: (
                     <>
-                      <P>
-                        This now looks like lunchboxes from the previous page!
-                      </P>
+                      <P>We now hae a simpler lunchbox!</P>
                     </>
                   )
                 }
@@ -818,14 +846,14 @@ export default () => (
                         </UlLi>
                         <UlLi>
                           But{' '}
-                          <Italic>
-                            it will now be labeled as{' '}
+                          <Highlight>
+                            it is now labeled as{' '}
                             <BottomRightBadge
                               inline
                               bottomRightBadgeType="funcArg"
                             />
-                          </Italic>
-                          , because it’s on the “<Bold>L</Bold>eft” now.
+                          </Highlight>{' '}
+                          because it’s on the “<Bold>L</Bold>eft” now.
                         </UlLi>
                       </Ul>
                     </>
@@ -880,7 +908,7 @@ export default () => (
                   type: 'thinking',
                   children: (
                     <>
-                      <P>I think so?</P>
+                      <P>Hmm… I might need to look at it one more time.</P>
                     </>
                   )
                 },
@@ -1060,10 +1088,21 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        <Italic>Not yet.</Italic> I still haven’t given you
+                        <Bold>Not yet.</Bold> I still haven’t given you
                         questions regarding the{' '}
                         <HighlightBold>additional rules</HighlightBold> of a
                         lunchbox.
+                      </P>
+                    </>
+                  )
+                },
+                {
+                  type: 'thinking',
+                  children: (
+                    <>
+                      <P>
+                        <Bold>The additional rules?</Bold> What are you talking
+                        about?
                       </P>
                     </>
                   )
@@ -1076,17 +1115,6 @@ export default () => (
             />
             <BubbleQuotes
               quotes={[
-                {
-                  type: 'thinking',
-                  children: (
-                    <>
-                      <P>
-                        <Bold>The additional rules?</Bold> What are you talking
-                        about?
-                      </P>
-                    </>
-                  )
-                },
                 {
                   type: 'devil',
                   children: (
@@ -1109,10 +1137,10 @@ export default () => (
                     <>
                       <P>
                         Hmm… this is new.{' '}
-                        <Italic>
+                        <Highlight>
                           There are two pairs of{' '}
                           <InlinePrioritiesLabel>1</InlinePrioritiesLabel>’s
-                        </Italic>
+                        </Highlight>
                         .
                       </P>
                     </>
@@ -1140,10 +1168,10 @@ export default () => (
                     <>
                       <P>
                         This one looks new too.{' '}
-                        <Italic>
+                        <Highlight>
                           There’s only ONE item (a <EmojiWithText letter="b" />)
                           on the bottom row.
-                        </Italic>
+                        </Highlight>
                       </P>
                     </>
                   )
@@ -1177,9 +1205,9 @@ export default () => (
               emojis={['❓', '🍱', '❓']}
               description={
                 <>
-                  You need the <Bold>additional rules</Bold> to
+                  You need know the <Bold>additional rules</Bold>
                   <br />
-                  solve puzzles like the above
+                  to solve puzzles like the above
                 </>
               }
             />
@@ -1190,8 +1218,8 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        There are <Italic>two additional rules</Italic> you need
-                        to know.
+                        There are <Bold>two additional rules</Bold> you need to
+                        know.
                       </P>
                       <P>
                         After explaining them, I’ll give you more{' '}
@@ -1216,7 +1244,7 @@ export default () => (
                   type: 'devil',
                   children: (
                     <>
-                      <P>Well: </P>
+                      <P>Well, here’s the deal…</P>
                       <WillReturnQuote />
                     </>
                   )
@@ -1296,11 +1324,8 @@ export default () => (
             </R.Aezk>
             <Hr />
             <P>
-              <Bold>Then, here’s a question:</Bold> What will happen to the
-              labels? <BottomRightBadge inline bottomRightBadgeType="callArg" />{' '}
-              <BottomRightBadge inline bottomRightBadgeType="funcArg" />{' '}
-              <BottomRightBadge inline bottomRightBadgeType="funcBound" />{' '}
-              <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />
+              <Emoji>🤔</Emoji> <Bold>Now, you might be wondering:</Bold> What
+              labels do we use?
             </P>
             <EmojiSeparator
               nodes={[
@@ -1309,20 +1334,27 @@ export default () => (
                 <BottomRightBadge inline bottomRightBadgeType="funcBound" />,
                 <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />
               ]}
+              description={
+                <>
+                  <Highlight>What labels do we use?</Highlight>
+                </>
+              }
             />
             <P>
-              First, the top <EmojiWithText letter="a" /> will be labeled as{' '}
+              <Bold>First:</Bold> The top <EmojiWithText letter="a" /> will be
+              labeled as{' '}
               <BottomRightBadge inline bottomRightBadgeType="callArg" />.
             </P>
             <R.Igrl />
             <P>
-              Next, the bottom-left <EmojiWithText letter="b" /> will be labeled
-              as <BottomRightBadge inline bottomRightBadgeType="funcArg" />.
+              <Bold>Second:</Bold> The bottom-left <EmojiWithText letter="b" />{' '}
+              will be labeled as{' '}
+              <BottomRightBadge inline bottomRightBadgeType="funcArg" />.
             </P>
             <R.Uppk />
             <P>
-              Next, the right <EmojiWithText letter="b" /> and the right{' '}
-              <EmojiWithText letter="c" /> will be labeled as{' '}
+              <Bold>>Third:</Bold> The right <EmojiWithText letter="b" /> and
+              the right <EmojiWithText letter="c" /> will be labeled as{' '}
               <BottomRightBadge inline bottomRightBadgeType="funcBound" />.
             </P>
             <R.Qfbk />
@@ -1829,7 +1861,7 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        Yes - we can’t take any more steps, so that’s where we
+                        Yes. We can’t take any more steps, so that’s where we
                         stop.
                       </P>
                     </>
@@ -2023,17 +2055,32 @@ export default () => (
                         <Bold>Good for you!</Bold> And you’ve just completed the
                         beginner levels.
                       </P>
+                    </>
+                  )
+                },
+                {
+                  type: 'celebrate',
+                  children: (
+                    <>
+                      <P>Yay!</P>
+                    </>
+                  )
+                },
+                {
+                  type: 'devil',
+                  children: (
+                    <>
                       <P>
                         <Bold>Next up: Intermediate levels.</Bold> As I
                         mentioned earlier:
                       </P>
-                      <WillReturnQuote />
+                      <WillReturnQuote covered />
                     </>
                   )
                 }
               ]}
             />
-            <WillReturn />
+            <WillReturn covered />
             <BubbleQuotes
               quotes={[
                 {

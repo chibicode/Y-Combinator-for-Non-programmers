@@ -17,6 +17,13 @@ export const qxob: ExpressionRunnerShorthandConfig = {
   showPriorities: true
 }
 
+export const bcgp: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.pisd,
+  initialState: 'showFuncUnbound',
+  showPriorities: true
+}
+
 export const pbhg: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   initialExpressionContainer: initialExpressionContainers.pisd,

@@ -186,7 +186,7 @@ export default () => (
                   <br />
                   to do additions and subtractions of
                   <br />
-                  large numbers.
+                  large numbers
                 </>
               }
             />
@@ -222,7 +222,7 @@ export default () => (
                   We might put the wrong number of
                   <br />
                   <CustomEmoji type="plusOne" />
-                  ’s as the number gets large.
+                  ’s as the number gets large
                 </>
               }
             />
@@ -433,7 +433,7 @@ export default () => (
                   <br />
                   <CustomEmoji type="blankNumberRed" />,{' '}
                   <CustomEmoji type="blankNumberYellow" />, and{' '}
-                  <CustomEmoji type="blankNumberGreen" />.
+                  <CustomEmoji type="blankNumberGreen" />
                 </>
               }
             />
@@ -622,8 +622,7 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        I see - that’s why it becomes <EmojiNumber number={1} />
-                        !
+                        I see—that’s why it becomes <EmojiNumber number={1} />!
                       </P>
                     </>
                   )
@@ -894,7 +893,7 @@ export default () => (
                   because the final result is{' '}
                   <HighlightBold>conditioned</HighlightBold> on
                   <br />
-                  what’s in <InlineBorder type="condition" />.
+                  what’s in <InlineBorder type="condition" />
                 </>
               }
             />

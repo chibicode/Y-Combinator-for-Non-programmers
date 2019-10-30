@@ -28,12 +28,12 @@ export default () => (
     cards={[
       {
         type: 'summary',
-        title: <>This is the last advanced episode!</>,
+        title: <>This is the final advanced level!</>,
         content: (
           <>
             <P>
               <Highlight>
-                This is the last page for the advanced levels!
+                This is the final page for the advanced levels!
               </Highlight>{' '}
               You’re almost there!
             </P>
@@ -70,7 +70,9 @@ export default () => (
               emojis={['🔁', '😈', '🔁']}
               description={
                 <>
-                  We got <H args={{ name: 'repeatFeature' }} /> back!
+                  I will return
+                  <br />
+                  <H args={{ name: 'repeatFeature' }} /> to you!
                 </>
               }
             />
@@ -105,7 +107,7 @@ export default () => (
                     <>
                       <P>
                         Finally, we can use mathboxes to do additions and
-                        subtractions - no matter how difficult they are!
+                        subtractions!
                       </P>
                     </>
                   )
@@ -137,15 +139,50 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        <Bold>Actually:</Bold>{' '}
+                        <Bold>But guys…</Bold> Do you really think it’s over
+                        now?
+                      </P>
+                    </>
+                  )
+                },
+                {
+                  type: 'roll',
+                  children: (
+                    <>
+                      <P>Hmm…?</P>
+                    </>
+                  )
+                },
+                {
+                  type: 'devil',
+                  children: (
+                    <>
+                      <P>
+                        <Bold>Well, we are not done yet!</Bold>{' '}
+                      </P>
+                      <P>
                         <Highlight>
-                          I have something I haven’t told you about.
+                          I still have an important thing I haven’t told you
+                          about.
                         </Highlight>{' '}
                         Let’s talk about it now!
                       </P>
                     </>
                   )
-                },
+                }
+              ]}
+            />
+            <EmojiSeparator
+              emojis={['❓', '😈', '❓']}
+              description={
+                <>
+                  I still have an important thing
+                  <br />I haven’t told you about!
+                </>
+              }
+            />
+            <BubbleQuotes
+              quotes={[
                 {
                   type: 'roll',
                   children: (
@@ -816,7 +853,7 @@ export default () => (
                 <>
                   Lunchboxes can do addition, multiplication,
                   <br />
-                  subtraction, and division.
+                  subtraction, and division
                 </>
               }
             />

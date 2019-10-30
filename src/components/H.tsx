@@ -38,7 +38,7 @@ import EmojiNumber from 'src/components/EmojiNumber'
 import TwitterEmbed from 'src/components/TwitterEmbed'
 import { shareId, shareVisible } from 'src/lib/twitter'
 import { dateString, dateSchemaString } from 'src/lib/date'
-import { githubRepo, jpBaseUrl } from 'src/lib/meta'
+import { githubRepo, jpBaseUrl, enBaseUrl } from 'src/lib/meta'
 import CustomEmoji from 'src/components/CustomEmoji'
 import InlinePrioritiesLabel from 'src/components/InlinePrioritiesLabel'
 import { VariableNames } from 'src/types/VariableNames'
@@ -1206,9 +1206,9 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
             <br />
             <Bold>ソースコード:</Bold>{' '}
             <ExternalLink href={githubRepo}>GitHubで公開中</ExternalLink>
-            {/*<br />
+            <br />
             <Bold>英語版:</Bold>{' '}
-            <ExternalLink href={enBaseUrl}>英語版はこちら</ExternalLink>*/}
+            <ExternalLink href={enBaseUrl}>英語版はこちら</ExternalLink>
             {args.includeTwitter && (
               <>
                 <br />
@@ -1829,14 +1829,13 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
                   Twitter: <Bold>@chibicode</Bold>
                 </Highlight>
               </ExternalLink>
-              . I’d also appreciate it if you could read until the end of this
-              course before emailing me - let me know what you think!
+              .
             </P>
             <Ul>
               <UlLi>
                 <Bold>I’m mainly looking for</Bold>{' '}
                 <Highlight>a senior engineering position</Highlight>. But I’m
-                also interested in product-leaning positions (Product design,
+                also interested in product-leaning positions (product design,
                 PM, DevRel, etc.) for developer-facing products. I’m better at
                 front-end than back-end, but can do both.
               </UlLi>
@@ -1844,15 +1843,33 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
                 <Bold>Location preference:</Bold>{' '}
                 <HighlightBold>Remote</HighlightBold> would be ideal. 2nd
                 preference is <Highlight>Los Angeles</Highlight>. I’m currently
-                in SF Bay Area, but my wife and I are looking to relocate to LA
-                or other more affordable places.
+                in SF Bay Area (3rd preference), but my wife and I are looking
+                to relocate to LA or other more affordable places.
+              </UlLi>
+              <UlLi>
+                <Bold>Other preferences:</Bold> My last full-time job was in
+                edtech/media, but{' '}
+                <Highlight>I’m looking at a wide range of areas</Highlight>. I
+                like companies that think machine learning is the new SQL (see{' '}
+                <ExternalLink href="https://www.ben-evans.com/benedictevans/2019/10/4/machine-learning-deployment">
+                  this article
+                </ExternalLink>{' '}
+                and{' '}
+                <ExternalLink href="https://www.ben-evans.com/benedictevans/2018/06/22/ways-to-think-about-machine-learning-8nefy">
+                  this article
+                </ExternalLink>{' '}
+                by Benedict Evans). I don’t like whiteboard interviews, but{' '}
+                <Italic>
+                  if you ask me to implement Y Combinator on a whiteboard
+                </Italic>
+                , I think I’ll do well. <Emoji>😉</Emoji>
               </UlLi>
             </Ul>
             <Hr />
             <P>More about me:</P>
             <Ul>
               <UlLi>
-                <Bold>Work experience (2010-2017):</Bold>{' '}
+                <Bold>Work experience (pre-2017):</Bold>{' '}
                 <Highlight>
                   I worked as a lead full-stack (Rails) developer at{' '}
                   <ExternalLink href="https://www.edsurge.com/">
@@ -1863,7 +1880,9 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
                 . I was the first engineering hire and was involved in
                 architecting pretty much all of the projects. Before that, I was
                 a product designer at Quora (2011-2012) and an engineer at
-                Palantir (2010-2011).
+                Palantir (2010-2011). I studied Computer Science (undergrad) and
+                Human-Computer Interaction (grad) at Carnegie Mellon and won the
+                best teaching assistant award upon graduation.
               </UlLi>
               <UlLi>
                 <Bold>In 2017:</Bold> After 4.5 years at EdSurge, I spent almost
@@ -1879,9 +1898,9 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
                 <Highlight>
                   I co-translated a book called{' '}
                   <ExternalLink href="https://www.amazon.com/dp/B0756J1LLV/ref=cm_sw_r_tw_dp_U_x_256TDbEEVPQ98">
-                    “Factfulness”
+                    <Bold>“Factfulness”</Bold>
                   </ExternalLink>{' '}
-                  by Hans Rosling and others into Japanese.
+                  (by Hans Rosling and others) into Japanese.
                 </Highlight>{' '}
                 It went on sale in 2019 and became one of Japan’s top-selling
                 nonfiction books of the year. It’s a great book -{' '}
@@ -1897,9 +1916,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
                 src="/static/images/shu-uesugi-factfulness-square.jpg"
                 caption={
                   <>
-                    <Bold>The Japanese edition of “Factfulness”:</Bold>
-                    <br />
-                    Photo taken at Bạch Mai Hospital in Hanoi, Vietnam,
+                    Me at Bạch Mai Hospital in Hanoi, Vietnam,
                     <br />
                     where Hans Rosling (the author) had worked.
                   </>
@@ -1909,19 +1926,21 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
             <Ul>
               <UlLi>
                 <Bold>In 2019:</Bold> I spent time marketing the Japanese
-                edition of “Factfulness”, freelancing (Rails dev), and working
-                on this course. I got married and spent a lot of time with my
-                wife, who moved to the U.S. from Japan. And I’m now looking for
-                a full-time job.
+                edition of “Factfulness”, freelancing (Rails dev for small
+                startups), and working on this course. I got married and spent a
+                lot of time with my wife, who moved to the U.S. from Japan. And
+                I’m now looking for a full-time job.
               </UlLi>
               <UlLi>
-                <Bold>Things I enjoy:</Bold>{' '}
-                <Highlight>Expository writing</Highlight> (like this course) and{' '}
+                <Bold>Things I’m pretty good at:</Bold>{' '}
+                <Highlight>Expository writing</Highlight> (like this course),{' '}
                 <Highlight>React/TypeScript</Highlight> (
                 <ExternalLink href="https://github.com/chibicode/ycombinator">
                   see the repo for this course
                 </ExternalLink>
-                )
+                ), and <Highlight>product design</Highlight> (but not visual
+                design). I’ve also worked with <Highlight>Rails</Highlight> from
+                version 1 to version 6.
               </UlLi>
               <UlLi>
                 <Bold>Current interests:</Bold> As a professional EN → JP
@@ -1930,12 +1949,12 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
                 <ExternalLink href="https://distill.pub/2017/aia/">
                   using AI to augment human intelligence
                 </ExternalLink>
-                .
+                . I try to read about deep learning in my spare time.
               </UlLi>
             </Ul>
             <Hr />
             <P>
-              <Bold>Again:</Bold> Contact me at{' '}
+              <Bold>If you’re interested:</Bold> Contact me at{' '}
               <ExternalLink href="mailto:shu@chibicode.com">
                 <Highlight>shu@chibicode.com</Highlight>
               </ExternalLink>{' '}
