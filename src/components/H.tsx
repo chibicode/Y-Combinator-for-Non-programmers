@@ -1966,7 +1966,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
                 <ExternalLink href="https://distill.pub/2017/aia/">
                   using AI to augment human intelligence
                 </ExternalLink>
-                . I try to read about deep learning in my spare time.
+                .
               </UlLi>
             </Ul>
             <Hr />
