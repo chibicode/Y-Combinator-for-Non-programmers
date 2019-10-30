@@ -51,6 +51,55 @@ export const FalseCaseExplanation = () => (
   </>
 )
 
+const ReproduceWithNoNegativeMargin = () => (
+  <>
+    <TwoColGrid
+      noTopNegativeMargin
+      noBottomNegativeMargin
+      left={
+        <>
+          <R.Bwnp>
+            Repeat <CustomEmoji type="plusOne" />
+            <br />
+            <CustomEmoji type="blankNumber" /> times
+          </R.Bwnp>
+          <ExpressionRunnerSeparator />
+          <EmojiSeparator
+            emojis={['❓', '🍱', '❓']}
+            size="mdsm"
+            description={
+              <>
+                Reproduce with
+                <br />a lunchbox
+              </>
+            }
+          />
+        </>
+      }
+      right={
+        <>
+          <R.Ewfr>
+            Repeat <CustomEmoji type="minusOne" />
+            <br />
+            <CustomEmoji type="blankNumber" /> times
+          </R.Ewfr>
+          <ExpressionRunnerSeparator />
+          <EmojiSeparator
+            emojis={['❓', '🍱', '❓']}
+            size="mdsm"
+            description={
+              <>
+                Reproduce with
+                <br />a lunchbox
+              </>
+            }
+          />
+        </>
+      }
+    />
+  </>
+)
+
 export default () => (
   <EpisodeCardList
     cards={[
@@ -97,6 +146,7 @@ export default () => (
         )
       },
       {
+        type: 'summary',
         title: (
           <>
             Review: <H args={{ name: 'repeatFeature', capitalize: true }} />
@@ -110,54 +160,19 @@ export default () => (
               <HighlightBold>reproduce</HighlightBold> this using a lunchbox to
               get it back.
             </P>
-            <TwoColGrid
-              noTopNegativeMargin
-              noBottomNegativeMargin
-              left={
-                <>
-                  <R.Bwnp>
-                    Repeat <CustomEmoji type="plusOne" />
-                    <br />
-                    <CustomEmoji type="blankNumber" /> times
-                  </R.Bwnp>
-                  <ExpressionRunnerSeparator />
-                  <EmojiSeparator
-                    emojis={['❓', '🍱', '❓']}
-                    size="mdsm"
-                    description={
-                      <>
-                        Reproduce with
-                        <br />a lunchbox
-                      </>
-                    }
-                  />
-                </>
-              }
-              right={
-                <>
-                  <R.Ewfr>
-                    Repeat <CustomEmoji type="minusOne" />
-                    <br />
-                    <CustomEmoji type="blankNumber" /> times
-                  </R.Ewfr>
-                  <ExpressionRunnerSeparator />
-                  <EmojiSeparator
-                    emojis={['❓', '🍱', '❓']}
-                    size="mdsm"
-                    description={
-                      <>
-                        Reproduce with
-                        <br />a lunchbox
-                      </>
-                    }
-                  />
-                </>
-              }
-            />
+            <ReproduceWithNoNegativeMargin />
             <P>
               In case you forgot about <H args={{ name: 'repeatFeature' }} />,
               let’s do a quick review!
             </P>
+            <EmojiSeparator
+              emojis={['✨', '🔁', '✨']}
+              description={
+                <>
+                  Let’s review <H args={{ name: 'repeatFeature' }} />!
+                </>
+              }
+            />
             <P>
               Take a look at this mathbox and <H args={{ name: 'pressPlay' }} />
               :
@@ -167,6 +182,7 @@ export default () => (
         )
       },
       {
+        type: 'summary',
         title: (
           <>It’s necessary for additions and subtractions of large numbers</>
         ),
@@ -191,7 +207,7 @@ export default () => (
               }
             />
             <P>
-              <Bold>Example (from beginner 2):</Bold>{' '}
+              <Bold>Example (from Beginner 2):</Bold>{' '}
               <Highlight>
                 If you don’t use <H args={{ name: 'repeatFeature' }} />,
               </Highlight>{' '}
@@ -264,9 +280,10 @@ export default () => (
             />
             <P>
               The villagers have been trying hard to reproduce{' '}
-              <H args={{ name: 'repeatFeature' }} /> using a lunchbox. However,
-              looks like it’s not going well for them.
+              <H args={{ name: 'repeatFeature' }} /> using a lunchbox.
             </P>
+            <ReproduceWithNoNegativeMargin />
+            <P>However, looks like it’s not going well for them.</P>
             <BubbleQuotes
               quotes={[
                 {
@@ -343,7 +360,10 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        <H args={{ name: 'conditionFeature' }} />? What’s that?
+                        <H
+                          args={{ name: 'conditionFeature', capitalize: true }}
+                        />
+                        ? What’s that?
                       </P>
                     </>
                   )
