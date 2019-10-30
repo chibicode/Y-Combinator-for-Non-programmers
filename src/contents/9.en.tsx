@@ -290,7 +290,7 @@ export default () => (
               <H args={{ name: 'pressRun' }} />
             </P>
             <R.Exbn>
-              <HighlightBold>What used last time:</HighlightBold>
+              <HighlightBold>What we used last time:</HighlightBold>
               <br />
               It has <EmojiForLetter letter="e" />
               ’s on top instead of <EmojiForLetter letter="b" />
@@ -353,9 +353,12 @@ export default () => (
                       <P>Let me tell you what’s going on.</P>
                       <P>
                         Let’s take a look at the previous example that{' '}
-                        <Italic>failed</Italic> to calculate{' '}
-                        <EmojiNumber number={1} /> <Emoji>➕</Emoji>{' '}
-                        <EmojiNumber number={1} />.
+                        <Highlight>
+                          <Emoji>❌</Emoji> <Italic>failed</Italic>{' '}
+                          <Emoji>❌</Emoji>
+                        </Highlight>{' '}
+                        to calculate <EmojiNumber number={1} />{' '}
+                        <Emoji>➕</Emoji> <EmojiNumber number={1} />.
                       </P>
                     </>
                   )
@@ -363,9 +366,12 @@ export default () => (
               ]}
             />
             <R.Ybne>
-              The example that <Italic>failed</Italic> to calculate
+              The example that{' '}
+              <Highlight>
+                <Emoji>❌</Emoji> <Italic>failed</Italic> <Emoji>❌</Emoji>
+              </Highlight>
               <br />
-              <EmojiNumber number={1} /> <Emoji>➕</Emoji>{' '}
+              to calculate <EmojiNumber number={1} /> <Emoji>➕</Emoji>{' '}
               <EmojiNumber number={1} />
             </R.Ybne>
             <BubbleQuotes
@@ -445,7 +451,7 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        <Bold>Here’s an important point:</Bold>{' '}
+                        <Bold>Now, here’s the secret:</Bold>{' '}
                         <Highlight>
                           If the same item exists in both{' '}
                           <BottomRightBadge
@@ -537,31 +543,37 @@ export default () => (
                       <P>Here’s a simple example:</P>
                       <Ul>
                         <UlLi>
-                          The left lunchbox has <Italic>different</Italic>{' '}
-                          <BottomRightBadge
-                            inline
-                            bottomRightBadgeType="callArg"
-                          />{' '}
-                          and{' '}
-                          <BottomRightBadge
-                            inline
-                            bottomRightBadgeType="funcUnbound"
-                          />
-                          .
+                          The left lunchbox has{' '}
+                          <Highlight>
+                            <Italic>different</Italic>{' '}
+                            <BottomRightBadge
+                              inline
+                              bottomRightBadgeType="callArg"
+                            />{' '}
+                            and{' '}
+                            <BottomRightBadge
+                              inline
+                              bottomRightBadgeType="funcUnbound"
+                            />
+                            .
+                          </Highlight>
                         </UlLi>
                         <UlLi>
-                          The right lunchbox has <Italic>the same</Italic>{' '}
-                          <BottomRightBadge
-                            inline
-                            bottomRightBadgeType="callArg"
-                          />{' '}
-                          and{' '}
-                          <BottomRightBadge
-                            inline
-                            bottomRightBadgeType="funcUnbound"
-                          />{' '}
-                          (both <EmojiForLetter letter="b" />
-                          ).
+                          The right lunchbox has{' '}
+                          <Highlight>
+                            <Italic>the same</Italic>{' '}
+                            <BottomRightBadge
+                              inline
+                              bottomRightBadgeType="callArg"
+                            />{' '}
+                            and{' '}
+                            <BottomRightBadge
+                              inline
+                              bottomRightBadgeType="funcUnbound"
+                            />{' '}
+                            (both <EmojiForLetter letter="b" />
+                            ).
+                          </Highlight>
                         </UlLi>
                       </Ul>
                       <P>Let’s see what happens to each lunchbox!</P>
@@ -628,12 +640,22 @@ export default () => (
             <BubbleQuotes
               quotes={[
                 {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>We’re not done yet, but did you notice anything</P>
+                    </>
+                  )
+                },
+                {
                   type: 'surprised',
                   children: (
                     <>
                       <P>
-                        The bottom two are different on the left, but they’re
-                        the same on the right!
+                        <Highlight>
+                          The bottom two are different on the left, but they’re
+                          the same on the right!
+                        </Highlight>
                       </P>
                     </>
                   )
@@ -759,7 +781,7 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        <Bold>So, hope you understood that:</Bold>{' '}
+                        <Bold>So, this illustrates that:</Bold>{' '}
                         <Highlight>
                           If the same item exists in both{' '}
                           <BottomRightBadge
@@ -810,12 +832,12 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        Let’s go back to the previous example that couldn’t
+                        Let’s go back to the previous example that could NOT
                         calculate <EmojiNumber number={1} /> <Emoji>➕</Emoji>{' '}
                         <EmojiNumber number={1} />.
                       </P>
                       <P>
-                        This failed because{' '}
+                        <Emoji>❌</Emoji> This failed because{' '}
                         <EmojiForLetter size="mdlg" letter="b" /> was in both{' '}
                         <BottomRightBadge
                           inline
@@ -1287,9 +1309,12 @@ export default () => (
               <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />.
             </P>
             <P>
-              Because of this, if we don’t do anything, it won’t be able to
-              calculate <EmojiNumber number={1} /> <Emoji>➕</Emoji>{' '}
-              <EmojiNumber number={1} />.
+              Because of this,{' '}
+              <Highlight>
+                if we don’t do anything, it won’t be able to calculate{' '}
+                <EmojiNumber number={1} /> <Emoji>➕</Emoji>{' '}
+                <EmojiNumber number={1} />.
+              </Highlight>
             </P>
             <R.Kwyy>
               <Highlight>

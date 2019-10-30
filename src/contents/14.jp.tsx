@@ -905,6 +905,9 @@ export default () => (
             </R.Nphi>
             <ExpressionRunnerSeparator />
             <R.Msrk>
+              <InlineBorder type="condition" /> が <EmojiNumber number={0} />{' '}
+              なので、
+              <br />
               <InlineBorder type="trueCase" /> に入っている{' '}
               <EmojiNumber number={2} /> が残る
             </R.Msrk>

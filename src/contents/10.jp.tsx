@@ -550,11 +550,11 @@ export default () => (
                 }
               ]}
             />
-            <R.Hiag>
+            <R.Fomt>
               <EmojiNumber number={1} /> に変換できる弁当箱と
               <br />
               合体させて…
-            </R.Hiag>
+            </R.Fomt>
             <ExpressionRunnerSeparator />
             <ExpressionRunnerCaptionOnly>
               実行したときに、

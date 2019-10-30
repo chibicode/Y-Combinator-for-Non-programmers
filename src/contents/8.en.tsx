@@ -543,11 +543,11 @@ export default () => (
                 }
               ]}
             />
-            <R.Rqer>
+            <R.Xmgo>
               Combine <Emoji>👧🏻</Emoji> Saya’s lunchbox with
               <br />
               a lunchbox that can be converted to <EmojiNumber number={1} />
-            </R.Rqer>
+            </R.Xmgo>
             <ExpressionRunnerSeparator />
             <ExpressionRunnerCaptionOnly>
               What happens when you{' '}

@@ -21,7 +21,7 @@
             "name": "c",
             "highlightType": "active",
             "topLeftBadgeType": "none",
-            "bottomRightBadgeType": "callArg",
+            "bottomRightBadgeType": "none",
             "type": "variable",
             "argPriorityAgg": [
               1
@@ -36,7 +36,7 @@
               "name": "a",
               "highlightType": "active",
               "topLeftBadgeType": "none",
-              "bottomRightBadgeType": "funcArg",
+              "bottomRightBadgeType": "none",
               "type": "variable",
               "argPriorityAgg": [],
               "funcPriorityAgg": [
@@ -52,7 +52,7 @@
                 "name": "b",
                 "highlightType": "active",
                 "topLeftBadgeType": "none",
-                "bottomRightBadgeType": "funcUnbound",
+                "bottomRightBadgeType": "none",
                 "type": "variable",
                 "argPriorityAgg": [],
                 "funcPriorityAgg": [],
@@ -64,7 +64,7 @@
                 "name": "a",
                 "highlightType": "active",
                 "topLeftBadgeType": "none",
-                "bottomRightBadgeType": "funcBound",
+                "bottomRightBadgeType": "none",
                 "type": "variable",
                 "argPriorityAgg": [],
                 "funcPriorityAgg": [],
@@ -78,7 +78,7 @@
             "type": "function",
             "maxNestedFunctionDepth": 2
           },
-          "state": "showFuncUnbound",
+          "state": "active",
           "type": "call",
           "priority": 1,
           "maxNestedFunctionDepth": 2
@@ -90,7 +90,7 @@
       },
       "numLeafNodes": 3,
       "containerState": "stepped",
-      "previouslyChangedExpressionState": "showFuncUnbound",
+      "previouslyChangedExpressionState": "active",
       "activePriority": 1
     }
   ],

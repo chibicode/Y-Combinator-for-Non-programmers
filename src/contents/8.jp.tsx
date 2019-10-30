@@ -498,11 +498,11 @@ export default () => (
                 }
               ]}
             />
-            <R.Rqer>
+            <R.Xmgo>
               <EmojiNumber number={1} /> に変換できる弁当箱と、
               <br />
               <Emoji>👧🏻</Emoji> サヤちゃんの弁当箱を合体させて…
-            </R.Rqer>
+            </R.Xmgo>
             <ExpressionRunnerSeparator />
             <ExpressionRunnerCaptionOnly>
               <H args={{ name: 'run' }} /> するとどうなる？

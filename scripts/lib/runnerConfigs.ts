@@ -20,7 +20,7 @@ export const qxob: ExpressionRunnerShorthandConfig = {
 export const bcgp: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   initialExpressionContainer: initialExpressionContainers.pisd,
-  initialState: 'showFuncUnbound',
+  initialState: 'active',
   showPriorities: true
 }
 
@@ -820,6 +820,12 @@ export const rqer: ExpressionRunnerShorthandConfig = {
     b: 'highlighted',
     c: 'highlighted'
   }
+}
+
+export const xmgo: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  showPriorities: true,
+  initialExpressionContainer: initialExpressionContainers.hvqf
 }
 
 export const duuk: ExpressionRunnerShorthandConfig = {
@@ -1681,6 +1687,12 @@ export const dtle: ExpressionRunnerShorthandConfig = {
 export const hiag: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   initialExpressionContainer: initialExpressionContainers.nhpm,
+  showPriorities: true
+}
+
+export const fomt: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.dyrk,
   showPriorities: true
 }
 

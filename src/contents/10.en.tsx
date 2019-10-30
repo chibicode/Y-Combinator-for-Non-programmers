@@ -577,11 +577,11 @@ export default () => (
                 }
               ]}
             />
-            <R.Hiag>
+            <R.Fomt>
               Combine <Emoji>👧🏻</Emoji> Saya’s lunchbox with
               <br />
               a lunchbox that can be converted to <EmojiNumber number={1} />…
-            </R.Hiag>
+            </R.Fomt>
             <ExpressionRunnerSeparator />
             <ExpressionRunnerCaptionOnly>
               If it becomes a lunchbox that can be

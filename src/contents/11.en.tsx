@@ -910,11 +910,11 @@ export default () => (
             />
             <EmojiSeparator
               nodes={[
-                <Emoji>🔢</Emoji>,
+                <EmojiNumber number={0} />,
                 <CustomEmoji type="singleArrowReverse" />,
                 <CustomEmoji type="condition" />,
                 <CustomEmoji type="singleArrow" />,
-                <EmojiNumber number={0} />
+                <Emoji>🔢</Emoji>
               ]}
               description={
                 <>

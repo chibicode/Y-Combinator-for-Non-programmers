@@ -917,6 +917,8 @@ export default () => (
             </R.Nphi>
             <ExpressionRunnerSeparator />
             <R.Msrk>
+              Because <InlineBorder type="condition" /> is{' '}
+              <EmojiNumber number={0} />,<br />
               It chooses <InlineBorder type="trueCase" />,<br />
               which is <EmojiNumber number={2} />
             </R.Msrk>
