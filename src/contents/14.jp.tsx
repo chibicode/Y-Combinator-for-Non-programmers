@@ -36,7 +36,11 @@ const ThreeStepsSummary = () => (
       を3回繰り返す
     </R.Jwce>
     <ExpressionRunnerSeparator />
-    <R.Seie></R.Seie>
+    <R.Seie>
+      つまり、
+      <EmojiNumber number={2} /> <Emoji>➕</Emoji> <EmojiNumber number={3} />{' '}
+      を計算できる
+    </R.Seie>
   </>
 )
 
@@ -897,10 +901,13 @@ export default () => (
               またいくつかのステップを経た後に、
               <br />
               <InlineBorder type="condition" /> が <EmojiNumber number={0} />{' '}
-              になるので、
-              <br />
-              <InlineBorder type="trueCase" /> が残ります
+              になります
             </R.Nphi>
+            <ExpressionRunnerSeparator />
+            <R.Msrk>
+              <InlineBorder type="trueCase" /> に入っている{' '}
+              <EmojiNumber number={2} /> が残る
+            </R.Msrk>
             <ExpressionRunnerSeparator />
             <R.Jwce>
               <CustomEmoji type="plusOne" /> が3回繰り返され…

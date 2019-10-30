@@ -909,8 +909,14 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
     if (locale === 'en') {
       return (
         <>
-          <Highlight>
-            <Bold>We’re not done yet:</Bold>
+          <Highlight highlightType="pink">
+            <Bold
+              css={css`
+                font-size: ${fontSizes(1)};
+              `}
+            >
+              We’re not done yet:
+            </Bold>
             <br />
             Just pausing here for an explanation.
           </Highlight>
@@ -918,7 +924,17 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
       )
     } else {
       return (
-        <HighlightBold>まだ途中ですが、解説のため一旦止めます！</HighlightBold>
+        <Highlight highlightType="pink">
+          <Bold
+            css={css`
+              font-size: ${fontSizes(1)};
+            `}
+          >
+            まだ途中ですが、
+            <br />
+            解説のため一旦止めます！
+          </Bold>
+        </Highlight>
       )
     }
   }
