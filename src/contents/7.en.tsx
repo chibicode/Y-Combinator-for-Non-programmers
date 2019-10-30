@@ -94,7 +94,8 @@ export const StepTwo = () => (
                 <Bold>Second:</Bold> We can’t start with the leftmost pair of{' '}
                 <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
                 ’s because there’s only one item on the bottom (a{' '}
-                <EmojiWithText letter="b" />)
+                <EmojiWithText letter="b" />
+                ).
               </P>
               <P>
                 Therefore,{' '}
@@ -127,9 +128,12 @@ export const StepThree = () => (
           children: (
             <>
               <P>
-                <Bold>Third:</Bold> We’ll need to start with the pair of{' '}
-                <InlinePrioritiesLabel>2</InlinePrioritiesLabel>’s again, just
-                like the last time.
+                <Bold>Third:</Bold>{' '}
+                <Highlight>
+                  We’ll need to start with the pair of{' '}
+                  <InlinePrioritiesLabel>2</InlinePrioritiesLabel>’s
+                </Highlight>{' '}
+                again, just like the last time.
               </P>
             </>
           )
@@ -167,7 +171,9 @@ export default () => (
               <Highlight>
                 You don’t need to understand everything immediately. Even if you
                 don’t completely get it, please keep reading!
-              </Highlight>
+              </Highlight>{' '}
+              After reading a few more pages, you might understand it.{' '}
+              <Emoji>😉</Emoji>
             </P>
             <EmojiSeparator
               emojis={['✨', '🤗', '✨']}
@@ -179,13 +185,6 @@ export default () => (
                 </>
               }
             />
-            <P>
-              <Bold>
-                There’s a lot of overlapping materials for the next few pages.
-              </Bold>{' '}
-              So even if you have no idea what’s going on, after reading a few
-              more pages, you might understand it. <Emoji>😉</Emoji>
-            </P>
           </>
         )
       },
@@ -260,7 +259,7 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        <Bold>We learned on the last page that:</Bold>{' '}
+                        <Bold>We learned on the last page</Bold> that{' '}
                         <Highlight>
                           I can convert this lunchbox to{' '}
                           <EmojiNumber number={0} />.
@@ -348,7 +347,7 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        <Bold>Now:</Bold>
+                        <Bold>Here’s the challenge:</Bold>
                       </P>
                       <Ul>
                         <UlLi>
@@ -379,7 +378,7 @@ export default () => (
             <R.Jzwg>
               After running it, it becomes a lunchbox
               <br />
-              that can be converted to <EmojiNumber number={1} />.
+              that can be converted to <EmojiNumber number={1} />
             </R.Jzwg>
             <BubbleQuotes
               quotes={[
@@ -446,7 +445,7 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        <Bold>Now, here’s the challenge:</Bold>
+                        <Bold>So, here’s what you need to do:</Bold>
                       </P>
                       <Ul>
                         <UlLi>
@@ -572,9 +571,11 @@ export default () => (
               ]}
             />
             <R.Fzpz>
+              Randomly filled each <CustomEmoji type="questionFoodGrey" /> icon
+              with
+              <br />
               <EmojiForLetter letter="a" /> <EmojiForLetter letter="b" />{' '}
-              <EmojiForLetter letter="c" /> を適当に{' '}
-              <CustomEmoji type="questionFoodGrey" /> に入れてみた
+              <EmojiForLetter letter="c" />
             </R.Fzpz>
             <BubbleQuotes
               quotes={[
@@ -583,8 +584,8 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        Now, we’ll <H args={{ name: 'run' }} /> the above
-                        lunchbox, and…
+                        Now, we’ll <H args={{ name: 'run', lowerCase: true }} />{' '}
+                        the above lunchbox, and…
                       </P>
                       <Ul>
                         <UlLi>
@@ -607,7 +608,8 @@ export default () => (
               ]}
             />
             <R.Nuco>
-              We’ll <H args={{ name: 'run' }} /> this lunchbox, and…
+              We’ll <H args={{ name: 'run', lowerCase: true }} /> this lunchbox,
+              and…
             </R.Nuco>
             <ExpressionRunnerSeparator />
             <ExpressionRunnerCaptionOnly>
@@ -625,7 +627,8 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        Ok, let’s <H args={{ name: 'run' }} /> it!
+                        Ok, let’s <H args={{ name: 'run', lowerCase: true }} />{' '}
+                        it!
                       </P>
                     </>
                   )
@@ -717,9 +720,7 @@ export default () => (
                       <P>Now, we want to convert this to a mathbox…</P>
                       <P>
                         <Bold>But unfortunately:</Bold>{' '}
-                        <Italic>
-                          I won’t be able to convert this to a mathbox.
-                        </Italic>
+                        <Highlight>I won’t be able to convert this.</Highlight>
                       </P>
                     </>
                   )
@@ -737,7 +738,7 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        <Bold>Why?</Bold> Because it doesn’t follow this
+                        <Bold>Why not?</Bold> Because it doesn’t follow this
                         pattern:
                       </P>
                       <R.Eozk>
@@ -749,8 +750,10 @@ export default () => (
                         />
                       </R.Eozk>
                       <P>
-                        There needs to be exactly one <Emoji>🅱️</Emoji> on the
-                        top-right, but that’s not the case here.
+                        <Highlight>
+                          There needs to be exactly one <Emoji>🅱️</Emoji> on the
+                          top-right, but that’s not the case here.
+                        </Highlight>
                       </P>
                     </>
                   )
@@ -770,9 +773,12 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        Hmm… if the top-right was a <EmojiWithText letter="c" />{' '}
-                        instead of a <EmojiWithText letter="b" />, it could have
-                        been converted to <EmojiNumber number={2} />.
+                        Hmm…{' '}
+                        <Highlight>
+                          if the top-right was a <EmojiWithText letter="c" />{' '}
+                          instead of a <EmojiWithText letter="b" />, it could
+                          have been converted to <EmojiNumber number={1} />.
+                        </Highlight>
                       </P>
                       <P>It was so close!</P>
                     </>
@@ -783,7 +789,7 @@ export default () => (
             <R.Bgxi>
               If the top-right was a <EmojiWithText letter="c" />,
               <br />
-              it could have been converted to <EmojiNumber number={2} />
+              it could have been converted to <EmojiNumber number={1} />
             </R.Bgxi>
             <ExpressionRunnerSeparator />
             <R.Rnug />
