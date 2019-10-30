@@ -171,7 +171,7 @@ export default () => (
                     <>
                       <P>
                         ここからは、より複雑な
-                        <H args={{ name: 'bentoBoxPuzzle' }} />
+                        <H args={{ name: 'lunchBoxPuzzle' }} />
                         を解いてもらおう。たとえば、こういうパズルだ。
                       </P>
                     </>
@@ -181,7 +181,7 @@ export default () => (
             />
             <R.Cvtc>
               3段の
-              <H args={{ name: 'bentoBoxPuzzle' }} />
+              <H args={{ name: 'lunchBoxPuzzle' }} />
             </R.Cvtc>
             <BubbleQuotes
               quotes={[
@@ -268,7 +268,7 @@ export default () => (
                     <>
                       <P>
                         ではまず、こういった3段の
-                        <H args={{ name: 'bentoBoxPuzzle' }} />
+                        <H args={{ name: 'lunchBoxPuzzle' }} />
                         の解き方を説明しよう。
                       </P>
                       <P>
@@ -306,7 +306,7 @@ export default () => (
           <>
             <P>
               3段の
-              <H args={{ name: 'bentoBoxPuzzle' }} />
+              <H args={{ name: 'lunchBoxPuzzle' }} />
               を解く際には、まず
               <HighlightBold>
                 左上と左下に <InlinePrioritiesLabel>1</InlinePrioritiesLabel>{' '}
@@ -905,7 +905,7 @@ export default () => (
         content: (
           <>
             <P>
-              <H args={{ name: 'lookAtThisBentoBox' }} />:
+              <H args={{ name: 'lookAtThisLunchBox' }} />:
             </P>
             <R.Dkiy />
             <P>
@@ -1037,7 +1037,7 @@ export default () => (
                     <>
                       <P>
                         まず、こちらの
-                        <H args={{ name: 'bentoBoxPuzzle' }} />
+                        <H args={{ name: 'lunchBoxPuzzle' }} />
                         を見てみな。
                       </P>
                     </>
@@ -1072,7 +1072,7 @@ export default () => (
                     <>
                       <P>
                         続いて、こちらの
-                        <H args={{ name: 'bentoBoxPuzzle' }} />
+                        <H args={{ name: 'lunchBoxPuzzle' }} />
                         を見てみな。
                       </P>
                     </>
@@ -1212,7 +1212,7 @@ export default () => (
           <>
             <P>
               まずは、こちらの
-              <H args={{ name: 'bentoBoxPuzzle' }} />
+              <H args={{ name: 'lunchBoxPuzzle' }} />
               から見ていきましょう。
             </P>
             <R.Laea>
@@ -1427,7 +1427,7 @@ export default () => (
         content: (
           <>
             <P>
-              <H args={{ name: 'lookAtThisBentoBox' }} />:
+              <H args={{ name: 'lookAtThisLunchBox' }} />:
             </P>
             <R.Wcer />
             <P>
@@ -1561,7 +1561,7 @@ export default () => (
           <>
             <P>
               続いて、こちらの
-              <H args={{ name: 'bentoBoxPuzzle' }} />
+              <H args={{ name: 'lunchBoxPuzzle' }} />
               をご覧ください。
             </P>
             <R.Gtdu>
@@ -1809,7 +1809,7 @@ export default () => (
         content: (
           <>
             <P>
-              <H args={{ name: 'lookAtThisBentoBox' }} />:
+              <H args={{ name: 'lookAtThisLunchBox' }} />:
             </P>
             <R.Fclo />
             <P>

@@ -293,7 +293,7 @@ export default () => (
           <>
             <H
               args={{
-                name: 'bentoBoxPuzzle',
+                name: 'lunchBoxPuzzle',
                 capitalize: true
               }}
             />
@@ -310,7 +310,7 @@ export default () => (
                       <P>
                         The puzzle you’ll be solving is called{' '}
                         <HighlightBold>
-                          <H args={{ name: 'bentoBoxPuzzle' }} />
+                          <H args={{ name: 'lunchBoxPuzzle' }} />
                         </HighlightBold>
                         .
                       </P>
@@ -376,7 +376,7 @@ export default () => (
                       <P>
                         Now, take a look at this below. This is an example of{' '}
                         <HighlightBold>
-                          <H args={{ name: 'bentoBoxPuzzle' }} />
+                          <H args={{ name: 'lunchBoxPuzzle' }} />
                         </HighlightBold>
                         .
                       </P>
@@ -388,7 +388,7 @@ export default () => (
             <R.Ilpo>
               <H
                 args={{
-                  name: 'bentoBoxPuzzle',
+                  name: 'lunchBoxPuzzle',
                   capitalize: true,
                   indefinite: true
                 }}
@@ -420,7 +420,7 @@ export default () => (
                       <P>
                         Yes. It’s called{' '}
                         <HighlightBold>
-                          <H args={{ name: 'bentoBoxPuzzle' }} />
+                          <H args={{ name: 'lunchBoxPuzzle' }} />
                         </HighlightBold>{' '}
                         because it looks like a Japanese lunchbox.
                       </P>
@@ -488,7 +488,7 @@ export default () => (
                         Now, let’s talk about how we can{' '}
                         <H args={{ name: 'run', lowerCase: true }} />{' '}
                         <H
-                          args={{ name: 'bentoBoxPuzzle', indefinite: true }}
+                          args={{ name: 'lunchBoxPuzzle', indefinite: true }}
                         />
                         .
                       </P>
@@ -510,7 +510,7 @@ export default () => (
           <>
             <P>
               We can <H args={{ name: 'run', lowerCase: true }} />{' '}
-              <H args={{ name: 'bentoBoxPuzzle', indefinite: true }} />, just
+              <H args={{ name: 'lunchBoxPuzzle', indefinite: true }} />, just
               like how we can run a mathbox.{' '}
               <H args={{ name: 'pressPlay', capitalize: true }} /> below:
             </P>
@@ -573,7 +573,7 @@ export default () => (
                   <Highlight>
                     There’s a specific set of rules for
                     <br />
-                    <H args={{ name: 'bentoBoxPuzzle' }} />.
+                    <H args={{ name: 'lunchBoxPuzzle' }} />.
                     <br />
                     Your task is to figure out what that is!
                   </Highlight>
@@ -609,14 +609,14 @@ export default () => (
       {
         title: (
           <>
-            More examples of <H args={{ name: 'bentoBoxPuzzle' }} />
+            More examples of <H args={{ name: 'lunchBoxPuzzle' }} />
           </>
         ),
         content: (
           <>
             <P>
               Let’s take a look at more examples of{' '}
-              <H args={{ name: 'bentoBoxPuzzle' }} />.
+              <H args={{ name: 'lunchBoxPuzzle' }} />.
             </P>
             <Hr />
             <P>
@@ -813,7 +813,7 @@ export default () => (
             />
             <P>
               <H args={{ name: 'question' }} />{' '}
-              <H args={{ name: 'lookAtThisBentoBoxPuzzle' }} />:
+              <H args={{ name: 'lookAtThisLunchBoxPuzzle' }} />:
             </P>
             <R.Loai />
             <P>
@@ -838,7 +838,7 @@ export default () => (
           <>
             <P>
               <H args={{ name: 'question' }} />{' '}
-              <H args={{ name: 'lookAtThisBentoBoxPuzzle' }} />:
+              <H args={{ name: 'lookAtThisLunchBoxPuzzle' }} />:
             </P>
             <R.Uvmv />
             <P>
@@ -884,7 +884,7 @@ export default () => (
           <>
             <P>
               We’ll talk about the patterns of{' '}
-              <H args={{ name: 'bentoBoxPuzzle' }} /> on the next page!
+              <H args={{ name: 'lunchBoxPuzzle' }} /> on the next page!
             </P>
             <EmojiSeparator
               emojis={['🤔', '🍱', '😈']}

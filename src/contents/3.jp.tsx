@@ -281,7 +281,7 @@ export default () => (
       {
         title: (
           <>
-            <H args={{ name: 'bentoBoxPuzzle' }} />
+            <H args={{ name: 'lunchBoxPuzzle' }} />
           </>
         ),
         content: (
@@ -295,7 +295,7 @@ export default () => (
                       <P>
                         お前たちに解いてもらうパズルは、{' '}
                         <HighlightBold>
-                          <H args={{ name: 'bentoBoxPuzzle' }} />
+                          <H args={{ name: 'lunchBoxPuzzle' }} />
                         </HighlightBold>
                         というものだ。
                       </P>
@@ -319,7 +319,7 @@ export default () => (
                     <>
                       <P>
                         そして、これがその
-                        <H args={{ name: 'bentoBoxPuzzle' }} />
+                        <H args={{ name: 'lunchBoxPuzzle' }} />
                         だ。
                       </P>
                     </>
@@ -328,11 +328,11 @@ export default () => (
               ]}
             />
             <R.Ilpo>
-              <H args={{ name: 'bentoBoxPuzzle' }} /> の一例
+              <H args={{ name: 'lunchBoxPuzzle' }} /> の一例
             </R.Ilpo>
             <P>
               <Bold>解説:</Bold> 上のように、
-              <H args={{ name: 'bentoBoxPuzzle' }} />
+              <H args={{ name: 'lunchBoxPuzzle' }} />
               には、実際の弁当箱のように、
               <Highlight>
                 四角の中にいくつかマスがあり、それぞれのマスの中に料理が入っています
@@ -394,14 +394,14 @@ export default () => (
                     <>
                       <P>
                         実はこの
-                        <H args={{ name: 'bentoBoxPuzzle' }} />
+                        <H args={{ name: 'lunchBoxPuzzle' }} />
                         は、<Highlight>計算箱と密接な関係がある</Highlight>
                         んだが、これについては後に説明する。
                       </P>
                       <P>
                         とりあえず今は、
                         <Highlight>
-                          <H args={{ name: 'bentoBoxPuzzle' }} />の
+                          <H args={{ name: 'lunchBoxPuzzle' }} />の
                           <H args={{ name: 'run' }} /> について見ていこう。
                         </Highlight>
                       </P>
@@ -425,7 +425,7 @@ export default () => (
           <>
             <P>
               <Highlight>
-                <H args={{ name: 'bentoBoxPuzzle' }} />
+                <H args={{ name: 'lunchBoxPuzzle' }} />
                 は、計算箱と同じように
                 <H args={{ name: 'run' }} /> することができます。
               </Highlight>
@@ -513,14 +513,14 @@ export default () => (
         title: (
           <>
             他の
-            <H args={{ name: 'bentoBoxPuzzle' }} />
+            <H args={{ name: 'lunchBoxPuzzle' }} />
           </>
         ),
         content: (
           <>
             <P>
               では、他の
-              <H args={{ name: 'bentoBoxPuzzle' }} />
+              <H args={{ name: 'lunchBoxPuzzle' }} />
               も見てみましょう。
             </P>
             <Hr />
@@ -712,7 +712,7 @@ export default () => (
           <>
             <P>
               これまでに4種類の
-              <H args={{ name: 'bentoBoxPuzzle' }} />
+              <H args={{ name: 'lunchBoxPuzzle' }} />
               を紹介しましたが、どれも
               <H args={{ name: 'run' }} />{' '}
               する際にある法則に従っています。それが分かったかどうか、
@@ -725,7 +725,7 @@ export default () => (
             />
             <P>
               <H args={{ name: 'question' }} />{' '}
-              <H args={{ name: 'lookAtThisBentoBoxPuzzle' }} />:
+              <H args={{ name: 'lookAtThisLunchBoxPuzzle' }} />:
             </P>
             <R.Loai />
             <P>
@@ -751,7 +751,7 @@ export default () => (
           <>
             <P>
               <H args={{ name: 'question' }} /> こちらの
-              <H args={{ name: 'bentoBoxPuzzle' }} />を{' '}
+              <H args={{ name: 'lunchBoxPuzzle' }} />を{' '}
               <H args={{ name: 'run' }} />
               すると、
             </P>
@@ -803,7 +803,7 @@ export default () => (
           <>
             <P>
               次のページで、
-              <H args={{ name: 'bentoBoxPuzzle' }} />
+              <H args={{ name: 'lunchBoxPuzzle' }} />
               の法則を説明します！
             </P>
             <EmojiSeparator

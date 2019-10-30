@@ -72,7 +72,7 @@ interface HProps {
     | { name: 'yesNoQuizCorrectPostfix' }
     | { name: 'yesNoQuizIncorrectPostfix'; isYes: boolean }
     | {
-        name: 'bentoBoxPuzzle'
+        name: 'lunchBoxPuzzle'
         capitalize?: true
         indefinite?: true
         postfix?: string
@@ -102,7 +102,7 @@ interface HProps {
     | { name: 'pageUnderConstructionTitle' }
     | { name: 'question' }
     | { name: 'whatHappensAtTheEndQuestion' }
-    | { name: 'lookAtThisBentoBox'; lowerCase?: true }
+    | { name: 'lookAtThisLunchBox'; lowerCase?: true }
     | {
         name: 'pressRun'
         skipColon?: boolean
@@ -136,7 +136,7 @@ interface HProps {
         type: 'condition' | 'trueCase' | 'falseCase'
         capitalize?: true
       }
-    | { name: 'lookAtThisBentoBoxPuzzle' }
+    | { name: 'lookAtThisLunchBoxPuzzle' }
     | { name: 'convertToMathbox'; lowerCase?: true }
     | { name: 'undoConvertToMathbox' }
     | { name: 'doneConvertToMathbox' }
@@ -384,7 +384,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
       )
     }
   }
-  if (args.name === 'bentoBoxPuzzle') {
+  if (args.name === 'lunchBoxPuzzle') {
     if (locale === 'en') {
       return (
         <>
@@ -831,7 +831,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
       )
     }
   }
-  if (args.name === 'lookAtThisBentoBox') {
+  if (args.name === 'lookAtThisLunchBox') {
     if (locale === 'en') {
       return <>{args.lowerCase ? 't' : 'T'}ake a look at this lunchbox</>
     } else {
@@ -1335,7 +1335,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
       }
     }
   }
-  if (args.name === 'lookAtThisBentoBoxPuzzle') {
+  if (args.name === 'lookAtThisLunchBoxPuzzle') {
     if (locale === 'en') {
       return (
         <>
@@ -1346,7 +1346,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
       return (
         <>
           こちらの
-          <H args={{ name: 'bentoBoxPuzzle' }} />
+          <H args={{ name: 'lunchBoxPuzzle' }} />
           をご覧ください
         </>
       )

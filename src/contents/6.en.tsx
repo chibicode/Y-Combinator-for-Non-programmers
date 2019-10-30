@@ -121,7 +121,7 @@ export default () => (
               <Bold>But:</Bold> The mathboxes were taken by the devil{' '}
               <Emoji>😈</Emoji>. To take them back, we must solve{' '}
               <Highlight>
-                <H args={{ name: 'bentoBoxPuzzle', postfix: 's' }} />
+                <H args={{ name: 'lunchBoxPuzzle', postfix: 's' }} />
               </Highlight>
               . A lunchbox works as follows:
             </P>
@@ -945,7 +945,7 @@ export default () => (
                         previous <H args={{ name: 'yesNoQuiz' }} />.
                       </P>
                       <P>
-                        <H args={{ name: 'lookAtThisBentoBox' }} />:
+                        <H args={{ name: 'lookAtThisLunchBox' }} />:
                       </P>
                     </>
                   )

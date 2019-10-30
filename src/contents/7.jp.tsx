@@ -240,7 +240,7 @@ export default () => (
                     <>
                       <P>
                         わかりました。まず、
-                        <H args={{ name: 'lookAtThisBentoBox' }} />。
+                        <H args={{ name: 'lookAtThisLunchBox' }} />。
                       </P>
                     </>
                   )

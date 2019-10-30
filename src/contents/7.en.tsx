@@ -243,7 +243,7 @@ export default () => (
                       <P>
                         Sure. First,{' '}
                         <H
-                          args={{ name: 'lookAtThisBentoBox', lowerCase: true }}
+                          args={{ name: 'lookAtThisLunchBox', lowerCase: true }}
                         />
                         .
                       </P>

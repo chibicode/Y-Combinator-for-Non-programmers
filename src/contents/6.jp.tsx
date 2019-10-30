@@ -113,7 +113,7 @@ export default () => (
             <Hr />
             <P>
               奪われた計算箱を取り返すためには、悪魔が出題する
-              <H args={{ name: 'bentoBoxPuzzle' }} />
+              <H args={{ name: 'lunchBoxPuzzle' }} />
               を解かないといけません。弁当箱には、以下のような法則があります。
             </P>
             <BasicRules includeFuncUnbound />
@@ -306,7 +306,7 @@ export default () => (
                     <>
                       <P>
                         こちらの
-                        <H args={{ name: 'bentoBoxPuzzle' }} />
+                        <H args={{ name: 'lunchBoxPuzzle' }} />
                         をご覧ください！
                       </P>
                     </>
@@ -986,7 +986,7 @@ export default () => (
                     <>
                       <P>
                         続いて
-                        <H args={{ name: 'lookAtThisBentoBox' }} />
+                        <H args={{ name: 'lookAtThisLunchBox' }} />
                         。このページの冒頭で紹介した弁当箱です。
                       </P>
                     </>

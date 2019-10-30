@@ -132,7 +132,7 @@ export default () => (
             />
             <P>
               どうやら、ラムダ村の村人たちは
-              <H args={{ name: 'bentoBoxPuzzle' }} />
+              <H args={{ name: 'lunchBoxPuzzle' }} />
               の法則を見抜いたようです！
             </P>
             <BubbleQuotes
@@ -383,7 +383,7 @@ export default () => (
                       <P>
                         次に進む前に、
                         <Highlight>
-                          <H args={{ name: 'bentoBoxPuzzle' }} />
+                          <H args={{ name: 'lunchBoxPuzzle' }} />
                           の法則を明確にする必要があるからな。
                         </Highlight>
                       </P>
@@ -465,7 +465,7 @@ export default () => (
                       <P>
                         <Highlight>
                           というわけで、これから
-                          <H args={{ name: 'bentoBoxPuzzle' }} />の
+                          <H args={{ name: 'lunchBoxPuzzle' }} />の
                           <HighlightBold>明確な法則</HighlightBold>を紹介する。
                         </Highlight>
                         それを理解した上で、さらに複雑なパズルを解いてもらおう。
@@ -491,7 +491,7 @@ export default () => (
       {
         title: (
           <>
-            <H args={{ name: 'bentoBoxPuzzle' }} />
+            <H args={{ name: 'lunchBoxPuzzle' }} />
             の明確な法則
           </>
         ),
@@ -506,7 +506,7 @@ export default () => (
                     <>
                       <P>
                         では、
-                        <H args={{ name: 'bentoBoxPuzzle' }} />
+                        <H args={{ name: 'lunchBoxPuzzle' }} />
                         の明確な法則をまとめてみよう。全部で
                         <Highlight>4つのステップ</Highlight>があるぞ。
                       </P>
@@ -544,7 +544,7 @@ export default () => (
           <>
             <P>
               それぞれのステップについて、 こちらの
-              <H args={{ name: 'bentoBoxPuzzle' }} />
+              <H args={{ name: 'lunchBoxPuzzle' }} />
               を使って説明していきます。
             </P>
             <R.Ilpo />
@@ -1130,7 +1130,7 @@ export default () => (
                     <>
                       <P>
                         以上が、
-                        <H args={{ name: 'bentoBoxPuzzle' }} />
+                        <H args={{ name: 'lunchBoxPuzzle' }} />
                         の明確な法則だ。理解できたかな？
                       </P>
                     </>

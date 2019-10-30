@@ -198,7 +198,7 @@ export default () => (
               <Emoji>⚠️</Emoji> <Bold>Warning:</Bold>{' '}
               <H
                 args={{
-                  name: 'bentoBoxPuzzle',
+                  name: 'lunchBoxPuzzle',
                   capitalize: true,
                   postfix: 's'
                 }}
@@ -235,7 +235,7 @@ export default () => (
               ]}
             />
             <R.Cvtc>
-              <H args={{ name: 'bentoBoxPuzzle', capitalize: true }} /> with{' '}
+              <H args={{ name: 'lunchBoxPuzzle', capitalize: true }} /> with{' '}
               <Italic>3 rows</Italic>
             </R.Cvtc>
             <BubbleQuotes
@@ -361,7 +361,7 @@ export default () => (
           <>
             <P>
               <Bold>The first step</Bold> in solving{' '}
-              <H args={{ name: 'bentoBoxPuzzle', indefinite: true }} /> with 3
+              <H args={{ name: 'lunchBoxPuzzle', indefinite: true }} /> with 3
               rows is to{' '}
               <Highlight>
                 focus on the pair of{' '}
@@ -984,7 +984,7 @@ export default () => (
         content: (
           <>
             <P>
-              <H args={{ name: 'lookAtThisBentoBox' }} />:
+              <H args={{ name: 'lookAtThisLunchBox' }} />:
             </P>
             <R.Dkiy />
             <P>
@@ -1303,7 +1303,7 @@ export default () => (
         content: (
           <>
             <P>
-              Take a look at this <H args={{ name: 'bentoBoxPuzzle' }} />, which
+              Take a look at this <H args={{ name: 'lunchBoxPuzzle' }} />, which
               has two pairs of <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
               ’s:
             </P>
@@ -1514,7 +1514,7 @@ export default () => (
         content: (
           <>
             <P>
-              <H args={{ name: 'lookAtThisBentoBox' }} />:
+              <H args={{ name: 'lookAtThisLunchBox' }} />:
             </P>
             <R.Wcer />
             <P>
@@ -1652,7 +1652,7 @@ export default () => (
           <>
             <P>
               <Bold>Next:</Bold> Take a look at this{' '}
-              <H args={{ name: 'bentoBoxPuzzle' }} />
+              <H args={{ name: 'lunchBoxPuzzle' }} />
             </P>
             <R.Gtdu>
               There’s only one item (a <EmojiWithText letter="b" />)<br />
@@ -1904,7 +1904,7 @@ export default () => (
         content: (
           <>
             <P>
-              <H args={{ name: 'lookAtThisBentoBox' }} />:
+              <H args={{ name: 'lookAtThisLunchBox' }} />:
             </P>
             <R.Fclo />
             <P>

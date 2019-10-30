@@ -885,7 +885,7 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        <H args={{ name: 'bentoBoxPuzzle' }} />
+                        <H args={{ name: 'lunchBoxPuzzle' }} />
                         に、「
                         <HighlightBold>
                           <BottomRightBadge
