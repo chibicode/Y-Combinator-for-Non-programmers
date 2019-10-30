@@ -13,6 +13,7 @@ import Emoji from 'src/components/Emoji'
 import EmojiNumber from 'src/components/EmojiNumber'
 import CustomEmoji from 'src/components/CustomEmoji'
 import EmojiSeparator from 'src/components/EmojiSeparator'
+import EmojiWithText from 'src/components/EmojiWithText'
 import BubbleQuotes from 'src/components/BubbleQuotes'
 import NextLessonButton from 'src/components/NextLessonButton'
 import CardContent from 'src/components/CardContent'
@@ -533,8 +534,8 @@ export default () => (
               }
             />
             <P>
-              <Bold>The puzzles look like this:</Bold> I’ll explain how it works
-              on the next page, but for now,{' '}
+              <Bold>The puzzles look like this:</Bold> I’ll explain how these
+              puzzles work on the next page, but for now,{' '}
               <Highlight>
                 try pressing the <H args={{ name: 'run' }} /> button.
               </Highlight>{' '}
@@ -546,6 +547,25 @@ export default () => (
               <br />
               Try pressing <H args={{ name: 'run' }} />!
             </R.Mcug>
+            <P>
+              This one has <HighlightBold>emojis</HighlightBold> instead of
+              numbers - <EmojiWithText letter="a" /> and a{' '}
+              <EmojiWithText letter="b" />.{' '}
+              <Highlight>
+                Try pressing <H args={{ name: 'run' }} /> and see what happens:
+              </Highlight>
+            </P>
+            <R.Wunw />
+            <P>
+              <Bold>Eventually,</Bold> you’ll be solving complex puzzles like
+              this. Again,{' '}
+              <Highlight>
+                I’ll explain how these puzzles work later, but for now, try
+                pressing <H args={{ name: 'run' }} />:
+              </Highlight>
+            </P>
+            <R.Beiz />
+            <Hr />
             <P>
               These puzzles are great also because{' '}
               <Highlight>they are optimized for smartphones</Highlight>. A lot
