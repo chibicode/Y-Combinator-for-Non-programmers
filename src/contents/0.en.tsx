@@ -550,8 +550,8 @@ export default () => (
               }
             />
             <P>
-              <Bold>The puzzles look like this:</Bold> I’ll explain how these
-              puzzles work on the next page, but for now,{' '}
+              <Bold>The puzzles look like this:</Bold> I’ll explain how this
+              puzzle works on the next page, but for now,{' '}
               <Highlight>
                 try pressing the <H args={{ name: 'run' }} /> button.
               </Highlight>{' '}
@@ -567,19 +567,24 @@ export default () => (
               <Bold>Eventually,</Bold> you’ll be solving complex puzzles that
               involve <Bold>emojis</Bold> like below. Again,{' '}
               <Highlight>
-                I’ll explain how these puzzles work later, but for now, try
-                pressing <H args={{ name: 'run' }} />:
+                try pressing <H args={{ name: 'run' }} /> and see what happens:
               </Highlight>
             </P>
             <R.Beiz />
             <Hr />
             <P>
-              <Bold>Also:</Bold> My puzzles are{' '}
-              <Highlight>optimized for smartphones</Highlight>. A lot of “learn
-              to code” resources are either (1){' '}
+              <Bold>Also:</Bold> These puzzles are{' '}
+              <Highlight>
+                optimized for <Emoji>📱</Emoji> smartphones
+              </Highlight>
+              . A lot of “learn to code” resources are either (1){' '}
               <Italic>great, but not smartphone-ready</Italic> or (2){' '}
-              <Italic>smartphone-ready, but not great.</Italic> I tried to
-              change that. <Emoji>😉</Emoji>
+              <Italic>smartphone-ready, but not great.</Italic> I tried to make
+              something that’s{' '}
+              <Highlight>
+                <Italic>great and smartphone-ready</Italic>
+              </Highlight>
+              . <Emoji>😉</Emoji>
             </P>
             <EmojiSeparator
               emojis={['📱', '🧩', '💻']}
