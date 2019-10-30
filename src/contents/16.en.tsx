@@ -95,8 +95,11 @@ export default () => (
               description={<>Who invented lunchboxes?</>}
             />
             <P>
-              <Bold>Answer:</Bold> Lunchboxes were invented in the 1930s by a
-              mathematician <Bold>Alonzo Church</Bold>.
+              <Bold>Answer:</Bold>{' '}
+              <Highlight>
+                Lunchboxes were invented in the 1930s by a mathematician{' '}
+                <Bold>Alonzo Church</Bold>.
+              </Highlight>
             </P>
             <EmojiSeparator
               emojis={['👨🏻‍🦳', '💭', '🍱']}
@@ -168,6 +171,8 @@ export default () => (
                 following lunchbox:
               </Highlight>
             </P>
+            <CenteredCode size="md">λA.B C</CenteredCode>
+            <ExpressionRunnerSeparator />
             <R.Kzkg>
               The above lambda calculus expression is
               <br />
@@ -234,8 +239,8 @@ export default () => (
                 But we really were talking about{' '}
                 <HighlightBold>lambda calculus</HighlightBold>.
               </Highlight>{' '}
-              We used lunchboxes to make lambda calculus more approachable for
-              non-programmers.
+              I invented lunchboxes to make lambda calculus more approachable
+              for non-programmers.
             </P>
             <EmojiSeparator
               nodes={[
@@ -245,7 +250,7 @@ export default () => (
               ]}
               description={
                 <>
-                  We used lunchboxes to make
+                  I invented lunchboxes to make
                   <br />
                   lambda calculus more approachable
                 </>
@@ -638,7 +643,8 @@ export default () => (
                   <br />
                   building a complex thing from simple things.
                   <br />
-                  Lunchboxes are a great example
+                  Lunchboxes and Y Combinator are
+                  <br />a great example of this idea.
                 </>
               }
             />
@@ -673,10 +679,16 @@ export default () => (
               }
             />
             <P>
-              So hopefully this course gave you an idea of what learning
-              computer science is like. As you learn it, you’ll be surprised
-              that most innovative ideas in computer science are based on lots
-              of simple ideas!
+              <Bold>
+                Hopefully, this course gave you an idea of what learning
+                computer science is like.
+              </Bold>{' '}
+              If you do end up learning computer science, you’ll be surprised
+              that{' '}
+              <Highlight>
+                most innovative ideas in computer science are based on lots of
+                simple ideas!
+              </Highlight>
             </P>
           </>
         )
@@ -735,9 +747,14 @@ export default () => (
                         <Bold>If you’re a programmer</Bold> and are interested
                         in trying out the{' '}
                         <HighlightBold>Y Combinator</HighlightBold> program,
-                        press “Test Y Combinator in devtools” below. You need to
-                        be on a desktop browser though—you can’t do it on a
-                        smartphone.
+                        press “Test Y Combinator in devtools” below.
+                      </P>
+                      <P>
+                        <Emoji>⚠️</Emoji>{' '}
+                        <Highlight>
+                          You need to be on a desktop browser though—you can’t
+                          do it on a smartphone.
+                        </Highlight>
                       </P>
                     </>
                   )
@@ -769,7 +786,7 @@ export default () => (
                 <Ul>
                   <UlLi>
                     <Bold>
-                      Paste the above code on your desktop browser’s developer
+                      Run the above code on your desktop browser’s developer
                       tools
                     </Bold>
                     , and{' '}
@@ -780,8 +797,9 @@ export default () => (
                   </UlLi>
                   <UlLi>
                     <Bold>Also:</Bold> If you change the <Code>4</Code> on the
-                    bottom to <Code>5</Code>, it will calculate the factorial of{' '}
-                    <EmojiNumber number={5} />, which is <Code>120</Code>.
+                    bottom to <Code>5</Code> and run it, it will calculate the
+                    factorial of <EmojiNumber number={5} />, which is{' '}
+                    <Code>120</Code>.
                   </UlLi>
                 </Ul>
                 <P>

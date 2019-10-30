@@ -516,6 +516,8 @@ export default () => (
             <P>
               上のラムダ計算の記述式は、以下の弁当箱とまったく同じことを表しています。
             </P>
+            <CenteredCode size="md">λA.B C</CenteredCode>
+            <ExpressionRunnerSeparator />
             <R.Kzkg>
               上のラムダ計算の記述式は、
               <br />
