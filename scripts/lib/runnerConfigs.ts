@@ -106,6 +106,18 @@ export const qfbk: ExpressionRunnerShorthandConfig = {
   explanationsVisibility: 'visible'
 }
 
+export const zynf: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.lqti,
+  initialState: 'showFuncBound',
+  showAllShowSteps: true,
+  showPriorities: true,
+  highlightOverrides: {
+    c: 'active'
+  },
+  highlightOverrideActiveAfterStart: true
+}
+
 export const yfwd: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   initialExpressionContainer: initialExpressionContainers.lqti,

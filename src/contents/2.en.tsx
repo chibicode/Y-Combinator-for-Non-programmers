@@ -180,7 +180,7 @@ export default () => (
               <Bold>
                 We’ll start this page with a{' '}
                 <Highlight>
-                  <H args={{ name: 'yesNoQuiz' }} />
+                  <H args={{ name: 'yesNoQuiz', lowerCase: true }} />
                 </Highlight>
                 .
               </Bold>{' '}

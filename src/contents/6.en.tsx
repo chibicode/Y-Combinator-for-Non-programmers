@@ -34,7 +34,7 @@ export default () => (
           content: (
             <>
               <P>
-                <Bold>Welcome to the intermediate levels:</Bold> They’ll be
+                <Bold>Welcome to the intermediate levels:</Bold> Things will be
                 harder than the beginner levels, but you should be able to
                 handle them!
               </P>
@@ -121,7 +121,7 @@ export default () => (
               <Bold>But:</Bold> The mathboxes were taken by the devil{' '}
               <Emoji>😈</Emoji>. To take them back, we must solve{' '}
               <Highlight>
-                <H args={{ name: 'bentoBoxPuzzle', postfix: 's' }} />
+                <H args={{ name: 'lunchBoxPuzzle', postfix: 's' }} />
               </Highlight>
               . A lunchbox works as follows:
             </P>
@@ -131,17 +131,18 @@ export default () => (
             <Hr />
             <P>We also learned about the mathboxes with 3 or more rows:</P>
             <ThreeRowRules />
+            <R.Vdhd>Lunchbox with 3 rows</R.Vdhd>
             <Hr />
             <Beginner5Rules />
             <Hr />
             <P>
-              <Bold>That’s what we’ve learned in the beginner levels:</Bold>{' '}
-              <Italic>You don’t need to remember them.</Italic> You just need to
-              know that these rules exist, and you should be fine.
+              <Bold>Note:</Bold>{' '}
+              <Highlight>You don’t need to memorize the rules.</Highlight> You
+              just need to know that these rules exist, and you should be fine.
             </P>
             <EmojiSeparator
               emojis={['✨', '🤗', '✨']}
-              description={<>You don’t need to remember these rules!</>}
+              description={<>You don’t need to memorize these rules!</>}
             />
             <P>Let’s start the intermediate levels!</P>
           </>
@@ -159,9 +160,12 @@ export default () => (
                     <>
                       <P>We’ll start the intermediate levels.</P>
                       <P>
-                        <Bold>As promised:</Bold> I’ll give you a{' '}
-                        <Italic>very difficult question</Italic>. I’ll give you
-                        the mathboxes back if you solve it!
+                        <Bold>As promised:</Bold>{' '}
+                        <Highlight>
+                          I’ll give you a{' '}
+                          <Italic>very difficult question</Italic>. I’ll give
+                          you the mathboxes back if you solve it!
+                        </Highlight>
                       </P>
                     </>
                   )
@@ -198,7 +202,7 @@ export default () => (
                     <>
                       <P>
                         But before I give you the question, let me introduce you{' '}
-                        to <Italic>my partner</Italic>.
+                        to <Italic>my business partner</Italic>.
                       </P>
                     </>
                   )
@@ -207,7 +211,7 @@ export default () => (
                   type: 'thinking',
                   children: (
                     <>
-                      <P>What? Your partner?</P>
+                      <P>What? Your business partner?</P>
                     </>
                   )
                 },
@@ -239,7 +243,8 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        Hello, I’m Minion. How may I help you today, Mr. Devil?
+                        <Bold>Hello, I’m Minion</Bold>. How may I help you
+                        today, Mr. Devil?
                       </P>
                     </>
                   )
@@ -249,7 +254,8 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        Thanks for coming! Everyone, this is my partner, Minion.
+                        Thanks for coming! Everyone, this is my business
+                        partner, Minion.
                       </P>
                     </>
                   )
@@ -267,8 +273,8 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        Well, Minion is not a regular dog. He’s got some{' '}
-                        <Italic>special</Italic> tricks.
+                        Well, Minion is a special dog. He’s got some{' '}
+                        <Italic>awesome</Italic> tricks.
                       </P>
                       <P>Minion, show these guys one of your tricks!</P>
                     </>
@@ -328,9 +334,9 @@ export default () => (
                     <>
                       <P>
                         By using my trick,{' '}
-                        <Italic>
+                        <Highlight>
                           I can convert this lunchbox into a mathbox
-                        </Italic>
+                        </Highlight>
                         .
                       </P>
                       <P>
@@ -365,7 +371,9 @@ export default () => (
                     <>
                       <P>
                         <Bold>Yes, and importantly:</Bold>{' '}
-                        <Italic>The conversion follows a specific rule.</Italic>
+                        <Highlight>
+                          The conversion follows a specific rule.
+                        </Highlight>
                       </P>
                       <P>
                         <Highlight>Try guessing what this rule is!</Highlight>
@@ -386,7 +394,9 @@ export default () => (
                 <>
                   I convert a lunchbox into a mathbox, and
                   <br />
-                  there’s a specific rule for the conversion
+                  <HighlightBold>
+                    there’s a specific rule for the conversion
+                  </HighlightBold>
                 </>
               }
             />
@@ -463,7 +473,7 @@ export default () => (
                         <Highlight>
                           Let’s do a{' '}
                           <Bold>
-                            <H args={{ name: 'yesNoQuiz' }} />
+                            <H args={{ name: 'yesNoQuiz', lowerCase: true }} />
                           </Bold>{' '}
                           to check your understanding!
                         </Highlight>
@@ -623,8 +633,11 @@ export default () => (
                       <P>
                         <Bold>Important:</Bold> I can only convert{' '}
                         <Italic>certain types</Italic> of lunchboxes into
-                        mathboxes. A lunchbox must match the following patterns
-                        to be convertible.
+                        mathboxes.
+                      </P>
+                      <P>
+                        A lunchbox must match the following patterns to be
+                        convertible.
                       </P>
                       <P>
                         <Bold>First:</Bold>{' '}
@@ -693,7 +706,7 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        Let’s now add label each item as <Emoji>🅰️</Emoji> or{' '}
+                        Let’s now label each item as <Emoji>🅰️</Emoji> or{' '}
                         <Emoji>🅱️</Emoji>’s using this rule:
                       </P>
                       <R.Mgku>
@@ -841,10 +854,10 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        <Italic>
+                        <Highlight>
                           As long as it follows the same pattern, it doesn’t
                           matter which items are used.
-                        </Italic>
+                        </Highlight>
                       </P>
                       <P>
                         <Bold>Example:</Bold> Suppose that we have{' '}
@@ -864,8 +877,8 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        We’ll add <Emoji>🅰️</Emoji>’s and <Emoji>🅱️</Emoji>’s as
-                        follows…
+                        We’ll label <Emoji>🅰️</Emoji>’s and <Emoji>🅱️</Emoji>’s
+                        as follows…
                       </P>
                     </>
                   )
@@ -942,10 +955,11 @@ export default () => (
                     <>
                       <P>
                         Let’s try to apply the rules on the lunchbox from the
-                        previous <H args={{ name: 'yesNoQuiz' }} />.
+                        previous{' '}
+                        <H args={{ name: 'yesNoQuiz', lowerCase: true }} />.
                       </P>
                       <P>
-                        <H args={{ name: 'lookAtThisBentoBox' }} />:
+                        <H args={{ name: 'lookAtThisLunchBox' }} />:
                       </P>
                     </>
                   )
@@ -1044,7 +1058,7 @@ export default () => (
                     <>
                       <P>
                         That means the number of <Emoji>🅰️</Emoji>’s on the
-                        bottom right is <Italic>zero</Italic>.
+                        bottom right is <HighlightBold>zero</HighlightBold>.
                       </P>
                       <P>
                         <Bold>So:</Bold> After converting to a mathbox, it
@@ -1070,7 +1084,7 @@ export default () => (
                     <>
                       <P>
                         I see, so the number of <Emoji>🅰️</Emoji>’s on the
-                        bottom right <Italic>can be zero</Italic>.
+                        bottom right <HighlightBold>can be zero</HighlightBold>.
                       </P>
                     </>
                   )
@@ -1080,11 +1094,14 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        <Bold>Right:</Bold> “Some <Emoji>🅰️</Emoji>’s” can mean
-                        “<Italic>Zero</Italic> <Emoji>🅰️</Emoji>’s”.
+                        <Bold>Right:</Bold>{' '}
+                        <Highlight>
+                          “Some <Emoji>🅰️</Emoji>’s” can mean “
+                          <Italic>Zero</Italic> <Emoji>🅰️</Emoji>’s”.
+                        </Highlight>
                       </P>
                       <R.Hehx>
-                        “Some <Emoji>🅰️</Emoji>’s” can mean “
+                        “Some <Emoji>🅰️</Emoji>’s” can also mean “
                         <Italic>Zero</Italic> <Emoji>🅰️</Emoji>’s”.
                       </R.Hehx>
                     </>

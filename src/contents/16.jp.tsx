@@ -575,7 +575,7 @@ export default () => (
               </HighlightBold>
               <Highlight>
                 ラムダ計算の記述式は見た目が複雑なので、
-                <H args={{ name: 'bentoBoxPuzzle' }} />
+                <H args={{ name: 'lunchBoxPuzzle' }} />
                 という形で教えることで、とっつきやすくしていた
               </Highlight>
               というわけですね。
@@ -592,7 +592,7 @@ export default () => (
                   <br />
                   ラムダ計算の記述式は見た目が複雑なので、
                   <br />
-                  <H args={{ name: 'bentoBoxPuzzle' }} />
+                  <H args={{ name: 'lunchBoxPuzzle' }} />
                   という形で教える
                   <br />
                   ことで、とっつきやすくしていた。

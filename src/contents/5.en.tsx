@@ -198,7 +198,7 @@ export default () => (
               <Emoji>⚠️</Emoji> <Bold>Warning:</Bold>{' '}
               <H
                 args={{
-                  name: 'bentoBoxPuzzle',
+                  name: 'lunchBoxPuzzle',
                   capitalize: true,
                   postfix: 's'
                 }}
@@ -235,7 +235,7 @@ export default () => (
               ]}
             />
             <R.Cvtc>
-              <H args={{ name: 'bentoBoxPuzzle', capitalize: true }} /> with{' '}
+              <H args={{ name: 'lunchBoxPuzzle', capitalize: true }} /> with{' '}
               <Italic>3 rows</Italic>
             </R.Cvtc>
             <BubbleQuotes
@@ -329,7 +329,13 @@ export default () => (
                           <Bold>Then:</Bold>{' '}
                           <Highlight>
                             I will give you{' '}
-                            <H args={{ name: 'yesNoQuiz', postfix: 'zes' }} />{' '}
+                            <H
+                              args={{
+                                name: 'yesNoQuiz',
+                                postfix: 'zes',
+                                lowerCase: true
+                              }}
+                            />{' '}
                             to solve.
                           </Highlight>
                         </OlLi>
@@ -361,7 +367,7 @@ export default () => (
           <>
             <P>
               <Bold>The first step</Bold> in solving{' '}
-              <H args={{ name: 'bentoBoxPuzzle', indefinite: true }} /> with 3
+              <H args={{ name: 'lunchBoxPuzzle', indefinite: true }} /> with 3
               rows is to{' '}
               <Highlight>
                 focus on the pair of{' '}
@@ -953,7 +959,7 @@ export default () => (
                         <Highlight>
                           Let’s do a{' '}
                           <Bold>
-                            <H args={{ name: 'yesNoQuiz' }} />
+                            <H args={{ name: 'yesNoQuiz', lowerCase: true }} />
                           </Bold>{' '}
                           to check your understanding!
                         </Highlight>
@@ -984,7 +990,7 @@ export default () => (
         content: (
           <>
             <P>
-              <H args={{ name: 'lookAtThisBentoBox' }} />:
+              <H args={{ name: 'lookAtThisLunchBox' }} />:
             </P>
             <R.Dkiy />
             <P>
@@ -1223,7 +1229,14 @@ export default () => (
                       </P>
                       <P>
                         After explaining them, I’ll give you more{' '}
-                        <H args={{ name: 'yesNoQuiz', postfix: 'zes' }} />!
+                        <H
+                          args={{
+                            name: 'yesNoQuiz',
+                            postfix: 'zes',
+                            lowerCase: true
+                          }}
+                        />
+                        !
                       </P>
                     </>
                   )
@@ -1303,8 +1316,8 @@ export default () => (
         content: (
           <>
             <P>
-              Take a look at this <H args={{ name: 'bentoBoxPuzzle' }} />, which
-              has two pairs of <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
+              Take a look at this lunchbox, which has two pairs of{' '}
+              <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
               ’s:
             </P>
             <R.Laea>
@@ -1324,8 +1337,8 @@ export default () => (
             </R.Aezk>
             <Hr />
             <P>
-              <Emoji>🤔</Emoji> <Bold>Now, you might be wondering:</Bold> What
-              labels do we use?
+              <Emoji>🤔</Emoji> <Bold>Now, you might be wondering:</Bold>{' '}
+              <Highlight>What labels do we use?</Highlight>
             </P>
             <EmojiSeparator
               nodes={[
@@ -1334,11 +1347,7 @@ export default () => (
                 <BottomRightBadge inline bottomRightBadgeType="funcBound" />,
                 <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />
               ]}
-              description={
-                <>
-                  <Highlight>What labels do we use?</Highlight>
-                </>
-              }
+              description={<>What labels do we use?</>}
             />
             <P>
               <Bold>First:</Bold> The top <EmojiWithText letter="a" /> will be
@@ -1353,8 +1362,8 @@ export default () => (
             </P>
             <R.Uppk />
             <P>
-              <Bold>>Third:</Bold> The right <EmojiWithText letter="b" /> and
-              the right <EmojiWithText letter="c" /> will be labeled as{' '}
+              <Bold>Third:</Bold> The right <EmojiWithText letter="b" /> and the
+              right <EmojiWithText letter="c" /> will be labeled as{' '}
               <BottomRightBadge inline bottomRightBadgeType="funcBound" />.
             </P>
             <R.Qfbk />
@@ -1387,14 +1396,23 @@ export default () => (
                         , even though it <Italic>looks like</Italic> it’s in the
                         middle.
                       </P>
+                      <R.Zynf>
+                        The right <EmojiWithText letter="b" /> will be{' '}
+                        <BottomRightBadge
+                          inline
+                          bottomRightBadgeType="funcBound"
+                        />
+                        <br />
+                        because it touches the right edge
+                      </R.Zynf>
                     </>
                   )
                 }
               ]}
             />
             <P>
-              Finally, the remaining <EmojiWithText letter="c" /> will be
-              labeled as{' '}
+              <Bold>Finally:</Bold> The remaining <EmojiWithText letter="c" />{' '}
+              will be labeled as{' '}
               <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />.
             </P>
             <R.Yfwd />
@@ -1425,8 +1443,8 @@ export default () => (
                           <BottomRightBadge
                             inline
                             bottomRightBadgeType="funcUnbound"
-                          />{' '}
-                          for those items.
+                          />
+                          .
                         </Highlight>
                       </P>
                     </>
@@ -1489,7 +1507,8 @@ export default () => (
                     <>
                       <P>Yes. Hope you were following along!</P>
                       <P>
-                        Let’s do a <H args={{ name: 'yesNoQuiz' }} /> now.
+                        Let’s do a{' '}
+                        <H args={{ name: 'yesNoQuiz', lowerCase: true }} /> now.
                       </P>
                     </>
                   )
@@ -1509,7 +1528,7 @@ export default () => (
         content: (
           <>
             <P>
-              <H args={{ name: 'lookAtThisBentoBox' }} />:
+              <H args={{ name: 'lookAtThisLunchBox' }} />:
             </P>
             <R.Wcer />
             <P>
@@ -1602,15 +1621,11 @@ export default () => (
                 It’s similar to the one that was used for the quiz, except…
               </UlLi>
               <UlLi>
-                <Italic>
+                <Highlight>
                   There’s no pair of{' '}
                   <InlinePrioritiesLabel>1</InlinePrioritiesLabel>’s on the left
                   edge.
-                </Italic>
-              </UlLi>
-              <UlLi>
-                So there’s only one inner pair of{' '}
-                <InlinePrioritiesLabel>1</InlinePrioritiesLabel>’s.
+                </Highlight>
               </UlLi>
             </Ul>
             <R.Dhzf>
@@ -1650,7 +1665,7 @@ export default () => (
         content: (
           <>
             <P>
-              Next, take a look at this <H args={{ name: 'bentoBoxPuzzle' }} />
+              <Bold>Next:</Bold> Take a look at this lunchbox:
             </P>
             <R.Gtdu>
               There’s only one item (a <EmojiWithText letter="b" />)<br />
@@ -1663,8 +1678,12 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        Notice that there’s only one item (a{' '}
-                        <EmojiWithText letter="b" />) on the bottom row.
+                        Notice that{' '}
+                        <Highlight>
+                          there’s only one item (a <EmojiWithText letter="b" />)
+                          on the bottom row
+                        </Highlight>
+                        .
                       </P>
                     </>
                   )
@@ -1674,8 +1693,11 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        Okay… let’s assume that we start with the pair of{' '}
-                        <InlinePrioritiesLabel>1</InlinePrioritiesLabel>’s.
+                        Okay…{' '}
+                        <Highlight>
+                          let’s see what happens if we start with the pair of{' '}
+                          <InlinePrioritiesLabel>1</InlinePrioritiesLabel>’s.
+                        </Highlight>
                       </P>
                     </>
                   )
@@ -1690,8 +1712,10 @@ export default () => (
               ]}
               description={
                 <>
-                  Suppose that we start with the pair of{' '}
-                  <InlinePrioritiesLabel>1</InlinePrioritiesLabel>’s…
+                  What happens if we start with
+                  <br />
+                  the pair of <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
+                  ’s?
                 </>
               }
             />
@@ -1702,20 +1726,23 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        Then, <Italic>which label</Italic> (out of{' '}
-                        <BottomRightBadge
-                          inline
-                          bottomRightBadgeType="funcArg"
-                        />{' '}
-                        <BottomRightBadge
-                          inline
-                          bottomRightBadgeType="funcBound"
-                        />{' '}
-                        <BottomRightBadge
-                          inline
-                          bottomRightBadgeType="funcUnbound"
-                        />
-                        ) should we use for the <EmojiWithText letter="b" />?
+                        <Bold>I’m wondering:</Bold>{' '}
+                        <Highlight>
+                          <Italic>Which label</Italic> (out of{' '}
+                          <BottomRightBadge
+                            inline
+                            bottomRightBadgeType="funcArg"
+                          />{' '}
+                          <BottomRightBadge
+                            inline
+                            bottomRightBadgeType="funcBound"
+                          />{' '}
+                          <BottomRightBadge
+                            inline
+                            bottomRightBadgeType="funcUnbound"
+                          />
+                          ) should we use for the <EmojiWithText letter="b" />?
+                        </Highlight>
                       </P>
                     </>
                   )
@@ -1747,16 +1774,21 @@ export default () => (
                 <>
                   Can’t use any of the labels for the
                   <br />
-                  <EmojiWithText letter="b" />
+                  <EmojiWithText letter="b" />, because
+                  <br />
+                  it’s the only item on the bottom row
                 </>
               }
             />
             <P>
-              <Bold>Therefore:</Bold> In this scenario,{' '}
-              <Italic>
-                you can’t start with the pair of{' '}
-                <InlinePrioritiesLabel>1</InlinePrioritiesLabel>’s.
-              </Italic>
+              <Bold>Therefore:</Bold>{' '}
+              <Highlight>
+                In this scenario,{' '}
+                <Italic>
+                  you can’t start with the pair of{' '}
+                  <InlinePrioritiesLabel>1</InlinePrioritiesLabel>’s.
+                </Italic>
+              </Highlight>
             </P>
             <R.Roko>
               Can’t start with the pair of{' '}
@@ -1802,43 +1834,53 @@ export default () => (
                           <InlinePrioritiesLabel>2</InlinePrioritiesLabel>’s,
                         </UlLi>
                         <UlLi>
-                          You’ll be looking at{' '}
-                          <Italic>just the top two rows</Italic>, and…
+                          <Highlight>
+                            We can label the <EmojiWithText letter="c" /> on the
+                            top as{' '}
+                            <BottomRightBadge
+                              inline
+                              bottomRightBadgeType="callArg"
+                            />
+                            , and…
+                          </Highlight>
                         </UlLi>
                         <UlLi>
-                          There are two items (<EmojiWithText letter="a" />) on
-                          the bottom, which can be labeled as{' '}
-                          <BottomRightBadge
-                            inline
-                            bottomRightBadgeType="funcArg"
-                          />{' '}
-                          and{' '}
-                          <BottomRightBadge
-                            inline
-                            bottomRightBadgeType="funcBound"
-                          />
-                          .
+                          <Highlight>
+                            There are two items (<EmojiWithText letter="a" />)
+                            on the bottom, which can be labeled as{' '}
+                            <BottomRightBadge
+                              inline
+                              bottomRightBadgeType="funcArg"
+                            />{' '}
+                            and{' '}
+                            <BottomRightBadge
+                              inline
+                              bottomRightBadgeType="funcBound"
+                            />
+                            .
+                          </Highlight>
                         </UlLi>
                       </Ul>
-                    </>
-                  )
-                },
-                {
-                  type: 'devil',
-                  children: (
-                    <>
-                      <P>Exactly. Here are the labels for each item:</P>
+                      <R.Oork>
+                        Adding labels:{' '}
+                        <BottomRightBadge
+                          inline
+                          bottomRightBadgeType="callArg"
+                        />{' '}
+                        <BottomRightBadge
+                          inline
+                          bottomRightBadgeType="funcArg"
+                        />{' '}
+                        <BottomRightBadge
+                          inline
+                          bottomRightBadgeType="funcBound"
+                        />
+                      </R.Oork>
                     </>
                   )
                 }
               ]}
             />
-            <R.Oork>
-              Adding labels:{' '}
-              <BottomRightBadge inline bottomRightBadgeType="callArg" />{' '}
-              <BottomRightBadge inline bottomRightBadgeType="funcArg" />{' '}
-              <BottomRightBadge inline bottomRightBadgeType="funcBound" />
-            </R.Oork>
             <P>
               The rest is simple. <H args={{ name: 'pressRun' }} />
             </P>
@@ -1902,7 +1944,7 @@ export default () => (
         content: (
           <>
             <P>
-              <H args={{ name: 'lookAtThisBentoBox' }} />:
+              <H args={{ name: 'lookAtThisLunchBox' }} />:
             </P>
             <R.Fclo />
             <P>
@@ -2022,6 +2064,14 @@ export default () => (
                       </P>
                     </>
                   )
+                },
+                {
+                  type: 'smile',
+                  children: (
+                    <>
+                      <P>Ok, got it!</P>
+                    </>
+                  )
                 }
               ]}
             />
@@ -2041,8 +2091,14 @@ export default () => (
                     <>
                       <P>
                         I solved all of the{' '}
-                        <H args={{ name: 'yesNoQuiz', postfix: 'zes' }} /> so
-                        far!
+                        <H
+                          args={{
+                            name: 'yesNoQuiz',
+                            postfix: 'zes',
+                            lowerCase: true
+                          }}
+                        />{' '}
+                        so far!
                       </P>
                     </>
                   )

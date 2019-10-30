@@ -49,7 +49,7 @@ export default () => (
   <EpisodeCardList
     cards={[
       {
-        title: <>We’re doomed!</>,
+        title: <>The challenge</>,
         content: (
           <>
             <EmojiSeparator
@@ -76,7 +76,7 @@ export default () => (
                     <>
                       <P>
                         But we need to solve this to get our mathboxes{' '}
-                        <CustomEmoji type="mathBox" /> back! We’re doomed!
+                        <CustomEmoji type="mathBox" /> back!
                       </P>
                     </>
                   )
@@ -143,7 +143,8 @@ export default () => (
                     <>
                       <P>We appreciate it, but this isn’t for kids.</P>
                       <P>
-                        We tried hard but couldn’t solve it. So I doubt you can.
+                        We tried hard but couldn’t solve it. I don’t think you
+                        can do it!
                       </P>
                     </>
                   )
@@ -208,7 +209,8 @@ export default () => (
               ]}
             />
             <R.Plde>
-              We’ll <H args={{ name: 'run' }} /> this lunchbox, and…
+              We’ll <H args={{ name: 'run', lowerCase: true }} /> this lunchbox,
+              and…
             </R.Plde>
             <ExpressionRunnerSeparator />
             <ExpressionRunnerCaptionOnly>
@@ -277,7 +279,7 @@ export default () => (
                   type: 'surprised',
                   children: (
                     <>
-                      <P>Wait…! It can’t be…!</P>
+                      <P>Wait…! This is…!</P>
                     </>
                   )
                 },
@@ -397,7 +399,7 @@ export default () => (
                   type: 'thinking',
                   children: (
                     <>
-                      <P>Hmm…?</P>
+                      <P>Hmm… ok, let me hear what you have to say.</P>
                     </>
                   )
                 },
@@ -638,11 +640,11 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        Let’s <H args={{ name: 'run' }} /> it! This time, we’ll
-                        continue running until the end.{' '}
+                        Let’s <H args={{ name: 'run', lowerCase: true }} /> it!
+                        This time, we’ll continue running until the end without
+                        stopping.{' '}
                       </P>
                       <P>
-                        If you can’t wait,{' '}
                         <H args={{ name: 'runSkippableToTheEnd' }} />
                       </P>
                     </>
@@ -704,7 +706,7 @@ export default () => (
             </R.Rqer>
             <ExpressionRunnerSeparator />
             <R.Cawl>
-              If we <H args={{ name: 'run' }} /> it,
+              If we <H args={{ name: 'run', lowerCase: true }} /> it,
               <br />
               it becomes a lunchbox
               <br />
@@ -819,9 +821,9 @@ export default () => (
                     <>
                       <P>
                         Maybe…
-                        <Highlight>
+                        <HighlightBold>
                           it can add <EmojiNumber number={1} />?
-                        </Highlight>
+                        </HighlightBold>
                       </P>
                     </>
                   )
@@ -830,24 +832,8 @@ export default () => (
                   type: 'dog',
                   children: (
                     <>
-                      <P>Exactly!</P>
-                    </>
-                  )
-                },
-                {
-                  type: 'thinking',
-                  children: (
-                    <>
-                      <P>What do you mean?</P>
-                    </>
-                  )
-                },
-                {
-                  type: 'dog',
-                  children: (
-                    <>
                       <P>
-                        <Bold>Here’s what I mean:</Bold>
+                        <Bold>Exactly!</Bold>
                       </P>
                       <Ul>
                         <UlLi>
@@ -1050,10 +1036,12 @@ export default () => (
             <BubbleQuotes
               quotes={[
                 {
-                  type: 'thinking',
+                  type: 'dog',
                   children: (
                     <>
-                      <P>I see…, so:</P>
+                      <P>
+                        <Bold>So, to add 1 to a number:</Bold>
+                      </P>
                       <Ul>
                         <UlLi>
                           <Highlight>
@@ -1134,9 +1122,10 @@ export default () => (
                   type: 'saya',
                   children: (
                     <>
+                      <P>I got it!</P>
                       <P>
-                        I got it! First, we’ll use this lunchbox that can be
-                        converted to <EmojiNumber number={2} />:
+                        First, we’ll use this lunchbox that can be converted to{' '}
+                        <EmojiNumber number={2} />:
                       </P>
                     </>
                   )
@@ -1182,8 +1171,9 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        <Bold>Correct!</Bold> Let’s <H args={{ name: 'run' }} />{' '}
-                        it to check!
+                        <Bold>Correct!</Bold> Let’s{' '}
+                        <H args={{ name: 'run', lowerCase: true }} /> it to
+                        check!
                       </P>
                       <P>
                         (
@@ -1344,7 +1334,8 @@ export default () => (
                     </R.Dvpl>
                     <P>
                       <Bold>Therefore:</Bold> There are many lunchboxes that can
-                      reproduce <H args={{ name: 'plusOneFeature' }} />.
+                      reproduce <H args={{ name: 'plusOneFeature' }} />.{' '}
+                      <Emoji>😉</Emoji>
                     </P>
                   </>
                 }
@@ -1444,7 +1435,7 @@ export default () => (
                   type: 'sad',
                   children: (
                     <>
-                      <P>Hey Minion, I want to tell you about something…</P>
+                      <P>Hey Minion, I want to tell you something…</P>
                     </>
                   )
                 },
@@ -1461,8 +1452,10 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        <Italic>Wasn’t that problem too difficult?</Italic>{' '}
-                        There’s no way we could’ve come up with an answer
+                        <Bold>
+                          The problem on the last page was too difficult!
+                        </Bold>{' '}
+                        There’s no way we could’ve come up with an answer as
                         quickly as Saya did.
                       </P>
                       <P>
@@ -1478,7 +1471,7 @@ export default () => (
             <R.Envj>The previous problem:</R.Envj>
             <ExpressionRunnerSeparator />
             <R.Vcqp>
-              <Emoji>😢</Emoji>
+              <Emoji size="mdlg">😢</Emoji>
               <br />
               There’s no way we could’ve come up with
               <br />
@@ -1491,15 +1484,12 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        <Bold>Please don’t worry!</Bold> In fact, only a super
-                        genius would be able to come up with an answer for this
-                        question.
+                        <Bold>Oh, don’t worry!</Bold> The problem was very
+                        difficult. We didn’t expect you to answer it.
                       </P>
                       <P>
-                        <Highlight>
-                          And you don’t need to be a super genius to learn about
-                          computer science or Y combinator.
-                        </Highlight>
+                        You don’t need to be able to answer questions like this
+                        to learn computer science.
                       </P>
                     </>
                   )
@@ -1517,13 +1507,9 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        <Bold>Yes:</Bold> It was a very difficult question. We
-                        didn’t expect you to answer it.
-                      </P>
-                      <P>
                         <Highlight>
-                          As long as you can look at the answer and understand
-                          why it’s correct, you’ll be fine.
+                          As long as you understand it after looking at the
+                          answer, you’ll be fine.
                         </Highlight>
                       </P>
                     </>
@@ -1575,7 +1561,8 @@ export default () => (
               ]}
             />
             <P>
-              However, <Italic>Saya doesn’t seem too happy.</Italic>
+              <Bold>However:</Bold>{' '}
+              <Italic>Saya doesn’t seem too happy.</Italic>
             </P>
             <BubbleQuotes
               quotes={[
@@ -1584,8 +1571,10 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        Hey Minion, I noticed something{' '}
-                        <Italic>very strange…</Italic>
+                        <Highlight>
+                          Hey Minion, I noticed something{' '}
+                          <Italic>very strange…</Italic>
+                        </Highlight>
                       </P>
                     </>
                   )

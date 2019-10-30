@@ -175,7 +175,7 @@ export default () => (
             />
             <P>
               Looks like the villagers have figured out the patterns for{' '}
-              <H args={{ name: 'bentoBoxPuzzle' }} />!
+              <H args={{ name: 'lunchBoxPuzzle' }} />!
             </P>
             <BubbleQuotes
               quotes={[
@@ -260,7 +260,7 @@ export default () => (
                     <>
                       <P>
                         So this is the solution for the first{' '}
-                        <H args={{ name: 'yesNoQuiz' }} />:
+                        <H args={{ name: 'yesNoQuiz', lowerCase: true }} />:
                       </P>
                     </>
                   )
@@ -338,7 +338,7 @@ export default () => (
                     <>
                       <P>
                         So this is the solution for the second{' '}
-                        <H args={{ name: 'yesNoQuiz' }} />:
+                        <H args={{ name: 'yesNoQuiz', lowerCase: true }} />:
                       </P>
                     </>
                   )
@@ -425,7 +425,7 @@ export default () => (
                         <Highlight>
                           Before going to the next page, we still need to{' '}
                           <Bold>formalize</Bold> the rules of{' '}
-                          <H args={{ name: 'bentoBoxPuzzle' }} />.
+                          <H args={{ name: 'lunchBoxPuzzle' }} />.
                         </Highlight>
                       </P>
                     </>
@@ -527,7 +527,7 @@ export default () => (
                         <Highlight>
                           I’ll explain to you the <Italic>formal</Italic>, more
                           detailed rules of{' '}
-                          <H args={{ name: 'bentoBoxPuzzle' }} />.
+                          <H args={{ name: 'lunchBoxPuzzle' }} />.
                         </Highlight>
                       </P>
                       <P>
@@ -556,7 +556,7 @@ export default () => (
       {
         title: (
           <>
-            The formal rules of <H args={{ name: 'bentoBoxPuzzle' }} />
+            The formal rules of <H args={{ name: 'lunchBoxPuzzle' }} />
           </>
         ),
         type: 'summary',
@@ -570,7 +570,7 @@ export default () => (
                     <>
                       <P>
                         Here are the formal rules of{' '}
-                        <H args={{ name: 'bentoBoxPuzzle' }} />. There are{' '}
+                        <H args={{ name: 'lunchBoxPuzzle' }} />. There are{' '}
                         <Italic>four steps</Italic>:
                       </P>
                     </>
@@ -1218,7 +1218,7 @@ export default () => (
                     <>
                       <P>
                         That’s it for the <Bold>formal</Bold> rules of{' '}
-                        <H args={{ name: 'bentoBoxPuzzle' }} />.
+                        <H args={{ name: 'lunchBoxPuzzle' }} />.
                       </P>
                     </>
                   )
