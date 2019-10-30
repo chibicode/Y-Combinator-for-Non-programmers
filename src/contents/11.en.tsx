@@ -697,8 +697,8 @@ export default () => (
                     <>
                       <P>
                         <Bold>Question:</Bold> If we{' '}
-                        <H args={{ name: 'run', lowerCase: true }} />, will it
-                        become like this?
+                        <H args={{ name: 'run', lowerCase: true }} /> it, will
+                        it become like this?
                       </P>
                     </>
                   )
@@ -735,7 +735,7 @@ export default () => (
                         <EmojiNumber number={4} />.
                       </P>
                       <P>
-                        <H args={{ name: 'pressPlay', capitalize: true }} />
+                        <H args={{ name: 'pressPlay', capitalize: true }} />:
                       </P>
                     </>
                   )
@@ -751,14 +751,17 @@ export default () => (
                     <>
                       <P>Let me explain why!</P>
                       <P>
-                        <Bold>First</Bold> It checks if{' '}
-                        <H
-                          args={{
-                            name: 'conditionSectionName',
-                            type: 'condition'
-                          }}
-                        />{' '}
-                        is <EmojiNumber number={0} />.
+                        <Bold>First:</Bold>{' '}
+                        <Highlight>
+                          It checks if{' '}
+                          <H
+                            args={{
+                              name: 'conditionSectionName',
+                              type: 'condition'
+                            }}
+                          />{' '}
+                          is <EmojiNumber number={0} />.
+                        </Highlight>
                       </P>
                     </>
                   )
@@ -773,23 +776,23 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        This time,{' '}
+                        <Bold>This time:</Bold>{' '}
                         <Highlight>
-                          what’s in{' '}
+                          What’s in{' '}
                           <H
                             args={{
                               name: 'conditionSectionName',
                               type: 'condition'
                             }}
                           />{' '}
-                          is not <EmojiNumber number={0} />.
+                          is NOT <EmojiNumber number={0} />.
                         </Highlight>{' '}
                         Instead, it’s <EmojiNumber number={3} />.
                       </P>
                       <P>
-                        In this case,{' '}
+                        <Bold>In this case:</Bold>{' '}
                         <Highlight>
-                          the number in{' '}
+                          The number in{' '}
                           <H
                             args={{
                               name: 'conditionSectionName',
@@ -869,7 +872,7 @@ export default () => (
             <P>
               <Highlight>
                 <Bold>
-                  If it’s not <EmojiNumber number={0} />:
+                  If it’s NOT <EmojiNumber number={0} />:
                 </Bold>{' '}
                 <CustomEmoji type="blankNumberRed" /> in{' '}
                 <H args={{ name: 'conditionSectionName', type: 'falseCase' }} />{' '}
