@@ -679,6 +679,7 @@ export default () => (
                           が同じ <EmojiWithText letter="f" /> になったよ！
                         </HighlightBold>
                       </P>
+                      <R.Zjto></R.Zjto>
                       <P>
                         前回と同じように
                         <Highlight>
@@ -753,6 +754,8 @@ export default () => (
                 }}
               />
             </R.Zzhq>
+            <ExpressionRunnerSeparator />
+            <R.Jwah></R.Jwah>
             <BubbleQuotes
               quotes={[
                 {

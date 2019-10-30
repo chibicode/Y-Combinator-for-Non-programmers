@@ -1709,6 +1709,14 @@ export const xusi: ExpressionRunnerShorthandConfig = {
   explanationsVisibility: 'visible'
 }
 
+export const zjto: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.udaf,
+  showPriorities: true,
+  initialState: 'needsAlphaConvert',
+  explanationsVisibility: 'visible'
+}
+
 export const lipt: ExpressionRunnerShorthandConfig = {
   runner: 'runButtonOnly',
   initialExpressionContainer: initialExpressionContainers.udaf,

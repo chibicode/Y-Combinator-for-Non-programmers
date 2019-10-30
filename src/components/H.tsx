@@ -247,7 +247,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
       return (
         <P>
           <Bold>Hello!</Bold> This is <Italic>page {episodeNumber + 1}</Italic>{' '}
-          of a course called “
+          of the course called “
           <InternalLink href={'/'}>{lessonTitle}</InternalLink>
           ”. If you just got here,{' '}
           <InternalLink href={'/'}>
