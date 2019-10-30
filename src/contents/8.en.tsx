@@ -49,7 +49,7 @@ export default () => (
   <EpisodeCardList
     cards={[
       {
-        title: <>We’re doomed!</>,
+        title: <>The challenge</>,
         content: (
           <>
             <EmojiSeparator
@@ -76,7 +76,7 @@ export default () => (
                     <>
                       <P>
                         But we need to solve this to get our mathboxes{' '}
-                        <CustomEmoji type="mathBox" /> back! We’re doomed!
+                        <CustomEmoji type="mathBox" /> back!
                       </P>
                     </>
                   )
@@ -143,7 +143,8 @@ export default () => (
                     <>
                       <P>We appreciate it, but this isn’t for kids.</P>
                       <P>
-                        We tried hard but couldn’t solve it. So I doubt you can.
+                        We tried hard but couldn’t solve it. I don’t think you
+                        can do it!
                       </P>
                     </>
                   )
@@ -208,7 +209,8 @@ export default () => (
               ]}
             />
             <R.Plde>
-              We’ll <H args={{ name: 'run' }} /> this lunchbox, and…
+              We’ll <H args={{ name: 'run', lowerCase: true }} /> this lunchbox,
+              and…
             </R.Plde>
             <ExpressionRunnerSeparator />
             <ExpressionRunnerCaptionOnly>
@@ -277,7 +279,7 @@ export default () => (
                   type: 'surprised',
                   children: (
                     <>
-                      <P>Wait…! It can’t be…!</P>
+                      <P>Wait…! This is…!</P>
                     </>
                   )
                 },
@@ -397,7 +399,7 @@ export default () => (
                   type: 'thinking',
                   children: (
                     <>
-                      <P>Hmm…?</P>
+                      <P>Hmm… ok, let me hear what you have to say.</P>
                     </>
                   )
                 },
