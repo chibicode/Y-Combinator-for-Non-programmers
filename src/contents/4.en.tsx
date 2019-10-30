@@ -260,7 +260,7 @@ export default () => (
                     <>
                       <P>
                         So this is the solution for the first{' '}
-                        <H args={{ name: 'yesNoQuiz' }} />:
+                        <H args={{ name: 'yesNoQuiz', lowerCase: true }} />:
                       </P>
                     </>
                   )
@@ -338,7 +338,7 @@ export default () => (
                     <>
                       <P>
                         So this is the solution for the second{' '}
-                        <H args={{ name: 'yesNoQuiz' }} />:
+                        <H args={{ name: 'yesNoQuiz', lowerCase: true }} />:
                       </P>
                     </>
                   )

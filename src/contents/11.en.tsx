@@ -650,7 +650,7 @@ export default () => (
                       <P>
                         I’ll show you another example. This one’s going to be a{' '}
                         <Bold>
-                          <H args={{ name: 'yesNoQuiz' }} />
+                          <H args={{ name: 'yesNoQuiz', lowerCase: true }} />
                         </Bold>
                         .{' '}
                       </P>

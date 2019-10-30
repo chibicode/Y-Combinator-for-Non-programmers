@@ -771,7 +771,9 @@ export default () => (
                       <P>
                         Alright.{' '}
                         <Highlight>
-                          Let’s do a <H args={{ name: 'yesNoQuiz' }} /> then.
+                          Let’s do a{' '}
+                          <H args={{ name: 'yesNoQuiz', lowerCase: true }} />{' '}
+                          then.
                         </Highlight>
                       </P>
                       <P>

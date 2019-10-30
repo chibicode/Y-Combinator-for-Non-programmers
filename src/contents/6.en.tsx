@@ -463,7 +463,7 @@ export default () => (
                         <Highlight>
                           Let’s do a{' '}
                           <Bold>
-                            <H args={{ name: 'yesNoQuiz' }} />
+                            <H args={{ name: 'yesNoQuiz', lowerCase: true }} />
                           </Bold>{' '}
                           to check your understanding!
                         </Highlight>
@@ -942,7 +942,8 @@ export default () => (
                     <>
                       <P>
                         Let’s try to apply the rules on the lunchbox from the
-                        previous <H args={{ name: 'yesNoQuiz' }} />.
+                        previous{' '}
+                        <H args={{ name: 'yesNoQuiz', lowerCase: true }} />.
                       </P>
                       <P>
                         <H args={{ name: 'lookAtThisLunchBox' }} />:
