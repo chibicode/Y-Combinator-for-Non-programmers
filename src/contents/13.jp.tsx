@@ -719,13 +719,7 @@ export default () => (
                           }}
                         />
                       </R.Ifqp>
-                      <P>
-                        つまり、
-                        <H
-                          args={{ name: 'convertToMathbox' }}
-                        /> すると、結果は <EmojiNumber number={4} />{' '}
-                        になるのです。
-                      </P>
+                      <ExpressionRunnerSeparator />
                       <R.Kizi></R.Kizi>
                     </>
                   )
@@ -1026,8 +1020,8 @@ export default () => (
                       <P>
                         この計算箱は、以下のように{' '}
                         <CustomEmoji type="plusOne" /> を3回繰り返すことにより、
-                        <EmojiNumber number={3} /> <Emoji>➕</Emoji>{' '}
-                        <EmojiNumber number={2} /> を計算できるわけだよね。
+                        <EmojiNumber number={2} /> <Emoji>➕</Emoji>{' '}
+                        <EmojiNumber number={3} /> を計算できるわけだよね。
                       </P>
                     </>
                   )
@@ -1148,7 +1142,11 @@ export default () => (
               を3回繰り返す
             </R.Jwce>
             <ExpressionRunnerSeparator />
-            <R.Seie></R.Seie>
+            <R.Seie>
+              つまり、
+              <EmojiNumber number={2} /> <Emoji>➕</Emoji>{' '}
+              <EmojiNumber number={3} /> を計算できる
+            </R.Seie>
             <BubbleQuotes
               quotes={[
                 {
