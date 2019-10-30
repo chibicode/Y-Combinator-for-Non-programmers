@@ -56,10 +56,12 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        <Bold>Let’s review again:</Bold> If{' '}
-                        <InlineBorder type="condition" /> is{' '}
-                        <EmojiNumber number={0} />, then the result is{' '}
-                        <CustomEmoji type="blankNumberYellow" />…
+                        <Bold>Let’s review again:</Bold>{' '}
+                        <Highlight>
+                          If <InlineBorder type="condition" /> is{' '}
+                          <EmojiNumber number={0} />, then the result is{' '}
+                          <CustomEmoji type="blankNumberYellow" />…
+                        </Highlight>
                       </P>
                     </>
                   )
@@ -74,9 +76,12 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        And, if <InlineBorder type="condition" /> is NOT{' '}
-                        <EmojiNumber number={0} />, then the result is{' '}
-                        <CustomEmoji type="blankNumberRed" />.
+                        <Bold>And:</Bold>{' '}
+                        <Highlight>
+                          If <InlineBorder type="condition" /> is NOT{' '}
+                          <EmojiNumber number={0} />, then the result is{' '}
+                          <CustomEmoji type="blankNumberRed" />.
+                        </Highlight>
                       </P>
                     </>
                   )
@@ -234,8 +239,10 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        The result is <CustomEmoji type="blankNumberYellow" />!
+                        The result is a lunchbox that can be converted to{' '}
+                        <CustomEmoji type="blankNumberYellow" />!
                       </P>
+                      <R.Bndi></R.Bndi>
                     </>
                   )
                 },
@@ -393,9 +400,10 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        This time, the result is{' '}
-                        <CustomEmoji type="blankNumberRed" />!
+                        This time, the result is a lunchbox that can be
+                        converted to <CustomEmoji type="blankNumberRed" />!
                       </P>
+                      <R.Kiiq></R.Kiiq>
                     </>
                   )
                 },
@@ -483,7 +491,9 @@ export default () => (
             <R.Vlhb>
               <Emoji>👧🏻</Emoji> Using a lunchbox!
               <br />
-              <Bold>Question:</Bold> Is this the correct answer?
+              <Bold>Question:</Bold> Is this the correct way to
+              <br />
+              reproduce it?
             </R.Vlhb>
             <BubbleQuotes
               quotes={[
@@ -526,7 +536,9 @@ export default () => (
                   type: 'saya',
                   children: (
                     <>
-                      <P>As a final check:</P>
+                      <P>
+                        <Bold>As a final check:</Bold>
+                      </P>
                       <Ul>
                         <UlLi>
                           <Highlight>
@@ -604,8 +616,10 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        Let’s try the same thing with my lunchbox, and see if
-                        the result is also <EmojiNumber number={1} />.
+                        <Highlight>
+                          Let’s try the same thing with my lunchbox, and see if
+                          the result is also <EmojiNumber number={1} />.
+                        </Highlight>
                       </P>
                       <Ul>
                         <UlLi>
@@ -642,7 +656,7 @@ export default () => (
               <Highlight>
                 If it becomes a lunchbox that can be
                 <br />
-                converted to <EmojiNumber size="semilg" number={1} />, then{' '}
+                converted to <EmojiNumber size="mdlg" number={1} />, then{' '}
                 <HighlightBold>success</HighlightBold> <Emoji>🎉</Emoji>
               </Highlight>
             </ExpressionRunnerCaptionOnly>
@@ -653,15 +667,11 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        I see, if the result is the same as using{' '}
-                        <H args={{ name: 'conditionFeature' }} />…
-                      </P>
-                      <P>
-                        We can be pretty sure that Saya’s lunchbox has{' '}
-                        <HighlightBold>reproduced</HighlightBold>{' '}
+                        I see, if this works, we can be pretty sure that Saya’s
+                        lunchbox has <HighlightBold>reproduced</HighlightBold>{' '}
                         <H args={{ name: 'conditionFeature' }} /> correctly.
-                        Let’s check!
                       </P>
+                      <P>Let’s check!</P>
                     </>
                   )
                 }
@@ -743,8 +753,42 @@ export default () => (
                         />
                       </R.Ooya>
                       <P>
-                        Because the result is <EmojiNumber number={1} />, it’s a
-                        success! <Emoji>🎉</Emoji>
+                        The result is <EmojiNumber number={1} />,{' '}
+                        <Highlight>
+                          which is the same as using{' '}
+                          <H args={{ name: 'conditionFeature' }} />
+                        </Highlight>
+                        .
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <P>
+              If we use <H args={{ name: 'conditionFeature' }} />:
+            </P>
+            <R.Zdpf></R.Zdpf>
+            <ExpressionRunnerSeparator />
+            <R.Rnug>
+              The result is <EmojiNumber number={1} />
+            </R.Rnug>
+            <P>
+              If we use <Emoji>👧🏻</Emoji> Saya’s lunchbox:
+            </P>
+            <R.Jbqw></R.Jbqw>
+            <ExpressionRunnerSeparator />
+            <R.Jzwg>
+              The result is also <EmojiNumber number={1} />
+            </R.Jzwg>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'saya',
+                  children: (
+                    <>
+                      <P>
+                        So it’s a success! <Emoji>🎉</Emoji>
                       </P>
                     </>
                   )
@@ -915,6 +959,7 @@ export default () => (
                 name: 'repeatFeature'
               }}
             />
+            ?
           </>
         ),
         content: (
