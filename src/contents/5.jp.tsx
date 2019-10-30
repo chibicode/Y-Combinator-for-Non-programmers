@@ -1300,6 +1300,23 @@ export default () => (
                         </HighlightBold>
                         んだ。
                       </P>
+                      <R.Zynf>
+                        弁当箱の右端に接している料理には
+                        <br />
+                        すべて{' '}
+                        <BottomRightBadge
+                          inline
+                          bottomRightBadgeType="funcBound"
+                        />{' '}
+                        の印がつくので
+                        <br />
+                        右の <EmojiWithText letter="b" /> にも{' '}
+                        <BottomRightBadge
+                          inline
+                          bottomRightBadgeType="funcBound"
+                        />{' '}
+                        がつく
+                      </R.Zynf>
                     </>
                   )
                 }

@@ -1324,8 +1324,8 @@ export default () => (
             </R.Aezk>
             <Hr />
             <P>
-              <Emoji>🤔</Emoji> <Bold>Now, you might be wondering:</Bold> What
-              labels do we use?
+              <Emoji>🤔</Emoji> <Bold>Now, you might be wondering:</Bold>{' '}
+              <Highlight>What labels do we use?</Highlight>
             </P>
             <EmojiSeparator
               nodes={[
@@ -1334,11 +1334,7 @@ export default () => (
                 <BottomRightBadge inline bottomRightBadgeType="funcBound" />,
                 <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />
               ]}
-              description={
-                <>
-                  <Highlight>What labels do we use?</Highlight>
-                </>
-              }
+              description={<>What labels do we use?</>}
             />
             <P>
               <Bold>First:</Bold> The top <EmojiWithText letter="a" /> will be
@@ -1353,8 +1349,8 @@ export default () => (
             </P>
             <R.Uppk />
             <P>
-              <Bold>>Third:</Bold> The right <EmojiWithText letter="b" /> and
-              the right <EmojiWithText letter="c" /> will be labeled as{' '}
+              <Bold>Third:</Bold> The right <EmojiWithText letter="b" /> and the
+              right <EmojiWithText letter="c" /> will be labeled as{' '}
               <BottomRightBadge inline bottomRightBadgeType="funcBound" />.
             </P>
             <R.Qfbk />
@@ -1387,14 +1383,23 @@ export default () => (
                         , even though it <Italic>looks like</Italic> it’s in the
                         middle.
                       </P>
+                      <R.Zynf>
+                        The right <EmojiWithText letter="b" /> will be{' '}
+                        <BottomRightBadge
+                          inline
+                          bottomRightBadgeType="funcBound"
+                        />
+                        <br />
+                        because it touches the right edge
+                      </R.Zynf>
                     </>
                   )
                 }
               ]}
             />
             <P>
-              Finally, the remaining <EmojiWithText letter="c" /> will be
-              labeled as{' '}
+              <Bold>Finally:</Bold> The remaining <EmojiWithText letter="c" />{' '}
+              will be labeled as{' '}
               <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />.
             </P>
             <R.Yfwd />
@@ -1425,8 +1430,8 @@ export default () => (
                           <BottomRightBadge
                             inline
                             bottomRightBadgeType="funcUnbound"
-                          />{' '}
-                          for those items.
+                          />
+                          .
                         </Highlight>
                       </P>
                     </>
@@ -1602,15 +1607,11 @@ export default () => (
                 It’s similar to the one that was used for the quiz, except…
               </UlLi>
               <UlLi>
-                <Italic>
+                <Highlight>
                   There’s no pair of{' '}
                   <InlinePrioritiesLabel>1</InlinePrioritiesLabel>’s on the left
                   edge.
-                </Italic>
-              </UlLi>
-              <UlLi>
-                So there’s only one inner pair of{' '}
-                <InlinePrioritiesLabel>1</InlinePrioritiesLabel>’s.
+                </Highlight>
               </UlLi>
             </Ul>
             <R.Dhzf>
@@ -1650,7 +1651,8 @@ export default () => (
         content: (
           <>
             <P>
-              Next, take a look at this <H args={{ name: 'bentoBoxPuzzle' }} />
+              <Bold>Next:</Bold> Take a look at this{' '}
+              <H args={{ name: 'bentoBoxPuzzle' }} />
             </P>
             <R.Gtdu>
               There’s only one item (a <EmojiWithText letter="b" />)<br />
