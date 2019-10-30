@@ -984,7 +984,17 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
               </ExternalLink>
               . <Emoji>😉</Emoji>
             </UlLi>
-            {/* <UlLi>And please <Highlight>discuss this on <Bold>Hacker News</Bold> (<ExternalLink href="">Thread URL is here</ExternalLink>)!</Highlight> <Emoji>😎</Emoji></UlLi> */}
+            <UlLi>
+              And please{' '}
+              <Highlight>
+                discuss this on <Bold>Hacker News</Bold> (
+                <ExternalLink href="https://news.ycombinator.com/item?id=21399025">
+                  the discussion thread URL is here
+                </ExternalLink>
+                )!
+              </Highlight>{' '}
+              <Emoji>😎</Emoji>
+            </UlLi>
           </Ul>
           <Hr />
         </>
