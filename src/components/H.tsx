@@ -1940,7 +1940,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
                   see the repo for this course
                 </ExternalLink>
                 ). I’m okay at <Highlight>product design</Highlight>. I’ve also
-                worked with <Highlight>Rails</Highlight> from version 1 to
+                worked with <Highlight>Rails</Highlight> from version 2 to
                 version 6.
               </UlLi>
               <UlLi>
