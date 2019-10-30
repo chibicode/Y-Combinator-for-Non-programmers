@@ -633,8 +633,11 @@ export default () => (
                       <P>
                         <Bold>Important:</Bold> I can only convert{' '}
                         <Italic>certain types</Italic> of lunchboxes into
-                        mathboxes. A lunchbox must match the following patterns
-                        to be convertible.
+                        mathboxes.
+                      </P>
+                      <P>
+                        A lunchbox must match the following patterns to be
+                        convertible.
                       </P>
                       <P>
                         <Bold>First:</Bold>{' '}
@@ -703,7 +706,7 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        Let’s now add label each item as <Emoji>🅰️</Emoji> or{' '}
+                        Let’s now label each item as <Emoji>🅰️</Emoji> or{' '}
                         <Emoji>🅱️</Emoji>’s using this rule:
                       </P>
                       <R.Mgku>
@@ -851,10 +854,10 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        <Italic>
+                        <Highlight>
                           As long as it follows the same pattern, it doesn’t
                           matter which items are used.
-                        </Italic>
+                        </Highlight>
                       </P>
                       <P>
                         <Bold>Example:</Bold> Suppose that we have{' '}
@@ -874,8 +877,8 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        We’ll add <Emoji>🅰️</Emoji>’s and <Emoji>🅱️</Emoji>’s as
-                        follows…
+                        We’ll label <Emoji>🅰️</Emoji>’s and <Emoji>🅱️</Emoji>’s
+                        as follows…
                       </P>
                     </>
                   )
@@ -1055,7 +1058,7 @@ export default () => (
                     <>
                       <P>
                         That means the number of <Emoji>🅰️</Emoji>’s on the
-                        bottom right is <Italic>zero</Italic>.
+                        bottom right is <HighlightBold>zero</HighlightBold>.
                       </P>
                       <P>
                         <Bold>So:</Bold> After converting to a mathbox, it
@@ -1081,7 +1084,7 @@ export default () => (
                     <>
                       <P>
                         I see, so the number of <Emoji>🅰️</Emoji>’s on the
-                        bottom right <Italic>can be zero</Italic>.
+                        bottom right <HighlightBold>can be zero</HighlightBold>.
                       </P>
                     </>
                   )
@@ -1091,11 +1094,14 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        <Bold>Right:</Bold> “Some <Emoji>🅰️</Emoji>’s” can mean
-                        “<Italic>Zero</Italic> <Emoji>🅰️</Emoji>’s”.
+                        <Bold>Right:</Bold>{' '}
+                        <Highlight>
+                          “Some <Emoji>🅰️</Emoji>’s” can mean “
+                          <Italic>Zero</Italic> <Emoji>🅰️</Emoji>’s”.
+                        </Highlight>
                       </P>
                       <R.Hehx>
-                        “Some <Emoji>🅰️</Emoji>’s” can mean “
+                        “Some <Emoji>🅰️</Emoji>’s” can also mean “
                         <Italic>Zero</Italic> <Emoji>🅰️</Emoji>’s”.
                       </R.Hehx>
                     </>
