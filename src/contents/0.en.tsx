@@ -574,9 +574,9 @@ export default () => (
             <R.Beiz />
             <Hr />
             <P>
-              These puzzles are great also because{' '}
-              <Highlight>they are optimized for smartphones</Highlight>. A lot
-              of “learn to code” resources are either (1){' '}
+              <Bold>Also:</Bold> My puzzles are{' '}
+              <Highlight>optimized for smartphones</Highlight>. A lot of “learn
+              to code” resources are either (1){' '}
               <Italic>great, but not smartphone-ready</Italic> or (2){' '}
               <Italic>smartphone-ready, but not great.</Italic> I tried to
               change that. <Emoji>😉</Emoji>
