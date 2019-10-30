@@ -160,9 +160,12 @@ export default () => (
                     <>
                       <P>We’ll start the intermediate levels.</P>
                       <P>
-                        <Bold>As promised:</Bold> I’ll give you a{' '}
-                        <Italic>very difficult question</Italic>. I’ll give you
-                        the mathboxes back if you solve it!
+                        <Bold>As promised:</Bold>{' '}
+                        <Highlight>
+                          I’ll give you a{' '}
+                          <Italic>very difficult question</Italic>. I’ll give
+                          you the mathboxes back if you solve it!
+                        </Highlight>
                       </P>
                     </>
                   )
@@ -199,7 +202,7 @@ export default () => (
                     <>
                       <P>
                         But before I give you the question, let me introduce you{' '}
-                        to <Italic>my partner</Italic>.
+                        to <Italic>my business partner</Italic>.
                       </P>
                     </>
                   )
@@ -208,7 +211,7 @@ export default () => (
                   type: 'thinking',
                   children: (
                     <>
-                      <P>What? Your partner?</P>
+                      <P>What? Your business partner?</P>
                     </>
                   )
                 },
@@ -250,7 +253,8 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        Thanks for coming! Everyone, this is my partner, Minion.
+                        Thanks for coming! Everyone, this is my business
+                        partner, Minion.
                       </P>
                     </>
                   )
