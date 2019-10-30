@@ -250,7 +250,7 @@ export default () => (
               <HighlightBold>
                 <Emoji>👨🏻‍🦳</Emoji> Paul Graham
               </HighlightBold>
-              , a co-founder of the firm, said this in{' '}
+              , a co-founder of this firm, said this in{' '}
               <ExternalLink href="https://mixergy.com/interviews/y-combinator-paul-graham/">
                 his 2010 interview
               </ExternalLink>{' '}
@@ -371,8 +371,8 @@ export default () => (
               }
             />
             <P>
-              <Bold>First:</Bold> I studied computer science at Carnegie Mellon
-              University (one of the top schools), and I can also say that{' '}
+              <Bold>First:</Bold> I studied computer science in college, and I
+              can also say that{' '}
               <Italic>
                 Y Combinator is one of the coolest concepts in computer science
                 I learned.
@@ -441,8 +441,19 @@ export default () => (
                 concepts
               </Highlight>
               , such as AI or blockchain. They <Italic>genuinely</Italic> want
-              to understand how the software they’re using works.
+              to understand how modern software works (thanks to the latest tech
+              bubble).
             </P>
+            <EmojiSeparator
+              emojis={['🤔', '💭', '🤖']}
+              description={
+                <>
+                  Many non-programmers are
+                  <br />
+                  curious about how modern software works
+                </>
+              }
+            />
             <P>
               But they can’t learn it because{' '}
               <Highlight>
@@ -475,10 +486,13 @@ export default () => (
               }
             />
             <P>
-              <Bold>Downside:</Bold> I admit that this is not the best way to
-              introduce computer science to non-programmers. That’s why I’m
-              calling this course a “<Italic>wild</Italic>” introduction to
-              computer science.
+              <Bold>Downside:</Bold> I admit that{' '}
+              <Highlight>
+                this approach is not the best way to introduce computer science
+                to non-programmers
+              </Highlight>
+              . That’s why I’m calling this course a “<Italic>wild</Italic>”
+              introduction to computer science.
             </P>
             <P>
               The ideal way to teach computer science would be to{' '}
@@ -501,6 +515,7 @@ export default () => (
         title: <>How to teach Y Combinator for non-programmers</>,
         content: (
           <>
+            <P>Now, how am I going to teach Y Combinator on this course?</P>
             <P>
               <Bold>Puzzles, not programming:</Bold> In this course, I will
               teach you Y Combinator using{' '}
@@ -536,8 +551,8 @@ export default () => (
               <Highlight>they are optimized for smartphones</Highlight>. A lot
               of “learn to code” resources are either (1){' '}
               <Italic>great, but not smartphone-ready</Italic> or (2){' '}
-              <Italic>smartphone-ready, but not great.</Italic> I tried to fix
-              that. <Emoji>😉</Emoji>
+              <Italic>smartphone-ready, but not great.</Italic> I tried to
+              change that. <Emoji>😉</Emoji>
             </P>
             <EmojiSeparator
               emojis={['📱', '🧩', '💻']}
@@ -579,7 +594,7 @@ export default () => (
                       <Bold>For programmers:</Bold> This course is optimized for
                       non-programmers,{' '}
                       <Highlight>
-                        so if you’re a programmer and want to learn Y
+                        so if you’re a programmer and want to learn about Y
                         Combinator, there are other better resources.
                       </Highlight>{' '}
                       Press “Continue reading” below to learn more.
