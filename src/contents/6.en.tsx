@@ -34,7 +34,7 @@ export default () => (
           content: (
             <>
               <P>
-                <Bold>Welcome to the intermediate levels:</Bold> They’ll be
+                <Bold>Welcome to the intermediate levels:</Bold> Things will be
                 harder than the beginner levels, but you should be able to
                 handle them!
               </P>
@@ -131,17 +131,18 @@ export default () => (
             <Hr />
             <P>We also learned about the mathboxes with 3 or more rows:</P>
             <ThreeRowRules />
+            <R.Vdhd>Lunchbox with 3 rows</R.Vdhd>
             <Hr />
             <Beginner5Rules />
             <Hr />
             <P>
-              <Bold>That’s what we’ve learned in the beginner levels:</Bold>{' '}
-              <Italic>You don’t need to remember them.</Italic> You just need to
-              know that these rules exist, and you should be fine.
+              <Bold>Note:</Bold>{' '}
+              <Highlight>You don’t need to memorize the rules.</Highlight> You
+              just need to know that these rules exist, and you should be fine.
             </P>
             <EmojiSeparator
               emojis={['✨', '🤗', '✨']}
-              description={<>You don’t need to remember these rules!</>}
+              description={<>You don’t need to memorize these rules!</>}
             />
             <P>Let’s start the intermediate levels!</P>
           </>
