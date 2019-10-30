@@ -873,14 +873,33 @@ export default () => (
                       <P>
                         <Bold>Well:</Bold> Just because you were able to
                         calculate <EmojiNumber number={1} /> <Emoji>➖</Emoji>{' '}
-                        <EmojiNumber number={1} />, it doesn’t necessarily mean
-                        that your lunchbox has reproduced{' '}
-                        <H args={{ name: 'minusOneFeature' }} />.
+                        <EmojiNumber number={1} />,{' '}
+                        <Highlight>
+                          it doesn’t necessarily mean that your lunchbox has
+                          reproduced <H args={{ name: 'minusOneFeature' }} />.
+                        </Highlight>
                       </P>
                       <P>
-                        It needs to be able to subtract 1 from{' '}
-                        <Italic>any number</Italic>.
+                        <Highlight>
+                          It needs to be able to subtract 1 from{' '}
+                          <Italic>any number</Italic>.
+                        </Highlight>
                       </P>
+                      <EmojiSeparator
+                        nodes={[
+                          <CustomEmoji type="blankNumber" />,
+                          <CustomEmoji type="singleArrow" />,
+                          <CustomEmoji type="blankNumber" />,
+                          <Emoji>➖</Emoji>,
+                          <EmojiNumber number={1} />
+                        ]}
+                        description={
+                          <>
+                            It needs to be able to subtract 1 from <br />
+                            <Italic>any number</Italic>.
+                          </>
+                        }
+                      />
                     </>
                   )
                 },
@@ -897,9 +916,11 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        For example, can your lunchbox calculate{' '}
-                        <EmojiNumber number={2} /> <Emoji>➖</Emoji>{' '}
-                        <EmojiNumber number={1} />?
+                        <Bold>For example:</Bold>{' '}
+                        <Highlight>
+                          Can your lunchbox calculate <EmojiNumber number={2} />{' '}
+                          <Emoji>➖</Emoji> <EmojiNumber number={1} />?
+                        </Highlight>
                       </P>
                     </>
                   )
@@ -1101,11 +1122,13 @@ export default () => (
                   type: 'devil',
                   children: (
                     <>
-                      <P>I didn’t think you’ll get it this easily</P>
                       <P>
-                        But <Highlight>Saya is correct!</Highlight> Her lunchbox
-                        does reproduce <H args={{ name: 'minusOneFeature' }} />!{' '}
-                        <Emoji>🎉</Emoji>
+                        <Bold>Saya is correct!</Bold>{' '}
+                        <Highlight>
+                          Her lunchbox does reproduce{' '}
+                          <H args={{ name: 'minusOneFeature' }} />!{' '}
+                          <Emoji>🎉</Emoji>
+                        </Highlight>
                       </P>
                     </>
                   )
@@ -1144,8 +1167,9 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        No, I’m just lucky. But anyway, we’ve reproduced{' '}
-                        <H args={{ name: 'minusOneFeature' }} />!
+                        No, I’m just lucky. But anyway, we showed that{' '}
+                        <H args={{ name: 'minusOneFeature' }} /> can be
+                        reproduced using a lunchbox!
                       </P>
                     </>
                   )
@@ -1319,7 +1343,7 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        Well, but{' '}
+                        But{' '}
                         <Highlight>
                           I won’t give you back{' '}
                           <H args={{ name: 'repeatFeature' }} /> yet.
