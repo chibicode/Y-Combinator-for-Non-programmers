@@ -945,7 +945,7 @@ export default () => (
                         You probably didn’t know this, but{' '}
                         <Highlight>
                           <H args={{ name: 'conditionFeature' }} /> is actually
-                          one of the secret features of a mathbox.
+                          the <Bold>secret feature</Bold> of a mathbox.
                         </Highlight>
                       </P>
                     </>
@@ -962,8 +962,8 @@ export default () => (
               ]}
               description={
                 <>
-                  It’s a secret feature of a mathbox{' '}
-                  <CustomEmoji type="mathBox" />
+                  It’s the <HighlightBold>secret feature</HighlightBold> of a
+                  mathbox <CustomEmoji type="mathBox" />
                 </>
               }
             />
@@ -985,7 +985,7 @@ export default () => (
                         In fact,{' '}
                         <Highlight>
                           <H args={{ name: 'conditionFeature' }} /> has been
-                          forgotten by most people,
+                          forgotten by the people in Lambda Village,
                         </Highlight>{' '}
                         because it’s not a very useful feature.
                       </P>
@@ -1139,7 +1139,7 @@ export default () => (
                         Yes.{' '}
                         <Highlight>
                           So you should first try to reproduce{' '}
-                          <H args={{ name: 'conditionFeature' }} /> first.
+                          <H args={{ name: 'conditionFeature' }} />.
                         </Highlight>
                       </P>
                       <P>
