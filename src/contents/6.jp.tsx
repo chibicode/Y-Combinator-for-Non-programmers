@@ -124,7 +124,6 @@ export default () => (
               そして初級編の最後では、3段以上ある弁当箱の法則について解説しました。
             </P>
             <ThreeRowRules />
-            <R.Vdhd>3段の弁当箱</R.Vdhd>
             <Hr />
             <Beginner5Rules />
             <Hr />

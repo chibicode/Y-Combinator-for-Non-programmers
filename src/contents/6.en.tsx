@@ -243,7 +243,8 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        Hello, I’m Minion. How may I help you today, Mr. Devil?
+                        <Bold>Hello, I’m Minion</Bold>. How may I help you
+                        today, Mr. Devil?
                       </P>
                     </>
                   )
@@ -272,8 +273,8 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        Well, Minion is not a regular dog. He’s got some{' '}
-                        <Italic>special</Italic> tricks.
+                        Well, Minion is a special dog. He’s got some{' '}
+                        <Italic>awesome</Italic> tricks.
                       </P>
                       <P>Minion, show these guys one of your tricks!</P>
                     </>
@@ -333,9 +334,9 @@ export default () => (
                     <>
                       <P>
                         By using my trick,{' '}
-                        <Italic>
+                        <Highlight>
                           I can convert this lunchbox into a mathbox
-                        </Italic>
+                        </Highlight>
                         .
                       </P>
                       <P>
@@ -370,7 +371,9 @@ export default () => (
                     <>
                       <P>
                         <Bold>Yes, and importantly:</Bold>{' '}
-                        <Italic>The conversion follows a specific rule.</Italic>
+                        <Highlight>
+                          The conversion follows a specific rule.
+                        </Highlight>
                       </P>
                       <P>
                         <Highlight>Try guessing what this rule is!</Highlight>
@@ -391,7 +394,9 @@ export default () => (
                 <>
                   I convert a lunchbox into a mathbox, and
                   <br />
-                  there’s a specific rule for the conversion
+                  <HighlightBold>
+                    there’s a specific rule for the conversion
+                  </HighlightBold>
                 </>
               }
             />
