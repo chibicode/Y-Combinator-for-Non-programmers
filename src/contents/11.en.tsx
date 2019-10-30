@@ -405,19 +405,24 @@ export default () => (
                       <P>What’s this?</P>
                       <Ul>
                         <UlLi>
-                          It contains <CustomEmoji type="blankNumberRed" />,{' '}
-                          <CustomEmoji type="blankNumberYellow" />, and{' '}
-                          <CustomEmoji type="blankNumberGreen" />.
+                          <Highlight>
+                            It contains <CustomEmoji type="blankNumberRed" />,{' '}
+                            <CustomEmoji type="blankNumberYellow" />, and{' '}
+                            <CustomEmoji type="blankNumberGreen" />.
+                          </Highlight>
                         </UlLi>
                         <UlLi>
-                          On the left, there are three signs:{' '}
-                          <InlineBorder type="falseCase" />{' '}
-                          <InlineBorder type="trueCase" />{' '}
-                          <InlineBorder type="condition" />
+                          <Highlight>
+                            On the left, there are three signs:{' '}
+                            <InlineBorder type="falseCase" />{' '}
+                            <InlineBorder type="trueCase" />{' '}
+                            <InlineBorder type="condition" />
+                          </Highlight>
                         </UlLi>
                       </Ul>
                       <P>
-                        It looks like a traffic signal <Emoji>🚦</Emoji>…
+                        It looks like a traffic signal{' '}
+                        <Emoji size="mdlg">🚦</Emoji>…
                       </P>
                     </>
                   )
@@ -429,10 +434,11 @@ export default () => (
                       <P>
                         <Bold>First:</Bold>{' '}
                         <Highlight>
-                          You can put any number on each of{' '}
+                          You can fill each of{' '}
                           <CustomEmoji type="blankNumberRed" />,{' '}
                           <CustomEmoji type="blankNumberYellow" />, and{' '}
-                          <CustomEmoji type="blankNumberGreen" />.
+                          <CustomEmoji type="blankNumberGreen" /> with any
+                          number.
                         </Highlight>
                       </P>
                       <P>The numbers could be all the same or all different.</P>
@@ -449,11 +455,11 @@ export default () => (
               ]}
               description={
                 <>
-                  You can put any number on each of
+                  You can fill each of
                   <br />
                   <CustomEmoji type="blankNumberRed" />,{' '}
                   <CustomEmoji type="blankNumberYellow" />, and{' '}
-                  <CustomEmoji type="blankNumberGreen" />
+                  <CustomEmoji type="blankNumberGreen" /> with any number
                 </>
               }
             />
@@ -483,6 +489,8 @@ export default () => (
                 }
               ]}
             />
+            <R.Rhoa></R.Rhoa>
+            <ExpressionRunnerSeparator />
             <R.Zdpf>
               Used <EmojiNumber number={2} /> <EmojiNumber number={1} />{' '}
               <EmojiNumber number={0} /> for{' '}
