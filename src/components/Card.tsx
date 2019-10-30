@@ -48,7 +48,7 @@ export interface CardState {
   overrideColor?: CardProps['color']
 }
 
-export const backgroundColor = (color: CardProps['color']) =>
+export const backgroundColor = (color: CardProps['color'] | 'white') =>
   ({
     green: colors('green50'),
     grey: colors('grey100'),
@@ -58,7 +58,9 @@ export const backgroundColor = (color: CardProps['color']) =>
     blue: colors('blue50'),
     indigo: colors('indigo50'),
     pink: colors('pink50'),
-    brown: colors('brown50')
+    brown: colors('brown50'),
+    // For highlights in quotes
+    white: colors('white')
   }[color])
 
 // First where the text is white

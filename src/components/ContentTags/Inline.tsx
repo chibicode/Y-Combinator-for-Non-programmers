@@ -25,9 +25,9 @@ const HighlightContext = React.createContext<HighlightContextProps>(
   highlightContextDefault
 )
 
-const mix = (color: CardProps['color'], base: string) =>
+const mix = (color: CardProps['color'] | 'white', base: string) =>
   Color(base)
-    .mix(Color(backgroundColor(color)), color === 'grey' ? 0.4 : 0.5)
+    .mix(Color(backgroundColor(color)), 0.6)
     .hsl()
     .string()
 
@@ -60,7 +60,7 @@ export const HighlightBold = ({
   const { color } = useContext(CardColorContext)
   const { inQuote } = useContext(BubbleQuoteContext)
 
-  const baseColor = inQuote ? 'grey' : color
+  const baseColor = inQuote ? 'white' : color
   if (inHighlightType === 'white' || highlightType === 'none') {
     return (
       <span
@@ -119,7 +119,7 @@ export const Highlight = ({
   const { color } = useContext(CardColorContext)
   const { inQuote } = useContext(BubbleQuoteContext)
 
-  const baseColor = inQuote ? 'grey' : color
+  const baseColor = inQuote ? 'white' : color
 
   if (inHighlightType === 'white' || highlightType === 'none') {
     return <span {...props} />
