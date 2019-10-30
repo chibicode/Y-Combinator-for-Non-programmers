@@ -967,16 +967,25 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
             </Highlight>
           </P>
           <P>
-            <Bold>If you’re a programmer:</Bold> You can also file an{' '}
-            <ExternalLink href="https://github.com/chibicode/ycombinator/issues">
-              issue on GitHub
-            </ExternalLink>
-            . I’d also appreciate it if you could{' '}
-            <ExternalLink href="https://github.com/chibicode/ycombinator/">
-              <Highlight>★ star the repo</Highlight>
-            </ExternalLink>
-            . <Emoji>😉</Emoji>
+            <Bold>If you’re a programmer:</Bold>
           </P>
+          <Ul>
+            <UlLi>
+              You can also file an{' '}
+              <ExternalLink href="https://github.com/chibicode/ycombinator/issues">
+                issue on GitHub
+              </ExternalLink>
+              .
+            </UlLi>
+            <UlLi>
+              I’d also appreciate it if you could{' '}
+              <ExternalLink href="https://github.com/chibicode/ycombinator/">
+                <Highlight>★ star the repo</Highlight>
+              </ExternalLink>
+              . <Emoji>😉</Emoji>
+            </UlLi>
+            {/* <UlLi>And please <Highlight>discuss this on <Bold>Hacker News</Bold> (<ExternalLink href="">Thread URL is here</ExternalLink>)!</Highlight> <Emoji>😎</Emoji></UlLi> */}
+          </Ul>
           <Hr />
         </>
       )
@@ -991,7 +1000,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
               </Highlight>{' '}
               <Emoji>😉</Emoji>
             </P>
-            <TwitterEmbed id={shareId} />
+            <TwitterEmbed showCard id={shareId} />
             {question}
             <P>
               <Bold>If you changed your mind want to keep reading:</Bold> Press
@@ -1009,7 +1018,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
               </Highlight>
               :
             </P>
-            <TwitterEmbed id={shareId} />
+            <TwitterEmbed showCard id={shareId} />
             {question}
             <P>Once again, thank you for reading! </P>
           </>
