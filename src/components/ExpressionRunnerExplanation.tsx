@@ -27,13 +27,13 @@ const allAtOnce = (hideFuncUnboundBadge?: boolean) =>
   locale === 'en' ? (
     <>
       Label items as <BottomRightBadge bottomRightBadgeType="callArg" inline />{' '}
-      <BottomRightBadge bottomRightBadgeType="funcBound" inline />{' '}
+      <BottomRightBadge bottomRightBadgeType="funcArg" inline />{' '}
       {!hideFuncUnboundBadge && (
         <>
           <BottomRightBadge bottomRightBadgeType="funcUnbound" inline />{' '}
         </>
       )}
-      <BottomRightBadge bottomRightBadgeType="funcArg" inline />{' '}
+      <BottomRightBadge bottomRightBadgeType="funcBound" inline />{' '}
     </>
   ) : (
     <>

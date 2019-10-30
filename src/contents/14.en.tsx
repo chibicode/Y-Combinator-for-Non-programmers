@@ -195,7 +195,8 @@ export default () => (
                         </UlLi>
                         <UlLi>
                           <Highlight>
-                            You don’t have to follow all the steps!
+                            You don’t have to follow all the steps with your
+                            eyes!
                           </Highlight>{' '}
                           Just glance over it. Save your eyes!
                         </UlLi>

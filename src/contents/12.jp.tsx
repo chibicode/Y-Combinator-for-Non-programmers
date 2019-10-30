@@ -251,6 +251,7 @@ export default () => (
                         <CustomEmoji type="blankNumberYellow" />{' '}
                         に変換できる弁当箱が残った！
                       </P>
+                      <R.Bndi></R.Bndi>
                     </>
                   )
                 },
@@ -419,6 +420,7 @@ export default () => (
                         <CustomEmoji type="blankNumberRed" />{' '}
                         に変換できる弁当箱が残った！
                       </P>
+                      <R.Kiiq></R.Kiiq>
                     </>
                   )
                 },
@@ -675,7 +677,7 @@ export default () => (
             <ExpressionRunnerSeparator />
             <ExpressionRunnerCaptionOnly>
               <Highlight>
-                <EmojiNumber size="semilg" number={1} /> に変換できる弁当箱
+                <EmojiNumber size="mdlg" number={1} /> に変換できる弁当箱
                 <br />
                 になれば<HighlightBold>成功</HighlightBold> <Emoji>🎉</Emoji>
               </Highlight>
@@ -779,7 +781,7 @@ export default () => (
                         <EmojiNumber number={1} /> が残ったので、
                         <HighlightBold>
                           成功
-                        </HighlightBold> <Emoji>🎉</Emoji> です！
+                        </HighlightBold> <Emoji>🎉</Emoji> だよ！
                       </P>
                     </>
                   )
@@ -791,9 +793,34 @@ export default () => (
                       <P>やったー、さすがサヤちゃん！</P>
                     </>
                   )
+                },
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>すごい！まとめると、下のようになります！</P>
+                    </>
+                  )
                 }
               ]}
             />
+            <P>
+              「<H args={{ name: 'conditionFeature' }} />
+              」を使った場合:
+            </P>
+            <R.Zdpf></R.Zdpf>
+            <ExpressionRunnerSeparator />
+            <R.Rnug>
+              結果は <EmojiNumber number={1} /> になる
+            </R.Rnug>
+            <P>
+              <Emoji>👧🏻</Emoji> サヤの弁当箱を使った場合:
+            </P>
+            <R.Jbqw></R.Jbqw>
+            <ExpressionRunnerSeparator />
+            <R.Jzwg>
+              結果は <EmojiNumber number={1} /> になる
+            </R.Jzwg>
           </>
         )
       },

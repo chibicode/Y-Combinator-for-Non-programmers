@@ -50,6 +50,45 @@ export const FalseCaseExplanation = () => (
   </>
 )
 
+const ReproduceWithNoNegativeMargin = () => (
+  <>
+    <TwoColGrid
+      noTopNegativeMargin
+      noBottomNegativeMargin
+      left={
+        <>
+          <R.Bwnp>
+            <CustomEmoji type="plusOne" /> を <CustomEmoji type="blankNumber" />{' '}
+            回<br />
+            繰り返す
+          </R.Bwnp>
+          <ExpressionRunnerSeparator />
+          <EmojiSeparator
+            size="mdsm"
+            emojis={['❓', '🍱', '❓']}
+            description={<>弁当箱で再現</>}
+          />
+        </>
+      }
+      right={
+        <>
+          <R.Ewfr>
+            <CustomEmoji type="minusOne" /> を{' '}
+            <CustomEmoji type="blankNumber" /> 回<br />
+            繰り返す
+          </R.Ewfr>
+          <ExpressionRunnerSeparator />
+          <EmojiSeparator
+            size="mdsm"
+            emojis={['❓', '🍱', '❓']}
+            description={<>弁当箱で再現</>}
+          />
+        </>
+      }
+    />
+  </>
+)
+
 export default () => (
   <EpisodeCardList
     cards={[
@@ -88,6 +127,7 @@ export default () => (
         )
       },
       {
+        type: 'summary',
         title: (
           <>
             「<H args={{ name: 'repeatFeature' }} />
@@ -101,44 +141,20 @@ export default () => (
               <H args={{ name: 'repeatFeature' }} />
               」は、まだ返してもらっていません。これを弁当箱で再現できないと返してもらえないのです。
             </P>
-            <TwoColGrid
-              noTopNegativeMargin
-              noBottomNegativeMargin
-              left={
-                <>
-                  <R.Bwnp>
-                    <CustomEmoji type="plusOne" /> を{' '}
-                    <CustomEmoji type="blankNumber" /> 回<br />
-                    繰り返す
-                  </R.Bwnp>
-                  <ExpressionRunnerSeparator />
-                  <EmojiSeparator
-                    size="mdsm"
-                    emojis={['❓', '🍱', '❓']}
-                    description={<>弁当箱で再現</>}
-                  />
-                </>
-              }
-              right={
-                <>
-                  <R.Ewfr>
-                    <CustomEmoji type="minusOne" /> を{' '}
-                    <CustomEmoji type="blankNumber" /> 回<br />
-                    繰り返す
-                  </R.Ewfr>
-                  <ExpressionRunnerSeparator />
-                  <EmojiSeparator
-                    size="mdsm"
-                    emojis={['❓', '🍱', '❓']}
-                    description={<>弁当箱で再現</>}
-                  />
-                </>
-              }
-            />
+            <ReproduceWithNoNegativeMargin />
             <P>
               「<H args={{ name: 'repeatFeature' }} />
               」について忘れてしまった方も多いと思うので、ここで復習をしましょう。
             </P>
+            <EmojiSeparator
+              emojis={['✨', '🔁', '✨']}
+              description={
+                <>
+                  「<H args={{ name: 'repeatFeature' }} />
+                  」の復習をしましょう！
+                </>
+              }
+            />
             <P>
               まず、こちらの計算箱をご覧になり、
               <H args={{ name: 'pressPlay' }} />
@@ -148,6 +164,7 @@ export default () => (
         )
       },
       {
+        type: 'summary',
         title: <>大きな数の足し算や引き算に役立つ</>,
         content: (
           <>
@@ -243,8 +260,10 @@ export default () => (
               ラムダ村の村人たちは、計算箱の「
               <H args={{ name: 'repeatFeature' }} />
               」を <Emoji>😈</Emoji>{' '}
-              悪魔から返してもらうべく、弁当箱で繰り返しの機能を再現しようと頑張っていました。しかし…
+              悪魔から返してもらうべく、弁当箱で繰り返しの機能を再現しようと頑張っていました。
             </P>
+            <ReproduceWithNoNegativeMargin />
+            <P>しかし、あまり上手くいってないようです。</P>
             <BubbleQuotes
               quotes={[
                 {
@@ -441,6 +460,8 @@ export default () => (
                 }
               ]}
             />
+            <R.Rhoa></R.Rhoa>
+            <ExpressionRunnerSeparator />
             <R.Zdpf>
               <CustomEmoji type="blankNumberRed" />{' '}
               <CustomEmoji type="blankNumberYellow" />{' '}

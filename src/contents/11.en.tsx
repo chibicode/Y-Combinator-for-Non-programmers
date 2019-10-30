@@ -51,6 +51,55 @@ export const FalseCaseExplanation = () => (
   </>
 )
 
+const ReproduceWithNoNegativeMargin = () => (
+  <>
+    <TwoColGrid
+      noTopNegativeMargin
+      noBottomNegativeMargin
+      left={
+        <>
+          <R.Bwnp>
+            Repeat <CustomEmoji type="plusOne" />
+            <br />
+            <CustomEmoji type="blankNumber" /> times
+          </R.Bwnp>
+          <ExpressionRunnerSeparator />
+          <EmojiSeparator
+            emojis={['❓', '🍱', '❓']}
+            size="mdsm"
+            description={
+              <>
+                Reproduce with
+                <br />a lunchbox
+              </>
+            }
+          />
+        </>
+      }
+      right={
+        <>
+          <R.Ewfr>
+            Repeat <CustomEmoji type="minusOne" />
+            <br />
+            <CustomEmoji type="blankNumber" /> times
+          </R.Ewfr>
+          <ExpressionRunnerSeparator />
+          <EmojiSeparator
+            emojis={['❓', '🍱', '❓']}
+            size="mdsm"
+            description={
+              <>
+                Reproduce with
+                <br />a lunchbox
+              </>
+            }
+          />
+        </>
+      }
+    />
+  </>
+)
+
 export default () => (
   <EpisodeCardList
     cards={[
@@ -97,6 +146,7 @@ export default () => (
         )
       },
       {
+        type: 'summary',
         title: (
           <>
             Review: <H args={{ name: 'repeatFeature', capitalize: true }} />
@@ -110,54 +160,19 @@ export default () => (
               <HighlightBold>reproduce</HighlightBold> this using a lunchbox to
               get it back.
             </P>
-            <TwoColGrid
-              noTopNegativeMargin
-              noBottomNegativeMargin
-              left={
-                <>
-                  <R.Bwnp>
-                    Repeat <CustomEmoji type="plusOne" />
-                    <br />
-                    <CustomEmoji type="blankNumber" /> times
-                  </R.Bwnp>
-                  <ExpressionRunnerSeparator />
-                  <EmojiSeparator
-                    emojis={['❓', '🍱', '❓']}
-                    size="mdsm"
-                    description={
-                      <>
-                        Reproduce with
-                        <br />a lunchbox
-                      </>
-                    }
-                  />
-                </>
-              }
-              right={
-                <>
-                  <R.Ewfr>
-                    Repeat <CustomEmoji type="minusOne" />
-                    <br />
-                    <CustomEmoji type="blankNumber" /> times
-                  </R.Ewfr>
-                  <ExpressionRunnerSeparator />
-                  <EmojiSeparator
-                    emojis={['❓', '🍱', '❓']}
-                    size="mdsm"
-                    description={
-                      <>
-                        Reproduce with
-                        <br />a lunchbox
-                      </>
-                    }
-                  />
-                </>
-              }
-            />
+            <ReproduceWithNoNegativeMargin />
             <P>
               In case you forgot about <H args={{ name: 'repeatFeature' }} />,
               let’s do a quick review!
             </P>
+            <EmojiSeparator
+              emojis={['✨', '🔁', '✨']}
+              description={
+                <>
+                  Let’s review <H args={{ name: 'repeatFeature' }} />!
+                </>
+              }
+            />
             <P>
               Take a look at this mathbox and <H args={{ name: 'pressPlay' }} />
               :
@@ -167,6 +182,7 @@ export default () => (
         )
       },
       {
+        type: 'summary',
         title: (
           <>It’s necessary for additions and subtractions of large numbers</>
         ),
@@ -191,7 +207,7 @@ export default () => (
               }
             />
             <P>
-              <Bold>Example (from beginner 2):</Bold>{' '}
+              <Bold>Example (from Beginner 2):</Bold>{' '}
               <Highlight>
                 If you don’t use <H args={{ name: 'repeatFeature' }} />,
               </Highlight>{' '}
@@ -264,9 +280,10 @@ export default () => (
             />
             <P>
               The villagers have been trying hard to reproduce{' '}
-              <H args={{ name: 'repeatFeature' }} /> using a lunchbox. However,
-              looks like it’s not going well for them.
+              <H args={{ name: 'repeatFeature' }} /> using a lunchbox.
             </P>
+            <ReproduceWithNoNegativeMargin />
+            <P>However, looks like it’s not going well for them.</P>
             <BubbleQuotes
               quotes={[
                 {
@@ -343,7 +360,10 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        <H args={{ name: 'conditionFeature' }} />? What’s that?
+                        <H
+                          args={{ name: 'conditionFeature', capitalize: true }}
+                        />
+                        ? What’s that?
                       </P>
                     </>
                   )
@@ -385,19 +405,24 @@ export default () => (
                       <P>What’s this?</P>
                       <Ul>
                         <UlLi>
-                          It contains <CustomEmoji type="blankNumberRed" />,{' '}
-                          <CustomEmoji type="blankNumberYellow" />, and{' '}
-                          <CustomEmoji type="blankNumberGreen" />.
+                          <Highlight>
+                            It contains <CustomEmoji type="blankNumberRed" />,{' '}
+                            <CustomEmoji type="blankNumberYellow" />, and{' '}
+                            <CustomEmoji type="blankNumberGreen" />.
+                          </Highlight>
                         </UlLi>
                         <UlLi>
-                          On the left, there are three signs:{' '}
-                          <InlineBorder type="falseCase" />{' '}
-                          <InlineBorder type="trueCase" />{' '}
-                          <InlineBorder type="condition" />
+                          <Highlight>
+                            On the left, there are three signs:{' '}
+                            <InlineBorder type="falseCase" />{' '}
+                            <InlineBorder type="trueCase" />{' '}
+                            <InlineBorder type="condition" />
+                          </Highlight>
                         </UlLi>
                       </Ul>
                       <P>
-                        It looks like a traffic signal <Emoji>🚦</Emoji>…
+                        It looks like a traffic signal{' '}
+                        <Emoji size="mdlg">🚦</Emoji>…
                       </P>
                     </>
                   )
@@ -409,10 +434,11 @@ export default () => (
                       <P>
                         <Bold>First:</Bold>{' '}
                         <Highlight>
-                          You can put any number on each of{' '}
+                          You can fill each of{' '}
                           <CustomEmoji type="blankNumberRed" />,{' '}
                           <CustomEmoji type="blankNumberYellow" />, and{' '}
-                          <CustomEmoji type="blankNumberGreen" />.
+                          <CustomEmoji type="blankNumberGreen" /> with any
+                          number.
                         </Highlight>
                       </P>
                       <P>The numbers could be all the same or all different.</P>
@@ -429,11 +455,11 @@ export default () => (
               ]}
               description={
                 <>
-                  You can put any number on each of
+                  You can fill each of
                   <br />
                   <CustomEmoji type="blankNumberRed" />,{' '}
                   <CustomEmoji type="blankNumberYellow" />, and{' '}
-                  <CustomEmoji type="blankNumberGreen" />
+                  <CustomEmoji type="blankNumberGreen" /> with any number
                 </>
               }
             />
@@ -463,6 +489,8 @@ export default () => (
                 }
               ]}
             />
+            <R.Rhoa></R.Rhoa>
+            <ExpressionRunnerSeparator />
             <R.Zdpf>
               Used <EmojiNumber number={2} /> <EmojiNumber number={1} />{' '}
               <EmojiNumber number={0} /> for{' '}
@@ -669,8 +697,8 @@ export default () => (
                     <>
                       <P>
                         <Bold>Question:</Bold> If we{' '}
-                        <H args={{ name: 'run', lowerCase: true }} />, will it
-                        become like this?
+                        <H args={{ name: 'run', lowerCase: true }} /> it, will
+                        it become like this?
                       </P>
                     </>
                   )
@@ -707,7 +735,7 @@ export default () => (
                         <EmojiNumber number={4} />.
                       </P>
                       <P>
-                        <H args={{ name: 'pressPlay', capitalize: true }} />
+                        <H args={{ name: 'pressPlay', capitalize: true }} />:
                       </P>
                     </>
                   )
@@ -723,14 +751,17 @@ export default () => (
                     <>
                       <P>Let me explain why!</P>
                       <P>
-                        <Bold>First</Bold> It checks if{' '}
-                        <H
-                          args={{
-                            name: 'conditionSectionName',
-                            type: 'condition'
-                          }}
-                        />{' '}
-                        is <EmojiNumber number={0} />.
+                        <Bold>First:</Bold>{' '}
+                        <Highlight>
+                          It checks if{' '}
+                          <H
+                            args={{
+                              name: 'conditionSectionName',
+                              type: 'condition'
+                            }}
+                          />{' '}
+                          is <EmojiNumber number={0} />.
+                        </Highlight>
                       </P>
                     </>
                   )
@@ -745,23 +776,23 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        This time,{' '}
+                        <Bold>This time:</Bold>{' '}
                         <Highlight>
-                          what’s in{' '}
+                          What’s in{' '}
                           <H
                             args={{
                               name: 'conditionSectionName',
                               type: 'condition'
                             }}
                           />{' '}
-                          is not <EmojiNumber number={0} />.
+                          is NOT <EmojiNumber number={0} />.
                         </Highlight>{' '}
                         Instead, it’s <EmojiNumber number={3} />.
                       </P>
                       <P>
-                        In this case,{' '}
+                        <Bold>In this case:</Bold>{' '}
                         <Highlight>
-                          the number in{' '}
+                          The number in{' '}
                           <H
                             args={{
                               name: 'conditionSectionName',
@@ -841,7 +872,7 @@ export default () => (
             <P>
               <Highlight>
                 <Bold>
-                  If it’s not <EmojiNumber number={0} />:
+                  If it’s NOT <EmojiNumber number={0} />:
                 </Bold>{' '}
                 <CustomEmoji type="blankNumberRed" /> in{' '}
                 <H args={{ name: 'conditionSectionName', type: 'falseCase' }} />{' '}
@@ -914,7 +945,7 @@ export default () => (
                         You probably didn’t know this, but{' '}
                         <Highlight>
                           <H args={{ name: 'conditionFeature' }} /> is actually
-                          one of the secret features of a mathbox.
+                          the <Bold>secret feature</Bold> of a mathbox.
                         </Highlight>
                       </P>
                     </>
@@ -931,8 +962,8 @@ export default () => (
               ]}
               description={
                 <>
-                  It’s a secret feature of a mathbox{' '}
-                  <CustomEmoji type="mathBox" />
+                  It’s the <HighlightBold>secret feature</HighlightBold> of a
+                  mathbox <CustomEmoji type="mathBox" />
                 </>
               }
             />
@@ -954,7 +985,7 @@ export default () => (
                         In fact,{' '}
                         <Highlight>
                           <H args={{ name: 'conditionFeature' }} /> has been
-                          forgotten by most people,
+                          forgotten by the people in Lambda Village,
                         </Highlight>{' '}
                         because it’s not a very useful feature.
                       </P>
@@ -1108,7 +1139,7 @@ export default () => (
                         Yes.{' '}
                         <Highlight>
                           So you should first try to reproduce{' '}
-                          <H args={{ name: 'conditionFeature' }} /> first.
+                          <H args={{ name: 'conditionFeature' }} />.
                         </Highlight>
                       </P>
                       <P>

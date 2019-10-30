@@ -55,11 +55,11 @@ export const Conclusion = () => (
         }}
       />
       ,{' '}
-      <Italic>
+      <Highlight>
         you’ll always use the correct number of <CustomEmoji type="plusOne" />
         ’s or <CustomEmoji type="minusOne" />
         ’s
-      </Italic>
+      </Highlight>
       . You can be confident that your additions and subtractions are accurate.
     </P>
     <P>

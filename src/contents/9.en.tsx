@@ -24,7 +24,7 @@ import BottomRightBadge from 'src/components/BottomRightBadge'
 import TwoColGrid from 'src/components/TwoColGrid'
 import * as R from 'src/components/Runners'
 import NextLessonButton from 'src/components/NextLessonButton'
-import { BlankNumberPlusOne } from 'src/contents/8.en'
+import { ReproducePlusOne } from 'src/contents/8.en'
 
 export const SpecialRule = () => (
   <>
@@ -54,12 +54,14 @@ export default () => (
         content: (
           <>
             <P>
-              <Bold>On the last page, we learned that:</Bold> By using{' '}
-              <Emoji>👧🏻</Emoji> Saya’s lunchbox, we can{' '}
-              <HighlightBold>reproduce</HighlightBold>{' '}
-              <H args={{ name: 'plusOneFeature' }} /> of a mathbox.
+              <Bold>On the last page</Bold>, we learned that,{' '}
+              <Highlight>
+                by using <Emoji>👧🏻</Emoji> Saya’s lunchbox, we can{' '}
+                <HighlightBold>reproduce</HighlightBold>{' '}
+                <H args={{ name: 'plusOneFeature' }} /> of a mathbox.
+              </Highlight>
             </P>
-            <BlankNumberPlusOne />
+            <ReproducePlusOne />
             <P>
               <Bold>That’s it for the quick review.</Bold> Let’s continue!
             </P>
@@ -214,7 +216,7 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        <Bold>Why?:</Bold> Because it doesn’t follow this
+                        <Bold>Why not?</Bold> Because it doesn’t follow this
                         pattern.
                       </P>
                       <R.Eozk>
@@ -226,9 +228,11 @@ export default () => (
                         />
                       </R.Eozk>
                       <P>
-                        There needs to be exactly one <Emoji>🅱️</Emoji> on the
-                        top-right, but there are <Italic>two</Italic> in this
-                        case.
+                        <Highlight>
+                          There needs to be exactly one <Emoji>🅱️</Emoji> on the
+                          top-right, but there are <Italic>two</Italic> in this
+                          case.
+                        </Highlight>
                       </P>
                     </>
                   )
@@ -457,7 +461,8 @@ export default () => (
                         </Highlight>
                       </P>
                       <P>
-                        In this case, <EmojiForLetter letter="b" /> is in both{' '}
+                        In this case, <EmojiForLetter size="mdlg" letter="b" />{' '}
+                        is in both{' '}
                         <BottomRightBadge
                           inline
                           bottomRightBadgeType="callArg"
@@ -532,7 +537,7 @@ export default () => (
                       <P>Here’s a simple example:</P>
                       <Ul>
                         <UlLi>
-                          The left lunchbox has different{' '}
+                          The left lunchbox has <Italic>different</Italic>{' '}
                           <BottomRightBadge
                             inline
                             bottomRightBadgeType="callArg"
@@ -545,7 +550,7 @@ export default () => (
                           .
                         </UlLi>
                         <UlLi>
-                          The right lunchbox has the same{' '}
+                          The right lunchbox has <Italic>the same</Italic>{' '}
                           <BottomRightBadge
                             inline
                             bottomRightBadgeType="callArg"
@@ -810,8 +815,8 @@ export default () => (
                         <EmojiNumber number={1} />.
                       </P>
                       <P>
-                        This failed because <EmojiForLetter letter="b" /> was in
-                        both{' '}
+                        This failed because{' '}
+                        <EmojiForLetter size="mdlg" letter="b" /> was in both{' '}
                         <BottomRightBadge
                           inline
                           bottomRightBadgeType="callArg"
@@ -832,7 +837,7 @@ export default () => (
               Couldn’t calculate <EmojiNumber number={1} /> <Emoji>➕</Emoji>{' '}
               <EmojiNumber number={1} />
               <br />
-              because <EmojiForLetter letter="b" /> was in both{' '}
+              because <EmojiForLetter letter="b" size="mdlg" /> was in both{' '}
               <BottomRightBadge inline bottomRightBadgeType="callArg" /> and{' '}
               <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />,
               <br />
@@ -919,9 +924,9 @@ export default () => (
                           </Highlight>
                         </UlLi>
                         <UlLi>
-                          <Highlight>
+                          <HighlightBold>
                             Change one of them to something different.
-                          </Highlight>
+                          </HighlightBold>
                         </UlLi>
                       </Ul>
                     </>
@@ -948,7 +953,11 @@ export default () => (
                   /> and{' '}
                   <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />
                   ,<br />
-                  change one of them to something different
+                  <Highlight>
+                    change one of them to
+                    <br />
+                    something different
+                  </Highlight>
                 </>
               }
             />
@@ -1050,7 +1059,8 @@ export default () => (
                           inline
                           bottomRightBadgeType="funcUnbound"
                         />
-                        … (in this case: <EmojiForLetter letter="b" />)
+                        … (in this case:{' '}
+                        <EmojiForLetter size="mdlg" letter="b" />)
                       </P>
                     </>
                   )
@@ -1065,13 +1075,15 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        <Bold>Because of this special rule:</Bold> The{' '}
-                        <EmojiWithText letter="b" postfix="es" /> in{' '}
-                        <BottomRightBadge
-                          inline
-                          bottomRightBadgeType="callArg"
-                        />{' '}
-                        will now become something else.
+                        <Bold>Because of this special rule:</Bold>{' '}
+                        <Highlight>
+                          The <EmojiWithText letter="b" postfix="es" /> in{' '}
+                          <BottomRightBadge
+                            inline
+                            bottomRightBadgeType="callArg"
+                          />{' '}
+                          will now become something else.
+                        </Highlight>
                       </P>
                       <EmojiSeparator
                         nodes={[
@@ -1149,6 +1161,13 @@ export default () => (
                   children: (
                     <>
                       <P>
+                        <Highlight>
+                          <EmojiForLetter size="mdlg" letter="b" /> on the top
+                          became <EmojiForLetter size="mdlg" letter="e" />!
+                        </Highlight>
+                      </P>
+                      <P>
+                        And{' '}
                         <BottomRightBadge
                           inline
                           bottomRightBadgeType="callArg"
@@ -1168,7 +1187,8 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        Let’s continue then! <H args={{ name: 'pressRun' }} />
+                        Yes. Let’s continue then!{' '}
+                        <H args={{ name: 'pressRun' }} />
                       </P>
                     </>
                   )
@@ -1235,7 +1255,8 @@ export default () => (
         content: (
           <>
             <P>
-              If you combine <Emoji>👧🏻</Emoji> Saya’s lunchbox which reproduces{' '}
+              <Bold>What we learned:</Bold> If you combine <Emoji>👧🏻</Emoji>{' '}
+              Saya’s lunchbox which reproduces{' '}
               <H args={{ name: 'plusOneFeature' }} />…
             </P>
             <R.Vcqp>
@@ -1257,9 +1278,9 @@ export default () => (
               />
             </R.Cmla>
             <P>
-              Then, there will be the same item (
+              <Bold>Then:</Bold> There will be the same item (
               <Highlight>
-                <EmojiForLetter letter="b" />
+                <EmojiForLetter letter="b" size="mdlg" />
               </Highlight>
               ) in both{' '}
               <BottomRightBadge inline bottomRightBadgeType="callArg" /> and{' '}
@@ -1272,7 +1293,7 @@ export default () => (
             </P>
             <R.Kwyy>
               <Highlight>
-                <EmojiForLetter letter="b" />
+                <EmojiForLetter letter="b" size="mdlg" />
               </Highlight>{' '}
               is in both{' '}
               <BottomRightBadge inline bottomRightBadgeType="callArg" /> and{' '}
@@ -1299,6 +1320,8 @@ export default () => (
               in this case:
             </P>
             <SpecialRule />
+            <R.Smdm />
+            <ExpressionRunnerSeparator />
             <R.Niwv />
             <P>
               By doing this, it will be able to calculate{' '}
