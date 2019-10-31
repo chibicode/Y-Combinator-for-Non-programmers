@@ -34,6 +34,7 @@ import {
 } from 'src/lib/episodeCategories'
 import EmojiForLetter from 'src/components/EmojiForLetter'
 import EmojiSeparator from 'src/components/EmojiSeparator'
+import NextLessonButton from 'src/components/NextLessonButton'
 import EmojiNumber from 'src/components/EmojiNumber'
 import TwitterEmbed from 'src/components/TwitterEmbed'
 import { shareId, shareVisible } from 'src/lib/twitter'
@@ -169,7 +170,7 @@ interface HProps {
     | { name: 'whatTheNumberIsCaption' }
     | { name: 'runAndShowAllSteps' }
     | { name: 'ignoreForNow' }
-    | { name: 'aboutMe' }
+    | { name: 'aboutMe'; hideNextPageButton?: boolean }
 }
 
 const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
@@ -1004,7 +1005,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
               </Highlight>{' '}
               <Emoji>😉</Emoji>
             </P>
-            <TwitterEmbed showCard id={shareId} />
+            <TwitterEmbed id={shareId} />
             {question}
             <P>
               <Bold>If you changed your mind want to keep reading:</Bold> Press
@@ -1022,7 +1023,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
               </Highlight>
               :
             </P>
-            <TwitterEmbed showCard id={shareId} />
+            <TwitterEmbed id={shareId} />
             {question}
             <P>Once again, thank you for reading! </P>
           </>
@@ -2000,6 +2001,13 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
               </ExternalLink>
               .
             </P>
+            {!args.hideNextPageButton && (
+              <>
+                <Hr />
+                <P>To go to the next page, press this button:</P>
+                <NextLessonButton />
+              </>
+            )}
           </CardContent>
         </>
       )
