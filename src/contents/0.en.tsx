@@ -444,7 +444,7 @@ export default () => (
                 <>
                   Learn Y Combinator using puzzles.
                   <br />
-                  No programming required!
+                  No programming involved!
                 </>
               }
             />
