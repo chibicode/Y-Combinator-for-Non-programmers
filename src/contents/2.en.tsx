@@ -75,7 +75,7 @@ export const Conclusion = () => (
           />
           , we can do
           <br />
-          additions and subtractions accurately!
+          additions and subtractions accurately
         </>
       }
     />
@@ -177,11 +177,11 @@ export default () => (
                 .
               </Bold>{' '}
               It doesn’t matter if you get it right or wrong, so don’t worry too
-              much!
+              much.
             </P>
             <EmojiSeparator
               emojis={['👍', '🤔', '👎']}
-              description={<>We’ll do a Yes/No quiz!</>}
+              description={<>We’ll do a Yes/No quiz</>}
             />
             <P>
               The villagers living in Lambda Village were all bad at math, so
@@ -553,7 +553,7 @@ export default () => (
                 <>
                   We are bad at math,
                   <br />
-                  so we can’t live without mathboxes!
+                  so we can’t live without mathboxes.
                 </>
               }
             />
@@ -563,9 +563,9 @@ export default () => (
             </P>
             <EmojiSeparator
               emojis={['🌲', '😭', '❓', '😭', '🌲']}
-              description={<>Something terrible happened!</>}
+              description={<>Something terrible happened</>}
             />
-            <P>We’ll talk about it on the next page!</P>
+            <P>We’ll talk about it on the next page.</P>
             <NextLessonButton />
           </>
         )
