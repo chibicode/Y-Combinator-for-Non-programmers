@@ -1,15 +1,7 @@
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core'
 import EpisodeCardList from 'src/components/EpisodeCardList'
-import {
-  P,
-  Hr,
-  Highlight,
-  Ul,
-  UlLi,
-  Bold,
-  Italic
-} from 'src/components/ContentTags'
+import { P, Highlight, Bold, Italic } from 'src/components/ContentTags'
 import CustomEmoji from 'src/components/CustomEmoji'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import EmojiNumber from 'src/components/EmojiNumber'
@@ -72,7 +64,7 @@ export const Conclusion = () => (
       was absolutely necessary for the villagers in Lambda Village.
     </P>
     <EmojiSeparator
-      emojis={['➕', '🤗', '➖']}
+      nodes={[<Emoji>✨</Emoji>, <Emoji>🔁</Emoji>, <Emoji>✨</Emoji>]}
       description={
         <>
           By using{' '}
@@ -259,18 +251,7 @@ export default () => (
               </Highlight>
               .
             </P>
-            <EmojiSeparator
-              emojis={['❌', '😭', '❌']}
-              description={
-                <>
-                  Oops! It didn’t calculate <EmojiNumber number={10} />{' '}
-                  <Emoji>➖</Emoji> <EmojiNumber number={8} />
-                </>
-              }
-            />
-            <P>
-              Were you able to figure out why this happened? <Emoji>😉</Emoji>
-            </P>
+            <P>Were you able to figure out why this happened?</P>
           </>
         )
       },
@@ -294,19 +275,6 @@ export default () => (
               </Highlight>
               .
             </P>
-            <EmojiSeparator
-              nodes={[
-                <Emoji>❌</Emoji>,
-                <CustomEmoji type="minusOne" />,
-                <Emoji>❌</Emoji>
-              ]}
-              description={
-                <>
-                  Wrong number of <CustomEmoji type="minusOne" />
-                  ’s
-                </>
-              }
-            />
             <P>
               If you wanted to calculate <EmojiNumber number={10} />{' '}
               <Emoji>➖</Emoji> <EmojiNumber number={8} />, you need to have{' '}
@@ -354,28 +322,12 @@ export default () => (
               <CustomEmoji type="plusOne" />
               ’s or <CustomEmoji type="minusOne" />
               ’s, then you won’t be able to calculate additions or subtractions
-              correctly. <Emoji>😭</Emoji>
+              correctly.
             </P>
             <P>
               <Bold>Now, here’s a question:</Bold>{' '}
               <Highlight>How can we avoid mistakes like this?</Highlight>
             </P>
-            <EmojiSeparator
-              nodes={[
-                <CustomEmoji type="plusOne" />,
-                <Emoji>🤔</Emoji>,
-                <CustomEmoji type="minusOne" />
-              ]}
-              description={
-                <>
-                  How do we avoid putting
-                  <br />
-                  the wrong number of <CustomEmoji type="plusOne" />
-                  ’s or <CustomEmoji type="minusOne" />
-                  ’s?
-                </>
-              }
-            />
           </>
         )
       },
@@ -468,51 +420,13 @@ export default () => (
             </P>
             <R.Pgxb />
             <P>
-              <Bold>Summary:</Bold>{' '}
+              <Bold>Summary:</Bold> By using{' '}
+              <H args={{ name: 'repeatFeature' }} />,{' '}
               <Highlight>
-                If there’s{' '}
-                <InlineBorder>
-                  <EmojiNumber number={8} />
-                </InlineBorder>{' '}
-                next to <CustomEmoji type="minusOne" />, it repeats{' '}
-                <CustomEmoji type="minusOne" /> eight times
-              </Highlight>
-              .
-            </P>
-            <EmojiSeparator
-              nodes={[
-                <InlineBorder small>
-                  <EmojiNumber number={8} />
-                </InlineBorder>,
-                <CustomEmoji type="minusOne" />
-              ]}
-            />
-            <ExpressionRunnerSeparator />
-            <EmojiSeparator
-              size="mdsm"
-              nodes={[
-                <CustomEmoji type="minusOne" />,
-                <CustomEmoji type="minusOne" />,
-                <CustomEmoji type="minusOne" />,
-                <CustomEmoji type="minusOne" />,
-                <CustomEmoji type="minusOne" />,
-                <CustomEmoji type="minusOne" />,
-                <CustomEmoji type="minusOne" />,
-                <CustomEmoji type="minusOne" />
-              ]}
-              description={
-                <>
-                  Repeats <CustomEmoji type="minusOne" /> eight times
-                </>
-              }
-            />
-            <P>
-              By using <H args={{ name: 'repeatFeature' }} />,{' '}
-              <Italic>
                 you can specify the number of times{' '}
                 <CustomEmoji type="minusOne" /> gets repeated
-              </Italic>
-              . <Emoji>🤗</Emoji>
+              </Highlight>
+              .
             </P>
           </>
         )
@@ -536,71 +450,8 @@ export default () => (
             <TwoPlusFour />
             <P>
               This is how you can calculate <EmojiNumber number={2} />{' '}
-              <Emoji>➕</Emoji> <EmojiNumber number={4} />. <Emoji>😉</Emoji>
+              <Emoji>➕</Emoji> <EmojiNumber number={4} />.
             </P>
-          </>
-        )
-      },
-      {
-        title: (
-          <>
-            <H
-              args={{
-                name: 'repeatFeature',
-                capitalize: true
-              }}
-            />
-          </>
-        ),
-        content: (
-          <>
-            <P>Here’s the summary:</P>
-            <R.Bwnp />
-            <Ul>
-              <UlLi>
-                <Highlight>
-                  If there’s{' '}
-                  <InlineBorder>
-                    <CustomEmoji type="blankNumber" />
-                  </InlineBorder>{' '}
-                  to the left of <CustomEmoji type="plusOne" />, then…
-                </Highlight>
-              </UlLi>
-              <UlLi>
-                <Highlight>
-                  When you <H args={{ name: 'run', lowerCase: true }} /> it,{' '}
-                  <CustomEmoji type="plusOne" /> gets repeated for{' '}
-                  <CustomEmoji type="blankNumber" /> times.
-                </Highlight>
-              </UlLi>
-            </Ul>
-            <Hr />
-            <P>
-              Of course, you can use <CustomEmoji type="minusOne" /> instead of{' '}
-              <CustomEmoji type="plusOne" /> as well.
-            </P>
-            <R.Ewfr>
-              <CustomEmoji type="minusOne" /> gets repeated{' '}
-              <CustomEmoji type="blankNumber" /> times
-            </R.Ewfr>
-            <Hr />
-            <P>
-              So this is how{' '}
-              <Highlight>
-                <H args={{ name: 'repeatFeature' }} />
-              </Highlight>{' '}
-              works!
-            </P>
-            <EmojiSeparator
-              nodes={[<Emoji>✨</Emoji>, <Emoji>🔁</Emoji>, <Emoji>✨</Emoji>]}
-              description={
-                <>
-                  <Highlight>
-                    <H args={{ name: 'repeatFeature', capitalize: true }} />
-                  </Highlight>
-                </>
-              }
-            />
           </>
         )
       },
@@ -629,10 +480,7 @@ export default () => (
               <Emoji>🅰️</Emoji> as <EmojiNumber number={5} /> and{' '}
               <Emoji>🅱️</Emoji> as <EmojiNumber number={3} />.
             </P>
-            <R.Etku>
-              Set <Emoji>🅰️</Emoji> as <EmojiNumber number={5} /> and{' '}
-              <Emoji>🅱️</Emoji> as <EmojiNumber number={3} />.
-            </R.Etku>
+            <R.Etku></R.Etku>
             <P>
               If you <H args={{ name: 'run', lowerCase: true }} /> it, it
               calculates <EmojiNumber number={5} /> <Emoji>➕</Emoji>{' '}
@@ -651,8 +499,7 @@ export default () => (
               <Italic>
                 you won’t use the wrong number of <CustomEmoji type="plusOne" />
                 ’s again!
-              </Italic>{' '}
-              <Emoji>😉</Emoji>
+              </Italic>
             </P>
           </>
         )
