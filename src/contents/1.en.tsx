@@ -465,7 +465,7 @@ export default () => (
                 </>
               }
             />
-            <P>The villagers couldn’t live without mathboxes!</P>
+            <P>The villagers couldn’t live without mathboxes.</P>
           </>
         ),
         footer: {
@@ -509,10 +509,7 @@ export default () => (
               ]}
               description={<>A mathbox has one more feature…</>}
             />
-            <P>
-              We’ll talk about this third feature on the next page!{' '}
-              <Emoji>🤗</Emoji>
-            </P>
+            <P>Let’s talk about this third feature on the next page.</P>
             <NextLessonButton />
           </>
         )

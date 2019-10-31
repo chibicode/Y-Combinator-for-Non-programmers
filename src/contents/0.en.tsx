@@ -57,7 +57,7 @@ export default () => (
             <R.Mcug>
               You’ll see puzzles like this:
               <br />
-              Try pressing <H args={{ name: 'run' }} />!
+              Try pressing <H args={{ name: 'run' }} />.
             </R.Mcug>
           </>
         )
@@ -122,14 +122,14 @@ export default () => (
               <Emoji>😁</Emoji>{' '}
               <Bold>If you want to get started as soon as possible:</Bold>{' '}
               <Highlight>
-                Press the button below to go to the next page!
+                Press the button below to go to the next page.
               </Highlight>
             </P>
             <NextLessonButton />
             <P>
               <Emoji>🤔</Emoji>{' '}
               <Bold>If you want to read the introduction</Bold> before you get
-              started, <Highlight>scroll down and keep reading!</Highlight> The
+              started, <Highlight>scroll down and keep reading.</Highlight> The
               introduction should take only a few minutes to read.
             </P>
             <EmojiSeparator
@@ -138,7 +138,7 @@ export default () => (
                 <CustomEmoji type="singleArrowDown" />,
                 <CustomEmoji type="singleArrowDown" />
               ]}
-              topDescription={<>Scroll down to read the introduction!</>}
+              topDescription={<>Scroll down to read the introduction</>}
             />
           </>
         )
@@ -261,7 +261,7 @@ export default () => (
               </Highlight>{' '}
               <Emoji>😉</Emoji>
             </P>
-            <P>Let’s now talk about this course!</P>
+            <P>Let’s now talk about this course.</P>
           </>
         )
       },
@@ -423,14 +423,14 @@ export default () => (
                 <ExternalLink href={githubRepo}>
                   the source is available on GitHub
                 </ExternalLink>
-                . Please ★ star it! <Emoji>😉</Emoji>
+                . I’d appreciate it if you could ★ star it. <Emoji>😉</Emoji>
               </P>
             </CardContent>
           )
         }
       },
       {
-        title: <>Let’s get started!</>,
+        title: <>Let’s get started</>,
         content: (
           <>
             <P>
@@ -444,7 +444,7 @@ export default () => (
                 <>
                   Learn Y Combinator using puzzles.
                   <br />
-                  No programming involved!
+                  No programming involved.
                 </>
               }
             />
@@ -452,7 +452,7 @@ export default () => (
               <Bold>Let’s get started</Bold> and take a look at what the puzzles
               look like.{' '}
               <Highlight>
-                Press the button below to go to the next page!
+                Press the button below to go to the next page.
               </Highlight>
             </P>
             <NextLessonButton />
