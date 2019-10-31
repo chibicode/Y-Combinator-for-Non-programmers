@@ -463,8 +463,6 @@ export default () => (
             <>
               <P>Also, sorry for not introducing myself earlier…</P>
               <H args={{ name: 'aboutMe' }} />
-              <P>To go to the next page, press this button:</P>
-              <NextLessonButton />
             </>
           )
         }
