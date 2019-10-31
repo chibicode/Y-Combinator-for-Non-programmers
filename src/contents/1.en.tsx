@@ -38,7 +38,7 @@ export default () => (
                 <CustomEmoji type="mathBox" />,
                 <CustomEmoji type="mathBox" />
               ]}
-              description={<>This is the icon for mathboxes</>}
+              description={<>Mathboxes</>}
             />
           </>
         )
@@ -78,9 +78,7 @@ export default () => (
                 </>
               }
             />
-            <P>
-              Let me explain how it works! <Emoji>🤗</Emoji>
-            </P>
+            <P>Let me explain how it works.</P>
           </>
         )
       },
@@ -107,18 +105,10 @@ export default () => (
                   bottom.
                 </Highlight>
               </UlLi>
-              <UlLi>I’ll explain what these icons mean shortly!</UlLi>
             </Ul>
-            <EmojiSeparator
-              nodes={[
-                <CustomEmoji type="mathBox" />,
-                <Emoji>1️⃣</Emoji>,
-                <CustomEmoji type="plusOne" />
-              ]}
-            />
             <P>
-              Next, we’ll talk about how we can{' '}
-              <H args={{ name: 'run', lowerCase: true }} /> this mathbox.
+              Before I explain what these icons mean, let’s talk about how we
+              can <H args={{ name: 'run', lowerCase: true }} /> this mathbox.
             </P>
           </>
         )
@@ -144,7 +134,7 @@ export default () => (
             <P>
               The result is <EmojiNumber number={2} />. That means it calculated{' '}
               <EmojiNumber number={1} /> <Emoji>➕</Emoji>{' '}
-              <EmojiNumber number={1} />. <Emoji>🙂</Emoji>
+              <EmojiNumber number={1} />.
             </P>
             <Hr />
             <P>
@@ -155,7 +145,7 @@ export default () => (
             <P>
               The result is <EmojiNumber number={4} />, which means it
               calculated <EmojiNumber number={3} /> <Emoji>➕</Emoji>{' '}
-              <EmojiNumber number={1} />. <Emoji>🙂</Emoji>
+              <EmojiNumber number={1} />.
             </P>
           </>
         )
@@ -250,7 +240,7 @@ export default () => (
             <P>
               The result is <EmojiNumber number={2} />. So it calculated{' '}
               <EmojiNumber number={3} /> <Emoji>➖</Emoji>{' '}
-              <EmojiNumber number={1} />. <Emoji>🙂</Emoji>
+              <EmojiNumber number={1} />.
             </P>
             <Hr />
             <P>
@@ -293,47 +283,18 @@ export default () => (
         )
       },
       {
-        title: (
-          <>
-            You can only use <CustomEmoji type="plusOne" /> and{' '}
-            <CustomEmoji type="minusOne" />
-          </>
-        ),
+        type: 'challengeProblem',
+        title: <>How can we calculate this?</>,
         content: (
           <>
             <P>
-              <Emoji>⚠️</Emoji> <Bold>Important:</Bold>{' '}
+              <Emoji>🤔</Emoji> <Bold>Now, here’s a question:</Bold>{' '}
               <Highlight>
-                You can{' '}
-                <Italic>
-                  only use <CustomEmoji type="plusOne" /> and{' '}
-                  <CustomEmoji type="minusOne" />
-                </Italic>{' '}
-                in mathboxes.
-              </Highlight>
-            </P>
-            <EmojiSeparator
-              nodes={[
-                <CustomEmoji type="plusOne" />,
-                <CustomEmoji type="mathBox" />,
-                <CustomEmoji type="minusOne" />
-              ]}
-              description={
-                <>
-                  You can only use <CustomEmoji type="plusOne" /> and{' '}
-                  <CustomEmoji type="minusOne" />
-                </>
-              }
-            />
-            <P>
-              <Bold>Question:</Bold> If you can only use{' '}
-              <CustomEmoji type="plusOne" /> and <CustomEmoji type="minusOne" />
-              , then{' '}
-              <Highlight>
-                how do you calculate something like <EmojiNumber number={2} />{' '}
-                <Emoji>➕</Emoji> <EmojiNumber number={2} />
+                Can you think of a way to calculate something like{' '}
+                <EmojiNumber number={2} /> <Emoji>➕</Emoji>{' '}
+                <EmojiNumber number={2} />
               </Highlight>{' '}
-              using a mathbox? <Emoji>🤔</Emoji>
+              using a mathbox?
             </P>
             <EmojiSeparator
               nodes={[
@@ -362,27 +323,15 @@ export default () => (
               </Highlight>{' '}
               on <EmojiNumber number={2} />.
             </P>
-            <EmojiSeparator
-              nodes={[
-                <EmojiNumber number={2} />,
-                <CustomEmoji type="plusOne" />,
-                <CustomEmoji type="plusOne" />
-              ]}
-              description={
-                <>
-                  Use <CustomEmoji type="plusOne" /> twice
-                </>
-              }
-            />
             <P>
-              Here’s the mathbox that uses <CustomEmoji type="plusOne" /> twice.{' '}
+              Here’s an example.{' '}
               <H args={{ name: 'pressPlay', capitalize: true }} />:
             </P>
             <R.Jiqb />
             <P>
               The result is <EmojiNumber number={4} />. So it calculated{' '}
               <EmojiNumber number={2} /> <Emoji>➕</Emoji>{' '}
-              <EmojiNumber number={2} />. <Emoji>🙂</Emoji>
+              <EmojiNumber number={2} />.
             </P>
           </>
         )
@@ -402,32 +351,8 @@ export default () => (
                 <CustomEmoji type="plusOne" /> and{' '}
                 <CustomEmoji type="minusOne" /> as many times as you like
               </Highlight>
-              . <Emoji>😉</Emoji>
+              .
             </P>
-            <EmojiSeparator
-              noBottomMargin
-              nodes={[
-                <CustomEmoji type="plusOne" />,
-                <CustomEmoji type="plusOne" />,
-                <CustomEmoji type="plusOne" />
-              ]}
-            />
-            <EmojiSeparator
-              noTopMargin
-              nodes={[
-                <CustomEmoji type="minusOne" />,
-                <CustomEmoji type="minusOne" />,
-                <CustomEmoji type="minusOne" />
-              ]}
-              description={
-                <>
-                  Use <CustomEmoji type="plusOne" /> and{' '}
-                  <CustomEmoji type="minusOne" />
-                  <br />
-                  as many times as you like
-                </>
-              }
-            />
             <P>
               <Bold>Example:</Bold> This one uses{' '}
               <Italic>
@@ -468,30 +393,6 @@ export default () => (
               </Highlight>{' '}
               .
             </P>
-            <EmojiSeparator
-              nodes={[
-                <CustomEmoji type="plusOne" />,
-                <CustomEmoji type="horizontalDotDotDot" />,
-                <CustomEmoji type="plusOne" />
-              ]}
-              noBottomMargin
-            />
-            <EmojiSeparator
-              noTopMargin
-              nodes={[
-                <CustomEmoji type="minusOne" />,
-                <CustomEmoji type="horizontalDotDotDotRed" />,
-                <CustomEmoji type="minusOne" />
-              ]}
-              description={
-                <>
-                  By using <CustomEmoji type="plusOne" /> and{' '}
-                  <CustomEmoji type="minusOne" /> many times,
-                  <br />
-                  you can calculate any addition or subtraction
-                </>
-              }
-            />
             <P>
               <Bold>Example:</Bold> Suppose that you want to calculate{' '}
               <EmojiNumber number={10} /> <Emoji>➕</Emoji>{' '}
@@ -558,18 +459,13 @@ export default () => (
               ]}
               description={
                 <>
-                  “We suck at math, so we must use mathboxes
+                  “We suck at math, so we must use
                   <br />
-                  to do simple additions like <EmojiNumber number={2} />{' '}
-                  <Emoji>➕</Emoji> <EmojiNumber number={3} />
-                  .”
+                  mathboxes to do even simple additions.”
                 </>
               }
             />
-            <P>
-              <Bold>Therefore:</Bold> The villagers couldn’t live without
-              mathboxes!
-            </P>
+            <P>The villagers couldn’t live without mathboxes!</P>
           </>
         ),
         footer: {
