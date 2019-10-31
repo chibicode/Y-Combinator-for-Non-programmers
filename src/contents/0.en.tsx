@@ -10,7 +10,6 @@ import {
   Hr
 } from 'src/components/ContentTags'
 import Emoji from 'src/components/Emoji'
-import EmojiNumber from 'src/components/EmojiNumber'
 import CustomEmoji from 'src/components/CustomEmoji'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import BubbleQuotes from 'src/components/BubbleQuotes'
@@ -21,19 +20,6 @@ import H from 'src/components/H'
 import YoutubeEmbed from 'src/components/YoutubeEmbed'
 import { githubRepo } from 'src/lib/meta'
 import * as R from 'src/components/Runners'
-
-const StarOnGitHub = () => (
-  <>
-    <P>
-      <Bold>Also, for programmers:</Bold> This course is written in TypeScript
-      and React, and{' '}
-      <ExternalLink href={githubRepo}>
-        the source is available on GitHub
-      </ExternalLink>
-      . Please ★ star it! <Emoji>😉</Emoji>
-    </P>
-  </>
-)
 
 export default () => (
   <EpisodeCardList
@@ -52,37 +38,37 @@ export default () => (
               , one of the coolest ideas in computer science.
             </P>
             <P>
-              <Emoji>🆓</Emoji> This course is{' '}
-              <HighlightBold>100% FREE</HighlightBold> (no signup required), and
-              you can do it from your smartphone, tablet, or computer.
+              This course is <HighlightBold>free</HighlightBold> (no signup
+              required), and you can do it from your <Emoji>📱</Emoji>{' '}
+              smartphone or <Emoji>💻</Emoji> computer.
             </P>
-            <EmojiSeparator
-              emojis={['📱', '🆓', '💻']}
-              description={
-                <>
-                  It’s <HighlightBold>100% FREE</HighlightBold>, and you can do
-                  it from
-                  <br />
-                  your smartphone, tablet, or computer
-                </>
-              }
-            />
             <P>
               <Emoji>🍱</Emoji> <Bold>Quick demo:</Bold> In this course, you’ll
               learn computer science concepts by{' '}
               <Highlight>
-                solving <Bold>emoji puzzles</Bold>—no coding required
+                solving <Bold>puzzles</Bold>—no coding required
               </Highlight>
-              . Here’s a quick demo. I’ll explain how this puzzle works later,
-              but for now,{' '}
+              . Here’s a quick demo. I’ll explain how this puzzle works on the
+              next page, but for now,{' '}
               <Highlight>
                 try pressing <H args={{ name: 'run' }} /> and see what happens:
               </Highlight>
             </P>
-            <R.Wunw />
+            <R.Mcug>
+              You’ll see puzzles like this:
+              <br />
+              Try pressing <H args={{ name: 'run' }} />!
+            </R.Mcug>
+          </>
+        )
+      },
+      {
+        type: 'meta',
+        title: <>Table of Contents</>,
+        content: (
+          <>
             <P>
-              <CustomEmoji type="index" /> <Bold>Roadmap:</Bold> This course
-              consists of{' '}
+              This course consists of{' '}
               <Bold>
                 <H
                   args={{
@@ -115,53 +101,9 @@ export default () => (
               . It should take about <HighlightBold>2 to 3 hours</HighlightBold>{' '}
               to read for most people.
             </P>
-            <EmojiSeparator
-              emojis={['📗', '📘', '📕']}
-              description={
-                <>
-                  <Bold>
-                    <H
-                      args={{
-                        name: 'categoryNameColored',
-                        category: 'beginner',
-                        text: <>5 beginner levels</>
-                      }}
-                    />
-                  </Bold>
-                  ,{' '}
-                  <Bold>
-                    <H
-                      args={{
-                        name: 'categoryNameColored',
-                        category: 'intermediate',
-                        text: <>5 intermediate levels</>
-                      }}
-                    />
-                  </Bold>
-                  ,<br />
-                  and{' '}
-                  <Bold>
-                    <H
-                      args={{
-                        name: 'categoryNameColored',
-                        category: 'advanced',
-                        text: <>5 advanced levels</>
-                      }}
-                    />
-                  </Bold>
-                </>
-              }
-            />
-            <Hr />
-            <CardContent
-              preview={{
-                text: <>Press here to view the table of contents.</>
-              }}
-            >
-              <Bold>Table of Contents:</Bold> Press each title below to jump to
-              that page.
-              <Toc />
-            </CardContent>
+            <EmojiSeparator emojis={['📗', '📘', '📕']} />
+            <P>↓ Press each title to jump to that page.</P>
+            <Toc />
           </>
         ),
         footer: {
@@ -188,7 +130,7 @@ export default () => (
               <Emoji>🤔</Emoji>{' '}
               <Bold>If you want to read the introduction</Bold> before you get
               started, <Highlight>scroll down and keep reading!</Highlight> The
-              introduction shouldn’t take much time to read.
+              introduction should take only a few minutes to read.
             </P>
             <EmojiSeparator
               nodes={[
@@ -206,8 +148,8 @@ export default () => (
         content: (
           <>
             <P>
-              <Emoji>🤔</Emoji> <Bold>Have you heard of “Y Combinator”?</Bold>{' '}
-              If you’re into technology, you might have heard that{' '}
+              <Bold>Have you heard of “Y Combinator”?</Bold> If you’re into
+              technology, you might have heard that{' '}
               <Highlight>
                 Y Combinator is the name of a startup investing firm.
               </Highlight>{' '}
@@ -222,20 +164,11 @@ export default () => (
                 The combined valuation
               </ExternalLink>{' '}
               of top companies they invested (such as AirBnB) is more than $150
-              billion dollars as of October 2019.
+              billion dollars as of October 2019. <Emoji>💰</Emoji>
             </P>
-            <EmojiSeparator
-              emojis={['💰', '😎', '💰']}
-              description={
-                <>
-                  Y Combinator is the name of
-                  <br />a startup investing firm
-                </>
-              }
-            />
             <P>
-              <Emoji>⚠️</Emoji> <Bold>However:</Bold> In this course, we will
-              NOT talk about this startup investing firm.{' '}
+              <Bold>However:</Bold> In this course, we will NOT talk about this
+              startup investing firm.{' '}
               <Highlight>
                 Y Combinator is actually the name of{' '}
                 <Bold>an interesting concept in computer science</Bold>, and
@@ -305,8 +238,8 @@ export default () => (
               ]}
             />
             <P>
-              <Emoji>👨🏻‍🦳</Emoji> <Bold>Explanation of the above quote:</Bold>{' '}
-              Paul Graham, a computer scientist,{' '}
+              <Bold>Explanation of the above quote:</Bold> Paul Graham, a
+              computer scientist,{' '}
               <Highlight>
                 wanted to invest in entrepreneurs who are also programmers (“
                 <Bold>hackers</Bold>” <Emoji>😎</Emoji>)
@@ -316,61 +249,28 @@ export default () => (
               hackers.
             </P>
             <P>
-              And because Y Combinator is a very technical concept,{' '}
-              <Highlight>
-                he assumed businesspeople (“<Bold>suits</Bold>”{' '}
-                <Emoji>👔</Emoji>) won’t understand what it means
-              </Highlight>{' '}
-              and therefore won’t be attracted.
+              And because Y Combinator is a very technical concept, he assumed
+              businesspeople (“<Bold>suits</Bold>” <Emoji>👔</Emoji>) won’t
+              understand what it means and therefore won’t be attracted.
             </P>
-            <EmojiSeparator
-              emojis={['😎', '🆚', '👔']}
-              description={
-                <>
-                  <Bold>Hackers vs Suits:</Bold>
-                  <br />
-                  To attract programmers
-                  <br />
-                  but not businesspeople,
-                  <br />
-                  Paul Graham named his investing firm
-                  <br />
-                  “Y Combinator”
-                </>
-              }
-            />
             <P>
-              <Emoji>😉</Emoji> <Bold>But don’t worry:</Bold>{' '}
+              <Bold>But don’t worry:</Bold>{' '}
               <Highlight>
                 Even if you have no programming background, by the time you
                 finish this course, you’ll understand what Y Combinator is.
-              </Highlight>
+              </Highlight>{' '}
+              <Emoji>😉</Emoji>
             </P>
             <P>Let’s now talk about this course!</P>
           </>
-        ),
-        footer: {
-          content: (
-            <>
-              <P>
-                <Bold>If you just want to get started:</Bold> Press the button
-                below to go to the next page!
-              </P>
-              <NextLessonButton />
-              <P>
-                <Bold>Or,</Bold> if you want to keep reading the introduction,
-                scroll down below!
-              </P>
-            </>
-          )
-        }
+        )
       },
       {
         title: <>Why teach Y Combinator for non-programmers?</>,
         content: (
           <>
             <P>
-              <Emoji>🤔</Emoji> <Bold>You might be wondering:</Bold>{' '}
+              <Bold>You might be wondering:</Bold>{' '}
               <Highlight>
                 Why did I decide to teach Y Combinator for non-programmers?
               </Highlight>{' '}
@@ -396,9 +296,8 @@ export default () => (
               </Italic>
             </P>
             <P>
-              <Bold>So:</Bold>{' '}
-              <Highlight>From a non-programmer’s point of view,</Highlight> by
-              taking this course,{' '}
+              So, <Highlight>from a non-programmer’s point of view,</Highlight>{' '}
+              by taking this course,{' '}
               <Highlight>
                 they can learn one of the coolest ideas in computer science as
                 quickly as possible
@@ -421,84 +320,33 @@ export default () => (
                 </>
               }
             />
-            <P>But that’s not the only reason.</P>
             <P>
-              <Bold>Y Combinator is a difficult concept.</Bold> If you ask a
-              random programmer in San Francisco to write the Y Combinator
-              program without looking it up,{' '}
-              <Highlight>I bet 95% of them won’t be able to do it.</Highlight>{' '}
-              It’s not easy.
-            </P>
-            <EmojiSeparator
-              emojis={['❌', '😭', '❌']}
-              description={
-                <>
-                  Most programmers won’t be able to
-                  <br />
-                  write the Y Combinator program
-                  <br />
-                  without looking it up
-                </>
-              }
-            />
-            <P>
-              <Emoji>🤔</Emoji> <Bold>So I thought:</Bold> If I could teach Y
-              Combinator to non-programmers, that means{' '}
-              <Highlight>
-                I’d be able to teach{' '}
-                <Italic>other difficult computer science concepts</Italic> to
-                non-programmers too.
-              </Highlight>
-            </P>
-            <P>
-              <Bold>And that’s important because…</Bold> I know that{' '}
+              <Bold>Second:</Bold> I know that{' '}
               <Highlight>
                 many of my non-programmer friends want to{' '}
-                <Italic>actually understand</Italic> difficult computer science
-                concepts
+                <Italic>actually understand</Italic> computer science concepts
               </Highlight>
-              , such as AI or blockchain. They <Italic>genuinely</Italic> want
-              to understand how modern software works (thanks to the latest tech
-              bubble).
+              , such as AI or blockchain. However, they can’t learn them because{' '}
+              they don’t have the necessary programming knowledge . Pretty much
+              all learning resources that teach computer science concepts{' '}
+              <Italic>assume</Italic> that you know programming.
             </P>
-            <EmojiSeparator
-              emojis={['🤔', '💭', '🤖']}
-              description={
-                <>
-                  Many non-programmers are
-                  <br />
-                  curious about how modern software works
-                </>
-              }
-            />
             <P>
-              But they can’t learn it because{' '}
+              So{' '}
               <Highlight>
-                they don’t have the necessary programming knowledge
-              </Highlight>
-              . Pretty much all learning resources that teach difficult computer
-              science concepts <Italic>assume</Italic> that you know
-              programming.
-            </P>
-            <Hr />
-            <P>
-              <Emoji>😠</Emoji> <Bold>I want to change this.</Bold>{' '}
-              <Highlight>
-                I want to make it easier for non-programmers to learn difficult
-                computer science concepts as quickly as possible
+                I want to make it easier for non-programmers to learn computer
+                science concepts as quickly as possible
               </Highlight>
               —without having to learn to code. This course is my first step in
               this direction.
             </P>
             <EmojiSeparator
-              emojis={['🙂', '✨', '🙂']}
+              nodes={[<Emoji>✨</Emoji>, <Emoji>🤗</Emoji>, <Emoji>✨</Emoji>]}
               description={
                 <>
-                  I want to make it easier for
+                  Non-programmers should be able to learn
                   <br />
-                  non-programmers to learn
-                  <br />
-                  difficult computer science concepts
+                  computer science without having learn to code
                 </>
               }
             />
@@ -512,9 +360,8 @@ export default () => (
               introduction to computer science.
             </P>
             <P>
-              The ideal way to teach computer science would be to{' '}
-              <Highlight>teach programming first.</Highlight> However, learning
-              to code takes time, and{' '}
+              The ideal way to teach computer science would be to teach
+              programming first. However, learning to code takes time, and{' '}
               <Highlight>
                 most people—especially adults—won’t ever learn to code.
               </Highlight>{' '}
@@ -524,94 +371,6 @@ export default () => (
               </ExternalLink>
               , I believe there need to be more ways to teach computer science
               without requiring programming knowledge.
-            </P>
-          </>
-        )
-      },
-      {
-        title: <>How to teach Y Combinator for non-programmers</>,
-        content: (
-          <>
-            <P>Now, how am I going to teach Y Combinator on this course?</P>
-            <P>
-              <Bold>Puzzles, not programming:</Bold> In this course, I will
-              teach you Y Combinator using{' '}
-              <HighlightBold>puzzles</HighlightBold>. There’s no programming
-              involved.
-            </P>
-            <EmojiSeparator
-              emojis={['✨', '🧩', '✨']}
-              description={
-                <>
-                  Learn Y Combinator using puzzles.
-                  <br />
-                  No programming required!
-                </>
-              }
-            />
-            <P>
-              <Bold>The puzzles look like this:</Bold> I’ll explain how this
-              puzzle works on the next page, but for now,{' '}
-              <Highlight>
-                try pressing the <H args={{ name: 'run' }} /> button.
-              </Highlight>{' '}
-              It will calculate <EmojiNumber number={1} /> <Emoji>➕</Emoji>{' '}
-              <EmojiNumber number={1} />.
-            </P>
-            <R.Mcug>
-              You’ll be solving puzzles like this:
-              <br />
-              Try pressing <H args={{ name: 'run' }} />!
-            </R.Mcug>
-            <P>
-              <Bold>Eventually,</Bold> you’ll be solving complex puzzles that
-              involve <Bold>emojis</Bold> like below. Again,{' '}
-              <Highlight>
-                try pressing <H args={{ name: 'run' }} /> and see what happens:
-              </Highlight>
-            </P>
-            <R.Beiz />
-            <Hr />
-            <P>
-              <Bold>Also:</Bold> These puzzles are{' '}
-              <Highlight>
-                optimized for <Emoji>📱</Emoji> smartphones
-              </Highlight>
-              . A lot of “learn to code” resources are either (1){' '}
-              <Italic>great, but not smartphone-ready</Italic> or (2){' '}
-              <Italic>smartphone-ready, but not great.</Italic> I tried to make
-              something that’s{' '}
-              <Highlight>
-                <Italic>great and smartphone-ready</Italic>
-              </Highlight>
-              . <Emoji>😉</Emoji>
-            </P>
-            <EmojiSeparator
-              emojis={['📱', '🧩', '💻']}
-              description={
-                <>
-                  The puzzles are optimized for smartphones.
-                  <br />
-                  They can be done on a computer too
-                </>
-              }
-            />
-            <P>
-              <Bold>100% FREE, takes 2 to 3 hours:</Bold> Finally, this course
-              is <HighlightBold>100% FREE</HighlightBold> (no signup required)
-              and should take about <HighlightBold>2 to 3 hours</HighlightBold>{' '}
-              to read for most people.
-            </P>
-            <EmojiSeparator
-              emojis={['🆓', '🤗', '🆓']}
-              description={<>100% FREE!</>}
-            />
-            <P>
-              I had to pack a lot of materials so it can be read in under 3
-              hours, so <Highlight>it’s fast-paced and challenging.</Highlight>{' '}
-              However, <Highlight>you’ll never get stuck</Highlight>—I made it
-              so that you can finish the course even if you don’t understand
-              everything (and that’s okay! <Emoji>🤗</Emoji>).
             </P>
           </>
         ),
@@ -624,26 +383,22 @@ export default () => (
                   <>
                     <P>
                       <Bold>For programmers:</Bold> This course is optimized for
-                      non-programmers,{' '}
-                      <Highlight>
-                        so if you’re a programmer and want to learn about Y
-                        Combinator, there are other better resources.
-                      </Highlight>{' '}
-                      Press “Continue reading” below to learn more.
+                      non-programmers, so if you’re a programmer and want to
+                      learn about Y Combinator, there are other better
+                      resources. Press “Continue reading” below to learn more.
                     </P>
                   </>
-                ),
-                afterText: <StarOnGitHub />
+                )
               }}
             >
               <Hr />
               <P>
-                <Bold>
-                  For programmers interested in learning about Y Combinator, I
-                  recommend this video:
-                </Bold>{' '}
+                For programmers interested in learning about Y Combinator, I
+                recommend this video:{' '}
                 <ExternalLink href="https://www.youtube.com/watch?v=FITJMJjASUs">
-                  “Y Not- Adventures in Functional Programming”
+                  <HighlightBold>
+                    “Y Not- Adventures in Functional Programming”
+                  </HighlightBold>
                 </ExternalLink>
                 .
               </P>
@@ -662,7 +417,14 @@ export default () => (
                 src="https://www.youtube.com/embed/FITJMJjASUs"
               />
               <Hr />
-              <StarOnGitHub />
+              <P>
+                <Bold>Also, for programmers:</Bold> This course is written in
+                TypeScript and React, and{' '}
+                <ExternalLink href={githubRepo}>
+                  the source is available on GitHub
+                </ExternalLink>
+                . Please ★ star it! <Emoji>😉</Emoji>
+              </P>
             </CardContent>
           )
         }
@@ -671,9 +433,24 @@ export default () => (
         title: <>Let’s get started!</>,
         content: (
           <>
-            <EmojiSeparator emojis={['✨', '🙂', '✨']} />
             <P>
-              <Bold>Let’s get started!</Bold>{' '}
+              In this course, I will teach you Y Combinator using{' '}
+              <HighlightBold>puzzles</HighlightBold>. There’s no programming
+              involved.
+            </P>
+            <EmojiSeparator
+              emojis={['✨', '🧩', '✨']}
+              description={
+                <>
+                  Learn Y Combinator using puzzles.
+                  <br />
+                  No programming involved!
+                </>
+              }
+            />
+            <P>
+              <Bold>Let’s get started</Bold> and take a look at what the puzzles
+              look like.{' '}
               <Highlight>
                 Press the button below to go to the next page!
               </Highlight>
