@@ -462,7 +462,7 @@ export default () => (
           content: (
             <>
               <P>Also, sorry for not introducing myself earlier…</P>
-              <H args={{ name: 'aboutMe' }} />
+              <H args={{ name: 'aboutMe', hideNextPageButton: true }} />
             </>
           )
         }

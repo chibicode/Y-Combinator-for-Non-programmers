@@ -154,15 +154,13 @@ const EpisodeCardList = ({
                     ? {
                         content: (
                           <>
-                            <H args={{ name: 'aboutMe' }} />
-                            {episodeNumber <= numEpisodesExceptFirstAndLast && (
-                              <>
-                                <P>
-                                  To go to the next page, press this button:
-                                </P>
-                                <NextLessonButton />
-                              </>
-                            )}
+                            <H
+                              args={{
+                                name: 'aboutMe',
+                                hideNextPageButton:
+                                  episodeNumber > numEpisodesExceptFirstAndLast
+                              }}
+                            />
                           </>
                         )
                       }
