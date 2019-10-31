@@ -957,14 +957,12 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
       const question = (
         <>
           <P>
-            <Bold>If you have a question or a comment about this course:</Bold>{' '}
-            <Highlight>
-              Please reply to the above tweet with a screenshot, or email me at{' '}
-              <ExternalLink href="mailto:shu@chibicode.com">
-                shu@chibicode.com
-              </ExternalLink>
-              .
-            </Highlight>
+            <Bold>If you have a question or a comment:</Bold> Please reply to
+            the above tweet with a screenshot, or email me at{' '}
+            <ExternalLink href="mailto:shu@chibicode.com">
+              shu@chibicode.com
+            </ExternalLink>
+            .
           </P>
           <P>
             <Bold>If you’re a programmer:</Bold>
@@ -980,20 +978,16 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
             <UlLi>
               I’d also appreciate it if you could{' '}
               <ExternalLink href="https://github.com/chibicode/ycombinator/">
-                <Highlight>★ star the repo</Highlight>
+                ★ star the repo
               </ExternalLink>
               . <Emoji>😉</Emoji>
             </UlLi>
             <UlLi>
-              And please{' '}
-              <Highlight>
-                discuss this on <Bold>Hacker News</Bold> (
-                <ExternalLink href="https://news.ycombinator.com/item?id=21399025">
-                  the discussion thread URL is here
-                </ExternalLink>
-                )!
-              </Highlight>{' '}
-              <Emoji>😎</Emoji>
+              You can{' '}
+              <ExternalLink href="https://news.ycombinator.com/item?id=21399025">
+                discuss this on <Bold>Hacker News</Bold>
+              </ExternalLink>
+              . <Emoji>😎</Emoji>
             </UlLi>
           </Ul>
           <Hr />

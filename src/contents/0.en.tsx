@@ -52,26 +52,15 @@ export default () => (
               , one of the coolest ideas in computer science.
             </P>
             <P>
-              <Emoji>🆓</Emoji> This course is{' '}
-              <HighlightBold>100% FREE</HighlightBold> (no signup required), and
-              you can do it from your smartphone, tablet, or computer.
+              This course is <HighlightBold>free</HighlightBold> (no signup
+              required), and you can do it from your <Emoji>📱</Emoji>{' '}
+              smartphone or <Emoji>💻</Emoji> computer.
             </P>
-            <EmojiSeparator
-              emojis={['📱', '🆓', '💻']}
-              description={
-                <>
-                  It’s <HighlightBold>100% FREE</HighlightBold>, and you can do
-                  it from
-                  <br />
-                  your smartphone, tablet, or computer
-                </>
-              }
-            />
             <P>
               <Emoji>🍱</Emoji> <Bold>Quick demo:</Bold> In this course, you’ll
               learn computer science concepts by{' '}
               <Highlight>
-                solving <Bold>emoji puzzles</Bold>—no coding required
+                solving <Bold>puzzles</Bold>—no coding required
               </Highlight>
               . Here’s a quick demo. I’ll explain how this puzzle works later,
               but for now,{' '}
@@ -79,10 +68,21 @@ export default () => (
                 try pressing <H args={{ name: 'run' }} /> and see what happens:
               </Highlight>
             </P>
-            <R.Wunw />
+            <R.Mcug>
+              You’ll see puzzles like this:
+              <br />
+              Try pressing <H args={{ name: 'run' }} />!
+            </R.Mcug>
+          </>
+        )
+      },
+      {
+        type: 'meta',
+        title: <>Table of Contents</>,
+        content: (
+          <>
             <P>
-              <CustomEmoji type="index" /> <Bold>Roadmap:</Bold> This course
-              consists of{' '}
+              This course consists of{' '}
               <Bold>
                 <H
                   args={{
@@ -115,53 +115,9 @@ export default () => (
               . It should take about <HighlightBold>2 to 3 hours</HighlightBold>{' '}
               to read for most people.
             </P>
-            <EmojiSeparator
-              emojis={['📗', '📘', '📕']}
-              description={
-                <>
-                  <Bold>
-                    <H
-                      args={{
-                        name: 'categoryNameColored',
-                        category: 'beginner',
-                        text: <>5 beginner levels</>
-                      }}
-                    />
-                  </Bold>
-                  ,{' '}
-                  <Bold>
-                    <H
-                      args={{
-                        name: 'categoryNameColored',
-                        category: 'intermediate',
-                        text: <>5 intermediate levels</>
-                      }}
-                    />
-                  </Bold>
-                  ,<br />
-                  and{' '}
-                  <Bold>
-                    <H
-                      args={{
-                        name: 'categoryNameColored',
-                        category: 'advanced',
-                        text: <>5 advanced levels</>
-                      }}
-                    />
-                  </Bold>
-                </>
-              }
-            />
-            <Hr />
-            <CardContent
-              preview={{
-                text: <>Press here to view the table of contents.</>
-              }}
-            >
-              <Bold>Table of Contents:</Bold> Press each title below to jump to
-              that page.
-              <Toc />
-            </CardContent>
+            <EmojiSeparator emojis={['📗', '📘', '📕']} />
+            <P>↓ Press each title to jump to that page.</P>
+            <Toc />
           </>
         ),
         footer: {
