@@ -62,7 +62,7 @@ export default () => (
               </Highlight>
             </P>
             <ReproducePlusOne />
-            <P>That’s it for the quick review. Let’s continue!</P>
+            <P>That’s it for the quick review. Let’s continue.</P>
           </>
         )
       },
@@ -174,7 +174,7 @@ export default () => (
                   type: 'saya',
                   children: (
                     <>
-                      <P>Let’s run it to check!</P>
+                      <P>Let’s run it to check.</P>
                     </>
                   )
                 }
@@ -418,7 +418,7 @@ export default () => (
                   type: 'dog',
                   children: (
                     <>
-                      <P>Let me use a simple example to explain!</P>
+                      <P>Let me use a simple example to explain.</P>
                     </>
                   )
                 }
@@ -473,7 +473,7 @@ export default () => (
                           </Highlight>
                         </UlLi>
                       </Ul>
-                      <P>Let’s see what happens to each lunchbox!</P>
+                      <P>Let’s see what happens to each lunchbox.</P>
                     </>
                   )
                 }
@@ -551,7 +551,7 @@ export default () => (
                       <P>
                         <Highlight>
                           The bottom two are different on the left, but they’re
-                          the same on the right!
+                          the same on the right.
                         </Highlight>
                       </P>
                     </>
@@ -717,7 +717,7 @@ export default () => (
             <EmojiSeparator
               nodes={[
                 <EmojiForLetter letter="c" />,
-                <Emoji>🆚</Emoji>,
+                <CustomEmoji type="doubleArrow" />,
                 <EmojiForLetter letter="d" />
               ]}
               description={<>The result changes</>}
@@ -785,7 +785,7 @@ export default () => (
                   type: 'saya',
                   children: (
                     <>
-                      <P>Let’s not give up! I think there’s a way.</P>
+                      <P>Let’s not give up. I think there’s a way.</P>
                     </>
                   )
                 },
@@ -893,7 +893,7 @@ export default () => (
                   type: 'dog',
                   children: (
                     <>
-                      <P>Sure, that’s fine!</P>
+                      <P>Sure, that’s fine.</P>
                     </>
                   )
                 },
@@ -1089,7 +1089,7 @@ export default () => (
                       <P>
                         <Highlight>
                           <EmojiForLetter size="mdlg" letter="b" /> on the top
-                          became <EmojiForLetter size="mdlg" letter="e" />!
+                          became <EmojiForLetter size="mdlg" letter="e" />.
                         </Highlight>
                       </P>
                       <P>
@@ -1103,7 +1103,7 @@ export default () => (
                           inline
                           bottomRightBadgeType="funcUnbound"
                         />{' '}
-                        no longer overlap now!
+                        no longer overlap now.
                       </P>
                     </>
                   )
@@ -1113,7 +1113,7 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        Yes. Let’s continue then!{' '}
+                        Yes. Let’s continue then.{' '}
                         <H args={{ name: 'pressRun' }} />
                       </P>
                     </>
@@ -1130,7 +1130,7 @@ export default () => (
                     <>
                       <P>
                         Yay! It became a lunchbox that can be converted to{' '}
-                        <EmojiNumber number={2} />!
+                        <EmojiNumber number={2} />.
                       </P>
                     </>
                   )
@@ -1153,7 +1153,7 @@ export default () => (
                       <P>
                         That means it calculated <EmojiNumber number={1} />{' '}
                         <Emoji>➕</Emoji> <EmojiNumber number={1} />{' '}
-                        successfully! <Emoji>🎉</Emoji>
+                        successfully. <Emoji>🎉</Emoji>
                       </P>
                     </>
                   )
@@ -1162,7 +1162,7 @@ export default () => (
                   type: 'dog',
                   children: (
                     <>
-                      <P>Yes. Let’s summarize what we just did!</P>
+                      <P>Yes. Let’s summarize what we just did.</P>
                     </>
                   )
                 }
@@ -1306,7 +1306,7 @@ export default () => (
                     <>
                       <P>
                         <Bold>Anyway:</Bold> We figured out how to reproduce{' '}
-                        <H args={{ name: 'plusOneFeature' }} />!
+                        <H args={{ name: 'plusOneFeature' }} />.
                       </P>
                       <P>As you promised, give us our mathboxes back!</P>
                     </>
@@ -1316,7 +1316,7 @@ export default () => (
                   type: 'devil',
                   children: (
                     <>
-                      <P>Grr…!</P>
+                      <P>Grr…</P>
                     </>
                   )
                 }
@@ -1324,7 +1324,7 @@ export default () => (
             />
             <P>
               Will the villagers get their mathboxes back? Let’s see on the next
-              page!
+              page.
             </P>
             <NextLessonButton />
           </>

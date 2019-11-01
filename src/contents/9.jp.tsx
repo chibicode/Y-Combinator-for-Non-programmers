@@ -683,7 +683,7 @@ export default () => (
             <EmojiSeparator
               nodes={[
                 <EmojiForLetter letter="c" />,
-                <Emoji>🆚</Emoji>,
+                <CustomEmoji type="doubleArrow" />,
                 <EmojiForLetter letter="d" />
               ]}
               description={
