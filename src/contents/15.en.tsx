@@ -32,13 +32,13 @@ export default () => (
           <>
             <P>
               <Highlight>
-                This is the final page for the advanced levels!
+                This is the final page for the advanced levels.
               </Highlight>{' '}
-              You’re almost there!
+              You’re almost done.
             </P>
             <EmojiSeparator
               emojis={['✨', '🤗', '✨']}
-              description={<>You’re almost there!</>}
+              description={<>You’re almost done</>}
             />
           </>
         )
@@ -57,7 +57,7 @@ export default () => (
                         As promised,{' '}
                         <Highlight>
                           I will return <H args={{ name: 'repeatFeature' }} />{' '}
-                          to you!
+                          to you.
                         </Highlight>
                       </P>
                     </>
@@ -71,7 +71,7 @@ export default () => (
                 <>
                   I will return
                   <br />
-                  <H args={{ name: 'repeatFeature' }} /> to you!
+                  <H args={{ name: 'repeatFeature' }} /> to you
                 </>
               }
             />
@@ -106,7 +106,7 @@ export default () => (
                     <>
                       <P>
                         Finally, we can use mathboxes to do additions and
-                        subtractions!
+                        subtractions.
                       </P>
                     </>
                   )
@@ -164,24 +164,11 @@ export default () => (
                           I still have an important thing I haven’t told you
                           about.
                         </Highlight>{' '}
-                        Let’s talk about it now!
+                        Let’s talk about it now.
                       </P>
                     </>
                   )
-                }
-              ]}
-            />
-            <EmojiSeparator
-              emojis={['❓', '😈', '❓']}
-              description={
-                <>
-                  I still have an important thing
-                  <br />I haven’t told you about!
-                </>
-              }
-            />
-            <BubbleQuotes
-              quotes={[
+                },
                 {
                   type: 'roll',
                   children: (
@@ -237,7 +224,7 @@ export default () => (
                           Try filling each of{' '}
                           <CustomEmoji type="blankNumberPurple" /> and{' '}
                           <CustomEmoji type="blankNumberPink" /> with a random
-                          number!
+                          number.
                         </Highlight>
                       </P>
                     </>
@@ -327,7 +314,7 @@ export default () => (
                     <>
                       <P>
                         Ok, let’s see what happens when you{' '}
-                        <H args={{ name: 'run', lowerCase: true }} /> it!
+                        <H args={{ name: 'run', lowerCase: true }} /> it.
                       </P>
                     </>
                   )
@@ -346,12 +333,12 @@ export default () => (
         content: (
           <>
             <P>
-              Let’s <H args={{ name: 'run', lowerCase: true }} /> it!
+              Let’s <H args={{ name: 'run', lowerCase: true }} /> it.
             </P>
             <Ul>
               <UlLi>
                 <Highlight>
-                  It’s complicated, so you don’t need to follow all the steps!
+                  It’s complicated, so you don’t need to follow all the steps.
                 </Highlight>{' '}
                 Save your eyes!
               </UlLi>
@@ -373,7 +360,7 @@ export default () => (
                       <P>
                         It became this lunchbox{' '}
                         <Highlight>
-                          that can be converted to <EmojiNumber number={5} />!
+                          that can be converted to <EmojiNumber number={5} />.
                         </Highlight>
                       </P>
                       <R.Xkcm>
@@ -527,7 +514,7 @@ export default () => (
                           <Emoji>➕</Emoji>,
                           <CustomEmoji type="blankNumberPink" />
                         ]}
-                        description={<>It can add two numbers!</>}
+                        description={<>It can add two numbers</>}
                       />
                     </>
                   )
@@ -634,7 +621,7 @@ export default () => (
                     <>
                       <P>
                         Ok, let’s <H args={{ name: 'run', lowerCase: true }} />{' '}
-                        it!
+                        it.
                       </P>
                       <P>
                         This one takes time, so if you can’t wait, press{' '}
@@ -658,7 +645,7 @@ export default () => (
                       <P>
                         It became a lunchbox{' '}
                         <Highlight>
-                          that can be converted to <EmojiNumber number={6} />!
+                          that can be converted to <EmojiNumber number={6} />.
                         </Highlight>
                       </P>
                       <R.Edzu>
@@ -786,7 +773,7 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        So, it’s a lunchbox that can calculate multiplication.
+                        So, it’s a lunchbox that can calculate multiplications.
                       </P>
                     </>
                   )
@@ -799,7 +786,7 @@ export default () => (
                 <Emoji>✖️</Emoji>,
                 <CustomEmoji type="blankNumberPink" />
               ]}
-              description={<>It can calculate multiplication!</>}
+              description={<>It can calculate multiplications</>}
             />
           </>
         )
@@ -811,27 +798,11 @@ export default () => (
             <BubbleQuotes
               quotes={[
                 {
-                  type: 'surprised',
-                  children: (
-                    <>
-                      <P>
-                        <Bold>This is amazing!</Bold>{' '}
-                        <CustomEmoji type="mathBox" /> Mathboxes could only do
-                        additions and subtractions, but{' '}
-                        <Highlight>
-                          <Emoji>🍱</Emoji> lunchboxes can do multiplications!
-                        </Highlight>
-                      </P>
-                    </>
-                  )
-                },
-                {
                   type: 'devil',
                   children: (
                     <>
                       <P>
-                        Yeah. By the way, we don’t have time to explain this,
-                        but{' '}
+                        By the way, we don’t have time to explain this, but{' '}
                         <Highlight>
                           lunchboxes can also do <Bold>subtractions</Bold> and{' '}
                           <Bold>divisions</Bold> of two numbers.
@@ -864,16 +835,16 @@ export default () => (
       },
       {
         type: 'summary',
-        title: <>This is the final topic!</>,
+        title: <>Next up: The final topic!</>,
         content: (
           <>
             <P>
               What’s coming up next is the final topic we’ll cover. You’re so
-              close to the finish!
+              close to the finish.
             </P>
             <EmojiSeparator
               emojis={['✨', '🤗', '✨']}
-              description={<>You’re so close to the finish!</>}
+              description={<>You’re so close to the finish</>}
             />
           </>
         )
@@ -1394,7 +1365,7 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        Let’s <H args={{ name: 'run', lowerCase: true }} /> it!
+                        Let’s <H args={{ name: 'run', lowerCase: true }} /> it.
                       </P>
                       <Ul>
                         <UlLi>
@@ -1444,7 +1415,7 @@ export default () => (
                       <P>
                         It became <EmojiNumber number={3} /> <Emoji>✖️</Emoji>{' '}
                         <EmojiNumber number={2} /> <Emoji>✖️</Emoji>{' '}
-                        <EmojiNumber number={1} />!
+                        <EmojiNumber number={1} />.
                       </P>
                     </>
                   )
@@ -1459,7 +1430,7 @@ export default () => (
                       </P>
                       <P>
                         Let’s <H args={{ name: 'run', lowerCase: true }} />{' '}
-                        until the end!
+                        until the end.
                       </P>
                     </>
                   )
@@ -1561,7 +1532,7 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        Let’s <H args={{ name: 'run', lowerCase: true }} /> it!
+                        Let’s <H args={{ name: 'run', lowerCase: true }} /> it.
                       </P>
                     </>
                   )
@@ -1576,7 +1547,7 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        It became <EmojiNumber number={24} />!
+                        It became <EmojiNumber number={24} />.
                       </P>
                     </>
                   )
@@ -1786,7 +1757,7 @@ export default () => (
                 <>
                   Lunchboxes are more powerful
                   <br />
-                  than mathboxes!
+                  than mathboxes
                 </>
               }
             />
@@ -1811,11 +1782,11 @@ export default () => (
                     <>
                       <P>
                         That’s a very good question. Let’s talk about it on the
-                        next page!
+                        next page.
                       </P>
                       <P>
                         <Bold>The next page is the final page:</Bold>{' '}
-                        <Highlight>Epilogue!</Highlight>
+                        <Highlight>Epilogue.</Highlight>
                       </P>
                     </>
                   )
