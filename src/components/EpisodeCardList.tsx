@@ -11,7 +11,6 @@ import H from 'src/components/H'
 import { P } from 'src/components/ContentTags'
 import { shareVisible } from 'src/lib/twitter'
 import NextLessonButton from 'src/components/NextLessonButton'
-import EmojiSeparator from 'src/components/EmojiSeparator'
 import { spaces, fontSizes } from 'src/lib/theme'
 import EpisodeContext from 'src/components/EpisodeContext'
 import PrevNextLinks from 'src/components/PrevNextLinks'
@@ -32,13 +31,11 @@ export type EpisodeCardListType = readonly EpisodeCardType[]
 const EpisodeCardList = ({
   cards,
   notFound,
-  demo,
-  underConstruction
+  demo
 }: {
   cards: EpisodeCardListType
   notFound: boolean
   demo: boolean
-  underConstruction?: boolean
 }) => {
   const { episodeNumber } = useContext(EpisodeContext)
   const { lastVisibleCardIndex, setLastVisibleCardIndex } = useConditionalCards(
@@ -49,22 +46,6 @@ const EpisodeCardList = ({
       <EpisodePageInitialRenderWarning />
       <EpisodeHero demo={demo} notFound={notFound} />
       <>
-        {underConstruction && (
-          <CardWrapper
-            type="summary"
-            isLast={cards.length === 0}
-            title={
-              <>
-                <H args={{ name: 'pageUnderConstructionTitle' }} />
-              </>
-            }
-          >
-            <P>
-              <H args={{ name: 'pageUnderConstruction' }} />
-            </P>
-            <EmojiSeparator emojis={['⚠️', '⚠️', '⚠️']} />
-          </CardWrapper>
-        )}
         {cards.map(({ title, type, content, preview, footer }, index) =>
           index <= lastVisibleCardIndex ? (
             <CardWrapper

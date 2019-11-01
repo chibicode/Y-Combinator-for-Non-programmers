@@ -99,8 +99,6 @@ interface HProps {
     | { name: 'toc' }
     | { name: 'tocClose' }
     | { name: 'yesNoQuizDontWorry' }
-    | { name: 'pageUnderConstruction' }
-    | { name: 'pageUnderConstructionTitle' }
     | { name: 'question' }
     | { name: 'whatHappensAtTheEndQuestion' }
     | { name: 'lookAtThisLunchBox'; lowerCase?: true }
@@ -657,24 +655,6 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
           適当に勘で答えてみてください。
         </>
       )
-    }
-  }
-  if (args.name === 'pageUnderConstruction') {
-    if (locale === 'en') {
-      return (
-        <>
-          <Bold>Sorry!</Bold> This page is under construction.
-        </>
-      )
-    } else {
-      return <>このページは現在工事中です。</>
-    }
-  }
-  if (args.name === 'pageUnderConstructionTitle') {
-    if (locale === 'en') {
-      return <>Under Construction</>
-    } else {
-      return <>工事中</>
     }
   }
   if (args.name === 'match') {
