@@ -175,7 +175,7 @@ export default () => (
             />
             <P>
               Looks like the villagers have figured out the patterns for{' '}
-              <H args={{ name: 'lunchBoxPuzzle' }} />!
+              <H args={{ name: 'lunchBoxPuzzle' }} />.
             </P>
             <BubbleQuotes
               quotes={[
@@ -191,7 +191,7 @@ export default () => (
                   type: 'devil',
                   children: (
                     <>
-                      <P>Really? Then explain to me!</P>
+                      <P>Really? Then explain to me.</P>
                     </>
                   )
                 }
@@ -360,7 +360,7 @@ export default () => (
                   type: 'happy',
                   children: (
                     <>
-                      <P>This has to be the solution! Am I correct?</P>
+                      <P>This has to be the solution. Am I correct?</P>
                     </>
                   )
                 }
@@ -384,7 +384,7 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        <Bold>You’re exactly right!</Bold> Good job!{' '}
+                        <Bold>You’re exactly right.</Bold> Good job!{' '}
                         <Emoji>🎉</Emoji> <Emoji>🎉</Emoji> <Emoji>🎉</Emoji>
                       </P>
                     </>
@@ -543,7 +543,7 @@ export default () => (
                     <>
                       <P>
                         Okay… show me what the <Italic>formal rules</Italic>{' '}
-                        look like!
+                        look like.
                       </P>
                     </>
                   )
@@ -585,7 +585,7 @@ export default () => (
                   type: 'devil',
                   children: (
                     <>
-                      <P>Now, let’s talk about each step!</P>
+                      <P>Now, let’s talk about each step.</P>
                     </>
                   )
                 }
@@ -679,7 +679,7 @@ export default () => (
                           inline
                           bottomRightBadgeType="funcBound"
                         />
-                        !
+                        .
                       </P>
                     </>
                   )
@@ -740,7 +740,7 @@ export default () => (
                           inline
                           bottomRightBadgeType="funcBound"
                         />{' '}
-                        now have a <Emoji>✅</Emoji> sign!
+                        now have a <Emoji>✅</Emoji> sign.
                       </P>
                     </>
                   )
@@ -806,7 +806,7 @@ export default () => (
                           inline
                           bottomRightBadgeType="funcBound"
                         />{' '}
-                        is!
+                        is.
                       </P>
                     </>
                   )
@@ -865,7 +865,7 @@ export default () => (
                           inline
                           bottomRightBadgeType="funcArg"
                         />
-                        ’s have turned into <Emoji>💥</Emoji>!
+                        ’s have turned into <Emoji>💥</Emoji>.
                       </P>
                     </>
                   )
@@ -1018,7 +1018,7 @@ export default () => (
                   type: 'surprised',
                   children: (
                     <>
-                      <P>I see, now I understand everything clearly!</P>
+                      <P>I see, now I understand everything clearly.</P>
                     </>
                   )
                 },
@@ -1176,7 +1176,7 @@ export default () => (
                 <>
                   Let’s see all the steps
                   <br />
-                  from the beginning to the end!
+                  from the beginning to the end
                 </>
               }
             />
@@ -1273,7 +1273,7 @@ export default () => (
                       </P>
                       <P>
                         If you want your mathboxes back, you better solve all of
-                        them!
+                        them.
                       </P>
                     </>
                   )

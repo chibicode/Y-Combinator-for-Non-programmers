@@ -48,7 +48,7 @@ const WillReturnQuote = ({ covered }: { covered?: true }) => (
     </Ul>
     <P>
       <Highlight>
-        I’ll give you the mathboxes back if you solve it!{' '}
+        I’ll give you the mathboxes back if you solve it.{' '}
         <CustomEmoji type="mathBox" />
       </Highlight>
     </P>
@@ -171,7 +171,7 @@ const WillReturn = ({ covered }: { covered?: true }) => (
         <>
           If you can solve it,
           <br />
-          you’ll get your mathboxes back!
+          you’ll get your mathboxes back
         </>
       }
     />
@@ -183,17 +183,13 @@ export default () => (
     cards={[
       {
         type: 'summary',
-        title: <>This is the final beginner level!</>,
+        title: <>This is the final beginner level</>,
         content: (
           <>
             <P>
-              <Bold>This is the final page of the beginner levels.</Bold> Thank
-              you for following along so far!
+              This is the final page of the beginner levels. Thank you for
+              following along so far.
             </P>
-            <EmojiSeparator
-              emojis={['✨', '🤗', '✨']}
-              description={<>The final page of the beginner levels!</>}
-            />
             <P>
               <Emoji>⚠️</Emoji> <Bold>Warning:</Bold>{' '}
               <H
@@ -224,10 +220,8 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        <Bold>
-                          From now on, you’ll be solving much harder puzzles
-                          like this one:
-                        </Bold>
+                        From now on, you’ll be solving much harder puzzles like
+                        this one:
                       </P>
                     </>
                   )
@@ -316,7 +310,7 @@ export default () => (
                   type: 'devil',
                   children: (
                     <>
-                      <P>I’ll show you!</P>
+                      <P>I’ll show you.</P>
                       <Ol>
                         <OlLi>
                           <Bold>First:</Bold>{' '}
@@ -347,7 +341,7 @@ export default () => (
                   type: 'brave',
                   children: (
                     <>
-                      <P>Ok, sounds good!</P>
+                      <P>Ok, sounds good.</P>
                     </>
                   )
                 }
@@ -410,7 +404,7 @@ export default () => (
                         <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
                         ’s became pink{' '}
                         <InlinePrioritiesLabel revert>1</InlinePrioritiesLabel>
-                        ’s!
+                        ’s.
                       </P>
                       <P>
                         Also, the top row now has a darker color{' '}
@@ -504,7 +498,7 @@ export default () => (
                               inline
                               bottomRightBadgeType="funcUnbound"
                             />{' '}
-                            for the <EmojiWithText letter="b" />!
+                            for the <EmojiWithText letter="b" />.
                           </Italic>
                         </Highlight>
                       </P>
@@ -517,7 +511,7 @@ export default () => (
               There’s a new label{' '}
               <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />
               <br />
-              for the <EmojiWithText letter="b" />!
+              for the <EmojiWithText letter="b" />
             </R.Pbhg>
             <BubbleQuotes
               quotes={[
@@ -680,7 +674,7 @@ export default () => (
                   type: 'smile',
                   children: (
                     <>
-                      <P>Got it. Let’s continue then!</P>
+                      <P>Got it. Let’s continue then.</P>
                     </>
                   )
                 }
@@ -719,9 +713,7 @@ export default () => (
                 </>
               }
             />
-            <P>
-              This will be a review of the last page! <Emoji>😉</Emoji>
-            </P>
+            <P>This will be a review of the last page.</P>
             <P>
               <Bold>First:</Bold> <InstructionTwo />{' '}
               <H args={{ name: 'pressNext' }} />
@@ -827,7 +819,7 @@ export default () => (
                   type: 'surprised',
                   children: (
                     <>
-                      <P>We now hae a simpler lunchbox!</P>
+                      <P>We now have a simpler lunchbox.</P>
                     </>
                   )
                 }
@@ -897,7 +889,7 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        We’re left with a <EmojiWithText letter="c" />!
+                        We’re left with a <EmojiWithText letter="c" />.
                       </P>
                     </>
                   )
@@ -955,13 +947,13 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        Perfect!{' '}
+                        Perfect.{' '}
                         <Highlight>
                           Let’s do a{' '}
                           <Bold>
                             <H args={{ name: 'yesNoQuiz', lowerCase: true }} />
                           </Bold>{' '}
-                          to check your understanding!
+                          to check your understanding.
                         </Highlight>
                       </P>
                     </>
@@ -1054,7 +1046,7 @@ export default () => (
                             lowerCase: true
                           }}
                         />
-                        !
+                        .
                       </P>
                     </>
                   )
@@ -1112,15 +1104,7 @@ export default () => (
                       </P>
                     </>
                   )
-                }
-              ]}
-            />
-            <EmojiSeparator
-              emojis={['❓', '🍱', '❓']}
-              description={<>The additional rules…?</>}
-            />
-            <BubbleQuotes
-              quotes={[
+                },
                 {
                   type: 'devil',
                   children: (
@@ -1236,7 +1220,7 @@ export default () => (
                             lowerCase: true
                           }}
                         />
-                        !
+                        .
                       </P>
                     </>
                   )
@@ -1273,7 +1257,7 @@ export default () => (
                     <>
                       <P>
                         Really? So we’re pretty close to getting our mathboxes
-                        back!
+                        back.
                       </P>
                     </>
                   )
@@ -1285,7 +1269,7 @@ export default () => (
                       <P>
                         <Bold>In that case:</Bold> Let’s finish the rest of this
                         page quickly so we can move on to the intermediate
-                        levels!
+                        levels.
                       </P>
                     </>
                   )
@@ -1496,7 +1480,7 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        We’re left with <EmojiWithText letter="a" />!
+                        We’re left with <EmojiWithText letter="a" />.
                       </P>
                     </>
                   )
@@ -1505,7 +1489,7 @@ export default () => (
                   type: 'devil',
                   children: (
                     <>
-                      <P>Yes. Hope you were following along!</P>
+                      <P>Yes. Hope you were following along.</P>
                       <P>
                         Let’s do a{' '}
                         <H args={{ name: 'yesNoQuiz', lowerCase: true }} /> now.
@@ -1566,7 +1550,7 @@ export default () => (
                       </P>
                       <P>
                         Let’s <H args={{ name: 'run', lowerCase: true }} /> it
-                        to check!
+                        to check.
                       </P>
                     </>
                   )
@@ -1685,6 +1669,10 @@ export default () => (
                         </Highlight>
                         .
                       </P>
+                      <P>
+                        What happens if we start with the pair of{' '}
+                        <InlinePrioritiesLabel>1</InlinePrioritiesLabel>’s?
+                      </P>
                     </>
                   )
                 },
@@ -1693,42 +1681,10 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        Okay…{' '}
+                        If we start with the pair of{' '}
+                        <InlinePrioritiesLabel>1</InlinePrioritiesLabel>’s,{' '}
                         <Highlight>
-                          let’s see what happens if we start with the pair of{' '}
-                          <InlinePrioritiesLabel>1</InlinePrioritiesLabel>’s.
-                        </Highlight>
-                      </P>
-                    </>
-                  )
-                }
-              ]}
-            />
-            <EmojiSeparator
-              nodes={[
-                <InlinePrioritiesLabel>1</InlinePrioritiesLabel>,
-                <Emoji>🤔</Emoji>,
-                <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
-              ]}
-              description={
-                <>
-                  What happens if we start with
-                  <br />
-                  the pair of <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
-                  ’s?
-                </>
-              }
-            />
-            <BubbleQuotes
-              quotes={[
-                {
-                  type: 'thinking',
-                  children: (
-                    <>
-                      <P>
-                        <Bold>I’m wondering:</Bold>{' '}
-                        <Highlight>
-                          <Italic>Which label</Italic> (out of{' '}
+                          <Italic>which label</Italic> (out of{' '}
                           <BottomRightBadge
                             inline
                             bottomRightBadgeType="funcArg"
@@ -1893,7 +1849,7 @@ export default () => (
                     <>
                       <P>
                         We’re left with a <EmojiWithText letter="c" /> and a{' '}
-                        <EmojiWithText letter="b" />!
+                        <EmojiWithText letter="b" />.
                       </P>
                     </>
                   )
@@ -1922,8 +1878,8 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        <Bold>Alright:</Bold> It’s time for another{' '}
-                        <H args={{ name: 'yesNoQuiz' }} />!
+                        Alright, it’s time for another{' '}
+                        <H args={{ name: 'yesNoQuiz' }} />.
                       </P>
                       <P>This will be the last quiz for this page.</P>
                     </>
@@ -1983,7 +1939,7 @@ export default () => (
                       </P>
                       <P>
                         Let’s <H args={{ name: 'run', lowerCase: true }} /> it
-                        to check!
+                        to check.
                       </P>
                     </>
                   )
@@ -2010,7 +1966,7 @@ export default () => (
                             lowerCase: true
                           }}
                         />
-                        !
+                        .
                       </P>
                     </>
                   )
@@ -2069,7 +2025,7 @@ export default () => (
                   type: 'smile',
                   children: (
                     <>
-                      <P>Ok, got it!</P>
+                      <P>Ok, got it.</P>
                     </>
                   )
                 }
@@ -2143,27 +2099,7 @@ export default () => (
                   type: 'brave',
                   children: (
                     <>
-                      <P>
-                        If we solve this difficult question, will you really
-                        give us our mathboxes back?{' '}
-                        <CustomEmoji type="mathBox" />
-                      </P>
-                    </>
-                  )
-                },
-                {
-                  type: 'devil',
-                  children: (
-                    <>
-                      <P>Of course, I will.</P>
-                    </>
-                  )
-                },
-                {
-                  type: 'brave',
-                  children: (
-                    <>
-                      <P>Alright then! Let’s proceed to the next page!</P>
+                      <P>Alright then. Let’s proceed to the next page!</P>
                     </>
                   )
                 }
