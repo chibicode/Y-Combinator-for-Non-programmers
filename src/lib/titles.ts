@@ -22,7 +22,7 @@ export const episodeTitles = {
     4: 'The Rules of The Lunchbox',
     5: 'Lunchboxes with 3 Rows',
     6: 'Minion’s Trick',
-    7: 'Zero to One',
+    7: 'The Challenge Question',
     8: 'Super Saya',
     9: 'Can’t Add One?',
     10: 'Subtract One',
