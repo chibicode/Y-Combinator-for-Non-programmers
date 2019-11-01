@@ -1008,8 +1008,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
             <TwitterEmbed id={shareId} />
             {question}
             <P>
-              <Bold>If you changed your mind want to keep reading:</Bold> Press
-              the button below!
+              <Bold>To keep reading this course:</Bold> Press the button below!
             </P>
           </>
         )
@@ -1613,13 +1612,13 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
     if (locale === 'en') {
       return (
         <Highlight highlightType="pink">
-          You can also <Bold>skip to the end</Bold>. <Emoji>😉</Emoji>
+          You can also <Bold>skip to the end</Bold>.
         </Highlight>
       )
     } else {
       return (
         <Highlight highlightType="pink">
-          <Bold>最後までスキップ</Bold>することも可能です。<Emoji>😉</Emoji>
+          <Bold>最後までスキップ</Bold>することも可能です。
         </Highlight>
       )
     }
@@ -1628,14 +1627,13 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
     if (locale === 'en') {
       return (
         <Highlight highlightType="pink">
-          You can also <Bold>skip to the next stopping point.</Bold>{' '}
-          <Emoji>😉</Emoji>
+          You can also <Bold>skip to the next stopping point.</Bold>
         </Highlight>
       )
     } else {
       return (
         <Highlight highlightType="pink">
-          <Bold>途中までスキップ</Bold>することも可能です。<Emoji>😉</Emoji>
+          <Bold>途中までスキップ</Bold>することも可能です。
         </Highlight>
       )
     }

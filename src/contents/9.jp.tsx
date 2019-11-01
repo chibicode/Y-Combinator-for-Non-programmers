@@ -257,81 +257,6 @@ export default () => (
         )
       },
       {
-        title: <>前回と比較してみよう</>,
-        content: (
-          <>
-            <BubbleQuotes
-              quotes={[
-                {
-                  type: 'dog',
-                  children: (
-                    <>
-                      <P>
-                        では、前回と比較してみましょう。前回実行したのは、こちらの弁当箱でした。
-                      </P>
-                      <P>
-                        <HighlightBold>
-                          先ほどと唯一違うのは、上の部分に{' '}
-                          <EmojiWithText letter="b" /> のかわりに{' '}
-                          <EmojiWithText letter="e" /> が入っている
-                        </HighlightBold>
-                        ところです。(<Highlight>黄色</Highlight>で示しています)
-                      </P>
-                    </>
-                  )
-                }
-              ]}
-            />
-            <P>
-              <H args={{ name: 'pressRun' }} />
-            </P>
-            <R.Exbn>
-              <HighlightBold>前回実行した弁当箱:</HighlightBold>
-              <br />
-              上の部分は <EmojiNumber number={1} /> に変換できる。
-              <br />
-              <Highlight>
-                先ほどと違うのは、上の <EmojiForLetter letter="e" /> の部分。
-              </Highlight>
-              <br />
-              それ以外はすべて先ほどと同じ。
-            </R.Exbn>
-            <BubbleQuotes
-              quotes={[
-                {
-                  type: 'dog',
-                  children: (
-                    <>
-                      <P>
-                        こちらは、最終的に <EmojiNumber number={2} />{' '}
-                        に変換できる弁当箱になりますね。
-                      </P>
-                    </>
-                  )
-                }
-              ]}
-            />
-            <R.Rico>
-              <H
-                args={{ name: 'canBeConvertedCaption', number: 2, letter: 'b' }}
-              />
-            </R.Rico>
-            <BubbleQuotes
-              quotes={[
-                {
-                  type: 'thinking',
-                  children: (
-                    <>
-                      <P>うーん、どうして結果に違いが出るんだろう？</P>
-                    </>
-                  )
-                }
-              ]}
-            />
-          </>
-        )
-      },
-      {
         title: (
           <>
             <BottomRightBadge inline bottomRightBadgeType="callArg" /> と{' '}
@@ -349,31 +274,7 @@ export default () => (
                     <>
                       <P>では、ここでネタばらしをしましょう。</P>
                       <P>
-                        こちらに、先ほど
-                        <HighlightBold>失敗した</HighlightBold>
-                        例をもう一度表示しています。
-                      </P>
-                    </>
-                  )
-                }
-              ]}
-            />
-            <R.Ybne>
-              先ほど{' '}
-              <Highlight>
-                <EmojiNumber number={1} /> <Emoji>➕</Emoji>{' '}
-                <EmojiNumber number={1} /> を計算できなかった
-              </Highlight>
-              例
-            </R.Ybne>
-            <BubbleQuotes
-              quotes={[
-                {
-                  type: 'dog',
-                  children: (
-                    <>
-                      <P>
-                        次に、
+                        まず、先ほどの失敗した弁当箱に{' '}
                         <BottomRightBadge
                           inline
                           bottomRightBadgeType="callArg"
@@ -773,10 +674,21 @@ export default () => (
                       inline
                       bottomRightBadgeType="funcUnbound"
                     />{' '}
-                    に同じ料理があると、
-                    <br />
-                    実行結果が狂う
+                    に同じ料理があると…
                   </HighlightBold>
+                </>
+              }
+            />
+            <ExpressionRunnerSeparator />
+            <EmojiSeparator
+              nodes={[
+                <EmojiForLetter letter="c" />,
+                <Emoji>🆚</Emoji>,
+                <EmojiForLetter letter="d" />
+              ]}
+              description={
+                <>
+                  <HighlightBold>実行結果が狂う</HighlightBold>
                 </>
               }
             />

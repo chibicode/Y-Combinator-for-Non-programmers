@@ -177,6 +177,7 @@ export default () => (
         )
       },
       {
+        type: 'challengeProblem',
         title: <>The problem</>,
         content: (
           <>
@@ -246,8 +247,7 @@ export default () => (
                       <P>
                         <Highlight>
                           Each <CustomEmoji type="questionFoodGrey" /> icon{' '}
-                          <Italic>represents a food item</Italic>, but we’ll
-                          talk about that later.
+                          <Italic>represents a food item</Italic>.
                         </Highlight>
                       </P>
                     </>
@@ -277,18 +277,6 @@ export default () => (
               ]}
             />
             <R.Stda>After combining the two lunchboxes</R.Stda>
-          </>
-        )
-      },
-      {
-        type: 'challengeProblem',
-        title: (
-          <>
-            <EmojiNumber number={0} /> to <EmojiNumber number={1} />
-          </>
-        ),
-        content: (
-          <>
             <BubbleQuotes
               quotes={[
                 {
@@ -297,104 +285,6 @@ export default () => (
                     <>
                       <P>
                         <Bold>Now, here’s the challenge:</Bold>
-                      </P>
-                      <Ul>
-                        <UlLi>
-                          <Highlight>
-                            If you fill each{' '}
-                            <CustomEmoji type="questionFoodGrey" /> icon with
-                            the <Italic>correct</Italic> food item,
-                          </Highlight>
-                        </UlLi>
-                        <UlLi>
-                          <Highlight>
-                            After running it, it becomes a lunchbox that can be
-                            converted to <EmojiNumber number={1} />.
-                          </Highlight>
-                        </UlLi>
-                      </Ul>
-                    </>
-                  )
-                }
-              ]}
-            />
-            <R.Cawa>
-              If you fill each <CustomEmoji type="questionFoodGrey" /> icon with
-              <br />
-              the <Italic>correct</Italic> food item,
-            </R.Cawa>
-            <ExpressionRunnerSeparator />
-            <R.Jzwg>
-              After running it, it becomes a lunchbox
-              <br />
-              that can be converted to <EmojiNumber number={1} />
-            </R.Jzwg>
-            <BubbleQuotes
-              quotes={[
-                {
-                  type: 'dog',
-                  children: (
-                    <>
-                      <P>
-                        Because the top lunchbox can be converted to{' '}
-                        <EmojiNumber number={0} />,
-                      </P>
-                      <R.Hkbs>
-                        <H
-                          args={{
-                            name: 'canBeConvertedCaption',
-                            letter: 'd',
-                            number: 0
-                          }}
-                        />
-                      </R.Hkbs>
-                      <P>
-                        <Bold>It means that:</Bold>
-                      </P>
-                      <Ul>
-                        <UlLi>By running the combined lunchbox,</UlLi>
-                        <UlLi>
-                          <Highlight>
-                            A lunchbox that can be converted to{' '}
-                            <EmojiNumber number={0} />…
-                          </Highlight>
-                        </UlLi>
-                        <UlLi>
-                          <Highlight>
-                            Becomes a lunchbox that can be converted to{' '}
-                            <EmojiNumber number={1} />.
-                          </Highlight>
-                        </UlLi>
-                      </Ul>
-                    </>
-                  )
-                }
-              ]}
-            />
-            <EmojiSeparator
-              nodes={[
-                <EmojiNumber number={0} />,
-                <CustomEmoji type="singleArrow" />,
-                <EmojiNumber number={1} />
-              ]}
-              description={
-                <>
-                  A lunchbox that can be converted to <EmojiNumber number={0} />
-                  <br />
-                  becomes a lunchbox
-                  <br />
-                  that can be converted to <EmojiNumber number={1} />
-                </>
-              }
-            />
-            <BubbleQuotes
-              quotes={[
-                {
-                  type: 'dog',
-                  children: (
-                    <>
-                      <P>
-                        <Bold>So, here’s what you need to do:</Bold>
                       </P>
                       <Ul>
                         <UlLi>
@@ -769,7 +659,7 @@ export default () => (
                   type: 'dog',
                   children: (
                     <>
-                      <P>Your answer was incorrect!</P>
+                      <P>Your answer was incorrect.</P>
                     </>
                   )
                 }
@@ -880,23 +770,13 @@ export default () => (
         )
       },
       {
-        title: <>The answer is on the next page</>,
+        title: <>Can the villagers solve this problem?</>,
         content: (
           <>
             <P>
               The villagers are so close to getting their mathboxes back, but
-              they’re struggling with the difficult problem.
-            </P>
-            <EmojiSeparator
-              emojis={['❓', '😭', '❓']}
-              description={<>This problem is too difficult!</>}
-            />
-            <P>
-              <Bold>But:</Bold>{' '}
-              <Highlight>
-                They’ll figure out the answer on the next page.
-              </Highlight>{' '}
-              Let’s keep reading!
+              they’re struggling. Let’s see if they can solve it on the next
+              page!
             </P>
             <NextLessonButton />
           </>
