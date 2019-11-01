@@ -928,7 +928,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
   }
   if (args.name === 'lookAtToc') {
     if (locale === 'en') {
-      return <>Here’s table of contents:</>
+      return <>Table of contents:</>
     } else {
       return <>目次はこちらです:</>
     }
