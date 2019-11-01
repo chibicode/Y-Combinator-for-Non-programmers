@@ -1077,7 +1077,7 @@ export default () => (
                         <UlLi>
                           <Highlight>
                             You’ll be able to reproduce{' '}
-                            <H args={{ name: 'repeatFeature' }} /> too
+                            <H args={{ name: 'repeatFeature' }} /> too.
                           </Highlight>
                         </UlLi>
                       </Ul>

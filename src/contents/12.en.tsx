@@ -111,7 +111,7 @@ export default () => (
         title: <>Saya’s Idea</>,
         content: (
           <>
-            <P>As usual, Saya seems to have an idea!</P>
+            <P>As usual, Saya seems to have an idea.</P>
             <BubbleQuotes
               quotes={[
                 {
@@ -129,7 +129,7 @@ export default () => (
             </R.Rhoa>
             <ExpressionRunnerSeparator />
             <R.Vlhb>
-              <Emoji>👧🏻</Emoji> Using a lunchbox!
+              <Emoji>👧🏻</Emoji> Using a lunchbox.
             </R.Vlhb>
             <BubbleQuotes
               quotes={[
@@ -137,7 +137,7 @@ export default () => (
                   type: 'surprised',
                   children: (
                     <>
-                      <P>Wow! Thanks Saya! Let’s see if this actually works.</P>
+                      <P>Wow, thanks Saya. Let’s see if this actually works.</P>
                     </>
                   )
                 }
@@ -219,7 +219,7 @@ export default () => (
                         />
                       </R.Elyq>
                       <P>
-                        Let’s try running it!{' '}
+                        Let’s try running it.{' '}
                         <H args={{ name: 'pressRun', girl: true }} />
                       </P>
                     </>
@@ -240,7 +240,7 @@ export default () => (
                     <>
                       <P>
                         The result is a lunchbox that can be converted to{' '}
-                        <CustomEmoji type="blankNumberYellow" />!
+                        <CustomEmoji type="blankNumberYellow" />.
                       </P>
                       <R.Bndi></R.Bndi>
                     </>
@@ -294,7 +294,7 @@ export default () => (
                       <P>
                         Right, in both cases, if we start with{' '}
                         <EmojiNumber number={0} />, the final result is{' '}
-                        <CustomEmoji type="blankNumberYellow" />!
+                        <CustomEmoji type="blankNumberYellow" />.
                       </P>
                     </>
                   )
@@ -380,7 +380,7 @@ export default () => (
                         />
                       </R.Ooya>
                       <P>
-                        Let’s try running it!{' '}
+                        Let’s try running it.{' '}
                         <H args={{ name: 'pressRun', girl: true }} />
                       </P>
                     </>
@@ -401,7 +401,7 @@ export default () => (
                     <>
                       <P>
                         This time, the result is a lunchbox that can be
-                        converted to <CustomEmoji type="blankNumberRed" />!
+                        converted to <CustomEmoji type="blankNumberRed" />.
                       </P>
                       <R.Kiiq></R.Kiiq>
                     </>
@@ -455,7 +455,7 @@ export default () => (
                       <P>
                         Right, in both cases, if we start with{' '}
                         <EmojiNumber number={1} />, the final result is{' '}
-                        <CustomEmoji type="blankNumberRed" />!
+                        <CustomEmoji type="blankNumberRed" />.
                       </P>
                     </>
                   )
@@ -489,7 +489,7 @@ export default () => (
             </R.Rhoa>
             <ExpressionRunnerSeparator />
             <R.Vlhb>
-              <Emoji>👧🏻</Emoji> Using a lunchbox!
+              <Emoji>👧🏻</Emoji> Using a lunchbox.
               <br />
               <Bold>Question:</Bold> Is this the correct way to
               <br />
@@ -502,7 +502,7 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        Let’s do a <Italic>final check</Italic>, just in case!
+                        Let’s do a <Italic>final check</Italic>, just in case.
                       </P>
                     </>
                   )
@@ -671,7 +671,7 @@ export default () => (
                         lunchbox has <HighlightBold>reproduced</HighlightBold>{' '}
                         <H args={{ name: 'conditionFeature' }} /> correctly.
                       </P>
-                      <P>Let’s check!</P>
+                      <P>Let’s check.</P>
                     </>
                   )
                 }
@@ -724,7 +724,7 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        Let’s run it!{' '}
+                        Let’s run it.{' '}
                         <H args={{ name: 'pressRun', girl: true }} />
                       </P>
                     </>
@@ -741,7 +741,7 @@ export default () => (
                     <>
                       <P>
                         The result is a lunchbox that can be converted to{' '}
-                        <EmojiNumber number={1} />!
+                        <EmojiNumber number={1} />.
                       </P>
                       <R.Ooya>
                         <H
@@ -822,12 +822,12 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        <Bold>Good job, Saya!</Bold> You’re correct!
+                        <Bold>Good job, Saya.</Bold> You’re correct!
                       </P>
                       <P>
                         You have successfully{' '}
                         <HighlightBold>reproduced</HighlightBold>{' '}
-                        <H args={{ name: 'conditionFeature' }} />!
+                        <H args={{ name: 'conditionFeature' }} />.
                       </P>
                     </>
                   )
@@ -841,7 +841,7 @@ export default () => (
             <R.Vlhb>
               …can be reproduced by
               <br />
-              <Emoji>👧🏻</Emoji> Saya’s lunchbox!
+              <Emoji>👧🏻</Emoji> Saya’s lunchbox
             </R.Vlhb>
             <BubbleQuotes
               quotes={[
@@ -939,7 +939,7 @@ export default () => (
                         solution.
                       </P>
                       <P>
-                        If you’re curious, press “Continue reading” below! (It’s
+                        If you’re curious, press “Continue reading” below. (It’s
                         optional.)
                       </P>
                     </>
@@ -1086,7 +1086,7 @@ export default () => (
                       <P>
                         <Highlight>
                           You’re now very close to reproducing{' '}
-                          <H args={{ name: 'repeatFeature' }} /> as well!
+                          <H args={{ name: 'repeatFeature' }} /> as well.
                         </Highlight>
                       </P>
                     </>
@@ -1125,7 +1125,7 @@ export default () => (
                 <>
                   We’re now very close to reproducing
                   <br />
-                  <H args={{ name: 'repeatFeature' }} />!
+                  <H args={{ name: 'repeatFeature' }} />
                 </>
               }
             />
@@ -1147,8 +1147,8 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        Yes, I will explain on the next page! Please continue
-                        reading!
+                        Yes, I will explain on the next page. Please continue
+                        reading.
                       </P>
                     </>
                   )
