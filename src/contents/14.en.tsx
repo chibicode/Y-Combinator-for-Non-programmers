@@ -47,26 +47,21 @@ export default () => (
     cards={[
       {
         type: 'summary',
-        title: <>The most complicated lunchbox you’ve seen</>,
+        title: <>The most complicated lunchbox ever</>,
         content: (
           <>
             <P>
-              In this page, I’ll show you the most complicated lunchbox you’ve
-              seen.
+              In this page, I’ll show you the most complicated lunchbox ever.
             </P>
             <EmojiSeparator
               emojis={['⚠️', '🍱', '⚠️']}
-              description={<>The most complicated lunchbox you’ve seen</>}
+              description={<>The most complicated lunchbox ever</>}
             />
             <P>
               It will be hard, but{' '}
               <Highlight>you don’t need to understand everything.</Highlight>{' '}
               Even if you don’t fully get it, you should keep reading!
             </P>
-            <EmojiSeparator
-              emojis={['✨', '🤗', '✨']}
-              description={<>You don’t need to understand everything!</>}
-            />
           </>
         )
       },
