@@ -133,6 +133,7 @@ export default () => (
               }
             />
             <P>Let’s now talk about lambda calculus!</P>
+            <P>Let’s now talk about lambda calculus.</P>
           </>
         )
       },
@@ -687,7 +688,7 @@ export default () => (
               that{' '}
               <Highlight>
                 most innovative ideas in computer science are based on lots of
-                simple ideas!
+                simple ideas.
               </Highlight>
             </P>
           </>
