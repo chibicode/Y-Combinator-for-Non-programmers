@@ -26,13 +26,7 @@ const commonTitleClasses = css`
   text-align: center;
 `
 
-const EpisodeHero = ({
-  demo,
-  notFound
-}: {
-  demo: boolean
-  notFound: boolean
-}) => {
+const EpisodeHero = ({ notFound }: { notFound: boolean }) => {
   const { episodeTitle, episodeNumber } = useContext(EpisodeContext)
   return (
     <header
@@ -41,7 +35,7 @@ const EpisodeHero = ({
       `}
     >
       <>
-        {episodeTitle || demo || notFound ? (
+        {episodeTitle || notFound ? (
           <>
             <h3
               css={[
@@ -80,13 +74,7 @@ const EpisodeHero = ({
                 `
               ]}
             >
-              {notFound ? (
-                <H args={{ name: 'pageNotFound' }} />
-              ) : demo ? (
-                <H args={{ name: 'demoTitle' }} />
-              ) : (
-                episodeTitle
-              )}
+              {notFound ? <H args={{ name: 'pageNotFound' }} /> : episodeTitle}
             </h1>
           </>
         ) : (
@@ -135,9 +123,7 @@ const EpisodeHero = ({
       </>
       <EmojiSeparator
         size="lg"
-        nodes={(demo
-          ? ['🍱', '▶️', '🔲']
-          : notFound
+        nodes={(notFound
           ? ['❓', '😭', '❓']
           : episodeEmojis[episodeNumber as keyof typeof episodeEmojis]
         ).map(emoji =>
@@ -153,7 +139,6 @@ const EpisodeHero = ({
 }
 
 EpisodeHero.defaultProps = {
-  demo: false,
   notFound: false
 }
 

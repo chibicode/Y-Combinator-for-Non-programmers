@@ -30,12 +30,10 @@ export type EpisodeCardListType = readonly EpisodeCardType[]
 
 const EpisodeCardList = ({
   cards,
-  notFound,
-  demo
+  notFound
 }: {
   cards: EpisodeCardListType
   notFound: boolean
-  demo: boolean
 }) => {
   const { episodeNumber } = useContext(EpisodeContext)
   const { lastVisibleCardIndex, setLastVisibleCardIndex } = useConditionalCards(
@@ -44,7 +42,7 @@ const EpisodeCardList = ({
   return (
     <>
       <EpisodePageInitialRenderWarning />
-      <EpisodeHero demo={demo} notFound={notFound} />
+      <EpisodeHero notFound={notFound} />
       <>
         {cards.map(({ title, type, content, preview, footer }, index) =>
           index <= lastVisibleCardIndex ? (
@@ -97,7 +95,6 @@ const EpisodeCardList = ({
         )}
         {shareVisible &&
           !notFound &&
-          !demo &&
           cards.length - 1 === lastVisibleCardIndex && (
             <div
               css={css`
@@ -173,8 +170,7 @@ const EpisodeCardList = ({
 }
 
 EpisodeCardList.defaultProps = {
-  notFound: false,
-  demo: false
+  notFound: false
 }
 
 export default EpisodeCardList

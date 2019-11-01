@@ -275,9 +275,7 @@ export const kaaf = initializeDoneExpressionContainer({
 export const mxkk = initializeDoneExpressionContainer({ shorthandNumber: 5 })
 
 export const lyet = initializeExpressionContainer(numberParams('d', 'e', 0))
-export const zdlx = initializeExpressionContainer(
-  numberParamsHighlightNumber('d', 'e', 1)
-)
+
 export const aocc = initializeExpressionContainer(
   numberParamsHighlightNumber('d', 'e', 2)
 )
@@ -388,15 +386,6 @@ export const vibe = initializeExpressionContainer([
   },
   {
     shorthandNumber: 1
-  }
-])
-
-export const lbkw = initializeExpressionContainer([
-  {
-    shorthandFunc: 'add'
-  },
-  {
-    shorthandNumber: 2
   }
 ])
 
@@ -847,10 +836,6 @@ export const oxuf = initializeExpressionContainer(
   numberParamsHighlightNumber('b', 'c', 2)
 )
 
-export const fhyo = initializeExpressionContainer(
-  numberParamsHighlightNumber('b', 'c', 3)
-)
-
 export const yywl = initializeExpressionContainer(
   numberParamsHighlightNumber('b', 'c', 4)
 )
@@ -894,11 +879,6 @@ export const uwoq = initializeExpressionContainer({
     ]
   }
 })
-
-export const henz = initializeExpressionContainer([
-  succParams('a', 'b', 'c'),
-  numberParams('d', { name: 'e', highlighted: true }, 1)
-])
 
 export const tsms = initializeExpressionContainer('blankNumberPlusOne')
 export const hipa = initializeExpressionContainer('blankNumberMinusOne')

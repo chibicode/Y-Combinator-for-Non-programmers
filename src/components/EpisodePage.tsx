@@ -12,8 +12,7 @@ import Page from 'src/components/Page'
 import TocModal from 'src/components/TocModal'
 import episodeEmojis from 'src/lib/episodeEmojis'
 import NotFoundCardList from 'src/components/NotFoundCardList'
-import DemoCardList from 'src/components/DemoCardList'
-import { ogUrl, demoUrl } from 'src/lib/meta'
+import { ogUrl } from 'src/lib/meta'
 import locale from 'src/lib/locale'
 
 export interface EpisodePageProps {
@@ -22,7 +21,6 @@ export interface EpisodePageProps {
   episodeTitleString?: React.ReactNode
   episodeNumber: number
   notFound: boolean
-  demo: boolean
   contentName: ContentProps['name']
 }
 
@@ -32,7 +30,6 @@ const EpisodePage = ({
   episodeTitleString,
   episodeNumber,
   notFound,
-  demo,
   contentName
 }: EpisodePageProps) => {
   const title = `${
@@ -45,7 +42,7 @@ const EpisodePage = ({
   const [modalVisible, setModalVisible] = useState(false)
   const hideModal = () => setModalVisible(false)
   const showModal = () => setModalVisible(true)
-  const url = demo ? demoUrl : ogUrl(episodeNumber)
+  const url = ogUrl(episodeNumber)
   return (
     <Page>
       <Head>
@@ -56,7 +53,7 @@ const EpisodePage = ({
         <link rel="canonical" href={url} />
       </Head>
       {modalVisible && <TocModal hideModal={hideModal} />}
-      {!notFound && !demo ? (
+      {!notFound ? (
         <EpisodePageHeader
           showModal={showModal}
           episodeNumber={episodeNumber}
@@ -77,16 +74,10 @@ const EpisodePage = ({
             showModal
           }}
         >
-          {notFound ? (
-            <NotFoundCardList />
-          ) : demo ? (
-            <DemoCardList />
-          ) : (
-            <Content name={contentName} />
-          )}
+          {notFound ? <NotFoundCardList /> : <Content name={contentName} />}
         </EpisodeContext.Provider>
       </Container>
-      {!notFound && !demo ? (
+      {!notFound ? (
         <EpisodePageHeader
           showModal={showModal}
           episodeNumber={episodeNumber}
@@ -105,8 +96,7 @@ const EpisodePage = ({
 }
 
 EpisodePage.defaultProps = {
-  notFound: false,
-  demo: false
+  notFound: false
 }
 
 export default EpisodePage
