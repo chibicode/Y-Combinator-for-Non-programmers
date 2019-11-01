@@ -60,7 +60,7 @@ export default () => (
             <P>
               It will be hard, but{' '}
               <Highlight>you don’t need to understand everything.</Highlight>{' '}
-              Even if you don’t fully get it, you should keep reading!
+              Even if you don’t fully get it, you should keep reading.
             </P>
           </>
         )
@@ -97,7 +97,7 @@ export default () => (
               , just like when using <H args={{ name: 'repeatFeature' }} />.
             </P>
             <ThreeStepsSummary />
-            <P>Let’s see if this is actually true!</P>
+            <P>Let’s see if this is actually true.</P>
           </>
         )
       },
@@ -151,7 +151,7 @@ export default () => (
                       <P>
                         Yeah, we need to see{' '}
                         <Highlight>
-                          what happens in between the beginning and the end!
+                          what happens in between the beginning and the end.
                         </Highlight>
                       </P>
                     </>
@@ -172,7 +172,7 @@ export default () => (
                   type: 'saya',
                   children: (
                     <>
-                      <P>Ok, let’s do it!</P>
+                      <P>Ok, let’s do it.</P>
                       <Ul>
                         <UlLi>
                           We’ll pause several times in between for explanation.
@@ -180,7 +180,7 @@ export default () => (
                         <UlLi>
                           <Highlight>
                             You don’t have to follow all the steps with your
-                            eyes!
+                            eyes.
                           </Highlight>{' '}
                           Just glance over it. Save your eyes!
                         </UlLi>
@@ -219,7 +219,7 @@ export default () => (
                       <P>
                         Take a look at this{' '}
                         <HighlightBold>yellow section</HighlightBold> in the
-                        middle!
+                        middle.
                       </P>
                     </>
                   )
@@ -257,7 +257,7 @@ export default () => (
                   type: 'surprised',
                   children: (
                     <>
-                      <P>It’s much simpler now!</P>
+                      <P>It’s much simpler now.</P>
                     </>
                   )
                 },
@@ -325,7 +325,7 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        Let’s continue!{' '}
+                        Let’s continue.{' '}
                         <H args={{ name: 'pressRun', girl: true }} />
                       </P>
                     </>
@@ -344,7 +344,7 @@ export default () => (
                         Oh!{' '}
                         <Highlight>
                           This yellow section is exactly the same as the one we
-                          ignored last time!
+                          ignored last time.
                         </Highlight>
                       </P>
                     </>
@@ -378,7 +378,7 @@ export default () => (
                   type: 'thinking',
                   children: (
                     <>
-                      <P>Hmm… interesting!</P>
+                      <P>Hmm… interesting.</P>
                     </>
                   )
                 },
@@ -403,7 +403,7 @@ export default () => (
                     <>
                       <P>
                         I’ve highlighted the differences from the last time in{' '}
-                        <Highlight>yellow</Highlight> below. Take a look!
+                        <Highlight>yellow</Highlight> below. Take a look.
                       </P>
                     </>
                   )
@@ -499,7 +499,7 @@ export default () => (
                           <EmojiNumber number={1} /> next?
                         </Highlight>
                       </P>
-                      <P>Let’s see if that turns out to be true!</P>
+                      <P>Let’s see if that turns out to be true.</P>
                     </>
                   )
                 }
@@ -519,7 +519,7 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        Let’s continue! We’ll un-ignore the section we ignored
+                        Let’s continue. We’ll un-ignore the section we ignored
                         earlier.
                       </P>
                     </>
@@ -578,7 +578,7 @@ export default () => (
                   type: 'saya',
                   children: (
                     <>
-                      <P>Let’s compare it with the previous iteration again!</P>
+                      <P>Let’s compare it with the previous iteration again.</P>
                       <P>
                         I’ve highlighted the differences from the last time in{' '}
                         <Highlight>yellow</Highlight> below.
@@ -685,7 +685,7 @@ export default () => (
                   type: 'saya',
                   children: (
                     <>
-                      <P>Let’s check!</P>
+                      <P>Let’s check.</P>
                     </>
                   )
                 }
@@ -705,7 +705,7 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        <Bold>We’re almost done!</Bold> I just un-ignored the
+                        <Bold>We’re almost done.</Bold> I just un-ignored the
                         section we ignored earlier.
                       </P>
                       <P>
@@ -750,7 +750,7 @@ export default () => (
                   type: 'saya',
                   children: (
                     <>
-                      <P>Let’s compare it with the previous iteration again!</P>
+                      <P>Let’s compare it with the previous iteration again.</P>
                       <P>
                         I’ve highlighted the differences from the last time in{' '}
                         <Highlight>yellow</Highlight> below.
@@ -787,7 +787,7 @@ export default () => (
                       <P>
                         <Highlight>
                           <InlineBorder type="condition" /> finally became{' '}
-                          <EmojiNumber number={0} />!
+                          <EmojiNumber number={0} />.
                         </Highlight>
                       </P>
                     </>
@@ -823,7 +823,7 @@ export default () => (
                     <>
                       <P>
                         Wow! It’s now exactly like using{' '}
-                        <H args={{ name: 'repeatFeature' }} />!
+                        <H args={{ name: 'repeatFeature' }} />.
                       </P>
                     </>
                   )
@@ -859,7 +859,7 @@ export default () => (
                   type: 'saya',
                   children: (
                     <>
-                      <P>That’s it! Let’s summarize what we’ve seen so far!</P>
+                      <P>That’s it! Let’s summarize what we’ve seen so far.</P>
                     </>
                   )
                 }
@@ -971,7 +971,7 @@ export default () => (
                 }
               ]}
             />
-            <R.Qycx>Exactly the same as this!</R.Qycx>
+            <R.Qycx>Exactly the same as this</R.Qycx>
             <BubbleQuotes
               quotes={[
                 {
@@ -998,7 +998,7 @@ export default () => (
               <H args={{ name: 'repeatFeature' }} />…
             </R.Qycx>
             <ExpressionRunnerSeparator />
-            <R.Kjba>…using this lunchbox!</R.Kjba>
+            <R.Kjba>…using this lunchbox</R.Kjba>
           </>
         )
       },
@@ -1136,7 +1136,7 @@ export default () => (
               <H args={{ name: 'repeatFeature' }} />…
             </R.Nmbt>
             <ExpressionRunnerSeparator />
-            <R.Bxuv>…using this lunchbox!</R.Bxuv>
+            <R.Bxuv>…using this lunchbox</R.Bxuv>
             <BubbleQuotes
               quotes={[
                 {
@@ -1221,7 +1221,7 @@ export default () => (
                   type: 'thinking',
                   children: (
                     <>
-                      <P>I see…!</P>
+                      <P>I see…</P>
                     </>
                   )
                 }
@@ -1246,7 +1246,7 @@ export default () => (
                     <>
                       <P>
                         <Bold>Congratulations!</Bold> You reproduced{' '}
-                        <H args={{ name: 'repeatFeature' }} /> successfully!{' '}
+                        <H args={{ name: 'repeatFeature' }} /> successfully.{' '}
                         <Emoji>🎉</Emoji>
                       </P>
                     </>
@@ -1272,7 +1272,7 @@ export default () => (
               ]}
               description={
                 <>
-                  We reproduced <H args={{ name: 'repeatFeature' }} />!{' '}
+                  We reproduced <H args={{ name: 'repeatFeature' }} />{' '}
                   <Emoji>🎉</Emoji>
                 </>
               }
@@ -1352,14 +1352,14 @@ export default () => (
             />
             <R.Jaqs>You can reproduce this mathbox…</R.Jaqs>
             <ExpressionRunnerSeparator />
-            <R.Zkon>…with this lunchbox!</R.Zkon>
+            <R.Zkon>…with this lunchbox</R.Zkon>
             <BubbleQuotes
               quotes={[
                 {
                   type: 'surprised',
                   children: (
                     <>
-                      <P>I see…!</P>
+                      <P>I see…</P>
                     </>
                   )
                 }
@@ -1616,7 +1616,7 @@ export default () => (
                       <P>
                         <Bold>Note:</Bold> There are other lunchboxes that are
                         called <HighlightBold>“Y Combinator”</HighlightBold>. If
-                        you’re curious, press “Continue reading” below! (It’s
+                        you’re curious, press “Continue reading” below. (It’s
                         optional.)
                       </P>
                     </>
@@ -1664,7 +1664,7 @@ export default () => (
                 }
               ]}
             />
-            <P>Will the villagers get it back? Check on the next page!</P>
+            <P>Will the villagers get it back? Check on the next page.</P>
             <NextLessonButton />
           </>
         )

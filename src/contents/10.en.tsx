@@ -1293,7 +1293,7 @@ export default () => (
                   type: 'devil',
                   children: (
                     <>
-                      <P>Grr…!</P>
+                      <P>Grr…</P>
                     </>
                   )
                 },
