@@ -62,9 +62,7 @@ export default () => (
               </Highlight>
             </P>
             <ReproducePlusOne />
-            <P>
-              <Bold>That’s it for the quick review.</Bold> Let’s continue!
-            </P>
+            <P>That’s it for the quick review. Let’s continue!</P>
           </>
         )
       },

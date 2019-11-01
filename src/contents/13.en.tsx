@@ -37,22 +37,11 @@ export default () => (
               description={<>Things will get harder!</>}
             />
             <P>
-              <Bold>But:</Bold>{' '}
               <Highlight>
                 You don’t need to understand everything immediately. Even if you
                 don’t completely get it, please keep reading!
               </Highlight>
             </P>
-            <EmojiSeparator
-              emojis={['✨', '🤗', '✨']}
-              description={
-                <>
-                  You don’t need to
-                  <br />
-                  understand everything immediately!
-                </>
-              }
-            />
           </>
         )
       },
