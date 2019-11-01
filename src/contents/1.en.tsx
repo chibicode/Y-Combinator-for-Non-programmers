@@ -346,7 +346,7 @@ export default () => (
         content: (
           <>
             <P>
-              <Bold>Note:</Bold> You can use both{' '}
+              You can use both{' '}
               <Highlight>
                 <CustomEmoji type="plusOne" /> and{' '}
                 <CustomEmoji type="minusOne" /> as many times as you like
@@ -366,7 +366,7 @@ export default () => (
               <EmojiNumber number={3} />
             </R.Eagi>
             <P>
-              <Bold>Another Example:</Bold> This one uses{' '}
+              <Bold>Another example:</Bold> This one uses{' '}
               <Italic>
                 <CustomEmoji type="minusOne" /> four times
               </Italic>{' '}
@@ -385,7 +385,7 @@ export default () => (
         content: (
           <>
             <P>
-              <Bold>Takeaway:</Bold> By using <CustomEmoji type="plusOne" /> and{' '}
+              By using <CustomEmoji type="plusOne" /> and{' '}
               <CustomEmoji type="minusOne" /> many times, you can{' '}
               <Highlight>
                 calculate any addition or subtraction, no matter how large the
@@ -476,14 +476,6 @@ export default () => (
                 <Italic>multiplications</Italic> <Emoji>✖️</Emoji> or{' '}
                 <Italic>divisions</Italic> <Emoji>➗</Emoji>.
               </P>
-              <EmojiSeparator
-                emojis={['✖️', '😭', '➗']}
-                description={<>No multiplications or divisions</>}
-              />
-              <P>
-                <Bold>However:</Bold> For the villagers who all struggle with
-                additions and subtractions, mathboxes were still very useful.
-              </P>
             </>
           )
         }
@@ -493,7 +485,6 @@ export default () => (
         content: (
           <>
             <P>
-              <Bold>Next up:</Bold>{' '}
               <Highlight>
                 It turns out that mathboxes have{' '}
                 <Italic>one more feature</Italic>
