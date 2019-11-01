@@ -41,7 +41,7 @@ export default () => (
               emojis={['🌲', '😈', '🌲']}
               description={
                 <>
-                  <HighlightBold>The devil</HighlightBold> appears!
+                  <HighlightBold>The devil</HighlightBold> appears
                 </>
               }
             />
@@ -86,7 +86,7 @@ export default () => (
                   type: 'crying',
                   children: (
                     <>
-                      <P>You can’t take our mathboxes! That’s too cruel!</P>
+                      <P>You can’t take our mathboxes. That’s too cruel!</P>
                     </>
                   )
                 }
@@ -116,10 +116,6 @@ export default () => (
               ]}
               description={<>I’m taking all your mathboxes!</>}
             />
-            <P>All of the mathboxes are now gone.</P>
-            <R.Dgyc>
-              <Emoji>😈</Emoji> Bye bye, mathboxes!
-            </R.Dgyc>
             <R.Ggxl></R.Ggxl>
             <P>
               The villagers, who all relied on mathboxes for doing additions and
@@ -129,7 +125,7 @@ export default () => (
               quotes={[
                 {
                   type: 'crying',
-                  children: <P>The devil! Why did you do this to us?</P>
+                  children: <P>Why did you do this to us?</P>
                 },
                 {
                   type: 'sad',
@@ -184,13 +180,13 @@ export default () => (
                         </Italic>
                         .
                       </P>
-                      <P>You should thank me for it!</P>
+                      <P>You should thank me for it.</P>
                     </>
                   )
                 },
                 {
                   type: 'sad',
-                  children: <P>But…but…we don’t want to study math!</P>
+                  children: <P>But… but… we don’t want to study math!</P>
                 }
               ]}
             />
@@ -210,7 +206,7 @@ export default () => (
                 {
                   type: 'sad',
                   children: (
-                    <P>Please return the mathboxes to us! We’ll do anything!</P>
+                    <P>Please return the mathboxes to us. We’ll do anything!</P>
                   )
                 },
                 {
@@ -244,7 +240,7 @@ export default () => (
                             thinking.
                           </Bold>{' '}
                           If you can solve <Italic>all</Italic> of them, I’ll
-                          give your mathboxes back!
+                          give your mathboxes back.
                         </Highlight>
                       </P>
                     </>
@@ -254,7 +250,7 @@ export default () => (
                   type: 'sad',
                   children: (
                     <P>
-                      Puzzles…? They sound hard… I don’t know if we can do it!
+                      Puzzles…? They sound hard… I don’t know if we can do it.
                     </P>
                   )
                 },
@@ -262,8 +258,8 @@ export default () => (
                   type: 'brave',
                   children: (
                     <>
-                      <P>But…we have to get our mathboxes back!</P>
-                      <P>We’ll accept your challenge, the devil!</P>
+                      <P>But…we have to get our mathboxes back.</P>
+                      <P>We’ll accept your challenge!</P>
                     </>
                   )
                 },
@@ -339,7 +335,7 @@ export default () => (
                   type: 'heart',
                   children: (
                     <>
-                      <P>Wow, they look delicious!</P>
+                      <P>Wow, they look delicious…</P>
                     </>
                   )
                 },
@@ -401,7 +397,7 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        <Bold>It looks like a Japanese lunchbox!</Bold>
+                        <Bold>It looks like a Japanese lunchbox.</Bold>
                       </P>
                       <P>
                         <Highlight>
@@ -526,7 +522,7 @@ export default () => (
                         <Highlight>
                           the bottom two <EmojiWithText letter="a" />{' '}
                           disappeared, and only the <EmojiWithText letter="b" />{' '}
-                          is left!
+                          is left.
                         </Highlight>
                       </P>
                     </>
@@ -575,7 +571,7 @@ export default () => (
                     <br />
                     <H args={{ name: 'lunchBoxPuzzle' }} />.
                     <br />
-                    Your task is to figure out what that is!
+                    Your task is to figure out what that is.
                   </Highlight>
                 </>
               }
@@ -777,7 +773,7 @@ export default () => (
                         </Highlight>
                       </P>
                       <P>
-                        I’ll check if you’ve figured out the pattern correctly!
+                        I’ll check if you’ve figured out the pattern correctly.
                       </P>
                     </>
                   )
@@ -811,7 +807,7 @@ export default () => (
             </P>
             <EmojiSeparator
               emojis={['👍', '🍱', '👎']}
-              description={<>Let’s see if you’ve figured out the pattern!</>}
+              description={<>Let’s see if you’ve figured out the pattern</>}
             />
             <P>
               <H args={{ name: 'question' }} />{' '}
@@ -886,13 +882,9 @@ export default () => (
           <>
             <P>
               We’ll talk about the patterns of{' '}
-              <H args={{ name: 'lunchBoxPuzzle' }} /> on the next page!
+              <H args={{ name: 'lunchBoxPuzzle' }} /> on the next page. Even if
+              you didn’t get the correct answers, please read on!
             </P>
-            <EmojiSeparator
-              emojis={['🤔', '🍱', '😈']}
-              description={<>The patterns are on the next page!</>}
-            />
-            <P>Even if you didn’t get the correct answers, please read on!</P>
             <NextLessonButton />
           </>
         )
