@@ -119,7 +119,7 @@ export default () => (
                 <Emoji>🤗</Emoji>,
                 <CustomEmoji type="minusOne" />
               ]}
-              description={<>Got these two features back!</>}
+              description={<>Got these two features back</>}
             />
             <P>
               They were able to <HighlightBold>reproduce</HighlightBold> each
@@ -163,13 +163,13 @@ export default () => (
             <ReproduceWithNoNegativeMargin />
             <P>
               In case you forgot about <H args={{ name: 'repeatFeature' }} />,
-              let’s do a quick review!
+              let’s do a quick review.
             </P>
             <EmojiSeparator
               emojis={['✨', '🔁', '✨']}
               description={
                 <>
-                  Let’s review <H args={{ name: 'repeatFeature' }} />!
+                  Let’s review <H args={{ name: 'repeatFeature' }} />.
                 </>
               }
             />
@@ -293,7 +293,7 @@ export default () => (
                       <P>
                         Hmm… no matter how much I try, we can’t think of a way
                         to reproduce <H args={{ name: 'repeatFeature' }} />{' '}
-                        using a lunchbox!
+                        using a lunchbox.
                       </P>
                       <P>Saya, do you have any good ideas?</P>
                     </>
@@ -338,7 +338,7 @@ export default () => (
                   type: 'crying',
                   children: (
                     <>
-                      <P>Oh, thank you, Minion! Please, give us a hint!</P>
+                      <P>Oh, thank you, Minion. Please, give us a hint!</P>
                     </>
                   )
                 },
@@ -512,7 +512,7 @@ export default () => (
                         mathbox and see what happens.
                       </P>
                       <P>
-                        <H args={{ name: 'pressPlay', capitalize: true }} />!
+                        <H args={{ name: 'pressPlay', capitalize: true }} />.
                       </P>
                     </>
                   )
@@ -527,7 +527,7 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        It became <EmojiNumber number={1} />!
+                        It became <EmojiNumber number={1} />.
                       </P>
                     </>
                   )
@@ -536,7 +536,7 @@ export default () => (
                   type: 'dog',
                   children: (
                     <>
-                      <P>Let me explain why!</P>
+                      <P>Let me explain why.</P>
                     </>
                   )
                 }
@@ -650,7 +650,7 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        I see—that’s why it becomes <EmojiNumber number={1} />!
+                        I see—that’s why it becomes <EmojiNumber number={1} />.
                       </P>
                     </>
                   )
@@ -749,7 +749,7 @@ export default () => (
                   type: 'dog',
                   children: (
                     <>
-                      <P>Let me explain why!</P>
+                      <P>Let me explain why.</P>
                       <P>
                         <Bold>First:</Bold>{' '}
                         <Highlight>
@@ -973,7 +973,7 @@ export default () => (
                   type: 'surprised',
                   children: (
                     <>
-                      <P>Really? I didn’t know this feature existed!</P>
+                      <P>Really? I didn’t know this feature existed.</P>
                     </>
                   )
                 },
@@ -1077,7 +1077,7 @@ export default () => (
                         <UlLi>
                           <Highlight>
                             You’ll be able to reproduce{' '}
-                            <H args={{ name: 'repeatFeature' }} /> too!
+                            <H args={{ name: 'repeatFeature' }} /> too
                           </Highlight>
                         </UlLi>
                       </Ul>
@@ -1117,7 +1117,7 @@ export default () => (
                 <>
                   You’ll be able to reproduce
                   <br />
-                  <H args={{ name: 'repeatFeature' }} /> too!
+                  <H args={{ name: 'repeatFeature' }} /> too
                 </>
               }
             />
@@ -1162,7 +1162,7 @@ export default () => (
             <ExpressionRunnerCaptionOnly>
               You’ll be able to reproduce
               <br />
-              <H args={{ name: 'repeatFeature' }} /> too!
+              <H args={{ name: 'repeatFeature' }} /> too
             </ExpressionRunnerCaptionOnly>
             <BubbleQuotes
               quotes={[
@@ -1173,7 +1173,7 @@ export default () => (
                       <P>Hmm… ok.</P>
                       <P>
                         I don’t know why these two features are related… but
-                        let’s try anyway!
+                        let’s try anyway.
                       </P>
                     </>
                   )
@@ -1182,7 +1182,7 @@ export default () => (
             />
             <P>
               On the next page, we’ll try to reproduce{' '}
-              <H args={{ name: 'conditionFeature' }} /> using a lunchbox!
+              <H args={{ name: 'conditionFeature' }} /> using a lunchbox.
             </P>
             <NextLessonButton />
           </>
