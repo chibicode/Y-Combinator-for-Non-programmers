@@ -39,7 +39,7 @@ export default () => (
             <P>
               <Highlight>
                 You don’t need to understand everything immediately. Even if you
-                don’t completely get it, please keep reading!
+                don’t completely get it, please keep reading.
               </Highlight>
             </P>
           </>
@@ -57,7 +57,7 @@ export default () => (
                     <>
                       <P>
                         Let me give you a hint to reproduce{' '}
-                        <H args={{ name: 'repeatFeature' }} /> using a lunchbox!
+                        <H args={{ name: 'repeatFeature' }} /> using a lunchbox.
                       </P>
                     </>
                   )
@@ -149,7 +149,7 @@ export default () => (
                     <>
                       <P>
                         Well… there’s no way I can figure it out in my head.
-                        It’s too complicated!
+                        It’s too complicated.
                       </P>
                     </>
                   )
@@ -168,7 +168,7 @@ export default () => (
                       <R.Ldcq>
                         <Emoji>👧🏻</Emoji> I think the result will be <br />a
                         lunchbox that can be converted to{' '}
-                        <EmojiNumber number={4} />!
+                        <EmojiNumber number={4} />
                       </R.Ldcq>
                     </>
                   )
@@ -178,7 +178,7 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        <Bold>Yes! Correct!</Bold>{' '}
+                        <Bold>Correct.</Bold>{' '}
                         <Highlight>
                           Saya, You’re exactly right! <Emoji>🎉</Emoji>
                         </Highlight>
@@ -204,7 +204,7 @@ export default () => (
                     <>
                       <P>
                         Not really. Actually, I used a{' '}
-                        <HighlightBold>trick.</HighlightBold> Let me explain!
+                        <HighlightBold>trick.</HighlightBold> Let me explain.
                       </P>
                     </>
                   )
@@ -246,7 +246,7 @@ export default () => (
                     <>
                       <P>
                         Oh! The <Bold>top section</Bold> is actually a lunchbox
-                        that can be converted to <EmojiNumber number={3} />!
+                        that can be converted to <EmojiNumber number={3} />.
                       </P>
                       <R.Ayrl>
                         <H
@@ -265,7 +265,7 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        Yes! So we’ll{' '}
+                        Yes. So we’ll{' '}
                         <Highlight>
                           replace this section with <EmojiNumber number={3} />.
                         </Highlight>
@@ -305,7 +305,7 @@ export default () => (
                       <P>
                         The <Bold>middle-right</Bold> section is actually a
                         lunchbox that can be converted to{' '}
-                        <EmojiNumber number={2} />!
+                        <EmojiNumber number={2} />.
                       </P>
                       <R.Mzys>
                         <H
@@ -324,7 +324,7 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        Yes! So we’ll{' '}
+                        Yes. So we’ll{' '}
                         <Highlight>
                           replace this section with <EmojiNumber number={2} />.
                         </Highlight>
@@ -343,7 +343,7 @@ export default () => (
                   type: 'surprised',
                   children: (
                     <>
-                      <P>I see…!</P>
+                      <P>I see…</P>
                     </>
                   )
                 }
@@ -380,7 +380,7 @@ export default () => (
                       <P>
                         This looks like <Emoji>👧🏻</Emoji> Saya’s lunchbox that
                         can <HighlightBold>reproduce</HighlightBold>{' '}
-                        <H args={{ name: 'plusOneFeature' }} />!
+                        <H args={{ name: 'plusOneFeature' }} />.
                       </P>
                       <R.Vcqp>
                         <Emoji>👧🏻</Emoji> Saya’s lunchbox that can{' '}
@@ -398,7 +398,7 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        Exactly! So we’ll{' '}
+                        Exactly. So we’ll{' '}
                         <Highlight>
                           replace this with <CustomEmoji type="plusOne" />.
                         </Highlight>
@@ -417,7 +417,7 @@ export default () => (
                   type: 'thinking',
                   children: (
                     <>
-                      <P>Hmm… it’s getting much simpler!</P>
+                      <P>Hmm… it’s getting much simpler.</P>
                     </>
                   )
                 }
@@ -439,7 +439,7 @@ export default () => (
                       <P>
                         Finally,{' '}
                         <Highlight>
-                          take a look at the <Bold>bottom-right</Bold> section!
+                          take a look at the <Bold>bottom-right</Bold> section.
                         </Highlight>
                       </P>
                     </>
@@ -475,7 +475,7 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        Exactly! So{' '}
+                        Exactly. So{' '}
                         <Highlight>
                           we’ll replace it with{' '}
                           <H args={{ name: 'conditionFeature' }} />.
@@ -525,7 +525,7 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        Let’s run it!{' '}
+                        Let’s run it.{' '}
                         <H args={{ name: 'pressRun', girl: true }} />
                       </P>
                     </>
@@ -571,7 +571,7 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        See, the final result is <EmojiNumber number={4} />!
+                        See, the final result is <EmojiNumber number={4} />.
                       </P>
                       <R.Kizi>
                         <Emoji>👧🏻</Emoji> The final result is{' '}
@@ -584,7 +584,7 @@ export default () => (
                   type: 'thinking',
                   children: (
                     <>
-                      <P>Hmm… I see!</P>
+                      <P>Hmm… You’re right.</P>
                     </>
                   )
                 }
@@ -682,7 +682,7 @@ export default () => (
                     <>
                       <P>
                         Let’s <H args={{ name: 'run', lowerCase: true }} /> the
-                        original lunchbox directly!
+                        original lunchbox directly.
                       </P>
                       <Ul>
                         <UlLi>
@@ -739,7 +739,7 @@ export default () => (
                   type: 'surprised',
                   children: (
                     <>
-                      <P>The result is the same as using Saya’s method!</P>
+                      <P>The result is the same as using Saya’s method.</P>
                       <P>
                         <Bold>So…</Bold> I guess Saya’s method was right…?
                       </P>
@@ -972,7 +972,7 @@ export default () => (
                 <>
                   I think I figured out how to
                   <br />
-                  reproduce <H args={{ name: 'repeatFeature' }} />!
+                  reproduce <H args={{ name: 'repeatFeature' }} />
                 </>
               }
             />
@@ -990,7 +990,7 @@ export default () => (
                   type: 'saya',
                   children: (
                     <>
-                      <P>Yes, let me explain!</P>
+                      <P>Yes, let me explain.</P>
                     </>
                   )
                 }
@@ -1015,7 +1015,7 @@ export default () => (
                     <>
                       <P>
                         <Bold>First:</Bold> Take a look at this mathbox with{' '}
-                        <H args={{ name: 'repeatFeature' }} />!
+                        <H args={{ name: 'repeatFeature' }} />.
                       </P>
                     </>
                   )
@@ -1056,7 +1056,7 @@ export default () => (
                     <>
                       <P>
                         I figured out how to reproduce this behavior using a
-                        lunchbox!
+                        lunchbox.
                       </P>
                     </>
                   )
@@ -1218,7 +1218,7 @@ export default () => (
                     <>
                       <P>
                         Yes, let’s <H args={{ name: 'run', lowerCase: true }} />{' '}
-                        on the next page to check!
+                        on the next page to check.
                       </P>
                     </>
                   )
