@@ -773,10 +773,21 @@ export default () => (
                       inline
                       bottomRightBadgeType="funcUnbound"
                     />{' '}
-                    に同じ料理があると、
-                    <br />
-                    実行結果が狂う
+                    に同じ料理があると…
                   </HighlightBold>
+                </>
+              }
+            />
+            <ExpressionRunnerSeparator />
+            <EmojiSeparator
+              nodes={[
+                <EmojiForLetter letter="c" />,
+                <Emoji>🆚</Emoji>,
+                <EmojiForLetter letter="d" />
+              ]}
+              description={
+                <>
+                  <HighlightBold>実行結果が狂う</HighlightBold>
                 </>
               }
             />

@@ -641,7 +641,7 @@ export default () => (
                   type: 'dog',
                   children: (
                     <>
-                      <P>We’re not done yet, but did you notice anything</P>
+                      <P>We’re not done yet, but did you notice something?</P>
                     </>
                   )
                 },
@@ -810,11 +810,18 @@ export default () => (
                   If the same item exists in both{' '}
                   <BottomRightBadge inline bottomRightBadgeType="callArg" /> and{' '}
                   <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />
-                  ,
-                  <br />
-                  then the results change
+                  …
                 </>
               }
+            />
+            <ExpressionRunnerSeparator />
+            <EmojiSeparator
+              nodes={[
+                <EmojiForLetter letter="c" />,
+                <Emoji>🆚</Emoji>,
+                <EmojiForLetter letter="d" />
+              ]}
+              description={<>The results change</>}
             />
           </>
         )

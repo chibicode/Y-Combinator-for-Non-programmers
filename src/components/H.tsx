@@ -1612,13 +1612,13 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
     if (locale === 'en') {
       return (
         <Highlight highlightType="pink">
-          You can also <Bold>skip to the end</Bold>. <Emoji>😉</Emoji>
+          You can also <Bold>skip to the end</Bold>.
         </Highlight>
       )
     } else {
       return (
         <Highlight highlightType="pink">
-          <Bold>最後までスキップ</Bold>することも可能です。<Emoji>😉</Emoji>
+          <Bold>最後までスキップ</Bold>することも可能です。
         </Highlight>
       )
     }
@@ -1627,14 +1627,13 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
     if (locale === 'en') {
       return (
         <Highlight highlightType="pink">
-          You can also <Bold>skip to the next stopping point.</Bold>{' '}
-          <Emoji>😉</Emoji>
+          You can also <Bold>skip to the next stopping point.</Bold>
         </Highlight>
       )
     } else {
       return (
         <Highlight highlightType="pink">
-          <Bold>途中までスキップ</Bold>することも可能です。<Emoji>😉</Emoji>
+          <Bold>途中までスキップ</Bold>することも可能です。
         </Highlight>
       )
     }
