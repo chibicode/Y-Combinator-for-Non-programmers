@@ -26,10 +26,10 @@ import Emoji from 'src/components/Emoji'
 import CustomEmoji from 'src/components/CustomEmoji'
 import BubbleQuotes from 'src/components/BubbleQuotes'
 import * as R from 'src/components/Runners'
-// import * as R from 'src/components/Runners/fakeIndex'
 import ExpressionRunnerCaptionOnly from 'src/components/ExpressionRunnerCaptionOnly'
 import CardContent from 'src/components/CardContent'
 import { colors } from 'src/lib/theme'
+import { Conclusion } from 'src/contents/15.en'
 
 const pythonCss = css`
   background: ${colors('green800')};
@@ -584,35 +584,11 @@ export default () => (
               }
             />
             <P>
-              <Bold>For example:</Bold> We learned that a lunchbox can calculate{' '}
-              <Bold>multiplications</Bold>:
+              <Bold>For example:</Bold> We learned that we can use the{' '}
+              <HighlightBold>Y Combinator</HighlightBold> lunchbox to do complex
+              calculations like factorials.
             </P>
-            <R.Vqyl>
-              A lunchbox that can calculate
-              <br />
-              multiplications
-            </R.Vqyl>
-            <ExpressionRunnerSeparator />
-            <R.Aflw></R.Aflw>
-            <P>
-              <Bold>Most importantly:</Bold> We learned that we can use{' '}
-              <HighlightBold>Y Combinator</HighlightBold> to repeat some
-              calculations.
-            </P>
-            <R.Xjzx>
-              By using the <HighlightBold>Y Combinator</HighlightBold> lunchbox…
-            </R.Xjzx>
-            <ExpressionRunnerSeparator />
-            <EmojiSeparator
-              emojis={['✨', '🔁', '✨']}
-              description={
-                <>
-                  We can create a lunchbox that can
-                  <br />
-                  repeat <Emoji>🔁</Emoji> some calculations
-                </>
-              }
-            />
+            <Conclusion />
             <P>
               <Bold>Again:</Bold> Computer science is all about building a
               complex thing from simple things.{' '}

@@ -22,6 +22,39 @@ import * as R from 'src/components/Runners'
 import NextLessonButton from 'src/components/NextLessonButton'
 import MultiplyIcon from 'src/components/MultiplyIcon'
 
+export const Conclusion = () => (
+  <>
+    <R.Xjzx>
+      By combining <HighlightBold>Y Combinator</HighlightBold>…
+    </R.Xjzx>
+    <ExpressionRunnerSeparator />
+    <EmojiSeparator
+      emojis={['🍱', '✖️', '🍱']}
+      description={
+        <>
+          …with a lunchbox that can
+          <br />
+          calculate multiplications…
+        </>
+      }
+    />
+    <ExpressionRunnerSeparator />
+    <EmojiSeparator
+      size="sm"
+      nodes={[
+        <CustomEmoji type="blankNumber" />,
+        <Emoji>✖️</Emoji>,
+        <CustomEmoji type="questionMinusOne" />,
+        <Emoji>✖️</Emoji>,
+        <CustomEmoji type="horizontalDotDotDot" />,
+        <Emoji>✖️</Emoji>,
+        <EmojiNumber number={1} />
+      ]}
+      description={<>You can do complicated calculations like factorials</>}
+    />
+  </>
+)
+
 export default () => (
   <EpisodeCardList
     cards={[
@@ -1669,36 +1702,7 @@ export default () => (
                 }
               ]}
             />
-            <R.Xjzx>
-              By combining <HighlightBold>Y Combinator</HighlightBold>…
-            </R.Xjzx>
-            <ExpressionRunnerSeparator />
-            <EmojiSeparator
-              emojis={['🍱', '✖️', '🍱']}
-              description={
-                <>
-                  …with a lunchbox that can
-                  <br />
-                  calculate multiplications…
-                </>
-              }
-            />
-            <ExpressionRunnerSeparator />
-            <EmojiSeparator
-              size="sm"
-              nodes={[
-                <CustomEmoji type="blankNumber" />,
-                <Emoji>✖️</Emoji>,
-                <CustomEmoji type="questionMinusOne" />,
-                <Emoji>✖️</Emoji>,
-                <CustomEmoji type="horizontalDotDotDot" />,
-                <Emoji>✖️</Emoji>,
-                <EmojiNumber number={1} />
-              ]}
-              description={
-                <>You can do complicated calculations like factorials</>
-              }
-            />
+            <Conclusion />
             <BubbleQuotes
               quotes={[
                 {
