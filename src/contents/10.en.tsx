@@ -39,8 +39,8 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        Fine! Since you got the question right, I’ll return your
-                        mathboxes!
+                        Ok, fine! Since you got the question right, I’ll return
+                        your mathboxes.
                       </P>
                       <P>Here it is!</P>
                     </>
@@ -151,7 +151,7 @@ export default () => (
                       <P>
                         <Highlight>
                           But I never promised to return <Italic>all</Italic> of
-                          the features!
+                          the features.
                         </Highlight>
                       </P>
                     </>
@@ -230,7 +230,7 @@ export default () => (
                       </P>
                       <P>
                         <HighlightBold>
-                          You must reproduce them using lunchboxes!
+                          You must reproduce them using lunchboxes.
                         </HighlightBold>
                       </P>
                     </>
@@ -332,11 +332,7 @@ export default () => (
                   type: 'crying',
                   children: (
                     <>
-                      <P>
-                        We’re so bad at math, so we really need those features
-                        back.
-                      </P>
-                      <P>I guess we have to try!</P>
+                      <P>I guess we have to try…</P>
                     </>
                   )
                 }
@@ -374,7 +370,7 @@ export default () => (
                         Yes.{' '}
                         <Highlight>
                           Let me give you a hint for reproducing{' '}
-                          <H args={{ name: 'minusOneFeature' }} />!
+                          <H args={{ name: 'minusOneFeature' }} />.
                         </Highlight>
                       </P>
                     </>
@@ -422,7 +418,7 @@ export default () => (
                   type: 'thinking',
                   children: (
                     <>
-                      <P>Hmm… it looks really complicated!</P>
+                      <P>Hmm… it looks really complicated.</P>
                     </>
                   )
                 },
@@ -464,7 +460,7 @@ export default () => (
                         Now,{' '}
                         <Highlight>
                           try to guess what goes in each{' '}
-                          <CustomEmoji type="questionFoodGrey" /> icon!
+                          <CustomEmoji type="questionFoodGrey" /> icon.
                         </Highlight>
                       </P>
                     </>
@@ -474,7 +470,7 @@ export default () => (
                   type: 'crying',
                   children: (
                     <>
-                      <P>But… this lunchbox looks so complicated!</P>
+                      <P>But… this lunchbox looks so complicated.</P>
                       <P>I don’t think we can do it…</P>
                     </>
                   )
@@ -515,7 +511,7 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        I don’t know if this is correct, but come take a look!
+                        I don’t know if this is correct, but come take a look.
                       </P>
                     </>
                   )
@@ -528,7 +524,7 @@ export default () => (
             </R.Pbop>
             <ExpressionRunnerSeparator />
             <R.Cldb>
-              <Emoji>👧🏻</Emoji> As follows!
+              <Emoji>👧🏻</Emoji> …as follows
             </R.Cldb>
             <BubbleQuotes
               quotes={[
@@ -549,7 +545,7 @@ export default () => (
                     <>
                       <P>
                         Ok. Let’s first combine it with a lunchbox that can be
-                        converted to <EmojiNumber number={1} />!
+                        converted to <EmojiNumber number={1} />.
                       </P>
                       <P>
                         <Highlight>
@@ -599,7 +595,7 @@ export default () => (
                     <>
                       <P>
                         Let’s run it with this lunchbox that can be converted to{' '}
-                        <EmojiNumber number={1} />!
+                        <EmojiNumber number={1} />.
                       </P>
                       <R.Dqdv>
                         <H
@@ -629,7 +625,7 @@ export default () => (
                     <>
                       <P>
                         Ok, let’s <H args={{ name: 'run', lowerCase: true }} />{' '}
-                        it!
+                        it.
                       </P>
                     </>
                   )
@@ -680,7 +676,7 @@ export default () => (
                     <>
                       <P>
                         <Highlight>
-                          You don’t have to follow all the steps with your eyes!
+                          You don’t have to follow all the steps with your eyes.
                         </Highlight>{' '}
                         Just glance over it. Save your eyes!
                       </P>
@@ -692,7 +688,7 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        <Bold>But guys, take a look!</Bold>{' '}
+                        <Bold>Hey guys, take a look!</Bold>{' '}
                         <BottomRightBadge
                           inline
                           bottomRightBadgeType="callArg"
@@ -725,7 +721,7 @@ export default () => (
               <Highlight>
                 Press <H args={{ name: 'next' }} />
               </Highlight>{' '}
-              to apply the <HighlightBold>special rule</HighlightBold>!
+              to apply the <HighlightBold>special rule</HighlightBold>.
             </P>
             <R.Xusi></R.Xusi>
             <BubbleQuotes
@@ -747,7 +743,7 @@ export default () => (
                       </P>
                       <P>
                         Now, let’s <H args={{ name: 'run', lowerCase: true }} />{' '}
-                        it until the end!
+                        it until the end.
                       </P>
                     </>
                   )
@@ -763,7 +759,7 @@ export default () => (
                     <>
                       <P>
                         The resulting lunchbox can be converted to{' '}
-                        <EmojiNumber number={0} />!
+                        <EmojiNumber number={0} />.
                       </P>
                     </>
                   )
@@ -846,7 +842,7 @@ export default () => (
                   type: 'surprised',
                   children: (
                     <>
-                      <P>Wow…!</P>
+                      <P>Wow…</P>
                     </>
                   )
                 }
@@ -948,7 +944,7 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        Let’s try it! Here’s a lunchbox that can be converted to{' '}
+                        Let’s try it. Here’s a lunchbox that can be converted to{' '}
                         <EmojiNumber number={2} />.
                       </P>
                       <R.Mzys>
@@ -979,7 +975,7 @@ export default () => (
                     <>
                       <P>
                         Ok, let’s <H args={{ name: 'run', lowerCase: true }} />{' '}
-                        it!
+                        it.
                       </P>
                       <Ul>
                         <UlLi>
@@ -991,7 +987,7 @@ export default () => (
                         <UlLi>
                           <Highlight>
                             You don’t have to follow all the steps with your
-                            eyes!
+                            eyes.
                           </Highlight>{' '}
                           Just glance over it.
                         </UlLi>
@@ -1020,7 +1016,7 @@ export default () => (
                     <>
                       <P>
                         The resulting lunchbox can be converted to{' '}
-                        <EmojiNumber number={1} />!
+                        <EmojiNumber number={1} />.
                       </P>
                     </>
                   )
@@ -1123,7 +1119,7 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        <Bold>Saya is correct!</Bold>{' '}
+                        <Bold>Saya is correct.</Bold>{' '}
                         <Highlight>
                           Her lunchbox does reproduce{' '}
                           <H args={{ name: 'minusOneFeature' }} />!{' '}
@@ -1142,7 +1138,7 @@ export default () => (
             </R.Ditw>
             <ExpressionRunnerSeparator />
             <R.Bgko>
-              Using <Emoji>👧🏻</Emoji> Saya’s lunchbox!
+              Using <Emoji>👧🏻</Emoji> Saya’s lunchbox
             </R.Bgko>
             <BubbleQuotes
               quotes={[
@@ -1169,7 +1165,7 @@ export default () => (
                       <P>
                         No, I’m just lucky. But anyway, we showed that{' '}
                         <H args={{ name: 'minusOneFeature' }} /> can be
-                        reproduced using a lunchbox!
+                        reproduced using a lunchbox.
                       </P>
                     </>
                   )
@@ -1259,7 +1255,7 @@ export default () => (
                         solution.
                       </P>
                       <P>
-                        If you’re curious, press “Continue reading” below! (It’s
+                        If you’re curious, press “Continue reading” below. (It’s
                         optional.)
                       </P>
                     </>
@@ -1351,7 +1347,7 @@ export default () => (
                       </P>
                       <P>
                         If you want it back, you must reproduce it using a
-                        lunchbox too!
+                        lunchbox too.
                       </P>
                     </>
                   )
@@ -1408,7 +1404,7 @@ export default () => (
                     <>
                       <P>
                         Seems difficult…. But we have <Emoji>👧🏻</Emoji> Saya on
-                        our side! She’ll be able to solve it for sure!
+                        our side. She’ll be able to solve it for sure!
                       </P>
                     </>
                   )
@@ -1423,7 +1419,7 @@ export default () => (
                       </P>
                       <P>
                         <Highlight>
-                          Let’s move on to the advanced levels next!
+                          Let’s move on to the advanced levels next.
                         </Highlight>
                       </P>
                     </>
@@ -1480,7 +1476,7 @@ export default () => (
                   Y combinator is actually{' '}
                   <Italic>a special kind of a lunchbox</Italic>.
                 </Highlight>{' '}
-                You’ll soon find out what that means!
+                You’ll soon find out what that means.
               </P>
               <EmojiSeparator
                 emojis={['❓', '🍱', '❓']}
