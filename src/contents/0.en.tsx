@@ -21,6 +21,34 @@ import YoutubeEmbed from 'src/components/YoutubeEmbed'
 import { githubRepo } from 'src/lib/meta'
 import * as R from 'src/components/Runners'
 
+export const JimsTalk = () => (
+  <>
+    <P>
+      For programmers interested in learning about Y Combinator, I recommend
+      this video:{' '}
+      <ExternalLink href="https://www.youtube.com/watch?v=FITJMJjASUs">
+        <HighlightBold>
+          “Y Not- Adventures in Functional Programming”
+        </HighlightBold>
+      </ExternalLink>
+      .
+    </P>
+    <P>
+      This is a talk by{' '}
+      <ExternalLink href="https://en.wikipedia.org/wiki/Jim_Weirich">
+        Jim Weirich
+      </ExternalLink>
+      , a legendary Ruby programmer who passed away in 2014. He gave this talk
+      at RubyConf 2012, and I was in the audience. It was an amazing talk.
+    </P>
+    <YoutubeEmbed
+      width={560}
+      height={315}
+      src="https://www.youtube.com/embed/FITJMJjASUs"
+    />
+  </>
+)
+
 export default () => (
   <EpisodeCardList
     cards={[
@@ -392,30 +420,7 @@ export default () => (
               }}
             >
               <Hr />
-              <P>
-                For programmers interested in learning about Y Combinator, I
-                recommend this video:{' '}
-                <ExternalLink href="https://www.youtube.com/watch?v=FITJMJjASUs">
-                  <HighlightBold>
-                    “Y Not- Adventures in Functional Programming”
-                  </HighlightBold>
-                </ExternalLink>
-                .
-              </P>
-              <P>
-                This is a talk by{' '}
-                <ExternalLink href="https://en.wikipedia.org/wiki/Jim_Weirich">
-                  Jim Weirich
-                </ExternalLink>
-                , a legendary Ruby programmer who passed away in 2014. He gave
-                this talk at RubyConf 2012, and I was in the audience. It was an
-                amazing talk.
-              </P>
-              <YoutubeEmbed
-                width={560}
-                height={315}
-                src="https://www.youtube.com/embed/FITJMJjASUs"
-              />
+              <JimsTalk />
               <Hr />
               <P>
                 <Bold>Also, for programmers:</Bold> This course is written in

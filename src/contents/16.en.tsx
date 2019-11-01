@@ -30,6 +30,7 @@ import ExpressionRunnerCaptionOnly from 'src/components/ExpressionRunnerCaptionO
 import CardContent from 'src/components/CardContent'
 import { colors } from 'src/lib/theme'
 import { Conclusion } from 'src/contents/15.en'
+import { JimsTalk } from 'src/contents/0.en'
 
 const pythonCss = css`
   background: ${colors('green800')};
@@ -781,6 +782,8 @@ export default () => (
                   </Highlight>{' '}
                   Interesting, right? <Emoji>😉</Emoji>
                 </P>
+                <Hr />
+                <JimsTalk />
               </CardContent>
             </>
           )
