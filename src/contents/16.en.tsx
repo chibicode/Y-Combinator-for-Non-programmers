@@ -44,18 +44,9 @@ export default () => (
         title: <>This is the final page!</>,
         content: (
           <>
-            <P>
-              This is the final page! Thank you for reading all the way through!
-            </P>
             <EmojiSeparator
               emojis={['🎉', '🤗', '🎉']}
-              description={
-                <>
-                  Thank you for reading
-                  <br />
-                  all the way through!
-                </>
-              }
+              description={<>This is the final page!</>}
             />
           </>
         )
@@ -132,7 +123,6 @@ export default () => (
                 </>
               }
             />
-            <P>Let’s now talk about lambda calculus!</P>
             <P>Let’s now talk about lambda calculus.</P>
           </>
         )
