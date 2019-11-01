@@ -260,78 +260,6 @@ export default () => (
         )
       },
       {
-        title: <>Let’s compare it with the last time</>,
-        content: (
-          <>
-            <BubbleQuotes
-              quotes={[
-                {
-                  type: 'dog',
-                  children: (
-                    <>
-                      <P>
-                        Let’s compare it with the last time. Previously, we used
-                        the following lunchbox:
-                      </P>
-                      <P>
-                        <Bold>The only difference</Bold>: It has{' '}
-                        <EmojiForLetter letter="e" />
-                        ’s on the top instead of <EmojiForLetter letter="b" />
-                        ’s. Everything else is the same.
-                      </P>
-                    </>
-                  )
-                }
-              ]}
-            />
-            <P>
-              <H args={{ name: 'pressRun' }} />
-            </P>
-            <R.Exbn>
-              <HighlightBold>What we used last time:</HighlightBold>
-              <br />
-              It has <EmojiForLetter letter="e" />
-              ’s on top instead of <EmojiForLetter letter="b" />
-              ’s.
-              <br />
-              Everything else is the same.
-            </R.Exbn>
-            <BubbleQuotes
-              quotes={[
-                {
-                  type: 'dog',
-                  children: (
-                    <>
-                      <P>
-                        This one did become a lunchbox that can be converted to{' '}
-                        <EmojiNumber number={2} />.
-                      </P>
-                    </>
-                  )
-                }
-              ]}
-            />
-            <R.Rico>
-              <H
-                args={{ name: 'canBeConvertedCaption', number: 2, letter: 'b' }}
-              />
-            </R.Rico>
-            <BubbleQuotes
-              quotes={[
-                {
-                  type: 'thinking',
-                  children: (
-                    <>
-                      <P>Hmm, why is there a difference?</P>
-                    </>
-                  )
-                }
-              ]}
-            />
-          </>
-        )
-      },
-      {
         title: (
           <>
             If the same item exists in both{' '}
@@ -350,36 +278,7 @@ export default () => (
                     <>
                       <P>Let me tell you what’s going on.</P>
                       <P>
-                        Let’s take a look at the previous example that{' '}
-                        <Highlight>
-                          <Emoji>❌</Emoji> <Italic>failed</Italic>{' '}
-                          <Emoji>❌</Emoji>
-                        </Highlight>{' '}
-                        to calculate <EmojiNumber number={1} />{' '}
-                        <Emoji>➕</Emoji> <EmojiNumber number={1} />.
-                      </P>
-                    </>
-                  )
-                }
-              ]}
-            />
-            <R.Ybne>
-              The example that{' '}
-              <Highlight>
-                <Emoji>❌</Emoji> <Italic>failed</Italic> <Emoji>❌</Emoji>
-              </Highlight>
-              <br />
-              to calculate <EmojiNumber number={1} /> <Emoji>➕</Emoji>{' '}
-              <EmojiNumber number={1} />
-            </R.Ybne>
-            <BubbleQuotes
-              quotes={[
-                {
-                  type: 'dog',
-                  children: (
-                    <>
-                      <P>
-                        Let’s label each item with{' '}
+                        First, let’s label each item with{' '}
                         <BottomRightBadge
                           inline
                           bottomRightBadgeType="callArg"
@@ -461,7 +360,7 @@ export default () => (
                             inline
                             bottomRightBadgeType="funcUnbound"
                           />
-                          , then the results change.
+                          , then the result changes.
                         </Highlight>
                       </P>
                       <P>
@@ -501,7 +400,7 @@ export default () => (
                   <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />
                   ,
                   <br />
-                  then the results change
+                  then the result changes
                 </>
               }
             />
@@ -519,7 +418,7 @@ export default () => (
                   type: 'dog',
                   children: (
                     <>
-                      <P>Let me use an example to explain!</P>
+                      <P>Let me use a simple example to explain!</P>
                     </>
                   )
                 }
@@ -538,7 +437,7 @@ export default () => (
                   type: 'dog',
                   children: (
                     <>
-                      <P>Here’s a simple example:</P>
+                      <P>Here’s a simple example that illustrates my point:</P>
                       <Ul>
                         <UlLi>
                           The left lunchbox has{' '}
@@ -791,7 +690,7 @@ export default () => (
                             inline
                             bottomRightBadgeType="funcUnbound"
                           />
-                          , then the results change.
+                          , then the result changes.
                         </Highlight>
                       </P>
                     </>
@@ -821,7 +720,7 @@ export default () => (
                 <Emoji>🆚</Emoji>,
                 <EmojiForLetter letter="d" />
               ]}
-              description={<>The results change</>}
+              description={<>The result changes</>}
             />
           </>
         )
@@ -842,7 +741,7 @@ export default () => (
                         <EmojiNumber number={1} />.
                       </P>
                       <P>
-                        <Emoji>❌</Emoji> This failed because{' '}
+                        This failed because{' '}
                         <EmojiForLetter size="mdlg" letter="b" /> was in both{' '}
                         <BottomRightBadge
                           inline
