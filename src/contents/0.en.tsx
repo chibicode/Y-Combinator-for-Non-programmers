@@ -192,7 +192,7 @@ export default () => (
                 The combined valuation
               </ExternalLink>{' '}
               of top companies they invested (such as AirBnB) is more than $150
-              billion dollars as of October 2019. <Emoji>💰</Emoji>
+              billion dollars as of October 2019.
             </P>
             <P>
               <Bold>However:</Bold> In this course, we will NOT talk about this
@@ -286,8 +286,7 @@ export default () => (
               <Highlight>
                 Even if you have no programming background, by the time you
                 finish this course, you’ll understand what Y Combinator is.
-              </Highlight>{' '}
-              <Emoji>😉</Emoji>
+              </Highlight>
             </P>
             <P>Let’s now talk about this course.</P>
           </>
@@ -332,7 +331,7 @@ export default () => (
               </Highlight>
               , without having to learn to code or study other boring stuff
               along the way. It could be the fastest way for non-programmers to
-              understand why computer science is interesting. <Emoji>😉</Emoji>
+              understand why computer science is interesting.
             </P>
             <EmojiSeparator
               nodes={[
@@ -428,7 +427,7 @@ export default () => (
                 <ExternalLink href={githubRepo}>
                   the source is available on GitHub
                 </ExternalLink>
-                . I’d appreciate it if you could ★ star it. <Emoji>😉</Emoji>
+                . I’d appreciate it if you could ★ star it.
               </P>
             </CardContent>
           )
