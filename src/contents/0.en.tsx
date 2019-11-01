@@ -327,7 +327,7 @@ export default () => (
                 <Italic>actually understand</Italic> computer science concepts
               </Highlight>
               , such as AI or blockchain. However, they can’t learn them because{' '}
-              they don’t have the necessary programming knowledge . Pretty much
+              they don’t have the necessary programming knowledge. Pretty much
               all learning resources that teach computer science concepts{' '}
               <Italic>assume</Italic> that you know programming.
             </P>
@@ -356,8 +356,8 @@ export default () => (
                 this approach is not the best way to introduce computer science
                 to non-programmers
               </Highlight>
-              . That’s why I’m calling this course a “<Italic>wild</Italic>”
-              introduction to computer science.
+              . That’s why I’m calling this course “a <Italic>wild</Italic>{' '}
+              introduction” to computer science.
             </P>
             <P>
               The ideal way to teach computer science would be to teach
