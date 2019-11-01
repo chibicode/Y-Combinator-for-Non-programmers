@@ -559,13 +559,9 @@ export default () => (
             />
             <P>
               However, one day, <Italic>something terrible happened</Italic> in
-              Lambda Village that changed everything.
+              Lambda Village that changed everything. We’ll talk about it on the
+              next page.
             </P>
-            <EmojiSeparator
-              emojis={['🌲', '😭', '❓', '😭', '🌲']}
-              description={<>Something terrible happened</>}
-            />
-            <P>We’ll talk about it on the next page.</P>
             <NextLessonButton />
           </>
         )

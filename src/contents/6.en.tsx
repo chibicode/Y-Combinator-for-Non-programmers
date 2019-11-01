@@ -36,7 +36,7 @@ export default () => (
               <P>
                 <Bold>Welcome to the intermediate levels:</Bold> Things will be
                 harder than the beginner levels, but you should be able to
-                handle them!
+                handle them.
               </P>
               <Hr />
               <P>
@@ -58,8 +58,7 @@ export default () => (
                 <Bold>Otherwise:</Bold> If you’ve just finished the beginner
                 levels and don’t need a review,{' '}
                 <Highlight>
-                  then skip the review and please continue reading!{' '}
-                  <Emoji>😉</Emoji>
+                  then skip the review and please continue reading.
                 </Highlight>
               </P>
             </>
@@ -140,11 +139,6 @@ export default () => (
               <Highlight>You don’t need to memorize the rules.</Highlight> You
               just need to know that these rules exist, and you should be fine.
             </P>
-            <EmojiSeparator
-              emojis={['✨', '🤗', '✨']}
-              description={<>You don’t need to memorize these rules!</>}
-            />
-            <P>Let’s start the intermediate levels!</P>
           </>
         )
       },
@@ -164,30 +158,12 @@ export default () => (
                         <Highlight>
                           I’ll give you a{' '}
                           <Italic>very difficult question</Italic>. I’ll give
-                          you the mathboxes back if you solve it!
+                          you the mathboxes back if you solve it.
                         </Highlight>
                       </P>
                     </>
                   )
-                }
-              ]}
-            />
-            <EmojiSeparator
-              nodes={[
-                <CustomEmoji type="mathBox" />,
-                <Emoji>😈</Emoji>,
-                <CustomEmoji type="mathBox" />
-              ]}
-              description={
-                <>
-                  If you can solve this very difficult question,
-                  <br />
-                  I’ll give you the mathboxes back!
-                </>
-              }
-            />
-            <BubbleQuotes
-              quotes={[
+                },
                 {
                   type: 'brave',
                   children: (
@@ -232,7 +208,7 @@ export default () => (
               emojis={['✨', '🐶', '✨']}
               description={
                 <>
-                  Hello, I’m <Bold>Minion!</Bold>
+                  Hello, I’m <Bold>Minion.</Bold>
                 </>
               }
             />
@@ -254,7 +230,7 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        Thanks for coming! Everyone, this is my business
+                        Thanks for coming. Everyone, this is my business
                         partner, Minion.
                       </P>
                     </>
@@ -276,7 +252,7 @@ export default () => (
                         Well, Minion is a special dog. He’s got some{' '}
                         <Italic>awesome</Italic> tricks.
                       </P>
-                      <P>Minion, show these guys one of your tricks!</P>
+                      <P>Minion, show these guys one of your tricks.</P>
                     </>
                   )
                 },
@@ -297,21 +273,13 @@ export default () => (
         title: <>Minion’s Trick</>,
         content: (
           <>
-            <EmojiSeparator
-              nodes={[
-                <Emoji>🍱</Emoji>,
-                <Emoji>🐶</Emoji>,
-                <CustomEmoji type="mathBox" />
-              ]}
-              description={<>I’ll show you a trick of mine!</>}
-            />
             <BubbleQuotes
               quotes={[
                 {
                   type: 'dog',
                   children: (
                     <>
-                      <P>Take a look at this lunchbox!</P>
+                      <P>Take a look at this lunchbox.</P>
                     </>
                   )
                 }
@@ -343,7 +311,7 @@ export default () => (
                         <Highlight>
                           Try pressing the{' '}
                           <H args={{ name: 'convertToMathbox' }} /> button
-                          below!
+                          below.
                         </Highlight>
                       </P>
                     </>
@@ -408,7 +376,7 @@ export default () => (
                     <>
                       <P>
                         Hmm… I wonder what the rule is. Let’s take a look at
-                        more examples!
+                        more examples.
                       </P>
                     </>
                   )
@@ -432,7 +400,7 @@ export default () => (
                         Here are 3 more examples.{' '}
                         <Highlight>
                           Try pressing <H args={{ name: 'convertToMathbox' }} />{' '}
-                          on each lunchbox!
+                          on each lunchbox.
                         </Highlight>
                       </P>
                     </>
@@ -460,7 +428,7 @@ export default () => (
                   type: 'thinking',
                   children: (
                     <>
-                      <P>Hmm… I might have figured out the pattern!</P>
+                      <P>Hmm… I might have figured out the pattern.</P>
                     </>
                   )
                 },
@@ -469,13 +437,13 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        Alright!{' '}
+                        Alright.{' '}
                         <Highlight>
                           Let’s do a{' '}
                           <Bold>
                             <H args={{ name: 'yesNoQuiz', lowerCase: true }} />
                           </Bold>{' '}
-                          to check your understanding!
+                          to check your understanding.
                         </Highlight>
                       </P>
                     </>
@@ -561,7 +529,7 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        Let’s try it!{' '}
+                        Let’s try it.{' '}
                         <Highlight>
                           Press <H args={{ name: 'convertToMathbox' }} /> below.
                         </Highlight>
@@ -587,7 +555,7 @@ export default () => (
                             lowerCase: true
                           }}
                         />
-                        !
+                        .
                       </P>
                     </>
                   )
@@ -596,7 +564,7 @@ export default () => (
                   type: 'dog',
                   children: (
                     <>
-                      <P>Alright, so let me explain the rules!</P>
+                      <P>Great! Now, let me explain the rules.</P>
                     </>
                   )
                 }
@@ -620,7 +588,7 @@ export default () => (
               description={
                 <>
                   I’ll show you exactly how to convert
-                  <br />a lunchbox into a mathbox!
+                  <br />a lunchbox into a mathbox.
                 </>
               }
             />
@@ -776,7 +744,7 @@ export default () => (
                       <R.Eozk></R.Eozk>
                       <P>
                         <Bold>Therefore:</Bold> It <Italic>can</Italic> be
-                        converted to a mathbox!
+                        converted to a mathbox.
                       </P>
                     </>
                   )
@@ -1122,7 +1090,7 @@ export default () => (
                   type: 'devil',
                   children: (
                     <>
-                      <P>Thanks for explaining, Minion!</P>
+                      <P>Thanks for explaining, Minion.</P>
                     </>
                   )
                 },
@@ -1130,7 +1098,7 @@ export default () => (
                   type: 'dog',
                   children: (
                     <>
-                      <P>No problem, sir!</P>
+                      <P>No problem, sir.</P>
                     </>
                   )
                 },
@@ -1148,32 +1116,12 @@ export default () => (
                       </P>
                       <P>
                         <Highlight>
-                          I’ll give you the mathboxes back if you solve it!
+                          I’ll return your mathboxes if you solve it.
                         </Highlight>
                       </P>
                     </>
                   )
-                }
-              ]}
-            />
-            <EmojiSeparator
-              nodes={[
-                <CustomEmoji type="mathBox" />,
-                <Emoji>😈</Emoji>,
-                <CustomEmoji type="mathBox" />
-              ]}
-              description={
-                <>
-                  If you can solve the difficult question
-                  <br />
-                  on the next page,
-                  <br />
-                  you’ll get your mathboxes back!
-                </>
-              }
-            />
-            <BubbleQuotes
-              quotes={[
+                },
                 {
                   type: 'brave',
                   children: (

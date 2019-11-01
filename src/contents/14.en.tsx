@@ -1652,8 +1652,8 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        The devil! We reproduced{' '}
-                        <H args={{ name: 'repeatFeature' }} /> using a lunchbox!
+                        We reproduced <H args={{ name: 'repeatFeature' }} />{' '}
+                        using a lunchbox.
                       </P>
                       <P>Now, give it back to us!</P>
                     </>
