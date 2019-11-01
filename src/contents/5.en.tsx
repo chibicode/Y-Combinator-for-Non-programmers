@@ -48,7 +48,7 @@ const WillReturnQuote = ({ covered }: { covered?: true }) => (
     </Ul>
     <P>
       <Highlight>
-        I’ll give you the mathboxes back if you solve it.{' '}
+        I’ll return your mathboxes if you solve it.{' '}
         <CustomEmoji type="mathBox" />
       </Highlight>
     </P>

@@ -164,27 +164,15 @@ export default () => (
             </P>
             <EmojiSeparator
               emojis={['⚠️', '🍱', '⚠️']}
-              description={<>Things will get harder!</>}
+              description={<>Things will get harder</>}
             />
             <P>
               <Bold>But:</Bold>{' '}
               <Highlight>
                 You don’t need to understand everything immediately. Even if you
                 don’t completely get it, please keep reading!
-              </Highlight>{' '}
-              After reading a few more pages, you might understand it.{' '}
-              <Emoji>😉</Emoji>
+              </Highlight>
             </P>
-            <EmojiSeparator
-              emojis={['✨', '🤗', '✨']}
-              description={
-                <>
-                  You don’t need to
-                  <br />
-                  understand everything immediately!
-                </>
-              }
-            />
           </>
         )
       },
@@ -200,36 +188,7 @@ export default () => (
                     <>
                       <P>
                         <Bold>As promised:</Bold> If you can solve this problem,
-                        I’ll give you the mathboxes back!
-                      </P>
-                    </>
-                  )
-                }
-              ]}
-            />
-            <EmojiSeparator
-              nodes={[
-                <CustomEmoji type="mathBox" />,
-                <Emoji>😈</Emoji>,
-                <CustomEmoji type="mathBox" />
-              ]}
-              description={
-                <>
-                  If you can solve this problem,
-                  <br />
-                  I’ll give you the mathboxes back!
-                </>
-              }
-            />
-            <BubbleQuotes
-              quotes={[
-                {
-                  type: 'devil',
-                  children: (
-                    <>
-                      <P>
-                        This problem is <Italic>very difficult</Italic>, so you
-                        better think hard!
+                        I’ll return your mathboxes.
                       </P>
                       <P>Minion, explain the problem!</P>
                     </>
@@ -259,7 +218,7 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        <Bold>We learned on the last page</Bold> that{' '}
+                        We learned on the last page that{' '}
                         <Highlight>
                           I can convert this lunchbox to{' '}
                           <EmojiNumber number={0} />.
@@ -283,14 +242,13 @@ export default () => (
                   type: 'dog',
                   children: (
                     <>
+                      <P>Now, take a look at this lunchbox.</P>
                       <P>
-                        <Bold>Next:</Bold>{' '}
-                        <Highlight>We combine it with this lunchbox.</Highlight>
-                      </P>
-                      <P>
-                        Each <CustomEmoji type="questionFoodGrey" /> icon{' '}
-                        <Italic>represents a food item</Italic>, but we’ll talk
-                        about that later.
+                        <Highlight>
+                          Each <CustomEmoji type="questionFoodGrey" /> icon{' '}
+                          <Italic>represents a food item</Italic>, but we’ll
+                          talk about that later.
+                        </Highlight>
                       </P>
                     </>
                   )
@@ -298,8 +256,6 @@ export default () => (
               ]}
             />
             <R.Envj>
-              Combine with this lunchbox.
-              <br />
               Each <CustomEmoji type="questionFoodGrey" /> icon represents a
               food item
             </R.Envj>
@@ -309,6 +265,11 @@ export default () => (
                   type: 'dog',
                   children: (
                     <>
+                      <P>
+                        <Highlight>
+                          We now combine the above two lunchboxes.
+                        </Highlight>
+                      </P>
                       <P>If you combine them, it’ll look like this:</P>
                     </>
                   )
@@ -316,18 +277,6 @@ export default () => (
               ]}
             />
             <R.Stda>After combining the two lunchboxes</R.Stda>
-            <BubbleQuotes
-              quotes={[
-                {
-                  type: 'dog',
-                  children: (
-                    <>
-                      <P>Now, let me tell you the question!</P>
-                    </>
-                  )
-                }
-              ]}
-            />
           </>
         )
       },
@@ -347,7 +296,7 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        <Bold>Here’s the challenge:</Bold>
+                        <Bold>Now, here’s the challenge:</Bold>
                       </P>
                       <Ul>
                         <UlLi>
@@ -485,27 +434,13 @@ export default () => (
                       </P>
                       <P>
                         <Highlight>
-                          If you solve this, I’ll give you the mathboxes back!
+                          If you solve this, I’ll return your mathboxes!
                         </Highlight>
                       </P>
                     </>
                   )
                 }
               ]}
-            />
-            <EmojiSeparator
-              nodes={[
-                <CustomEmoji type="mathBox" />,
-                <Emoji>😈</Emoji>,
-                <CustomEmoji type="mathBox" />
-              ]}
-              description={
-                <>
-                  If you solve this,
-                  <br />
-                  I’ll give you the mathboxes back!
-                </>
-              }
             />
           </>
         )
