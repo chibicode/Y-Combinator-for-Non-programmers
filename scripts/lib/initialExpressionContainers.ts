@@ -275,6 +275,12 @@ export const kaaf = initializeDoneExpressionContainer({
 export const mxkk = initializeDoneExpressionContainer({ shorthandNumber: 5 })
 
 export const lyet = initializeExpressionContainer(numberParams('d', 'e', 0))
+
+export const vlfz = initializeExpressionContainer([
+  highlighted('bentoBox'),
+  numberParams('d', 'e', 0)
+])
+
 export const zdlx = initializeExpressionContainer(
   numberParamsHighlightNumber('d', 'e', 1)
 )
@@ -833,6 +839,8 @@ export const iqbf = initializeExpressionContainer({
     body: ['b', { name: 'b', highlighted: true }]
   }
 })
+
+export const dpev = initializeExpressionContainer(numberParams('b', 'c', 1))
 
 export const abbh = initializeExpressionContainer(
   numberParamsHighlightNonNumber('b', 'c', 1)

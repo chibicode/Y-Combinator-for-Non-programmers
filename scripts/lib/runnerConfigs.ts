@@ -1137,6 +1137,12 @@ export const dvfg: ExpressionRunnerShorthandConfig = {
   showPriorities: true
 }
 
+export const xmns: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.vlfz,
+  showPriorities: true
+}
+
 export const hkbs: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   initialExpressionContainer: initialExpressionContainers.lyet,
@@ -1244,6 +1250,12 @@ export const fhrd: ExpressionRunnerShorthandConfig = {
   initialExpressionContainer: initialExpressionContainers.iqbf,
   showPriorities: true,
   bottomRightBadgeOverrides: { b: '🅰️', c: '🅱️' }
+}
+
+export const fqcg: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.dpev,
+  showPriorities: true
 }
 
 export const bgxi: ExpressionRunnerShorthandConfig = {

@@ -18,7 +18,6 @@ import EmojiForLetter from 'src/components/EmojiForLetter'
 import CardContent from 'src/components/CardContent'
 import H from 'src/components/H'
 import ExpressionRunnerSeparator from 'src/components/ExpressionRunnerSeparator'
-import ExpressionRunnerCaptionOnly from 'src/components/ExpressionRunnerCaptionOnly'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import * as R from 'src/components/Runners'
 import EmojiWithText from 'src/components/EmojiWithText'
@@ -177,7 +176,8 @@ export default () => (
         )
       },
       {
-        title: <>The problem</>,
+        type: 'challengeProblem',
+        title: <>The Challenge Question</>,
         content: (
           <>
             <BubbleQuotes
@@ -187,8 +187,8 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        <Bold>As promised:</Bold> If you can solve this problem,
-                        I’ll return your mathboxes.
+                        <Bold>As promised:</Bold> If you can solve this
+                        challenge question, I’ll return your mathboxes.
                       </P>
                       <P>Minion, explain the problem!</P>
                     </>
@@ -242,12 +242,210 @@ export default () => (
                   type: 'dog',
                   children: (
                     <>
-                      <P>Now, take a look at this lunchbox.</P>
+                      <P>
+                        Second,{' '}
+                        <H
+                          args={{ name: 'lookAtThisLunchBox', lowerCase: true }}
+                        />
+                        .
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Fqcg />
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>
+                        We learned on the last page that{' '}
+                        <Highlight>
+                          I can convert this lunchbox to{' '}
+                          <EmojiNumber number={1} />.
+                        </Highlight>
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Joaq>
+              <H
+                args={{ name: 'canBeConvertedCaption', letter: 'b', number: 1 }}
+              />
+            </R.Joaq>
+            <ExpressionRunnerSeparator />
+            <R.Rnug />
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>
+                        <Bold>Now, here’s the question:</Bold>{' '}
+                        <Highlight>
+                          How can you turn the first lunchbox into the second
+                          lunchbox?
+                        </Highlight>
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Dvfg>How can you turn the first lunchbox…</R.Dvfg>
+            <ExpressionRunnerSeparator />
+            <R.Fqcg>Into the second lunchbox?</R.Fqcg>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'devil',
+                  children: (
+                    <>
+                      <P>
+                        This is the <Bold>“very difficult question”</Bold> I’ve
+                        been talking about.
+                      </P>
+                      <P>
+                        <Highlight>
+                          If you solve this, I’ll return your mathboxes!
+                        </Highlight>
+                      </P>
+                    </>
+                  )
+                },
+                {
+                  type: 'thinking',
+                  children: (
+                    <>
+                      <P>Hmm… I have no idea…</P>
+                    </>
+                  )
+                },
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>No problem. Let me give you some hints!</P>
+                    </>
+                  )
+                }
+              ]}
+            />
+          </>
+        )
+      },
+      {
+        type: 'challengeProblem',
+        title: <>Hint 1: Combine with something</>,
+        content: (
+          <>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>
+                        <Bold>Here’s the first hint:</Bold>
+                      </P>
+                      <Ul>
+                        <UlLi>
+                          <Highlight>
+                            If you combine the first lunchbox with a specific
+                            kind of a lunchbox <Emoji>🍱</Emoji> and{' '}
+                            <H args={{ name: 'run', lowerCase: true }} /> it,
+                          </Highlight>
+                        </UlLi>
+                        <UlLi>
+                          <Highlight>
+                            You’ll end up with the second lunchbox.
+                          </Highlight>
+                        </UlLi>
+                      </Ul>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Xmns>
+              If you combine the first lunchbox with
+              <br />a specific kind of a lunchbox <Emoji>🍱</Emoji>…
+            </R.Xmns>
+            <ExpressionRunnerSeparator />
+            <R.Fqcg>
+              After you <H args={{ name: 'run', lowerCase: true }} /> it,
+              <br />
+              you’ll end up with the second lunchbox
+            </R.Fqcg>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>
+                        <Bold>So the question is:</Bold>{' '}
+                        <Highlight>What lunchbox should we use?</Highlight>
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <EmojiSeparator
+              emojis={['❓', '🍱', '❓']}
+              description={<>What lunchbox should we use?</>}
+            />
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'thinking',
+                  children: (
+                    <>
+                      <P>Hmm… I still have no idea…</P>
+                    </>
+                  )
+                },
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>No problem. Let me give you another hint!</P>
+                    </>
+                  )
+                }
+              ]}
+            />
+          </>
+        )
+      },
+      {
+        type: 'challengeProblem',
+        title: (
+          <>
+            Hint 2: A lunchbox with <CustomEmoji type="questionFoodGrey" />
+            ’s
+          </>
+        ),
+        content: (
+          <>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>Take a look at this lunchbox.</P>
                       <P>
                         <Highlight>
                           Each <CustomEmoji type="questionFoodGrey" /> icon{' '}
-                          <Italic>represents a food item</Italic>, but we’ll
-                          talk about that later.
+                          <Italic>represents a food item</Italic>.
                         </Highlight>
                       </P>
                     </>
@@ -266,50 +464,19 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        <Highlight>
-                          We now combine the above two lunchboxes.
-                        </Highlight>
-                      </P>
-                      <P>If you combine them, it’ll look like this:</P>
-                    </>
-                  )
-                }
-              ]}
-            />
-            <R.Stda>After combining the two lunchboxes</R.Stda>
-          </>
-        )
-      },
-      {
-        type: 'challengeProblem',
-        title: (
-          <>
-            <EmojiNumber number={0} /> to <EmojiNumber number={1} />
-          </>
-        ),
-        content: (
-          <>
-            <BubbleQuotes
-              quotes={[
-                {
-                  type: 'dog',
-                  children: (
-                    <>
-                      <P>
-                        <Bold>Now, here’s the challenge:</Bold>
+                        <Bold>Here’s the second hint:</Bold>
                       </P>
                       <Ul>
                         <UlLi>
                           <Highlight>
-                            If you fill each{' '}
-                            <CustomEmoji type="questionFoodGrey" /> icon with
-                            the <Italic>correct</Italic> food item,
+                            If you combine the first lunchbox with the above
+                            lunchbox and{' '}
+                            <H args={{ name: 'run', lowerCase: true }} /> it,
                           </Highlight>
                         </UlLi>
                         <UlLi>
                           <Highlight>
-                            After running it, it becomes a lunchbox that can be
-                            converted to <EmojiNumber number={1} />.
+                            You’ll end up with the second lunchbox.
                           </Highlight>
                         </UlLi>
                       </Ul>
@@ -319,16 +486,16 @@ export default () => (
               ]}
             />
             <R.Cawa>
-              If you fill each <CustomEmoji type="questionFoodGrey" /> icon with
+              If you combine the first lunchbox with
               <br />
-              the <Italic>correct</Italic> food item,
+              the above lunchbox…
             </R.Cawa>
             <ExpressionRunnerSeparator />
-            <R.Jzwg>
-              After running it, it becomes a lunchbox
+            <R.Fqcg>
+              After you <H args={{ name: 'run', lowerCase: true }} /> it,
               <br />
-              that can be converted to <EmojiNumber number={1} />
-            </R.Jzwg>
+              you’ll end up with the second lunchbox
+            </R.Fqcg>
             <BubbleQuotes
               quotes={[
                 {
@@ -336,105 +503,10 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        Because the top lunchbox can be converted to{' '}
-                        <EmojiNumber number={0} />,
-                      </P>
-                      <R.Hkbs>
-                        <H
-                          args={{
-                            name: 'canBeConvertedCaption',
-                            letter: 'd',
-                            number: 0
-                          }}
-                        />
-                      </R.Hkbs>
-                      <P>
-                        <Bold>It means that:</Bold>
-                      </P>
-                      <Ul>
-                        <UlLi>By running the combined lunchbox,</UlLi>
-                        <UlLi>
-                          <Highlight>
-                            A lunchbox that can be converted to{' '}
-                            <EmojiNumber number={0} />…
-                          </Highlight>
-                        </UlLi>
-                        <UlLi>
-                          <Highlight>
-                            Becomes a lunchbox that can be converted to{' '}
-                            <EmojiNumber number={1} />.
-                          </Highlight>
-                        </UlLi>
-                      </Ul>
-                    </>
-                  )
-                }
-              ]}
-            />
-            <EmojiSeparator
-              nodes={[
-                <EmojiNumber number={0} />,
-                <CustomEmoji type="singleArrow" />,
-                <EmojiNumber number={1} />
-              ]}
-              description={
-                <>
-                  A lunchbox that can be converted to <EmojiNumber number={0} />
-                  <br />
-                  becomes a lunchbox
-                  <br />
-                  that can be converted to <EmojiNumber number={1} />
-                </>
-              }
-            />
-            <BubbleQuotes
-              quotes={[
-                {
-                  type: 'dog',
-                  children: (
-                    <>
-                      <P>
-                        <Bold>So, here’s what you need to do:</Bold>
-                      </P>
-                      <Ul>
-                        <UlLi>
-                          <Highlight>
-                            Fill each <CustomEmoji type="questionFoodGrey" />{' '}
-                            icon in a way such that,
-                          </Highlight>
-                        </UlLi>
-                        <UlLi>
-                          <Highlight>
-                            After you{' '}
-                            <H args={{ name: 'run', lowerCase: true }} /> it,
-                          </Highlight>
-                        </UlLi>
-                        <UlLi>
-                          <Highlight>
-                            The resulting lunchbox can be converted to{' '}
-                            <EmojiNumber number={1} />.
-                          </Highlight>
-                        </UlLi>
-                      </Ul>
-                    </>
-                  )
-                }
-              ]}
-            />
-            <Problem />
-            <BubbleQuotes
-              quotes={[
-                {
-                  type: 'devil',
-                  children: (
-                    <>
-                      <P>
-                        This is the <Bold>“very difficult question”</Bold> I’ve
-                        been talking about.
-                      </P>
-                      <P>
+                        <Bold>So the question is:</Bold>{' '}
                         <Highlight>
-                          If you solve this, I’ll return your mathboxes!
+                          Which food item goes in each{' '}
+                          <CustomEmoji type="questionFoodGrey" /> icon?
                         </Highlight>
                       </P>
                     </>
@@ -442,9 +514,178 @@ export default () => (
                 }
               ]}
             />
+            <R.Envj>
+              Which food item goes in each{' '}
+              <CustomEmoji type="questionFoodGrey" /> icon?
+            </R.Envj>
           </>
         )
       },
+      // {
+      //   type: 'challengeProblem',
+      //   title: (
+      //     <>
+      //       <EmojiNumber number={0} /> to <EmojiNumber number={1} />
+      //     </>
+      //   ),
+      //   content: (
+      //     <>
+      //       <BubbleQuotes
+      //         quotes={[
+      //           {
+      //             type: 'dog',
+      //             children: (
+      //               <>
+      //                 <P>
+      //                   <Bold>Now, here’s the challenge:</Bold>
+      //                 </P>
+      //                 <Ul>
+      //                   <UlLi>
+      //                     <Highlight>
+      //                       If you fill each{' '}
+      //                       <CustomEmoji type="questionFoodGrey" /> icon with
+      //                       the <Italic>correct</Italic> food item,
+      //                     </Highlight>
+      //                   </UlLi>
+      //                   <UlLi>
+      //                     <Highlight>
+      //                       After running it, it becomes a lunchbox that can be
+      //                       converted to <EmojiNumber number={1} />.
+      //                     </Highlight>
+      //                   </UlLi>
+      //                 </Ul>
+      //               </>
+      //             )
+      //           }
+      //         ]}
+      //       />
+      //       <R.Cawa>
+      //         If you fill each <CustomEmoji type="questionFoodGrey" /> icon with
+      //         <br />
+      //         the <Italic>correct</Italic> food item,
+      //       </R.Cawa>
+      //       <ExpressionRunnerSeparator />
+      //       <R.Jzwg>
+      //         After running it, it becomes a lunchbox
+      //         <br />
+      //         that can be converted to <EmojiNumber number={1} />
+      //       </R.Jzwg>
+      //       <BubbleQuotes
+      //         quotes={[
+      //           {
+      //             type: 'dog',
+      //             children: (
+      //               <>
+      //                 <P>
+      //                   Because the top lunchbox can be converted to{' '}
+      //                   <EmojiNumber number={0} />,
+      //                 </P>
+      //                 <R.Hkbs>
+      //                   <H
+      //                     args={{
+      //                       name: 'canBeConvertedCaption',
+      //                       letter: 'd',
+      //                       number: 0
+      //                     }}
+      //                   />
+      //                 </R.Hkbs>
+      //                 <P>
+      //                   <Bold>It means that:</Bold>
+      //                 </P>
+      //                 <Ul>
+      //                   <UlLi>By running the combined lunchbox,</UlLi>
+      //                   <UlLi>
+      //                     <Highlight>
+      //                       A lunchbox that can be converted to{' '}
+      //                       <EmojiNumber number={0} />…
+      //                     </Highlight>
+      //                   </UlLi>
+      //                   <UlLi>
+      //                     <Highlight>
+      //                       Becomes a lunchbox that can be converted to{' '}
+      //                       <EmojiNumber number={1} />.
+      //                     </Highlight>
+      //                   </UlLi>
+      //                 </Ul>
+      //               </>
+      //             )
+      //           }
+      //         ]}
+      //       />
+      //       <EmojiSeparator
+      //         nodes={[
+      //           <EmojiNumber number={0} />,
+      //           <CustomEmoji type="singleArrow" />,
+      //           <EmojiNumber number={1} />
+      //         ]}
+      //         description={
+      //           <>
+      //             A lunchbox that can be converted to <EmojiNumber number={0} />
+      //             <br />
+      //             becomes a lunchbox
+      //             <br />
+      //             that can be converted to <EmojiNumber number={1} />
+      //           </>
+      //         }
+      //       />
+      //       <BubbleQuotes
+      //         quotes={[
+      //           {
+      //             type: 'dog',
+      //             children: (
+      //               <>
+      //                 <P>
+      //                   <Bold>So, here’s what you need to do:</Bold>
+      //                 </P>
+      //                 <Ul>
+      //                   <UlLi>
+      //                     <Highlight>
+      //                       Fill each <CustomEmoji type="questionFoodGrey" />{' '}
+      //                       icon in a way such that,
+      //                     </Highlight>
+      //                   </UlLi>
+      //                   <UlLi>
+      //                     <Highlight>
+      //                       After you{' '}
+      //                       <H args={{ name: 'run', lowerCase: true }} /> it,
+      //                     </Highlight>
+      //                   </UlLi>
+      //                   <UlLi>
+      //                     <Highlight>
+      //                       The resulting lunchbox can be converted to{' '}
+      //                       <EmojiNumber number={1} />.
+      //                     </Highlight>
+      //                   </UlLi>
+      //                 </Ul>
+      //               </>
+      //             )
+      //           }
+      //         ]}
+      //       />
+      //       <Problem />
+      //       <BubbleQuotes
+      //         quotes={[
+      //           {
+      //             type: 'devil',
+      //             children: (
+      //               <>
+      //                 <P>
+      //                   This is the <Bold>“very difficult question”</Bold> I’ve
+      //                   been talking about.
+      //                 </P>
+      //                 <P>
+      //                   <Highlight>
+      //                     If you solve this, I’ll return your mathboxes!
+      //                   </Highlight>
+      //                 </P>
+      //               </>
+      //             )
+      //           }
+      //         ]}
+      //       />
+      //     </>
+      //   )
+      // },
       {
         title: <>Try filling with random items</>,
         content: (
@@ -455,8 +696,7 @@ export default () => (
                   type: 'crying',
                   children: (
                     <>
-                      <P>Hmm… I don’t know if I understood the problem.</P>
-                      <P>And I have no idea how to solve it!</P>
+                      <P>Hmm… I still have no idea…</P>
                     </>
                   )
                 },
@@ -471,10 +711,6 @@ export default () => (
                           <CustomEmoji type="questionFoodGrey" /> icon with a{' '}
                           <Italic>random</Italic> food item.
                         </Highlight>
-                      </P>
-                      <P>
-                        By doing so, you’ll be able to understand the problem
-                        better.
                       </P>
                     </>
                   )
@@ -520,41 +756,26 @@ export default () => (
                     <>
                       <P>
                         Now, we’ll <H args={{ name: 'run', lowerCase: true }} />{' '}
-                        the above lunchbox, and…
+                        the above lunchbox and{' '}
+                        <Highlight>
+                          check see if it becomes the second lunchbox.
+                        </Highlight>
                       </P>
-                      <Ul>
-                        <UlLi>
-                          <Highlight>
-                            If it becomes a lunchbox that can be converted to{' '}
-                            <EmojiNumber number={1} />, it’s a{' '}
-                            <Highlight>success!</Highlight> <Emoji>🎉</Emoji>
-                          </Highlight>
-                        </UlLi>
-                        <UlLi>
-                          <Highlight>
-                            If not, then it’s a <Highlight>failure</Highlight>.{' '}
-                            <Emoji>😭</Emoji>
-                          </Highlight>
-                        </UlLi>
-                      </Ul>
                     </>
                   )
                 }
               ]}
             />
+
             <R.Nuco>
               We’ll <H args={{ name: 'run', lowerCase: true }} /> this lunchbox,
               and…
             </R.Nuco>
             <ExpressionRunnerSeparator />
-            <ExpressionRunnerCaptionOnly>
-              If it becomes a lunchbox that can be
-              <br />
-              converted to <EmojiNumber number={1} size="mdlg" />,{' '}
-              <Highlight>success</Highlight>. <Emoji>🎉</Emoji>
-              <br />
-              Otherwise, <Highlight>failure</Highlight> <Emoji>😭</Emoji>
-            </ExpressionRunnerCaptionOnly>
+            <R.Fqcg>
+              <Emoji>❓</Emoji> See if it becomes this lunchbox{' '}
+              <Emoji>❓</Emoji>
+            </R.Fqcg>
             <BubbleQuotes
               quotes={[
                 {
@@ -642,7 +863,7 @@ export default () => (
         )
       },
       {
-        title: <>Can’t convert to a mathbox</>,
+        title: <>Not what we wanted</>,
         content: (
           <>
             <BubbleQuotes
@@ -651,16 +872,26 @@ export default () => (
                   type: 'dog',
                   children: (
                     <>
-                      <P>Now, we want to convert this to a mathbox…</P>
-                      <P>
-                        <Bold>But unfortunately:</Bold>{' '}
-                        <Highlight>I won’t be able to convert this.</Highlight>
-                      </P>
+                      <P>What we wanted to get at the end was this lunchbox:</P>
                     </>
                   )
                 }
               ]}
             />
+            <R.Fqcg>What we wanted</R.Fqcg>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>But instead, we got this lunchbox:</P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Bwff>We got this lunchbox instead</R.Bwff>
             <R.Xwzc>
               <Emoji>❌</Emoji> Can’t convert this to a mathbox{' '}
               <Emoji>❌</Emoji>
