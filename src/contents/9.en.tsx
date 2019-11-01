@@ -1404,9 +1404,7 @@ export default () => (
                         <Bold>Anyway:</Bold> We figured out how to reproduce{' '}
                         <H args={{ name: 'plusOneFeature' }} />!
                       </P>
-                      <P>
-                        The devil! As you promised, give us our mathboxes back!
-                      </P>
+                      <P>As you promised, give us our mathboxes back!</P>
                     </>
                   )
                 },
