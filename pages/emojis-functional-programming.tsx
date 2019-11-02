@@ -33,7 +33,7 @@ const titleSplit = (
   </>
 )
 const description = lessonTitle
-const url = `${enBaseUrl}/emojis-functional-programming/`
+const url = `${enBaseUrl}/emojis-functional-programming`
 const ogImageUrl = `${enBaseUrl}/static/images/blog-og.png`
 
 // const cards: EpisodeCardListType = []
