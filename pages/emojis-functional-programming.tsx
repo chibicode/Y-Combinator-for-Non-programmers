@@ -3,7 +3,8 @@ import { css, jsx } from '@emotion/core'
 import Page from 'src/components/Page'
 import Head from 'next/head'
 // import H from 'src/components/H'
-import { fontSizes, colors, spaces } from 'src/lib/theme'
+import { ns, fontSizes, colors, spaces } from 'src/lib/theme'
+import { lessonTitle } from 'src/lib/titles'
 import Container from 'src/components/Container'
 // import CardWrapper from 'src/components/CardWrapper'
 import EpisodeHero from 'src/components/EpisodeHero'
@@ -12,6 +13,7 @@ import { P, ExternalLink } from 'src/components/ContentTags'
 import locale from 'src/lib/locale'
 // import { EpisodeCardListType } from 'src/components/EpisodeCardList'
 import { DateTime } from 'luxon'
+import { enBaseUrl } from 'src/lib/meta'
 
 const date = DateTime.fromISO('2019-11-06T12:00:00Z')
 const dateString = date
@@ -30,6 +32,9 @@ const titleSplit = (
     non-programmers
   </>
 )
+const description = lessonTitle
+const url = `${enBaseUrl}/emojis-functional-programming/`
+const ogImageUrl = `${enBaseUrl}/static/images/blog-og.png`
 
 // const cards: EpisodeCardListType = []
 
@@ -39,12 +44,12 @@ export default () =>
       <Head>
         <title key="title">{title}</title>
         <meta property="og:title" content={title} />
-        {/* <meta property="og:site_name" content={lessonTitle} />
+        <meta property="og:site_name" content={lessonTitle} />
         <meta property="og:url" content={url} />
         <link rel="canonical" href={url} />
         <meta property="og:description" content={description} />
         <meta name="description" content={description} />
-        <meta property="og:image" content={ogImageUrl} /> */}
+        <meta property="og:image" content={ogImageUrl} />
         <meta property="article:published_time" content={dateSchemaString} />
       </Head>
       <div
@@ -61,7 +66,8 @@ export default () =>
             font-size: ${fontSizes(0.85)};
           `}
         >
-          {dateString} &middot; Shu Uesugi (
+          <time dateTime={dateSchemaString}>{dateString}</time> &middot; Shu
+          Uesugi (
           <ExternalLink href="https://twitter.com/chibicode">
             @chibicode
           </ExternalLink>
@@ -71,9 +77,12 @@ export default () =>
           src="/static/images/animated@2x.gif"
           alt={title}
           css={css`
-            width: 180px;
+            width: 7rem;
             margin: ${spaces(1.75)} auto ${spaces(2)};
             display: block;
+            ${ns} {
+              width: 8rem;
+            }
           `}
         />
         <P>
