@@ -94,7 +94,7 @@ const EpisodeHero = ({
                   color: ${colors('grey900')};
                   padding-top: ${spaces(0.5)};
                   font-size: ${fontSizes(1.6)};
-                  margin: 0 auto ${spaces(0.5)};
+                  margin: 0 auto ${threeLineTitle ? 0 : spaces(0.5)};
                   font-weight: ${fontWeights(800)};
                   line-height: ${lineHeights(1.3)};
 
@@ -141,6 +141,16 @@ const EpisodeHero = ({
           nodes={emojis.map(emoji =>
             emoji === '🔲' ? (
               <CustomEmoji type="mathBox" />
+            ) : emoji === '🍣' ? (
+              <img
+                src="/static/images/animated@1x.gif"
+                alt="Lunchbox"
+                css={css`
+                  width: 1.6em;
+                  vertical-align: middle;
+                  transform: translateY(-0.125em);
+                `}
+              />
             ) : (
               <Emoji>{emoji}</Emoji>
             )
