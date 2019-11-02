@@ -25,7 +25,7 @@ const HighlightContext = React.createContext<HighlightContextProps>(
   highlightContextDefault
 )
 
-const mix = (color: CardProps['color'] | 'white', base: string) =>
+const mix = (color: CardProps['color'], base: string) =>
   Color(base)
     .mix(
       Color(backgroundColor(color)),

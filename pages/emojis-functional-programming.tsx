@@ -2,14 +2,20 @@
 import { css, jsx } from '@emotion/core'
 import Page from 'src/components/Page'
 import Head from 'next/head'
-// import H from 'src/components/H'
 import { ns, fontSizes, colors, spaces } from 'src/lib/theme'
 import { lessonTitle } from 'src/lib/titles'
 import Container from 'src/components/Container'
+import Emoji from 'src/components/Emoji'
 // import CardWrapper from 'src/components/CardWrapper'
 import EpisodeHero from 'src/components/EpisodeHero'
 import EpisodePageFooter from 'src/components/EpisodePageFooter'
-import { P, ExternalLink } from 'src/components/ContentTags'
+import {
+  P,
+  Italic,
+  Bold,
+  InternalLink,
+  ExternalLink
+} from 'src/components/ContentTags'
 import locale from 'src/lib/locale'
 // import { EpisodeCardListType } from 'src/components/EpisodeCardList'
 import { DateTime } from 'luxon'
@@ -32,7 +38,8 @@ const titleSplit = (
     Non-programmers
   </>
 )
-const description = lessonTitle
+const description =
+  'How to teach lambda calculus, Church encoding, and Y combinator without any code'
 const url = `${enBaseUrl}/emojis-functional-programming`
 const ogImageUrl = `${enBaseUrl}/static/images/blog-og.png`
 
@@ -57,8 +64,10 @@ export default () =>
           padding-top: ${spaces(1.5)};
         `}
       />
-      <Container size="smsm" horizontalPadding={1}>
+      <Container size="smsm" horizontalPadding={0.5}>
         <EpisodeHero mainTitle={titleSplit} threeLineTitle />
+      </Container>
+      <Container size="smsm" horizontalPadding={0.75}>
         <div
           css={css`
             text-align: center;
@@ -77,19 +86,35 @@ export default () =>
           src="/static/images/animated@2x.gif"
           alt={title}
           css={css`
-            width: 7rem;
+            width: 6rem;
             margin: ${spaces(1.75)} auto ${spaces(2)};
             display: block;
             ${ns} {
-              width: 8rem;
+              width: 7rem;
             }
           `}
         />
         <P>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur,
-          neque quod eum maxime distinctio, commodi alias qui magni ullam
-          dolores ipsa, odio esse quidem dicta. Voluptatem illo voluptate
-          doloremque odit.
+          Last month, I published a free online course called “
+          <InternalLink href="/">
+            <Bold>Y Combinator for Non-programmers</Bold>
+          </InternalLink>
+          ”. In this course, I teach computer science concepts such as
+          functional programming, lambda calculus, Church encoding, and Y
+          combinator in a way such that{' '}
+          <Italic>
+            people who have zero programming knowledge can understand
+          </Italic>
+          .
+        </P>
+        <P>
+          There’s not a single line of code mentioned in the course—instead, I
+          used <Emoji>🍱</Emoji> <Italic>emoji puzzles</Italic> to explain these
+          concepts. In this article, I’ll explain how my emoji puzzles can be
+          used to represent and execute functional code{' '}
+          <Italic>visually</Italic>. If you enjoy teaching programming to
+          beginners, or if you like functional programming in general, I think
+          you’ll enjoy this post.
         </P>
       </Container>
       <div

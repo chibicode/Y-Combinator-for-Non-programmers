@@ -12,7 +12,7 @@ interface CardColorContextProps {
 }
 
 const cardColorContextDefault: CardColorContextProps = {
-  color: 'grey'
+  color: 'white'
 }
 
 export const CardColorContext = React.createContext<CardColorContextProps>(
@@ -30,6 +30,7 @@ export interface CardProps {
     | 'indigo'
     | 'pink'
     | 'brown'
+    | 'white'
   slideNumber?: number
   slideCount?: number
   isLast?: boolean
@@ -48,7 +49,7 @@ export interface CardState {
   overrideColor?: CardProps['color']
 }
 
-export const backgroundColor = (color: CardProps['color'] | 'white') =>
+export const backgroundColor = (color: CardProps['color']) =>
   ({
     green: colors('green50'),
     grey: colors('grey100'),
@@ -59,7 +60,6 @@ export const backgroundColor = (color: CardProps['color'] | 'white') =>
     indigo: colors('indigo50'),
     pink: colors('pink50'),
     brown: colors('brown50'),
-    // For highlights in quotes
     white: colors('white')
   }[color])
 
@@ -68,6 +68,7 @@ const slideLabelBgColor = (color: CardProps['color']) =>
   ({
     green: colors('green600'),
     grey: colors('grey600'),
+    white: colors('grey600'),
     orange: colors('deepOrange600'),
     yellow: colors('yellow900'),
     purple: colors('deepPurple300'),
