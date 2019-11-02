@@ -1,13 +1,9 @@
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core'
-import { useContext } from 'react'
 import { InternalLink } from 'src/components/ContentTags'
 import EmojiSeparator from 'src/components/EmojiSeparator'
-import EpisodeContext from 'src/components/EpisodeContext'
-import episodeEmojis from 'src/lib/episodeEmojis'
 import CustomEmoji from 'src/components/CustomEmoji'
 import { description } from 'src/lib/titles'
-import locale from 'src/lib/locale'
 import Emoji from 'src/components/Emoji'
 import {
   colors,
@@ -18,22 +14,25 @@ import {
   spaces,
   ns
 } from 'src/lib/theme'
-import H from 'src/components/H'
 
 const commonTitleClasses = css`
-  line-height: ${lineHeights(1.1)};
   letter-spacing: ${letterSpacings('title')};
   text-align: center;
 `
 
 const EpisodeHero = ({
-  demo,
-  notFound
+  mainTitle,
+  episodeTitle,
+  showDescription,
+  emojis,
+  threeLineTitle
 }: {
-  demo: boolean
-  notFound: boolean
+  mainTitle: React.ReactNode
+  episodeTitle?: React.ReactNode
+  showDescription?: boolean
+  emojis?: string[]
+  threeLineTitle?: boolean
 }) => {
-  const { episodeTitle, episodeNumber } = useContext(EpisodeContext)
   return (
     <header
       css={css`
@@ -41,12 +40,13 @@ const EpisodeHero = ({
       `}
     >
       <>
-        {episodeTitle || demo || notFound ? (
+        {episodeTitle ? (
           <>
             <h3
               css={[
                 commonTitleClasses,
                 css`
+                  line-height: ${lineHeights(1.3)};
                   color: ${colors('grey700')};
                   padding: ${spaces(1)} 0 ${spaces(1)};
                   font-size: ${fontSizes(1.2)};
@@ -63,30 +63,26 @@ const EpisodeHero = ({
                   text-decoration: none;
                 `}
               >
-                <H args={{ name: 'titleSplit' }} />
+                {mainTitle}
               </InternalLink>
             </h3>
             <h1
               css={[
                 commonTitleClasses,
                 css`
+                  line-height: ${lineHeights(1.3)};
                   color: ${colors('grey900')};
                   font-size: ${fontSizes(1.6)};
                   ${ns} {
                     font-size: ${fontSizes(2)};
+                    line-height: ${lineHeights(1.2)};
                   }
                   font-weight: ${fontWeights(800)};
                   margin: 0 auto ${spaces(0.5)};
                 `
               ]}
             >
-              {notFound ? (
-                <H args={{ name: 'pageNotFound' }} />
-              ) : demo ? (
-                <H args={{ name: 'demoTitle' }} />
-              ) : (
-                episodeTitle
-              )}
+              {episodeTitle}
             </h1>
           </>
         ) : (
@@ -98,19 +94,25 @@ const EpisodeHero = ({
                   color: ${colors('grey900')};
                   padding-top: ${spaces(0.5)};
                   font-size: ${fontSizes(1.6)};
-                  margin: 0 auto ${spaces(0.5)};
+                  margin: 0 auto ${threeLineTitle ? 0 : spaces(0.5)};
                   font-weight: ${fontWeights(800)};
+                  line-height: ${lineHeights(1.3)};
 
                   ${ns} {
-                    font-size: ${fontSizes(2.5)};
+                    font-size: ${threeLineTitle
+                      ? fontSizes(2.25)
+                      : fontSizes(2.5)};
+                    line-height: ${threeLineTitle
+                      ? lineHeights(1.2)
+                      : lineHeights(1.1)};
                     font-weight: ${fontWeights(900)};
                   }
                 `
               ]}
             >
-              <H args={{ name: 'titleSplit' }} />
+              {mainTitle}
             </h1>
-            {locale === 'en' && (
+            {showDescription && (
               <h3
                 css={[
                   commonTitleClasses,
@@ -133,28 +135,30 @@ const EpisodeHero = ({
           </>
         )}
       </>
-      <EmojiSeparator
-        size="lg"
-        nodes={(demo
-          ? ['🍱', '▶️', '🔲']
-          : notFound
-          ? ['❓', '😭', '❓']
-          : episodeEmojis[episodeNumber as keyof typeof episodeEmojis]
-        ).map(emoji =>
-          emoji === '🔲' ? (
-            <CustomEmoji type="mathBox" />
-          ) : (
-            <Emoji>{emoji}</Emoji>
-          )
-        )}
-      />
+      {emojis && (
+        <EmojiSeparator
+          size="lg"
+          nodes={emojis.map(emoji =>
+            emoji === '🔲' ? (
+              <CustomEmoji type="mathBox" />
+            ) : emoji === '🍣' ? (
+              <img
+                src="/static/images/animated@1x.gif"
+                alt="Lunchbox"
+                css={css`
+                  width: 1.6em;
+                  vertical-align: middle;
+                  transform: translateY(-0.125em);
+                `}
+              />
+            ) : (
+              <Emoji>{emoji}</Emoji>
+            )
+          )}
+        />
+      )}
     </header>
   )
-}
-
-EpisodeHero.defaultProps = {
-  demo: false,
-  notFound: false
 }
 
 export default EpisodeHero

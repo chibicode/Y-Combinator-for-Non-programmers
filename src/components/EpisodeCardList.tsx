@@ -11,13 +11,13 @@ import H from 'src/components/H'
 import { P } from 'src/components/ContentTags'
 import { shareVisible } from 'src/lib/twitter'
 import NextLessonButton from 'src/components/NextLessonButton'
-import EmojiSeparator from 'src/components/EmojiSeparator'
 import { spaces, fontSizes } from 'src/lib/theme'
 import EpisodeContext from 'src/components/EpisodeContext'
 import PrevNextLinks from 'src/components/PrevNextLinks'
 import Emoji from 'src/components/Emoji'
 import locale from 'src/lib/locale'
 import { numEpisodesExceptFirstAndLast } from 'src/lib/episodeCategories'
+import episodeEmojis from 'src/lib/episodeEmojis'
 
 export interface EpisodeCardType {
   type?: 'yesNoQuiz' | 'sideNote' | 'meta' | 'summary' | 'challengeProblem'
@@ -29,42 +29,21 @@ export interface EpisodeCardType {
 
 export type EpisodeCardListType = readonly EpisodeCardType[]
 
-const EpisodeCardList = ({
-  cards,
-  notFound,
-  demo,
-  underConstruction
-}: {
-  cards: EpisodeCardListType
-  notFound: boolean
-  demo: boolean
-  underConstruction?: boolean
-}) => {
-  const { episodeNumber } = useContext(EpisodeContext)
+const EpisodeCardList = ({ cards }: { cards: EpisodeCardListType }) => {
+  const { episodeTitle, episodeNumber } = useContext(EpisodeContext)
   const { lastVisibleCardIndex, setLastVisibleCardIndex } = useConditionalCards(
     cards
   )
   return (
     <>
       <EpisodePageInitialRenderWarning />
-      <EpisodeHero demo={demo} notFound={notFound} />
+      <EpisodeHero
+        mainTitle={<H args={{ name: 'titleSplit' }} />}
+        episodeTitle={episodeTitle}
+        showDescription={locale === 'en'}
+        emojis={episodeEmojis[episodeNumber as keyof typeof episodeEmojis]}
+      />
       <>
-        {underConstruction && (
-          <CardWrapper
-            type="summary"
-            isLast={cards.length === 0}
-            title={
-              <>
-                <H args={{ name: 'pageUnderConstructionTitle' }} />
-              </>
-            }
-          >
-            <P>
-              <H args={{ name: 'pageUnderConstruction' }} />
-            </P>
-            <EmojiSeparator emojis={['⚠️', '⚠️', '⚠️']} />
-          </CardWrapper>
-        )}
         {cards.map(({ title, type, content, preview, footer }, index) =>
           index <= lastVisibleCardIndex ? (
             <CardWrapper
@@ -114,86 +93,78 @@ const EpisodeCardList = ({
             </CardWrapper>
           ) : null
         )}
-        {shareVisible &&
-          !notFound &&
-          !demo &&
-          cards.length - 1 === lastVisibleCardIndex && (
-            <div
-              css={css`
-                padding: ${spaces(
-                    episodeNumber <= numEpisodesExceptFirstAndLast ? 8 : 2
-                  )}
-                  0 ${spaces(1)};
-              `}
+        {shareVisible && cards.length - 1 === lastVisibleCardIndex && (
+          <div
+            css={css`
+              padding: ${spaces(
+                  episodeNumber <= numEpisodesExceptFirstAndLast ? 8 : 2
+                )}
+                0 ${spaces(1)};
+            `}
+          >
+            <CardWrapper
+              type="meta"
+              isLast={
+                locale === 'en'
+                  ? true
+                  : episodeNumber > 0 &&
+                    episodeNumber <= numEpisodesExceptFirstAndLast
+              }
+              title={<H args={{ name: 'shareTitle' }} />}
+              footer={
+                locale === 'jp'
+                  ? {
+                      color: 'indigo',
+                      content: (
+                        <>
+                          <H
+                            args={{
+                              name: 'dateAndSource',
+                              includeAboutMe: true
+                            }}
+                          />
+                        </>
+                      )
+                    }
+                  : episodeNumber > 0
+                  ? {
+                      content: (
+                        <>
+                          <H
+                            args={{
+                              name: 'aboutMe',
+                              hideNextPageButton:
+                                episodeNumber > numEpisodesExceptFirstAndLast
+                            }}
+                          />
+                        </>
+                      )
+                    }
+                  : undefined
+              }
             >
-              <CardWrapper
-                type="meta"
-                isLast={
-                  locale === 'en'
-                    ? true
-                    : episodeNumber > 0 &&
-                      episodeNumber <= numEpisodesExceptFirstAndLast
-                }
-                title={<H args={{ name: 'shareTitle' }} />}
-                footer={
-                  locale === 'jp'
-                    ? {
-                        color: 'indigo',
-                        content: (
-                          <>
-                            <H
-                              args={{
-                                name: 'dateAndSource',
-                                includeAboutMe: true
-                              }}
-                            />
-                          </>
-                        )
-                      }
-                    : episodeNumber > 0
-                    ? {
-                        content: (
-                          <>
-                            <H
-                              args={{
-                                name: 'aboutMe',
-                                hideNextPageButton:
-                                  episodeNumber > numEpisodesExceptFirstAndLast
-                              }}
-                            />
-                          </>
-                        )
-                      }
-                    : undefined
-                }
-              >
-                <H args={{ name: 'shareContent' }} />
-                {episodeNumber <= numEpisodesExceptFirstAndLast && (
-                  <NextLessonButton halfMargin={locale === 'jp'} />
-                )}
-              </CardWrapper>
-              {(episodeNumber === 0 ||
-                episodeNumber > numEpisodesExceptFirstAndLast) &&
-                locale === 'jp' && (
-                  <CardWrapper
-                    type="meta"
-                    isLast
-                    title={<H args={{ name: 'testimonialsTitle' }} />}
-                  >
-                    <H args={{ name: 'testimonialsContent' }} />
-                    {episodeNumber === 0 && <NextLessonButton halfMargin />}
-                  </CardWrapper>
-                )}
-            </div>
-          )}
+              <H args={{ name: 'shareContent' }} />
+              {episodeNumber <= numEpisodesExceptFirstAndLast && (
+                <NextLessonButton halfMargin={locale === 'jp'} />
+              )}
+            </CardWrapper>
+            {(episodeNumber === 0 ||
+              episodeNumber > numEpisodesExceptFirstAndLast) &&
+              locale === 'jp' && (
+                <CardWrapper
+                  type="meta"
+                  isLast
+                  title={<H args={{ name: 'testimonialsTitle' }} />}
+                >
+                  <H args={{ name: 'testimonialsContent' }} />
+                  {episodeNumber === 0 && <NextLessonButton halfMargin />}
+                </CardWrapper>
+              )}
+          </div>
+        )}
       </>
     </>
   )
-}
-
-EpisodeCardList.defaultProps = {
-  notFound: false,
-  demo: false
 }
 
 export default EpisodeCardList

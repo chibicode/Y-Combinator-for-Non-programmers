@@ -1,6 +1,4 @@
-/** @jsx jsx */
-import { css, jsx } from '@emotion/core'
-import { spaces } from 'src/lib/theme'
+import React from 'react'
 import Head from 'next/head'
 import { useState } from 'react'
 import Container from 'src/components/Container'
@@ -11,18 +9,17 @@ import EpisodeContext from 'src/components/EpisodeContext'
 import Page from 'src/components/Page'
 import TocModal from 'src/components/TocModal'
 import episodeEmojis from 'src/lib/episodeEmojis'
-import NotFoundCardList from 'src/components/NotFoundCardList'
-import DemoCardList from 'src/components/DemoCardList'
-import { ogUrl, demoUrl } from 'src/lib/meta'
+import { ogUrl } from 'src/lib/meta'
 import locale from 'src/lib/locale'
+import { description } from 'src/lib/titles'
+import { dateSchemaString } from 'src/lib/date'
+import { ogImageUrl } from 'src/lib/meta'
 
 export interface EpisodePageProps {
   lessonTitle: string
   episodeTitle?: React.ReactNode
   episodeTitleString?: React.ReactNode
   episodeNumber: number
-  notFound: boolean
-  demo: boolean
   contentName: ContentProps['name']
 }
 
@@ -31,8 +28,6 @@ const EpisodePage = ({
   episodeTitle,
   episodeTitleString,
   episodeNumber,
-  notFound,
-  demo,
   contentName
 }: EpisodePageProps) => {
   const title = `${
@@ -45,7 +40,7 @@ const EpisodePage = ({
   const [modalVisible, setModalVisible] = useState(false)
   const hideModal = () => setModalVisible(false)
   const showModal = () => setModalVisible(true)
-  const url = demo ? demoUrl : ogUrl(episodeNumber)
+  const url = ogUrl(episodeNumber)
   return (
     <Page>
       <Head>
@@ -54,20 +49,13 @@ const EpisodePage = ({
         <meta property="og:site_name" content={lessonTitle} />
         <meta property="og:url" content={url} />
         <link rel="canonical" href={url} />
+        <meta property="og:description" content={description} />
+        <meta name="description" content={description} />
+        <meta property="article:published_time" content={dateSchemaString} />
+        <meta property="og:image" content={ogImageUrl} />
       </Head>
       {modalVisible && <TocModal hideModal={hideModal} />}
-      {!notFound && !demo ? (
-        <EpisodePageHeader
-          showModal={showModal}
-          episodeNumber={episodeNumber}
-        />
-      ) : (
-        <div
-          css={css`
-            padding-top: ${spaces(1)};
-          `}
-        />
-      )}
+      <EpisodePageHeader showModal={showModal} episodeNumber={episodeNumber} />
       <Container size="sm">
         <EpisodeContext.Provider
           value={{
@@ -77,36 +65,17 @@ const EpisodePage = ({
             showModal
           }}
         >
-          {notFound ? (
-            <NotFoundCardList />
-          ) : demo ? (
-            <DemoCardList />
-          ) : (
-            <Content name={contentName} />
-          )}
+          <Content name={contentName} />
         </EpisodeContext.Provider>
       </Container>
-      {!notFound && !demo ? (
-        <EpisodePageHeader
-          showModal={showModal}
-          episodeNumber={episodeNumber}
-          isBottom
-        />
-      ) : (
-        <div
-          css={css`
-            padding: ${spaces(3)} 0;
-          `}
-        ></div>
-      )}
+      <EpisodePageHeader
+        showModal={showModal}
+        episodeNumber={episodeNumber}
+        isBottom
+      />
       <EpisodePageFooter />
     </Page>
   )
-}
-
-EpisodePage.defaultProps = {
-  notFound: false,
-  demo: false
 }
 
 export default EpisodePage

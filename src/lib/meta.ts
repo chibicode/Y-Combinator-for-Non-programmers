@@ -13,5 +13,3 @@ export const ogImageUrl =
 
 export const ogUrl = (episodeNumber: number) =>
   `${baseUrl}${episodeNumber > 0 ? `/${episodeNumber}/` : ''}`
-
-export const demoUrl = `${baseUrl}/demo/`

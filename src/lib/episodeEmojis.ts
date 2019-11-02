@@ -1,7 +1,7 @@
 import { episodeTitles } from 'src/lib/titles'
 
 const episodeEmojis: Record<keyof typeof episodeTitles | 0, string[]> = {
-  0: ['🐶', '🙂', '😈', '👧🏻'],
+  0: ['🐶', '🙂', '🍣', '😈', '👧🏻'],
   1: ['➕', '🔲', '➖'],
   2: ['🔁', '🔲', '🔁'],
   3: ['🍱', '😈', '🍱'],

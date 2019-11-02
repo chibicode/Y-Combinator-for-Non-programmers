@@ -99,8 +99,6 @@ interface HProps {
     | { name: 'toc' }
     | { name: 'tocClose' }
     | { name: 'yesNoQuizDontWorry' }
-    | { name: 'pageUnderConstruction' }
-    | { name: 'pageUnderConstructionTitle' }
     | { name: 'question' }
     | { name: 'whatHappensAtTheEndQuestion' }
     | { name: 'lookAtThisLunchBox'; lowerCase?: true }
@@ -166,7 +164,6 @@ interface HProps {
     | { name: 'testimonialsTitle' }
     | { name: 'testimonialsContent' }
     | { name: 'goToOtherPage' }
-    | { name: 'demoTitle' }
     | { name: 'whatTheNumberIsCaption' }
     | { name: 'runAndShowAllSteps' }
     | { name: 'ignoreForNow' }
@@ -659,24 +656,6 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
       )
     }
   }
-  if (args.name === 'pageUnderConstruction') {
-    if (locale === 'en') {
-      return (
-        <>
-          <Bold>Sorry!</Bold> This page is under construction.
-        </>
-      )
-    } else {
-      return <>このページは現在工事中です。</>
-    }
-  }
-  if (args.name === 'pageUnderConstructionTitle') {
-    if (locale === 'en') {
-      return <>Under Construction</>
-    } else {
-      return <>工事中</>
-    }
-  }
   if (args.name === 'match') {
     if (locale === 'en') {
       return (
@@ -948,7 +927,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
   }
   if (args.name === 'lookAtToc') {
     if (locale === 'en') {
-      return <>Here’s table of contents:</>
+      return <>Table of contents:</>
     } else {
       return <>目次はこちらです:</>
     }
@@ -1762,13 +1741,6 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
           <CustomEmoji type="condition" />
         </>
       )
-    }
-  }
-  if (args.name === 'demoTitle') {
-    if (locale === 'en') {
-      return <>Demo Page</>
-    } else {
-      return <>デモページ</>
     }
   }
   if (args.name === 'whatTheNumberIsCaption') {

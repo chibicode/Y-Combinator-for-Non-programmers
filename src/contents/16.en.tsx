@@ -489,7 +489,7 @@ export default () => (
           <>
             <P>
               We’re almost done, but let me say a few things about computer
-              science and Y Combinator. <Emoji>😉</Emoji>
+              science and Y Combinator.
             </P>
             <Hr />
             <P>
@@ -596,8 +596,7 @@ export default () => (
               <Highlight>
                 I think lunchboxes—especially Y Combinator—are a great example
                 of this idea.
-              </Highlight>{' '}
-              <Emoji>😉</Emoji>
+              </Highlight>
             </P>
             <EmojiSeparator
               nodes={[
@@ -780,7 +779,7 @@ export default () => (
                     However, the above code does not use any of them because it
                     uses Y Combinator.
                   </Highlight>{' '}
-                  Interesting, right? <Emoji>😉</Emoji>
+                  Interesting, right?
                 </P>
                 <Hr />
                 <JimsTalk />
