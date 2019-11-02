@@ -1,0 +1,2 @@
+convert -delay 80 animation-*@1x.png animated@1x.gif
+convert -delay 80 animation-*@2x.png animated@2x.gif
