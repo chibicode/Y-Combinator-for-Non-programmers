@@ -48,6 +48,7 @@ export const allColors = {
   pink400: pink[400],
   pink500: pink[500],
   pink600: pink[600],
+  pink700: pink[700],
   transparent: 'transparent',
   white: 'white',
   white75: Color('#fff')
