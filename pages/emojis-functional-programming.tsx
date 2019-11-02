@@ -8,7 +8,7 @@ import Container from 'src/components/Container'
 // import CardWrapper from 'src/components/CardWrapper'
 import EpisodeHero from 'src/components/EpisodeHero'
 import EpisodePageFooter from 'src/components/EpisodePageFooter'
-// import { P } from 'src/components/ContentTags'
+import { P } from 'src/components/ContentTags'
 import locale from 'src/lib/locale'
 // import { EpisodeCardListType } from 'src/components/EpisodeCardList'
 
@@ -44,12 +44,13 @@ export default () =>
           padding-top: ${spaces(1.5)};
         `}
       />
-      <Container size="sm">
+      <Container size="sm" horizontalPadding={1}>
         <EpisodeHero
           mainTitle={titleSplit}
           emojis={['🍣', '🍱', '🥪']}
           threeLineTitle
         />
+        <P />
       </Container>
       <div
         css={css`
