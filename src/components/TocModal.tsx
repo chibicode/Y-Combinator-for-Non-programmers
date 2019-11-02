@@ -47,7 +47,7 @@ const titleCss = css`
   font-size: ${fontSizes(1.2)};
   display: block;
   font-weight: ${fontWeights(800)};
-  line-height: ${lineHeights(1.1)};
+  line-height: ${lineHeights(1.2)};
   letter-spacing: ${letterSpacings('title')};
   text-decoration: none;
   &:hover {

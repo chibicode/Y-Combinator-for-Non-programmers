@@ -11,12 +11,14 @@ import EpisodeHero from 'src/components/EpisodeHero'
 import EpisodePageFooter from 'src/components/EpisodePageFooter'
 import { P } from 'src/components/ContentTags'
 import Toc from 'src/components/Toc'
+import { ogImageUrl } from 'src/lib/meta'
 
 export default () => (
   <Page>
     <Head>
       <title key="title">{lessonTitle}</title>
       <meta property="og:title" content={lessonTitle} />
+      <meta property="og:image" content={ogImageUrl} />
     </Head>
     <div
       css={css`

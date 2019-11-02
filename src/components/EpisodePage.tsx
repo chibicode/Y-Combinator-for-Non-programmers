@@ -11,6 +11,9 @@ import TocModal from 'src/components/TocModal'
 import episodeEmojis from 'src/lib/episodeEmojis'
 import { ogUrl } from 'src/lib/meta'
 import locale from 'src/lib/locale'
+import { description } from 'src/lib/titles'
+import { dateSchemaString } from 'src/lib/date'
+import { ogImageUrl } from 'src/lib/meta'
 
 export interface EpisodePageProps {
   lessonTitle: string
@@ -46,6 +49,10 @@ const EpisodePage = ({
         <meta property="og:site_name" content={lessonTitle} />
         <meta property="og:url" content={url} />
         <link rel="canonical" href={url} />
+        <meta property="og:description" content={description} />
+        <meta name="description" content={description} />
+        <meta property="article:published_time" content={dateSchemaString} />
+        <meta property="og:image" content={ogImageUrl} />
       </Head>
       {modalVisible && <TocModal hideModal={hideModal} />}
       <EpisodePageHeader showModal={showModal} episodeNumber={episodeNumber} />

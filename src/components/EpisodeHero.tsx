@@ -16,7 +16,6 @@ import {
 } from 'src/lib/theme'
 
 const commonTitleClasses = css`
-  line-height: ${lineHeights(1.1)};
   letter-spacing: ${letterSpacings('title')};
   text-align: center;
 `
@@ -25,12 +24,14 @@ const EpisodeHero = ({
   mainTitle,
   episodeTitle,
   showDescription,
-  emojis
+  emojis,
+  threeLineTitle
 }: {
   mainTitle: React.ReactNode
   episodeTitle?: React.ReactNode
   showDescription?: boolean
   emojis?: string[]
+  threeLineTitle?: boolean
 }) => {
   return (
     <header
@@ -45,6 +46,7 @@ const EpisodeHero = ({
               css={[
                 commonTitleClasses,
                 css`
+                  line-height: ${lineHeights(1.3)};
                   color: ${colors('grey700')};
                   padding: ${spaces(1)} 0 ${spaces(1)};
                   font-size: ${fontSizes(1.2)};
@@ -68,10 +70,12 @@ const EpisodeHero = ({
               css={[
                 commonTitleClasses,
                 css`
+                  line-height: ${lineHeights(1.3)};
                   color: ${colors('grey900')};
                   font-size: ${fontSizes(1.6)};
                   ${ns} {
                     font-size: ${fontSizes(2)};
+                    line-height: ${lineHeights(1.2)};
                   }
                   font-weight: ${fontWeights(800)};
                   margin: 0 auto ${spaces(0.5)};
@@ -92,9 +96,15 @@ const EpisodeHero = ({
                   font-size: ${fontSizes(1.6)};
                   margin: 0 auto ${spaces(0.5)};
                   font-weight: ${fontWeights(800)};
+                  line-height: ${lineHeights(1.3)};
 
                   ${ns} {
-                    font-size: ${fontSizes(2.5)};
+                    font-size: ${threeLineTitle
+                      ? fontSizes(2.25)
+                      : fontSizes(2.5)};
+                    line-height: ${threeLineTitle
+                      ? lineHeights(1.2)
+                      : lineHeights(1.1)};
                     font-weight: ${fontWeights(900)};
                   }
                 `
