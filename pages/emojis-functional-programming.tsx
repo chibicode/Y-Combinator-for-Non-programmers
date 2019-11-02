@@ -22,14 +22,14 @@ const dateString = date
   .toFormat('LLL d, yyyy')
 const dateSchemaString = date.setZone('America/Los_Angeles').toISO()
 
-const title = 'Using emojis to teach functional programming to non-programmers'
+const title = 'Using Emojis to Teach Functional Programming to Non-programmers'
 const titleSplit = (
   <>
-    Using emojis to teach
+    Using Emojis to Teach
     <br />
-    functional programming to
+    Functional Programming to
     <br />
-    non-programmers
+    Non-programmers
   </>
 )
 const description = lessonTitle
