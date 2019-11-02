@@ -1,6 +1,4 @@
-/** @jsx jsx */
-import { css, jsx } from '@emotion/core'
-import { spaces } from 'src/lib/theme'
+import React from 'react'
 import Head from 'next/head'
 import { useState } from 'react'
 import Container from 'src/components/Container'
@@ -11,7 +9,6 @@ import EpisodeContext from 'src/components/EpisodeContext'
 import Page from 'src/components/Page'
 import TocModal from 'src/components/TocModal'
 import episodeEmojis from 'src/lib/episodeEmojis'
-import NotFoundCardList from 'src/components/NotFoundCardList'
 import { ogUrl } from 'src/lib/meta'
 import locale from 'src/lib/locale'
 
@@ -20,7 +17,6 @@ export interface EpisodePageProps {
   episodeTitle?: React.ReactNode
   episodeTitleString?: React.ReactNode
   episodeNumber: number
-  notFound: boolean
   contentName: ContentProps['name']
 }
 
@@ -29,7 +25,6 @@ const EpisodePage = ({
   episodeTitle,
   episodeTitleString,
   episodeNumber,
-  notFound,
   contentName
 }: EpisodePageProps) => {
   const title = `${
@@ -53,18 +48,7 @@ const EpisodePage = ({
         <link rel="canonical" href={url} />
       </Head>
       {modalVisible && <TocModal hideModal={hideModal} />}
-      {!notFound ? (
-        <EpisodePageHeader
-          showModal={showModal}
-          episodeNumber={episodeNumber}
-        />
-      ) : (
-        <div
-          css={css`
-            padding-top: ${spaces(1)};
-          `}
-        />
-      )}
+      <EpisodePageHeader showModal={showModal} episodeNumber={episodeNumber} />
       <Container size="sm">
         <EpisodeContext.Provider
           value={{
@@ -74,29 +58,17 @@ const EpisodePage = ({
             showModal
           }}
         >
-          {notFound ? <NotFoundCardList /> : <Content name={contentName} />}
+          <Content name={contentName} />
         </EpisodeContext.Provider>
       </Container>
-      {!notFound ? (
-        <EpisodePageHeader
-          showModal={showModal}
-          episodeNumber={episodeNumber}
-          isBottom
-        />
-      ) : (
-        <div
-          css={css`
-            padding: ${spaces(3)} 0;
-          `}
-        ></div>
-      )}
+      <EpisodePageHeader
+        showModal={showModal}
+        episodeNumber={episodeNumber}
+        isBottom
+      />
       <EpisodePageFooter />
     </Page>
   )
-}
-
-EpisodePage.defaultProps = {
-  notFound: false
 }
 
 export default EpisodePage

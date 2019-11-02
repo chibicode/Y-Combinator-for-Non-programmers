@@ -1,13 +1,9 @@
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core'
-import { useContext } from 'react'
 import { InternalLink } from 'src/components/ContentTags'
 import EmojiSeparator from 'src/components/EmojiSeparator'
-import EpisodeContext from 'src/components/EpisodeContext'
-import episodeEmojis from 'src/lib/episodeEmojis'
 import CustomEmoji from 'src/components/CustomEmoji'
 import { description } from 'src/lib/titles'
-import locale from 'src/lib/locale'
 import Emoji from 'src/components/Emoji'
 import {
   colors,
@@ -18,7 +14,6 @@ import {
   spaces,
   ns
 } from 'src/lib/theme'
-import H from 'src/components/H'
 
 const commonTitleClasses = css`
   line-height: ${lineHeights(1.1)};
@@ -26,8 +21,17 @@ const commonTitleClasses = css`
   text-align: center;
 `
 
-const EpisodeHero = ({ notFound }: { notFound: boolean }) => {
-  const { episodeTitle, episodeNumber } = useContext(EpisodeContext)
+const EpisodeHero = ({
+  mainTitle,
+  episodeTitle,
+  showDescription,
+  emojis
+}: {
+  mainTitle: React.ReactNode
+  episodeTitle?: React.ReactNode
+  showDescription?: boolean
+  emojis?: string[]
+}) => {
   return (
     <header
       css={css`
@@ -35,7 +39,7 @@ const EpisodeHero = ({ notFound }: { notFound: boolean }) => {
       `}
     >
       <>
-        {episodeTitle || notFound ? (
+        {episodeTitle ? (
           <>
             <h3
               css={[
@@ -57,7 +61,7 @@ const EpisodeHero = ({ notFound }: { notFound: boolean }) => {
                   text-decoration: none;
                 `}
               >
-                <H args={{ name: 'titleSplit' }} />
+                {mainTitle}
               </InternalLink>
             </h3>
             <h1
@@ -74,7 +78,7 @@ const EpisodeHero = ({ notFound }: { notFound: boolean }) => {
                 `
               ]}
             >
-              {notFound ? <H args={{ name: 'pageNotFound' }} /> : episodeTitle}
+              {episodeTitle}
             </h1>
           </>
         ) : (
@@ -96,9 +100,9 @@ const EpisodeHero = ({ notFound }: { notFound: boolean }) => {
                 `
               ]}
             >
-              <H args={{ name: 'titleSplit' }} />
+              {mainTitle}
             </h1>
-            {locale === 'en' && (
+            {showDescription && (
               <h3
                 css={[
                   commonTitleClasses,
@@ -121,25 +125,20 @@ const EpisodeHero = ({ notFound }: { notFound: boolean }) => {
           </>
         )}
       </>
-      <EmojiSeparator
-        size="lg"
-        nodes={(notFound
-          ? ['❓', '😭', '❓']
-          : episodeEmojis[episodeNumber as keyof typeof episodeEmojis]
-        ).map(emoji =>
-          emoji === '🔲' ? (
-            <CustomEmoji type="mathBox" />
-          ) : (
-            <Emoji>{emoji}</Emoji>
-          )
-        )}
-      />
+      {emojis && (
+        <EmojiSeparator
+          size="lg"
+          nodes={emojis.map(emoji =>
+            emoji === '🔲' ? (
+              <CustomEmoji type="mathBox" />
+            ) : (
+              <Emoji>{emoji}</Emoji>
+            )
+          )}
+        />
+      )}
     </header>
   )
-}
-
-EpisodeHero.defaultProps = {
-  notFound: false
 }
 
 export default EpisodeHero
