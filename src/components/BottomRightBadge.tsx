@@ -22,7 +22,7 @@ const bottomRightBadgeTypeToColors = (
     `,
     funcArg: css`
       background-color: ${colors('pink400')};
-      border-color: ${colors('pink600')};
+      border-color: ${colors('pink700')};
     `,
     funcUnbound: css`
       background-color: ${colors('green400')};

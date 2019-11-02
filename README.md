@@ -1,12 +1,12 @@
 # 🍱 [Y Combinator for Non-programmers](https://ycombinator.chibicode.com/)
 
-> A Wild Introduction to Computer Science
+### This is the repository for the online course called **[Y Combinator for Non-programmers](https://ycombinator.chibicode.com/)** by Shu Uesugi.
 
-[![Y Combinator for Non-programmers](public/static/images/og-image-en@2x.png)](https://ycombinator.chibicode.com/)
+<p>
+  <img src="public/static/images/animated@2x.gif" width="240" height="240" />
+</p>
 
-This is the repository for the website: **[Y Combinator for Non-programmers](https://ycombinator.chibicode.com/)** by Shu Uesugi.
-
-It also contains the code for the Japanese version: **[コンピュータサイエンスと魔法のYコンビネータ](https://yj.chibicode.com/)**
+(It also contains the code for the Japanese version: **[コンピュータサイエンスと魔法のYコンビネータ](https://yj.chibicode.com/)**)
 
 ## Running it locally (English version)
 
