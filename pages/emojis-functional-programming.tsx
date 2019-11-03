@@ -48,7 +48,7 @@ const Subheading = (props: JSX.IntrinsicElements['h3']) => (
   <H3
     {...props}
     css={css`
-      margin: ${spaces(1.75)} 0 ${spaces(1)};
+      margin: ${spaces(1.75)} 0 ${spaces(0.75)};
     `}
   />
 )
@@ -123,11 +123,11 @@ export default () =>
           .
         </P>
         <P>
-          There’s not a single line of code mentioned in the course—instead, I
-          created <Emoji>🍱</Emoji> <Italic>emoji puzzles</Italic> to explain
-          these concepts. In this article, I’ll explain how my emoji puzzles can
-          represent and execute functional code <Italic>visually</Italic>. If
-          you enjoy teaching programming to beginners, or if you like functional
+          To explain these concepts, I created{' '}
+          <Bold>an educational puzzle using emojis</Bold> <Emoji>🍱</Emoji>. In
+          this article, I’ll explain how my emoji puzzles can represent and
+          execute functional code <Italic>visually</Italic>. If you enjoy
+          teaching programming to beginners, or if you like functional
           programming in general, I think you’ll enjoy this post.
         </P>
         <Warning>
@@ -149,7 +149,11 @@ export default () =>
             familiar with JS, you should still be able to understand it.
           </P>
         </Warning>
-        <Subheading>Test</Subheading>
+        <Subheading>Identity function in JS</Subheading>
+        <P>
+          First, take a look at the following code. It’s an identity function in
+          JavaScript that returns the argument.
+        </P>
       </Container>
       <EpisodePageFooter />
     </Page>
