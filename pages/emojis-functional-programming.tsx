@@ -9,14 +9,20 @@ import Emoji from 'src/components/Emoji'
 import EpisodeHero from 'src/components/EpisodeHero'
 import EpisodePageFooter from 'src/components/EpisodePageFooter'
 import * as R from 'src/components/Runners'
-import { P, Italic, Bold, InternalLink, H3 } from 'src/components/ContentTags'
+import {
+  ExternalLink,
+  P,
+  Italic,
+  Bold,
+  InternalLink,
+  H3
+} from 'src/components/ContentTags'
 import locale from 'src/lib/locale'
 import { DateTime } from 'luxon'
 import { enBaseUrl } from 'src/lib/meta'
 import Warning, { warningSpacing } from 'src/components/Warning'
 import Highlight, { defaultProps } from 'prism-react-renderer'
 import theme from 'prism-react-renderer/themes/nightOwlLight'
-// import 'victormono'
 
 const date = DateTime.fromISO('2019-11-06T12:00:00Z')
 // const dateString = date
@@ -236,7 +242,11 @@ export default () =>
             `}
           >
             I’ll use <Bold>JavaScript</Bold> in this article. Even if you’re not
-            familiar with JS, you should still be able to understand it.
+            familiar with JS, you should still be able to understand it. P.S.{' '}
+            <ExternalLink href="https://github.com/chibicode/ycombinator/blob/master/pages/emojis-functional-programming.tsx">
+              The source code for this article is available on GitHub
+            </ExternalLink>
+            —please ★ it!
           </P>
         </Warning>
         <Warning backgroundColor="red">
