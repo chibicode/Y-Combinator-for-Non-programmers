@@ -246,7 +246,7 @@ export default () =>
             <ExternalLink href="https://github.com/chibicode/ycombinator/blob/master/pages/emojis-functional-programming.tsx">
               The source code for this article is available on GitHub
             </ExternalLink>
-            —please ★ it!
+            —please ★ star it!
           </P>
         </Warning>
         <Warning backgroundColor="red">
