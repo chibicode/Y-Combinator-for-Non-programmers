@@ -52,7 +52,7 @@ const Subheading = (props: JSX.IntrinsicElements['h3']) => (
   <H3
     {...props}
     css={css`
-      margin: ${spaces(1.75)} 0 ${spaces(0.75)};
+      margin: ${spaces(2)} 0 ${spaces(0.5)};
     `}
   />
 )
