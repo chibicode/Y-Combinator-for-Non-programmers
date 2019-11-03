@@ -16,7 +16,7 @@ const Warning = ({
   backgroundColor
 }: {
   children: React.ReactNode
-  backgroundColor: 'yellow' | 'red'
+  backgroundColor: 'yellow' | 'red' | 'brown'
 }) => (
   <div
     css={[
@@ -25,6 +25,8 @@ const Warning = ({
         border-radius: ${radii(0.5)};
         background: ${backgroundColor === 'yellow'
           ? colors('yellow100')
+          : backgroundColor === 'brown'
+          ? colors('brown50')
           : colors('pink50')};
       `
     ]}

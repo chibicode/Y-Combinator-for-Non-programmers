@@ -6,6 +6,7 @@ import { ns, radii, fontSizes, colors, spaces } from 'src/lib/theme'
 import { lessonTitle } from 'src/lib/titles'
 import Container from 'src/components/Container'
 import Emoji from 'src/components/Emoji'
+import EmojiForLetter from 'src/components/EmojiForLetter'
 import EpisodeHero from 'src/components/EpisodeHero'
 import EpisodePageFooter from 'src/components/EpisodePageFooter'
 import * as R from 'src/components/Runners'
@@ -23,6 +24,8 @@ import { enBaseUrl } from 'src/lib/meta'
 import Warning, { warningSpacing } from 'src/components/Warning'
 import Highlight, { defaultProps } from 'prism-react-renderer'
 import theme from 'prism-react-renderer/themes/nightOwlLight'
+import BubbleQuoteContext from 'src/components/BubbleQuoteContext'
+import EmojiWithText from 'src/components/EmojiWithText'
 
 const date = DateTime.fromISO('2019-11-06T12:00:00Z')
 // const dateString = date
@@ -205,27 +208,29 @@ export default () =>
             }
           `}
         />
-        <P>
-          Last month, I published a free online course called “
-          <InternalLink href="/">
-            <Bold>Y Combinator for Non-programmers</Bold>
-          </InternalLink>
-          ”. In this course, I teach computer science concepts such as
-          functional programming, lambda calculus, Church encoding, and Y
-          combinator in a way such that{' '}
-          <Italic>
-            people who have zero programming knowledge can understand
-          </Italic>
-          .
-        </P>
-        <P>
-          To explain these concepts, I created{' '}
-          <Bold>an educational puzzle using emojis</Bold> <Emoji>🍱</Emoji>. In
-          this article, I’ll explain how my emoji puzzles can represent and
-          execute functional code <Italic>visually</Italic>. If you like to
-          teach programming to beginners, or if you like functional programming
-          in general, I think you’ll enjoy this post.
-        </P>
+        <BubbleQuoteContext.Provider value={{ inQuote: true }}>
+          <P>
+            Last month, I published a free online course called “
+            <InternalLink href="/">
+              <Bold>Y Combinator for Non-programmers</Bold>
+            </InternalLink>
+            ”. In this course, I teach computer science concepts such as
+            functional programming, lambda calculus, Church encoding, and Y
+            combinator in a way such that{' '}
+            <Italic>
+              people who have zero programming knowledge can understand
+            </Italic>
+            .
+          </P>
+          <P>
+            To explain these concepts, I created{' '}
+            <Bold>an educational puzzle using emojis</Bold> <Emoji>🍱</Emoji>.
+            In this article, I’ll explain how my emoji puzzles can represent and
+            execute functional code <Italic>visually</Italic>. If you like to
+            teach programming to beginners, or if you like functional
+            programming in general, I think you’ll enjoy this post.
+          </P>
+        </BubbleQuoteContext.Provider>
         <Warning>
           <P>
             <Emoji>⚠️</Emoji> <Bold>Note:</Bold> This article is for programmers
@@ -255,39 +260,79 @@ export default () =>
           <Italic>full-time position</Italic> (remote or in SF/LA). Scroll to
           the bottom of this post for details.
         </Warning>
-        <Subheading>Identity function in JS</Subheading>
-        <P>
-          First, take a look at the following code. It’s an{' '}
-          <Italic>identity function</Italic> in JavaScript that returns the
-          argument.
-        </P>
-        <CodeBlock>{`// Identity function in JS
+        <BubbleQuoteContext.Provider value={{ inQuote: true }}>
+          <Subheading>Identity function in JS</Subheading>
+          <P>
+            First, take a look at the following code. It’s an{' '}
+            <Italic>identity function</Italic> in JavaScript that returns the
+            argument.
+          </P>
+          <CodeBlock>{`// Identity function in JS
 sushi => sushi`}</CodeBlock>
-        <P>
-          If you apply the above function on a string{' '}
-          <InlineCode>'sandwich'</InlineCode>, then the result would be{' '}
-          <InlineCode>'sandwich'</InlineCode>. (You can run this on your
-          browser’s developer console.)
-        </P>
-        <CodeBlock>{`// The result would be 'sandwich'
+          <P>
+            If you apply the above function on a string{' '}
+            <InlineCode>'sandwich'</InlineCode>, then the result would be{' '}
+            <InlineCode>'sandwich'</InlineCode>. (You can run this on your
+            browser’s developer console.)
+          </P>
+          <CodeBlock>{`// The result would be 'sandwich'
 (sushi => sushi)('sandwich')`}</CodeBlock>
-        <P>
-          <Bold>Now, here’s the interesting part:</Bold> One day, I realized
-          that the above JS code can be{' '}
-          <Italic>described visually using emojis.</Italic> Check this out:
-        </P>
-        <R.Ilpo>
-          An “<Bold>emoji puzzle</Bold>” that visually describes
-          <br />
-          the JS code from the above
-        </R.Ilpo>
-        <P></P>
-        <CodeBlock
-          shouldHighlight={(lineNumber, tokenNumber) =>
-            lineNumber === 1 && tokenNumber > 1 && tokenNumber < 6
-          }
-        >{`// The result would be 'sandwich'
-(sushi => sushi)('sandwich')`}</CodeBlock>
+          <P>
+            <Bold>Now, here’s the interesting part:</Bold> One day, I realized
+            that the above JS code can be{' '}
+            <Italic>described visually using emojis.</Italic> Check this out:
+          </P>
+          <R.Ilpo>
+            An “<Bold>emoji puzzle</Bold>” that visually describes
+            <br />
+            the JS code from the above
+          </R.Ilpo>
+          <P>
+            The above emoji puzzle is equivalent to the earlier JS code. First,
+            the identity function <InlineCode>sushi => sushi</InlineCode>…
+          </P>
+          <CodeBlock
+            shouldHighlight={(lineNumber, tokenNumber) =>
+              lineNumber === 0 && tokenNumber > 0 && tokenNumber < 5
+            }
+          >{`(sushi => sushi)('sandwich')`}</CodeBlock>
+          <P>
+            …is represented by <Italic>the bottom two items</Italic> on the
+            puzzle, which are both <EmojiWithText letter="a" />.
+          </P>
+          <R.Elku>
+            <InlineCode>sushi => sushi</InlineCode> is represented
+            <br />
+            by the bottom two items
+          </R.Elku>
+          <P>
+            Second, the argument <InlineCode>'sandwich'</InlineCode> to the
+            identity function…
+          </P>
+          <CodeBlock
+            shouldHighlight={(lineNumber, tokenNumber) =>
+              lineNumber === 0 && tokenNumber > 6 && tokenNumber < 8
+            }
+          >{`(sushi => sushi)('sandwich')`}</CodeBlock>
+          <P>
+            …is represented by <Italic>the top item</Italic> on the puzzle,
+            which is a <EmojiWithText letter="b" />.
+          </P>
+          <R.Vowa>
+            The argument <InlineCode>'sandwich'</InlineCode> is represented
+            <br />
+            by the top item
+          </R.Vowa>
+          <Warning backgroundColor="brown">
+            <Bold>Side Note:</Bold> To keep things simple, the puzzle doesn’t
+            distinguish between variable names (e.g.{' '}
+            <InlineCode>sushi</InlineCode>) and strings (e.g.{' '}
+            <InlineCode>'sushi'</InlineCode>). Both{' '}
+            <InlineCode>sushi</InlineCode> and <InlineCode>'sushi'</InlineCode>{' '}
+            will be represented as <EmojiForLetter letter="a" size="semilg" />.
+          </Warning>
+          <Subheading>Running the function</Subheading>
+        </BubbleQuoteContext.Provider>
       </Container>
       <EpisodePageFooter />
     </Page>
