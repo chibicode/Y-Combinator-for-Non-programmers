@@ -1,9 +1,5 @@
 const path = require('path')
 
-// Necessary for victormono
-const withCSS = require('@zeit/next-css')
-const withFonts = require('next-fonts')
-
 const config = {
   webpack(config) {
     config.resolve.alias = Object.assign({}, config.resolve.alias, {
@@ -32,4 +28,4 @@ if (!process.env.PRODUCTION_LOCALE) {
   }
 }
 
-module.exports = withFonts(withCSS(config))
+module.exports = config

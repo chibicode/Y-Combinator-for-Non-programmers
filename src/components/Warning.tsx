@@ -3,7 +3,7 @@ import { css, jsx } from '@emotion/core'
 import { ns, radii, colors, spaces } from 'src/lib/theme'
 
 export const warningSpacing = css`
-  padding: ${spaces(0.75)} ${spaces(1)};
+  padding: ${spaces(0.75)} ${spaces(0.75)};
 
   ${ns} {
     padding: ${spaces(1)} ${spaces(1.25)};

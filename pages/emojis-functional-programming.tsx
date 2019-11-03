@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { css, jsx } from '@emotion/core'
+import { css, jsx, Global } from '@emotion/core'
 import Page from 'src/components/Page'
 import Head from 'next/head'
 import { ns, radii, fontSizes, colors, spaces } from 'src/lib/theme'
@@ -8,6 +8,7 @@ import Container from 'src/components/Container'
 import Emoji from 'src/components/Emoji'
 import EpisodeHero from 'src/components/EpisodeHero'
 import EpisodePageFooter from 'src/components/EpisodePageFooter'
+import * as R from 'src/components/Runners'
 import {
   P,
   Italic,
@@ -22,7 +23,7 @@ import { enBaseUrl } from 'src/lib/meta'
 import Warning, { warningSpacing } from 'src/components/Warning'
 import Highlight, { defaultProps } from 'prism-react-renderer'
 import theme from 'prism-react-renderer/themes/nightOwlLight'
-import 'victormono'
+// import 'victormono'
 
 const date = DateTime.fromISO('2019-11-06T12:00:00Z')
 const dateString = date
@@ -56,7 +57,32 @@ const Subheading = (props: JSX.IntrinsicElements['h3']) => (
   />
 )
 
-const CodeBlock = ({ children }: { children: string }) => (
+const codeFontFamily = `'Victor Mono', SFMono-Regular, Consolas,
+Liberation Mono, Menlo, Courier, monospace`
+
+const InlineCode = ({ children }: { children: string }) => (
+  <code
+    css={css`
+      font-weight: 600;
+      font-family: ${codeFontFamily};
+      background-color: ${colors('codeBg')};
+      display: inline-block;
+      font-size: 0.85em;
+      padding: 0.075em 0.2em;
+      border-radius: ${radii(0.25)};
+    `}
+  >
+    {children}
+  </code>
+)
+
+const CodeBlock = ({
+  children,
+  shouldHighlight
+}: {
+  children: string
+  shouldHighlight?: (lineNumber: number, tokenNumber: number) => boolean
+}) => (
   <Highlight
     {...defaultProps}
     code={children}
@@ -68,12 +94,12 @@ const CodeBlock = ({ children }: { children: string }) => (
         css={[
           warningSpacing,
           css`
-            background-color: #f5f6ff;
+            background-color: ${colors('codeBg')};
             border-radius: ${radii(0.5)};
-            font-weight: bold;
-            font-family: 'Victor Mono', SFMono-Regular, Consolas,
-              Liberation Mono, Menlo, Courier, monospace;
+            font-weight: 600;
+            font-family: ${codeFontFamily};
             margin: ${spaces(1.25)} 0 ${spaces(1.25)};
+            font-size: ${fontSizes(0.85)};
           `
         ]}
       >
@@ -87,9 +113,17 @@ const CodeBlock = ({ children }: { children: string }) => (
               {line.map((token, key) => (
                 <span
                   {...getTokenProps({ token, key })}
-                  css={css`
-                    font-style: normal !important;
-                  `}
+                  css={[
+                    css`
+                      font-style: normal !important;
+                    `,
+                    !!shouldHighlight &&
+                      shouldHighlight(i, key) &&
+                      css`
+                        background: ${colors('yellow400')};
+                        border-bottom: 2px solid ${colors('deepOrange400')};
+                      `
+                  ]}
                 />
               ))}
             </div>
@@ -103,6 +137,20 @@ const CodeBlock = ({ children }: { children: string }) => (
 export default () =>
   locale === 'en' ? (
     <Page>
+      <Global
+        styles={[
+          css`
+            @font-face {
+              font-family: 'Victor Mono';
+              src: url('/static/fonts/VictorMono-SemiBold.woff2')
+                  format('woff2'),
+                url('/static/fonts/woff/SemiBold.woff') format('woff');
+              font-weight: 400;
+              font-style: normal;
+            }
+          `
+        ]}
+      />
       <Head>
         <title key="title">{titleWithEmoji}</title>
         <meta property="og:title" content={titleWithEmoji} />
@@ -198,11 +246,36 @@ export default () =>
         </Warning>
         <Subheading>Identity function in JS</Subheading>
         <P>
-          First, take a look at the following code. It’s an identity function in
-          JavaScript that returns the argument.
+          First, take a look at the following code. It’s an{' '}
+          <Italic>identity function</Italic> in JavaScript that returns the
+          argument.
         </P>
-        <CodeBlock>{`// Identity function
-a => a`}</CodeBlock>
+        <CodeBlock>{`// Identity function in JS
+sushi => sushi`}</CodeBlock>
+        <P>
+          If you apply the above function on a string{' '}
+          <InlineCode>'sandwich'</InlineCode>, then the result would be{' '}
+          <InlineCode>'sandwich'</InlineCode>.
+        </P>
+        <CodeBlock>{`// The result would be 'sandwich'
+(sushi => sushi)('sandwich')`}</CodeBlock>
+        <P>
+          <Bold>Now, here’s the interesting part:</Bold> One day, I realized
+          that the above JS code can be{' '}
+          <Italic>described visually using emojis.</Italic> Check this out:
+        </P>
+        <R.Ilpo>
+          An “<Bold>emoji puzzle</Bold>” that visually describes
+          <br />
+          the JS code from the above
+        </R.Ilpo>
+        <P></P>
+        <CodeBlock
+          shouldHighlight={(lineNumber, tokenNumber) =>
+            lineNumber === 1 && tokenNumber > 1 && tokenNumber < 6
+          }
+        >{`// The result would be 'sandwich'
+(sushi => sushi)('sandwich')`}</CodeBlock>
       </Container>
       <EpisodePageFooter />
     </Page>
