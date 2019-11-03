@@ -29,6 +29,7 @@ const dateString = date
 const dateSchemaString = date.setZone('America/Los_Angeles').toISO()
 
 const title = 'Using Emojis to Teach Functional Programming to Non-programmers'
+const titleWithEmoji = `🍱 ${title}`
 const titleSplit = (
   <>
     Using Emojis to Teach
@@ -56,8 +57,8 @@ export default () =>
   locale === 'en' ? (
     <Page>
       <Head>
-        <title key="title">{title}</title>
-        <meta property="og:title" content={title} />
+        <title key="title">{titleWithEmoji}</title>
+        <meta property="og:title" content={titleWithEmoji} />
         <meta property="og:site_name" content={lessonTitle} />
         <meta property="og:url" content={url} />
         <link rel="canonical" href={url} />
@@ -123,12 +124,11 @@ export default () =>
         </P>
         <P>
           There’s not a single line of code mentioned in the course—instead, I
-          used <Emoji>🍱</Emoji> <Italic>emoji puzzles</Italic> to explain these
-          concepts. In this article, I’ll explain how my emoji puzzles can be
-          used to represent and execute functional code{' '}
-          <Italic>visually</Italic>. If you enjoy teaching programming to
-          beginners, or if you like functional programming in general, I think
-          you’ll enjoy this post.
+          created <Emoji>🍱</Emoji> <Italic>emoji puzzles</Italic> to explain
+          these concepts. In this article, I’ll explain how my emoji puzzles can
+          represent and execute functional code <Italic>visually</Italic>. If
+          you enjoy teaching programming to beginners, or if you like functional
+          programming in general, I think you’ll enjoy this post.
         </P>
         <Warning>
           <P>
