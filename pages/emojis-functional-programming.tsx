@@ -6,6 +6,7 @@ import { ns, radii, fontSizes, colors, spaces } from 'src/lib/theme'
 import { lessonTitle } from 'src/lib/titles'
 import Container from 'src/components/Container'
 import Emoji from 'src/components/Emoji'
+import H from 'src/components/H'
 import EmojiForLetter from 'src/components/EmojiForLetter'
 import EpisodeHero from 'src/components/EpisodeHero'
 import EpisodePageFooter from 'src/components/EpisodePageFooter'
@@ -323,6 +324,11 @@ sushi => sushi`}</CodeBlock>
             <br />
             by the top item
           </R.Vowa>
+          <P>
+            That’s how my emoji puzzle can visually describe a simple JS
+            expression. Next, let’s talk about how we can{' '}
+            <H args={{ name: 'run', lowerCase: true }} /> it.
+          </P>
           <Warning backgroundColor="brown">
             <Bold>Side Note:</Bold> To keep things simple, the puzzle doesn’t
             distinguish between variable names (e.g.{' '}
