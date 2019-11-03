@@ -20,12 +20,13 @@ export default () => (
       <meta property="og:title" content={lessonTitle} />
       <meta property="og:image" content={ogImageUrl} />
     </Head>
-    <div
-      css={css`
+    <Container
+      size="sm"
+      cssOverrides={css`
         padding-top: ${spaces(1)};
+        padding-bottom: ${spaces(6)};
       `}
-    />
-    <Container size="sm">
+    >
       <EpisodeHero
         mainTitle={<H args={{ name: 'titleSplit' }} />}
         episodeTitle={<H args={{ name: 'pageNotFound' }} />}
@@ -46,11 +47,6 @@ export default () => (
         <Toc includeFirstPage />
       </CardWrapper>
     </Container>
-    <div
-      css={css`
-        padding: ${spaces(3)} 0;
-      `}
-    ></div>
     <EpisodePageFooter />
   </Page>
 )

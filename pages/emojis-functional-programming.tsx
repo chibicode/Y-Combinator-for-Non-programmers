@@ -2,11 +2,10 @@
 import { css, jsx } from '@emotion/core'
 import Page from 'src/components/Page'
 import Head from 'next/head'
-import { ns, fontSizes, colors, spaces } from 'src/lib/theme'
+import { ns, radii, fontSizes, colors, spaces } from 'src/lib/theme'
 import { lessonTitle } from 'src/lib/titles'
 import Container from 'src/components/Container'
 import Emoji from 'src/components/Emoji'
-// import CardWrapper from 'src/components/CardWrapper'
 import EpisodeHero from 'src/components/EpisodeHero'
 import EpisodePageFooter from 'src/components/EpisodePageFooter'
 import {
@@ -14,10 +13,10 @@ import {
   Italic,
   Bold,
   InternalLink,
-  ExternalLink
+  ExternalLink,
+  H3
 } from 'src/components/ContentTags'
 import locale from 'src/lib/locale'
-// import { EpisodeCardListType } from 'src/components/EpisodeCardList'
 import { DateTime } from 'luxon'
 import { enBaseUrl } from 'src/lib/meta'
 
@@ -43,7 +42,31 @@ const description =
 const url = `${enBaseUrl}/emojis-functional-programming`
 const ogImageUrl = `${enBaseUrl}/static/images/blog-og.png`
 
-// const cards: EpisodeCardListType = []
+const Subheading = (props: JSX.IntrinsicElements['h3']) => (
+  <H3
+    {...props}
+    css={css`
+      margin: ${spaces(1.75)} 0 ${spaces(1)};
+    `}
+  />
+)
+
+const Warning = ({ children }: { children: React.ReactNode }) => (
+  <div
+    css={css`
+      padding: ${spaces(0.75)} ${spaces(1)};
+
+      ${ns} {
+        padding: ${spaces(1)} ${spaces(1.25)};
+      }
+
+      border-radius: ${radii(0.5)};
+      background: ${colors('yellow100')};
+    `}
+  >
+    {children}
+  </div>
+)
 
 export default () =>
   locale === 'en' ? (
@@ -59,15 +82,22 @@ export default () =>
         <meta property="og:image" content={ogImageUrl} />
         <meta property="article:published_time" content={dateSchemaString} />
       </Head>
-      <div
-        css={css`
+      <Container
+        size="smsm"
+        horizontalPadding={0.5}
+        cssOverrides={css`
           padding-top: ${spaces(1.5)};
         `}
-      />
-      <Container size="smsm" horizontalPadding={0.5}>
+      >
         <EpisodeHero mainTitle={titleSplit} threeLineTitle />
       </Container>
-      <Container size="smsm" horizontalPadding={0.75}>
+      <Container
+        size="smsm"
+        horizontalPadding={0.75}
+        cssOverrides={css`
+          padding-bottom: ${spaces(6)};
+        `}
+      >
         <div
           css={css`
             text-align: center;
@@ -116,12 +146,27 @@ export default () =>
           beginners, or if you like functional programming in general, I think
           you’ll enjoy this post.
         </P>
+        <Warning>
+          <P>
+            <Emoji>⚠️</Emoji> <Bold>Note:</Bold> This article is for programmers
+            who are familiar with functional programming. If you’re a
+            non-programmer, check out “
+            <InternalLink href="/">
+              <Bold>Y Combinator for Non-programmers</Bold>
+            </InternalLink>
+            ” instead.
+          </P>
+          <P
+            css={css`
+              margin-bottom: 0;
+            `}
+          >
+            I’ll use <Bold>JavaScript</Bold> in this article. Even if you’re not
+            familiar with JS, you should still be able to understand it.
+          </P>
+        </Warning>
+        <Subheading>Test</Subheading>
       </Container>
-      <div
-        css={css`
-          padding: ${spaces(3)} 0;
-        `}
-      ></div>
       <EpisodePageFooter />
     </Page>
   ) : (
