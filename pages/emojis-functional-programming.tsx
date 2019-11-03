@@ -126,9 +126,9 @@ export default () =>
           To explain these concepts, I created{' '}
           <Bold>an educational puzzle using emojis</Bold> <Emoji>🍱</Emoji>. In
           this article, I’ll explain how my emoji puzzles can represent and
-          execute functional code <Italic>visually</Italic>. If you enjoy
-          teaching programming to beginners, or if you like functional
-          programming in general, I think you’ll enjoy this post.
+          execute functional code <Italic>visually</Italic>. If you like to
+          teach programming to beginners, or if you like functional programming
+          in general, I think you’ll enjoy this post.
         </P>
         <Warning>
           <P>
