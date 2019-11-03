@@ -19,7 +19,7 @@ import {
 import locale from 'src/lib/locale'
 import { DateTime } from 'luxon'
 import { enBaseUrl } from 'src/lib/meta'
-import Warning from 'src/components/Warning'
+import Warning, { warningSpacing } from 'src/components/Warning'
 import Highlight, { defaultProps } from 'prism-react-renderer'
 import theme from 'prism-react-renderer/themes/nightOwlLight'
 import 'victormono'
@@ -65,15 +65,17 @@ const CodeBlock = ({ children }: { children: string }) => (
   >
     {({ tokens, getLineProps, getTokenProps }) => (
       <pre
-        css={css`
-          background-color: #f5f6ff;
-          border-radius: ${radii(0.5)};
-          font-weight: bold;
-          font-family: 'Victor Mono', SFMono-Regular, Consolas, Liberation Mono,
-            Menlo, Courier, monospace;
-          padding: ${spaces(0.75)} ${spaces(1)};
-          margin: ${spaces(1.25)} 0 ${spaces(1.25)};
-        `}
+        css={[
+          warningSpacing,
+          css`
+            background-color: #f5f6ff;
+            border-radius: ${radii(0.5)};
+            font-weight: bold;
+            font-family: 'Victor Mono', SFMono-Regular, Consolas,
+              Liberation Mono, Menlo, Courier, monospace;
+            margin: ${spaces(1.25)} 0 ${spaces(1.25)};
+          `
+        ]}
       >
         <div
           css={css`
