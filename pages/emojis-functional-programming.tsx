@@ -337,7 +337,9 @@ sushi => sushi`}</CodeBlock>
             <InlineCode>sushi</InlineCode> and <InlineCode>'sushi'</InlineCode>{' '}
             will be represented as <EmojiForLetter letter="a" size="semilg" />.
           </Warning>
-          <Subheading>Running the function</Subheading>
+          <Subheading>
+            Running the function <Emoji>▶️</Emoji>
+          </Subheading>
         </BubbleQuoteContext.Provider>
       </Container>
       <EpisodePageFooter />
