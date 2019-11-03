@@ -86,8 +86,6 @@ export const HighlightBold = ({
                 ? mix(baseColor, colors('blue50'))
                 : highlightType === 'white'
                 ? colors('white')
-                : baseColor === 'yellow'
-                ? mix(baseColor, colors('pink100'))
                 : mix(baseColor, colors('yellow100'))};
             `,
             inLink &&
@@ -138,8 +136,6 @@ export const Highlight = ({
                 ? mix(baseColor, colors('blue50'))
                 : highlightType === 'white'
                 ? colors('white')
-                : baseColor === 'yellow'
-                ? mix(baseColor, colors('pink100'))
                 : mix(baseColor, colors('yellow100'))};
             `,
             inLink &&

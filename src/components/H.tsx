@@ -243,7 +243,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
   if (args.name === 'newUser') {
     if (locale === 'en') {
       return (
-        <P>
+        <>
           <Bold>Hello!</Bold> This is <Italic>page {episodeNumber + 1}</Italic>{' '}
           of the course called “
           <InternalLink href={'/'}>{lessonTitle}</InternalLink>
@@ -252,21 +252,19 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
             <Bold>click here to read from the beginning</Bold>
           </InternalLink>
           .
-        </P>
+        </>
       )
     } else {
       return (
-        <P>
+        <>
           <Bold>こんにちは！</Bold>このページは「
           <InternalLink href={'/'}>{lessonTitle}</InternalLink>
-          」という記事の
-          <Highlight>{episodeNumber + 1}ページ目</Highlight>
-          です。1ページ目から読むには
+          」という記事の{episodeNumber + 1}ページ目です。1ページ目から読むには
           <InternalLink href={'/'}>
-            <HighlightBold>こちらからどうぞ</HighlightBold>
+            <Bold>こちらからどうぞ</Bold>
           </InternalLink>
           。
-        </P>
+        </>
       )
     }
   }

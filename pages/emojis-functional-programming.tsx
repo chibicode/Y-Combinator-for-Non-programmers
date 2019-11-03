@@ -2,7 +2,7 @@
 import { css, jsx } from '@emotion/core'
 import Page from 'src/components/Page'
 import Head from 'next/head'
-import { ns, radii, fontSizes, colors, spaces } from 'src/lib/theme'
+import { ns, fontSizes, colors, spaces } from 'src/lib/theme'
 import { lessonTitle } from 'src/lib/titles'
 import Container from 'src/components/Container'
 import Emoji from 'src/components/Emoji'
@@ -19,6 +19,7 @@ import {
 import locale from 'src/lib/locale'
 import { DateTime } from 'luxon'
 import { enBaseUrl } from 'src/lib/meta'
+import Warning from 'src/components/Warning'
 
 const date = DateTime.fromISO('2019-11-06T12:00:00Z')
 const dateString = date
@@ -49,23 +50,6 @@ const Subheading = (props: JSX.IntrinsicElements['h3']) => (
       margin: ${spaces(1.75)} 0 ${spaces(1)};
     `}
   />
-)
-
-const Warning = ({ children }: { children: React.ReactNode }) => (
-  <div
-    css={css`
-      padding: ${spaces(0.75)} ${spaces(1)};
-
-      ${ns} {
-        padding: ${spaces(1)} ${spaces(1.25)};
-      }
-
-      border-radius: ${radii(0.5)};
-      background: ${colors('yellow100')};
-    `}
-  >
-    {children}
-  </div>
 )
 
 export default () =>

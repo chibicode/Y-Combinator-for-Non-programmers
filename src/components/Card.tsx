@@ -24,7 +24,6 @@ export interface CardProps {
   color:
     | 'grey'
     | 'orange'
-    | 'yellow'
     | 'green'
     | 'blue'
     | 'indigo'
@@ -54,7 +53,6 @@ export const backgroundColor = (color: CardProps['color']) =>
     green: colors('green50'),
     grey: colors('grey100'),
     orange: colors('deepOrange50'),
-    yellow: colors('yellow100'),
     purple: colors('deepPurple50'),
     blue: colors('blue50'),
     indigo: colors('indigo50'),
@@ -70,7 +68,6 @@ const slideLabelBgColor = (color: CardProps['color']) =>
     grey: colors('grey600'),
     white: colors('grey600'),
     orange: colors('deepOrange600'),
-    yellow: colors('yellow900'),
     purple: colors('deepPurple300'),
     blue: colors('blue600'),
     indigo: colors('indigo300'),
