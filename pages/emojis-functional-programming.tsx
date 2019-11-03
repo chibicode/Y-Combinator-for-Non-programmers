@@ -239,6 +239,12 @@ export default () =>
             familiar with JS, you should still be able to understand it.
           </P>
         </Warning>
+        <Warning backgroundColor="red">
+          <Emoji>👋</Emoji> <Bold>Available for Hire:</Bold> My name is{' '}
+          <Bold>Shu Uesugi</Bold>, a full-stack engineer who’s looking for a{' '}
+          <Italic>full-time position</Italic> (remote or in SF/LA). Scroll to
+          the bottom of this post for details.
+        </Warning>
         <Subheading>Identity function in JS</Subheading>
         <P>
           First, take a look at the following code. It’s an{' '}
@@ -250,7 +256,8 @@ sushi => sushi`}</CodeBlock>
         <P>
           If you apply the above function on a string{' '}
           <InlineCode>'sandwich'</InlineCode>, then the result would be{' '}
-          <InlineCode>'sandwich'</InlineCode>.
+          <InlineCode>'sandwich'</InlineCode>. (You can run this on your
+          browser’s developer console.)
         </P>
         <CodeBlock>{`// The result would be 'sandwich'
 (sushi => sushi)('sandwich')`}</CodeBlock>
