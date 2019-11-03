@@ -174,7 +174,7 @@ export default () =>
         <h2
           css={css`
             text-align: center;
-            color: ${colors('grey700')};
+            color: ${colors('indigo400')};
             font-size: ${fontSizes(1)};
             font-style: italic;
             font-weight: normal;
