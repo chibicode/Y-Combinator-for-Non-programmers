@@ -9,14 +9,7 @@ import Emoji from 'src/components/Emoji'
 import EpisodeHero from 'src/components/EpisodeHero'
 import EpisodePageFooter from 'src/components/EpisodePageFooter'
 import * as R from 'src/components/Runners'
-import {
-  P,
-  Italic,
-  Bold,
-  InternalLink,
-  ExternalLink,
-  H3
-} from 'src/components/ContentTags'
+import { P, Italic, Bold, InternalLink, H3 } from 'src/components/ContentTags'
 import locale from 'src/lib/locale'
 import { DateTime } from 'luxon'
 import { enBaseUrl } from 'src/lib/meta'
@@ -26,10 +19,10 @@ import theme from 'prism-react-renderer/themes/nightOwlLight'
 // import 'victormono'
 
 const date = DateTime.fromISO('2019-11-06T12:00:00Z')
-const dateString = date
-  .setLocale('en')
-  .setZone('America/Los_Angeles')
-  .toFormat('LLL d, yyyy')
+// const dateString = date
+//   .setLocale('en')
+//   .setZone('America/Los_Angeles')
+//   .toFormat('LLL d, yyyy')
 const dateSchemaString = date.setZone('America/Los_Angeles').toISO()
 
 const title = 'Using Emojis to Teach Functional Programming to Non-programmers'
@@ -44,7 +37,7 @@ const titleSplit = (
   </>
 )
 const description =
-  'How to teach lambda calculus, Church encoding, and Y combinator without any code'
+  'A visual implementation of Lambda calculus, Church encoding, and Y combinator'
 const url = `${enBaseUrl}/emojis-functional-programming`
 const ogImageUrl = `${enBaseUrl}/static/images/blog-og.png`
 
@@ -178,20 +171,22 @@ export default () =>
           padding-bottom: ${spaces(6)};
         `}
       >
-        <div
+        <h2
           css={css`
             text-align: center;
             color: ${colors('grey700')};
-            font-size: ${fontSizes(0.85)};
+            font-size: ${fontSizes(1)};
+            font-style: italic;
+            font-weight: normal;
+            margin: 0;
+
+            ${ns} {
+              font-size: ${fontSizes(1.2)};
+            }
           `}
         >
-          <time dateTime={dateSchemaString}>{dateString}</time> &middot; Shu
-          Uesugi (
-          <ExternalLink href="https://twitter.com/chibicode">
-            @chibicode
-          </ExternalLink>
-          )
-        </div>
+          {description}
+        </h2>
         <img
           src="/static/images/animated@2x.gif"
           alt={title}
