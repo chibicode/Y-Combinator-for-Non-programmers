@@ -440,10 +440,10 @@ sushi => sushi`}</CodeBlock>
             <Bold>Side Note:</Bold> To keep things simple, the puzzle doesn’t
             distinguish between variable names (e.g.{' '}
             <InlineCode>sushi</InlineCode>) and strings (e.g.{' '}
-            <InlineCode>'sushi'</InlineCode>). Both{' '}
+            <InlineCode>'sushi'</InlineCode>). Therefore, both{' '}
             <InlineCode>sushi</InlineCode> and <InlineCode>'sushi'</InlineCode>{' '}
-            will be represented as <EmojiForLetter letter="a" size="semilg" />,
-            and this won’t cause an issue for our purporses.
+            will be represented as <EmojiForLetter letter="a" size="semilg" />.
+            This won’t cause an issue for our purporses.
           </Warning>
           <Subheading>Running the function</Subheading>
           <P>
