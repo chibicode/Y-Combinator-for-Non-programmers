@@ -337,7 +337,7 @@ export default () =>
             In this article, I’ll explain how my emoji puzzles can represent and
             execute functional code <Italic>visually</Italic>. If you like to
             teach programming to beginners, or if you like functional
-            programming in general, I think you’ll enjoy this post.
+            programming in general, I think you’ll enjoy this article.
           </P>
         </BubbleQuoteContext.Provider>
         <Warning>
@@ -367,7 +367,7 @@ export default () =>
           <Emoji>👋</Emoji> <Bold>Available for Hire:</Bold> My name is{' '}
           <Bold>Shu Uesugi</Bold>, a full-stack engineer who’s looking for a{' '}
           <Italic>full-time position</Italic> (remote or in SF/LA). Scroll to
-          the bottom of this post for details.
+          the bottom of this article for details.
         </Warning>
         <BubbleQuoteContext.Provider value={{ inQuote: true }}>
           <Subheading>Identity function in JS</Subheading>
