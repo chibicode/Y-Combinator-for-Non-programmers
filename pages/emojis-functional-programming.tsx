@@ -97,7 +97,15 @@ const Subheading = ({
               font-weight: normal;
             `}
           >
-            (Step <Bold>{step}</Bold>/{numSteps})
+            (Step{' '}
+            <Bold
+              css={css`
+                color: ${colors('indigo400')};
+              `}
+            >
+              {step}
+            </Bold>
+            /{numSteps})
           </span>
         </>
       )}
@@ -472,7 +480,7 @@ export default () => {
             <UlLi>
               This article is long—it’s about{' '}
               <Bold>{wordCount.toLocaleString('en-US')}</Bold> words (
-              <Bold>{minRead} min.</Bold> read). so to indicate how far along
+              <Bold>{minRead} min.</Bold> read). To help you track how far along
               you are in the article, I’ll show a “step” number next to each
               subheading. There are a total of <Bold>{numSteps}</Bold> steps in
               this article.
