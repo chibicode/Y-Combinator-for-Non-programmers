@@ -16,7 +16,6 @@ import Color from 'color'
 
 // https://material.io/design/color/the-color-system.html
 export const allColors = {
-  secretCode: '#3B88C3',
   grey100: grey[100],
   grey300: grey[300],
   grey600: grey[600],
@@ -74,7 +73,8 @@ export const allColors = {
   cyan100: cyan[100],
   red100: red[100],
   orange100: orange[100],
-  codeBg: '#f5f6ff'
+  codeBg: '#f5f6ff',
+  codeOutput: '#e0e3ff'
 }
 
 const colors = (x: keyof typeof allColors) => allColors[x]

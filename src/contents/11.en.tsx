@@ -174,8 +174,8 @@ export default () => (
               }
             />
             <P>
-              Take a look at this mathbox and <H args={{ name: 'deprecatedPressRun' }} />
-              :
+              Take a look at this mathbox and{' '}
+              <H args={{ name: 'deprecatedPressRun' }} />:
             </P>
             <TwoPlusFour />
           </>
@@ -512,7 +512,13 @@ export default () => (
                         mathbox and see what happens.
                       </P>
                       <P>
-                        <H args={{ name: 'deprecatedPressRun', capitalize: true }} />.
+                        <H
+                          args={{
+                            name: 'deprecatedPressRun',
+                            capitalize: true
+                          }}
+                        />
+                        .
                       </P>
                     </>
                   )
@@ -735,7 +741,13 @@ export default () => (
                         <EmojiNumber number={4} />.
                       </P>
                       <P>
-                        <H args={{ name: 'deprecatedPressRun', capitalize: true }} />:
+                        <H
+                          args={{
+                            name: 'deprecatedPressRun',
+                            capitalize: true
+                          }}
+                        />
+                        :
                       </P>
                     </>
                   )

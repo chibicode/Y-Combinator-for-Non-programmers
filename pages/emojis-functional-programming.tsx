@@ -1,5 +1,6 @@
 /** @jsx jsx */
 import { css, jsx, Global } from '@emotion/core'
+import { useState } from 'react'
 import Page from 'src/components/Page'
 import Head from 'next/head'
 import { ns, radii, fontSizes, colors, spaces } from 'src/lib/theme'
@@ -10,6 +11,7 @@ import H from 'src/components/H'
 import EmojiForLetter from 'src/components/EmojiForLetter'
 import EpisodeHero from 'src/components/EpisodeHero'
 import EpisodePageFooter from 'src/components/EpisodePageFooter'
+import ButtonWithTouchActiveStates from 'src/components/ButtonWithTouchActiveStates'
 import * as R from 'src/components/Runners'
 import {
   ExternalLink,
@@ -17,13 +19,14 @@ import {
   Italic,
   Bold,
   InternalLink,
+  Highlight,
   H3
 } from 'src/components/ContentTags'
 import locale from 'src/lib/locale'
 import { DateTime } from 'luxon'
 import { enBaseUrl } from 'src/lib/meta'
 import Warning, { warningSpacing } from 'src/components/Warning'
-import Highlight, { defaultProps } from 'prism-react-renderer'
+import PrismHighlight, { defaultProps } from 'prism-react-renderer'
 import theme from 'prism-react-renderer/themes/nightOwlLight'
 import BubbleQuoteContext from 'src/components/BubbleQuoteContext'
 import EmojiWithText from 'src/components/EmojiWithText'
@@ -63,12 +66,18 @@ const Subheading = (props: JSX.IntrinsicElements['h3']) => (
 const codeFontFamily = `'Victor Mono', SFMono-Regular, Consolas,
 Liberation Mono, Menlo, Courier, monospace`
 
-const InlineCode = ({ children }: { children: string }) => (
+const InlineCode = ({
+  children,
+  highlighted
+}: {
+  children: string
+  highlighted?: boolean
+}) => (
   <code
     css={css`
       font-weight: 600;
       font-family: ${codeFontFamily};
-      background-color: ${colors('codeBg')};
+      background-color: ${highlighted ? colors('yellow400') : colors('codeBg')};
       display: inline-block;
       font-size: 0.85em;
       padding: 0.075em 0.2em;
@@ -81,61 +90,160 @@ const InlineCode = ({ children }: { children: string }) => (
 
 const CodeBlock = ({
   children,
-  shouldHighlight
+  shouldHighlight,
+  result
 }: {
   children: string
   shouldHighlight?: (lineNumber: number, tokenNumber: number) => boolean
-}) => (
-  <Highlight
-    {...defaultProps}
-    code={children}
-    theme={theme}
-    language="javascript"
-  >
-    {({ tokens, getLineProps, getTokenProps }) => (
-      <pre
-        css={[
-          warningSpacing,
-          css`
-            background-color: ${colors('codeBg')};
-            border-radius: ${radii(0.5)};
-            font-weight: 600;
-            font-family: ${codeFontFamily};
-            margin: ${spaces(1.25)} 0 ${spaces(1.25)};
-            font-size: ${fontSizes(0.85)};
-          `
-        ]}
+  result?: string
+}) => {
+  const [resultVisible, setResultVisible] = useState(false)
+  const buttonOnClick = () => setResultVisible(true)
+  return (
+    <>
+      <PrismHighlight
+        {...defaultProps}
+        code={children}
+        theme={theme}
+        language="javascript"
       >
-        <div
-          css={css`
-            overflow-x: auto;
-          `}
-        >
-          {tokens.map((line, i) => (
-            <div {...getLineProps({ line, key: i })}>
-              {line.map((token, key) => (
-                <span
-                  {...getTokenProps({ token, key })}
-                  css={[
-                    css`
-                      font-style: normal !important;
-                    `,
-                    !!shouldHighlight &&
-                      shouldHighlight(i, key) &&
-                      css`
-                        background: ${colors('yellow400')};
-                        border-bottom: 2px solid ${colors('deepOrange400')};
-                      `
-                  ]}
-                />
+        {({ tokens, getLineProps, getTokenProps }) => (
+          <pre
+            css={[
+              warningSpacing,
+              css`
+                background-color: ${colors('codeBg')};
+                font-weight: 600;
+                font-family: ${codeFontFamily};
+                margin: ${spaces(1.25)} 0 ${result ? 0 : spaces(1.25)};
+                font-size: ${fontSizes(0.85)};
+              `,
+              result
+                ? css`
+                    border-top-left-radius: ${radii(0.5)};
+                    border-top-right-radius: ${radii(0.5)};
+                  `
+                : css`
+                    border-radius: ${radii(0.5)};
+                  `,
+              (!(result && resultVisible) || !result) &&
+                css`
+                  border-bottom-right-radius: ${radii(0.5)};
+                `
+            ]}
+          >
+            <div
+              css={css`
+                overflow-x: auto;
+              `}
+            >
+              {tokens.map((line, i) => (
+                <div {...getLineProps({ line, key: i })}>
+                  {line.map((token, key) => (
+                    <span
+                      {...getTokenProps({ token, key })}
+                      css={[
+                        css`
+                          font-style: normal !important;
+                        `,
+                        !!shouldHighlight &&
+                          shouldHighlight(i, key) &&
+                          css`
+                            background: ${colors('yellow400')};
+                            border-bottom: 2px solid ${colors('deepOrange400')};
+                          `
+                      ]}
+                    />
+                  ))}
+                </div>
               ))}
             </div>
-          ))}
-        </div>
-      </pre>
-    )}
-  </Highlight>
-)
+          </pre>
+        )}
+      </PrismHighlight>
+      {result && (
+        <>
+          <div
+            css={css`
+              margin-bottom: ${spaces(1.25)};
+            `}
+          >
+            {resultVisible ? (
+              <div
+                css={[
+                  warningSpacing,
+                  css`
+                    border-top-left-radius: 0;
+                    border-top-right-radius: 0;
+                    border-bottom-left-radius: ${radii(0.5)};
+                    border-bottom-right-radius: ${radii(0.5)};
+                    background: ${colors('codeOutput')};
+                    line-height: 1.1rem;
+                  `
+                ]}
+              >
+                <Bold
+                  css={css`
+                    color: ${colors('indigo400')};
+                    font-size: ${fontSizes(0.85)};
+                  `}
+                >
+                  Result:{' '}
+                </Bold>
+                <span
+                  css={css`
+                    color: ${colors('indigo500')};
+                  `}
+                >
+                  <InlineCode highlighted>{result}</InlineCode>
+                </span>
+              </div>
+            ) : (
+              <ButtonWithTouchActiveStates
+                onClick={buttonOnClick}
+                activeBackgroundColor={colors('indigo50')}
+                css={[
+                  warningSpacing,
+                  css`
+                    border-top-left-radius: 0;
+                    border-top-right-radius: 0;
+                    border-bottom-left-radius: ${radii(0.5)};
+                    border-bottom-right-radius: ${radii(0.5)};
+                    line-height: 1.1rem;
+                    border: none;
+                    margin-bottom: 0;
+                    font-weight: bold;
+                    font-size: ${fontSizes(0.85)};
+                    background: ${colors('codeOutput')};
+                    color: ${colors('indigo500')};
+                    &:enabled {
+                      cursor: pointer;
+                    }
+
+                    @media (hover: hover) {
+                      &:hover:enabled {
+                        background: ${colors('indigo50')};
+                      }
+                      &:focus {
+                        box-shadow: inset 0 0 0 1px ${colors('codeBg')};
+                        outline: none;
+                      }
+                    }
+                    &:active:enabled {
+                      background: ${colors('indigo50')};
+                    }
+                  `
+                ]}
+              >
+                Run <Emoji>▶️</Emoji>
+              </ButtonWithTouchActiveStates>
+            )}
+          </div>
+        </>
+      )}
+    </>
+  )
+}
 
 export default () =>
   locale === 'en' ? (
@@ -273,8 +381,7 @@ sushi => sushi`}</CodeBlock>
           <P>
             If you apply the above function on a string{' '}
             <InlineCode>'sandwich'</InlineCode>, then the result would be{' '}
-            <InlineCode>'sandwich'</InlineCode>. (You can run this on your
-            browser’s developer console.)
+            <InlineCode>'sandwich'</InlineCode>.
           </P>
           <CodeBlock>{`// The result would be 'sandwich'
 (sushi => sushi)('sandwich')`}</CodeBlock>
@@ -337,9 +444,17 @@ sushi => sushi`}</CodeBlock>
             <InlineCode>sushi</InlineCode> and <InlineCode>'sushi'</InlineCode>{' '}
             will be represented as <EmojiForLetter letter="a" size="semilg" />.
           </Warning>
-          <Subheading>
-            Running the function <Emoji>▶️</Emoji>
-          </Subheading>
+          <Subheading>Running the function</Subheading>
+          <P>
+            I’ve added the <H args={{ name: 'run' }} /> button to the JS code
+            snippet so you can see the result.{' '}
+            <Highlight>
+              Try pressing <H args={{ name: 'run' }} />:
+            </Highlight>
+          </P>
+          <CodeBlock
+            result={`'sandwich'`}
+          >{`(sushi => sushi)('sandwich')`}</CodeBlock>
         </BubbleQuoteContext.Provider>
       </Container>
       <EpisodePageFooter />
