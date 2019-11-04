@@ -4,7 +4,7 @@ import { ns, radii, colors, spaces } from 'src/lib/theme'
 
 export const warningSpacing = css`
   padding: ${spaces(0.75)} ${spaces(0.75)};
-  margin-bottom: ${spaces(1)};
+  margin-bottom: ${spaces(1.25)};
 
   ${ns} {
     padding: ${spaces(1)} ${spaces(1.25)};
