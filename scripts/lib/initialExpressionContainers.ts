@@ -25,6 +25,14 @@ export const nyhe = initializeExpressionContainer([
   'b'
 ])
 
+export const sckn = initializeExpressionContainer([
+  {
+    arg: 'a',
+    body: 'f'
+  },
+  'b'
+])
+
 export const txbv = initializeExpressionContainer([
   {
     arg: 'c',

@@ -2,7 +2,7 @@
 import { css, jsx } from '@emotion/core'
 import { ns, radii, colors, spaces } from 'src/lib/theme'
 
-export const warningSpacing = css`
+export const alertSpacing = css`
   padding: ${spaces(0.75)} ${spaces(0.75)};
   margin-bottom: ${spaces(1.25)};
 
@@ -11,7 +11,7 @@ export const warningSpacing = css`
   }
 `
 
-const Warning = ({
+const Alert = ({
   children,
   backgroundColor
 }: {
@@ -20,7 +20,7 @@ const Warning = ({
 }) => (
   <div
     css={[
-      warningSpacing,
+      alertSpacing,
       css`
         border-radius: ${radii(0.5)};
         background: ${backgroundColor === 'yellow'
@@ -35,8 +35,8 @@ const Warning = ({
   </div>
 )
 
-Warning.defaultProps = {
+Alert.defaultProps = {
   backgroundColor: 'yellow'
 }
 
-export default Warning
+export default Alert

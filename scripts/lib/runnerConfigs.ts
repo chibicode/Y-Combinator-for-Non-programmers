@@ -1611,6 +1611,11 @@ export const xqjd: ExpressionRunnerShorthandConfig = {
   showPriorities: true
 }
 
+export const qcme: ExpressionRunnerShorthandConfig = {
+  runner: 'runButtonOnly',
+  initialExpressionContainer: initialExpressionContainers.sckn
+}
+
 export const cldb: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   initialExpressionContainer: initialExpressionContainers.smxz,

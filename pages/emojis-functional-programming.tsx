@@ -28,7 +28,7 @@ import {
 import locale from 'src/lib/locale'
 import { DateTime } from 'luxon'
 import { enBaseUrl } from 'src/lib/meta'
-import Warning, { warningSpacing } from 'src/components/Warning'
+import Alert, { alertSpacing } from 'src/components/Alert'
 import PrismHighlight, { defaultProps } from 'prism-react-renderer'
 import theme from 'prism-react-renderer/themes/nightOwlLight'
 import BubbleQuoteContext from 'src/components/BubbleQuoteContext'
@@ -162,7 +162,7 @@ const CodeBlock = ({
         {({ tokens, getLineProps, getTokenProps }) => (
           <pre
             css={[
-              warningSpacing,
+              alertSpacing,
               css`
                 background-color: ${colors('codeBg')};
                 font-weight: 600;
@@ -223,7 +223,7 @@ const CodeBlock = ({
             {resultVisible ? (
               <div
                 css={[
-                  warningSpacing,
+                  alertSpacing,
                   css`
                     border-top-left-radius: 0;
                     border-top-right-radius: 0;
@@ -266,7 +266,7 @@ const CodeBlock = ({
                   onClick={buttonOnClick}
                   activeBackgroundColor={colors('indigo50')}
                   css={[
-                    warningSpacing,
+                    alertSpacing,
                     css`
                       border-top-left-radius: 0;
                       border-top-right-radius: 0;
@@ -306,7 +306,7 @@ const CodeBlock = ({
                 {showGuide && (
                   <span
                     css={[
-                      warningSpacing,
+                      alertSpacing,
                       css`
                         font-size: ${fontSizes(0.85)};
                         animation: pointToCodeRunButton 1s infinite;
@@ -434,7 +434,7 @@ export default () => {
             programming in general, I think you’ll enjoy this article.
           </P>
         </BubbleQuoteContext.Provider>
-        <Warning>
+        <Alert>
           <P>
             <Emoji>⚠️</Emoji> <Bold>Note:</Bold> This article is for programmers
             who are familiar with functional programming. If you’re a
@@ -456,13 +456,13 @@ export default () => {
             </ExternalLink>
             —please ★ star it!
           </P>
-        </Warning>
-        <Warning backgroundColor="brown">
+        </Alert>
+        <Alert backgroundColor="brown">
           <Emoji>👋</Emoji> <Bold>Available for Hire:</Bold> My name is{' '}
           <Bold>Shu Uesugi</Bold>, a full-stack engineer who’s looking for a{' '}
           <Italic>full-time position</Italic> (remote or in SF/LA). Scroll to
           the bottom of this article for details.
-        </Warning>
+        </Alert>
         <BubbleQuoteContext.Provider value={{ inQuote: true }}>
           <Subheading noHrTop step="none">
             Overview of this article
@@ -474,7 +474,7 @@ export default () => {
             </UlLi>
             <UlLi>
               <Bold>After that,</Bold> I’ll talk about how to use my emoji
-              puzzle to talk about lambda calculus, Church encoding, and Y
+              puzzle to teach lambda calculus, Church encoding, and Y
               Combinator.
             </UlLi>
             <UlLi>
@@ -552,14 +552,14 @@ sushi => sushi`}</CodeBlock>
             expression. Next, let’s talk about how we can{' '}
             <H args={{ name: 'run', lowerCase: true }} /> it.
           </P>
-          <Warning backgroundColor="brown">
+          <Alert backgroundColor="brown">
             <Bold>Side Note:</Bold> To keep things simple, this puzzle doesn’t
             distinguish between variable names (e.g.{' '}
             <InlineCode>sushi</InlineCode>) and strings (e.g.{' '}
             <InlineCode>'sushi'</InlineCode>). Therefore, both{' '}
             <InlineCode>sushi</InlineCode> and <InlineCode>'sushi'</InlineCode>{' '}
             will be represented as <EmojiForLetter letter="a" size="semilg" />.
-          </Warning>
+          </Alert>
           <Subheading step={step++}>Running the function</Subheading>
           <P>
             I’ve added the <H args={{ name: 'run' }} /> button to the JS code
@@ -588,8 +588,7 @@ sushi => sushi`}</CodeBlock>
           </ExpressionRunnerConfigContext.Provider>
           <P>
             The result is <EmojiWithText letter="b" />, which is the same as
-            what happens when you run the JS code (
-            <InlineCode>'sandwich'</InlineCode>).
+            what happens when you run the equivalent JS code.
           </P>
           <P>
             So, you can <H args={{ name: 'run', lowerCase: true }} /> an emoji
@@ -600,6 +599,38 @@ sushi => sushi`}</CodeBlock>
               Y Combinator for Non-programmers
             </InternalLink>
             )—without showing any code.
+          </P>
+          <Subheading step={step++}>Another example</Subheading>
+          <P>
+            Let’s take a look at another example. Here’s a piece of JS code
+            that’s slightly different from before. It’s a function that{' '}
+            <Italic>ignores the input</Italic> and always returns{' '}
+            <InlineCode>'pizza'</InlineCode>.
+          </P>
+          <CodeBlock>{`// A function that ignores the input
+// and always returns 'pizza'
+sushi => 'pizza'`}</CodeBlock>
+          <P>
+            Let’s run the above code with <InlineCode>'sandwich'</InlineCode> as
+            the argument. <H args={{ name: 'pressRun' }} />
+          </P>
+          <CodeBlock
+            result={`'pizza'`}
+            showGuide
+          >{`(sushi => 'pizza')('sandwich')`}</CodeBlock>
+          <P>
+            As expected, the result is <InlineCode>'pizza'</InlineCode>. Now,
+            this code can be represented using my emoji puzzle as follows.{' '}
+            <H args={{ name: 'pressRun' }} />
+          </P>
+          <ExpressionRunnerConfigContext.Provider
+            value={{ pointToRunButton: true }}
+          >
+            <R.Qcme></R.Qcme>
+          </ExpressionRunnerConfigContext.Provider>
+          <P>
+            Just like the JS code, the emoji puzzle ended up with a{' '}
+            <EmojiWithText letter="f" /> after running it.
           </P>
         </BubbleQuoteContext.Provider>
       </Container>
