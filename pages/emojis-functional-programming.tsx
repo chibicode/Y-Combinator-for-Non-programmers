@@ -323,7 +323,7 @@ export default () =>
             <InternalLink href="/">
               <Bold>Y Combinator for Non-programmers</Bold>
             </InternalLink>
-            ”. In this course, I teach computer science concepts such as
+            ”. In this 17-page course, I teach computer science concepts such as
             functional programming, lambda calculus, Church encoding, and Y
             combinator in a way such that{' '}
             <Italic>
