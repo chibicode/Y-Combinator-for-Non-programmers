@@ -437,7 +437,7 @@ sushi => sushi`}</CodeBlock>
             <H args={{ name: 'run', lowerCase: true }} /> it.
           </P>
           <Warning backgroundColor="brown">
-            <Bold>Side Note:</Bold> To keep things simple, the puzzle doesn’t
+            <Bold>Side Note:</Bold> To keep things simple, this puzzle doesn’t
             distinguish between variable names (e.g.{' '}
             <InlineCode>sushi</InlineCode>) and strings (e.g.{' '}
             <InlineCode>'sushi'</InlineCode>). Therefore, both{' '}
