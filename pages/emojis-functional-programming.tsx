@@ -363,7 +363,7 @@ export default () =>
             —please ★ star it!
           </P>
         </Warning>
-        <Warning backgroundColor="red">
+        <Warning backgroundColor="brown">
           <Emoji>👋</Emoji> <Bold>Available for Hire:</Bold> My name is{' '}
           <Bold>Shu Uesugi</Bold>, a full-stack engineer who’s looking for a{' '}
           <Italic>full-time position</Italic> (remote or in SF/LA). Scroll to
@@ -442,7 +442,8 @@ sushi => sushi`}</CodeBlock>
             <InlineCode>sushi</InlineCode>) and strings (e.g.{' '}
             <InlineCode>'sushi'</InlineCode>). Both{' '}
             <InlineCode>sushi</InlineCode> and <InlineCode>'sushi'</InlineCode>{' '}
-            will be represented as <EmojiForLetter letter="a" size="semilg" />.
+            will be represented as <EmojiForLetter letter="a" size="semilg" />,
+            and this won’t cause an issue for our purporses.
           </Warning>
           <Subheading>Running the function</Subheading>
           <P>
