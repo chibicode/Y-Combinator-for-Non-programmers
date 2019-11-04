@@ -89,7 +89,7 @@ interface HProps {
     | { name: 'unmatch' }
     | { name: 'nextButtonNextPagePrimaryText' }
     | { name: 'nextButtonSecondaryText'; nextEpisodeNumber: number }
-    | { name: 'pressPlay'; capitalize?: true }
+    | { name: 'deprecatedPressRun'; capitalize?: true }
     | { name: 'indexPageLink' }
     | { name: 'titlePrefix' }
     | { name: 'titlePrefixColored'; addColon?: boolean }
@@ -598,7 +598,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
       return <>{episodePrefix(args.nextEpisodeNumber)}へ</>
     }
   }
-  if (args.name === 'pressPlay') {
+  if (args.name === 'deprecatedPressRun') {
     if (locale === 'en') {
       return (
         <Highlight>

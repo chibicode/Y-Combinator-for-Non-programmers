@@ -508,7 +508,7 @@ export default () => (
               We can <H args={{ name: 'run', lowerCase: true }} />{' '}
               <H args={{ name: 'lunchBoxPuzzle', indefinite: true }} />, just
               like how we can run a mathbox.{' '}
-              <H args={{ name: 'pressPlay', capitalize: true }} /> below:
+              <H args={{ name: 'deprecatedPressRun', capitalize: true }} /> below:
             </P>
             <R.Itbm />
             <BubbleQuotes
@@ -619,7 +619,7 @@ export default () => (
               This one has <EmojiWithText letter="e" /> on the top row and a{' '}
               <EmojiWithText letter="c" /> and <EmojiWithText letter="d" /> on
               the bottom row.{' '}
-              <H args={{ name: 'pressPlay', capitalize: true }} />:
+              <H args={{ name: 'deprecatedPressRun', capitalize: true }} />:
             </P>
             <R.Zwpj />
             <P>
@@ -652,7 +652,7 @@ export default () => (
               This one has <EmojiWithText letter="g" /> and{' '}
               <EmojiWithText letter="o" /> on the top row and two slices of{' '}
               <EmojiWithText letter="f" /> on the bottom row.{' '}
-              <H args={{ name: 'pressPlay', capitalize: true }} />:
+              <H args={{ name: 'deprecatedPressRun', capitalize: true }} />:
             </P>
             <R.Rivc />
             <P>
@@ -665,7 +665,7 @@ export default () => (
               <EmojiWithText letter="p" /> on the top row and{' '}
               <EmojiWithText letter="h" /> and a <EmojiWithText letter="i" /> on
               the bottom row.{' '}
-              <H args={{ name: 'pressPlay', capitalize: true }} />:
+              <H args={{ name: 'deprecatedPressRun', capitalize: true }} />:
             </P>
             <R.Nmmz />
             <P>

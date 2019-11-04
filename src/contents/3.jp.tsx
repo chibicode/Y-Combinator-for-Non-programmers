@@ -431,7 +431,7 @@ export default () => (
               </Highlight>
               試しに、
               <Highlight>
-                <H args={{ name: 'pressPlay' }} />
+                <H args={{ name: 'deprecatedPressRun' }} />
               </Highlight>
             </P>
             <R.Itbm />
@@ -531,7 +531,7 @@ export default () => (
               <EmojiWithText letter="c" />と
               <EmojiWithText letter="d" />
               が入っています。
-              <H args={{ name: 'pressPlay' }} />
+              <H args={{ name: 'deprecatedPressRun' }} />
             </P>
             <R.Zwpj />
             <P>
@@ -562,7 +562,7 @@ export default () => (
               が、下段には
               <EmojiWithText letter="f" />
               がふたつ入っています。
-              <H args={{ name: 'pressPlay' }} />
+              <H args={{ name: 'deprecatedPressRun' }} />
             </P>
             <R.Rivc />
             <P>
@@ -578,7 +578,7 @@ export default () => (
               <EmojiWithText letter="h" />と
               <EmojiWithText letter="i" />
               が入っています。
-              <H args={{ name: 'pressPlay' }} />
+              <H args={{ name: 'deprecatedPressRun' }} />
             </P>
             <R.Nmmz />
             <P>
