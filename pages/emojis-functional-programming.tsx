@@ -20,7 +20,10 @@ import {
   Bold,
   InternalLink,
   Highlight,
-  H3
+  H3,
+  Ul,
+  Hr,
+  UlLi
 } from 'src/components/ContentTags'
 import locale from 'src/lib/locale'
 import { DateTime } from 'luxon'
@@ -31,6 +34,10 @@ import theme from 'prism-react-renderer/themes/nightOwlLight'
 import BubbleQuoteContext from 'src/components/BubbleQuoteContext'
 import EmojiWithText from 'src/components/EmojiWithText'
 import ExpressionRunnerConfigContext from 'src/components/ExpressionRunnerConfigContext'
+
+const numSteps = 100
+const wordCount = 10000
+const minRead = wordCount / 200
 
 const date = DateTime.fromISO('2019-11-06T12:00:00Z')
 // const dateString = date
@@ -55,13 +62,47 @@ const description =
 const url = `${enBaseUrl}/emojis-functional-programming`
 const ogImageUrl = `${enBaseUrl}/static/images/blog-og.png`
 
-const Subheading = (props: JSX.IntrinsicElements['h3']) => (
-  <H3
-    {...props}
-    css={css`
-      margin: ${spaces(2)} 0 ${spaces(0.5)};
-    `}
-  />
+const Subheading = ({
+  step,
+  noHrTop,
+  children,
+  ...props
+}: JSX.IntrinsicElements['h3'] & {
+  noHrTop?: boolean
+  step: number | 'none'
+}) => (
+  <>
+    {!noHrTop && (
+      <Hr
+        css={css`
+          border-bottom: 5px solid ${colors('codeBg')};
+          margin-top: ${spaces(2.25)};
+        `}
+      />
+    )}
+    <H3
+      {...props}
+      css={css`
+        margin: ${noHrTop ? spaces(2) : 0} 0 ${spaces(0.5)};
+      `}
+    >
+      {children}
+      {step !== 'none' && (
+        <>
+          {' '}
+          <span
+            css={css`
+              font-size: 0.7em;
+              color: ${colors('indigo300')};
+              font-weight: normal;
+            `}
+          >
+            (Step <Bold>{step}</Bold>/{numSteps})
+          </span>
+        </>
+      )}
+    </H3>
+  </>
 )
 
 const codeFontFamily = `'Victor Mono', SFMono-Regular, Consolas,
@@ -289,8 +330,9 @@ const CodeBlock = ({
   )
 }
 
-export default () =>
-  locale === 'en' ? (
+export default () => {
+  let step = 1
+  return locale === 'en' ? (
     <Page>
       <Global
         styles={[
@@ -414,7 +456,29 @@ export default () =>
           the bottom of this article for details.
         </Warning>
         <BubbleQuoteContext.Provider value={{ inQuote: true }}>
-          <Subheading>Identity function in JS</Subheading>
+          <Subheading noHrTop step="none">
+            Overview of this article
+          </Subheading>
+          <Ul>
+            <UlLi>
+              <Bold>First,</Bold> I’ll show you how some simple JavaScript code
+              can be represented using my emoji puzzle.
+            </UlLi>
+            <UlLi>
+              <Bold>After that,</Bold> I’ll talk about how to use my emoji
+              puzzle to talk about lambda calculus, Church encoding, and Y
+              Combinator.
+            </UlLi>
+            <UlLi>
+              This article is long—it’s about{' '}
+              <Bold>{wordCount.toLocaleString('en-US')}</Bold> words (
+              <Bold>{minRead} min.</Bold> read). so to indicate how far along
+              you are in the article, I’ll show a “step” number next to each
+              subheading. There are a total of <Bold>{numSteps}</Bold> steps in
+              this article.
+            </UlLi>
+          </Ul>
+          <Subheading step={step++}>Identity function in JS</Subheading>
           <P>
             First, take a look at the following code. It’s an{' '}
             <Italic>identity function</Italic> in JavaScript that returns the
@@ -488,7 +552,7 @@ sushi => sushi`}</CodeBlock>
             <InlineCode>sushi</InlineCode> and <InlineCode>'sushi'</InlineCode>{' '}
             will be represented as <EmojiForLetter letter="a" size="semilg" />.
           </Warning>
-          <Subheading>Running the function</Subheading>
+          <Subheading step={step++}>Running the function</Subheading>
           <P>
             I’ve added the <H args={{ name: 'run' }} /> button to the JS code
             snippet so you can see the result.{' '}
@@ -502,7 +566,7 @@ sushi => sushi`}</CodeBlock>
             showGuide
           >{`(sushi => sushi)('sandwich')`}</CodeBlock>
           <P>
-            Now, we can also run the equivalent emoji puzzle and get the same
+            Now, we can also “run” the equivalent emoji puzzle and get the same
             result.{' '}
             <Highlight>
               Try pressing the <H args={{ name: 'run' }} /> button below the
@@ -515,10 +579,19 @@ sushi => sushi`}</CodeBlock>
             <R.Itbm></R.Itbm>
           </ExpressionRunnerConfigContext.Provider>
           <P>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatem
-            itaque error aperiam consequatur debitis tempore quisquam modi illum
-            tenetur aspernatur velit iure, ea molestiae nisi repudiandae
-            voluptatibus corporis quas sequi.
+            The result is <EmojiWithText letter="b" />, which is the same as
+            what happens when you run the JS code (
+            <InlineCode>'sandwich'</InlineCode>).
+          </P>
+          <P>
+            So, you can <H args={{ name: 'run', lowerCase: true }} /> an emoji
+            puzzle just as you can run a piece of JS code. Basically, this is
+            how I taught functional programming to non-programmers in my course
+            (
+            <InternalLink href="/">
+              Y Combinator for Non-programmers
+            </InternalLink>
+            )—without showing any code.
           </P>
         </BubbleQuoteContext.Provider>
       </Container>
@@ -527,3 +600,4 @@ sushi => sushi`}</CodeBlock>
   ) : (
     <></>
   )
+}
