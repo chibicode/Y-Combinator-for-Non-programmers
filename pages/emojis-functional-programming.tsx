@@ -30,6 +30,7 @@ import PrismHighlight, { defaultProps } from 'prism-react-renderer'
 import theme from 'prism-react-renderer/themes/nightOwlLight'
 import BubbleQuoteContext from 'src/components/BubbleQuoteContext'
 import EmojiWithText from 'src/components/EmojiWithText'
+import ExpressionRunnerConfigContext from 'src/components/ExpressionRunnerConfigContext'
 
 const date = DateTime.fromISO('2019-11-06T12:00:00Z')
 // const dateString = date
@@ -91,11 +92,13 @@ const InlineCode = ({
 const CodeBlock = ({
   children,
   shouldHighlight,
-  result
+  result,
+  showGuide
 }: {
   children: string
   shouldHighlight?: (lineNumber: number, tokenNumber: number) => boolean
   result?: string
+  showGuide?: boolean
 }) => {
   const [resultVisible, setResultVisible] = useState(false)
   const buttonOnClick = () => setResultVisible(true)
@@ -177,8 +180,17 @@ const CodeBlock = ({
                     border-top-right-radius: 0;
                     border-bottom-left-radius: ${radii(0.5)};
                     border-bottom-right-radius: ${radii(0.5)};
-                    background: ${colors('codeOutput')};
-                    line-height: 1.1rem;
+                    background: #fff;
+                    border-left: 0.25rem solid ${colors('codeBg')};
+                    border-bottom: 0.25rem solid ${colors('codeBg')};
+                    border-right: 0.25rem solid ${colors('codeBg')};
+                    padding-top: 0.425rem;
+                    padding-bottom: 0.425rem;
+
+                    ${ns} {
+                      padding-top: 0.65rem;
+                      padding-bottom: 0.65rem;
+                    }
                   `
                 ]}
               >
@@ -186,6 +198,7 @@ const CodeBlock = ({
                   css={css`
                     color: ${colors('indigo400')};
                     font-size: ${fontSizes(0.85)};
+                    margin-left: -0.25rem;
                   `}
                 >
                   Result:{' '}
@@ -199,44 +212,75 @@ const CodeBlock = ({
                 </span>
               </div>
             ) : (
-              <ButtonWithTouchActiveStates
-                onClick={buttonOnClick}
-                activeBackgroundColor={colors('indigo50')}
-                css={[
-                  warningSpacing,
-                  css`
-                    border-top-left-radius: 0;
-                    border-top-right-radius: 0;
-                    border-bottom-left-radius: ${radii(0.5)};
-                    border-bottom-right-radius: ${radii(0.5)};
-                    line-height: 1.1rem;
-                    border: none;
-                    margin-bottom: 0;
-                    font-weight: bold;
-                    font-size: ${fontSizes(0.85)};
-                    background: ${colors('codeOutput')};
-                    color: ${colors('indigo500')};
-                    &:enabled {
-                      cursor: pointer;
-                    }
+              <>
+                <ButtonWithTouchActiveStates
+                  onClick={buttonOnClick}
+                  activeBackgroundColor={colors('indigo50')}
+                  css={[
+                    warningSpacing,
+                    css`
+                      border-top-left-radius: 0;
+                      border-top-right-radius: 0;
+                      border-bottom-left-radius: ${radii(0.5)};
+                      border-bottom-right-radius: ${radii(0.5)};
+                      line-height: 1.1rem;
+                      border: none;
+                      margin-bottom: 0;
+                      font-weight: bold;
+                      font-size: ${fontSizes(0.85)};
+                      background: ${colors('codeButtonBg')};
+                      color: ${colors('indigo500')};
+                      padding-left: ${spaces(1.25)};
+                      padding-right: ${spaces(1.25)};
 
-                    @media (hover: hover) {
-                      &:hover:enabled {
+                      &:enabled {
+                        cursor: pointer;
+                      }
+
+                      @media (hover: hover) {
+                        &:hover:enabled {
+                          background: ${colors('indigo50')};
+                        }
+                        &:focus {
+                          box-shadow: inset 0 0 0 1px ${colors('codeBg')};
+                          outline: none;
+                        }
+                      }
+                      &:active:enabled {
                         background: ${colors('indigo50')};
                       }
-                      &:focus {
-                        box-shadow: inset 0 0 0 1px ${colors('codeBg')};
-                        outline: none;
-                      }
-                    }
-                    &:active:enabled {
-                      background: ${colors('indigo50')};
-                    }
-                  `
-                ]}
-              >
-                Run <Emoji>▶️</Emoji>
-              </ButtonWithTouchActiveStates>
+                    `
+                  ]}
+                >
+                  Run <Emoji>▶️</Emoji>
+                </ButtonWithTouchActiveStates>
+                {showGuide && (
+                  <span
+                    css={[
+                      warningSpacing,
+                      css`
+                        font-size: ${fontSizes(0.85)};
+                        animation: pointToCodeRunButton 1s infinite;
+                        color: ${colors('grey700')};
+
+                        @keyframes pointToCodeRunButton {
+                          0% {
+                            margin-left: 0;
+                          }
+                          50% {
+                            margin-left: -0.5em;
+                          }
+                          100% {
+                            margin-left: 0;
+                          }
+                        }
+                      `
+                    ]}
+                  >
+                    ← <H args={{ name: 'pointToRunButton' }} />
+                  </span>
+                )}
+              </>
             )}
           </div>
         </>
@@ -455,6 +499,7 @@ sushi => sushi`}</CodeBlock>
           </P>
           <CodeBlock
             result={`'sandwich'`}
+            showGuide
           >{`(sushi => sushi)('sandwich')`}</CodeBlock>
           <P>
             Now, we can also run the equivalent emoji puzzle and get the same
@@ -463,6 +508,17 @@ sushi => sushi`}</CodeBlock>
               Try pressing the <H args={{ name: 'run' }} /> button below the
               puzzle.
             </Highlight>
+          </P>
+          <ExpressionRunnerConfigContext.Provider
+            value={{ pointToRunButton: true }}
+          >
+            <R.Itbm></R.Itbm>
+          </ExpressionRunnerConfigContext.Provider>
+          <P>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatem
+            itaque error aperiam consequatur debitis tempore quisquam modi illum
+            tenetur aspernatur velit iure, ea molestiae nisi repudiandae
+            voluptatibus corporis quas sequi.
           </P>
         </BubbleQuoteContext.Provider>
       </Container>

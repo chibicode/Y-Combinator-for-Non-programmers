@@ -168,6 +168,7 @@ interface HProps {
     | { name: 'runAndShowAllSteps' }
     | { name: 'ignoreForNow' }
     | { name: 'aboutMe'; hideNextPageButton?: boolean }
+    | { name: 'pointToRunButton' }
 }
 
 const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
@@ -1777,6 +1778,13 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
           省略
         </>
       )
+    }
+  }
+  if (args.name === 'pointToRunButton') {
+    if (locale === 'en') {
+      return <>Press this button!</>
+    } else {
+      return <>押してみてください！</>
     }
   }
   if (args.name === 'aboutMe') {

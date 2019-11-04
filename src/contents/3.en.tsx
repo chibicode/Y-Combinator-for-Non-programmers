@@ -22,6 +22,7 @@ import H from 'src/components/H'
 import BubbleQuotes from 'src/components/BubbleQuotes'
 import * as R from 'src/components/Runners'
 import NextLessonButton from 'src/components/NextLessonButton'
+import ExpressionRunnerConfigContext from 'src/components/ExpressionRunnerConfigContext'
 
 export default () => (
   <EpisodeCardList
@@ -508,9 +509,14 @@ export default () => (
               We can <H args={{ name: 'run', lowerCase: true }} />{' '}
               <H args={{ name: 'lunchBoxPuzzle', indefinite: true }} />, just
               like how we can run a mathbox.{' '}
-              <H args={{ name: 'deprecatedPressRun', capitalize: true }} /> below:
+              <H args={{ name: 'deprecatedPressRun', capitalize: true }} />{' '}
+              below:
             </P>
-            <R.Itbm />
+            <ExpressionRunnerConfigContext.Provider
+              value={{ pointToRunButton: true }}
+            >
+              <R.Itbm></R.Itbm>
+            </ExpressionRunnerConfigContext.Provider>
             <BubbleQuotes
               quotes={[
                 {

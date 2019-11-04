@@ -75,8 +75,8 @@ export const allColors = {
   cyan100: cyan[100],
   red100: red[100],
   orange100: orange[100],
-  codeBg: '#f5f6ff',
-  codeOutput: '#e0e3ff'
+  codeBg: '#f2f4ff',
+  codeButtonBg: '#d9ddff'
 }
 
 const colors = (x: keyof typeof allColors) => allColors[x]

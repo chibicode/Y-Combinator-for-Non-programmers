@@ -19,6 +19,7 @@ import H from 'src/components/H'
 import BubbleQuotes from 'src/components/BubbleQuotes'
 import * as R from 'src/components/Runners'
 import NextLessonButton from 'src/components/NextLessonButton'
+import ExpressionRunnerConfigContext from 'src/components/ExpressionRunnerConfigContext'
 
 export default () => (
   <EpisodeCardList
@@ -434,7 +435,11 @@ export default () => (
                 <H args={{ name: 'deprecatedPressRun' }} />
               </Highlight>
             </P>
-            <R.Itbm />
+            <ExpressionRunnerConfigContext.Provider
+              value={{ pointToRunButton: true }}
+            >
+              <R.Itbm />
+            </ExpressionRunnerConfigContext.Provider>
             <BubbleQuotes
               quotes={[
                 {
