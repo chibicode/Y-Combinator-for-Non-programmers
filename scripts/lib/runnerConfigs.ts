@@ -426,6 +426,12 @@ export const ilpo: ExpressionRunnerShorthandConfig = {
   initialExpressionContainer: initialExpressionContainers.nyhe
 }
 
+export const lngo: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  isDone: true,
+  initialExpressionContainer: initialExpressionContainers.nyhe
+}
+
 export const elku: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   initialExpressionContainer: initialExpressionContainers.nyhe,
@@ -1613,6 +1619,17 @@ export const xqjd: ExpressionRunnerShorthandConfig = {
 
 export const qcme: ExpressionRunnerShorthandConfig = {
   runner: 'runButtonOnly',
+  initialExpressionContainer: initialExpressionContainers.sckn
+}
+
+export const bjny: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.sckn
+}
+
+export const ukzq: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  isDone: true,
   initialExpressionContainer: initialExpressionContainers.sckn
 }
 

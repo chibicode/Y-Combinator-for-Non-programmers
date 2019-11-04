@@ -963,7 +963,8 @@ export default () => (
                 We’ll be using the <H args={{ name: 'run' }} /> button with the{' '}
                 <Bold>“Show every step”</Bold> functionality
               </Highlight>
-              , which automatically goes through each step.
+              , which automatically shows every step that happens between the
+              beginning and the end.
             </P>
             <InlineRunButtonShowAllSteps>
               If you use this button…

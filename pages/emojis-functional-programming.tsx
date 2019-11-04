@@ -6,6 +6,8 @@ import Head from 'next/head'
 import { ns, radii, fontSizes, colors, spaces } from 'src/lib/theme'
 import { lessonTitle } from 'src/lib/titles'
 import Container from 'src/components/Container'
+import ExpressionRunnerSeparator from 'src/components/ExpressionRunnerSeparator'
+import ExpressionRunnerCaptionWrapper from 'src/components/ExpressionRunnerCaptionWrapper'
 import Emoji from 'src/components/Emoji'
 import H from 'src/components/H'
 import EmojiForLetter from 'src/components/EmojiForLetter'
@@ -28,7 +30,7 @@ import {
 import locale from 'src/lib/locale'
 import { DateTime } from 'luxon'
 import { enBaseUrl } from 'src/lib/meta'
-import Alert, { alertSpacing } from 'src/components/Alert'
+import BaseAlert, { alertSpacing, AlertProps } from 'src/components/Alert'
 import PrismHighlight, { defaultProps } from 'prism-react-renderer'
 import theme from 'prism-react-renderer/themes/nightOwlLight'
 import BubbleQuoteContext from 'src/components/BubbleQuoteContext'
@@ -61,6 +63,14 @@ const description =
   'A visual implementation of Lambda calculus, Church encoding, and Y combinator'
 const url = `${enBaseUrl}/emojis-functional-programming`
 const ogImageUrl = `${enBaseUrl}/static/images/blog-og.png`
+
+const Alert = (props: AlertProps) => (
+  <BubbleQuoteContext.Provider value={{ inQuote: false }}>
+    <BaseAlert {...props} />
+  </BubbleQuoteContext.Provider>
+)
+
+Alert.defaultProps = BaseAlert.defaultProps
 
 const Subheading = ({
   step,
@@ -142,17 +152,30 @@ const CodeBlock = ({
   children,
   shouldHighlight,
   result,
-  showGuide
+  showGuide,
+  defaultResultVisible,
+  caption
 }: {
   children: string
   shouldHighlight?: (lineNumber: number, tokenNumber: number) => boolean
   result?: string
   showGuide?: boolean
+  defaultResultVisible: boolean
+  caption?: React.ReactNode
 }) => {
-  const [resultVisible, setResultVisible] = useState(false)
+  const [resultVisible, setResultVisible] = useState(defaultResultVisible)
   const buttonOnClick = () => setResultVisible(true)
   return (
     <>
+      {caption && (
+        <ExpressionRunnerCaptionWrapper
+          css={css`
+            margin-top: ${spaces(1.25)};
+          `}
+        >
+          JS code:
+        </ExpressionRunnerCaptionWrapper>
+      )}
       <PrismHighlight
         {...defaultProps}
         code={children}
@@ -167,7 +190,8 @@ const CodeBlock = ({
                 background-color: ${colors('codeBg')};
                 font-weight: 600;
                 font-family: ${codeFontFamily};
-                margin: ${spaces(1.25)} 0 ${result ? 0 : spaces(1.25)};
+                margin: ${caption ? 0 : spaces(1.25)} 0
+                  ${result ? 0 : spaces(1.25)};
                 font-size: ${fontSizes(0.85)};
               `,
               result
@@ -338,6 +362,10 @@ const CodeBlock = ({
   )
 }
 
+CodeBlock.defaultProps = {
+  defaultResultVisible: false
+}
+
 export default () => {
   let step = 1
   return locale === 'en' ? (
@@ -433,37 +461,36 @@ export default () => {
             teach programming to beginners, or if you like functional
             programming in general, I think you’ll enjoy this article.
           </P>
-        </BubbleQuoteContext.Provider>
-        <Alert>
-          <P>
-            <Emoji>⚠️</Emoji> <Bold>Note:</Bold> This article is for programmers
-            who are familiar with functional programming. If you’re a
-            non-programmer, check out “
-            <InternalLink href="/">
-              <Bold>Y Combinator for Non-programmers</Bold>
-            </InternalLink>
-            ” instead.
-          </P>
-          <P
-            css={css`
-              margin-bottom: 0;
-            `}
-          >
-            I’ll use <Bold>JavaScript</Bold> in this article. Even if you’re not
-            familiar with JS, you should still be able to understand it. P.S.{' '}
-            <ExternalLink href="https://github.com/chibicode/ycombinator/blob/master/pages/emojis-functional-programming.tsx">
-              The source code for this article is available on GitHub
-            </ExternalLink>
-            —please ★ star it!
-          </P>
-        </Alert>
-        <Alert backgroundColor="brown">
-          <Emoji>👋</Emoji> <Bold>Available for Hire:</Bold> My name is{' '}
-          <Bold>Shu Uesugi</Bold>, a full-stack engineer who’s looking for a{' '}
-          <Italic>full-time position</Italic> (remote or in SF/LA). Scroll to
-          the bottom of this article for details.
-        </Alert>
-        <BubbleQuoteContext.Provider value={{ inQuote: true }}>
+          <Alert>
+            <P>
+              <Emoji>⚠️</Emoji> <Bold>Note:</Bold> This article is for
+              programmers who are familiar with functional programming. If
+              you’re a non-programmer, check out “
+              <InternalLink href="/">
+                <Bold>Y Combinator for Non-programmers</Bold>
+              </InternalLink>
+              ” instead.
+            </P>
+            <P
+              css={css`
+                margin-bottom: 0;
+              `}
+            >
+              I’ll use <Bold>JavaScript</Bold> in this article. Even if you’re
+              not familiar with JS, you should still be able to understand it.
+              P.S.{' '}
+              <ExternalLink href="https://github.com/chibicode/ycombinator/blob/master/pages/emojis-functional-programming.tsx">
+                The source code for this article is available on GitHub
+              </ExternalLink>
+              —please ★ star it!
+            </P>
+          </Alert>
+          <Alert backgroundColor="brown">
+            <Emoji>👋</Emoji> <Bold>Available for Hire:</Bold> My name is{' '}
+            <Bold>Shu Uesugi</Bold>, a full-stack engineer who’s looking for a{' '}
+            <Italic>full-time position</Italic> (remote or in SF/LA). Scroll to
+            the bottom of this article for details.
+          </Alert>
           <Subheading noHrTop step="none">
             Overview of this article
           </Subheading>
@@ -616,21 +643,80 @@ sushi => 'pizza'`}</CodeBlock>
           </P>
           <CodeBlock
             result={`'pizza'`}
-            showGuide
           >{`(sushi => 'pizza')('sandwich')`}</CodeBlock>
           <P>
             As expected, the result is <InlineCode>'pizza'</InlineCode>. Now,
             this code can be represented using my emoji puzzle as follows.{' '}
             <H args={{ name: 'pressRun' }} />
           </P>
-          <ExpressionRunnerConfigContext.Provider
-            value={{ pointToRunButton: true }}
-          >
-            <R.Qcme></R.Qcme>
-          </ExpressionRunnerConfigContext.Provider>
+          <R.Qcme></R.Qcme>
           <P>
             Just like the JS code, the emoji puzzle ended up with a{' '}
             <EmojiWithText letter="f" /> after running it.
+          </P>
+          <Alert backgroundColor="red">
+            <P>
+              <Bold>What we learned so far:</Bold> Simple JS code like below can
+              be visually represented using emoji puzzles.
+            </P>
+            <CodeBlock
+              defaultResultVisible
+              result={`'sandwich'`}
+              showGuide
+              caption={<>JS Code</>}
+            >{`(sushi => sushi)('sandwich')`}</CodeBlock>
+            <R.Ilpo>Equivalent emoji puzzle:</R.Ilpo>
+            <ExpressionRunnerSeparator />
+            <R.Lngo></R.Lngo>
+            <Hr />
+            <CodeBlock
+              defaultResultVisible
+              result={`'pizza'`}
+              showGuide
+              caption={<>JS Code</>}
+            >{`(sushi => 'pizza')('sandwich')`}</CodeBlock>
+            <R.Bjny>Equivalent emoji puzzle:</R.Bjny>
+            <ExpressionRunnerSeparator />
+            <R.Ukzq></R.Ukzq>
+          </Alert>
+          <Subheading step={step++}>Visualizing evaluation rules</Subheading>
+          <P>
+            Because you know how to code, you have a mental model of how
+            function evaluation works. If you see{' '}
+            <InlineCode>(sushi => sushi)('sandwich')</InlineCode>, you can
+            quickly figure out that the result would be{' '}
+            <InlineCode>'sandwich'</InlineCode>. If you see{' '}
+            <InlineCode>(sushi => 'pizza')('sandwich')</InlineCode>, you know
+            that the result would be <InlineCode>'pizza'</InlineCode>. You know
+            what free variables and bound variables mean.
+          </P>
+          <P>
+            On the other hand, non-programmers don’t have a mental model of how
+            function evaluation works. To help them develop a mental model
+            without using any code, I created a{' '}
+            <Italic>step-by-step visualization</Italic> of function evaluation
+            rules using the emoji puzzle I mentioned earlier.
+          </P>
+          <P>
+            On the puzzle below,{' '}
+            <Highlight>
+              try pressing the <H args={{ name: 'run' }} /> button
+            </Highlight>
+            . This button is a bit different from the last time—
+            <Italic>
+              it shows all the steps that happen in between the beginning and
+              the end
+            </Italic>
+            .
+          </P>
+          <ExpressionRunnerConfigContext.Provider
+            value={{ pointToRunButton: true }}
+          >
+            <R.Wunw></R.Wunw>
+          </ExpressionRunnerConfigContext.Provider>
+          <P>Here are the four steps it displayed:</P>
+          <P>
+            <Bold>Step 1:</Bold>{' '}
           </P>
         </BubbleQuoteContext.Provider>
       </Container>

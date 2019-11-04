@@ -343,6 +343,7 @@ const ExpressionRunnerPrecomputed = ({
               skipToTheEnd={skipToTheEnd}
               onPauseClick={pause}
               convert={convert}
+              hideForwardButton={!!pointToRunButton && !atLeastOneStepTaken}
             />
           )}
         </Container>
@@ -350,34 +351,37 @@ const ExpressionRunnerPrecomputed = ({
           size={containerSize === 'xxs' ? 'xs' : 'sm'}
           horizontalPadding={0}
         >
-          {pointToRunButton && isReady && !resetClicked && (
-            <>
-              <div
-                css={css`
-                  font-size: ${fontSizes(0.85)};
-                  animation: pointToRunButton 1s infinite;
-                  color: ${colors('grey700')};
-                  position: relative;
-                  margin: ${spaces(1.25)} 0 ${spaces('-1')};
-                  text-align: center;
+          {pointToRunButton &&
+            !atLeastOneStepTaken &&
+            !isRunning &&
+            !resetClicked && (
+              <>
+                <div
+                  css={css`
+                    font-size: ${fontSizes(0.85)};
+                    animation: pointToRunButton 1s infinite;
+                    color: ${colors('grey700')};
+                    position: relative;
+                    margin: ${spaces(1.25)} 0 ${spaces('-1')};
+                    text-align: center;
 
-                  @keyframes pointToRunButton {
-                    0% {
-                      top: 0;
+                    @keyframes pointToRunButton {
+                      0% {
+                        top: 0;
+                      }
+                      50% {
+                        top: ${spaces('-0.5')};
+                      }
+                      100% {
+                        top: 0;
+                      }
                     }
-                    50% {
-                      top: ${spaces('-0.5')};
-                    }
-                    100% {
-                      top: 0;
-                    }
-                  }
-                `}
-              >
-                ↑ <H args={{ name: 'pointToRunButton' }} />
-              </div>
-            </>
-          )}
+                  `}
+                >
+                  ↑ <H args={{ name: 'pointToRunButton' }} />
+                </div>
+              </>
+            )}
           {!hideRunButton &&
             canStepForward &&
             !skipToTheEnd &&

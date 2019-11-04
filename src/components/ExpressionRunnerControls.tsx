@@ -13,6 +13,7 @@ interface ExpressionRunnerControlsProps {
   isRunning: boolean
   showRunButton: boolean
   skipToTheEnd: boolean
+  hideForwardButton: boolean
   onNextClick: () => void
   onPreviousClick: () => void
   onAutoClick: () => void
@@ -61,7 +62,8 @@ const ExpressionRunnerControls = ({
   onPauseClick,
   onSkipToTheEndClick,
   skipToTheEnd,
-  convert
+  convert,
+  hideForwardButton
 }: ExpressionRunnerControlsProps) => {
   const centerButtonWidth = convert ? 66 : 48
   const sideButtonsWidth = (100 - centerButtonWidth) / 2 - 2
@@ -152,7 +154,10 @@ const ExpressionRunnerControls = ({
       )}
       {showRunButton ? (
         <>
-          {!isRunning && canStepForward && !skipToTheEnd ? (
+          {!isRunning &&
+          canStepForward &&
+          !skipToTheEnd &&
+          !hideForwardButton ? (
             <ExpressionRunnerButton
               onClick={onNextClick}
               css={css`

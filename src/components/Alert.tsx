@@ -11,13 +11,12 @@ export const alertSpacing = css`
   }
 `
 
-const Alert = ({
-  children,
-  backgroundColor
-}: {
+export interface AlertProps {
   children: React.ReactNode
   backgroundColor: 'yellow' | 'red' | 'brown'
-}) => (
+}
+
+const Alert = ({ children, backgroundColor }: AlertProps) => (
   <div
     css={[
       alertSpacing,
