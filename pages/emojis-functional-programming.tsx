@@ -77,7 +77,7 @@ const InlineCode = ({
     css={css`
       font-weight: 600;
       font-family: ${codeFontFamily};
-      background-color: ${highlighted ? colors('yellow400') : colors('codeBg')};
+      background-color: ${highlighted ? colors('yellow200') : colors('codeBg')};
       display: inline-block;
       font-size: 0.85em;
       padding: 0.075em 0.2em;
@@ -149,8 +149,8 @@ const CodeBlock = ({
                         !!shouldHighlight &&
                           shouldHighlight(i, key) &&
                           css`
-                            background: ${colors('yellow400')};
-                            border-bottom: 2px solid ${colors('deepOrange400')};
+                            background: ${colors('yellow200')};
+                            border-bottom: 2px solid ${colors('deepOrange200')};
                           `
                       ]}
                     />
@@ -449,12 +449,21 @@ sushi => sushi`}</CodeBlock>
             I’ve added the <H args={{ name: 'run' }} /> button to the JS code
             snippet so you can see the result.{' '}
             <Highlight>
-              Try pressing <H args={{ name: 'run' }} />:
-            </Highlight>
+              If you press <H args={{ name: 'run' }} />,
+            </Highlight>{' '}
+            you’ll see that the result is <InlineCode>'sandwich'</InlineCode>.
           </P>
           <CodeBlock
             result={`'sandwich'`}
           >{`(sushi => sushi)('sandwich')`}</CodeBlock>
+          <P>
+            Now, we can also run the equivalent emoji puzzle and get the same
+            result.{' '}
+            <Highlight>
+              Try pressing the <H args={{ name: 'run' }} /> button below the
+              puzzle.
+            </Highlight>
+          </P>
         </BubbleQuoteContext.Provider>
       </Container>
       <EpisodePageFooter />
