@@ -443,7 +443,6 @@ sushi => sushi`}</CodeBlock>
             <InlineCode>'sushi'</InlineCode>). Therefore, both{' '}
             <InlineCode>sushi</InlineCode> and <InlineCode>'sushi'</InlineCode>{' '}
             will be represented as <EmojiForLetter letter="a" size="semilg" />.
-            This won’t cause an issue for our purporses.
           </Warning>
           <Subheading>Running the function</Subheading>
           <P>
