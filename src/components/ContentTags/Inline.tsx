@@ -29,7 +29,7 @@ const mix = (color: CardProps['color'], base: string) =>
   Color(base)
     .mix(
       Color(backgroundColor(color)),
-      color === 'white' ? 0.4 : color === 'grey' ? 0.45 : 0.55
+      color === 'white' ? 0.35 : color === 'grey' ? 0.45 : 0.55
     )
     .hsl()
     .string()

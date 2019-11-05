@@ -196,7 +196,7 @@ const CodeBlock = ({
             margin-top: ${spaces(1.25)};
           `}
         >
-          JS code:
+          {caption}
         </ExpressionRunnerCaptionWrapper>
       )}
       <PrismHighlight
@@ -282,6 +282,7 @@ const CodeBlock = ({
                     border-right: 0.25rem solid ${colors('codeBg')};
                     padding-top: 0.425rem;
                     padding-bottom: 0.425rem;
+                    margin-top: 0;
 
                     ${ns} {
                       padding-top: 0.65rem;
@@ -321,6 +322,7 @@ const CodeBlock = ({
                       border-bottom-right-radius: ${radii(0.5)};
                       line-height: 1.1rem;
                       border: none;
+                      margin-top: 0;
                       margin-bottom: 0;
                       font-weight: bold;
                       font-size: ${fontSizes(0.85)};
@@ -480,9 +482,27 @@ export default () => {
             To explain these concepts, I created{' '}
             <Bold>an educational puzzle using emojis</Bold> <Emoji>🍱</Emoji>.
             In this article, I’ll explain how my emoji puzzles can represent and
-            execute functional code <Italic>visually</Italic>. If you like to
-            teach programming to beginners, or if you like functional
-            programming in general, I think you’ll enjoy this article.
+            execute functional code <Italic>visually</Italic>. Here’s a sneak
+            peek—
+            <Highlight>
+              try pressing <H args={{ name: 'run', lowerCase: true }} /> below!
+            </Highlight>
+            :
+          </P>
+          <CodeBlock
+            result={`'sandwich'`}
+            showGuide
+            caption={<>Functional JS Code:</>}
+          >{`(sushi => sushi)('sandwich')`}</CodeBlock>
+          <ExpressionRunnerConfigContext.Provider
+            value={{ pointToRunButton: true }}
+          >
+            <R.Itbm>Equivalent emoji puzzle:</R.Itbm>
+          </ExpressionRunnerConfigContext.Provider>
+          <P>
+            If you like to teach programming to beginners, or if you like
+            functional programming in general, I think you’ll enjoy this
+            article.
           </P>
           <Alert>
             <P>
@@ -692,7 +712,7 @@ sushi => 'pizza'`}</CodeBlock>
               defaultResultVisible
               result={`'sandwich'`}
               showGuide
-              caption={<>JS Code</>}
+              caption={<>Functional JS Code:</>}
             >{`(sushi => sushi)('sandwich')`}</CodeBlock>
             <R.Ilpo>Equivalent emoji puzzle:</R.Ilpo>
             <ExpressionRunnerSeparator />
@@ -702,7 +722,7 @@ sushi => 'pizza'`}</CodeBlock>
               defaultResultVisible
               result={`'pizza'`}
               showGuide
-              caption={<>JS Code</>}
+              caption={<>Functional JS Code:</>}
             >{`(sushi => 'pizza')('sandwich')`}</CodeBlock>
             <R.Bjny>Equivalent emoji puzzle:</R.Bjny>
             <ExpressionRunnerSeparator />
@@ -730,10 +750,7 @@ sushi => 'pizza'`}</CodeBlock>
           </P>
           <P>Let’s reuse the earlier example again:</P>
           <CodeBlock
-            defaultResultVisible
-            result={`'sandwich'`}
-            showGuide
-            caption={<>JS Code</>}
+            caption={<>Functional JS Code:</>}
           >{`(sushi => sushi)('sandwich')`}</CodeBlock>
           <R.Ilpo>Equivalent emoji puzzle:</R.Ilpo>
           <P>
@@ -829,10 +846,7 @@ sushi => 'pizza'`}</CodeBlock>
           </Subheading>
           <P>Let’s take a look at the other example from earlier:</P>
           <CodeBlock
-            defaultResultVisible
-            result={`'pizza'`}
-            showGuide
-            caption={<>JS Code</>}
+            caption={<>Functional JS Code:</>}
           >{`(sushi => 'pizza')('sandwich')`}</CodeBlock>
           <R.Bjny>Equivalent emoji puzzle:</R.Bjny>
           <P>
@@ -903,7 +917,7 @@ sushi => 'pizza'`}</CodeBlock>
               defaultResultVisible
               result={`(spaghetti => 'bread')`}
               showGuide
-              caption={<>JS Code</>}
+              caption={<>Functional JS Code:</>}
             >{`(pizza => pizza)(spaghetti => 'bread')`}</CodeBlock>
             <R.Hluq>Equivalent emoji puzzle:</R.Hluq>
             <Hr />
@@ -911,7 +925,7 @@ sushi => 'pizza'`}</CodeBlock>
               defaultResultVisible
               result={`'hotDog'`}
               showGuide
-              caption={<>JS Code</>}
+              caption={<>Functional JS Code:</>}
             >{`(salad => 'hotDog')(curry => 'tacos')`}</CodeBlock>
             <R.Zuus>Equivalent emoji puzzle:</R.Zuus>
           </Alert>
