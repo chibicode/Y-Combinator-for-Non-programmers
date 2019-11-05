@@ -837,9 +837,9 @@ sushi => 'pizza'`}</CodeBlock>
           <P>
             The above steps visually represent how functions are evaluated—they
             are equivalent to how JavaScript evaluates{' '}
-            <InlineCode>(sushi => sushi)('sandwich')</InlineCode>. By following
-            these rules, non-programmers can intuitively learn to evaluate
-            functions without learning about how variable bindings work.
+            <InlineCode>(sushi => sushi)('sandwich')</InlineCode>. By learning
+            these rules, non-programmers can evaluate functions intuitively,
+            without learning about how variable bindings work.
           </P>
           <Subheading step={step++} coveredIn={4}>
             If there’s no match
