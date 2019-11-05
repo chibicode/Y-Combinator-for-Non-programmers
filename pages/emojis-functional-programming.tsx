@@ -51,7 +51,7 @@ const numSteps = 100
 const wordCount = 10000
 const minRead = wordCount / 200
 
-const date = DateTime.fromISO('2019-11-06T12:00:00Z')
+const date = DateTime.fromISO('2019-11-08T12:00:00Z')
 // const dateString = date
 //   .setLocale('en')
 //   .setZone('America/Los_Angeles')
@@ -869,9 +869,11 @@ sushi => 'pizza'`}</CodeBlock>
           <Alert backgroundColor="blue">
             <P>
               <Bold>More examples (optional read):</Bold> Here are more examples
-              that might be helpful for your understanding. You can press{' '}
-              <H args={{ name: 'run', lowerCase: true }} /> on each example to
-              see the evaluation visualization.{' '}
+              that might be helpful for your understanding. You can{' '}
+              <Highlight>
+                press <H args={{ name: 'run', lowerCase: true }} />
+              </Highlight>{' '}
+              on each example to see the evaluation visualization.{' '}
               <H args={{ name: 'mentionRightArrow' }} />
             </P>
             <CodeBlock
