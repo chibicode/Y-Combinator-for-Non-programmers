@@ -537,9 +537,9 @@ export default () => {
           </Alert>
           <Alert backgroundColor="brown">
             <Emoji>👋</Emoji> <Bold>Available for Hire:</Bold> My name is{' '}
-            <Bold>Shu Uesugi</Bold>, a full-stack engineer who’s looking for a{' '}
-            <Italic>full-time position</Italic> (remote or in SF/LA). Scroll to
-            the bottom of this article for details.
+            <Bold>Shu Uesugi</Bold>, a freelance full-stack engineer who’s
+            looking for a <Italic>full-time position</Italic> (remote or in
+            SF/LA). Scroll to the bottom of this article for details.
           </Alert>
           <Subheading noHrTop step="none" coveredIn="none">
             Overview of this article
