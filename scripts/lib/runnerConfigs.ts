@@ -1622,6 +1622,30 @@ export const qcme: ExpressionRunnerShorthandConfig = {
   initialExpressionContainer: initialExpressionContainers.sckn
 }
 
+export const gthd: ExpressionRunnerShorthandConfig = {
+  runner: 'runButtonOnly',
+  skipToTheEnd: false,
+  initialExpressionContainer: initialExpressionContainers.sckn
+}
+
+export const gogn: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.sckn,
+  initialState: 'showFuncBound'
+}
+
+export const zvpc: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.sckn,
+  initialState: 'betaReducePreviewBefore'
+}
+
+export const nsds: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.sckn,
+  initialState: 'betaReducePreviewCrossed'
+}
+
 export const bjny: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   initialExpressionContainer: initialExpressionContainers.sckn

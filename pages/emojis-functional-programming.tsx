@@ -734,7 +734,7 @@ sushi => 'pizza'`}</CodeBlock>
           </ExpressionRunnerConfigContext.Provider>
           <P>Here are the four steps it displayed:</P>
           <P>
-            <Bold>Step 1:</Bold>{' '}
+            <Bold>Step 1.</Bold>{' '}
             <Highlight>
               <StepOne />
             </Highlight>
@@ -755,40 +755,41 @@ sushi => 'pizza'`}</CodeBlock>
             <StepOne />
           </R.Zzxj>
           <P>
-            <Bold>Step 2:</Bold>{' '}
+            <Bold>Step 2.</Bold>{' '}
             <Highlight>
               <StepTwo />
             </Highlight>
           </P>
           <P>
-            Second, <InstructionTwo lowerCase />
+            Second, <InstructionTwo lowerCase /> In this case, both the
+            bottom-left and the bottom-right are <EmojiWithText letter="a" />,
+            so there’s a match.
           </P>
           <R.Keck>
             <StepTwo />
           </R.Keck>
           <P>
-            <Bold>Step 3:</Bold>{' '}
+            <Bold>Step 3.</Bold>{' '}
             <Highlight>
               <StepThree />
             </Highlight>
           </P>
           <P>
-            Third, <InstructionThree lowerCase /> This step, combined with the
-            previous step, describes how the variable{' '}
-            <InlineCode>sushi</InlineCode> is bound to{' '}
-            <InlineCode>'sandwich'</InlineCode>.
+            Third, <InstructionThree lowerCase /> In this case, we copy the{' '}
+            <EmojiWithText letter="b" /> on the top to the bottom-right.
           </P>
           <R.Qoms>
             <StepThree />
           </R.Qoms>
           <P>
-            <Bold>Step 4:</Bold>{' '}
+            <Bold>Step 4.</Bold>{' '}
             <Highlight>
               <StepFour />
             </Highlight>
           </P>
           <P>
-            Finally, <InstructionFour lowerCase />
+            Finally, <InstructionFour lowerCase /> We’re left with just the{' '}
+            <EmojiWithText letter="b" /> at the end.
           </P>
           <R.Mhgm>
             <StepFour />
@@ -803,6 +804,63 @@ sushi => 'pizza'`}</CodeBlock>
             functions without learning about how variable bindings work.
           </P>
           <Subheading step={step++}>If there’s no match</Subheading>
+          <P>Let’s take a look at the other example from earlier:</P>
+          <CodeBlock
+            defaultResultVisible
+            result={`'pizza'`}
+            showGuide
+            caption={<>JS Code</>}
+          >{`(sushi => 'pizza')('sandwich')`}</CodeBlock>
+          <R.Bjny>Equivalent emoji puzzle:</R.Bjny>
+          <P>
+            <Highlight>
+              Try pressing the <H args={{ name: 'run' }} /> button and see what
+              happens:
+            </Highlight>
+          </P>
+          <R.Gthd></R.Gthd>
+          <P>Here are the three steps it displayed:</P>
+          <P>
+            <Bold>Step 1.</Bold>{' '}
+            <Highlight>
+              <StepOne />
+              —this is the same as before.
+            </Highlight>
+          </P>
+          <R.Zzxj>
+            <StepOne />
+          </R.Zzxj>
+          <P>
+            <Bold>Step 2.</Bold>{' '}
+            <Highlight>
+              This time, there’s <Bold>no match</Bold> between{' '}
+              <BottomRightBadge inline bottomRightBadgeType="funcArg" /> and{' '}
+              <BottomRightBadge inline bottomRightBadgeType="funcBound" />. The
+              bottom-left is <EmojiWithText letter="a" />, but the bottom-right
+              is <EmojiWithText letter="f" />.
+            </Highlight>
+          </P>
+          <R.Zvpc>
+            <Bold>No match:</Bold>{' '}
+            <BottomRightBadge inline bottomRightBadgeType="funcArg" />{' '}
+            <BottomRightBadge inline bottomRightBadgeType="funcBound" />{' '}
+            <Emoji>❌</Emoji>
+          </R.Zvpc>
+          <P>
+            If there’s no match,{' '}
+            <Highlight>
+              we skip step 3 (<StepThree />) and go directly to step 4.
+            </Highlight>
+          </P>
+          <P>
+            <Bold>Step 4.</Bold>{' '}
+            <Highlight>
+              <StepFour />
+            </Highlight>
+          </P>
+          <R.Nsds></R.Nsds>
+          <ExpressionRunnerSeparator />
+          <R.Ukzq></R.Ukzq>
         </BubbleQuoteContext.Provider>
       </Container>
       <EpisodePageFooter />
