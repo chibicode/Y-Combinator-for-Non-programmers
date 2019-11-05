@@ -31,6 +31,7 @@ import MultiplyWhiteSvg from 'src/components/CustomEmoji/MultiplyWhiteSvg'
 import TwentyFourSvg from 'src/components/CustomEmoji/TwentyFourSvg'
 import QuestionMinusOne from 'src/components/CustomEmoji/QuestionMinusOne'
 import TwentySvg from 'src/components/CustomEmoji/TwentySvg'
+import TwitterSvg from 'src/components/CustomEmoji/TwitterSvg'
 import FourLunchboxesSvg from 'src/components/CustomEmoji/FourLunchboxesSvg'
 import Emoji, { EmojiProps } from 'src/components/Emoji'
 
@@ -67,7 +68,8 @@ export const customEmojiToComponent = {
   zeroOne: ZeroOneSvg,
   fourLunchboxes: FourLunchboxesSvg,
   nodes: NodesSvg,
-  complexCalculations: ComplexCalculationsSvg
+  complexCalculations: ComplexCalculationsSvg,
+  twitter: TwitterSvg
 }
 
 const CustomEmoji = ({

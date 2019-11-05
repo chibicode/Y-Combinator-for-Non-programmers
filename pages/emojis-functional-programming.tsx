@@ -14,6 +14,7 @@ import H from 'src/components/H'
 import EmojiForLetter from 'src/components/EmojiForLetter'
 import EpisodeHero from 'src/components/EpisodeHero'
 import EpisodePageFooter from 'src/components/EpisodePageFooter'
+import CustomEmoji from 'src/components/CustomEmoji'
 import ButtonWithTouchActiveStates from 'src/components/ButtonWithTouchActiveStates'
 import * as R from 'src/components/Runners'
 import {
@@ -47,6 +48,8 @@ import {
   StepFour
 } from 'src/contents/4.en'
 
+const hackerNewsLink = ``
+
 const numSteps = 100
 const wordCount = 10000
 const minRead = wordCount / 200
@@ -73,6 +76,10 @@ const description =
   'A visual implementation of Lambda calculus, Church encoding, and Y combinator'
 const url = `${enBaseUrl}/emojis-functional-programming`
 const ogImageUrl = `${enBaseUrl}/static/images/blog-og.png`
+
+const tweetUrl = `https://twitter.com/intent/tweet?url=${encodeURIComponent(
+  url
+)}&via=chibicode&text=${encodeURIComponent(title)}`
 
 const Alert = (props: AlertProps) => (
   <BubbleQuoteContext.Provider value={{ inQuote: false }}>
@@ -554,6 +561,22 @@ export default () => {
               you are in the article, I’ll show a “step” number above each
               subheading. There are a total of <Bold>{numSteps}</Bold> steps in
               this article.
+            </UlLi>
+            <UlLi>
+              <Bold>If you decide to read later:</Bold> I’d appreciate it if you
+              could share this article before you go!{' '}
+              <ExternalLink href={tweetUrl}>
+                <CustomEmoji type="twitter" size="mdlg" />{' '}
+                <Highlight>Click here to Tweet this article.</Highlight>
+              </ExternalLink>
+              {hackerNewsLink && (
+                <>
+                  {' '}
+                  You can also discuss this on{' '}
+                  <ExternalLink href={hackerNewsLink}>Hacker News</ExternalLink>
+                  .
+                </>
+              )}
             </UlLi>
           </Ul>
           <Subheading step={step++} coveredIn={3}>
