@@ -189,14 +189,14 @@ const CodeBlock = ({
   children,
   shouldHighlight,
   result,
-  showGuide,
+  pointToRunButton,
   defaultResultVisible,
   caption
 }: {
   children: string
   shouldHighlight?: (lineNumber: number, tokenNumber: number) => boolean
   result?: string
-  showGuide?: boolean
+  pointToRunButton?: boolean
   defaultResultVisible: boolean
   caption?: React.ReactNode
 }) => {
@@ -370,7 +370,7 @@ const CodeBlock = ({
                 >
                   Run <Emoji>▶️</Emoji>
                 </ButtonWithTouchActiveStates>
-                {showGuide && (
+                {pointToRunButton && (
                   <span
                     css={[
                       alertSpacing,
@@ -534,7 +534,7 @@ export default () => {
           </P>
           <CodeBlock
             result={`'sandwich'`}
-            showGuide
+            pointToRunButton
             caption={<>Functional JS code:</>}
           >{`(sushi => sushi)('sandwich')`}</CodeBlock>
           <PointToRunButton>
@@ -711,7 +711,7 @@ sushi => sushi`}</CodeBlock>
           </P>
           <CodeBlock
             result={`'sandwich'`}
-            showGuide
+            pointToRunButton
           >{`(sushi => sushi)('sandwich')`}</CodeBlock>
           <P>
             Now, we can also “run” the equivalent emoji puzzle and get the same
@@ -775,7 +775,6 @@ sushi => 'pizza'`}</CodeBlock>
             <CodeBlock
               defaultResultVisible
               result={`'sandwich'`}
-              showGuide
               caption={<>Functional JS code:</>}
             >{`(sushi => sushi)('sandwich')`}</CodeBlock>
             <R.Ilpo>Equivalent emoji puzzle:</R.Ilpo>
@@ -785,7 +784,6 @@ sushi => 'pizza'`}</CodeBlock>
             <CodeBlock
               defaultResultVisible
               result={`'pizza'`}
-              showGuide
               caption={<>Functional JS code:</>}
             >{`(sushi => 'pizza')('sandwich')`}</CodeBlock>
             <R.Bjny>Equivalent emoji puzzle:</R.Bjny>
@@ -978,7 +976,6 @@ sushi => 'pizza'`}</CodeBlock>
             <CodeBlock
               defaultResultVisible
               result={`(spaghetti => 'bread')`}
-              showGuide
               caption={<>Functional JS code:</>}
             >{`(pizza => pizza)(spaghetti => 'bread')`}</CodeBlock>
             <R.Hluq>Equivalent emoji puzzle:</R.Hluq>
@@ -986,7 +983,6 @@ sushi => 'pizza'`}</CodeBlock>
             <CodeBlock
               defaultResultVisible
               result={`'hotDog'`}
-              showGuide
               caption={<>Functional JS code:</>}
             >{`(salad => 'hotDog')(curry => 'tacos')`}</CodeBlock>
             <R.Zuus>Equivalent emoji puzzle:</R.Zuus>
@@ -1098,7 +1094,7 @@ sushi => 'pizza'`}</CodeBlock>
             <BottomRightBadge inline bottomRightBadgeType="funcBound" />,{' '}
             <Highlight>
               we now have a new label{' '}
-              <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />.
+              <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />
             </Highlight>{' '}
             for the <EmojiWithText letter="b" />.
           </P>
@@ -1108,6 +1104,114 @@ sushi => 'pizza'`}</CodeBlock>
             <br />
             for the <EmojiWithText letter="b" />
           </R.Pbhg>
+          <P>
+            <Bold>Here’s the rule:</Bold>{' '}
+            <Highlight>
+              The middle items on the bottom row are labeled as{' '}
+              <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />,
+              and you can <Bold>ignore them</Bold>.
+            </Highlight>{' '}
+            You can pretend that{' '}
+            <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />
+            ’s don’t exist and apply the other rules from before.
+          </P>
+          <P>Let’s take a look at the next few steps in this iteration:</P>
+          <R.Itvv></R.Itvv>
+          <ExpressionRunnerSeparator />
+          <R.Nefh></R.Nefh>
+          <ExpressionRunnerSeparator />
+          <R.Qwtn></R.Qwtn>
+          <ExpressionRunnerSeparator />
+          <R.Hbbv></R.Hbbv>
+          <P>This is exactly like how the earlier JS code is evaluated.</P>
+          <CodeBlock
+            caption={<>After evaluating this part…</>}
+            shouldHighlight={(lineNumber, tokenNumber) =>
+              lineNumber === 0 ||
+              (lineNumber === 1 && tokenNumber > 0 && tokenNumber < 2) ||
+              (lineNumber === 2 && tokenNumber < 2)
+            }
+          >{`(sushi => sandwich => sushi)(
+  'hamburger'
+)('chicken')`}</CodeBlock>
+          <ExpressionRunnerSeparator halfMargin />
+          <CodeBlock
+            caption={
+              <>
+                …it becomes this, which is
+                <br />
+                equivalent to the above emoji puzzle
+              </>
+            }
+          >{`(sandwich => 'hamburger')('chicken')`}</CodeBlock>
+          <P>
+            <Bold>But we’re not done yet!</Bold> Let’s continue to the end by{' '}
+            <Highlight>
+              pressing the <H args={{ name: 'run' }} /> button below:
+            </Highlight>
+          </P>
+          <R.Iwxm>Let’s continue to the end!</R.Iwxm>
+          <P>
+            We ended up with a <EmojiWithText letter="c" />, which is exactly
+            the same as what the JS code evaluated to. So we’ve shown that
+            complex functional JS expressions can be represented using an emoji
+            puzzle.
+          </P>
+          <Alert backgroundColor="red">
+            <P>
+              <Bold>What we learned so far:</Bold> Complex functional JS
+              expressions can be represented using an emoji puzzle.
+            </P>
+            <CodeBlock
+              defaultResultVisible
+              result={`'hamburger'`}
+              caption={<>Functional JS code:</>}
+            >{`(sushi => sandwich => sushi)(
+  'hamburger'
+)('chicken')`}</CodeBlock>
+            <R.Cvtc>
+              Equivalent emoji puzzle:
+              <br />
+              (Start with the pair of{' '}
+              <InlinePrioritiesLabel>1</InlinePrioritiesLabel>’s)
+            </R.Cvtc>
+            <ExpressionRunnerSeparator />
+            <R.Yxel></R.Yxel>
+          </Alert>
+          <Alert backgroundColor="blue">
+            <P>
+              <Bold>More examples (optional read):</Bold> Here are more examples
+              that might be helpful for your understanding. Again, remember
+              that:
+            </P>
+            <Ul>
+              <UlLi>
+                We start with the pair of{' '}
+                <InlinePrioritiesLabel>1</InlinePrioritiesLabel>’s.
+              </UlLi>
+              <UlLi>
+                The middle items on the bottom row are labeled as{' '}
+                <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />,
+                and you can <Bold>ignore them</Bold>.
+              </UlLi>
+            </Ul>
+            <P>
+              You can{' '}
+              <Highlight>
+                press <H args={{ name: 'run', lowerCase: true }} />
+              </Highlight>{' '}
+              on each example to see the evaluation visualization.{' '}
+              <H args={{ name: 'mentionRightArrow' }} />{' '}
+            </P>
+            <CodeBlock
+              defaultResultVisible
+              result={`'salad'`}
+              caption={<>Functional JS code:</>}
+            >{`(friedPotatoes => pizza => pizza)(
+  'spaghetti'
+)('salad')`}</CodeBlock>
+            <R.Hdxc>Equivalent emoji puzzle:</R.Hdxc>
+          </Alert>
         </BubbleQuoteContext.Provider>
       </Container>
       <EpisodePageFooter />

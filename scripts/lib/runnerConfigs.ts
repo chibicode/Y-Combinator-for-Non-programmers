@@ -34,6 +34,30 @@ export const pbhg: ExpressionRunnerShorthandConfig = {
   }
 }
 
+export const itvv: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.pisd,
+  initialState: 'betaReducePreviewBefore',
+  showPriorities: true,
+  explanationsVisibility: 'visible'
+}
+
+export const nefh: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.pisd,
+  initialState: 'betaReducePreviewAfter',
+  showPriorities: true,
+  explanationsVisibility: 'visible'
+}
+
+export const qwtn: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.pisd,
+  initialState: 'betaReducePreviewCrossed',
+  showPriorities: true,
+  explanationsVisibility: 'visible'
+}
+
 export const wwtl: ExpressionRunnerShorthandConfig = {
   runner: 'singleStep',
   initialExpressionContainer: initialExpressionContainers.pisd,
@@ -526,6 +550,15 @@ export const kvso: ExpressionRunnerShorthandConfig = {
   initialExpressionContainer: initialExpressionContainers.pisd,
   nextIterations: 1,
   initialState: 'showFuncBound',
+  showPriorities: true,
+  skipToTheEnd: false
+}
+
+export const iwxm: ExpressionRunnerShorthandConfig = {
+  runner: 'runButtonOnly',
+  initialExpressionContainer: initialExpressionContainers.pisd,
+  nextIterations: 1,
+  initialState: 'active',
   showPriorities: true,
   skipToTheEnd: false
 }
