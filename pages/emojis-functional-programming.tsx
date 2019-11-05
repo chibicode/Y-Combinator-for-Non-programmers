@@ -508,11 +508,11 @@ export default () => {
             <P>
               <Emoji>⚠️</Emoji> <Bold>Note:</Bold> This article is for
               programmers who are familiar with functional programming. If
-              you’re a non-programmer, check out “
+              you’re a non-programmer, check out the course itself instead: “
               <InternalLink href="/">
                 <Bold>Y Combinator for Non-programmers</Bold>
               </InternalLink>
-              ” instead.
+              ”.
             </P>
             <P
               css={css`
@@ -521,9 +521,9 @@ export default () => {
             >
               I’ll use <Bold>JavaScript</Bold> in this article. Even if you’re
               not familiar with JS, you should still be able to understand it.
-              P.S.{' '}
+              Also,{' '}
               <ExternalLink href="https://github.com/chibicode/ycombinator/blob/master/pages/emojis-functional-programming.tsx">
-                The source code for this article is available on GitHub
+                the source code for this article is available on GitHub
               </ExternalLink>
               —please ★ star it!
             </P>
