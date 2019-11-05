@@ -527,7 +527,7 @@ export default () => {
             execute functional code <Italic>visually</Italic>. Here’s a sneak
             peek—
             <Highlight>
-              try pressing <H args={{ name: 'run', lowerCase: true }} /> below!
+              try pressing <H args={{ name: 'run' }} /> below!
             </Highlight>
             :
           </P>
@@ -1033,6 +1033,21 @@ sushi => 'pizza'`}</CodeBlock>
             <R.Lxzn>
               <InlineCode>sushi => sandwich => sushi</InlineCode>
             </R.Lxzn>
+          </DimUnhighlighted>
+          <P>And the two arguments…</P>
+          <CodeBlock
+            shouldHighlight={(lineNumber, tokenNumber) =>
+              (lineNumber === 1 && tokenNumber > 0 && tokenNumber < 2) ||
+              (lineNumber === 2 && tokenNumber > 2 && tokenNumber < 4)
+            }
+          >{`(sushi => sandwich => sushi)(
+  'hamburger'
+)('chicken')`}</CodeBlock>
+          <P>…are represented by the top and the middle rows:</P>
+          <DimUnhighlighted>
+            <R.Ujuq>
+              <InlineCode>('hamburger')('chicken')</InlineCode>
+            </R.Ujuq>
           </DimUnhighlighted>
         </BubbleQuoteContext.Provider>
       </Container>
