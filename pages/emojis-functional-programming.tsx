@@ -8,6 +8,7 @@ import { lessonTitle } from 'src/lib/titles'
 import Container from 'src/components/Container'
 import ExpressionRunnerSeparator from 'src/components/ExpressionRunnerSeparator'
 import ExpressionRunnerCaptionWrapper from 'src/components/ExpressionRunnerCaptionWrapper'
+import BottomRightBadge from 'src/components/BottomRightBadge'
 import Emoji from 'src/components/Emoji'
 import H from 'src/components/H'
 import EmojiForLetter from 'src/components/EmojiForLetter'
@@ -36,6 +37,15 @@ import theme from 'prism-react-renderer/themes/nightOwlLight'
 import BubbleQuoteContext from 'src/components/BubbleQuoteContext'
 import EmojiWithText from 'src/components/EmojiWithText'
 import ExpressionRunnerConfigContext from 'src/components/ExpressionRunnerConfigContext'
+import {
+  StepOne,
+  StepTwo,
+  InstructionTwo,
+  StepThree,
+  InstructionThree,
+  InstructionFour,
+  StepFour
+} from 'src/contents/4.en'
 
 const numSteps = 100
 const wordCount = 10000
@@ -691,12 +701,20 @@ sushi => 'pizza'`}</CodeBlock>
             what free variables and bound variables mean.
           </P>
           <P>
-            On the other hand, non-programmers don’t have a mental model of how
-            function evaluation works. To help them develop a mental model
-            without using any code, I created a{' '}
+            On the other hand, non-programmers may not have a mental model of
+            how function evaluation works. To help them develop a mental model
+            without showing them any code, I created a{' '}
             <Italic>step-by-step visualization</Italic> of function evaluation
             rules using the emoji puzzle I mentioned earlier.
           </P>
+          <P>Let’s reuse the earlier example again:</P>
+          <CodeBlock
+            defaultResultVisible
+            result={`'sandwich'`}
+            showGuide
+            caption={<>JS Code</>}
+          >{`(sushi => sushi)('sandwich')`}</CodeBlock>
+          <R.Ilpo>Equivalent emoji puzzle:</R.Ilpo>
           <P>
             On the puzzle below,{' '}
             <Highlight>
@@ -717,7 +735,74 @@ sushi => 'pizza'`}</CodeBlock>
           <P>Here are the four steps it displayed:</P>
           <P>
             <Bold>Step 1:</Bold>{' '}
+            <Highlight>
+              <StepOne />
+            </Highlight>
           </P>
+          <P>
+            First, we label each emoji.{' '}
+            <Highlight>
+              The top item is labeled as{' '}
+              <BottomRightBadge inline bottomRightBadgeType="callArg" /> (for “
+              <Bold>T</Bold>op”), the left item is labeled as{' '}
+              <BottomRightBadge inline bottomRightBadgeType="funcArg" /> (for “
+              <Bold>L</Bold>eft”), and the right item is labeled as{' '}
+              <BottomRightBadge inline bottomRightBadgeType="funcBound" /> (for
+              “<Bold>R</Bold>ight”).
+            </Highlight>
+          </P>
+          <R.Zzxj>
+            <StepOne />
+          </R.Zzxj>
+          <P>
+            <Bold>Step 2:</Bold>{' '}
+            <Highlight>
+              <StepTwo />
+            </Highlight>
+          </P>
+          <P>
+            Second, <InstructionTwo lowerCase />
+          </P>
+          <R.Keck>
+            <StepTwo />
+          </R.Keck>
+          <P>
+            <Bold>Step 3:</Bold>{' '}
+            <Highlight>
+              <StepThree />
+            </Highlight>
+          </P>
+          <P>
+            Third, <InstructionThree lowerCase /> This step, combined with the
+            previous step, describes how the variable{' '}
+            <InlineCode>sushi</InlineCode> is bound to{' '}
+            <InlineCode>'sandwich'</InlineCode>.
+          </P>
+          <R.Qoms>
+            <StepThree />
+          </R.Qoms>
+          <P>
+            <Bold>Step 4:</Bold>{' '}
+            <Highlight>
+              <StepFour />
+            </Highlight>
+          </P>
+          <P>
+            Finally, <InstructionFour lowerCase />
+          </P>
+          <R.Mhgm>
+            <StepFour />
+          </R.Mhgm>
+          <ExpressionRunnerSeparator />
+          <R.Lngo></R.Lngo>
+          <P>
+            The above steps visually represent how functions are evaluated—they
+            are equivalent to how JavaScript evaluates{' '}
+            <InlineCode>(sushi => sushi)('sandwich')</InlineCode>. By following
+            these rules, non-programmers can intuitively learn to evaluate
+            functions without learning about how variable bindings work.
+          </P>
+          <Subheading step={step++}>If there’s no match</Subheading>
         </BubbleQuoteContext.Provider>
       </Container>
       <EpisodePageFooter />

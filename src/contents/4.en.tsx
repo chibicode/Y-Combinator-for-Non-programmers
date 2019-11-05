@@ -24,6 +24,51 @@ import ExpressionRunnerSeparator from 'src/components/ExpressionRunnerSeparator'
 import H from 'src/components/H'
 import NextLessonButton from 'src/components/NextLessonButton'
 
+export const StepOne = ({
+  includeFuncUnbound
+}: {
+  includeFuncUnbound?: boolean
+}) => (
+  <>
+    <Bold>Label:</Bold>{' '}
+    <BottomRightBadge inline bottomRightBadgeType="callArg" />{' '}
+    <BottomRightBadge inline bottomRightBadgeType="funcArg" />{' '}
+    {includeFuncUnbound && (
+      <>
+        <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />{' '}
+      </>
+    )}
+    <BottomRightBadge inline bottomRightBadgeType="funcBound" />
+  </>
+)
+
+export const StepTwo = () => (
+  <>
+    <Bold>Match:</Bold>{' '}
+    <BottomRightBadge inline bottomRightBadgeType="funcArg" />{' '}
+    <BottomRightBadge inline bottomRightBadgeType="funcBound" />{' '}
+    <Emoji>✅</Emoji>
+  </>
+)
+
+export const StepThree = () => (
+  <>
+    <Bold>Copy:</Bold>{' '}
+    <BottomRightBadge inline bottomRightBadgeType="callArg" /> <Emoji>↘️</Emoji>{' '}
+    <TopLeftBadgeWrapper topLeftBadgeType="match">
+      <BottomRightBadge inline bottomRightBadgeType="funcBound" />
+    </TopLeftBadgeWrapper>
+  </>
+)
+
+export const StepFour = () => (
+  <>
+    <Bold>Remove:</Bold> <Emoji>💥</Emoji>{' '}
+    <BottomRightBadge inline bottomRightBadgeType="callArg" />{' '}
+    <BottomRightBadge inline bottomRightBadgeType="funcArg" />
+  </>
+)
+
 export const BasicRules = ({
   includeFuncUnbound
 }: {
@@ -31,64 +76,28 @@ export const BasicRules = ({
 }) => (
   <>
     <P>
-      1. <Bold>Label:</Bold>{' '}
-      <BottomRightBadge inline bottomRightBadgeType="callArg" />{' '}
-      <BottomRightBadge inline bottomRightBadgeType="funcArg" />{' '}
-      {includeFuncUnbound && (
-        <>
-          <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />{' '}
-        </>
-      )}
-      <BottomRightBadge inline bottomRightBadgeType="funcBound" />
+      1. <StepOne includeFuncUnbound={includeFuncUnbound} />
     </P>
     <R.Zzxj>
-      <Bold>Label:</Bold>{' '}
-      <BottomRightBadge inline bottomRightBadgeType="callArg" />{' '}
-      <BottomRightBadge inline bottomRightBadgeType="funcArg" />{' '}
-      {includeFuncUnbound && (
-        <>
-          <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />{' '}
-        </>
-      )}
-      <BottomRightBadge inline bottomRightBadgeType="funcBound" />
+      <StepOne includeFuncUnbound={includeFuncUnbound} />
     </R.Zzxj>
     <P>
-      2. <Bold>Match:</Bold>{' '}
-      <BottomRightBadge inline bottomRightBadgeType="funcArg" />{' '}
-      <BottomRightBadge inline bottomRightBadgeType="funcBound" />{' '}
-      <Emoji>✅</Emoji>
+      2. <StepTwo />
     </P>
     <R.Keck>
-      <Bold>Match:</Bold>{' '}
-      <BottomRightBadge inline bottomRightBadgeType="funcArg" />{' '}
-      <BottomRightBadge inline bottomRightBadgeType="funcBound" />{' '}
-      <Emoji>✅</Emoji>
+      <StepTwo />
     </R.Keck>
     <P>
-      3. <Bold>Copy:</Bold>{' '}
-      <BottomRightBadge inline bottomRightBadgeType="callArg" />{' '}
-      <Emoji>↘️</Emoji>{' '}
-      <TopLeftBadgeWrapper topLeftBadgeType="match">
-        <BottomRightBadge inline bottomRightBadgeType="funcBound" />
-      </TopLeftBadgeWrapper>
+      3. <StepThree />
     </P>
     <R.Qoms>
-      <Bold>Copy:</Bold>{' '}
-      <BottomRightBadge inline bottomRightBadgeType="callArg" />{' '}
-      <Emoji>↘️</Emoji>{' '}
-      <TopLeftBadgeWrapper topLeftBadgeType="match">
-        <BottomRightBadge inline bottomRightBadgeType="funcBound" />
-      </TopLeftBadgeWrapper>
+      <StepThree />
     </R.Qoms>
     <P>
-      4. <Bold>Remove:</Bold> <Emoji>💥</Emoji>{' '}
-      <BottomRightBadge inline bottomRightBadgeType="callArg" />{' '}
-      <BottomRightBadge inline bottomRightBadgeType="funcArg" />
+      4. <StepFour />
     </P>
     <R.Mhgm>
-      <Bold>Remove:</Bold> <Emoji>💥</Emoji>{' '}
-      <BottomRightBadge inline bottomRightBadgeType="callArg" />{' '}
-      <BottomRightBadge inline bottomRightBadgeType="funcArg" />
+      <StepFour />
     </R.Mhgm>
     <ExpressionRunnerSeparator />
     <R.Osqo />
@@ -125,10 +134,10 @@ export const Unmatched = () => (
   </>
 )
 
-export const InstructionTwo = () => (
+export const InstructionTwo = ({ lowerCase }: { lowerCase?: boolean }) => (
   <>
     <Highlight>
-      We check to see if some of{' '}
+      {lowerCase ? 'w' : 'W'}e check to see if some of{' '}
       <BottomRightBadge inline bottomRightBadgeType="funcArg" />
       ’s and <BottomRightBadge inline bottomRightBadgeType="funcBound" />
       ’s <Bold>match</Bold>.{' '}
@@ -139,10 +148,10 @@ export const InstructionTwo = () => (
   </>
 )
 
-export const InstructionThree = () => (
+export const InstructionThree = ({ lowerCase }: { lowerCase?: boolean }) => (
   <>
     <Highlight>
-      We <Bold>copy</Bold>{' '}
+      {lowerCase ? 'w' : 'W'}e <Bold>copy</Bold>{' '}
       <BottomRightBadge inline bottomRightBadgeType="callArg" />
       ’s to where the <Italic>matched</Italic>{' '}
       <BottomRightBadge inline bottomRightBadgeType="funcBound" />
@@ -151,10 +160,10 @@ export const InstructionThree = () => (
   </>
 )
 
-export const InstructionFour = () => (
+export const InstructionFour = ({ lowerCase }: { lowerCase?: boolean }) => (
   <>
     <Highlight>
-      We <Bold>remove</Bold>{' '}
+      {lowerCase ? 'w' : 'W'}e <Bold>remove</Bold>{' '}
       <BottomRightBadge inline bottomRightBadgeType="callArg" />
       ’s and <BottomRightBadge inline bottomRightBadgeType="funcArg" />
       ’s.
