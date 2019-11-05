@@ -861,6 +861,35 @@ sushi => 'pizza'`}</CodeBlock>
           <R.Nsds></R.Nsds>
           <ExpressionRunnerSeparator />
           <R.Ukzq></R.Ukzq>
+          <P>
+            That’s how the emoji puzzle visualizes the evaluation of a function
+            when there’s no matching variable in the function body—like{' '}
+            <InlineCode>{`(sushi => 'pizza')('sandwich')`}</InlineCode>.
+          </P>
+          <Alert backgroundColor="blue">
+            <P>
+              <Bold>More examples (optional read):</Bold> Here are more examples
+              that might be helpful for your understanding. You can press{' '}
+              <H args={{ name: 'run', lowerCase: true }} /> on each example to
+              see the evaluation visualization.{' '}
+              <H args={{ name: 'mentionRightArrow' }} />
+            </P>
+            <CodeBlock
+              defaultResultVisible
+              result={`(spaghetti => 'bread')`}
+              showGuide
+              caption={<>JS Code</>}
+            >{`(pizza => pizza)(spaghetti => 'bread')`}</CodeBlock>
+            <R.Hluq>Equivalent emoji puzzle:</R.Hluq>
+            <Hr />
+            <CodeBlock
+              defaultResultVisible
+              result={`'hotDog'`}
+              showGuide
+              caption={<>JS Code</>}
+            >{`(salad => 'hotDog')(curry => 'tacos')`}</CodeBlock>
+            <R.Zuus>Equivalent emoji puzzle:</R.Zuus>
+          </Alert>
         </BubbleQuoteContext.Provider>
       </Container>
       <EpisodePageFooter />

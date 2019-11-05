@@ -13,7 +13,7 @@ export const alertSpacing = css`
 
 export interface AlertProps {
   children: React.ReactNode
-  backgroundColor: 'yellow' | 'red' | 'brown'
+  backgroundColor: 'yellow' | 'red' | 'brown' | 'blue'
 }
 
 const Alert = ({ children, backgroundColor }: AlertProps) => (
@@ -26,6 +26,8 @@ const Alert = ({ children, backgroundColor }: AlertProps) => (
           ? colors('yellow100')
           : backgroundColor === 'brown'
           ? colors('brown50')
+          : backgroundColor === 'blue'
+          ? colors('blue50')
           : colors('pink50')};
       `
     ]}
