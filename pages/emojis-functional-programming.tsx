@@ -3,7 +3,7 @@ import { css, jsx, Global } from '@emotion/core'
 import { useState } from 'react'
 import Page from 'src/components/Page'
 import Head from 'next/head'
-import { ns, radii, fontSizes, colors, spaces } from 'src/lib/theme'
+import { ns, radii, fontSizes, colors, spaces, maxWidths } from 'src/lib/theme'
 import { lessonTitle } from 'src/lib/titles'
 import Container from 'src/components/Container'
 import ExpressionRunnerSeparator from 'src/components/ExpressionRunnerSeparator'
@@ -112,14 +112,8 @@ const Subheading = ({
     {step !== 'none' && coveredIn !== 'none' && (
       <div
         css={css`
-          font-size: ${fontSizes(0.8)};
           color: ${colors('indigo300')};
-          font-weight: normal;
           margin-bottom: ${spaces(0.25)};
-
-          ${ns} {
-            font-size: ${fontSizes(0.85)};
-          }
         `}
       >
         Step{' '}
@@ -129,17 +123,28 @@ const Subheading = ({
           `}
         >
           {step}
-        </Bold>{' '}
-        of {numSteps} &middot; From the course’s{' '}
-        <InternalLink href={`/${coveredIn}`}>
-          <H
-            args={{
-              name: 'titlePrefixColored'
-            }}
-            episodeNumberOverrides={coveredIn}
-          />
-        </InternalLink>{' '}
-        level
+        </Bold>
+        /{numSteps}
+        <span
+          css={css`
+            font-size: ${fontSizes(0.75)};
+            ${ns} {
+              font-size: ${fontSizes(0.85)};
+            }
+          `}
+        >
+          {' '}
+          &middot; From my course’s{' '}
+          <InternalLink href={`/${coveredIn}`}>
+            <H
+              args={{
+                name: 'titlePrefixColored'
+              }}
+              episodeNumberOverrides={coveredIn}
+            />
+          </InternalLink>{' '}
+          level
+        </span>
       </div>
     )}
     <H3
@@ -200,7 +205,7 @@ const CodeBlock = ({
       {caption && (
         <ExpressionRunnerCaptionWrapper
           css={css`
-            margin-top: ${spaces(1.25)};
+            margin-top: ${spaces(1.75)};
           `}
         >
           {caption}
@@ -220,9 +225,10 @@ const CodeBlock = ({
                 background-color: ${colors('codeBg')};
                 font-weight: 600;
                 font-family: ${codeFontFamily};
-                margin: ${caption ? 0 : spaces(1.25)} 0
-                  ${result ? 0 : spaces(1.25)};
+                margin: ${caption ? 0 : spaces(1.75)} auto
+                  ${result ? 0 : spaces(1.75)};
                 font-size: ${fontSizes(0.85)};
+                max-width: ${maxWidths('xs')};
               `,
               result
                 ? css`
@@ -271,7 +277,10 @@ const CodeBlock = ({
         <>
           <div
             css={css`
-              margin-bottom: ${spaces(1.25)};
+              max-width: ${maxWidths('xs')};
+              margin-bottom: ${spaces(1.75)};
+              margin-left: auto;
+              margin-right: auto;
             `}
           >
             {resultVisible ? (
@@ -411,6 +420,7 @@ export default () => {
                   format('woff2'),
                 url('/static/fonts/woff/SemiBold.woff') format('woff');
               font-weight: 400;
+              font-display: fallback;
               font-style: normal;
             }
           `
@@ -473,11 +483,14 @@ export default () => {
         />
         <BubbleQuoteContext.Provider value={{ inQuote: true }}>
           <P>
-            Last month, I published a free online course called “
-            <InternalLink href="/">
-              <Bold>Y Combinator for Non-programmers</Bold>
-            </InternalLink>
-            ”. In this 17-page course, I teach computer science concepts such as
+            <Highlight>
+              Last month, I published a free online course called “
+              <InternalLink href="/">
+                <Bold>Y Combinator for Non-programmers</Bold>
+              </InternalLink>
+              ”.
+            </Highlight>{' '}
+            In this 17-page course, I teach computer science concepts such as
             functional programming, lambda calculus, Church encoding, and Y
             combinator in a way such that{' '}
             <Italic>
@@ -499,7 +512,7 @@ export default () => {
           <CodeBlock
             result={`'sandwich'`}
             showGuide
-            caption={<>Functional JS Code:</>}
+            caption={<>Functional JS code:</>}
           >{`(sushi => sushi)('sandwich')`}</CodeBlock>
           <ExpressionRunnerConfigContext.Provider
             value={{ pointToRunButton: true }}
@@ -735,7 +748,7 @@ sushi => 'pizza'`}</CodeBlock>
               defaultResultVisible
               result={`'sandwich'`}
               showGuide
-              caption={<>Functional JS Code:</>}
+              caption={<>Functional JS code:</>}
             >{`(sushi => sushi)('sandwich')`}</CodeBlock>
             <R.Ilpo>Equivalent emoji puzzle:</R.Ilpo>
             <ExpressionRunnerSeparator />
@@ -745,7 +758,7 @@ sushi => 'pizza'`}</CodeBlock>
               defaultResultVisible
               result={`'pizza'`}
               showGuide
-              caption={<>Functional JS Code:</>}
+              caption={<>Functional JS code:</>}
             >{`(sushi => 'pizza')('sandwich')`}</CodeBlock>
             <R.Bjny>Equivalent emoji puzzle:</R.Bjny>
             <ExpressionRunnerSeparator />
@@ -773,7 +786,7 @@ sushi => 'pizza'`}</CodeBlock>
           </P>
           <P>Let’s reuse the earlier example again:</P>
           <CodeBlock
-            caption={<>Functional JS Code:</>}
+            caption={<>Functional JS code:</>}
           >{`(sushi => sushi)('sandwich')`}</CodeBlock>
           <R.Ilpo>Equivalent emoji puzzle:</R.Ilpo>
           <P>
@@ -869,7 +882,7 @@ sushi => 'pizza'`}</CodeBlock>
           </Subheading>
           <P>Let’s take a look at the other example from earlier:</P>
           <CodeBlock
-            caption={<>Functional JS Code:</>}
+            caption={<>Functional JS code:</>}
           >{`(sushi => 'pizza')('sandwich')`}</CodeBlock>
           <R.Bjny>Equivalent emoji puzzle:</R.Bjny>
           <P>
@@ -940,7 +953,7 @@ sushi => 'pizza'`}</CodeBlock>
               defaultResultVisible
               result={`(spaghetti => 'bread')`}
               showGuide
-              caption={<>Functional JS Code:</>}
+              caption={<>Functional JS code:</>}
             >{`(pizza => pizza)(spaghetti => 'bread')`}</CodeBlock>
             <R.Hluq>Equivalent emoji puzzle:</R.Hluq>
             <Hr />
@@ -948,13 +961,44 @@ sushi => 'pizza'`}</CodeBlock>
               defaultResultVisible
               result={`'hotDog'`}
               showGuide
-              caption={<>Functional JS Code:</>}
+              caption={<>Functional JS code:</>}
             >{`(salad => 'hotDog')(curry => 'tacos')`}</CodeBlock>
             <R.Zuus>Equivalent emoji puzzle:</R.Zuus>
           </Alert>
           <Subheading step={step++} coveredIn={5}>
             More complicated expressions
           </Subheading>
+          <P>
+            Let’s take a look at more complicated functional JS expressions and
+            see if they can be represented using an emoji puzzle. Check out the
+            following JS expression, and
+            <Highlight>
+              {' '}
+              try to guess what the result would be before pressing the{' '}
+              <H args={{ name: 'run' }} /> button.
+            </Highlight>
+          </P>
+          <CodeBlock
+            result={`'hamburger'`}
+            caption={
+              <>
+                Guess what the result would be
+                <br />
+                before pressing the <H args={{ name: 'run' }} /> button.
+              </>
+            }
+          >{`(sushi => sandwich => sushi)(
+  'hamburger'
+)('chicken')`}</CodeBlock>
+          <P>
+            The result was <InlineCode>{`'hamburger'`}</InlineCode>. It’s
+            because <InlineCode>{'sushi'}</InlineCode> is bound to{' '}
+            <InlineCode>{`'hamburger'`}</InlineCode>,{' '}
+            <InlineCode>{'sandwich'}</InlineCode> is bound to{' '}
+            <InlineCode>{`'chicken'`}</InlineCode>, and it returns what’s in{' '}
+            <InlineCode>{'sushi'}</InlineCode>.
+          </P>
+          <P>And here’s the equivalent emoji puzzle:</P>
         </BubbleQuoteContext.Provider>
       </Container>
       <EpisodePageFooter />
