@@ -13,6 +13,7 @@ import Emoji from 'src/components/Emoji'
 import H from 'src/components/H'
 import EmojiForLetter from 'src/components/EmojiForLetter'
 import EpisodeHero from 'src/components/EpisodeHero'
+import InlinePrioritiesLabel from 'src/components/InlinePrioritiesLabel'
 import EpisodePageFooter from 'src/components/EpisodePageFooter'
 import CustomEmoji from 'src/components/CustomEmoji'
 import ButtonWithTouchActiveStates from 'src/components/ButtonWithTouchActiveStates'
@@ -518,7 +519,7 @@ export default () => {
             <Italic>
               people who have zero programming knowledge can understand
             </Italic>
-            .
+            —without sacrificing rigor.
           </P>
           <P>
             To explain these concepts, I created{' '}
@@ -544,43 +545,14 @@ export default () => {
             functional programming in general, I think you’ll enjoy this
             article.
           </P>
-          <Alert>
-            <P>
-              <Emoji>⚠️</Emoji> <Bold>Note:</Bold> This article is for
-              programmers who are familiar with functional programming. If
-              you’re a non-programmer, check out the course itself instead: “
-              <InternalLink href="/">
-                <Bold>Y Combinator for Non-programmers</Bold>
-              </InternalLink>
-              ”.
-            </P>
-            <P
-              css={css`
-                margin-bottom: 0;
-              `}
-            >
-              I’ll use <Bold>JavaScript</Bold> in this article. Even if you’re
-              not familiar with JS, you should still be able to understand it.
-              Also,{' '}
-              <ExternalLink href="https://github.com/chibicode/ycombinator/blob/master/pages/emojis-functional-programming.tsx">
-                the source code for this article is available on GitHub
-              </ExternalLink>
-              —please ★ star it!
-            </P>
-          </Alert>
-          <Alert backgroundColor="brown">
-            <Emoji>👋</Emoji> <Bold>Available for Hire:</Bold> My name is{' '}
-            <Bold>Shu Uesugi</Bold>, a freelance full-stack engineer who’s
-            looking for a <Italic>full-time position</Italic> (remote or in
-            SF/LA). Scroll to the bottom of this article for details.
-          </Alert>
           <Subheading noHrTop step="none" coveredIn="none">
-            Overview of this article
+            Overview
           </Subheading>
           <Ul>
             <UlLi>
               <Bold>First,</Bold> I’ll show you how some simple JavaScript code
-              can be represented using my emoji puzzle.
+              can be represented using my emoji puzzle. Even if you’re not
+              familiar with JS, you should still be able to understand it.
             </UlLi>
             <UlLi>
               <Bold>After that,</Bold> I’ll talk about how to use my emoji
@@ -611,7 +583,41 @@ export default () => {
                 </>
               )}
             </UlLi>
+            <UlLi>
+              Also,{' '}
+              <ExternalLink href="https://github.com/chibicode/ycombinator/blob/master/pages/emojis-functional-programming.tsx">
+                the source code for this article is available on GitHub
+              </ExternalLink>
+              —please ★ star it!
+            </UlLi>
           </Ul>
+          <Alert>
+            <div
+              css={css`
+                font-size: ${fontSizes(0.85)};
+              `}
+            >
+              <Emoji>⚠️</Emoji> <Bold>Note:</Bold> This article is for
+              programmers. If you’re a non-programmer, check out the course
+              itself instead: “
+              <InternalLink href="/">
+                <Bold>Y Combinator for Non-programmers</Bold>
+              </InternalLink>
+              ”.
+            </div>
+          </Alert>
+          <Alert backgroundColor="brown">
+            <div
+              css={css`
+                font-size: ${fontSizes(0.85)};
+              `}
+            >
+              <Emoji>👋</Emoji> <Bold>Available for Hire:</Bold> My name is{' '}
+              <Bold>Shu Uesugi</Bold>, a freelance full-stack engineer who’s
+              looking for a <Italic>full-time position</Italic> (remote or in
+              SF/LA). Scroll to the bottom of this article for details.
+            </div>
+          </Alert>
           <Subheading step={step++} coveredIn={3}>
             Identity function in JS
           </Subheading>
@@ -1049,6 +1055,58 @@ sushi => 'pizza'`}</CodeBlock>
               <InlineCode>('hamburger')('chicken')</InlineCode>
             </R.Ujuq>
           </DimUnhighlighted>
+          <P>
+            Now, let’s talk about how we evaluate this function. In JS, we first
+            evaluate the function call with the argument{' '}
+            <InlineCode>'hamburger'</InlineCode>.
+          </P>
+          <CodeBlock
+            caption={<>In JS, we evaluate this part first</>}
+            shouldHighlight={(lineNumber, tokenNumber) =>
+              lineNumber === 0 ||
+              (lineNumber === 1 && tokenNumber > 0 && tokenNumber < 2) ||
+              (lineNumber === 2 && tokenNumber < 2)
+            }
+          >{`(sushi => sandwich => sushi)(
+  'hamburger'
+)('chicken')`}</CodeBlock>
+          <P>
+            Equivalently, in the emoji puzzle,{' '}
+            <Italic>we evaluate the bottom two rows first.</Italic> We ignore
+            the top row initially, which is shaded in blue.
+          </P>
+          <R.Bcgp>
+            <Bold>Focus</Bold> on <Italic>the bottom 2 rows</Italic>, and
+            <br />
+            <Bold>Ignore</Bold> the <Italic>top row</Italic> for now
+          </R.Bcgp>
+          <P>
+            If you look at the left edge of the puzzle, the bottom two rows
+            correspond to the pair of{' '}
+            <InlinePrioritiesLabel revert>1</InlinePrioritiesLabel>
+            ’s. That’s the rule:{' '}
+            <Highlight>
+              In an emoji puzzle with 3 rows, you start with the pair of{' '}
+              <InlinePrioritiesLabel revert>1</InlinePrioritiesLabel>’s.
+            </Highlight>
+          </P>
+          <P>
+            Next, let’s label each item. This time, in addition to{' '}
+            <BottomRightBadge inline bottomRightBadgeType="callArg" />{' '}
+            <BottomRightBadge inline bottomRightBadgeType="funcArg" />{' '}
+            <BottomRightBadge inline bottomRightBadgeType="funcBound" />,{' '}
+            <Highlight>
+              we now have a new label{' '}
+              <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />.
+            </Highlight>{' '}
+            for the <EmojiWithText letter="b" />.
+          </P>
+          <R.Pbhg>
+            There’s a new label{' '}
+            <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />
+            <br />
+            for the <EmojiWithText letter="b" />
+          </R.Pbhg>
         </BubbleQuoteContext.Provider>
       </Container>
       <EpisodePageFooter />
