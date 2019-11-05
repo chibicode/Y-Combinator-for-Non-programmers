@@ -86,10 +86,12 @@ const Subheading = ({
   step,
   noHrTop,
   children,
+  coveredIn,
   ...props
 }: JSX.IntrinsicElements['h3'] & {
   noHrTop?: boolean
   step: number | 'none'
+  coveredIn: number | 'none'
 }) => (
   <>
     {!noHrTop && (
@@ -100,6 +102,39 @@ const Subheading = ({
         `}
       />
     )}
+    {step !== 'none' && coveredIn !== 'none' && (
+      <div
+        css={css`
+          font-size: ${fontSizes(0.8)};
+          color: ${colors('indigo300')};
+          font-weight: normal;
+          margin-bottom: ${spaces(0.25)};
+
+          ${ns} {
+            font-size: ${fontSizes(0.85)};
+          }
+        `}
+      >
+        Step{' '}
+        <Bold
+          css={css`
+            color: ${colors('indigo400')};
+          `}
+        >
+          {step}
+        </Bold>{' '}
+        of {numSteps} &middot; From the course’s{' '}
+        <InternalLink href={`/${coveredIn}`}>
+          <H
+            args={{
+              name: 'titlePrefixColored'
+            }}
+            episodeNumberOverrides={coveredIn}
+          />
+        </InternalLink>{' '}
+        level
+      </div>
+    )}
     <H3
       {...props}
       css={css`
@@ -107,28 +142,6 @@ const Subheading = ({
       `}
     >
       {children}
-      {step !== 'none' && (
-        <>
-          {' '}
-          <span
-            css={css`
-              font-size: 0.7em;
-              color: ${colors('indigo300')};
-              font-weight: normal;
-            `}
-          >
-            (Step{' '}
-            <Bold
-              css={css`
-                color: ${colors('indigo400')};
-              `}
-            >
-              {step}
-            </Bold>
-            /{numSteps})
-          </span>
-        </>
-      )}
     </H3>
   </>
 )
@@ -501,7 +514,7 @@ export default () => {
             <Italic>full-time position</Italic> (remote or in SF/LA). Scroll to
             the bottom of this article for details.
           </Alert>
-          <Subheading noHrTop step="none">
+          <Subheading noHrTop step="none" coveredIn="none">
             Overview of this article
           </Subheading>
           <Ul>
@@ -518,12 +531,14 @@ export default () => {
               This article is long—it’s about{' '}
               <Bold>{wordCount.toLocaleString('en-US')}</Bold> words (
               <Bold>{minRead} min.</Bold> read). To help you track how far along
-              you are in the article, I’ll show a “step” number next to each
+              you are in the article, I’ll show a “step” number above each
               subheading. There are a total of <Bold>{numSteps}</Bold> steps in
               this article.
             </UlLi>
           </Ul>
-          <Subheading step={step++}>Identity function in JS</Subheading>
+          <Subheading step={step++} coveredIn={3}>
+            Identity function in JS
+          </Subheading>
           <P>
             First, take a look at the following code. It’s an{' '}
             <Italic>identity function</Italic> in JavaScript that returns the
@@ -597,7 +612,9 @@ sushi => sushi`}</CodeBlock>
             <InlineCode>sushi</InlineCode> and <InlineCode>'sushi'</InlineCode>{' '}
             will be represented as <EmojiForLetter letter="a" size="semilg" />.
           </Alert>
-          <Subheading step={step++}>Running the function</Subheading>
+          <Subheading step={step++} coveredIn={4}>
+            Running the function
+          </Subheading>
           <P>
             I’ve added the <H args={{ name: 'run' }} /> button to the JS code
             snippet so you can see the result.{' '}
@@ -637,7 +654,9 @@ sushi => sushi`}</CodeBlock>
             </InternalLink>
             )—without showing any code.
           </P>
-          <Subheading step={step++}>Another example</Subheading>
+          <Subheading step={step++} coveredIn={4}>
+            Another example
+          </Subheading>
           <P>
             Let’s take a look at another example. Here’s a piece of JS code
             that’s slightly different from before. It’s a function that{' '}
@@ -689,7 +708,9 @@ sushi => 'pizza'`}</CodeBlock>
             <ExpressionRunnerSeparator />
             <R.Ukzq></R.Ukzq>
           </Alert>
-          <Subheading step={step++}>Visualizing evaluation rules</Subheading>
+          <Subheading step={step++} coveredIn={4}>
+            Visualizing evaluation rules
+          </Subheading>
           <P>
             Because you know how to code, you have a mental model of how
             function evaluation works. If you see{' '}
@@ -803,7 +824,9 @@ sushi => 'pizza'`}</CodeBlock>
             these rules, non-programmers can intuitively learn to evaluate
             functions without learning about how variable bindings work.
           </P>
-          <Subheading step={step++}>If there’s no match</Subheading>
+          <Subheading step={step++} coveredIn={4}>
+            If there’s no match
+          </Subheading>
           <P>Let’s take a look at the other example from earlier:</P>
           <CodeBlock
             defaultResultVisible
@@ -892,6 +915,9 @@ sushi => 'pizza'`}</CodeBlock>
             >{`(salad => 'hotDog')(curry => 'tacos')`}</CodeBlock>
             <R.Zuus>Equivalent emoji puzzle:</R.Zuus>
           </Alert>
+          <Subheading step={step++} coveredIn={5}>
+            More complicated expressions
+          </Subheading>
         </BubbleQuoteContext.Provider>
       </Container>
       <EpisodePageFooter />
