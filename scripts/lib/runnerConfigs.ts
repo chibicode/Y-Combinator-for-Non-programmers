@@ -194,6 +194,26 @@ export const cvtc: ExpressionRunnerShorthandConfig = {
   showPriorities: true
 }
 
+export const lxzn: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.pisd,
+  showPriorities: true,
+  highlightOverrides: {
+    a: 'highlighted',
+    b: 'highlighted'
+  }
+}
+
+export const ujuq: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.pisd,
+  showPriorities: true,
+  highlightOverrides: {
+    c: 'highlighted',
+    d: 'highlighted'
+  }
+}
+
 export const oork: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   initialExpressionContainer: initialExpressionContainers.hrdv,

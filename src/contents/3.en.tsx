@@ -22,6 +22,7 @@ import H from 'src/components/H'
 import BubbleQuotes from 'src/components/BubbleQuotes'
 import * as R from 'src/components/Runners'
 import NextLessonButton from 'src/components/NextLessonButton'
+import VariableShadeContext from 'src/components/VariableShadeContext'
 import ExpressionRunnerConfigContext from 'src/components/ExpressionRunnerConfigContext'
 
 export default () => (
@@ -431,16 +432,28 @@ export default () => (
               <Bold>Explanation:</Bold> In this example, the top section has a{' '}
               <EmojiWithText letter="b" />:
             </P>
-            <R.Vowa>
-              The top section has a <EmojiWithText letter="b" />
-            </R.Vowa>
+            <VariableShadeContext.Provider
+              value={{
+                shadeNonHighlighted: true
+              }}
+            >
+              <R.Vowa>
+                The top section has a <EmojiWithText letter="b" />
+              </R.Vowa>
+            </VariableShadeContext.Provider>
             <P>
               And each of the bottom two sections has{' '}
               <EmojiWithText letter="a" />, a traditional Japanese food:
             </P>
-            <R.Elku>
-              Each of the bottom two sections has <EmojiWithText letter="a" />
-            </R.Elku>
+            <VariableShadeContext.Provider
+              value={{
+                shadeNonHighlighted: true
+              }}
+            >
+              <R.Elku>
+                Each of the bottom two sections has <EmojiWithText letter="a" />
+              </R.Elku>
+            </VariableShadeContext.Provider>
             <BubbleQuotes
               quotes={[
                 {

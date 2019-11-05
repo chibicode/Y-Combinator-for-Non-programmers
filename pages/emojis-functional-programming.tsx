@@ -47,6 +47,7 @@ import {
   InstructionFour,
   StepFour
 } from 'src/contents/4.en'
+import VariableShadeContext from 'src/components/VariableShadeContext'
 
 const hackerNewsLink = ``
 
@@ -407,6 +408,26 @@ CodeBlock.defaultProps = {
   defaultResultVisible: false
 }
 
+const PointToRunButton = ({ children }: { children: React.ReactNode }) => (
+  <ExpressionRunnerConfigContext.Provider
+    value={{
+      pointToRunButton: true
+    }}
+  >
+    {children}
+  </ExpressionRunnerConfigContext.Provider>
+)
+
+const DimUnhighlighted = ({ children }: { children: React.ReactNode }) => (
+  <VariableShadeContext.Provider
+    value={{
+      shadeNonHighlighted: true
+    }}
+  >
+    {children}
+  </VariableShadeContext.Provider>
+)
+
 export default () => {
   let step = 1
   return locale === 'en' ? (
@@ -481,6 +502,7 @@ export default () => {
             }
           `}
         />
+
         <BubbleQuoteContext.Provider value={{ inQuote: true }}>
           <P>
             <Highlight>
@@ -514,11 +536,9 @@ export default () => {
             showGuide
             caption={<>Functional JS code:</>}
           >{`(sushi => sushi)('sandwich')`}</CodeBlock>
-          <ExpressionRunnerConfigContext.Provider
-            value={{ pointToRunButton: true }}
-          >
+          <PointToRunButton>
             <R.Itbm>Equivalent emoji puzzle:</R.Itbm>
-          </ExpressionRunnerConfigContext.Provider>
+          </PointToRunButton>
           <P>
             If you like to teach programming to beginners, or if you like
             functional programming in general, I think you’ll enjoy this
@@ -632,11 +652,13 @@ sushi => sushi`}</CodeBlock>
             …is represented by <Italic>the bottom two items</Italic> on the
             puzzle, which are both <EmojiWithText letter="a" />.
           </P>
-          <R.Elku>
-            <InlineCode>sushi => sushi</InlineCode> is represented
-            <br />
-            by the bottom two items
-          </R.Elku>
+          <DimUnhighlighted>
+            <R.Elku>
+              <InlineCode>sushi => sushi</InlineCode> is represented
+              <br />
+              by the bottom two items
+            </R.Elku>
+          </DimUnhighlighted>
           <P>
             Second, the argument <InlineCode>'sandwich'</InlineCode> to the
             identity function…
@@ -650,11 +672,13 @@ sushi => sushi`}</CodeBlock>
             …is represented by <Italic>the top item</Italic> on the puzzle,
             which is a <EmojiWithText letter="b" />.
           </P>
-          <R.Vowa>
-            The argument <InlineCode>'sandwich'</InlineCode> is represented
-            <br />
-            by the top item
-          </R.Vowa>
+          <DimUnhighlighted>
+            <R.Vowa>
+              The argument <InlineCode>'sandwich'</InlineCode> is represented
+              <br />
+              by the top item
+            </R.Vowa>
+          </DimUnhighlighted>
           <P>
             That’s how my emoji puzzle can visually describe a simple JS
             expression. Next, let’s talk about how we can{' '}
@@ -691,11 +715,9 @@ sushi => sushi`}</CodeBlock>
               puzzle.
             </Highlight>
           </P>
-          <ExpressionRunnerConfigContext.Provider
-            value={{ pointToRunButton: true }}
-          >
+          <PointToRunButton>
             <R.Itbm></R.Itbm>
-          </ExpressionRunnerConfigContext.Provider>
+          </PointToRunButton>
           <P>
             The result is <EmojiWithText letter="b" />, which is the same as
             what happens when you run the equivalent JS code.
@@ -801,11 +823,9 @@ sushi => 'pizza'`}</CodeBlock>
             </Italic>
             .
           </P>
-          <ExpressionRunnerConfigContext.Provider
-            value={{ pointToRunButton: true }}
-          >
+          <PointToRunButton>
             <R.Wunw></R.Wunw>
-          </ExpressionRunnerConfigContext.Provider>
+          </PointToRunButton>
           <P>Here are the four steps it displayed:</P>
           <P>
             <Bold>Step 1.</Bold>{' '}
@@ -999,6 +1019,21 @@ sushi => 'pizza'`}</CodeBlock>
             <InlineCode>{'sushi'}</InlineCode>.
           </P>
           <P>And here’s the equivalent emoji puzzle:</P>
+          <R.Cvtc></R.Cvtc>
+          <P>Let’s break it down. First, the function expression…</P>
+          <CodeBlock
+            shouldHighlight={(lineNumber, tokenNumber) =>
+              lineNumber === 0 && tokenNumber > 0 && tokenNumber < 9
+            }
+          >{`(sushi => sandwich => sushi)(
+  'hamburger'
+)('chicken')`}</CodeBlock>
+          <P>…is represented by the bottom row:</P>
+          <DimUnhighlighted>
+            <R.Lxzn>
+              <InlineCode>sushi => sandwich => sushi</InlineCode>
+            </R.Lxzn>
+          </DimUnhighlighted>
         </BubbleQuoteContext.Provider>
       </Container>
       <EpisodePageFooter />

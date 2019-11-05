@@ -48,10 +48,11 @@ export const variableExpressionBoxFontSize = (
   }[size])
 
 const VariableEmoji = ({ expression }: VariableExpressionBoxProps) => {
-  const { variableSize } = useContext(ExpressionRunnerContext)
-  const { hideBottomRightBadges, bottomRightBadgeOverrides } = useContext(
-    ExpressionRunnerContext
-  )
+  const {
+    hideBottomRightBadges,
+    bottomRightBadgeOverrides,
+    variableSize
+  } = useContext(ExpressionRunnerContext)
 
   if (expression.shorthandNumberAfterConvert) {
     return (
@@ -401,13 +402,16 @@ const VariableEmoji = ({ expression }: VariableExpressionBoxProps) => {
 }
 
 const VariableExpressionBox = ({ expression }: VariableExpressionBoxProps) => {
-  const { hidePriorities, variableSize } = useContext(ExpressionRunnerContext)
+  const { hidePriorities, variableSize, highlightOverrides } = useContext(
+    ExpressionRunnerContext
+  )
   const { conditionalState } = useContext(ConditionalContext)
   const { binaryState } = useContext(BinaryContext)
   const {
     shadeNonNumbers,
     shadeNonHighlightedFunc,
-    shadeNonFactorial
+    shadeNonFactorial,
+    shadeNonHighlighted
   } = useContext(VariableShadeContext)
 
   return (
@@ -423,7 +427,9 @@ const VariableExpressionBox = ({ expression }: VariableExpressionBoxProps) => {
           expression.shorthandNumber !== 3 &&
           expression.shorthandNumber !== 4 &&
           expression.shorthandNumber !== 5 &&
-          expression.name !== 'blankNumber')) && (
+          expression.name !== 'blankNumber') ||
+        (shadeNonHighlighted &&
+          highlightOverrides[expression.name] !== 'highlighted')) && (
         <span
           css={css`
             display: block;

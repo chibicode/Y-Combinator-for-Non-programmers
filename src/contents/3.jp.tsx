@@ -20,6 +20,7 @@ import BubbleQuotes from 'src/components/BubbleQuotes'
 import * as R from 'src/components/Runners'
 import NextLessonButton from 'src/components/NextLessonButton'
 import ExpressionRunnerConfigContext from 'src/components/ExpressionRunnerConfigContext'
+import VariableShadeContext from 'src/components/VariableShadeContext'
 
 export default () => (
   <EpisodeCardList
@@ -345,19 +346,31 @@ export default () => (
               <EmojiWithText letter="b" />
               が入っており、
             </P>
-            <R.Vowa>
-              上段には
-              <EmojiWithText letter="b" />
-            </R.Vowa>
+            <VariableShadeContext.Provider
+              value={{
+                shadeNonHighlighted: true
+              }}
+            >
+              <R.Vowa>
+                上段には
+                <EmojiWithText letter="b" />
+              </R.Vowa>
+            </VariableShadeContext.Provider>
             <P>
               下段には
               <EmojiWithText letter="a" />
               がふたつ入っています。
             </P>
-            <R.Elku>
-              下段には
-              <EmojiWithText letter="a" />
-            </R.Elku>
+            <VariableShadeContext.Provider
+              value={{
+                shadeNonHighlighted: true
+              }}
+            >
+              <R.Elku>
+                下段には
+                <EmojiWithText letter="a" />
+              </R.Elku>
+            </VariableShadeContext.Provider>
             <BubbleQuotes
               quotes={[
                 {
