@@ -1076,7 +1076,7 @@ sushi => 'pizza'`}</CodeBlock>
             the top row initially, which is shaded in blue.
           </P>
           <R.Bcgp>
-            <Bold>Focus</Bold> on <Italic>the bottom 2 rows</Italic>, and
+            <Bold>Focus</Bold> on <Italic>the bottom two rows</Italic>, and
             <br />
             <Bold>Ignore</Bold> the <Italic>top row</Italic> for now
           </R.Bcgp>
@@ -1091,7 +1091,8 @@ sushi => 'pizza'`}</CodeBlock>
             </Highlight>
           </P>
           <P>
-            Next, let’s label each item. This time, in addition to{' '}
+            Next, let’s label each item on the bottom two rows. This time, in
+            addition to{' '}
             <BottomRightBadge inline bottomRightBadgeType="callArg" />{' '}
             <BottomRightBadge inline bottomRightBadgeType="funcArg" />{' '}
             <BottomRightBadge inline bottomRightBadgeType="funcBound" />,{' '}
