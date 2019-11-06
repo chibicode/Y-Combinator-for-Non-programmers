@@ -168,6 +168,38 @@ export const epon = initializeExpressionContainer([
   'h'
 ])
 
+export const mfca = initializeExpressionContainer([
+  {
+    arg: 'e',
+    body: {
+      arg: 'f',
+      body: 'f'
+    }
+  },
+  {
+    arg: 'g',
+    body: 'g'
+  },
+  'h'
+])
+
+export const csqx = initializeExpressionContainer([
+  {
+    arg: 'e',
+    body: {
+      arg: 'f',
+      body: 'f'
+    }
+  },
+  [
+    {
+      arg: 'g',
+      body: 'g'
+    },
+    'h'
+  ]
+])
+
 export const lqti = initializeExpressionContainer([
   {
     arg: 'b',

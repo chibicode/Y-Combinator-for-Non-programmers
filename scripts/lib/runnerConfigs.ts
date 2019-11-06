@@ -448,6 +448,20 @@ export const hdxc: ExpressionRunnerShorthandConfig = {
   skipToTheEnd: false
 }
 
+export const xhje: ExpressionRunnerShorthandConfig = {
+  runner: 'runButtonOnly',
+  initialExpressionContainer: initialExpressionContainers.mfca,
+  showPriorities: true,
+  skipToTheEnd: false
+}
+
+export const hyvj: ExpressionRunnerShorthandConfig = {
+  runner: 'runButtonOnly',
+  initialExpressionContainer: initialExpressionContainers.csqx,
+  showPriorities: true,
+  skipToTheEnd: false
+}
+
 export const hykj: ExpressionRunnerShorthandConfig = {
   runner: 'runButtonOnly',
   skipToTheEnd: false,

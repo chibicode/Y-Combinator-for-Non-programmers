@@ -767,7 +767,7 @@ sushi => 'pizza'`}</CodeBlock>
             Just like the JS code, the emoji puzzle ended up with a{' '}
             <EmojiWithText letter="f" /> after running it.
           </P>
-          <Alert backgroundColor="red">
+          <Alert backgroundColor="pink">
             <P>
               <Bold>What we learned so far:</Bold> Simple JS code like below can
               be visually represented using emoji puzzles.
@@ -1006,7 +1006,7 @@ sushi => 'pizza'`}</CodeBlock>
               <>
                 Guess what the result would be
                 <br />
-                before pressing the <H args={{ name: 'run' }} /> button.
+                before pressing the <H args={{ name: 'run' }} /> button!
               </>
             }
           >{`(sushi => sandwich => sushi)(
@@ -1157,7 +1157,7 @@ sushi => 'pizza'`}</CodeBlock>
             complex functional JS expressions can be represented using an emoji
             puzzle.
           </P>
-          <Alert backgroundColor="red">
+          <Alert backgroundColor="pink">
             <P>
               <Bold>What we learned so far:</Bold> Complex functional JS
               expressions can be represented using an emoji puzzle.
@@ -1180,9 +1180,33 @@ sushi => 'pizza'`}</CodeBlock>
           </Alert>
           <Alert backgroundColor="blue">
             <P>
-              <Bold>More examples (optional read):</Bold> Here are more examples
-              that might be helpful for your understanding. Again, remember
-              that:
+              <Bold>More examples (optional read):</Bold> Here’s another example
+              that might be helpful for your understanding. Check out the
+              following JS expression, and{' '}
+              <Highlight>
+                try to guess what the result would be before pressing the{' '}
+                <H args={{ name: 'run' }} /> button.
+              </Highlight>
+            </P>
+            <CodeBlock
+              result={`'salad'`}
+              caption={
+                <>
+                  Guess what the result would be
+                  <br />
+                  before pressing the <H args={{ name: 'run' }} /> button!
+                </>
+              }
+            >{`(friedPotatoes => pizza => pizza)(
+  spaghetti => spaghetti
+)('salad')`}</CodeBlock>
+            <P>
+              The result was <InlineCode>'salad'</InlineCode>. Now, here’s the
+              equivalent emoji puzzle below.{' '}
+              <Highlight>
+                Try pressing <H args={{ name: 'run' }} />.
+              </Highlight>{' '}
+              Again, remember that:
             </P>
             <Ul>
               <UlLi>
@@ -1195,22 +1219,17 @@ sushi => 'pizza'`}</CodeBlock>
                 and you can <Bold>ignore them</Bold>.
               </UlLi>
             </Ul>
+            <R.Xhje>Equivalent emoji puzzle:</R.Xhje>
+            <Hr />
             <P>
-              You can{' '}
+              Next, here’s slightly different JS code.{' '}
               <Highlight>
-                press <H args={{ name: 'run', lowerCase: true }} />
-              </Highlight>{' '}
-              on each example to see the evaluation visualization.{' '}
-              <H args={{ name: 'mentionRightArrow' }} />{' '}
+                There’s an extra pair of parenthesis around{' '}
+                <InlineCode>(spaghetti => spaghetti)('salad')</InlineCode>, so
+                this will be evaluated first.
+              </Highlight>
             </P>
-            <CodeBlock
-              defaultResultVisible
-              result={`'salad'`}
-              caption={<>Functional JS code:</>}
-            >{`(friedPotatoes => pizza => pizza)(
-  'spaghetti'
-)('salad')`}</CodeBlock>
-            <R.Hdxc>Equivalent emoji puzzle:</R.Hdxc>
+            <R.Hyvj></R.Hyvj>
           </Alert>
         </BubbleQuoteContext.Provider>
       </Container>

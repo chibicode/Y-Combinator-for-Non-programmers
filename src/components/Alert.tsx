@@ -1,6 +1,7 @@
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core'
 import { ns, radii, colors, spaces } from 'src/lib/theme'
+import { CardColorContext } from 'src/components/Card'
 
 export const alertSpacing = css`
   padding: ${spaces(0.75)} ${spaces(0.75)};
@@ -14,27 +15,31 @@ export const alertSpacing = css`
 
 export interface AlertProps {
   children: React.ReactNode
-  backgroundColor: 'yellow' | 'red' | 'brown' | 'blue'
+  backgroundColor: 'yellow' | 'pink' | 'brown' | 'blue'
 }
 
 const Alert = ({ children, backgroundColor }: AlertProps) => (
-  <div
-    css={[
-      alertSpacing,
-      css`
-        border-radius: ${radii(0.5)};
-        background: ${backgroundColor === 'yellow'
-          ? colors('yellow100')
-          : backgroundColor === 'brown'
-          ? colors('brown50')
-          : backgroundColor === 'blue'
-          ? colors('blue50')
-          : colors('pink50')};
-      `
-    ]}
+  <CardColorContext.Provider
+    value={{ color: backgroundColor === 'yellow' ? 'white' : backgroundColor }}
   >
-    {children}
-  </div>
+    <div
+      css={[
+        alertSpacing,
+        css`
+          border-radius: ${radii(0.5)};
+          background: ${backgroundColor === 'yellow'
+            ? colors('yellow100')
+            : backgroundColor === 'brown'
+            ? colors('brown50')
+            : backgroundColor === 'blue'
+            ? colors('blue50')
+            : colors('pink50')};
+        `
+      ]}
+    >
+      {children}
+    </div>
+  </CardColorContext.Provider>
 )
 
 Alert.defaultProps = {
