@@ -1276,6 +1276,27 @@ sushi => 'pizza'`}</CodeBlock>
               </UlLi>
             </Ul>
           </Alert>
+          <Subheading step={step++} coveredIn={6}>
+            Church numerals
+          </Subheading>
+          <P>
+            Let’s now talk about one of the most important topics in functional
+            programming: <Bold>higher-order functions</Bold>. A higher order
+            function (1) <Italic>takes a function as an argument</Italic>, (2){' '}
+            <Italic>returns a function as its result</Italic>, or (3){' '}
+            <Italic>does both</Italic>.
+          </P>
+          <P>
+            Here’s a higher-order function called{' '}
+            <InlineCode>convert</InlineCode> that takes a function as an
+            argument. It then applies <InlineCode>(n => n + 1)(0)</InlineCode>{' '}
+            to it.
+          </P>
+          <CodeBlock
+            caption={<>A higher-order function</>}
+          >{`function convert(f) {
+  return f(n => n + 1)(0)
+}`}</CodeBlock>
         </BubbleQuoteContext.Provider>
       </Container>
       <EpisodePageFooter />
