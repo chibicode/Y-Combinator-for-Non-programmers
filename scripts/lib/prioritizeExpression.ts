@@ -269,6 +269,10 @@ function prioritizeConditionalExpressionHelper<
     )
   }
 
+  // TODO: There's probably a bug around currentPriority here -
+  // If both trueCase / falseCase go into if(){} then
+  // currentPriority will be duplicated
+
   if (
     isCall(expression.trueCase) ||
     isConditional(expression.trueCase) ||
