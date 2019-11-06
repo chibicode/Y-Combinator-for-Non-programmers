@@ -61,19 +61,10 @@ const date = DateTime.fromISO('2019-11-08T12:00:00Z')
 //   .toFormat('LLL d, yyyy')
 const dateSchemaString = date.setZone('America/Los_Angeles').toISO()
 
-const title = 'Using Emojis to Teach Functional Programming to Non-programmers'
-const titleWithEmoji = `🍱 ${title}`
-const titleSplit = (
-  <>
-    Using Emojis to Teach
-    <br />
-    Functional Programming to
-    <br />
-    Non-programmers
-  </>
-)
+const title = 'You Don’t Need Code to Explain Functional Programming'
+const titleWithEmoji = `🍣 ${title} 🥪`
 const description =
-  'A visual implementation of Lambda calculus, Church encoding, and Y combinator'
+  'An emoji-based implementation of Lambda calculus, Church encoding, and Y combinator'
 const url = `${enBaseUrl}/emojis-functional-programming`
 const ogImageUrl = `${enBaseUrl}/static/images/blog-og.png`
 
@@ -476,7 +467,7 @@ export default () => {
           padding-top: ${spaces(1.5)};
         `}
       >
-        <EpisodeHero mainTitle={titleSplit} threeLineTitle />
+        <EpisodeHero mainTitle={title} threeLineTitle />
       </Container>
       <Container
         size="smsm"
@@ -534,11 +525,11 @@ export default () => {
               —without sacrificing rigor.
             </P>
             <P>
-              To explain these concepts, I created{' '}
-              <Bold>an educational puzzle using emojis</Bold> <Emoji>🍱</Emoji>.
-              In this article, I’ll explain how my emoji puzzles can represent
-              and execute functional code <Italic>visually</Italic>. Here’s a
-              sneak peek—
+              I didn’t use any code to explain these concepts. Instead, I
+              created <Bold>an emoji puzzle</Bold> that works as a runtime for
+              functional expressions. In this article, I’ll explain how my emoji
+              puzzles can represent and execute functional code{' '}
+              <Italic>visually</Italic>. Here’s a sneak peek—
               <Highlight>
                 try pressing <H args={{ name: 'run' }} /> below!
               </Highlight>
