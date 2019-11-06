@@ -53,8 +53,6 @@ import VariableShadeContext from 'src/components/VariableShadeContext'
 const hackerNewsLink = ``
 
 const numSteps = 100
-const wordCount = 10000
-const minRead = wordCount / 200
 
 const date = DateTime.fromISO('2019-11-08T12:00:00Z')
 // const dateString = date
@@ -560,12 +558,9 @@ export default () => {
               Combinator.
             </UlLi>
             <UlLi>
-              This article is long—it’s about{' '}
-              <Bold>{wordCount.toLocaleString('en-US')}</Bold> words (
-              <Bold>{minRead} min.</Bold> read). To help you track how far along
-              you are in the article, I’ll show a “step” number above each
-              subheading. There are a total of <Bold>{numSteps}</Bold> steps in
-              this article.
+              To help you track how far along you are in the article, I’ll show
+              a “<Bold>step</Bold>” number above each subheading. There are a
+              total of <Bold>{numSteps}</Bold> steps in this article.
             </UlLi>
             <UlLi>
               <Bold>If you decide to read later:</Bold> I’d appreciate it if you
