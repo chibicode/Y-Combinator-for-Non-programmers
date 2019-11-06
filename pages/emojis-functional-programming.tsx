@@ -763,7 +763,8 @@ sushi => sushi`}</CodeBlock>
               <InternalLink href="/">
                 Y Combinator for Non-programmers
               </InternalLink>
-              )—without showing any code.
+              )—without showing any code. I could have used letters instead of
+              emojis, but emojis are less scary-looking for non-programers.
             </P>
             <Subheading step={step++} coveredIn={4}>
               Another example
