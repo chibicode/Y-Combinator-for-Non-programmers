@@ -1276,27 +1276,12 @@ sushi => 'pizza'`}</CodeBlock>
             Church numerals
           </Subheading>
           <P>
-            Let’s now talk about one of the most important topics in functional
-            programming: <Bold>higher-order functions</Bold>. A higher order
-            function (1) <Italic>takes a function as an argument</Italic>, (2){' '}
-            <Italic>returns a function as its result</Italic>, or (3){' '}
-            <Italic>does both</Italic>.
-          </P>
-          <P>
-            Here’s a higher-order function called{' '}
-            <InlineCode>convert</InlineCode> that takes a function as an
+            Let’s take a look at something more interesting. Here’s a function
+            called <InlineCode>convert</InlineCode> that takes a function as an
             argument. It then applies <InlineCode>(n => n + 1)(0)</InlineCode>{' '}
             to it.
           </P>
-          <CodeBlock
-            caption={
-              <>
-                A higher-order function:
-                <br />
-                Takes a function as an argument
-              </>
-            }
-          >{`function convert(f) {
+          <CodeBlock>{`function convert(f) {
   return f(n => n + 1)(0)
 }`}</CodeBlock>
           <P>
@@ -1367,6 +1352,59 @@ convert(sushi => sandwich =>
               <InlineCode>sushi</InlineCode> is used in the function body.
             </UlLi>
           </Ul>
+          <Alert backgroundColor="pink">
+            <P>
+              <Bold>What we learned so far:</Bold> If we have a function that
+              has one of the following patterns:
+            </P>
+            <CodeBlock>{`// a & b can be any variable name
+a => b => b
+a => b => a(b)
+a => b => a(a(b))
+a => b => a(a(a(b)))
+// ...and so on...`}</CodeBlock>
+            <P>
+              Then, when the function is passed to{' '}
+              <InlineCode>convert()</InlineCode>,{' '}
+              <Highlight>
+                it returns the number of times <InlineCode>a</InlineCode> is
+                applied to <InlineCode>b</InlineCode>
+              </Highlight>{' '}
+              in the function body.
+            </P>
+            <CodeBlock>{`convert(a => b => b)          // 0
+convert(a => b => a(b))       // 1
+convert(a => b => a(a(b)))    // 2
+convert(a => b => a(a(a(b)))) // 3
+// ...and so on...`}</CodeBlock>
+          </Alert>
+          <P>
+            These functions that can be converted to numbers using{' '}
+            <InlineCode>convert()</InlineCode> have a{' '}
+            <Italic>special name.</Italic> They are called{' '}
+            <ExternalLink href="https://en.wikipedia.org/wiki/Church_encoding">
+              <Bold>Church numerals</Bold>
+            </ExternalLink>
+            . Each function represents some Church numeral.
+          </P>
+          <CodeBlock>{`// Church numeral 0
+a => b => b
+
+// Church numeral 1
+a => b => a(b)
+
+// Church numeral 2
+a => b => a(a(b)))
+
+// Church numeral 3
+a => b => a(a(a(b))))
+
+// ...and so on...`}</CodeBlock>
+          <P>
+            <Bold>You might be wondering:</Bold> “What’s the point of this?”
+            I’ll explain it shortly, but before I do so, let me explain how my
+            emoji puzzles can express Church numerals.
+          </P>
         </BubbleQuoteContext.Provider>
       </Container>
       <EpisodePageFooter />
