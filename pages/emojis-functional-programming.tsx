@@ -1219,12 +1219,62 @@ sushi => 'pizza'`}</CodeBlock>
             <P>
               Next, here’s slightly different JS code.{' '}
               <Highlight>
-                There’s an extra pair of parenthesis around{' '}
+                There’s an extra pair of parentheses around{' '}
                 <InlineCode>(spaghetti => spaghetti)('salad')</InlineCode>, so
-                this will be evaluated first.
+                this will be evaluated first
               </Highlight>
+              , and the result will be different from the last time.
             </P>
-            <R.Hyvj></R.Hyvj>
+            <CodeBlock
+              result={`pizza => pizza`}
+              caption={
+                <>
+                  Guess what the result would be
+                  <br />
+                  before pressing the <H args={{ name: 'run' }} /> button!
+                </>
+              }
+            >{`(friedPotatoes => pizza => pizza)(
+  (spaghetti => spaghetti)("salad")
+)`}</CodeBlock>
+            <P>
+              Let’s take a look at the equivalent emoji puzzle. This time,{' '}
+              <Highlight>
+                the pair of <InlinePrioritiesLabel>1</InlinePrioritiesLabel>’s
+                is on the top two rows
+              </Highlight>{' '}
+              instead.{' '}
+              <Highlight>
+                Try pressing <H args={{ name: 'run' }} />
+              </Highlight>{' '}
+              and see what happens!
+            </P>
+            <R.Hyvj>
+              This time, the pair of{' '}
+              <InlinePrioritiesLabel>1</InlinePrioritiesLabel>’s is
+              <br />
+              on the top two rows instead
+            </R.Hyvj>
+            <P>
+              <Bold>Summary:</Bold>
+            </P>
+            <Ul>
+              <UlLi>
+                In <Bold>JavaScript</Bold>, you can change the evaluation order
+                of an expression by placing <Highlight>parentheses</Highlight>{' '}
+                on different locations.
+              </UlLi>
+              <UlLi>
+                In <Bold>emoji puzzles</Bold>, you can change the evaluation
+                order by placing{' '}
+                <Highlight>
+                  the numbers (e.g.{' '}
+                  <InlinePrioritiesLabel>1</InlinePrioritiesLabel>’s and{' '}
+                  <InlinePrioritiesLabel>2</InlinePrioritiesLabel>’s)
+                </Highlight>{' '}
+                on different locations.
+              </UlLi>
+            </Ul>
           </Alert>
         </BubbleQuoteContext.Provider>
       </Container>
