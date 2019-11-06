@@ -58,8 +58,12 @@ function prioritizeCallExpressionHelper<E extends CallExpression>({
     }
 
     newFunc = funcResult.expression
-    currentPriority = funcResult.maxDescendantPriority + 1
-    maxDescendantPriority = currentPriority
+    if (applicativeOrder) {
+      currentPriority = funcResult.expression.priority + 1
+    } else {
+      currentPriority = funcResult.maxDescendantPriority + 1
+      maxDescendantPriority = currentPriority
+    }
   } else {
     newFunc = prioritizeExpressionHelper(expression.func, applicativeOrder)
   }
@@ -91,7 +95,11 @@ function prioritizeCallExpressionHelper<E extends CallExpression>({
     }
 
     newArg = argResult.expression
-    maxDescendantPriority = argResult.maxDescendantPriority
+    if (applicativeOrder) {
+      currentPriority = argResult.expression.priority + 1
+    } else {
+      maxDescendantPriority = argResult.maxDescendantPriority
+    }
   } else {
     newArg = prioritizeExpressionHelper(expression.arg, applicativeOrder)
   }
@@ -101,14 +109,7 @@ function prioritizeCallExpressionHelper<E extends CallExpression>({
       ...expression,
       func: newFunc,
       arg: newArg,
-      priority:
-        currentPriority +
-        (applicativeOrder &&
-        (isCall(expression.arg) ||
-          isConditional(expression.arg) ||
-          isBinary(expression.arg))
-          ? 1
-          : 0)
+      priority: currentPriority
     },
     maxDescendantPriority
   }
@@ -158,8 +159,12 @@ function prioritizeBinaryExpressionHelper<E extends BinaryExpression>({
     }
 
     newFirst = funcResult.expression
-    currentPriority = funcResult.maxDescendantPriority + 1
-    maxDescendantPriority = currentPriority
+    if (applicativeOrder) {
+      currentPriority = funcResult.expression.priority + 1
+    } else {
+      currentPriority = funcResult.maxDescendantPriority + 1
+      maxDescendantPriority = currentPriority
+    }
   } else {
     newFirst = prioritizeExpressionHelper(expression.first, applicativeOrder)
   }
@@ -191,7 +196,11 @@ function prioritizeBinaryExpressionHelper<E extends BinaryExpression>({
     }
 
     newSecond = argResult.expression
-    maxDescendantPriority = argResult.maxDescendantPriority
+    if (applicativeOrder) {
+      currentPriority = argResult.expression.priority + 1
+    } else {
+      maxDescendantPriority = argResult.maxDescendantPriority
+    }
   } else {
     newSecond = prioritizeExpressionHelper(expression.second, applicativeOrder)
   }
@@ -201,14 +210,7 @@ function prioritizeBinaryExpressionHelper<E extends BinaryExpression>({
       ...expression,
       first: newFirst,
       second: newSecond,
-      priority:
-        currentPriority +
-        (applicativeOrder &&
-        (isCall(expression.second) ||
-          isConditional(expression.second) ||
-          isBinary(expression.second))
-          ? 1
-          : 0)
+      priority: currentPriority
     },
     maxDescendantPriority
   }
@@ -260,18 +262,18 @@ function prioritizeConditionalExpressionHelper<
       })
     }
     newCondition = conditionResult.expression
-    currentPriority = conditionResult.maxDescendantPriority + 1
-    maxDescendantPriority = currentPriority
+    if (applicativeOrder) {
+      currentPriority = conditionResult.expression.priority + 1
+    } else {
+      currentPriority = conditionResult.maxDescendantPriority + 1
+      maxDescendantPriority = currentPriority
+    }
   } else {
     newCondition = prioritizeExpressionHelper(
       expression.condition,
       applicativeOrder
     )
   }
-
-  // TODO: There's probably a bug around currentPriority here -
-  // If both trueCase / falseCase go into if(){} then
-  // currentPriority will be duplicated
 
   if (
     isCall(expression.trueCase) ||
@@ -299,7 +301,11 @@ function prioritizeConditionalExpressionHelper<
       })
     }
     newTrueCase = trueCaseResult.expression
-    maxDescendantPriority = trueCaseResult.maxDescendantPriority
+    if (applicativeOrder) {
+      currentPriority = trueCaseResult.expression.priority + 1
+    } else {
+      maxDescendantPriority = trueCaseResult.maxDescendantPriority
+    }
   } else {
     newTrueCase = prioritizeExpressionHelper(
       expression.trueCase,
@@ -333,7 +339,11 @@ function prioritizeConditionalExpressionHelper<
       })
     }
     newFalseCase = falseCaseResult.expression
-    maxDescendantPriority = falseCaseResult.maxDescendantPriority
+    if (applicativeOrder) {
+      currentPriority = falseCaseResult.expression.priority + 1
+    } else {
+      maxDescendantPriority = falseCaseResult.maxDescendantPriority
+    }
   } else {
     newFalseCase = prioritizeExpressionHelper(
       expression.falseCase,
@@ -347,20 +357,7 @@ function prioritizeConditionalExpressionHelper<
       condition: newCondition,
       trueCase: newTrueCase,
       falseCase: newFalseCase,
-      priority:
-        currentPriority +
-        (applicativeOrder &&
-        (isCall(expression.falseCase) ||
-          isConditional(expression.falseCase) ||
-          isBinary(expression.falseCase))
-          ? 1
-          : 0) +
-        (applicativeOrder &&
-        (isCall(expression.trueCase) ||
-          isConditional(expression.trueCase) ||
-          isBinary(expression.trueCase))
-          ? 1
-          : 0)
+      priority: currentPriority
     },
     maxDescendantPriority
   }
