@@ -173,7 +173,7 @@ const InlineCode = ({
 }) => (
   <code
     css={css`
-      font-weight: 600;
+      font-weight: 400;
       font-family: ${codeFontFamily};
       background-color: ${highlighted ? colors('yellow200') : colors('codeBg')};
       display: inline-block;
@@ -232,7 +232,7 @@ const CodeBlock = ({
               alertSpacing,
               css`
                 background-color: ${colors('codeBg')};
-                font-weight: 600;
+                font-weight: 400;
                 font-family: ${codeFontFamily};
                 margin-top: ${caption ? 0 : spaces(1.75)};
                 margin-left: ${spaces('-0.25')};
@@ -1505,8 +1505,8 @@ a => b => a(a(a(b))))
                 pattern <InlineCode>a => b => b</InlineCode>), and
               </UlLi>
               <UlLi>
-                Run <InlineCode>convert()</InlineCode> on it. What would the
-                result be?
+                Run <InlineCode>convert()</InlineCode> (from earlier) on it.
+                What would the result be?
               </UlLi>
             </Ul>
             <P>
@@ -1528,6 +1528,29 @@ const zero = chicken => salad => salad
 // What happens when you apply f to zero,
 // and convert it?
 convert(f(zero))`}</CodeBlock>
+            <P>
+              The result is <InlineCode>1</InlineCode>, which is 1 greater than
+              the input Church numeral, which was <InlineCode>0</InlineCode>.
+              Basically, <InlineCode>0</InlineCode> became{' '}
+              <InlineCode>1</InlineCode>.
+            </P>
+            <P>
+              <Bold>Here’s the secret:</Bold>{' '}
+              <Highlight>
+                This function we used actually <Bold>adds 1</Bold> to the input
+                church numeral.
+              </Highlight>{' '}
+              When you apply this function to a Church numeral, it returns a{' '}
+              <Italic>new Church numeral</Italic> that’s 1 greater than before.
+            </P>
+            <CodeBlock>{`// If we apply this function to a
+// Church numeral, it returns a new
+// Church numeral that’s greater by 1.
+const f = sushi => sandwich => pizza =>
+  sandwich(
+    sushi(sandwich)(pizza)
+  )`}</CodeBlock>
+            <P>You can try out more examples to verify this:</P>
           </BubbleQuoteContext.Provider>
         </ExpressionRunnerConfigContext.Provider>
       </Container>
