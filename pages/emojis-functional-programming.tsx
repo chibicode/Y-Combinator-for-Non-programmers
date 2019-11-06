@@ -522,7 +522,7 @@ export default () => {
               <Italic>
                 people who have zero programming knowledge can understand
               </Italic>
-              —without sacrificing rigor.
+              .
             </P>
             <P>
               I didn’t use any code to explain these concepts. Instead, I
@@ -559,8 +559,8 @@ export default () => {
               </UlLi>
               <UlLi>
                 <Bold>After that,</Bold> I’ll talk about how to use my emoji
-                puzzle to teach lambda calculus, Church encoding, and Y
-                Combinator.
+                puzzle to teach functional programming concepts such as lambda
+                calculus, Church encoding, and Y Combinator.
               </UlLi>
               <UlLi>
                 To help you track how far along you are in the article, I’ll
