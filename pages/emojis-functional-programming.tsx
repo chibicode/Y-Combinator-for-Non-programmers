@@ -74,7 +74,19 @@ const tweetUrl = `https://twitter.com/intent/tweet?url=${encodeURIComponent(
 
 const Alert = (props: AlertProps) => (
   <BubbleQuoteContext.Provider value={{ inQuote: false }}>
-    <BaseAlert {...props} />
+    <div
+      css={css`
+        margin-left: ${spaces('-0.25')};
+        margin-right: ${spaces('-0.25')};
+
+        ${ns} {
+          margin-left: 0;
+          margin-right: 0;
+        }
+      `}
+    >
+      <BaseAlert {...props} />
+    </div>
   </BubbleQuoteContext.Provider>
 )
 
@@ -192,7 +204,13 @@ const CodeBlock = ({
   const [resultVisible, setResultVisible] = useState(defaultResultVisible)
   const buttonOnClick = () => setResultVisible(true)
   return (
-    <>
+    <div
+      css={css`
+        margin-left: auto;
+        margin-right: auto;
+        max-width: ${maxWidths('xs')};
+      `}
+    >
       {caption && (
         <ExpressionRunnerCaptionWrapper
           css={css`
@@ -216,10 +234,17 @@ const CodeBlock = ({
                 background-color: ${colors('codeBg')};
                 font-weight: 600;
                 font-family: ${codeFontFamily};
-                margin: ${caption ? 0 : spaces(1.75)} auto
-                  ${result ? 0 : spaces(1.75)};
-                font-size: ${fontSizes(0.85)};
-                max-width: ${maxWidths('xs')};
+                margin-top: ${caption ? 0 : spaces(1.75)};
+                margin-left: ${spaces('-0.25')};
+                margin-right: ${spaces('-0.25')};
+                margin-bottom: ${result ? 0 : spaces(1.75)};
+                font-size: ${fontSizes(0.8)};
+
+                ${ns} {
+                  margin-left: 0;
+                  margin-right: 0;
+                  font-size: ${fontSizes(0.85)};
+                }
               `,
               result
                 ? css`
@@ -270,8 +295,12 @@ const CodeBlock = ({
             css={css`
               max-width: ${maxWidths('xs')};
               margin-bottom: ${spaces(1.75)};
-              margin-left: auto;
-              margin-right: auto;
+              margin-left: ${spaces('-0.25')};
+              margin-right: ${spaces('-0.25')};
+              ${ns} {
+                margin-left: 0;
+                margin-right: 0;
+              }
             `}
           >
             {resultVisible ? (
@@ -373,7 +402,7 @@ const CodeBlock = ({
                             margin-left: 0;
                           }
                           50% {
-                            margin-left: -0.5em;
+                            margin-left: -0.25em;
                           }
                           100% {
                             margin-left: 0;
@@ -390,7 +419,7 @@ const CodeBlock = ({
           </div>
         </>
       )}
-    </>
+    </div>
   )
 }
 
@@ -559,7 +588,7 @@ export default () => {
               <UlLi>
                 To help you track how far along you are in the article, I’ll
                 show a “<Bold>step</Bold>” number above each subheading. There
-                are a total of <Bold>{numSteps}</Bold> steps in this article.
+                are a total of <Bold>{numSteps}</Bold> steps.
               </UlLi>
               <UlLi>
                 <Bold>If you decide to read later:</Bold> I’d appreciate it if
@@ -1287,7 +1316,7 @@ sushi => 'pizza'`}</CodeBlock>
               the result be?{' '}
               <Highlight>
                 Try to guess before pressing the <H args={{ name: 'run' }} />{' '}
-                button!
+                button.
               </Highlight>
             </P>
             <CodeBlock
@@ -1454,9 +1483,51 @@ a => b => a(a(a(b))))
               Now that we’ve covered the basics of Church numerals, we’ll talk
               next about why Church numerals are interesting.
             </P>
-            <Subheading step={step++} coveredIn={7}>
+            <Subheading step={step++} coveredIn={8}>
               You can do maths with functions
             </Subheading>
+            <P>
+              Church numerals are interesting because{' '}
+              <Italic>they let you do maths with functions.</Italic> First, take
+              a look at this function:
+            </P>
+            <CodeBlock>{`sushi => sandwich => pizza =>
+  sandwich(
+    sushi(sandwich)(pizza)
+  )`}</CodeBlock>
+            <P>
+              It looks pretty complicated, but don’t worry too much. Now,
+              suppose that:
+            </P>
+            <Ul>
+              <UlLi>
+                We apply the above function to the Church numeral zero ( has the
+                pattern <InlineCode>a => b => b</InlineCode>), and
+              </UlLi>
+              <UlLi>
+                Run <InlineCode>convert()</InlineCode> on it. What would the
+                result be?
+              </UlLi>
+            </Ul>
+            <P>
+              Let’s take a look.{' '}
+              <Highlight>
+                Try to guess before pressing the <H args={{ name: 'run' }} />{' '}
+                button!
+              </Highlight>
+            </P>
+            <CodeBlock result="1">{`// Function from the above
+const f = sushi => sandwich => pizza =>
+  sandwich(
+    sushi(sandwich)(pizza)
+  )
+
+// Church numeral zero
+const zero = chicken => salad => salad
+
+// What happens when you apply f to zero,
+// and convert it?
+convert(f(zero))`}</CodeBlock>
           </BubbleQuoteContext.Provider>
         </ExpressionRunnerConfigContext.Provider>
       </Container>
