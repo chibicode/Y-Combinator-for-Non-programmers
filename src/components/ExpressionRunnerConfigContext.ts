@@ -2,6 +2,7 @@ import React from 'react'
 
 export interface ExpressionRunnerConfigContextProps {
   pointToRunButton?: true
+  churchNumerals?: true
 }
 
 export const ExpressionRunnerConfigContextDefault: ExpressionRunnerConfigContextProps = {}

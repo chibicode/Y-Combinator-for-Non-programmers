@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Bold } from 'src/components/ContentTags'
 import EmojiNumber from 'src/components/EmojiNumber'
 import Emoji from 'src/components/Emoji'
@@ -13,6 +13,7 @@ import H from 'src/components/H'
 import InlinePrioritiesLabel from 'src/components/InlinePrioritiesLabel'
 import InlineBorder from 'src/components/InlineBorder'
 import { ExpressionRunnerPrecomputedProps } from 'src/components/ExpressionRunnerPrecomputed'
+import ExpressionRunnerConfigContext from 'src/components/ExpressionRunnerConfigContext'
 
 interface ExpressionRunnerExplanationProps {
   expressionContainer: SteppedExpressionContainer
@@ -358,30 +359,43 @@ const ExpressionRunnerExplanation = ({
   showAllShowSteps,
   hideFuncUnboundBadge,
   convert
-}: ExpressionRunnerExplanationProps) => (
-  <>
-    {
-      <>
-        {isDone ? (
-          convert ? (
-            <H args={{ name: 'doneConvertToMathbox' }} highlightType="none" />
+}: ExpressionRunnerExplanationProps) => {
+  const { churchNumerals } = useContext(ExpressionRunnerConfigContext)
+  return (
+    <>
+      {
+        <>
+          {isDone ? (
+            convert ? (
+              churchNumerals ? (
+                <H
+                  args={{ name: 'doneConvertToChurchNumeral' }}
+                  highlightType="none"
+                />
+              ) : (
+                <H
+                  args={{ name: 'doneConvertToMathbox' }}
+                  highlightType="none"
+                />
+              )
+            ) : (
+              <H args={{ name: 'done' }} highlightType="none" />
+            )
           ) : (
-            <H args={{ name: 'done' }} highlightType="none" />
-          )
-        ) : (
-          !isRunning && (
-            <Explanation
-              state={expressionContainer.previouslyChangedExpressionState}
-              matchExists={expressionContainer.matchExists}
-              activePriority={expressionContainer.activePriority}
-              showAllShowSteps={showAllShowSteps}
-              hideFuncUnboundBadge={hideFuncUnboundBadge}
-            />
-          )
-        )}
-      </>
-    }
-  </>
-)
+            !isRunning && (
+              <Explanation
+                state={expressionContainer.previouslyChangedExpressionState}
+                matchExists={expressionContainer.matchExists}
+                activePriority={expressionContainer.activePriority}
+                showAllShowSteps={showAllShowSteps}
+                hideFuncUnboundBadge={hideFuncUnboundBadge}
+              />
+            )
+          )}
+        </>
+      }
+    </>
+  )
+}
 
 export default ExpressionRunnerExplanation

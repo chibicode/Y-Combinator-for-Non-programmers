@@ -140,6 +140,10 @@ interface HProps {
     | { name: 'undoConvertToMathbox' }
     | { name: 'doneConvertToMathbox' }
     | { name: 'canBeConverted' }
+    | { name: 'convertToChurchNumeral'; lowerCase?: true }
+    | { name: 'undoConvertToChurchNumeral' }
+    | { name: 'doneConvertToChurchNumeral' }
+    | { name: 'canBeConverted' }
     | { name: 'plusOneFeature'; capitalize?: true }
     | { name: 'minusOneFeature'; capitalize?: true; addNewline?: true }
     | { name: 'repeatFeature'; capitalize?: true; addNewline?: true }
@@ -1412,6 +1416,42 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
           </HighlightBold>
         </>
       )
+    }
+  }
+  if (args.name === 'convertToChurchNumeral') {
+    if (locale === 'en') {
+      return (
+        <>
+          <Bold>{args.lowerCase ? 'c' : 'C'}onvert to a Number</Bold>{' '}
+          <Emoji>🔢</Emoji>
+        </>
+      )
+    } else {
+      return <></>
+    }
+  }
+  if (args.name === 'undoConvertToChurchNumeral') {
+    if (locale === 'en') {
+      return (
+        <Bold>
+          Undo <Emoji>↩</Emoji>
+        </Bold>
+      )
+    } else {
+      return <></>
+    }
+  }
+  if (args.name === 'doneConvertToChurchNumeral') {
+    if (locale === 'en') {
+      return (
+        <>
+          <HighlightBold highlightType={highlightType}>
+            Converted to a number!
+          </HighlightBold>
+        </>
+      )
+    } else {
+      return <></>
     }
   }
   if (args.name === 'canBeConverted') {
