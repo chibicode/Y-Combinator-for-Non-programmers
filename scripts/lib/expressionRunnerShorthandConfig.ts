@@ -120,6 +120,7 @@ interface ExpressionRunnerPredefinedConfig {
   hideFuncUnboundBadgeOnExplanation?: boolean
   showPriorities?: boolean
   nextIterations?: number
+  applicativeOrder?: boolean
   explanationsVisibility?: ExpressionRunnerProps['explanationsVisibility']
   showAllShowSteps?: ExpressionRunnerProps['showAllShowSteps']
   skipToTheEnd?: boolean

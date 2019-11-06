@@ -760,6 +760,17 @@ export const epoi: ExpressionRunnerShorthandConfig = {
   convert: 'toMathBox'
 }
 
+export const fgen: ExpressionRunnerShorthandConfig = {
+  runner: 'predefined',
+  initialExpressionContainers: [
+    initialExpressionContainers.nskn,
+    initialExpressionContainers.hdpc
+  ],
+  showPriorities: true,
+  convert: 'toMathBox',
+  applicativeOrder: true
+}
+
 export const nlyu: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   showPriorities: true,
@@ -865,6 +876,17 @@ export const vlob: ExpressionRunnerShorthandConfig = {
   ],
   showPriorities: true,
   convert: 'toMathBox'
+}
+
+export const pebp: ExpressionRunnerShorthandConfig = {
+  runner: 'predefined',
+  initialExpressionContainers: [
+    initialExpressionContainers.tgxv,
+    initialExpressionContainers.qjcv
+  ],
+  showPriorities: true,
+  convert: 'toMathBox',
+  applicativeOrder: true
 }
 
 export const dubm: ExpressionRunnerShorthandConfig = {

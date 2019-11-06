@@ -241,6 +241,7 @@ const buildExpressionRunnerConfigFromShorthand = (
       showPriorities,
       explanationsVisibility,
       showAllShowSteps,
+      applicativeOrder,
       nextIterations,
       skipToTheEnd,
       convert
@@ -254,6 +255,7 @@ const buildExpressionRunnerConfigFromShorthand = (
       hidePriorities: !showPriorities,
       hideFuncUnboundBadgeOnExplanation,
       hideRunButton: false,
+      applicativeOrder,
       explanationsVisibility,
       lastAllowedExpressionStateAfterIterations: nextIterations,
       showAllShowSteps,

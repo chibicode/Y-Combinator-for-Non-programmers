@@ -1459,16 +1459,19 @@ a => b => a(a(a(b))))
               <br />
               (Church numeral <Bold>1</Bold>)
             </R.Mifg>
-            <R.Epoi>
+            <R.Fgen>
               Church numeral <Bold>2</Bold>
-            </R.Epoi>
-            <R.Vlob>
+            </R.Fgen>
+            <R.Pebp>
               Church numeral <Bold>3</Bold>
-            </R.Vlob>
+            </R.Pebp>
             <P>
               Now that we’ve covered the basics of Church numerals, we’ll talk
               next about why Church numerals are interesting.
             </P>
+            <Subheading step={step++} coveredIn={7}>
+              You can do maths with functions
+            </Subheading>
           </BubbleQuoteContext.Provider>
         </ExpressionRunnerConfigContext.Provider>
       </Container>
