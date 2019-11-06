@@ -14,8 +14,8 @@
             "bottomRightBadgeType": "none",
             "type": "variable",
             "argPriorityAgg": [
-              2,
-              1
+              1,
+              2
             ],
             "funcPriorityAgg": [],
             "emphasizePriority": false,

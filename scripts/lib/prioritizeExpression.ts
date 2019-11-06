@@ -420,13 +420,17 @@ function populatePriorityAggs<E extends Expression>({
       ...expression,
       arg: populatePriorityAggs<typeof expression.arg>({
         expression: expression.arg,
-        argPriorityAgg: [...argPriorityAgg, expression.priority],
+        argPriorityAgg: [...argPriorityAgg, expression.priority].sort(
+          (a, b) => a - b
+        ),
         funcPriorityAgg: [] as number[]
       }),
       func: populatePriorityAggs<typeof expression.func>({
         expression: expression.func,
         argPriorityAgg: [] as number[],
-        funcPriorityAgg: [expression.priority, ...funcPriorityAgg]
+        funcPriorityAgg: [expression.priority, ...funcPriorityAgg].sort(
+          (a, b) => a - b
+        )
       })
     }
   } else if (isFunction(expression)) {
@@ -450,7 +454,9 @@ function populatePriorityAggs<E extends Expression>({
       ...expression,
       falseCase: populatePriorityAggs<typeof expression.falseCase>({
         expression: expression.falseCase,
-        argPriorityAgg: [...argPriorityAgg, expression.priority],
+        argPriorityAgg: [...argPriorityAgg, expression.priority].sort(
+          (a, b) => a - b
+        ),
         funcPriorityAgg: [] as number[]
       }),
       condition: populatePriorityAggs<typeof expression.trueCase>({
@@ -461,7 +467,9 @@ function populatePriorityAggs<E extends Expression>({
       trueCase: populatePriorityAggs<typeof expression.trueCase>({
         expression: expression.trueCase,
         argPriorityAgg: [] as number[],
-        funcPriorityAgg: [expression.priority, ...funcPriorityAgg]
+        funcPriorityAgg: [expression.priority, ...funcPriorityAgg].sort(
+          (a, b) => a - b
+        )
       })
     }
   } else if (isRepeat(expression)) {
@@ -478,13 +486,17 @@ function populatePriorityAggs<E extends Expression>({
       ...expression,
       first: populatePriorityAggs<typeof expression.first>({
         expression: expression.first,
-        argPriorityAgg: [...argPriorityAgg, expression.priority],
+        argPriorityAgg: [...argPriorityAgg, expression.priority].sort(
+          (a, b) => a - b
+        ),
         funcPriorityAgg: [] as number[]
       }),
       second: populatePriorityAggs<typeof expression.second>({
         expression: expression.second,
         argPriorityAgg: [] as number[],
-        funcPriorityAgg: [expression.priority, ...funcPriorityAgg]
+        funcPriorityAgg: [expression.priority, ...funcPriorityAgg].sort(
+          (a, b) => a - b
+        )
       })
     }
   } else {
