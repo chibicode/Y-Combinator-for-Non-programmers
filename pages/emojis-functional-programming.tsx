@@ -427,6 +427,14 @@ const DimUnhighlighted = ({ children }: { children: React.ReactNode }) => (
   </VariableShadeContext.Provider>
 )
 
+const guessTheResult = (
+  <>
+    Guess what the result would be
+    <br />
+    before pressing the <H args={{ name: 'run' }} /> button!
+  </>
+)
+
 export default () => {
   let step = 1
   return locale === 'en' ? (
@@ -1185,13 +1193,7 @@ sushi => 'pizza'`}</CodeBlock>
             </P>
             <CodeBlock
               result={`'salad'`}
-              caption={
-                <>
-                  Guess what the result would be
-                  <br />
-                  before pressing the <H args={{ name: 'run' }} /> button!
-                </>
-              }
+              caption={guessTheResult}
             >{`(friedPotatoes => pizza => pizza)(
   spaghetti => spaghetti
 )('salad')`}</CodeBlock>
@@ -1227,13 +1229,7 @@ sushi => 'pizza'`}</CodeBlock>
             </P>
             <CodeBlock
               result={`pizza => pizza`}
-              caption={
-                <>
-                  Guess what the result would be
-                  <br />
-                  before pressing the <H args={{ name: 'run' }} /> button!
-                </>
-              }
+              caption={guessTheResult}
             >{`(friedPotatoes => pizza => pizza)(
   (spaghetti => spaghetti)("salad")
 )`}</CodeBlock>
@@ -1293,10 +1289,84 @@ sushi => 'pizza'`}</CodeBlock>
             to it.
           </P>
           <CodeBlock
-            caption={<>A higher-order function</>}
+            caption={
+              <>
+                A higher-order function:
+                <br />
+                Takes a function as an argument
+              </>
+            }
           >{`function convert(f) {
   return f(n => n + 1)(0)
 }`}</CodeBlock>
+          <P>
+            Now, suppose that we apply <InlineCode>convert</InlineCode> on this
+            function: <InlineCode>sushi => sandwich => sandwich</InlineCode>.
+            What would the result be?{' '}
+            <Highlight>
+              Try to guess before pressing the <H args={{ name: 'run' }} />{' '}
+              button!
+            </Highlight>
+          </P>
+          <CodeBlock result="0" caption={guessTheResult}>{`function convert(f) {
+  return f(n => n + 1)(0)
+}
+
+convert(sushi => sandwich =>
+  sandwich
+)`}</CodeBlock>
+          <P>
+            The result is <InlineCode>0</InlineCode> because:
+          </P>
+          <Ul>
+            <UlLi>
+              <InlineCode>sushi</InlineCode> is bound to{' '}
+              <InlineCode>n => n + 1</InlineCode>
+            </UlLi>
+            <UlLi>
+              <InlineCode>sandwich</InlineCode> is bound to{' '}
+              <InlineCode>0</InlineCode>
+            </UlLi>
+            <UlLi>
+              And it returns <InlineCode>sandwich</InlineCode>, which is{' '}
+              <InlineCode>0</InlineCode>.
+            </UlLi>
+          </Ul>
+          <P>
+            <Bold>Now, what if the input changes as follows?</Bold>{' '}
+            <Highlight>
+              Try pressing <H args={{ name: 'run' }} /> on each example.
+            </Highlight>
+          </P>
+          <CodeBlock result="1">{`convert(sushi => sandwich =>
+  sushi(sandwich)
+)`}</CodeBlock>
+          <CodeBlock result="2">{`convert(sushi => sandwich =>
+  sushi(sushi(sandwich))
+)`}</CodeBlock>
+          <CodeBlock result="3">{`convert(sushi => sandwich =>
+  sushi(sushi(sushi(sandwich)))
+)`}</CodeBlock>
+          <P>
+            The results are <InlineCode>1</InlineCode>,{' '}
+            <InlineCode>2</InlineCode>, and <InlineCode>3</InlineCode>{' '}
+            respectively because:
+          </P>
+          <Ul>
+            <UlLi>
+              <InlineCode>sushi</InlineCode> is bound to{' '}
+              <InlineCode>n => n + 1</InlineCode>
+            </UlLi>
+            <UlLi>
+              <InlineCode>sandwich</InlineCode> is bound to{' '}
+              <InlineCode>0</InlineCode>
+            </UlLi>
+            <UlLi>
+              So it applies <InlineCode>n => n + 1</InlineCode> to{' '}
+              <InlineCode>0</InlineCode> for the number of times{' '}
+              <InlineCode>sushi</InlineCode> is used in the function body.
+            </UlLi>
+          </Ul>
         </BubbleQuoteContext.Provider>
       </Container>
       <EpisodePageFooter />
