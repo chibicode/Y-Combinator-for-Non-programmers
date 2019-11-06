@@ -461,21 +461,15 @@ export default () => {
         <meta property="article:published_time" content={dateSchemaString} />
       </Head>
       <Container
-        size="smsm"
-        horizontalPadding={0.5}
-        cssOverrides={css`
-          padding-top: ${spaces(1.5)};
-        `}
-      >
-        <EpisodeHero mainTitle={title} threeLineTitle />
-      </Container>
-      <Container
+        Component="article"
         size="smsm"
         horizontalPadding={0.75}
         cssOverrides={css`
+          padding-top: ${spaces(1.5)};
           padding-bottom: ${spaces(6)};
         `}
       >
+        <EpisodeHero mainTitle={title} threeLineTitle />
         <h2
           css={css`
             text-align: center;
