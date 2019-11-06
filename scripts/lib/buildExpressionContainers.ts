@@ -1,6 +1,7 @@
 import { ExpressionRunnerConfig } from 'scripts/lib/buildExpressionRunnerConfigFromShorthand'
 import { isContainerWithState } from 'src/lib/expressionContainerGuards'
 import stepExpressionContainer from 'scripts/lib/stepExpressionContainer'
+import prioritizeExpressionContainer from 'scripts/lib/prioritizeExpressionContainer'
 import {
   ExpressionContainer,
   SteppedExpressionContainer
@@ -18,15 +19,25 @@ const buildExpressionContainers = ({
   hideControls,
   lastAllowedExpressionState,
   lastAllowedExpressionStateAfterIterations,
+  applicativeOrder,
   hideRunButton
 }: ExpressionRunnerConfig): readonly ExpressionContainer[] => {
   if (initialExpressionContainer) {
     let currentExpressionContainer: SteppedExpressionContainer = initialExpressionContainer
+
+    if (applicativeOrder) {
+      currentExpressionContainer = prioritizeExpressionContainer(
+        initialExpressionContainer,
+        applicativeOrder
+      )
+    }
+
     const results: ExpressionContainer[] = []
     const stepOptions = {
       showAllShowSteps,
       skipAlphaConvert,
-      skipActive
+      skipActive,
+      applicativeOrder
     }
 
     initializeInstructions.forEach(initializeInstruction => {
@@ -128,7 +139,9 @@ const buildExpressionContainers = ({
       return results
     }
   } else if (initialExpressionContainers) {
-    return initialExpressionContainers
+    return initialExpressionContainers.map(x =>
+      applicativeOrder ? prioritizeExpressionContainer(x, applicativeOrder) : x
+    )
   } else {
     throw new Error()
   }

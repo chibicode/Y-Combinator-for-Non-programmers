@@ -47,20 +47,24 @@ import {
 } from 'src/types/ExpressionTypes'
 import prioritizeExpression from 'scripts/lib/prioritizeExpression'
 
-interface StepOptions {
+export interface StepOptions {
   showAllShowSteps?: boolean
   skipAlphaConvert?: boolean
   skipActive?: boolean
+  applicativeOrder?: boolean
 }
 
 const stepExpressionContainerReset = (
-  e: ContainerWithState<'needsReset'>
+  e: ContainerWithState<'needsReset'>,
+  stepOptions: StepOptions
 ): ContainerWithState<'done'> | ContainerWithState<'ready'> => {
   const newContainer = prioritizeExpressionContainer(
-    resetExpressionContainer(e)
+    resetExpressionContainer(e),
+    stepOptions.applicativeOrder
   )
   const nextCallExpressionAndParent = findNextExecutableAndParent(
-    newContainer.expression
+    newContainer.expression,
+    stepOptions
   )
   if (nextCallExpressionAndParent.expression) {
     return newContainer
@@ -312,7 +316,7 @@ const runStep = (
     callParentKey,
     binaryParentKey,
     binaryParent
-  } = findNextExecutableAndParent(e.expression)
+  } = findNextExecutableAndParent(e.expression, stepOptions)
   if (!expression) {
     // Special case - already done to begin with
     return {
@@ -344,7 +348,7 @@ const runStep = (
     const newContainer = {
       expression:
         previouslyChangedExpressionState === 'betaReducePreviewAfter'
-          ? prioritizeExpression(nextExpression)
+          ? prioritizeExpression(nextExpression, stepOptions.applicativeOrder)
           : nextExpression,
       previouslyChangedExpressionState,
       matchExists,
@@ -413,7 +417,7 @@ const runStep = (
       ...e,
       expression:
         previouslyChangedExpressionState === 'betaReducePreviewAfter'
-          ? prioritizeExpression(newExpression)
+          ? prioritizeExpression(newExpression, stepOptions.applicativeOrder)
           : newExpression,
       containerState: 'stepped',
       matchExists,
@@ -434,7 +438,7 @@ export default function stepExpressionContainer(
   const result = runStep(e, stepOptions)
 
   if (isContainerWithState(result, 'needsReset')) {
-    return stepExpressionContainerReset(result)
+    return stepExpressionContainerReset(result, stepOptions)
   } else {
     return result
   }

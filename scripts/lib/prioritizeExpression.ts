@@ -16,10 +16,12 @@ import populateMaxNestedFunctionDepths from 'scripts/lib/populateMaxNestedFuncti
 
 function prioritizeCallExpressionHelper<E extends CallExpression>({
   expression,
-  priority
+  priority,
+  applicativeOrder
 }: {
   expression: E
   priority: number
+  applicativeOrder?: boolean
 }): {
   expression: E
   maxDescendantPriority: number
@@ -38,17 +40,20 @@ function prioritizeCallExpressionHelper<E extends CallExpression>({
     if (isCall(expression.func)) {
       funcResult = prioritizeCallExpressionHelper({
         expression: expression.func,
-        priority
+        priority,
+        applicativeOrder
       })
     } else if (isConditional(expression.func)) {
       funcResult = prioritizeConditionalExpressionHelper({
         expression: expression.func,
-        priority
+        priority,
+        applicativeOrder
       })
     } else {
       funcResult = prioritizeBinaryExpressionHelper({
         expression: expression.func,
-        priority
+        priority,
+        applicativeOrder
       })
     }
 
@@ -56,7 +61,7 @@ function prioritizeCallExpressionHelper<E extends CallExpression>({
     currentPriority = funcResult.maxDescendantPriority + 1
     maxDescendantPriority = currentPriority
   } else {
-    newFunc = prioritizeExpressionHelper(expression.func)
+    newFunc = prioritizeExpressionHelper(expression.func, applicativeOrder)
   }
 
   if (
@@ -68,24 +73,27 @@ function prioritizeCallExpressionHelper<E extends CallExpression>({
     if (isCall(expression.arg)) {
       argResult = prioritizeCallExpressionHelper({
         expression: expression.arg,
-        priority: currentPriority + 1
+        priority: currentPriority + (applicativeOrder ? 0 : 1),
+        applicativeOrder
       })
     } else if (isConditional(expression.arg)) {
       argResult = prioritizeConditionalExpressionHelper({
         expression: expression.arg,
-        priority: currentPriority + 1
+        priority: currentPriority + (applicativeOrder ? 0 : 1),
+        applicativeOrder
       })
     } else {
       argResult = prioritizeBinaryExpressionHelper({
         expression: expression.arg,
-        priority: currentPriority + 1
+        priority: currentPriority + (applicativeOrder ? 0 : 1),
+        applicativeOrder
       })
     }
 
     newArg = argResult.expression
     maxDescendantPriority = argResult.maxDescendantPriority
   } else {
-    newArg = prioritizeExpressionHelper(expression.arg)
+    newArg = prioritizeExpressionHelper(expression.arg, applicativeOrder)
   }
 
   return {
@@ -93,7 +101,14 @@ function prioritizeCallExpressionHelper<E extends CallExpression>({
       ...expression,
       func: newFunc,
       arg: newArg,
-      priority: currentPriority
+      priority:
+        currentPriority +
+        (applicativeOrder &&
+        (isCall(expression.arg) ||
+          isConditional(expression.arg) ||
+          isBinary(expression.arg))
+          ? 1
+          : 0)
     },
     maxDescendantPriority
   }
@@ -101,10 +116,12 @@ function prioritizeCallExpressionHelper<E extends CallExpression>({
 
 function prioritizeBinaryExpressionHelper<E extends BinaryExpression>({
   expression,
-  priority
+  priority,
+  applicativeOrder
 }: {
   expression: E
   priority: number
+  applicativeOrder?: boolean
 }): {
   expression: E
   maxDescendantPriority: number
@@ -123,17 +140,20 @@ function prioritizeBinaryExpressionHelper<E extends BinaryExpression>({
     if (isCall(expression.first)) {
       funcResult = prioritizeCallExpressionHelper({
         expression: expression.first,
-        priority
+        priority,
+        applicativeOrder
       })
     } else if (isConditional(expression.first)) {
       funcResult = prioritizeConditionalExpressionHelper({
         expression: expression.first,
-        priority
+        priority,
+        applicativeOrder
       })
     } else {
       funcResult = prioritizeBinaryExpressionHelper({
         expression: expression.first,
-        priority
+        priority,
+        applicativeOrder
       })
     }
 
@@ -141,7 +161,7 @@ function prioritizeBinaryExpressionHelper<E extends BinaryExpression>({
     currentPriority = funcResult.maxDescendantPriority + 1
     maxDescendantPriority = currentPriority
   } else {
-    newFirst = prioritizeExpressionHelper(expression.first)
+    newFirst = prioritizeExpressionHelper(expression.first, applicativeOrder)
   }
 
   if (
@@ -153,24 +173,27 @@ function prioritizeBinaryExpressionHelper<E extends BinaryExpression>({
     if (isCall(expression.second)) {
       argResult = prioritizeCallExpressionHelper({
         expression: expression.second,
-        priority: currentPriority + 1
+        priority: currentPriority + (applicativeOrder ? 0 : 1),
+        applicativeOrder
       })
     } else if (isConditional(expression.second)) {
       argResult = prioritizeConditionalExpressionHelper({
         expression: expression.second,
-        priority: currentPriority + 1
+        priority: currentPriority + (applicativeOrder ? 0 : 1),
+        applicativeOrder
       })
     } else {
       argResult = prioritizeBinaryExpressionHelper({
         expression: expression.second,
-        priority: currentPriority + 1
+        priority: currentPriority + (applicativeOrder ? 0 : 1),
+        applicativeOrder
       })
     }
 
     newSecond = argResult.expression
     maxDescendantPriority = argResult.maxDescendantPriority
   } else {
-    newSecond = prioritizeExpressionHelper(expression.second)
+    newSecond = prioritizeExpressionHelper(expression.second, applicativeOrder)
   }
 
   return {
@@ -178,7 +201,14 @@ function prioritizeBinaryExpressionHelper<E extends BinaryExpression>({
       ...expression,
       first: newFirst,
       second: newSecond,
-      priority: currentPriority
+      priority:
+        currentPriority +
+        (applicativeOrder &&
+        (isCall(expression.second) ||
+          isConditional(expression.second) ||
+          isBinary(expression.second))
+          ? 1
+          : 0)
     },
     maxDescendantPriority
   }
@@ -188,10 +218,12 @@ function prioritizeConditionalExpressionHelper<
   E extends ConditionalExpression
 >({
   expression,
-  priority
+  priority,
+  applicativeOrder
 }: {
   expression: E
   priority: number
+  applicativeOrder?: boolean
 }): {
   expression: E
   maxDescendantPriority: number
@@ -211,24 +243,30 @@ function prioritizeConditionalExpressionHelper<
     if (isCall(expression.condition)) {
       conditionResult = prioritizeCallExpressionHelper({
         expression: expression.condition,
-        priority
+        priority,
+        applicativeOrder
       })
     } else if (isConditional(expression.condition)) {
       conditionResult = prioritizeConditionalExpressionHelper({
         expression: expression.condition,
-        priority
+        priority,
+        applicativeOrder
       })
     } else {
       conditionResult = prioritizeBinaryExpressionHelper({
         expression: expression.condition,
-        priority
+        priority,
+        applicativeOrder
       })
     }
     newCondition = conditionResult.expression
     currentPriority = conditionResult.maxDescendantPriority + 1
     maxDescendantPriority = currentPriority
   } else {
-    newCondition = prioritizeExpressionHelper(expression.condition)
+    newCondition = prioritizeExpressionHelper(
+      expression.condition,
+      applicativeOrder
+    )
   }
 
   if (
@@ -240,23 +278,29 @@ function prioritizeConditionalExpressionHelper<
     if (isCall(expression.trueCase)) {
       trueCaseResult = prioritizeCallExpressionHelper({
         expression: expression.trueCase,
-        priority: currentPriority + 1
+        priority: currentPriority + (applicativeOrder ? 0 : 1),
+        applicativeOrder
       })
     } else if (isConditional(expression.trueCase)) {
       trueCaseResult = prioritizeConditionalExpressionHelper({
         expression: expression.trueCase,
-        priority: currentPriority + 1
+        priority: currentPriority + (applicativeOrder ? 0 : 1),
+        applicativeOrder
       })
     } else {
       trueCaseResult = prioritizeBinaryExpressionHelper({
         expression: expression.trueCase,
-        priority: currentPriority + 1
+        priority: currentPriority + (applicativeOrder ? 0 : 1),
+        applicativeOrder
       })
     }
     newTrueCase = trueCaseResult.expression
     maxDescendantPriority = trueCaseResult.maxDescendantPriority
   } else {
-    newTrueCase = prioritizeExpressionHelper(expression.trueCase)
+    newTrueCase = prioritizeExpressionHelper(
+      expression.trueCase,
+      applicativeOrder
+    )
   }
 
   if (
@@ -268,23 +312,29 @@ function prioritizeConditionalExpressionHelper<
     if (isCall(expression.falseCase)) {
       falseCaseResult = prioritizeCallExpressionHelper({
         expression: expression.falseCase,
-        priority: currentPriority + 1
+        priority: currentPriority + (applicativeOrder ? 0 : 1),
+        applicativeOrder
       })
     } else if (isConditional(expression.falseCase)) {
       falseCaseResult = prioritizeConditionalExpressionHelper({
         expression: expression.falseCase,
-        priority: currentPriority + 1
+        priority: currentPriority + (applicativeOrder ? 0 : 1),
+        applicativeOrder
       })
     } else {
       falseCaseResult = prioritizeBinaryExpressionHelper({
         expression: expression.falseCase,
-        priority: currentPriority + 1
+        priority: currentPriority + (applicativeOrder ? 0 : 1),
+        applicativeOrder
       })
     }
     newFalseCase = falseCaseResult.expression
     maxDescendantPriority = falseCaseResult.maxDescendantPriority
   } else {
-    newFalseCase = prioritizeExpressionHelper(expression.falseCase)
+    newFalseCase = prioritizeExpressionHelper(
+      expression.falseCase,
+      applicativeOrder
+    )
   }
 
   return {
@@ -293,14 +343,28 @@ function prioritizeConditionalExpressionHelper<
       condition: newCondition,
       trueCase: newTrueCase,
       falseCase: newFalseCase,
-      priority: currentPriority
+      priority:
+        currentPriority +
+        (applicativeOrder &&
+        (isCall(expression.falseCase) ||
+          isConditional(expression.falseCase) ||
+          isBinary(expression.falseCase))
+          ? 1
+          : 0) +
+        (applicativeOrder &&
+        (isCall(expression.trueCase) ||
+          isConditional(expression.trueCase) ||
+          isBinary(expression.trueCase))
+          ? 1
+          : 0)
     },
     maxDescendantPriority
   }
 }
 
 function prioritizeExpressionHelper<E extends Expression = Expression>(
-  expression: E
+  expression: E,
+  applicativeOrder?: boolean
 ): E {
   if (isVariable(expression)) {
     return {
@@ -311,28 +375,31 @@ function prioritizeExpressionHelper<E extends Expression = Expression>(
   } else if (isCall(expression)) {
     return prioritizeCallExpressionHelper({
       priority: 1,
-      expression
+      expression,
+      applicativeOrder
     }).expression
   } else if (isFunction(expression)) {
     return {
       ...expression,
-      arg: prioritizeExpressionHelper(expression.arg),
-      body: prioritizeExpressionHelper(expression.body)
+      arg: prioritizeExpressionHelper(expression.arg, applicativeOrder),
+      body: prioritizeExpressionHelper(expression.body, applicativeOrder)
     }
   } else if (isConditional(expression)) {
     return prioritizeConditionalExpressionHelper({
       priority: 1,
-      expression
+      expression,
+      applicativeOrder
     }).expression
   } else if (isRepeat(expression)) {
     return {
       ...expression,
-      child: prioritizeExpressionHelper(expression.child)
+      child: prioritizeExpressionHelper(expression.child, applicativeOrder)
     }
   } else if (isBinary(expression)) {
     return prioritizeBinaryExpressionHelper({
       priority: 1,
-      expression
+      expression,
+      applicativeOrder
     }).expression
   } else {
     throw new Error()
@@ -426,11 +493,12 @@ function populatePriorityAggs<E extends Expression>({
 }
 
 export default function prioritizeExpression<E extends Expression = Expression>(
-  expression: E
+  expression: E,
+  applicativeOrder?: boolean
 ): E {
   return populatePriorityAggs({
     expression: populateMaxNestedFunctionDepths(
-      prioritizeExpressionHelper(expression)
+      prioritizeExpressionHelper(expression, applicativeOrder)
     ),
     argPriorityAgg: [] as number[],
     funcPriorityAgg: [] as number[]

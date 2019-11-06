@@ -459,7 +459,8 @@ export const hyvj: ExpressionRunnerShorthandConfig = {
   runner: 'runButtonOnly',
   initialExpressionContainer: initialExpressionContainers.csqx,
   showPriorities: true,
-  skipToTheEnd: false
+  skipToTheEnd: false,
+  applicativeOrder: true
 }
 
 export const hykj: ExpressionRunnerShorthandConfig = {

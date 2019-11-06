@@ -17,6 +17,7 @@ import {
   BinaryExpression,
   ExecutableBinary
 } from 'src/types/ExpressionTypes'
+import { StepOptions } from 'scripts/lib/stepExpressionContainer'
 
 export interface FindResult {
   readonly expression?:
@@ -42,7 +43,8 @@ function helper({
   callParent,
   callParentKey,
   binaryParent,
-  binaryParentKey
+  binaryParentKey,
+  applicativeOrder
 }: {
   expression: CallExpression | ConditionalExpression | BinaryExpression
   conditionalParent?: ConditionalExpression
@@ -50,16 +52,19 @@ function helper({
   callParent?: CallExpression
   callParentKey?: 'func' | 'arg'
   binaryParentKey?: 'first' | 'second'
+  applicativeOrder?: boolean
 }): FindResult {
   if (isCall(expression)) {
-    if (isExecutableCall(expression)) {
-      return {
-        expression,
-        callParent,
-        callParentKey,
-        binaryParentKey,
-        conditionalParent,
-        binaryParent
+    if (!applicativeOrder) {
+      if (isExecutableCall(expression)) {
+        return {
+          expression,
+          callParent,
+          callParentKey,
+          binaryParentKey,
+          conditionalParent,
+          binaryParent
+        }
       }
     }
 
@@ -67,7 +72,8 @@ function helper({
       const result: FindResult = helper({
         expression: expression.func,
         callParentKey: 'func',
-        callParent: expression
+        callParent: expression,
+        applicativeOrder
       })
       if (result.expression) {
         return result
@@ -78,21 +84,37 @@ function helper({
       const result: FindResult = helper({
         expression: expression.arg,
         callParentKey: 'arg',
-        callParent: expression
+        callParent: expression,
+        applicativeOrder
       })
       if (result.expression) {
         return result
       }
     }
+
+    if (applicativeOrder) {
+      if (isExecutableCall(expression)) {
+        return {
+          expression,
+          callParent,
+          callParentKey,
+          binaryParentKey,
+          conditionalParent,
+          binaryParent
+        }
+      }
+    }
   } else if (isConditional(expression)) {
-    if (isExecutableConditional(expression)) {
-      return {
-        expression,
-        callParent,
-        callParentKey,
-        binaryParentKey,
-        conditionalParent,
-        binaryParent
+    if (!applicativeOrder) {
+      if (isExecutableConditional(expression)) {
+        return {
+          expression,
+          callParent,
+          callParentKey,
+          binaryParentKey,
+          conditionalParent,
+          binaryParent
+        }
       }
     }
 
@@ -103,21 +125,37 @@ function helper({
     ) {
       const result: FindResult = helper({
         expression: expression.condition,
-        conditionalParent: expression
+        conditionalParent: expression,
+        applicativeOrder
       })
       if (result.expression) {
         return result
       }
     }
+
+    if (applicativeOrder) {
+      if (isExecutableConditional(expression)) {
+        return {
+          expression,
+          callParent,
+          callParentKey,
+          binaryParentKey,
+          conditionalParent,
+          binaryParent
+        }
+      }
+    }
   } else {
-    if (isExecutableBinary(expression)) {
-      return {
-        expression,
-        callParent,
-        callParentKey,
-        binaryParentKey,
-        conditionalParent,
-        binaryParent
+    if (!applicativeOrder) {
+      if (isExecutableBinary(expression)) {
+        return {
+          expression,
+          callParent,
+          callParentKey,
+          binaryParentKey,
+          conditionalParent,
+          binaryParent
+        }
       }
     }
 
@@ -129,7 +167,8 @@ function helper({
       const result: FindResult = helper({
         expression: expression.first,
         binaryParent: expression,
-        binaryParentKey: 'first'
+        binaryParentKey: 'first',
+        applicativeOrder
       })
       if (result.expression) {
         return result
@@ -144,10 +183,24 @@ function helper({
       const result: FindResult = helper({
         expression: expression.second,
         binaryParent: expression,
-        binaryParentKey: 'second'
+        binaryParentKey: 'second',
+        applicativeOrder
       })
       if (result.expression) {
         return result
+      }
+    }
+
+    if (applicativeOrder) {
+      if (isExecutableBinary(expression)) {
+        return {
+          expression,
+          callParent,
+          callParentKey,
+          binaryParentKey,
+          conditionalParent,
+          binaryParent
+        }
       }
     }
   }
@@ -157,11 +210,15 @@ function helper({
 }
 
 export default function findNextExecutableAndParent(
-  expression: Expression
+  expression: Expression,
+  stepOptions: StepOptions
 ): FindResult {
   const notFound: FindResult = {}
   if (isCall(expression) || isConditional(expression) || isBinary(expression)) {
-    return helper({ expression })
+    return helper({
+      expression,
+      applicativeOrder: stepOptions.applicativeOrder
+    })
   } else if (isFunction(expression)) {
     let currentExpression: Expression = expression
     let previousExpression: FunctionExpression | null = null
@@ -175,7 +232,8 @@ export default function findNextExecutableAndParent(
       isBinary(currentExpression)
     ) {
       const helperResult = helper({
-        expression: currentExpression
+        expression: currentExpression,
+        applicativeOrder: stepOptions.applicativeOrder
       })
       if (
         helperResult.callParent ||

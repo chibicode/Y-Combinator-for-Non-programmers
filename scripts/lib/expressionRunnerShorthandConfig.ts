@@ -1,6 +1,8 @@
-import { ExpressionContainer } from 'src/types/ExpressionContainerTypes'
+import {
+  ExpressionContainer,
+  SteppedExpressionContainer
+} from 'src/types/ExpressionContainerTypes'
 import { ExpressionRunnerProps } from 'src/types/ExpressionRunnerTypes'
-import { SteppedExpressionContainer } from 'src/types/ExpressionContainerTypes'
 
 export const expressionRunnerSimpleConfigDefault = {
   isDone: false,
@@ -16,6 +18,7 @@ interface ExpressionRunnerSimpleConfig {
   initialState?: ExpressionContainer['previouslyChangedExpressionState']
   isDone?: boolean
   skipAlphaConvert?: boolean
+  applicativeOrder?: boolean
   skipActive?: boolean
   showDefaultAndActiveOnly?: boolean
   nextIterations?: number
@@ -65,6 +68,7 @@ interface ExpressionRunnerRunButtonOnlyConfig {
   showAllShowSteps?: ExpressionRunnerProps['showAllShowSteps']
   speed?: number
   skipAlphaConvert?: boolean
+  applicativeOrder?: boolean
   skipActive?: boolean
   showDefaultAndActiveOnly?: boolean
   highlightOverrides?: ExpressionRunnerProps['highlightOverrides']
