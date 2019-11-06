@@ -558,7 +558,7 @@ export default () => {
                 not familiar with JS, you should still be able to understand it.
               </UlLi>
               <UlLi>
-                <Bold>After that,</Bold> I’ll talk about how to use my emoji
+                <Bold>After that,</Bold> I’ll talk about how I used my emoji
                 puzzle to teach functional programming concepts such as lambda
                 calculus, Church encoding, and Y Combinator.
               </UlLi>
