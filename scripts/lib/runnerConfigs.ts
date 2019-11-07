@@ -2666,6 +2666,27 @@ export const vqyl: ExpressionRunnerShorthandConfig = {
   showPriorities: true
 }
 
+export const njqi: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.ncdj,
+  showPriorities: true,
+  applicativeOrder: true
+}
+
+export const kdxf: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.cdda,
+  showPriorities: true,
+  applicativeOrder: true
+}
+
+export const nnzx: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.acpu,
+  showPriorities: true,
+  applicativeOrder: true
+}
+
 export const yiet: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   initialExpressionContainer: initialExpressionContainers.ndtm,

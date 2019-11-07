@@ -30,8 +30,8 @@ const TwoColGrid = ({
     <Flex
       css={[
         css`
-          margin-left: ${spaces('-0.5')};
-          margin-right: ${spaces('-1.25')};
+          margin-left: ${spaces('-0.75')};
+          margin-right: ${spaces('-0.75')};
         `,
         !noTopNegativeMargin &&
           css`
@@ -45,7 +45,7 @@ const TwoColGrid = ({
     >
       <div
         css={css`
-          padding: 0 ${spaces(0.75)};
+          padding: 0 ${spaces(0.5)} 0 ${spaces(0.75)};
           flex: 1;
         `}
       >
@@ -61,7 +61,7 @@ const TwoColGrid = ({
       </div>
       <div
         css={css`
-          padding: 0 ${spaces(0.75)};
+          padding: 0 ${spaces(0.75)} 0 ${spaces(0.5)};
           flex: 1;
         `}
       >

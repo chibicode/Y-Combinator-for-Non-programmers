@@ -2151,6 +2151,8 @@ export const tjcx = initializeExpressionContainer({
   shorthandNumber: 6
 })
 
+export const acpu = initializeExpressionContainer(multParams('a', 'b', 'f'))
+
 export const yuov = initializeExpressionContainer([
   [
     multParams('a', 'b', 'c'),
@@ -2221,6 +2223,8 @@ export const tgxv = initializeExpressionContainer(numberParams('g', 'h', 3))
 
 export const nzne = initializeExpressionContainer(numberParams('b', 'f', 1))
 export const fkvc = initializeExpressionContainer(numberParams('b', 'f', 2))
+export const ncdj = initializeExpressionContainer(numberParams('d', 'h', 2))
+export const cdda = initializeExpressionContainer(numberParams('j', 'c', 3))
 
 export const hgjl = initializeExpressionContainer(succParams('a', 'b', 'f'))
 

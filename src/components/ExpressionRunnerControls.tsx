@@ -75,7 +75,7 @@ const ExpressionRunnerControls = ({
       css={css`
         display: flex;
         justify-content: space-between;
-        margin: ${spaces(1)} -2px 0 -2px;
+        margin: ${spaces(1)} 0 0 0;
       `}
     >
       {showRunButton ? (

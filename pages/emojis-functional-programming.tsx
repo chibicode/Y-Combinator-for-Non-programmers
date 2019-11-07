@@ -51,6 +51,7 @@ import {
   StepFour
 } from 'src/contents/4.en'
 import VariableShadeContext from 'src/components/VariableShadeContext'
+import TwoColGrid from 'src/components/TwoColGrid'
 
 const numSteps = 10
 
@@ -1660,6 +1661,71 @@ convert(f(two))`}</CodeBlock>
             <Subheading step={step++} coveredIn={11}>
               More complicated computations
             </Subheading>
+            <P>
+              You can do pretty much any computation with Church numerals.
+              Consider <Bold>multiplication.</Bold> Here’s a JS function that{' '}
+              <Italic>multiplies two Church numerals</Italic>:
+            </P>
+            <CodeBlock>{`// Multiplies two Church numerals
+const mul = sushi => sandwich => pizza =>
+  sushi(sandwich(pizza))`}</CodeBlock>
+            <P>
+              Let’s compute <InlineCode>2 x 3</InlineCode> using the above
+              function. Take a look at the code below and{' '}
+              <Highlight>
+                press <H args={{ name: 'run' }} />
+              </Highlight>
+              :
+            </P>
+            <CodeBlock result="6">{`// Church numeral two
+const two = chicken => salad =>
+  chicken(chicken(salad))
+
+// Church numeral three
+const three = curry => hamburger =>
+  curry(curry(curry(hamburger)))
+
+const result = mul(two)(three)
+
+convert(result)`}</CodeBlock>
+            <P>
+              The result was <InlineCode>6</InlineCode>, so it successfully
+              calculated <InlineCode>2 x 3</InlineCode>.
+            </P>
+            <P>
+              Now, let’s see if we can do the same using emoji puzzles. First,
+              here’s an emoji puzzle that’s equivalent to the{' '}
+              <InlineCode>mul</InlineCode> function.
+            </P>
+            <CodeBlock>{`// Multiplies two Church numerals
+const mul = sushi => sandwich => pizza =>
+  sushi(sandwich(pizza))`}</CodeBlock>
+            <ExpressionRunnerSeparator halfMarginTop />
+            <R.Nnzx>Equivalent emoji puzzle:</R.Nnzx>
+            <P>
+              Let’s combine it with emoji puzzles that can be converted to{' '}
+              <EmojiNumber number={2} /> and <EmojiNumber number={3} />:
+            </P>
+            <TwoColGrid
+              noBottomNegativeMargin
+              noTopNegativeMargin
+              maxVariableSize="sm"
+              left={
+                <>
+                  <R.Njqi>
+                    Converts to <EmojiNumber number={2} />
+                  </R.Njqi>
+                </>
+              }
+              right={
+                <>
+                  <R.Kdxf>
+                    Converts to <EmojiNumber number={3} />
+                  </R.Kdxf>
+                </>
+              }
+            />
+            <P>?</P>
           </BubbleQuoteContext.Provider>
         </ExpressionRunnerConfigContext.Provider>
       </Container>
