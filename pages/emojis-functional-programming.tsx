@@ -1585,7 +1585,9 @@ convert(f(two))`}</CodeBlock>
               <Highlight>
                 Now, let’s see if we can explain this to non-programmers using
                 emoji puzzles.
-              </Highlight>{' '}
+              </Highlight>
+            </P>
+            <P>
               First, here’s an emoji puzzle representation of the Church numeral{' '}
               <Bold>0</Bold>. You can confirm that it can be converted to{' '}
               <EmojiNumber number={0} /> by pressing the button.
@@ -1593,7 +1595,7 @@ convert(f(two))`}</CodeBlock>
             <R.Hfgh>
               <Bold>Represents:</Bold>
               <br />
-              <InlineCode>chicken => sandwich => sandwich</InlineCode>
+              <InlineCode>chicken => salad => salad</InlineCode>
               <br />
               (Church numeral <Bold>0</Bold>)
             </R.Hfgh>
@@ -1625,6 +1627,92 @@ convert(f(two))`}</CodeBlock>
               <br />
               (Church numeral <Bold>1</Bold>)
             </R.Uxno>
+            <Alert backgroundColor="pink">
+              <P>
+                <Bold>What just happened:</Bold> An emoji puzzle that can be
+                converted to <EmojiNumber number={0} /> became a puzzle that can
+                be converted to <EmojiNumber number={1} />.
+              </P>
+              <R.Pjih></R.Pjih>
+              <ExpressionRunnerSeparator />
+              <R.Jzwg></R.Jzwg>
+              <P
+                css={css`
+                  margin-bottom: 0;
+                `}
+              >
+                <Bold>In other words:</Bold>{' '}
+                <Highlight>
+                  We can use an emoji puzzle to calculate{' '}
+                  <InlineCode>someNumber + 1</InlineCode>, in a way that’s
+                  equivalent to using Church numeral functions in JS.
+                </Highlight>
+              </P>
+            </Alert>
+            <Alert backgroundColor="blue">
+              <P>
+                <Bold>More examples (optional read):</Bold> Let’s see if we can
+                calculate 1 + 1 = 2 using the same method. Here’s an emoji
+                puzzle that can be converted to <EmojiNumber number={1} />:
+              </P>
+              <R.Yfwq>
+                <Bold>Represents:</Bold>
+                <br />
+                <InlineCode>chicken => salad => chicken(salad)</InlineCode>
+                <br />
+                (Church numeral <Bold>1</Bold>)
+              </R.Yfwq>
+              <P>
+                And let’s combine it with the earlier emoji puzzle and run it.{' '}
+                <H args={{ name: 'pressRun' }} />
+              </P>
+              <R.Egka></R.Egka>
+              <P>
+                The result is equivalent to Church numeral <Bold>2</Bold> and
+                can be converted to <EmojiNumber number={2} />.
+              </P>
+              <R.Dvio>
+                Church numeral <Bold>2</Bold>
+              </R.Dvio>
+              <P>
+                So, it successfully calculated 1 + 1 = 2! Again, this is what
+                just happened:
+              </P>
+              <R.Kqtz></R.Kqtz>
+              <ExpressionRunnerSeparator />
+              <R.Cawl></R.Cawl>
+            </Alert>
+            <Alert backgroundColor="brown">
+              <P>
+                <Bold>Side Note (optional read):</Bold> What we saw was an
+                example of <Bold>higher-order functions</Bold>, one of the core
+                concepts of functional programming.
+              </P>
+              <P>
+                A <Bold>higher-order function</Bold> is{' '}
+                <Highlight>
+                  a function that takes a function or returns a function
+                </Highlight>
+                . The function we used earlier that calculates{' '}
+                <InlineCode>someNumber + 1</InlineCode> was a higher-order
+                function because:
+              </P>
+              <Ul>
+                <UlLi>It takes a Church numeral, which is a function</UlLi>
+                <UlLi>
+                  It returns a new Church numeral that’s greater by 1, which is
+                  also a function.
+                </UlLi>
+              </Ul>
+              <P
+                css={css`
+                  margin-bottom: 0;
+                `}
+              >
+                And as we just saw, higher-order functions can be taught to
+                non-programmers using emoji puzzles!
+              </P>
+            </Alert>
           </BubbleQuoteContext.Provider>
         </ExpressionRunnerConfigContext.Provider>
       </Container>

@@ -18,6 +18,7 @@ import { ExpressionRunnerContextProps } from 'src/types/ExpressionRunnerTypes'
 import CustomEmoji, { customEmojiToComponent } from 'src/components/CustomEmoji'
 import locale from 'src/lib/locale'
 import VariableShadeContext from 'src/components/VariableShadeContext'
+import ExpressionRunnerConfigContext from './ExpressionRunnerConfigContext'
 
 interface VariableExpressionBoxProps {
   expression: VariableExpression
@@ -53,6 +54,7 @@ const VariableEmoji = ({ expression }: VariableExpressionBoxProps) => {
     bottomRightBadgeOverrides,
     variableSize
   } = useContext(ExpressionRunnerContext)
+  const { churchNumerals } = useContext(ExpressionRunnerConfigContext)
 
   if (expression.shorthandNumberAfterConvert) {
     return (
@@ -73,7 +75,8 @@ const VariableEmoji = ({ expression }: VariableExpressionBoxProps) => {
           >
             <H
               args={{
-                name: 'canBeConverted'
+                name: 'canBeConverted',
+                emojiPuzzle: churchNumerals
               }}
             />
           </span>

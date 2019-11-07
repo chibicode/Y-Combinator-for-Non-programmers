@@ -364,6 +364,7 @@ export const jpac = initializeExpressionContainer(
 
 export const xvjz = initializeExpressionContainer(numberParams('f', 'g', 0))
 export const yqiv = initializeExpressionContainer(numberParams('d', 'h', 0))
+export const aeoc = initializeExpressionContainer(numberParams('d', 'h', 1))
 
 const yCombinator: FunctionExpressionParams = {
   arg: 'a',
@@ -2219,12 +2220,34 @@ export const ntes = initializeExpressionContainer(numberParams('c', 'd', 1))
 export const tgxv = initializeExpressionContainer(numberParams('g', 'h', 3))
 
 export const nzne = initializeExpressionContainer(numberParams('b', 'f', 1))
+export const fkvc = initializeExpressionContainer(numberParams('b', 'f', 2))
 
 export const hgjl = initializeExpressionContainer(succParams('a', 'b', 'f'))
 
 export const psen = initializeExpressionContainer([
   succParams('a', 'b', 'f'),
   numberParams('d', 'h', 0)
+])
+
+export const dzod = initializeExpressionContainer([
+  succParams('a', 'b', 'f'),
+  numberParams('d', 'h', 1)
+])
+
+export const nhmt = initializeExpressionContainer([
+  succParams('a', 'b', 'f'),
+  {
+    shorthandNumber: 0,
+    shorthandNumberAfterConvert: 'number'
+  }
+])
+
+export const sjbn = initializeExpressionContainer([
+  succParams('a', 'b', 'f'),
+  {
+    shorthandNumber: 1,
+    shorthandNumberAfterConvert: 'number'
+  }
 ])
 
 export const jxur = initializeExpressionContainer([

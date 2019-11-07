@@ -139,11 +139,10 @@ interface HProps {
     | { name: 'convertToMathbox'; lowerCase?: true }
     | { name: 'undoConvertToMathbox' }
     | { name: 'doneConvertToMathbox' }
-    | { name: 'canBeConverted' }
     | { name: 'convertToChurchNumeral'; lowerCase?: true }
     | { name: 'undoConvertToChurchNumeral' }
     | { name: 'doneConvertToChurchNumeral' }
-    | { name: 'canBeConverted' }
+    | { name: 'canBeConverted'; emojiPuzzle?: true }
     | { name: 'plusOneFeature'; capitalize?: true }
     | { name: 'minusOneFeature'; capitalize?: true; addNewline?: true }
     | { name: 'repeatFeature'; capitalize?: true; addNewline?: true }
@@ -1455,7 +1454,12 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
   }
   if (args.name === 'canBeConverted') {
     if (locale === 'en') {
-      return <>Lunchbox that can be converted to</>
+      return (
+        <>
+          {args.emojiPuzzle ? 'Emoji puzzle' : 'Lunchbox'} that can be converted
+          to
+        </>
+      )
     } else {
       return <>に変換できる弁当箱</>
     }
