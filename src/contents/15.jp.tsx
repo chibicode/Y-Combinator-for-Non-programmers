@@ -1083,10 +1083,10 @@ export default () => (
                 }
               ]}
             />
-            <R.Ochk>
+            <R.Fvii>
               <EmojiNumber number={2} /> <Emoji>✖️</Emoji>{' '}
               <EmojiNumber number={3} /> を計算できる弁当箱
-            </R.Ochk>
+            </R.Fvii>
             <BubbleQuotes
               quotes={[
                 {
