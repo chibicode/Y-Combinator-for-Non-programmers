@@ -587,7 +587,7 @@ export default () => {
               <UlLi>
                 <Bold>In steps 7 through 10,</Bold> I’ll talk about how I used
                 my emoji puzzles to teach functional programming concepts such
-                as lambda calculus, Church encoding, and Y Combinator.
+                as lambda calculus, Church encoding, and Y combinator.
               </UlLi>
             </Ul>
             <P>
