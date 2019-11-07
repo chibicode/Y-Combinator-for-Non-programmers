@@ -52,7 +52,7 @@ import {
 } from 'src/contents/4.en'
 import VariableShadeContext from 'src/components/VariableShadeContext'
 
-const numSteps = 100
+const numSteps = 10
 
 const date = DateTime.fromISO('2019-11-08T12:00:00Z')
 // const dateString = date
@@ -580,14 +580,14 @@ export default () => {
             <Ul>
               <UlLi>
                 <Bold>In steps 1 through 6,</Bold> I’ll show you how some simple
-                JavaScript code can be represented using my emoji puzzle. Even
+                JavaScript code can be represented using my emoji puzzles. Even
                 if you’re not familiar with JS, you should still be able to
                 understand it.
               </UlLi>
               <UlLi>
                 <Bold>In steps 7 through 10,</Bold> I’ll talk about how I used
-                my emoji puzzle to teach functional programming concepts such as
-                lambda calculus, Church encoding, and Y Combinator.
+                my emoji puzzles to teach functional programming concepts such
+                as lambda calculus, Church encoding, and Y Combinator.
               </UlLi>
             </Ul>
             <P>
@@ -688,7 +688,7 @@ sushi => sushi`}</CodeBlock>
               </R.Vowa>
             </DimUnhighlighted>
             <P>
-              That’s how my emoji puzzle can visually describe a simple JS
+              That’s how my emoji puzzles can visually describe a simple JS
               expression. Next, let’s talk about how we can{' '}
               <H args={{ name: 'run', lowerCase: true }} /> it.
             </P>
@@ -763,7 +763,7 @@ sushi => 'pizza'`}</CodeBlock>
             >{`(sushi => 'pizza')('sandwich')`}</CodeBlock>
             <P>
               As expected, the result is <InlineCode>'pizza'</InlineCode>. Now,
-              this code can be represented using my emoji puzzle as follows.{' '}
+              this code can be represented using an emoji puzzle as follows.{' '}
               <H args={{ name: 'pressRun' }} />
             </P>
             <R.Qcme></R.Qcme>
