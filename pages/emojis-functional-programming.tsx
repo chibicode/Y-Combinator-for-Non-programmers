@@ -580,15 +580,16 @@ export default () => {
             </P>
             <Ul>
               <UlLi>
-                <Bold>In steps 1 through 6,</Bold> I’ll show you how some simple
-                JavaScript code can be represented using my emoji puzzles. Even
-                if you’re not familiar with JS, you should still be able to
-                understand it.
+                <Bold>In the first half (steps 1 - 5):</Bold> I’ll show you how
+                some simple JavaScript code can be represented using my emoji
+                puzzles. Even if you’re not familiar with JS, you should still
+                be able to understand it.
               </UlLi>
               <UlLi>
-                <Bold>In steps 7 through 10,</Bold> I’ll talk about how I used
-                my emoji puzzles to teach functional programming concepts such
-                as lambda calculus, Church encoding, and Y combinator.
+                <Bold>In the second half (steps 6 - 10):</Bold> I’ll talk about
+                how I used my emoji puzzles to teach functional programming
+                concepts such as lambda calculus, Church encoding, and Y
+                combinator.
               </UlLi>
             </Ul>
             <P>
@@ -734,22 +735,22 @@ sushi => sushi`}</CodeBlock>
             </P>
             <P>
               So, you can <H args={{ name: 'run', lowerCase: true }} /> an emoji
-              puzzle just as you can run a piece of JS code. Basically, this is
-              how I taught functional programming to non-programmers in my
-              course (
-              <InternalLink href="/">
-                Y Combinator for Non-programmers
-              </InternalLink>
-              )—without showing any code. I could have used letters instead of
-              emojis, but emojis are less scary-looking for non-programers.
+              puzzle just as you can run a piece of JS code.{' '}
+              <Highlight>
+                Basically, this is how I taught functional programming to
+                non-programmers in my course (
+                <InternalLink href="/">
+                  Y Combinator for Non-programmers
+                </InternalLink>
+                )—without showing any code.
+              </Highlight>{' '}
+              I could have used letters instead of emojis, but emojis are less
+              scary-looking for non-programers.
             </P>
-            <Subheading step={step++} coveredIn={4}>
-              Another example
-            </Subheading>
             <P>
-              Let’s take a look at another example. Here’s a piece of JS code
-              that’s slightly different from before. It’s a function that{' '}
-              <Italic>ignores the input</Italic> and always returns{' '}
+              <Bold>Let’s take a look at another example.</Bold> Here’s a piece
+              of JS code that’s slightly different from before. It’s a function
+              that <Italic>ignores the input</Italic> and always returns{' '}
               <InlineCode>'pizza'</InlineCode>.
             </P>
             <CodeBlock>{`// A function that ignores the input
@@ -1279,10 +1280,11 @@ sushi => 'pizza'`}</CodeBlock>
               Church numerals
             </Subheading>
             <P>
-              Let’s take a look at something more interesting. Here’s a function
-              called <InlineCode>convert</InlineCode> that takes a function as
-              an argument. It then applies{' '}
-              <InlineCode>(n => n + 1)(0)</InlineCode> to it.
+              Let’s apply what we’ve learned and solve more interesting
+              problems. First, here’s a function called{' '}
+              <InlineCode>convert</InlineCode> that takes a function as an
+              argument. It then applies <InlineCode>(n => n + 1)(0)</InlineCode>{' '}
+              to it.
             </P>
             <CodeBlock>{`function convert(f) {
   return f(n => n + 1)(0)
@@ -1628,8 +1630,9 @@ convert(f(two))`}</CodeBlock>
             <Alert backgroundColor="blue">
               <P>
                 <Bold>More examples (optional read):</Bold> Let’s see if we can
-                calculate 1 + 1 = 2 using the same method. Here’s an emoji
-                puzzle that can be converted to <EmojiNumber number={1} />:
+                calculate <InlineCode>1 + 1 = 2</InlineCode> using the same
+                method. Here’s an emoji puzzle that can be converted to{' '}
+                <EmojiNumber number={1} />:
               </P>
               <R.Yfwq>
                 <Bold>Represents:</Bold>
@@ -1651,15 +1654,16 @@ convert(f(two))`}</CodeBlock>
                 Church numeral <Bold>2</Bold>
               </R.Dvio>
               <P>
-                So, it successfully calculated 1 + 1 = 2! Again, this is what
-                just happened:
+                So, it successfully calculated{' '}
+                <InlineCode>1 + 1 = 2</InlineCode>! Again, this is what just
+                happened:
               </P>
               <R.Kqtz></R.Kqtz>
               <ExpressionRunnerSeparator />
               <R.Cawl></R.Cawl>
             </Alert>
-            <Subheading step={step++} coveredIn={11}>
-              More complicated computations
+            <Subheading step={step++} coveredIn={15}>
+              Multiplications
             </Subheading>
             <P>
               You can do pretty much any computation with Church numerals.
@@ -1670,8 +1674,9 @@ convert(f(two))`}</CodeBlock>
 const mul = sushi => sandwich => pizza =>
   sushi(sandwich(pizza))`}</CodeBlock>
             <P>
-              Let’s compute <InlineCode>2 x 3</InlineCode> using the above
-              function. Take a look at the code below and{' '}
+              Let’s compute <InlineCode>2 x 3</InlineCode> using the above{' '}
+              <InlineCode>mul</InlineCode> function. Take a look at the code
+              below and{' '}
               <Highlight>
                 press <H args={{ name: 'run' }} />
               </Highlight>
@@ -1725,7 +1730,74 @@ const mul = sushi => sandwich => pizza =>
                 </>
               }
             />
-            <P>?</P>
+            <P>
+              Here’s the combined puzzle.{' '}
+              <Highlight>
+                Press <H args={{ name: 'run' }} />
+              </Highlight>{' '}
+              and see what happens. (Because it takes time, we’ll fast-forward
+              it at 4x the speed.)
+            </P>
+            <R.Anfx></R.Anfx>
+            <P>
+              The result is equivalent to Church numeral <Bold>6</Bold> and can
+              be converted to <EmojiNumber number={6} />.
+            </P>
+            <R.Mili>Church numeral 6</R.Mili>
+            <P>
+              So emoji puzzles can calculate multiplications too.{' '}
+              <InternalLink href="/10">In my course</InternalLink>, I also show
+              how we can do <Bold>subtractions</Bold> usinng emoji puzzles.
+              Divisions are very complicated but possible.
+            </P>
+            <Subheading step={step++} coveredIn={12}>
+              Conditionals
+            </Subheading>
+            <P>
+              In addition to maths, we can also represent{' '}
+              <Bold>conditionals</Bold> like <InlineCode>if/else</InlineCode>{' '}
+              statements using just functions/emoji puzzles.
+            </P>
+            <P>
+              Consider the following JS code. This is a simple{' '}
+              <InlineCode>if/else</InlineCode> statement that does different
+              things based on what <InlineCode>x</InlineCode> is.
+            </P>
+            <CodeBlock>{`if (x === 0) {
+  // is Zero
+} else {
+  // is NOT Zero
+}`}</CodeBlock>
+            <P>
+              It turns out that <InlineCode>if/else</InlineCode> statements like
+              the above can also be expressed using Church numerals. To save
+              time, I won’t show JS code this time and will only show the emoji
+              puzzle. Check out the following:
+            </P>
+            <R.Pmss>
+              An emoji puzzle that represents
+              <br />
+              <InlineCode>{`if (x === 0) { ... } else { ... }`}</InlineCode>
+            </R.Pmss>
+            <P>The above emoji puzzle will become:</P>
+            <Ul>
+              <UlLi>
+                <Highlight>
+                  <CustomEmoji type="isZero" size="mdlg" /> if you put something
+                  that can be converted to <EmojiNumber number={0} /> on the
+                  bottom
+                </Highlight>
+              </UlLi>
+              <UlLi>
+                <Highlight>
+                  <CustomEmoji type="isNotZero" size="mdlg" /> otherwise
+                </Highlight>
+              </UlLi>
+            </Ul>
+            <P>
+              Let’s try it out. First, we’ll put an emoji puzzle that can be
+              converted to <EmojiNumber number={0} /> on the bottom:
+            </P>
           </BubbleQuoteContext.Provider>
         </ExpressionRunnerConfigContext.Provider>
       </Container>

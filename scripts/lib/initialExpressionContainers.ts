@@ -1064,6 +1064,12 @@ export const cmay = initializeExpressionContainer(
   )
 )
 
+export const soer = initializeExpressionContainer(
+  isZeroParams('a', 'b', 'c', 'd', 'e', 'isNotZero', 'isZero', {
+    shorthandNumberAfterConvert: 'blank'
+  })
+)
+
 export const rpcm = initializeExpressionContainer(
   isZeroParams(
     'a',
@@ -2225,6 +2231,12 @@ export const nzne = initializeExpressionContainer(numberParams('b', 'f', 1))
 export const fkvc = initializeExpressionContainer(numberParams('b', 'f', 2))
 export const ncdj = initializeExpressionContainer(numberParams('d', 'h', 2))
 export const cdda = initializeExpressionContainer(numberParams('j', 'c', 3))
+export const rtum = initializeExpressionContainer(numberParams('f', 'c', 6))
+
+export const cteb = initializeExpressionContainer([
+  [multParams('a', 'b', 'f'), numberParams('j', 'c', 3)],
+  numberParams('d', 'h', 2)
+])
 
 export const hgjl = initializeExpressionContainer(succParams('a', 'b', 'f'))
 

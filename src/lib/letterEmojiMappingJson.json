@@ -45,6 +45,8 @@
   "blankNumberGreen": "❓",
   "blankNumberRed": "❓",
   "blankNumberYellow": "❓",
+  "isZero": "❓",
+  "isNotZero": "❓",
   "bentoBox": "🍱",
   "ignoreForNow": "❓",
   "mathBox": "❓",

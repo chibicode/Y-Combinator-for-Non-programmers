@@ -24,6 +24,8 @@ import NodesSvg from 'src/components/CustomEmoji/NodesSvg'
 import ComplexCalculationsSvg from 'src/components/CustomEmoji/ComplexCalculationsSvg'
 import QuestionFoodGreySvg from 'src/components/CustomEmoji/QuestionFoodGreySvg'
 import SingleArrowSvg from 'src/components/CustomEmoji/SingleArrowSvg'
+import IsZeroSvg from 'src/components/CustomEmoji/IsZeroSvg'
+import IsNotZeroSvg from 'src/components/CustomEmoji/IsNotZeroSvg'
 import SingleArrowDownSvg from 'src/components/CustomEmoji/SingleArrowDownSvg'
 import SingleArrowReverseSvg from 'src/components/CustomEmoji/SingleArrowReverseSvg'
 import MultiplySvg from 'src/components/CustomEmoji/MultiplySvg'
@@ -69,7 +71,9 @@ export const customEmojiToComponent = {
   fourLunchboxes: FourLunchboxesSvg,
   nodes: NodesSvg,
   complexCalculations: ComplexCalculationsSvg,
-  twitter: TwitterSvg
+  twitter: TwitterSvg,
+  isZero: IsZeroSvg,
+  isNotZero: IsNotZeroSvg
 }
 
 const CustomEmoji = ({
