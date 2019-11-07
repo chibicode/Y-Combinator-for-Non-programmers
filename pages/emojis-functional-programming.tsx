@@ -611,9 +611,8 @@ export default () => {
                   font-size: ${fontSizes(0.85)};
                 `}
               >
-                <Emoji>⚠️</Emoji> <Bold>Note:</Bold> This article is for
-                programmers. If you’re a non-programmer, check out the course
-                itself instead: “
+                <Emoji>⚠️</Emoji> This article is for programmers. If you’re a
+                non-programmer, check out the course itself instead: “
                 <InternalLink href="/">
                   <Bold>Y Combinator for Non-programmers</Bold>
                 </InternalLink>
@@ -1661,8 +1660,8 @@ convert(f(two))`}</CodeBlock>
             <Alert backgroundColor="brown">
               <P>
                 <Bold>Side Note (optional read):</Bold> What we saw was an
-                example of <Bold>higher-order functions</Bold>, one of the core
-                concepts of functional programming.
+                example of <Italic>higher-order functions</Italic>, one of the
+                core concepts of functional programming.
               </P>
               <P>
                 A <Bold>higher-order function</Bold> is{' '}
