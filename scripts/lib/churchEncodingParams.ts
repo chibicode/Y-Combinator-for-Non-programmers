@@ -145,8 +145,7 @@ export const predParams = (
 export const multParams = (
   a: VariableNames | HighlightedVariableExpressionParams,
   b: VariableNames | HighlightedVariableExpressionParams,
-  c: VariableNames | HighlightedVariableExpressionParams,
-  d: VariableNames | HighlightedVariableExpressionParams
+  c: VariableNames | HighlightedVariableExpressionParams
 ): FunctionExpressionParams => {
   return {
     arg: a,
@@ -154,10 +153,7 @@ export const multParams = (
       arg: b,
       body: {
         arg: c,
-        body: {
-          arg: d,
-          body: [[a, [b, c]], d]
-        }
+        body: [a, [b, c]]
       }
     }
   }

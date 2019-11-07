@@ -2122,7 +2122,7 @@ export const ajfq = initializeExpressionContainer(
 )
 
 export const hnzs = initializeExpressionContainer(
-  numberParamsHighlightNumber('c', 'd', 6)
+  numberParamsHighlightNumber('c', 'h', 6)
 )
 
 export const ibfr = initializeExpressionContainer([
@@ -2153,7 +2153,7 @@ export const tjcx = initializeExpressionContainer({
 
 export const yuov = initializeExpressionContainer([
   [
-    multParams('a', 'b', 'c', 'd'),
+    multParams('a', 'b', 'c'),
     {
       shorthandNumberAfterConvert: 'binarySecond'
     }
@@ -2164,14 +2164,14 @@ export const yuov = initializeExpressionContainer([
 ])
 
 export const ndtm = initializeExpressionContainer([
-  multParams('a', 'b', 'c', 'd'),
+  multParams('a', 'b', 'c'),
   numberParams(highlighted('g'), highlighted('h'), 3),
   numberParams(highlighted('e'), highlighted('f'), 2)
 ])
 
 export const rovo = initializeExpressionContainer([
   [
-    multParams('a', 'b', 'c', 'd'),
+    multParams('a', 'b', 'c'),
     {
       shorthandNumberAfterConvert: 'number',
       shorthandNumber: 3,
@@ -2187,7 +2187,7 @@ export const rovo = initializeExpressionContainer([
 
 export const wetc = initializeExpressionContainer([
   [
-    multParams('a', 'b', 'c', 'd'),
+    multParams('a', 'b', 'c'),
     {
       shorthandNumberAfterConvert: 'number',
       shorthandNumber: 3
