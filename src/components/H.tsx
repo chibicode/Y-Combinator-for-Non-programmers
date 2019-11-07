@@ -1422,8 +1422,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
     if (locale === 'en') {
       return (
         <>
-          <Bold>{args.lowerCase ? 'c' : 'C'}onvert to a Number</Bold>{' '}
-          <Emoji>🔢</Emoji>
+          <Bold>{args.lowerCase ? 'c' : 'C'}onvert to a Number</Bold>
         </>
       )
     } else {
@@ -1434,7 +1433,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
     if (locale === 'en') {
       return (
         <Bold>
-          Undo <Emoji>↩</Emoji>
+          Reset <Emoji>↩</Emoji>
         </Bold>
       )
     } else {

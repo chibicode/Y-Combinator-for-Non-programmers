@@ -363,6 +363,7 @@ export const jpac = initializeExpressionContainer(
 )
 
 export const xvjz = initializeExpressionContainer(numberParams('f', 'g', 0))
+export const yqiv = initializeExpressionContainer(numberParams('d', 'h', 0))
 
 const yCombinator: FunctionExpressionParams = {
   arg: 'a',
@@ -2216,6 +2217,15 @@ export const nuoh = initializeExpressionContainer([
 export const ntes = initializeExpressionContainer(numberParams('c', 'd', 1))
 
 export const tgxv = initializeExpressionContainer(numberParams('g', 'h', 3))
+
+export const nzne = initializeExpressionContainer(numberParams('b', 'f', 1))
+
+export const hgjl = initializeExpressionContainer(succParams('a', 'b', 'f'))
+
+export const psen = initializeExpressionContainer([
+  succParams('a', 'b', 'f'),
+  numberParams('d', 'h', 0)
+])
 
 export const jxur = initializeExpressionContainer([
   succParams('a', 'b', 'c'),

@@ -15,6 +15,7 @@ import EmojiForLetter from 'src/components/EmojiForLetter'
 import EpisodeHero from 'src/components/EpisodeHero'
 import InlinePrioritiesLabel from 'src/components/InlinePrioritiesLabel'
 import EpisodePageFooter from 'src/components/EpisodePageFooter'
+import EmojiNumber from 'src/components/EmojiNumber'
 import CustomEmoji from 'src/components/CustomEmoji'
 import ButtonWithTouchActiveStates from 'src/components/ButtonWithTouchActiveStates'
 import * as R from 'src/components/Runners'
@@ -1456,7 +1457,9 @@ a => b => a(a(a(b))))
               </Highlight>{' '}
               Try pressing it.
             </P>
-            <R.Jjjh></R.Jjjh>
+            <PointToRunButton>
+              <R.Jjjh></R.Jjjh>
+            </PointToRunButton>
             <P>
               Other Church numeral functions can also be represented using emoji
               puzzles, and they can be converted as well. Of course, the emojis
@@ -1552,6 +1555,76 @@ const f = sushi => sandwich => pizza =>
     sushi(sandwich)(pizza)
   )`}</CodeBlock>
             <P>You can try out more examples to verify this:</P>
+            <CodeBlock result="2">{`// Church numeral one
+const one = chicken => salad =>
+  chicken(salad)
+
+convert(f(one))`}</CodeBlock>
+            <CodeBlock result="3">{`// Church numeral two
+const two = chicken => salad =>
+  chicken(chicken(salad))
+
+convert(f(two))`}</CodeBlock>
+            <P>
+              This is what I mean by “
+              <Italic>doing maths with functions</Italic>”:
+            </P>
+            <Ul>
+              <UlLi>
+                You can calcultate <InlineCode>someNumber + 1</InlineCode>…
+              </UlLi>
+              <UlLi>
+                By using a Church numeral function that can be converted to{' '}
+                <InlineCode>someNumber</InlineCode>…
+              </UlLi>
+              <UlLi>
+                And the function <InlineCode>f</InlineCode> we saw earlier.
+              </UlLi>
+            </Ul>
+            <P>
+              <Highlight>
+                Now, let’s see if we can explain this to non-programmers using
+                emoji puzzles.
+              </Highlight>{' '}
+              First, here’s an emoji puzzle representation of the Church numeral{' '}
+              <Bold>0</Bold>. You can confirm that it can be converted to{' '}
+              <EmojiNumber number={0} /> by pressing the button.
+            </P>
+            <R.Hfgh>
+              <Bold>Represents:</Bold>
+              <br />
+              <InlineCode>chicken => sandwich => sandwich</InlineCode>
+              <br />
+              (Church numeral <Bold>0</Bold>)
+            </R.Hfgh>
+            <P>
+              And here’s the function <InlineCode>f</InlineCode> we saw earlier,
+              represented as an emoji puzzle:
+            </P>
+            <CodeBlock>{`const f = sushi => sandwich => pizza =>
+  sandwich(
+    sushi(sandwich)(pizza)
+  )`}</CodeBlock>
+            <ExpressionRunnerSeparator halfMarginTop />
+            <R.Qyhn>Equivalent emoji puzzle:</R.Qyhn>
+            <P>
+              Let’s apply <InlineCode>f</InlineCode> to the Church numeral{' '}
+              <Bold>0</Bold>. To do that, we just combine the above two emoji
+              puzzles and run it. <H args={{ name: 'pressRun' }} />
+            </P>
+            <R.Afxj>Combined the above two emoji puzzles</R.Afxj>
+            <P>
+              The result is equivalent to{' '}
+              <InlineCode>sandwich => pizza => sandwich(pizza)</InlineCode>,
+              which is Church numeral <Bold>1</Bold>.
+            </P>
+            <R.Uxno>
+              <Bold>Represents:</Bold>
+              <br />
+              <InlineCode>sandwich => pizza => sandwich(pizza)</InlineCode>
+              <br />
+              (Church numeral <Bold>1</Bold>)
+            </R.Uxno>
           </BubbleQuoteContext.Provider>
         </ExpressionRunnerConfigContext.Provider>
       </Container>

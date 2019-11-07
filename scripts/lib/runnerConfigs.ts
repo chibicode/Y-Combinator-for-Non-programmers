@@ -723,6 +723,42 @@ export const jarm: ExpressionRunnerShorthandConfig = {
   initialExpressionContainer: initialExpressionContainers.mzxw
 }
 
+export const afxj: ExpressionRunnerShorthandConfig = {
+  runner: 'runButtonOnly',
+  showPriorities: true,
+  skipToTheEnd: false,
+  initialExpressionContainer: initialExpressionContainers.psen,
+  applicativeOrder: true,
+  speed: 1.25
+}
+
+export const uxno: ExpressionRunnerShorthandConfig = {
+  runner: 'predefined',
+  showPriorities: true,
+  initialExpressionContainers: [
+    initialExpressionContainers.nzne,
+    initialExpressionContainers.ntua
+  ],
+  convert: 'toMathBox'
+}
+
+export const qyhn: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  showPriorities: true,
+  initialExpressionContainer: initialExpressionContainers.hgjl,
+  applicativeOrder: true
+}
+
+export const hfgh: ExpressionRunnerShorthandConfig = {
+  runner: 'predefined',
+  showPriorities: true,
+  initialExpressionContainers: [
+    initialExpressionContainers.yqiv,
+    initialExpressionContainers.irhr
+  ],
+  convert: 'toMathBox'
+}
+
 export const jjjh: ExpressionRunnerShorthandConfig = {
   runner: 'predefined',
   initialExpressionContainers: [
