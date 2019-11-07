@@ -184,7 +184,7 @@ export default () => (
           <>
             <P>
               <H args={{ name: 'theAnswerIs', isYes: false, sentence: true }} />
-              <H args={{ name: 'pressPlay' }} />
+              <H args={{ name: 'deprecatedPressRun' }} />
             </P>
             <R.Lxrk />
             <P>
@@ -407,7 +407,7 @@ export default () => (
               ということは <EmojiNumber number={10} /> <Emoji>➖</Emoji>{' '}
               <EmojiNumber number={8} /> を計算してくれるので、結果は{' '}
               <EmojiNumber number={2} /> になります。
-              <H args={{ name: 'pressPlay' }} />
+              <H args={{ name: 'deprecatedPressRun' }} />
             </P>
             <R.Pgxb />
             <P>
@@ -436,7 +436,7 @@ export default () => (
                 <CustomEmoji type="plusOne" /> を繰り返すこともできます。
               </HighlightBold>
               こちらの計算箱をご覧になり、
-              <H args={{ name: 'pressPlay' }} />
+              <H args={{ name: 'deprecatedPressRun' }} />
             </P>
             <TwoPlusFour />
             <P>

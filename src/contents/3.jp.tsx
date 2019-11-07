@@ -19,6 +19,8 @@ import H from 'src/components/H'
 import BubbleQuotes from 'src/components/BubbleQuotes'
 import * as R from 'src/components/Runners'
 import NextLessonButton from 'src/components/NextLessonButton'
+import ExpressionRunnerConfigContext from 'src/components/ExpressionRunnerConfigContext'
+import VariableShadeContext from 'src/components/VariableShadeContext'
 
 export default () => (
   <EpisodeCardList
@@ -344,19 +346,31 @@ export default () => (
               <EmojiWithText letter="b" />
               が入っており、
             </P>
-            <R.Vowa>
-              上段には
-              <EmojiWithText letter="b" />
-            </R.Vowa>
+            <VariableShadeContext.Provider
+              value={{
+                shadeNonHighlighted: true
+              }}
+            >
+              <R.Vowa>
+                上段には
+                <EmojiWithText letter="b" />
+              </R.Vowa>
+            </VariableShadeContext.Provider>
             <P>
               下段には
               <EmojiWithText letter="a" />
               がふたつ入っています。
             </P>
-            <R.Elku>
-              下段には
-              <EmojiWithText letter="a" />
-            </R.Elku>
+            <VariableShadeContext.Provider
+              value={{
+                shadeNonHighlighted: true
+              }}
+            >
+              <R.Elku>
+                下段には
+                <EmojiWithText letter="a" />
+              </R.Elku>
+            </VariableShadeContext.Provider>
             <BubbleQuotes
               quotes={[
                 {
@@ -431,10 +445,14 @@ export default () => (
               </Highlight>
               試しに、
               <Highlight>
-                <H args={{ name: 'pressPlay' }} />
+                <H args={{ name: 'deprecatedPressRun' }} />
               </Highlight>
             </P>
-            <R.Itbm />
+            <ExpressionRunnerConfigContext.Provider
+              value={{ pointToRunButton: true }}
+            >
+              <R.Itbm />
+            </ExpressionRunnerConfigContext.Provider>
             <BubbleQuotes
               quotes={[
                 {
@@ -531,7 +549,7 @@ export default () => (
               <EmojiWithText letter="c" />と
               <EmojiWithText letter="d" />
               が入っています。
-              <H args={{ name: 'pressPlay' }} />
+              <H args={{ name: 'deprecatedPressRun' }} />
             </P>
             <R.Zwpj />
             <P>
@@ -562,7 +580,7 @@ export default () => (
               が、下段には
               <EmojiWithText letter="f" />
               がふたつ入っています。
-              <H args={{ name: 'pressPlay' }} />
+              <H args={{ name: 'deprecatedPressRun' }} />
             </P>
             <R.Rivc />
             <P>
@@ -578,7 +596,7 @@ export default () => (
               <EmojiWithText letter="h" />と
               <EmojiWithText letter="i" />
               が入っています。
-              <H args={{ name: 'pressPlay' }} />
+              <H args={{ name: 'deprecatedPressRun' }} />
             </P>
             <R.Nmmz />
             <P>

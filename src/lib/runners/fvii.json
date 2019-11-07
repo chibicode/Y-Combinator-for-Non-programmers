@@ -92,22 +92,21 @@
                   },
                   "body": {
                     "arg": {
+                      "name": "d",
+                      "highlightType": "default",
+                      "topLeftBadgeType": "none",
+                      "bottomRightBadgeType": "none",
+                      "type": "variable",
+                      "argPriorityAgg": [
+                        3
+                      ],
+                      "funcPriorityAgg": [],
+                      "emphasizePriority": false,
+                      "bound": true,
+                      "maxNestedFunctionDepth": 0
+                    },
+                    "func": {
                       "arg": {
-                        "name": "d",
-                        "highlightType": "default",
-                        "topLeftBadgeType": "none",
-                        "bottomRightBadgeType": "none",
-                        "type": "variable",
-                        "argPriorityAgg": [
-                          2,
-                          4
-                        ],
-                        "funcPriorityAgg": [],
-                        "emphasizePriority": false,
-                        "bound": true,
-                        "maxNestedFunctionDepth": 0
-                      },
-                      "func": {
                         "arg": {
                           "name": "c",
                           "highlightType": "default",
@@ -115,7 +114,8 @@
                           "bottomRightBadgeType": "none",
                           "type": "variable",
                           "argPriorityAgg": [
-                            3
+                            1,
+                            2
                           ],
                           "funcPriorityAgg": [],
                           "emphasizePriority": false,
@@ -130,8 +130,7 @@
                           "type": "variable",
                           "argPriorityAgg": [],
                           "funcPriorityAgg": [
-                            3,
-                            4
+                            2
                           ],
                           "emphasizePriority": false,
                           "bound": true,
@@ -139,27 +138,7 @@
                         },
                         "state": "default",
                         "type": "call",
-                        "priority": 3,
-                        "maxNestedFunctionDepth": 0
-                      },
-                      "state": "default",
-                      "type": "call",
-                      "priority": 4,
-                      "maxNestedFunctionDepth": 0
-                    },
-                    "func": {
-                      "arg": {
-                        "name": "c",
-                        "highlightType": "default",
-                        "topLeftBadgeType": "none",
-                        "bottomRightBadgeType": "none",
-                        "type": "variable",
-                        "argPriorityAgg": [
-                          1
-                        ],
-                        "funcPriorityAgg": [],
-                        "emphasizePriority": false,
-                        "bound": true,
+                        "priority": 2,
                         "maxNestedFunctionDepth": 0
                       },
                       "func": {
@@ -171,7 +150,7 @@
                         "argPriorityAgg": [],
                         "funcPriorityAgg": [
                           1,
-                          2
+                          3
                         ],
                         "emphasizePriority": false,
                         "bound": true,
@@ -184,7 +163,7 @@
                     },
                     "state": "default",
                     "type": "call",
-                    "priority": 2,
+                    "priority": 3,
                     "maxNestedFunctionDepth": 0
                   },
                   "type": "function",
@@ -209,7 +188,7 @@
         "priority": 2,
         "maxNestedFunctionDepth": 4
       },
-      "numLeafNodes": 9,
+      "numLeafNodes": 8,
       "containerState": "ready",
       "previouslyChangedExpressionState": "default"
     }

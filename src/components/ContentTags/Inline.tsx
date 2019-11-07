@@ -25,11 +25,11 @@ const HighlightContext = React.createContext<HighlightContextProps>(
   highlightContextDefault
 )
 
-const mix = (color: CardProps['color'] | 'white', base: string) =>
+const mix = (color: CardProps['color'], base: string) =>
   Color(base)
     .mix(
       Color(backgroundColor(color)),
-      color === 'grey' || color === 'white' ? 0.45 : 0.55
+      color === 'white' ? 0.35 : color === 'grey' ? 0.45 : 0.55
     )
     .hsl()
     .string()
@@ -86,8 +86,6 @@ export const HighlightBold = ({
                 ? mix(baseColor, colors('blue50'))
                 : highlightType === 'white'
                 ? colors('white')
-                : baseColor === 'yellow'
-                ? mix(baseColor, colors('pink100'))
                 : mix(baseColor, colors('yellow100'))};
             `,
             inLink &&
@@ -138,8 +136,6 @@ export const Highlight = ({
                 ? mix(baseColor, colors('blue50'))
                 : highlightType === 'white'
                 ? colors('white')
-                : baseColor === 'yellow'
-                ? mix(baseColor, colors('pink100'))
                 : mix(baseColor, colors('yellow100'))};
             `,
             inLink &&

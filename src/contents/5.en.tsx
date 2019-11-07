@@ -422,8 +422,8 @@ export default () => (
                         <UlLi>
                           <Highlight>
                             <Bold>Focus</Bold> on{' '}
-                            <Italic>the bottom 2 rows</Italic>, which correspond
-                            to the pair of{' '}
+                            <Italic>the bottom two rows</Italic>, which
+                            correspond to the pair of{' '}
                             <InlinePrioritiesLabel revert>
                               1
                             </InlinePrioritiesLabel>
@@ -444,7 +444,7 @@ export default () => (
               ]}
             />
             <R.Bcgp>
-              <Bold>Focus</Bold> on <Italic>the bottom 2 rows</Italic>, and
+              <Bold>Focus</Bold> on <Italic>the bottom two rows</Italic>, and
               <br />
               <Bold>Ignore</Bold> the <Italic>top row</Italic> for now
             </R.Bcgp>

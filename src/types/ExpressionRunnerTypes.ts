@@ -47,6 +47,7 @@ export interface ExpressionRunnerProps {
   speed: number
   showAllShowSteps?: boolean
   skipAlphaConvert?: boolean
+  applicativeOrder?: boolean
   skipToTheEnd: boolean
   hideFuncUnboundBadgeOnExplanation: boolean
   highlightOverridesCallArgAndFuncUnboundOnly: boolean

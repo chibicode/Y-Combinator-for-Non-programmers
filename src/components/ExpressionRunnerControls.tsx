@@ -1,10 +1,12 @@
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core'
+import { useContext } from 'react'
 import H from 'src/components/H'
 import { colors, spaces, fontSizes } from 'src/lib/theme'
 import Emoji from 'src/components/Emoji'
 import { ExpressionRunnerProps } from 'src/types/ExpressionRunnerTypes'
 import ExpressionRunnerButton from 'src/components/ExpressionRunnerButton'
+import ExpressionRunnerConfigContext from 'src/components/ExpressionRunnerConfigContext'
 import locale from 'src/lib/locale'
 
 interface ExpressionRunnerControlsProps {
@@ -13,6 +15,7 @@ interface ExpressionRunnerControlsProps {
   isRunning: boolean
   showRunButton: boolean
   skipToTheEnd: boolean
+  hideForwardButton: boolean
   onNextClick: () => void
   onPreviousClick: () => void
   onAutoClick: () => void
@@ -61,10 +64,12 @@ const ExpressionRunnerControls = ({
   onPauseClick,
   onSkipToTheEndClick,
   skipToTheEnd,
-  convert
+  convert,
+  hideForwardButton
 }: ExpressionRunnerControlsProps) => {
   const centerButtonWidth = convert ? 66 : 48
   const sideButtonsWidth = (100 - centerButtonWidth) / 2 - 2
+  const { churchNumerals } = useContext(ExpressionRunnerConfigContext)
   return (
     <div
       css={css`
@@ -136,7 +141,14 @@ const ExpressionRunnerControls = ({
               <H args={{ name: 'pause' }} highlightType="none" />
             ) : skipToTheEnd ? (
               convert ? (
-                <H args={{ name: 'convertToMathbox' }} highlightType="none" />
+                churchNumerals ? (
+                  <H
+                    args={{ name: 'convertToChurchNumeral' }}
+                    highlightType="none"
+                  />
+                ) : (
+                  <H args={{ name: 'convertToMathbox' }} highlightType="none" />
+                )
               ) : (
                 <H args={{ name: 'run' }} highlightType="none" />
               )
@@ -144,7 +156,14 @@ const ExpressionRunnerControls = ({
               <H args={{ name: 'runAndShowAllSteps' }} highlightType="none" />
             )
           ) : convert ? (
-            <H args={{ name: 'undoConvertToMathbox' }} highlightType="none" />
+            churchNumerals ? (
+              <H
+                args={{ name: 'undoConvertToChurchNumeral' }}
+                highlightType="none"
+              />
+            ) : (
+              <H args={{ name: 'undoConvertToMathbox' }} highlightType="none" />
+            )
           ) : (
             <H args={{ name: 'reset' }} highlightType="none" />
           )}
@@ -152,7 +171,10 @@ const ExpressionRunnerControls = ({
       )}
       {showRunButton ? (
         <>
-          {!isRunning && canStepForward && !skipToTheEnd ? (
+          {!isRunning &&
+          canStepForward &&
+          !skipToTheEnd &&
+          !hideForwardButton ? (
             <ExpressionRunnerButton
               onClick={onNextClick}
               css={css`

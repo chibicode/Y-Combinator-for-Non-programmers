@@ -236,7 +236,7 @@ export default () => (
           <>
             <P>
               <H args={{ name: 'theAnswerIs', isYes: false }} />
-              . <H args={{ name: 'pressPlay', capitalize: true }} />:
+              . <H args={{ name: 'deprecatedPressRun', capitalize: true }} />:
             </P>
             <R.Lxrk />
             <P>
@@ -416,7 +416,7 @@ export default () => (
               <EmojiNumber number={10} /> <Emoji>➖</Emoji>{' '}
               <EmojiNumber number={8} /> and the result is{' '}
               <EmojiNumber number={2} />.{' '}
-              <H args={{ name: 'pressPlay', capitalize: true }} />:
+              <H args={{ name: 'deprecatedPressRun', capitalize: true }} />:
             </P>
             <R.Pgxb />
             <P>
@@ -445,7 +445,7 @@ export default () => (
                 ’s
               </Bold>
               . Take a look at this mathbox, and{' '}
-              <H args={{ name: 'pressPlay' }} />:
+              <H args={{ name: 'deprecatedPressRun' }} />:
             </P>
             <TwoPlusFour />
             <P>

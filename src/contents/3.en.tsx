@@ -22,6 +22,8 @@ import H from 'src/components/H'
 import BubbleQuotes from 'src/components/BubbleQuotes'
 import * as R from 'src/components/Runners'
 import NextLessonButton from 'src/components/NextLessonButton'
+import VariableShadeContext from 'src/components/VariableShadeContext'
+import ExpressionRunnerConfigContext from 'src/components/ExpressionRunnerConfigContext'
 
 export default () => (
   <EpisodeCardList
@@ -430,16 +432,28 @@ export default () => (
               <Bold>Explanation:</Bold> In this example, the top section has a{' '}
               <EmojiWithText letter="b" />:
             </P>
-            <R.Vowa>
-              The top section has a <EmojiWithText letter="b" />
-            </R.Vowa>
+            <VariableShadeContext.Provider
+              value={{
+                shadeNonHighlighted: true
+              }}
+            >
+              <R.Vowa>
+                The top section has a <EmojiWithText letter="b" />
+              </R.Vowa>
+            </VariableShadeContext.Provider>
             <P>
               And each of the bottom two sections has{' '}
               <EmojiWithText letter="a" />, a traditional Japanese food:
             </P>
-            <R.Elku>
-              Each of the bottom two sections has <EmojiWithText letter="a" />
-            </R.Elku>
+            <VariableShadeContext.Provider
+              value={{
+                shadeNonHighlighted: true
+              }}
+            >
+              <R.Elku>
+                Each of the bottom two sections has <EmojiWithText letter="a" />
+              </R.Elku>
+            </VariableShadeContext.Provider>
             <BubbleQuotes
               quotes={[
                 {
@@ -508,9 +522,14 @@ export default () => (
               We can <H args={{ name: 'run', lowerCase: true }} />{' '}
               <H args={{ name: 'lunchBoxPuzzle', indefinite: true }} />, just
               like how we can run a mathbox.{' '}
-              <H args={{ name: 'pressPlay', capitalize: true }} /> below:
+              <H args={{ name: 'deprecatedPressRun', capitalize: true }} />{' '}
+              below:
             </P>
-            <R.Itbm />
+            <ExpressionRunnerConfigContext.Provider
+              value={{ pointToRunButton: true }}
+            >
+              <R.Itbm></R.Itbm>
+            </ExpressionRunnerConfigContext.Provider>
             <BubbleQuotes
               quotes={[
                 {
@@ -619,7 +638,7 @@ export default () => (
               This one has <EmojiWithText letter="e" /> on the top row and a{' '}
               <EmojiWithText letter="c" /> and <EmojiWithText letter="d" /> on
               the bottom row.{' '}
-              <H args={{ name: 'pressPlay', capitalize: true }} />:
+              <H args={{ name: 'deprecatedPressRun', capitalize: true }} />:
             </P>
             <R.Zwpj />
             <P>
@@ -652,7 +671,7 @@ export default () => (
               This one has <EmojiWithText letter="g" /> and{' '}
               <EmojiWithText letter="o" /> on the top row and two slices of{' '}
               <EmojiWithText letter="f" /> on the bottom row.{' '}
-              <H args={{ name: 'pressPlay', capitalize: true }} />:
+              <H args={{ name: 'deprecatedPressRun', capitalize: true }} />:
             </P>
             <R.Rivc />
             <P>
@@ -665,7 +684,7 @@ export default () => (
               <EmojiWithText letter="p" /> on the top row and{' '}
               <EmojiWithText letter="h" /> and a <EmojiWithText letter="i" /> on
               the bottom row.{' '}
-              <H args={{ name: 'pressPlay', capitalize: true }} />:
+              <H args={{ name: 'deprecatedPressRun', capitalize: true }} />:
             </P>
             <R.Nmmz />
             <P>

@@ -89,7 +89,7 @@ interface HProps {
     | { name: 'unmatch' }
     | { name: 'nextButtonNextPagePrimaryText' }
     | { name: 'nextButtonSecondaryText'; nextEpisodeNumber: number }
-    | { name: 'pressPlay'; capitalize?: true }
+    | { name: 'deprecatedPressRun'; capitalize?: true }
     | { name: 'indexPageLink' }
     | { name: 'titlePrefix' }
     | { name: 'titlePrefixColored'; addColon?: boolean }
@@ -139,7 +139,10 @@ interface HProps {
     | { name: 'convertToMathbox'; lowerCase?: true }
     | { name: 'undoConvertToMathbox' }
     | { name: 'doneConvertToMathbox' }
-    | { name: 'canBeConverted' }
+    | { name: 'convertToChurchNumeral'; lowerCase?: true }
+    | { name: 'undoConvertToChurchNumeral' }
+    | { name: 'doneConvertToChurchNumeral' }
+    | { name: 'canBeConverted'; emojiPuzzle?: true }
     | { name: 'plusOneFeature'; capitalize?: true }
     | { name: 'minusOneFeature'; capitalize?: true; addNewline?: true }
     | { name: 'repeatFeature'; capitalize?: true; addNewline?: true }
@@ -168,6 +171,7 @@ interface HProps {
     | { name: 'runAndShowAllSteps' }
     | { name: 'ignoreForNow' }
     | { name: 'aboutMe'; hideNextPageButton?: boolean }
+    | { name: 'pointToRunButton' }
 }
 
 const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
@@ -243,7 +247,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
   if (args.name === 'newUser') {
     if (locale === 'en') {
       return (
-        <P>
+        <>
           <Bold>Hello!</Bold> This is <Italic>page {episodeNumber + 1}</Italic>{' '}
           of the course called “
           <InternalLink href={'/'}>{lessonTitle}</InternalLink>
@@ -252,21 +256,19 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
             <Bold>click here to read from the beginning</Bold>
           </InternalLink>
           .
-        </P>
+        </>
       )
     } else {
       return (
-        <P>
+        <>
           <Bold>こんにちは！</Bold>このページは「
           <InternalLink href={'/'}>{lessonTitle}</InternalLink>
-          」という記事の
-          <Highlight>{episodeNumber + 1}ページ目</Highlight>
-          です。1ページ目から読むには
+          」という記事の{episodeNumber + 1}ページ目です。1ページ目から読むには
           <InternalLink href={'/'}>
-            <HighlightBold>こちらからどうぞ</HighlightBold>
+            <Bold>こちらからどうぞ</Bold>
           </InternalLink>
           。
-        </P>
+        </>
       )
     }
   }
@@ -600,7 +602,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
       return <>{episodePrefix(args.nextEpisodeNumber)}へ</>
     }
   }
-  if (args.name === 'pressPlay') {
+  if (args.name === 'deprecatedPressRun') {
     if (locale === 'en') {
       return (
         <Highlight>
@@ -1415,9 +1417,49 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
       )
     }
   }
+  if (args.name === 'convertToChurchNumeral') {
+    if (locale === 'en') {
+      return (
+        <>
+          <Bold>{args.lowerCase ? 'c' : 'C'}onvert to a Number</Bold>
+        </>
+      )
+    } else {
+      return <></>
+    }
+  }
+  if (args.name === 'undoConvertToChurchNumeral') {
+    if (locale === 'en') {
+      return (
+        <Bold>
+          Reset <Emoji>↩</Emoji>
+        </Bold>
+      )
+    } else {
+      return <></>
+    }
+  }
+  if (args.name === 'doneConvertToChurchNumeral') {
+    if (locale === 'en') {
+      return (
+        <>
+          <HighlightBold highlightType={highlightType}>
+            Converted to a number!
+          </HighlightBold>
+        </>
+      )
+    } else {
+      return <></>
+    }
+  }
   if (args.name === 'canBeConverted') {
     if (locale === 'en') {
-      return <>Lunchbox that can be converted to</>
+      return (
+        <>
+          {args.emojiPuzzle ? 'Emoji puzzle' : 'Lunchbox'} that can be converted
+          to
+        </>
+      )
     } else {
       return <>に変換できる弁当箱</>
     }
@@ -1779,6 +1821,13 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
           省略
         </>
       )
+    }
+  }
+  if (args.name === 'pointToRunButton') {
+    if (locale === 'en') {
+      return <>Press this button!</>
+    } else {
+      return <>押してみてください！</>
     }
   }
   if (args.name === 'aboutMe') {

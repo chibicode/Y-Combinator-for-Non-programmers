@@ -127,7 +127,7 @@ export default () => (
                 <H args={{ name: 'run' }} /> button
               </HighlightBold>
               . If you press it, the mathbox calculates the result.{' '}
-              <H args={{ name: 'pressPlay', capitalize: true }} /> on the
+              <H args={{ name: 'deprecatedPressRun', capitalize: true }} /> on the
               mathbox below.
             </P>
             <R.Mcug />
@@ -139,7 +139,7 @@ export default () => (
             <Hr />
             <P>
               Let’s look at other mathboxes.{' '}
-              <H args={{ name: 'pressPlay', capitalize: true }} /> on this one:
+              <H args={{ name: 'deprecatedPressRun', capitalize: true }} /> on this one:
             </P>
             <R.Aovj />
             <P>
@@ -234,7 +234,7 @@ export default () => (
           <>
             <P>
               Mathboxes can also <Italic>subtract 1</Italic> from a number.{' '}
-              <H args={{ name: 'pressPlay', capitalize: true }} /> below:
+              <H args={{ name: 'deprecatedPressRun', capitalize: true }} /> below:
             </P>
             <R.Xmqp />
             <P>
@@ -325,7 +325,7 @@ export default () => (
             </P>
             <P>
               Here’s an example.{' '}
-              <H args={{ name: 'pressPlay', capitalize: true }} />:
+              <H args={{ name: 'deprecatedPressRun', capitalize: true }} />:
             </P>
             <R.Jiqb />
             <P>

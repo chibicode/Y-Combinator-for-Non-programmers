@@ -3,11 +3,22 @@ import { css, jsx } from '@emotion/core'
 import { spaces } from 'src/lib/theme'
 import CustomEmoji from 'src/components/CustomEmoji'
 
-const ExpressionRunnerSeparator = ({ blank }: { blank?: boolean }) => (
+const ExpressionRunnerSeparator = ({
+  blank,
+  halfMargin,
+  halfMarginBottom,
+  halfMarginTop
+}: {
+  blank?: boolean
+  halfMargin?: boolean
+  halfMarginBottom?: boolean
+  halfMarginTop?: boolean
+}) => (
   <div
     css={css`
       text-align: center;
-      margin: ${spaces('-1.25')} 0 ${spaces('-1')};
+      margin: ${halfMargin || halfMarginTop ? spaces('-0.25') : spaces('-1.25')}
+        0 ${halfMargin || halfMarginBottom ? spaces('-0.5') : spaces('-1')};
     `}
   >
     {!blank && <CustomEmoji type="singleArrowDown" size="mdlg" />}

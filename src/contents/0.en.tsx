@@ -76,17 +76,17 @@ export default () => (
               <Highlight>
                 solving <Bold>puzzles</Bold>—no coding required
               </Highlight>
-              . Here’s a quick demo. I’ll explain how this puzzle works on the
-              next page, but for now,{' '}
+              . Here’s a quick demo. I’ll explain how this puzzle works later,
+              but for now,{' '}
               <Highlight>
                 try pressing <H args={{ name: 'run' }} /> and see what happens:
               </Highlight>
             </P>
-            <R.Mcug>
+            <R.Wunw>
               You’ll see puzzles like this:
               <br />
               Try pressing <H args={{ name: 'run' }} />.
-            </R.Mcug>
+            </R.Wunw>
           </>
         )
       },

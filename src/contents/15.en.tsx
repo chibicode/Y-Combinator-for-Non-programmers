@@ -1207,10 +1207,10 @@ export default () => (
                 }
               ]}
             />
-            <R.Ochk>
+            <R.Fvii>
               A lunchbox that calculates <EmojiNumber number={2} />{' '}
               <Emoji>✖️</Emoji> <EmojiNumber number={3} />
-            </R.Ochk>
+            </R.Fvii>
             <BubbleQuotes
               quotes={[
                 {

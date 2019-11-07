@@ -1,5 +1,5 @@
 import styled from '@emotion/styled'
-import { colors, fontSizes, spaces, ns } from 'src/lib/theme'
+import { lineHeights, colors, fontSizes, spaces, ns } from 'src/lib/theme'
 
 export const H3 = styled.h3`
   color: ${colors('grey900')};
@@ -7,6 +7,7 @@ export const H3 = styled.h3`
   font-size: ${fontSizes(1.2)};
 
   ${ns} {
+    line-height: ${lineHeights(1.4)};
     font-size: ${fontSizes(1.4)};
   }
 `

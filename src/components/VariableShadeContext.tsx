@@ -4,6 +4,7 @@ export interface VariableShadeContextProps {
   shadeNonNumbers?: true
   shadeNonHighlightedFunc?: true
   shadeNonFactorial?: true
+  shadeNonHighlighted?: true
 }
 
 export const variableShadeContextDefault: VariableShadeContextProps = {}

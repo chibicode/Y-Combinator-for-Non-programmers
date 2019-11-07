@@ -139,7 +139,7 @@ export default () => (
               </HighlightBold>
               がついており、それを押すと計算が実行されます。試しに、下の計算箱で
               <HighlightBold>
-                <H args={{ name: 'pressPlay' }} />
+                <H args={{ name: 'deprecatedPressRun' }} />
               </HighlightBold>
             </P>
             <R.Mcug />
@@ -155,7 +155,7 @@ export default () => (
             <P>
               他の計算箱も見てみましょう！たとえばこちらをご覧になり、
               <HighlightBold>
-                <H args={{ name: 'pressPlay' }} />
+                <H args={{ name: 'deprecatedPressRun' }} />
               </HighlightBold>
             </P>
             <R.Aovj />
@@ -364,7 +364,7 @@ export default () => (
             <P>
               こちらに <CustomEmoji type="plusOne" />{' '}
               を2回使った計算箱を用意したので、実際に試してみましょう。
-              <H args={{ name: 'pressPlay' }} />
+              <H args={{ name: 'deprecatedPressRun' }} />
             </P>
             <R.Jiqb />
             <P>

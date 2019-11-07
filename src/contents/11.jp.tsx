@@ -157,7 +157,7 @@ export default () => (
             />
             <P>
               まず、こちらの計算箱をご覧になり、
-              <H args={{ name: 'pressPlay' }} />
+              <H args={{ name: 'deprecatedPressRun' }} />
             </P>
             <TwoPlusFour />
           </>
@@ -483,7 +483,7 @@ export default () => (
                         にそれぞれどんな効果があるか説明する前に、この計算箱を実行してみましょう。
                       </P>
                       <P>
-                        <H args={{ name: 'pressPlay' }} />
+                        <H args={{ name: 'deprecatedPressRun' }} />
                       </P>
                     </>
                   )
@@ -698,7 +698,7 @@ export default () => (
                         <EmojiNumber number={5} /> になります。
                       </P>
                       <P>
-                        <H args={{ name: 'pressPlay' }} />
+                        <H args={{ name: 'deprecatedPressRun' }} />
                       </P>
                     </>
                   )

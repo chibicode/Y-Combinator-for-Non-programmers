@@ -703,7 +703,7 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        Next, there’s a <EmojiWithText letter="f" /> in the
+                        Next, there’s <EmojiWithText letter="f" /> in the
                         middle, so we label all{' '}
                         <EmojiWithText letter="f" postfix="s" /> as{' '}
                         <Emoji>🅱️</Emoji>.
