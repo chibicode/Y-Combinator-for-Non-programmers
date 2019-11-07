@@ -801,6 +801,24 @@ export const pmss: ExpressionRunnerShorthandConfig = {
   applicativeOrder: true
 }
 
+export const vdcr: ExpressionRunnerShorthandConfig = {
+  runner: 'runButtonOnly',
+  skipToTheEnd: false,
+  showPriorities: true,
+  initialExpressionContainer: initialExpressionContainers.kmwe,
+  applicativeOrder: true,
+  speed: 2
+}
+
+export const vyic: ExpressionRunnerShorthandConfig = {
+  runner: 'runButtonOnly',
+  skipToTheEnd: false,
+  showPriorities: true,
+  initialExpressionContainer: initialExpressionContainers.rryd,
+  applicativeOrder: true,
+  speed: 2
+}
+
 export const hfgh: ExpressionRunnerShorthandConfig = {
   runner: 'predefined',
   showPriorities: true,

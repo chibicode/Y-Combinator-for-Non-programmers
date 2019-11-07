@@ -1754,7 +1754,7 @@ const mul = sushi => sandwich => pizza =>
               Conditionals
             </Subheading>
             <P>
-              In addition to maths, we can also represent{' '}
+              In addition to math expressions, we can also represent{' '}
               <Bold>conditionals</Bold> like <InlineCode>if/else</InlineCode>{' '}
               statements using just functions/emoji puzzles.
             </P>
@@ -1783,9 +1783,9 @@ const mul = sushi => sandwich => pizza =>
             <Ul>
               <UlLi>
                 <Highlight>
-                  <CustomEmoji type="isZero" size="mdlg" /> if you put something
-                  that can be converted to <EmojiNumber number={0} /> on the
-                  bottom
+                  <CustomEmoji type="isZero" size="mdlg" /> if you put an emoji
+                  puzzle that can be converted to <EmojiNumber number={0} /> on
+                  the bottom
                 </Highlight>
               </UlLi>
               <UlLi>
@@ -1796,7 +1796,43 @@ const mul = sushi => sandwich => pizza =>
             </Ul>
             <P>
               Let’s try it out. First, we’ll put an emoji puzzle that can be
-              converted to <EmojiNumber number={0} /> on the bottom:
+              converted to <EmojiNumber number={0} /> on the bottom.{' '}
+              <H args={{ name: 'pressRun' }} />
+            </P>
+            <R.Vdcr>
+              The bottom emoji puzzle (in yellow background)
+              <br />
+              can be converted to <EmojiNumber number={0} />
+            </R.Vdcr>
+            <P>
+              <Bold>What just happened:</Bold>{' '}
+              <Highlight>
+                We started out with <EmojiNumber number={0} />
+                , and it ended up with <CustomEmoji type="isZero" size="mdlg" />
+                .
+              </Highlight>
+            </P>
+            <P>
+              Now, what if we started out with an emoji puzzle that can be
+              converted to <EmojiNumber number={1} />?{' '}
+              <H args={{ name: 'pressRun' }} />
+            </P>
+            <R.Vyic>
+              The bottom emoji puzzle (in yellow background)
+              <br />
+              can be converted to <EmojiNumber number={1} />
+            </R.Vyic>
+            <P>
+              <Bold>What just happened:</Bold>{' '}
+              <Highlight>
+                We started out with <EmojiNumber number={1} />, and it ended up
+                with <CustomEmoji type="isNotZero" size="mdlg" />.
+              </Highlight>
+            </P>
+            <P>
+              As you just saw, in addition to math expressions, we can also
+              represent <Bold>conditional</Bold> statements using just emoji
+              puzzles.
             </P>
           </BubbleQuoteContext.Provider>
         </ExpressionRunnerConfigContext.Provider>

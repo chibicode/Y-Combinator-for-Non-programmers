@@ -1065,9 +1065,35 @@ export const cmay = initializeExpressionContainer(
 )
 
 export const soer = initializeExpressionContainer(
-  isZeroParams('a', 'b', 'c', 'd', 'e', 'isNotZero', 'isZero', {
+  isZeroParams('a', 'b', 'c', 'd', 'e', 'isZero', 'isNotZero', {
     shorthandNumberAfterConvert: 'blank'
   })
+)
+
+export const kmwe = initializeExpressionContainer(
+  isZeroParams(
+    'a',
+    'b',
+    'c',
+    'd',
+    'e',
+    'isZero',
+    'isNotZero',
+    numberParams(highlighted('f'), highlighted('g'), 0)
+  )
+)
+
+export const rryd = initializeExpressionContainer(
+  isZeroParams(
+    'a',
+    'b',
+    'c',
+    'd',
+    'e',
+    'isZero',
+    'isNotZero',
+    numberParams(highlighted('f'), highlighted('g'), 1)
+  )
 )
 
 export const rpcm = initializeExpressionContainer(
