@@ -1657,37 +1657,6 @@ convert(f(two))`}</CodeBlock>
               <ExpressionRunnerSeparator />
               <R.Cawl></R.Cawl>
             </Alert>
-            <Alert backgroundColor="brown">
-              <P>
-                <Bold>Side Note (optional read):</Bold> What we saw was an
-                example of <Italic>higher-order functions</Italic>, one of the
-                core concepts of functional programming.
-              </P>
-              <P>
-                A <Bold>higher-order function</Bold> is{' '}
-                <Highlight>
-                  a function that takes a function or returns a function
-                </Highlight>
-                . The function we used earlier that calculates{' '}
-                <InlineCode>someNumber + 1</InlineCode> was a higher-order
-                function because:
-              </P>
-              <Ul>
-                <UlLi>It takes a Church numeral, which is a function</UlLi>
-                <UlLi>
-                  It returns a new Church numeral that’s greater by 1, which is
-                  also a function.
-                </UlLi>
-              </Ul>
-              <P
-                css={css`
-                  margin-bottom: 0;
-                `}
-              >
-                And as we just saw, higher-order functions can be taught to
-                non-programmers using emoji puzzles!
-              </P>
-            </Alert>
             <Subheading step={step++} coveredIn={11}>
               More complicated computations
             </Subheading>
