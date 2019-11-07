@@ -23,6 +23,7 @@ import {
   ExternalLink,
   P,
   Italic,
+  HighlightBold,
   Bold,
   InternalLink,
   Highlight,
@@ -50,8 +51,6 @@ import {
   StepFour
 } from 'src/contents/4.en'
 import VariableShadeContext from 'src/components/VariableShadeContext'
-
-const hackerNewsLink = ``
 
 const numSteps = 100
 
@@ -575,48 +574,37 @@ export default () => {
             <Subheading noHrTop step="none" coveredIn="none">
               Overview
             </Subheading>
+            <P>
+              This article has <Bold>10 steps.</Bold>
+            </P>
             <Ul>
               <UlLi>
-                <Bold>First,</Bold> I’ll show you how some simple JavaScript
-                code can be represented using my emoji puzzle. Even if you’re
-                not familiar with JS, you should still be able to understand it.
+                <Bold>In steps 1 through 6,</Bold> I’ll show you how some simple
+                JavaScript code can be represented using my emoji puzzle. Even
+                if you’re not familiar with JS, you should still be able to
+                understand it.
               </UlLi>
               <UlLi>
-                <Bold>After that,</Bold> I’ll talk about how I used my emoji
-                puzzle to teach functional programming concepts such as lambda
-                calculus, Church encoding, and Y Combinator.
-              </UlLi>
-              <UlLi>
-                To help you track how far along you are in the article, I’ll
-                show a “<Bold>step</Bold>” number above each subheading. There
-                are a total of <Bold>{numSteps}</Bold> steps.
-              </UlLi>
-              <UlLi>
-                <Bold>If you decide to read later:</Bold> I’d appreciate it if
-                you could share this article before you go!{' '}
-                <ExternalLink href={tweetUrl}>
-                  <CustomEmoji type="twitter" size="mdlg" />{' '}
-                  <Highlight>Click here to Tweet this article.</Highlight>
-                </ExternalLink>
-                {hackerNewsLink && (
-                  <>
-                    {' '}
-                    You can also discuss this on{' '}
-                    <ExternalLink href={hackerNewsLink}>
-                      Hacker News
-                    </ExternalLink>
-                    .
-                  </>
-                )}
-              </UlLi>
-              <UlLi>
-                Also,{' '}
-                <ExternalLink href="https://github.com/chibicode/ycombinator/blob/master/pages/emojis-functional-programming.tsx">
-                  the source code for this article is available on GitHub
-                </ExternalLink>
-                —please ★ star it!
+                <Bold>In steps 7 through 10,</Bold> I’ll talk about how I used
+                my emoji puzzle to teach functional programming concepts such as
+                lambda calculus, Church encoding, and Y Combinator.
               </UlLi>
             </Ul>
+            <P>
+              If you plan to read later, I’d love it if you could share on
+              Twitter before you go.{' '}
+              <ExternalLink href={tweetUrl}>
+                <HighlightBold>
+                  <CustomEmoji type="twitter" /> Click here to Tweet this
+                  article.
+                </HighlightBold>
+              </ExternalLink>{' '}
+              Also, the source code for this article is{' '}
+              <ExternalLink href="https://github.com/chibicode/ycombinator/blob/master/pages/emojis-functional-programming.tsx">
+                available on GitHub
+              </ExternalLink>
+              .
+            </P>
             <Alert>
               <div
                 css={css`
@@ -630,18 +618,6 @@ export default () => {
                   <Bold>Y Combinator for Non-programmers</Bold>
                 </InternalLink>
                 ”.
-              </div>
-            </Alert>
-            <Alert backgroundColor="brown">
-              <div
-                css={css`
-                  font-size: ${fontSizes(0.85)};
-                `}
-              >
-                <Emoji>👋</Emoji> <Bold>Available for Hire:</Bold> My name is{' '}
-                <Bold>Shu Uesugi</Bold>, a freelance full-stack engineer who’s
-                looking for a <Italic>full-time position</Italic> (remote or in
-                SF/LA). Scroll to the bottom of this article for details.
               </div>
             </Alert>
             <Subheading step={step++} coveredIn={3}>
@@ -1713,6 +1689,9 @@ convert(f(two))`}</CodeBlock>
                 non-programmers using emoji puzzles!
               </P>
             </Alert>
+            <Subheading step={step++} coveredIn={11}>
+              More complicated computations
+            </Subheading>
           </BubbleQuoteContext.Provider>
         </ExpressionRunnerConfigContext.Provider>
       </Container>
