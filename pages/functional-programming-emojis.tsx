@@ -1824,8 +1824,10 @@ const mul = sushi => sandwich => pizza =>
   sushi(sandwich(pizza))`}</CodeBlock>
             <P>
               Let’s compute <InlineCode>2 x 3</InlineCode> using the above{' '}
-              <InlineCode>mul</InlineCode> function. Take a look at the code
-              below and{' '}
+              <InlineCode>mul</InlineCode> function. We use two Church numeral
+              functions—one for <InlineCode>2</InlineCode> and the other for{' '}
+              <InlineCode>3</InlineCode>, and feed them into{' '}
+              <InlineCode>mul</InlineCode>. Take a look at the code below and{' '}
               <Highlight>
                 press <H args={{ name: 'run' }} />
               </Highlight>
@@ -1885,7 +1887,7 @@ const mul = sushi => sandwich => pizza =>
                 Press <H args={{ name: 'run' }} />
               </Highlight>{' '}
               and see what happens. (Because it takes time, we’ll fast-forward
-              it at 4x the speed.)
+              it at 4x speed.)
             </P>
             <R.Anfx></R.Anfx>
             <P>
@@ -1903,9 +1905,9 @@ const mul = sushi => sandwich => pizza =>
               Conditionals
             </Subheading>
             <P>
-              In addition to math expressions, we can also represent{' '}
+              In addition to arithmetic, we can also implement{' '}
               <Bold>conditionals</Bold> such as <InlineCode>if/else</InlineCode>{' '}
-              statements using just functions/emoji puzzles.
+              statements using emoji puzzles.
             </P>
             <P>
               Consider the following JS code. This is a simple{' '}
@@ -1920,8 +1922,12 @@ const mul = sushi => sandwich => pizza =>
             <P>
               It turns out that <InlineCode>if/else</InlineCode> statements like
               the above can also be expressed using Church numerals. To save
-              time, I won’t show JS code this time and will only show the emoji
-              puzzle. Check out the following:
+              time,{' '}
+              <Highlight>
+                I won’t show JS code this time and will only show the emoji
+                puzzle.
+              </Highlight>{' '}
+              Check out the following:
             </P>
             <R.Pmss>
               An emoji puzzle that represents
@@ -1949,7 +1955,7 @@ const mul = sushi => sandwich => pizza =>
               <H args={{ name: 'pressRun' }} />
             </P>
             <R.Vdcr>
-              The bottom emoji puzzle (in the yellow background)
+              The bottom emoji puzzle (yellow background)
               <br />
               can be converted to <EmojiNumber number={0} />
             </R.Vdcr>
@@ -1967,7 +1973,7 @@ const mul = sushi => sandwich => pizza =>
               <H args={{ name: 'pressRun' }} />
             </P>
             <R.Vyic>
-              The bottom emoji puzzle (in the yellow background)
+              The bottom emoji puzzle (yellow background)
               <br />
               can be converted to <EmojiNumber number={1} />
             </R.Vyic>
@@ -1980,8 +1986,7 @@ const mul = sushi => sandwich => pizza =>
             </P>
             <P>
               As you just saw, in addition to math expressions, we can also
-              represent <Bold>conditional</Bold> statements using just emoji
-              puzzles.
+              represent <Bold>conditional</Bold> statements using emoji puzzles.
             </P>
             <Alert backgroundColor="brown">
               <P>
@@ -1993,8 +1998,8 @@ const mul = sushi => sandwich => pizza =>
                 <ExternalLink href="https://en.wikipedia.org/wiki/Lambda_calculus">
                   Wikipedia
                 </ExternalLink>
-                ), created by a mathematician Alonzo Church. It only has two
-                features:{' '}
+                ), created by a mathematician Alonzo Church in 1930s. It only
+                has two features:{' '}
                 <Highlight>variables and anonymous functions</Highlight>. Here’s
                 a piece of lambda calculus code:
               </P>
@@ -2031,7 +2036,7 @@ const mul = sushi => sandwich => pizza =>
                 noHighlight
                 caption={<>Equivalent lambda calculus code</>}
               >{`λsushi.λsandwich.λpizza
-  sushi(sandwich pizza)`}</CodeBlock>
+  sushi (sandwich pizza)`}</CodeBlock>
               <P>
                 <Bold>So, here’s the secret:</Bold>{' '}
                 <Highlight>
@@ -2084,10 +2089,12 @@ const mul = sushi => sandwich => pizza =>
               </div>
             </Alert>
             <P>
-              If we can express conditionals (e.g. <InlineCode>if</InlineCode>)
-              using functions/emoji puzzles, can we express{' '}
-              <Bold>control flow</Bold> (e.g. loops) as well? The answer is yes.
-              We can express control flow using{' '}
+              <Bold>Question:</Bold> If we can express conditionals (e.g.{' '}
+              <InlineCode>if</InlineCode>) using functions/emoji puzzles, can we
+              express <Bold>control flow</Bold> (e.g. loops) as well?
+            </P>
+            <P>
+              The answer is yes. We can express control flow using{' '}
               <Highlight>
                 <Bold>Y combinator</Bold>
               </Highlight>
@@ -2103,10 +2110,10 @@ const mul = sushi => sandwich => pizza =>
             <P>
               Y combinator is complex, so if we go into detail we’ll need
               another article. In fact, I used two full pages (
-              <InternalLink href="/14">page 1</InternalLink>,{' '}
-              <InternalLink href="/15">page 2</InternalLink>) in my course to
-              explain Y combinator using emoji puzzles. So here I’ll explain
-              what Y combinator is briefly.
+              <InternalLink href="/14">here</InternalLink> and{' '}
+              <InternalLink href="/15">here</InternalLink>) in my course to
+              explain Y combinator using emoji puzzles. So here I’ll briefly
+              explain what Y combinator is.
             </P>
             <P>
               Take a look at this JS code. It calculates the{' '}
@@ -2136,15 +2143,16 @@ const mul = sushi => sandwich => pizza =>
             <CodeBlock
               caption={
                 <>
-                  <InlineCode>5 * 4 * 3 * 2 *1</InlineCode>
+                  <InlineCode>5 * 4 * 3 * 2 * 1</InlineCode>
                 </>
               }
               result="120"
             >{`fact(5)`}</CodeBlock>
             <P>
-              The above recursive function was a <Italic>named</Italic>{' '}
-              function. It had the name <InlineCode>fact</InlineCode>, which was
-              called from the function body to do recursion.
+              Note that the above recursive function was a{' '}
+              <Italic>named</Italic> function. It had the name{' '}
+              <InlineCode>fact</InlineCode>, which was called from the function
+              body to do recursion.
             </P>
             <CodeBlock
               shouldHighlight={(lineNumber, tokenNumber) =>
@@ -2171,7 +2179,9 @@ const mul = sushi => sandwich => pizza =>
                 if you use Y combinator, you can do recursion without using a
                 named function.
               </Highlight>{' '}
-              First, here’s the Y combinator function{' '}
+            </P>
+            <P>
+              Let me show you how. Here’s the Y combinator function{' '}
               <InlineCode>yc</InlineCode>:
             </P>
             <CodeBlock
@@ -2190,9 +2200,13 @@ const mul = sushi => sandwich => pizza =>
   )`}</CodeBlock>
             <P>
               Now, we’ll apply <InlineCode>yCombinator</InlineCode> on another
-              anonymous function. This time, <InlineCode>fact</InlineCode> is
-              NOT a function name, but it’s a <Italic>parameter</Italic> name.
-              We haven’t used any named function yet.
+              anonymous function.{' '}
+              <Highlight>
+                This time, <InlineCode>fact</InlineCode> is NOT a function name,
+                but it’s a <Italic>parameter</Italic> name.
+              </Highlight>{' '}
+              We haven’t used any named function yet—we’ve only used anonymous
+              functions.
             </P>
             <CodeBlock
               caption={
@@ -2234,13 +2248,14 @@ const mul = sushi => sandwich => pizza =>
 })(5) // ← run it on 5`}</CodeBlock>
             <P>
               The result was <InlineCode>120</InlineCode>, so it successfully
-              calculated the factorial.
+              calculated the factorial{' '}
+              <InlineCode>5 * 4 * 3 * 2 * 1</InlineCode>.
             </P>
             <P>
               <Bold>So:</Bold>{' '}
               <Highlight>
                 By using the <InlineCode>yCombinator</InlineCode> function, you
-                can create a recursive function using only anonymous functions.
+                can create a recursive function without using named functions.
               </Highlight>{' '}
               It allows you to implement control flow (loops) using anonymous
               functions.
@@ -2266,8 +2281,8 @@ const mul = sushi => sandwich => pizza =>
               <InternalLink href="/15">
                 the final lesson of my course
               </InternalLink>
-              , I show how to use the above emoji puzzle to calculate factorials
-              (I won’t show it here because it’s pretty complex).
+              , I show how to use the Y combinator emoji puzzle to calculate
+              factorials (I won’t show it here because it’s pretty complex).
             </P>
             <P>
               <Bold>In any case,</Bold>{' '}
@@ -2277,7 +2292,7 @@ const mul = sushi => sandwich => pizza =>
               </Highlight>
             </P>
             <Alert backgroundColor="brown">
-              <JimsTalk />
+              <JimsTalk onBlog />
             </Alert>
             <Subheading step="none" coveredIn="none">
               Conclusion
@@ -2296,8 +2311,9 @@ const mul = sushi => sandwich => pizza =>
               <Highlight>
                 I wanted to challenge myself to explain a{' '}
                 <Italic>difficult computer science concept</Italic> (like Y
-                combinator) to non-programmers under the following constraints:
-              </Highlight>
+                combinator) to non-programmers
+              </Highlight>{' '}
+              while satisfying the following constraints:
             </P>
             <Ul>
               <UlLi>Don’t use any code</UlLi>
@@ -2305,8 +2321,10 @@ const mul = sushi => sandwich => pizza =>
               <UlLi>Must be doable on a smartphone in under 2-3 hours</UlLi>
             </Ul>
             <P>
-              In the future, I plan to do something similar with other CS
-              topics. In the meantime, you can take a look at my course,{' '}
+              That’s how I came up with emoji puzzles (they’re
+              smartphone-friendly too). In the future, I plan to develop
+              something similar with other CS topics. In the meantime, you can
+              take a look at my course,{' '}
               <InternalLink href="/">
                 Y Combinator for Non-programmers
               </InternalLink>
