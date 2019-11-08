@@ -1950,6 +1950,71 @@ const mul = sushi => sandwich => pizza =>
                 ).
               </P>
             </Alert>
+            <Subheading step={step++} coveredIn={14}>
+              Control flow and Y combinator
+            </Subheading>
+            <Alert backgroundColor="yellow">
+              <Bold>You’re almost done:</Bold> This is the final step in this
+              article.
+            </Alert>
+            <P>
+              If we can express conditionals (like <InlineCode>if</InlineCode>)
+              using functions/emoji puzzles, can we express{' '}
+              <Bold>control flow</Bold> (like loops) as well? The answer is yes.
+              We can express control flow using{' '}
+              <Highlight>
+                <Bold>Y combinator</Bold>
+              </Highlight>
+              .
+            </P>
+            <P>
+              <Bold>Y combinator</Bold>{' '}
+              <Highlight>
+                is a function that allows you to create a recursive function
+                without using named functions.
+              </Highlight>{' '}
+            </P>
+            <P>
+              Y combinator is complex, so if we go into detail we’ll need
+              another article. In fact, I had to used two full pages (
+              <InternalLink href="/14">page 1</InternalLink>,{' '}
+              <InternalLink href="/15">page 2</InternalLink>) in my course to
+              explain Y combinator using emoji puzzles. So here I’ll explain
+              what Y combinator is briefly.
+            </P>
+            <P>
+              Take a look at this JS code. It calculates the{' '}
+              <Bold>factorial</Bold> of a number using recursion.
+            </P>
+            <CodeBlock
+              caption={
+                <>
+                  Calculates the factorial of a number:
+                  <br />
+                  <InlineCode>n * n-1 * ... * 1</InlineCode>
+                </>
+              }
+            >{`function fact(n) {
+  if (n === 0) {
+    return 1
+  }
+  else {
+    return n * fact(n - 1)
+  }
+}`}</CodeBlock>
+            <P>
+              If you run it on <InlineCode>5</InlineCode>, it calculates{' '}
+              <InlineCode>5 * 4 * 3 * 2 * 1</InlineCode>.{' '}
+              <H args={{ name: 'pressRun' }} />
+            </P>
+            <CodeBlock
+              caption={
+                <>
+                  <InlineCode>5 * 4 * 3 * 2 *1</InlineCode>
+                </>
+              }
+              result="120"
+            >{`fact(5)`}</CodeBlock>
           </BubbleQuoteContext.Provider>
         </ExpressionRunnerConfigContext.Provider>
       </Container>
