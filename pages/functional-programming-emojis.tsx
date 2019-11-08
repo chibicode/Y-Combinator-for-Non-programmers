@@ -1030,17 +1030,16 @@ sushi => 'pizza'`}</CodeBlock>
             <ExpressionRunnerSeparator />
             <R.Ukzq></R.Ukzq>
             <P>
-              That’s how the emoji puzzle visualizes the evaluation of a
-              function when there’s no matching variable in the function
-              body—like{' '}
-              <InlineCode>{`(sushi => 'pizza')('sandwich')`}</InlineCode>.
+              So we’re left with a <EmojiWithText letter="f" />. That’s how the
+              emoji puzzle visualizes the evaluation of a function when there’s
+              no matching variable in the function body.
             </P>
             <Alert backgroundColor="blue">
               <P>
                 <Bold>More examples (optional read):</Bold> Here are more
                 examples that might be helpful for your understanding. You can{' '}
                 <Highlight>
-                  press <H args={{ name: 'run', lowerCase: true }} />
+                  press <H args={{ name: 'run' }} />
                 </Highlight>{' '}
                 on each example to see the evaluation visualization.{' '}
                 <H args={{ name: 'mentionRightArrow' }} />
