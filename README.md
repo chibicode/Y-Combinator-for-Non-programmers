@@ -10,7 +10,7 @@
 
 ## Blog Post: [“You Can Explain Functional Programming Using Emojis”](https://ycombinator.chibicode.com/functional-programming-emojis)
 
-I wrote about this repo on [this blog post](https://ycombinator.chibicode.com/functional-programming-emojis)—check it out!
+I wrote about this repo on [this blog post](https://ycombinator.chibicode.com/functional-programming-emojis). The source code for this blog post [can be found here](pages/functional-programming-emojis.tsx).
 
 <p>
   <a href="https://ycombinator.chibicode.com/functional-programming-emojis"><img src="public/static/images/blog-og.png" width="480" /></a>
