@@ -613,10 +613,6 @@ export default () => {
               In this article, I’ll explain how my emoji puzzles can represent
               and execute functional code visually.
             </P>
-            <P>
-              If you like to teach programming, or if you like functional
-              programming, I think you’ll enjoy this article.
-            </P>
             <Subheading noHrTop step="none" coveredIn="none">
               Quick Demo
             </Subheading>
@@ -644,7 +640,9 @@ export default () => {
               <R.Itbm>Equivalent emoji puzzle:</R.Itbm>
             </PointToRunButton>
             <P>
-              I’ll explain how it works in this article! <Emoji>😉</Emoji>
+              I’ll explain how it works shortly. If you like to teach
+              programming, or if you like functional programming, I think you’ll
+              enjoy this article.
             </P>
             <Subheading noHrTop step="none" coveredIn="none">
               Overview

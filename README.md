@@ -3,10 +3,18 @@
 ### This is the repository for the online course called **[Y Combinator for Non-programmers](https://ycombinator.chibicode.com/)** by Shu Uesugi.
 
 <p>
-  <img src="public/static/images/animated@2x.gif" width="240" height="240" />
+  <a href="https://ycombinator.chibicode.com/"><img src="public/static/images/animated@2x.gif" width="180" height="180" /></a>
 </p>
 
 (It also contains the code for the Japanese version: **[コンピュータサイエンスと魔法のYコンビネータ](https://yj.chibicode.com/)**)
+
+## Blog Post: [“You Can Explain Functional Programming Using Emojis”](https://ycombinator.chibicode.com/functional-programming-emojis)
+
+I wrote about this repo on [this blog post](https://ycombinator.chibicode.com/functional-programming-emojis)—check it out!
+
+<p>
+  <a href="https://ycombinator.chibicode.com/functional-programming-emojis"><img src="public/static/images/blog-og.png" width="480" /></a>
+</p>
 
 ## Running it locally (English version)
 
