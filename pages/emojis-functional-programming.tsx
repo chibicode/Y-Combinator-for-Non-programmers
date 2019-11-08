@@ -7,6 +7,7 @@ import { ns, radii, fontSizes, colors, spaces, maxWidths } from 'src/lib/theme'
 import { lessonTitle } from 'src/lib/titles'
 import Container from 'src/components/Container'
 import ExpressionRunnerSeparator from 'src/components/ExpressionRunnerSeparator'
+import EmojiSeparator from 'src/components/EmojiSeparator'
 import ExpressionRunnerCaptionWrapper from 'src/components/ExpressionRunnerCaptionWrapper'
 import BottomRightBadge from 'src/components/BottomRightBadge'
 import Emoji from 'src/components/Emoji'
@@ -63,7 +64,6 @@ const dateString = date
 const dateSchemaString = date.setZone('America/Los_Angeles').toISO()
 
 const title = 'You Don’t Need Code to Explain Functional Programming'
-const titleWithEmoji = `🍣 ${title} 🥪`
 const description =
   'An emoji-based implementation of Lambda calculus, Church encoding, and Y combinator'
 const url = `${enBaseUrl}/emojis-functional-programming`
@@ -482,8 +482,8 @@ export default () => {
         ]}
       />
       <Head>
-        <title key="title">{titleWithEmoji}</title>
-        <meta property="og:title" content={titleWithEmoji} />
+        <title key="title">{title}</title>
+        <meta property="og:title" content={title} />
         <meta property="og:site_name" content={lessonTitle} />
         <meta property="og:url" content={url} />
         <link rel="canonical" href={url} />
@@ -1908,7 +1908,19 @@ const mul = sushi => sandwich => pizza =>
                 And by using emoji puzzles, lambda calculus can be explained
                 visually to non-programmers!
               </P>
-              <Hr />
+              <EmojiSeparator
+                nodes={[
+                  <Emoji>🍣</Emoji>,
+                  <CustomEmoji type="doubleArrow" />,
+                  <CustomEmoji type="lambda" />
+                ]}
+                description={
+                  <>
+                    My emoji puzzles are actually
+                    <br />a visual representation of lambda calculus
+                  </>
+                }
+              />
               <P>
                 <Bold>Finally:</Bold> We saw that emoji puzzles, or lambda
                 calculus, can express not only numbers and arithmetic but also
