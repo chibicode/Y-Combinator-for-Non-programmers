@@ -689,7 +689,7 @@ sushi => sushi`}</CodeBlock>
             <R.Ilpo>
               An “<Bold>emoji puzzle</Bold>” that visually describes
               <br />
-              the JS code from the above
+              <InlineCode>(sushi => sushi)('sandwich')</InlineCode>
             </R.Ilpo>
             <P>
               The above emoji puzzle is equivalent to the earlier JS code.
@@ -738,39 +738,50 @@ sushi => sushi`}</CodeBlock>
               <H args={{ name: 'run', lowerCase: true }} /> it.
             </P>
             <Alert backgroundColor="brown">
-              <Bold>Note:</Bold> To keep things simple, emoji puzzles don’t
-              distinguish between variable names (e.g.{' '}
-              <InlineCode>sushi</InlineCode>) and strings (e.g.{' '}
-              <InlineCode>'sushi'</InlineCode>). Therefore, both{' '}
-              <InlineCode>sushi</InlineCode> and{' '}
-              <InlineCode>'sushi'</InlineCode> will be represented as{' '}
-              <EmojiForLetter letter="a" size="semilg" />.
+              <P>
+                <Bold>Note:</Bold> To keep things simple, emoji puzzles don’t
+                distinguish between variable names (e.g.{' '}
+                <InlineCode>sushi</InlineCode>) and strings (e.g.{' '}
+                <InlineCode>'sushi'</InlineCode>). Therefore, both{' '}
+                <InlineCode>sushi</InlineCode> and{' '}
+                <InlineCode>'sushi'</InlineCode> will be represented as{' '}
+                <EmojiForLetter letter="a" size="semilg" />.
+              </P>
+              <P
+                css={css`
+                  margin-bottom: 0;
+                `}
+              >
+                <Bold>Why emojis?</Bold> I used emojis because they are not
+                scary-looking for non-programers. I used food emojis because…I
+                like food. <Emoji>😉</Emoji>
+              </P>
             </Alert>
             <Subheading step={step++} coveredIn={4}>
               Running the function
             </Subheading>
             <P>
               I’ve added the <H args={{ name: 'run' }} /> button to the JS code
-              snippet so you can see the result.{' '}
-              <Highlight>
-                If you press <H args={{ name: 'run' }} />,
-              </Highlight>{' '}
-              you’ll see that the result is <InlineCode>'sandwich'</InlineCode>.
+              snippet below. <Highlight>If you press it,</Highlight> you’ll see
+              that the result is <InlineCode>'sandwich'</InlineCode>.
             </P>
             <CodeBlock
               result={`'sandwich'`}
               pointToRunButton
             >{`(sushi => sushi)('sandwich')`}</CodeBlock>
             <P>
-              Now, we can also “run” the equivalent emoji puzzle and get the
-              same result.{' '}
+              We can also “run” the equivalent emoji puzzle and get the same
+              result.{' '}
               <Highlight>
-                Try pressing the <H args={{ name: 'run' }} /> button below the
-                puzzle.
+                Try pressing the <H args={{ name: 'run' }} /> button below.
               </Highlight>
             </P>
             <PointToRunButton>
-              <R.Itbm></R.Itbm>
+              <R.Itbm>
+                An “<Bold>emoji puzzle</Bold>” that’s equivalent to
+                <br />
+                <InlineCode>(sushi => sushi)('sandwich')</InlineCode>
+              </R.Itbm>
             </PointToRunButton>
             <P>
               The result is a <EmojiWithText letter="b" />, which is the same as
@@ -780,15 +791,13 @@ sushi => sushi`}</CodeBlock>
               So, you can <H args={{ name: 'run', lowerCase: true }} /> an emoji
               puzzle just as you can run a piece of JS code.{' '}
               <Highlight>
-                Basically, this is how I taught functional programming to
-                non-programmers in my course (
+                This is how I taught functional programming to non-programmers
+                in my course (
                 <InternalLink href="/">
                   Y Combinator for Non-programmers
                 </InternalLink>
                 )—without showing any code.
-              </Highlight>{' '}
-              I could have used letters instead of emojis, but emojis are less
-              scary-looking for non-programers.
+              </Highlight>
             </P>
             <P>
               <Bold>Let’s take a look at another example.</Bold> Here’s a piece
