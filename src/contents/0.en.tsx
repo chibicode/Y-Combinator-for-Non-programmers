@@ -21,11 +21,11 @@ import YoutubeEmbed from 'src/components/YoutubeEmbed'
 import { githubRepo } from 'src/lib/meta'
 import * as R from 'src/components/Runners'
 
-export const JimsTalk = () => (
+export const JimsTalk = ({ onBlog }: { onBlog?: boolean }) => (
   <>
     <P>
-      For programmers interested in learning about Y Combinator, I recommend
-      this video:{' '}
+      {onBlog ? <>If you are</> : <>For programmers</>} interested in learning
+      about Y Combinator, I recommend this video:{' '}
       <ExternalLink href="https://www.youtube.com/watch?v=FITJMJjASUs">
         <HighlightBold>
           “Y Not- Adventures in Functional Programming”
