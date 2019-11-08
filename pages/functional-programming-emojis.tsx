@@ -550,7 +550,7 @@ export default () => {
       <Container
         Component="article"
         size="smsm"
-        horizontalPadding={0.75}
+        horizontalPadding={0.875}
         cssOverrides={css`
           padding-top: ${spaces(1.5)};
           padding-bottom: ${spaces(6)};
