@@ -85,34 +85,47 @@ const tweetUrl = `https://twitter.com/intent/tweet?url=${encodeURIComponent(
 
 const Ads = ({ shareId }: { shareId?: string }) => (
   <>
-    <P>
-      I’d love it if you could share this on Twitter.{' '}
-      <ExternalLink href={tweetUrl}>
-        <HighlightBold>
-          <CustomEmoji type="twitter" /> Click here to Tweet this article.
-        </HighlightBold>
-      </ExternalLink>
-      {shareId && <> You can also follow me on Twitter:</>}
-    </P>
-    {shareId && <TwitterEmbed showCard id={shareId} />}
-    <P>
-      Also, the source code is{' '}
-      <ExternalLink href="https://github.com/chibicode/ycombinator/">
-        available on GitHub
-      </ExternalLink>
-      :{' '}
-      <iframe
-        css={css`
-          vertical-align: middle;
-          transform: translateY(-0.1em);
-        `}
-        src="https://ghbtns.com/github-btn.html?user=chibicode&repo=ycombinator&type=star&count=true&size=large"
-        frameBorder="0"
-        scrolling="0"
-        width="160px"
-        height="30px"
-      ></iframe>
-    </P>
+    <Ul>
+      <UlLi>
+        I’d love it if you could share this on Twitter.{' '}
+        <ExternalLink href={tweetUrl}>
+          <HighlightBold>
+            <CustomEmoji type="twitter" /> Click here to Tweet this article.
+          </HighlightBold>
+        </ExternalLink>
+      </UlLi>
+      <UlLi>
+        Also, the source code is{' '}
+        <ExternalLink href="https://github.com/chibicode/ycombinator/">
+          available on GitHub
+        </ExternalLink>
+        :{' '}
+        <iframe
+          css={css`
+            vertical-align: middle;
+            transform: translateY(-0.1em);
+          `}
+          src="https://ghbtns.com/github-btn.html?user=chibicode&repo=ycombinator&type=star&count=true&size=large"
+          frameBorder="0"
+          scrolling="0"
+          width="160px"
+          height="30px"
+        ></iframe>
+      </UlLi>
+      <UlLi>
+        You can also discuss this on{' '}
+        <ExternalLink href="https://news.ycombinator.com/item?id=21484016">
+          Hacker News
+        </ExternalLink>
+        .
+      </UlLi>
+    </Ul>
+    {shareId && (
+      <>
+        <P>Here’s my Twitter:</P>
+        <TwitterEmbed showCard id={shareId} />
+      </>
+    )}
   </>
 )
 
@@ -568,8 +581,7 @@ export default () => {
             margin-bottom: ${spaces(2)};
           `}
         >
-          <time dateTime={dateSchemaString}>{dateString}</time> &middot; Shu
-          Uesugi (
+          Shu Uesugi (
           <ExternalLink href="https://twitter.com/chibicode">
             @chibicode
           </ExternalLink>
@@ -665,6 +677,7 @@ export default () => {
                 combinator.
               </UlLi>
             </Ul>
+            <P>Some announcements:</P>
             <Ads />
             <Alert>
               <div
@@ -2402,9 +2415,14 @@ const mul = sushi => sandwich => pizza =>
               Thank you for reading!
             </Subheading>
             <Ads shareId="1192843729565962241" />
-            {/*<P>
-              You can also discuss this on <ExternalLink href="">Hacker News</ExternalLink>.
-            </P>*/}
+            <P
+              css={css`
+                color: ${colors('grey600')};
+              `}
+            >
+              This article was published on{' '}
+              <time dateTime={dateSchemaString}>{dateString}</time>.
+            </P>
             <Hr />
             <H args={{ name: 'aboutMe', hideNextPageButton: true }} />
           </BubbleQuoteContext.Provider>
