@@ -443,13 +443,13 @@ const CodeBlock = ({
 
                         @keyframes pointToCodeRunButton {
                           0% {
-                            margin-left: 0;
+                            margin-left: 0px;
                           }
                           50% {
-                            margin-left: -0.25em;
+                            margin-left: -5px;
                           }
                           100% {
-                            margin-left: 0;
+                            margin-left: 0px;
                           }
                         }
                       `
