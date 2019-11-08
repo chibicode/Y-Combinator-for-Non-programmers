@@ -361,7 +361,7 @@ const ExpressionRunnerPrecomputed = ({
                     font-size: ${fontSizes(0.85)};
                     animation: pointToRunButton 1s infinite;
                     color: ${colors('grey700')};
-                    margin: ${spaces(1.25)} 0 ${spaces('-1')};
+                    margin: ${spaces(1)} 0 ${spaces('-1')};
                     text-align: center;
 
                     @keyframes pointToRunButton {
@@ -369,7 +369,7 @@ const ExpressionRunnerPrecomputed = ({
                         transform: translateY(0);
                       }
                       50% {
-                        transform: translateY(-0.5rem);
+                        transform: translateY(-0.375rem);
                       }
                       100% {
                         transform: translateY(0);

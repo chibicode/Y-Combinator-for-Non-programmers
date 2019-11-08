@@ -611,23 +611,40 @@ export default () => {
                 <Italic>visualize</Italic> functional code.
               </Highlight>{' '}
               In this article, I’ll explain how my emoji puzzles can represent
-              and execute functional code visually. Here’s a sneak peek—
+              and execute functional code visually.
+            </P>
+            <P>
+              If you like to teach programming, or if you like functional
+              programming, I think you’ll enjoy this article.
+            </P>
+            <Subheading noHrTop step="none" coveredIn="none">
+              Quick Demo
+            </Subheading>
+            <P>
+              First, here’s simple, functional JS code.{' '}
               <Highlight>
-                try pressing <H args={{ name: 'run' }} /> below!
-              </Highlight>
-              :
+                Try pressing <H args={{ name: 'run' }} /> below
+              </Highlight>{' '}
+              to see the result:
             </P>
             <CodeBlock
               result={`'sandwich'`}
               pointToRunButton
               caption={<>Functional JS code:</>}
             >{`(sushi => sushi)('sandwich')`}</CodeBlock>
+            <P>
+              The above code can be expressed visually using my{' '}
+              <Bold>emoji puzzle</Bold> below.{' '}
+              <Highlight>
+                Try pressing <H args={{ name: 'run' }} />
+              </Highlight>
+              :
+            </P>
             <PointToRunButton>
               <R.Itbm>Equivalent emoji puzzle:</R.Itbm>
             </PointToRunButton>
             <P>
-              If you like to teach programming, or if you like functional
-              programming, I think you’ll enjoy this article.
+              I’ll explain how it works in this article! <Emoji>😉</Emoji>
             </P>
             <Subheading noHrTop step="none" coveredIn="none">
               Overview
