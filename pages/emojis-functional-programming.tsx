@@ -56,10 +56,10 @@ import TwoColGrid from 'src/components/TwoColGrid'
 const numSteps = 10
 
 const date = DateTime.fromISO('2019-11-08T12:00:00Z')
-// const dateString = date
-//   .setLocale('en')
-//   .setZone('America/Los_Angeles')
-//   .toFormat('LLL d, yyyy')
+const dateString = date
+  .setLocale('en')
+  .setZone('America/Los_Angeles')
+  .toFormat('LLL d, yyyy')
 const dateSchemaString = date.setZone('America/Los_Angeles').toISO()
 
 const title = 'You Don’t Need Code to Explain Functional Programming'
@@ -507,7 +507,7 @@ export default () => {
             font-size: ${fontSizes(1)};
             font-style: italic;
             font-weight: normal;
-            margin: 0;
+            margin: 0 0 ${spaces(0.5)};
 
             ${ns} {
               font-size: ${fontSizes(1.2)};
@@ -516,12 +516,27 @@ export default () => {
         >
           {description}
         </h2>
+        <div
+          css={css`
+            font-size: ${fontSizes(0.8)};
+            color: ${colors('grey600')};
+            text-align: center;
+            margin-bottom: ${spaces(2)};
+          `}
+        >
+          <time dateTime={dateSchemaString}>{dateString}</time> &middot; Shu
+          Uesugi (
+          <ExternalLink href="https://twitter.com/chibicode">
+            @chibicode
+          </ExternalLink>
+          )
+        </div>
         <img
           src="/static/images/animated@2x.gif"
           alt={title}
           css={css`
             width: 6rem;
-            margin: ${spaces(1.75)} auto ${spaces(2)};
+            margin: ${spaces(2)} auto ${spaces(2.25)};
             display: block;
             ${ns} {
               width: 7rem;
@@ -540,7 +555,7 @@ export default () => {
                 </InternalLink>
                 ”.
               </Highlight>{' '}
-              In this 17-page course, I teach functional programming concepts
+              In this 17-page course, I explain functional programming concepts
               such as lambda calculus, Church encoding, and Y combinator in a
               way such that{' '}
               <Italic>
@@ -581,27 +596,26 @@ export default () => {
             <Ul>
               <UlLi>
                 <Bold>In the first half (steps 1 - 5):</Bold> I’ll show you how
-                some simple JavaScript code can be represented using my emoji
+                simple JavaScript code can be represented using my emoji
                 puzzles. Even if you’re not familiar with JS, you should still
                 be able to understand it.
               </UlLi>
               <UlLi>
                 <Bold>In the second half (steps 6 - 10):</Bold> I’ll talk about
-                how I used my emoji puzzles to teach functional programming
+                how I used my emoji puzzles to explain functional programming
                 concepts such as lambda calculus, Church encoding, and Y
                 combinator.
               </UlLi>
             </Ul>
             <P>
-              If you plan to read later, I’d love it if you could share on
-              Twitter before you go.{' '}
+              I’d love it if you could share this on Twitter.{' '}
               <ExternalLink href={tweetUrl}>
                 <HighlightBold>
                   <CustomEmoji type="twitter" /> Click here to Tweet this
                   article.
                 </HighlightBold>
               </ExternalLink>{' '}
-              Also, the source code for this article is{' '}
+              Also, the source code is{' '}
               <ExternalLink href="https://github.com/chibicode/ycombinator/blob/master/pages/emojis-functional-programming.tsx">
                 available on GitHub
               </ExternalLink>
