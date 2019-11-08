@@ -20,6 +20,7 @@ import EmojiNumber from 'src/components/EmojiNumber'
 import CustomEmoji from 'src/components/CustomEmoji'
 import ButtonWithTouchActiveStates from 'src/components/ButtonWithTouchActiveStates'
 import * as R from 'src/components/Runners'
+import { JimsTalk } from 'src/contents/0.en'
 import {
   ExternalLink,
   P,
@@ -2150,6 +2151,9 @@ const mul = sushi => sandwich => pizza =>
                 puzzles.
               </Highlight>
             </P>
+            <Alert backgroundColor="brown">
+              <JimsTalk />
+            </Alert>
           </BubbleQuoteContext.Provider>
         </ExpressionRunnerConfigContext.Provider>
       </Container>
