@@ -639,8 +639,8 @@ export default () => {
               <UlLi>
                 <Bold>In the first half (steps 1 - 5):</Bold> I’ll show you how
                 simple JavaScript code can be represented visually using my
-                emoji puzzles. Even if you’re not familiar with JS, you should
-                still be able to understand it.
+                emoji puzzles. You’ll be able to understand it even if you’re
+                not familiar with JS.
               </UlLi>
               <UlLi>
                 <Bold>In the second half (steps 6 - 10):</Bold> I’ll talk about
@@ -668,7 +668,7 @@ export default () => {
               Identity function in JS
             </Subheading>
             <P>
-              First, take a look at the following code. It’s an{' '}
+              Take a look at the following code. It’s an{' '}
               <Italic>identity function</Italic> in JavaScript that returns the
               argument.
             </P>
@@ -676,15 +676,15 @@ export default () => {
 sushi => sushi`}</CodeBlock>
             <P>
               If you apply the above function on a string{' '}
-              <InlineCode>'sandwich'</InlineCode>, then the result would be{' '}
+              <InlineCode>'sandwich'</InlineCode>, the result will be{' '}
               <InlineCode>'sandwich'</InlineCode>.
             </P>
-            <CodeBlock>{`// The result would be 'sandwich'
+            <CodeBlock>{`// The result will be 'sandwich'
 (sushi => sushi)('sandwich')`}</CodeBlock>
             <P>
-              <Bold>Now, here’s the interesting part:</Bold> One day, I realized
-              that the above JS code can be{' '}
-              <Italic>described visually using emojis.</Italic> Check this out:
+              One day, I realized that the above JS code can be{' '}
+              <Italic>described visually</Italic> using emojis like below. I
+              called this an “<Bold>emoji puzzle</Bold>”.
             </P>
             <R.Ilpo>
               An “<Bold>emoji puzzle</Bold>” that visually describes
@@ -702,8 +702,8 @@ sushi => sushi`}</CodeBlock>
               }
             >{`(sushi => sushi)('sandwich')`}</CodeBlock>
             <P>
-              …is represented by <Italic>the bottom two items</Italic> on the
-              puzzle, which are both <EmojiWithText letter="a" />.
+              …is represented by <Italic>the bottom two items</Italic>, which
+              are both <EmojiWithText letter="a" />.
             </P>
             <DimUnhighlighted>
               <R.Elku>
@@ -722,8 +722,8 @@ sushi => sushi`}</CodeBlock>
               }
             >{`(sushi => sushi)('sandwich')`}</CodeBlock>
             <P>
-              …is represented by <Italic>the top item</Italic> on the puzzle,
-              which is a <EmojiWithText letter="b" />.
+              …is represented by <Italic>the top item</Italic>, which is a{' '}
+              <EmojiWithText letter="b" />.
             </P>
             <DimUnhighlighted>
               <R.Vowa>
@@ -738,7 +738,7 @@ sushi => sushi`}</CodeBlock>
               <H args={{ name: 'run', lowerCase: true }} /> it.
             </P>
             <Alert backgroundColor="brown">
-              <Bold>Note:</Bold> To keep things simple, this puzzle doesn’t
+              <Bold>Note:</Bold> To keep things simple, emoji puzzles don’t
               distinguish between variable names (e.g.{' '}
               <InlineCode>sushi</InlineCode>) and strings (e.g.{' '}
               <InlineCode>'sushi'</InlineCode>). Therefore, both{' '}
