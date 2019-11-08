@@ -540,9 +540,9 @@ export default () => {
                 </InternalLink>
                 ”.
               </Highlight>{' '}
-              In this 17-page course, I teach computer science concepts such as
-              functional programming, lambda calculus, Church encoding, and Y
-              combinator in a way such that{' '}
+              In this 17-page course, I teach functional programming concepts
+              such as lambda calculus, Church encoding, and Y combinator in a
+              way such that{' '}
               <Italic>
                 people who have zero programming knowledge can understand
               </Italic>
@@ -551,7 +551,7 @@ export default () => {
             <P>
               I didn’t use any code to explain these concepts. Instead, I
               created <Bold>an emoji puzzle</Bold> that works as a runtime for
-              functional expressions. In this article, I’ll explain how my emoji
+              functional code. In this article, I’ll explain how my emoji
               puzzles can represent and execute functional code{' '}
               <Italic>visually</Italic>. Here’s a sneak peek—
               <Highlight>
