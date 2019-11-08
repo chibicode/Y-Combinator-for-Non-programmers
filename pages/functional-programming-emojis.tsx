@@ -91,9 +91,10 @@ const Ads = ({ shareId }: { shareId?: string }) => (
         <HighlightBold>
           <CustomEmoji type="twitter" /> Click here to Tweet this article.
         </HighlightBold>
-      </ExternalLink>{' '}
+      </ExternalLink>
+      {shareId && <> You can also follow me on Twitter:</>}
     </P>
-    {shareId && <TwitterEmbed id={shareId} />}
+    {shareId && <TwitterEmbed showCard id={shareId} />}
     <P>
       Also, the source code is{' '}
       <ExternalLink href="https://github.com/chibicode/ycombinator/">
@@ -2400,7 +2401,7 @@ const mul = sushi => sandwich => pizza =>
             <Subheading noHrTop step="none" coveredIn="none">
               Thank you for reading!
             </Subheading>
-            <Ads />
+            <Ads shareId="1192843729565962241" />
             {/*<P>
               You can also discuss this on <ExternalLink href="">Hacker News</ExternalLink>.
             </P>*/}
