@@ -217,7 +217,7 @@ const InlineCode = ({
     css={css`
       font-weight: 400;
       font-family: ${codeFontFamily};
-      background-color: ${highlighted ? colors('yellow300') : colors('codeBg')};
+      background-color: ${highlighted ? colors('yellow200') : colors('codeBg')};
       display: inline-block;
       font-size: 0.85em;
       padding: 0.075em 0.2em;
@@ -778,7 +778,7 @@ sushi => sushi`}</CodeBlock>
             </P>
             <PointToRunButton>
               <R.Itbm>
-                An “<Bold>emoji puzzle</Bold>” that’s equivalent to
+                An emoji puzzle that’s equivalent to
                 <br />
                 <InlineCode>(sushi => sushi)('sandwich')</InlineCode>
               </R.Itbm>
@@ -820,7 +820,11 @@ sushi => 'pizza'`}</CodeBlock>
               this code can be represented using an emoji puzzle as follows.{' '}
               <H args={{ name: 'pressRun' }} />
             </P>
-            <R.Qcme></R.Qcme>
+            <R.Qcme>
+              An emoji puzzle that’s equivalent to
+                <br />
+                <InlineCode>(sushi => 'pizza')('sandwich')</InlineCode>
+            </R.Qcme>
             <P>
               Just like the JS code, the emoji puzzle ended up with a{' '}
               <EmojiWithText letter="f" /> after running it.
@@ -828,7 +832,7 @@ sushi => 'pizza'`}</CodeBlock>
             <Alert backgroundColor="pink">
               <P>
                 <Bold>What we have learned so far:</Bold> Simple JS code like
-                below can be visually represented using emoji puzzles.
+                below can be represented using emoji puzzles.
               </P>
               <CodeBlock
                 defaultResultVisible
