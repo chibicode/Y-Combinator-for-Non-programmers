@@ -73,10 +73,10 @@ const dateString = date
   .toFormat('LLL d, yyyy')
 const dateSchemaString = date.setZone('America/Los_Angeles').toISO()
 
-const title = 'You Don’t Need Code to Explain Functional Programming'
+const title = 'You Can Explain Functional Programming with Emojis'
 const description =
-  'An emoji-based implementation of Lambda calculus, Church encoding, and Y combinator'
-const url = `${enBaseUrl}/functional-programming`
+  'A visual representation of Lambda calculus, Church encoding, and Y combinator'
+const url = `${enBaseUrl}/functional-programming-emojis`
 const ogImageUrl = `${enBaseUrl}/static/images/blog-og.png`
 
 const tweetUrl = `https://twitter.com/intent/tweet?url=${encodeURIComponent(
@@ -2193,14 +2193,13 @@ const mul = sushi => sandwich => pizza =>
               <UlLi>Must be doable on a smartphone in under 2-3 hours</UlLi>
             </Ul>
             <P>
-              And that’s how I came up with my course,{' '}
+              In the future, I plan to do something similar with other CS
+              topics. In the meantime, you can take a look at my course,{' '}
               <InternalLink href="/">
                 Y Combinator for Non-programmers
               </InternalLink>
-              , which uses emoji puzzles. In the future, I plan to do something
-              similar with other CS topics.
+              , here:
             </P>
-            <P>In the meantime, you can take a look at my course here:</P>
             <div
               css={css`
                 text-align: center;
@@ -2241,7 +2240,7 @@ const mul = sushi => sandwich => pizza =>
                     display: block;
                   `}
                 >
-                  View the Course
+                  View My Course
                 </span>
                 <span
                   css={css`
