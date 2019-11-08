@@ -1869,12 +1869,12 @@ const mul = sushi => sandwich => pizza =>
               </P>
               <P>
                 There’s a programming language called{' '}
-                <Bold>Lambda calculus</Bold>, created by a mathematician Alonzo
-                Church (
+                <Bold>Lambda calculus</Bold> (
                 <ExternalLink href="https://en.wikipedia.org/wiki/Lambda_calculus">
                   Wikipedia
                 </ExternalLink>
-                ). It only has two features:{' '}
+                ), created by a mathematician Alonzo Church. It only has two
+                features:{' '}
                 <Highlight>variables and anonymous functions</Highlight>. Here’s
                 a piece of lambda calculus code:
               </P>
@@ -1888,8 +1888,8 @@ const mul = sushi => sandwich => pizza =>
               >{`λsushi.sushi sandwich`}</CodeBlock>
               <P>
                 The above code is equivalent to the following JS code. There are
-                no strings in lambda calculus—everything is a variable or a
-                function.
+                no strings in lambda calculus—everything is either a variable or
+                an anonymous function.
               </P>
               <CodeBlock>{`(sushi => sushi)(sandwich)`}</CodeBlock>
               <P>
@@ -1906,7 +1906,7 @@ const mul = sushi => sandwich => pizza =>
                 <br />
                 two Church numerals
               </R.Nnzx>
-              <P>…is equivalent to the following lambda calculus expression:</P>
+              <P>…is equivalent to the following lambda calculus code:</P>
               <CodeBlock
                 noHighlight
                 caption={<>Equivalent lambda calculus code</>}
