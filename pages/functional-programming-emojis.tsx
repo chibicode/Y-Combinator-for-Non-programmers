@@ -822,8 +822,8 @@ sushi => 'pizza'`}</CodeBlock>
             </P>
             <R.Qcme>
               An emoji puzzle that’s equivalent to
-                <br />
-                <InlineCode>(sushi => 'pizza')('sandwich')</InlineCode>
+              <br />
+              <InlineCode>(sushi => 'pizza')('sandwich')</InlineCode>
             </R.Qcme>
             <P>
               Just like the JS code, the emoji puzzle ended up with a{' '}
@@ -856,21 +856,32 @@ sushi => 'pizza'`}</CodeBlock>
               Visualizing evaluation rules
             </Subheading>
             <P>
-              Because you know how to code, you have a mental model of how
-              function evaluation works. If you see{' '}
-              <InlineCode>(sushi => sushi)('sandwich')</InlineCode>, you can
-              quickly figure out that the result would be{' '}
-              <InlineCode>'sandwich'</InlineCode>. If you see{' '}
-              <InlineCode>(sushi => 'pizza')('sandwich')</InlineCode>, you know
-              that the result would be <InlineCode>'pizza'</InlineCode>. You
-              know what free variables and bound variables mean.
+              If you know how to code, you have a <Italic>mental model</Italic>{' '}
+              of how function evaluation works:
             </P>
+            <Ul>
+              <UlLi>
+                If you see <InlineCode>(sushi => sushi)('sandwich')</InlineCode>
+                , you can quickly figure out that the result would be{' '}
+                <InlineCode>'sandwich'</InlineCode>.
+              </UlLi>
+              <UlLi>
+                If you see{' '}
+                <InlineCode>(sushi => 'pizza')('sandwich')</InlineCode>, you
+                know that the result would be <InlineCode>'pizza'</InlineCode>.
+              </UlLi>
+              <UlLi>
+                You know what free variables and bound variables mean.
+              </UlLi>
+            </Ul>
             <P>
-              On the other hand, non-programmers may not have a mental model of
-              how function evaluation works. To help them develop a mental model
-              without showing them any code, I created a{' '}
-              <Italic>step-by-step visualization</Italic> of function evaluation
-              rules using the emoji puzzle I mentioned earlier.
+              On the other hand, most non-programmers don’t have a mental model
+              of how function evaluation works. To help them develop the mental
+              model,{' '}
+              <Highlight>
+                I created a <Italic>step-by-step visualization</Italic> of
+                function evaluation rules using emoji puzzles.
+              </Highlight>
             </P>
             <P>Let’s reuse the earlier example again:</P>
             <CodeBlock
@@ -882,12 +893,8 @@ sushi => 'pizza'`}</CodeBlock>
               <Highlight>
                 try pressing the <H args={{ name: 'run' }} /> button
               </Highlight>
-              . This button is a bit different from the last time—
-              <Italic>
-                it shows all the steps that happen in between the beginning and
-                the end
-              </Italic>
-              .
+              . This button is a bit different from the last time—it shows{' '}
+              <Italic>every step</Italic> that happens in between.
             </P>
             <PointToRunButton>
               <R.Wunw></R.Wunw>
@@ -957,11 +964,13 @@ sushi => 'pizza'`}</CodeBlock>
             <ExpressionRunnerSeparator />
             <R.Lngo></R.Lngo>
             <P>
-              The above steps visually represent how functions are
-              evaluated—they are equivalent to how JavaScript evaluates{' '}
-              <InlineCode>(sushi => sushi)('sandwich')</InlineCode>. By learning
-              these rules, non-programmers can evaluate functions intuitively,
-              without learning about how variable bindings work.
+              The above steps are a visual representation of how functions are
+              evaluated. They are equivalent to how JavaScript evaluates{' '}
+              <InlineCode>(sushi => sushi)('sandwich')</InlineCode>.
+            </P>
+            <P>
+              By learning these rules, non-programmers will be able to evaluate
+              functions intuitively.
             </P>
             <Subheading step={step++} coveredIn={4}>
               If there’s no match
