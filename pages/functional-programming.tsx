@@ -2258,6 +2258,9 @@ const mul = sushi => sandwich => pizza =>
               Thank you for reading!
             </Subheading>
             <Ads />
+            {/*<P>
+              You can also discuss this on <ExternalLink href="">Hacker News</ExternalLink>.
+            </P>*/}
             <Hr />
             <H args={{ name: 'aboutMe', hideNextPageButton: true }} />
           </BubbleQuoteContext.Provider>
