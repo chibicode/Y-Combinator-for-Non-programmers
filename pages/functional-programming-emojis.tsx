@@ -1583,12 +1583,12 @@ a => b => a(a(a(b))))
               next about why Church numerals are interesting.
             </P>
             <Subheading step={step++} coveredIn={8}>
-              You can do maths with functions
+              Arithmetic with functions
             </Subheading>
             <P>
               Church numerals are interesting because{' '}
-              <Italic>they let you do maths with functions.</Italic> First, take
-              a look at this function:
+              <Italic>they let you do arithmetic with functions.</Italic> Take a
+              look at this function:
             </P>
             <CodeBlock>{`sushi => sandwich => pizza =>
   sandwich(
@@ -1600,13 +1600,13 @@ a => b => a(a(a(b))))
             </P>
             <Ul>
               <UlLi>
-                We apply the above function to the Church numeral zero ( has the
+                We apply the above function to the Church numeral zero (has the
                 pattern <InlineCode>a => b => b</InlineCode>), and
               </UlLi>
               <UlLi>
                 Run <InlineCode>convert()</InlineCode> (from earlier) on it.
-                What would the result be?
               </UlLi>
+              <UlLi>What would the result be?</UlLi>
             </Ul>
             <P>
               Let’s take a look.{' '}
@@ -1629,18 +1629,31 @@ const zero = chicken => salad => salad
 convert(f(zero))`}</CodeBlock>
             <P>
               The result is <InlineCode>1</InlineCode>, which is 1 greater than
-              the input Church numeral, which was <InlineCode>0</InlineCode>.
-              Basically, <InlineCode>0</InlineCode> became{' '}
+              the input Church numeral, which was <InlineCode>0</InlineCode>. In
+              other words, <InlineCode>0</InlineCode> became{' '}
               <InlineCode>1</InlineCode>.
             </P>
+            <EmojiSeparator
+              nodes={[
+                <EmojiNumber number={0} />,
+                <CustomEmoji type="singleArrow" />,
+                <EmojiNumber number={1} />
+              ]}
+              description={
+                <>
+                  <InlineCode>0</InlineCode> became <InlineCode>1</InlineCode>
+                </>
+              }
+            />
             <P>
               <Bold>Here’s the secret:</Bold>{' '}
               <Highlight>
-                This function we used actually <Bold>adds 1</Bold> to the input
-                church numeral.
+                This function <InlineCode>f</InlineCode> we used actually{' '}
+                <Bold>adds 1</Bold> to the input Church numeral.
               </Highlight>{' '}
-              When you apply this function to a Church numeral, it returns a{' '}
-              <Italic>new Church numeral</Italic> that’s 1 greater than before.
+              When you apply <InlineCode>f</InlineCode> to a Church numeral, it
+              returns a <Italic>new Church numeral</Italic> that’s 1 greater
+              than before.
             </P>
             <CodeBlock>{`// If we apply this function to a
 // Church numeral, it returns a new
@@ -1662,20 +1675,40 @@ const two = chicken => salad =>
 convert(f(two))`}</CodeBlock>
             <P>
               This is what I mean by “
-              <Italic>doing maths with functions</Italic>”:
+              <Italic>doing arithmetic with functions</Italic>”:
             </P>
             <Ul>
               <UlLi>
-                You can calculate <InlineCode>someNumber + 1</InlineCode>…
+                <Highlight>
+                  By using a Church numeral function that can be converted to{' '}
+                  <InlineCode>someNumber</InlineCode>…
+                </Highlight>
               </UlLi>
               <UlLi>
-                By using a Church numeral function that can be converted to{' '}
-                <InlineCode>someNumber</InlineCode>…
+                <Highlight>
+                  …and the function <InlineCode>f</InlineCode> we saw earlier,
+                </Highlight>
               </UlLi>
               <UlLi>
-                And the function <InlineCode>f</InlineCode> we saw earlier.
+                <Highlight>
+                  You can calculate <InlineCode>someNumber + 1</InlineCode>.
+                </Highlight>
               </UlLi>
             </Ul>
+            <EmojiSeparator
+              nodes={[
+                <CustomEmoji type="blankNumber" />,
+                <Emoji>➕</Emoji>,
+                <EmojiNumber number={1} />
+              ]}
+              description={
+                <>
+                  You can calculate <InlineCode>someNumber + 1</InlineCode>
+                  <br />
+                  using just functions
+                </>
+              }
+            />
             <P>
               <Highlight>
                 Now, let’s see if we can explain this to non-programmers using
@@ -1685,7 +1718,7 @@ convert(f(two))`}</CodeBlock>
             <P>
               First, here’s an emoji puzzle representation of the Church numeral{' '}
               <Bold>0</Bold>. You can confirm that it can be converted to{' '}
-              <EmojiNumber number={0} /> by pressing the button.
+              <EmojiNumber number={0} /> by pressing the button below.
             </P>
             <R.Hfgh>
               <Bold>Represents:</Bold>
@@ -1739,8 +1772,7 @@ convert(f(two))`}</CodeBlock>
                 <Bold>In other words:</Bold>{' '}
                 <Highlight>
                   We can use an emoji puzzle to calculate{' '}
-                  <InlineCode>someNumber + 1</InlineCode>, in a way that’s
-                  equivalent to using Church numeral functions in JS.
+                  <InlineCode>someNumber + 1</InlineCode>.
                 </Highlight>
               </P>
             </Alert>
