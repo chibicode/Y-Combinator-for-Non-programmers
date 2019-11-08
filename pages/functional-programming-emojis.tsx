@@ -499,7 +499,7 @@ const guessTheResult = (
   <>
     Guess what the result would be
     <br />
-    before pressing the <H args={{ name: 'run' }} /> button!
+    before pressing the <H args={{ name: 'run' }} /> button.
   </>
 )
 
@@ -1063,8 +1063,10 @@ sushi => 'pizza'`}</CodeBlock>
             </Subheading>
             <P>
               Let’s take a look at more complicated functional JS expressions
-              and see if they can be represented using an emoji puzzle. Check
-              out the following JS expression, and
+              and see if they can be represented using an emoji puzzle.
+            </P>
+            <P>
+              Check out the following JS expression, and
               <Highlight>
                 {' '}
                 try to guess what the result would be before pressing the{' '}
@@ -1077,7 +1079,7 @@ sushi => 'pizza'`}</CodeBlock>
                 <>
                   Guess what the result would be
                   <br />
-                  before pressing the <H args={{ name: 'run' }} /> button!
+                  before pressing the <H args={{ name: 'run' }} /> button.
                 </>
               }
             >{`(sushi => sandwich => sushi)(
@@ -1085,13 +1087,23 @@ sushi => 'pizza'`}</CodeBlock>
 )('chicken')`}</CodeBlock>
             <P>
               The result was <InlineCode>{`'hamburger'`}</InlineCode>. It’s
-              because <InlineCode>{'sushi'}</InlineCode> is bound to{' '}
-              <InlineCode>{`'hamburger'`}</InlineCode>,{' '}
-              <InlineCode>{'sandwich'}</InlineCode> is bound to{' '}
-              <InlineCode>{`'chicken'`}</InlineCode>, and it returns what’s in{' '}
-              <InlineCode>{'sushi'}</InlineCode>.
+              because:
             </P>
-            <P>And here’s the equivalent emoji puzzle:</P>
+            <Ul>
+              <UlLi>
+                <InlineCode>{'sushi'}</InlineCode> is bound to{' '}
+                <InlineCode>{`'hamburger'`}</InlineCode>,
+              </UlLi>
+              <UlLi>
+                <InlineCode>{'sandwich'}</InlineCode> is bound to{' '}
+                <InlineCode>{`'chicken'`}</InlineCode>,
+              </UlLi>
+              <UlLi>
+                And it returns the value of <InlineCode>{'sushi'}</InlineCode>,
+                which is <InlineCode>{`'hamburger'`}</InlineCode>.
+              </UlLi>
+            </Ul>
+            <P>Now, here’s the equivalent emoji puzzle:</P>
             <R.Cvtc></R.Cvtc>
             <P>Let’s break it down. First, the function expression…</P>
             <CodeBlock
@@ -1123,8 +1135,8 @@ sushi => 'pizza'`}</CodeBlock>
               </R.Ujuq>
             </DimUnhighlighted>
             <P>
-              Now, let’s talk about how we evaluate this function. In JS, we
-              first evaluate the function call with the argument{' '}
+              How do we evaluate this function? Well, in JS, we first evaluate
+              the function call with the argument{' '}
               <InlineCode>'hamburger'</InlineCode>.
             </P>
             <CodeBlock
@@ -1139,8 +1151,8 @@ sushi => 'pizza'`}</CodeBlock>
 )('chicken')`}</CodeBlock>
             <P>
               Equivalently, in an emoji puzzle,{' '}
-              <Italic>we evaluate the bottom two rows first.</Italic> We ignore
-              the top row initially, which is shaded in blue.
+              <Highlight>we evaluate the bottom two rows first.</Highlight> We
+              ignore the top row initially, which is shaded in blue.
             </P>
             <R.Bcgp>
               <Bold>Focus</Bold> on <Italic>the bottom two rows</Italic>, and
@@ -1148,10 +1160,11 @@ sushi => 'pizza'`}</CodeBlock>
               <Bold>Ignore</Bold> the <Italic>top row</Italic> for now
             </R.Bcgp>
             <P>
-              If you look at the left edge of the puzzle, the bottom two rows
-              correspond to the pair of{' '}
+              Also, if you look at the left edge of the puzzle above, the bottom
+              two rows correspond to the pair of{' '}
               <InlinePrioritiesLabel revert>1</InlinePrioritiesLabel>
-              ’s. That’s the rule:{' '}
+              ’s. That’s how you know that you must start with the bottom two
+              rows.{' '}
               <Highlight>
                 In an emoji puzzle with 3 rows, you start with the pair of{' '}
                 <InlinePrioritiesLabel revert>1</InlinePrioritiesLabel>’s.
@@ -1178,15 +1191,18 @@ sushi => 'pizza'`}</CodeBlock>
             <P>
               <Bold>Here’s the rule:</Bold>{' '}
               <Highlight>
-                The middle items on the bottom row are labeled as{' '}
-                <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />,
-                and you can <Bold>ignore them</Bold>.
+                The middle item on the bottom row is labeled as{' '}
+                <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />{' '}
+                (for “<Bold>M</Bold>iddle”), and you can <Bold>ignore it</Bold>.
               </Highlight>{' '}
               You can pretend that{' '}
               <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />
-              ’s don’t exist and apply the other rules from before.
+              ’s don’t exist.
             </P>
-            <P>Let’s take a look at the next few steps in this iteration:</P>
+            <P>
+              Let’s take a look at the next few steps in this iteration, which
+              is just like what we saw earlier:
+            </P>
             <R.Itvv></R.Itvv>
             <ExpressionRunnerSeparator />
             <R.Nefh></R.Nefh>
@@ -1212,6 +1228,8 @@ sushi => 'pizza'`}</CodeBlock>
                   …it becomes this, which is
                   <br />
                   equivalent to the above emoji puzzle
+                  <br />
+                  (but it’s not done yet!)
                 </>
               }
             >{`(sandwich => 'hamburger')('chicken')`}</CodeBlock>
@@ -1224,14 +1242,13 @@ sushi => 'pizza'`}</CodeBlock>
             <R.Iwxm>Let’s continue to the end!</R.Iwxm>
             <P>
               We ended up with a <EmojiWithText letter="c" />, which is exactly
-              the same as what the JS code evaluated to. So we’ve shown that
-              complex functional JS expressions can be represented using an
-              emoji puzzle.
+              the same as what the JS code evaluated to.
             </P>
             <Alert backgroundColor="pink">
               <P>
                 <Bold>What we have learned so far:</Bold> Complex functional JS
-                expressions can be represented using an emoji puzzle.
+                expressions can be represented and evaluated using an emoji
+                puzzle.
               </P>
               <CodeBlock
                 defaultResultVisible
@@ -1279,26 +1296,28 @@ sushi => 'pizza'`}</CodeBlock>
                   <InlinePrioritiesLabel>1</InlinePrioritiesLabel>’s.
                 </UlLi>
                 <UlLi>
-                  The middle items on the bottom row are labeled as{' '}
+                  The middle item on the bottom row is labeled as{' '}
                   <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />
-                  , and you can <Bold>ignore them</Bold>.
+                  , and you can <Bold>ignore it</Bold>.
                 </UlLi>
               </Ul>
               <R.Xhje>Equivalent emoji puzzle:</R.Xhje>
               <Hr />
               <P>
-                Next, here’s slightly different JS code.{' '}
+                Next, here’s slightly different JS code. Compared to the last
+                time,{' '}
                 <Highlight>
-                  There’s an extra pair of parentheses around{' '}
-                  <InlineCode>(spaghetti => spaghetti)('salad')</InlineCode>, so
-                  this will be evaluated first
+                  there’s an extra pair of parentheses around{' '}
+                  <InlineCode>(spaghetti => spaghetti)('salad')</InlineCode>,
+                  which changes the result.
                 </Highlight>
-                , and the result will be different from the last time.
               </P>
               <CodeBlock
                 result={`pizza => pizza`}
                 caption={guessTheResult}
-              >{`(friedPotatoes => pizza => pizza)(
+              >{`// There’s an extra pair of parens around
+// (spaghetti => spaghetti)("salad")
+(friedPotatoes => pizza => pizza)(
   (spaghetti => spaghetti)("salad")
 )`}</CodeBlock>
               <P>
@@ -1307,11 +1326,11 @@ sushi => 'pizza'`}</CodeBlock>
                   the pair of <InlinePrioritiesLabel>1</InlinePrioritiesLabel>’s
                   is on the top two rows
                 </Highlight>{' '}
-                instead.{' '}
+                instead. So we start with the top two rows this time.{' '}
                 <Highlight>
                   Try pressing <H args={{ name: 'run' }} />
                 </Highlight>{' '}
-                and see what happens!
+                and see what happens.
               </P>
               <R.Hyvj>
                 This time, the pair of{' '}
@@ -1559,7 +1578,7 @@ a => b => a(a(a(b))))
               Let’s take a look.{' '}
               <Highlight>
                 Try to guess before pressing the <H args={{ name: 'run' }} />{' '}
-                button!
+                button.
               </Highlight>
             </P>
             <CodeBlock result="1">{`// Function from the above
@@ -1719,7 +1738,7 @@ convert(f(two))`}</CodeBlock>
               </R.Dvio>
               <P>
                 So, it successfully calculated{' '}
-                <InlineCode>1 + 1 = 2</InlineCode>! Again, this is what just
+                <InlineCode>1 + 1 = 2</InlineCode>. Again, this is what just
                 happened:
               </P>
               <R.Kqtz></R.Kqtz>
