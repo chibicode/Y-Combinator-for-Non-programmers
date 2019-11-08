@@ -96,7 +96,7 @@ const Ads = ({ shareId }: { shareId?: string }) => (
     {shareId && <TwitterEmbed id={shareId} />}
     <P>
       Also, the source code is{' '}
-      <ExternalLink href="https://github.com/chibicode/ycombinator/blob/master/pages/functional-programming.tsx">
+      <ExternalLink href="https://github.com/chibicode/ycombinator/">
         available on GitHub
       </ExternalLink>
       :{' '}
@@ -600,18 +600,18 @@ export default () => {
               </Highlight>{' '}
               In this 17-page course, I explain functional programming concepts
               such as lambda calculus, Church encoding, and Y combinator in a
-              way such that{' '}
-              <Italic>
-                people who have zero programming knowledge can understand
-              </Italic>
-              .
+              way such that people{' '}
+              <Italic>who have zero programming knowledge</Italic> can
+              understand.
             </P>
             <P>
-              I didn’t use any code to explain these concepts. Instead, I
-              created <Bold>an emoji puzzle</Bold> that works as a runtime for
-              functional code. In this article, I’ll explain how my emoji
-              puzzles can represent and execute functional code{' '}
-              <Italic>visually</Italic>. Here’s a sneak peek—
+              I didn’t use any code to explain these concepts. Instead,{' '}
+              <Highlight>
+                I created something called “<Bold>emoji puzzles</Bold>” that can{' '}
+                <Italic>visualize</Italic> functional code.
+              </Highlight>{' '}
+              In this article, I’ll explain how my emoji puzzles can represent
+              and execute functional code visually. Here’s a sneak peek—
               <Highlight>
                 try pressing <H args={{ name: 'run' }} /> below!
               </Highlight>
@@ -626,22 +626,21 @@ export default () => {
               <R.Itbm>Equivalent emoji puzzle:</R.Itbm>
             </PointToRunButton>
             <P>
-              If you like to teach programming to beginners, or if you like
-              functional programming in general, I think you’ll enjoy this
-              article.
+              If you like to teach programming, or if you like functional
+              programming, I think you’ll enjoy this article.
             </P>
             <Subheading noHrTop step="none" coveredIn="none">
               Overview
             </Subheading>
             <P>
-              This article has <Bold>10 steps.</Bold>
+              This article has <Bold>10 steps:</Bold>
             </P>
             <Ul>
               <UlLi>
                 <Bold>In the first half (steps 1 - 5):</Bold> I’ll show you how
-                simple JavaScript code can be represented using my emoji
-                puzzles. Even if you’re not familiar with JS, you should still
-                be able to understand it.
+                simple JavaScript code can be represented visually using my
+                emoji puzzles. Even if you’re not familiar with JS, you should
+                still be able to understand it.
               </UlLi>
               <UlLi>
                 <Bold>In the second half (steps 6 - 10):</Bold> I’ll talk about
@@ -658,7 +657,7 @@ export default () => {
                 `}
               >
                 <Emoji>⚠️</Emoji> This article is for programmers. If you’re a
-                non-programmer, check out the course itself instead: “
+                non-programmer, check out my course instead: “
                 <InternalLink href="/">
                   <Bold>Y Combinator for Non-programmers</Bold>
                 </InternalLink>
