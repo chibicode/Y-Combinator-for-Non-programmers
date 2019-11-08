@@ -73,10 +73,10 @@ const dateString = date
   .toFormat('LLL d, yyyy')
 const dateSchemaString = date.setZone('America/Los_Angeles').toISO()
 
-const title = 'You Don’t Need Code to Explain Functional Programming'
+const title = 'You Can Explain Functional Programming with Emojis'
 const description =
-  'An emoji-based implementation of Lambda calculus, Church encoding, and Y combinator'
-const url = `${enBaseUrl}/functional-programming`
+  'A visual representation of Lambda calculus, Church encoding, and Y combinator'
+const url = `${enBaseUrl}/functional-programming-emojis`
 const ogImageUrl = `${enBaseUrl}/static/images/blog-og.png`
 
 const tweetUrl = `https://twitter.com/intent/tweet?url=${encodeURIComponent(
@@ -96,7 +96,7 @@ const Ads = ({ shareId }: { shareId?: string }) => (
     {shareId && <TwitterEmbed id={shareId} />}
     <P>
       Also, the source code is{' '}
-      <ExternalLink href="https://github.com/chibicode/ycombinator/blob/master/pages/functional-programming.tsx">
+      <ExternalLink href="https://github.com/chibicode/ycombinator/">
         available on GitHub
       </ExternalLink>
       :{' '}
@@ -600,18 +600,18 @@ export default () => {
               </Highlight>{' '}
               In this 17-page course, I explain functional programming concepts
               such as lambda calculus, Church encoding, and Y combinator in a
-              way such that{' '}
-              <Italic>
-                people who have zero programming knowledge can understand
-              </Italic>
-              .
+              way such that people{' '}
+              <Italic>who have zero programming knowledge</Italic> can
+              understand.
             </P>
             <P>
-              I didn’t use any code to explain these concepts. Instead, I
-              created <Bold>an emoji puzzle</Bold> that works as a runtime for
-              functional code. In this article, I’ll explain how my emoji
-              puzzles can represent and execute functional code{' '}
-              <Italic>visually</Italic>. Here’s a sneak peek—
+              I didn’t use any code to explain these concepts. Instead,{' '}
+              <Highlight>
+                I created something called “<Bold>emoji puzzles</Bold>” that can{' '}
+                <Italic>visualize</Italic> functional code.
+              </Highlight>{' '}
+              In this article, I’ll explain how my emoji puzzles can represent
+              and execute functional code visually. Here’s a sneak peek—
               <Highlight>
                 try pressing <H args={{ name: 'run' }} /> below!
               </Highlight>
@@ -626,22 +626,21 @@ export default () => {
               <R.Itbm>Equivalent emoji puzzle:</R.Itbm>
             </PointToRunButton>
             <P>
-              If you like to teach programming to beginners, or if you like
-              functional programming in general, I think you’ll enjoy this
-              article.
+              If you like to teach programming, or if you like functional
+              programming, I think you’ll enjoy this article.
             </P>
             <Subheading noHrTop step="none" coveredIn="none">
               Overview
             </Subheading>
             <P>
-              This article has <Bold>10 steps.</Bold>
+              This article has <Bold>10 steps:</Bold>
             </P>
             <Ul>
               <UlLi>
                 <Bold>In the first half (steps 1 - 5):</Bold> I’ll show you how
-                simple JavaScript code can be represented using my emoji
-                puzzles. Even if you’re not familiar with JS, you should still
-                be able to understand it.
+                simple JavaScript code can be represented visually using my
+                emoji puzzles. Even if you’re not familiar with JS, you should
+                still be able to understand it.
               </UlLi>
               <UlLi>
                 <Bold>In the second half (steps 6 - 10):</Bold> I’ll talk about
@@ -658,7 +657,7 @@ export default () => {
                 `}
               >
                 <Emoji>⚠️</Emoji> This article is for programmers. If you’re a
-                non-programmer, check out the course itself instead: “
+                non-programmer, check out my course instead: “
                 <InternalLink href="/">
                   <Bold>Y Combinator for Non-programmers</Bold>
                 </InternalLink>
@@ -774,7 +773,7 @@ sushi => sushi`}</CodeBlock>
               <R.Itbm></R.Itbm>
             </PointToRunButton>
             <P>
-              The result is <EmojiWithText letter="b" />, which is the same as
+              The result is a <EmojiWithText letter="b" />, which is the same as
               what happens when you run the equivalent JS code.
             </P>
             <P>
@@ -819,8 +818,8 @@ sushi => 'pizza'`}</CodeBlock>
             </P>
             <Alert backgroundColor="pink">
               <P>
-                <Bold>What we learned so far:</Bold> Simple JS code like below
-                can be visually represented using emoji puzzles.
+                <Bold>What we have learned so far:</Bold> Simple JS code like
+                below can be visually represented using emoji puzzles.
               </P>
               <CodeBlock
                 defaultResultVisible
@@ -1118,7 +1117,7 @@ sushi => 'pizza'`}</CodeBlock>
   'hamburger'
 )('chicken')`}</CodeBlock>
             <P>
-              Equivalently, in the emoji puzzle,{' '}
+              Equivalently, in an emoji puzzle,{' '}
               <Italic>we evaluate the bottom two rows first.</Italic> We ignore
               the top row initially, which is shaded in blue.
             </P>
@@ -1210,7 +1209,7 @@ sushi => 'pizza'`}</CodeBlock>
             </P>
             <Alert backgroundColor="pink">
               <P>
-                <Bold>What we learned so far:</Bold> Complex functional JS
+                <Bold>What we have learned so far:</Bold> Complex functional JS
                 expressions can be represented using an emoji puzzle.
               </P>
               <CodeBlock
@@ -1407,8 +1406,8 @@ convert(sushi => sandwich =>
             </Ul>
             <Alert backgroundColor="pink">
               <P>
-                <Bold>What we learned so far:</Bold> If we have a function that
-                has one of the following patterns:
+                <Bold>What we have learned so far:</Bold> If we have a function
+                that has one of the following patterns:
               </P>
               <CodeBlock>{`// a & b can be any variable name
 a => b => b
@@ -1438,7 +1437,7 @@ convert(a => b => a(a(a(b)))) // 3
               <ExternalLink href="https://en.wikipedia.org/wiki/Church_encoding">
                 <Bold>Church numerals</Bold>
               </ExternalLink>
-              . Each function represents some Church numeral.
+              . Each function represents a Church numeral.
             </P>
             <CodeBlock>{`// Church numeral 0
 a => b => b
@@ -1593,7 +1592,7 @@ convert(f(two))`}</CodeBlock>
             </P>
             <Ul>
               <UlLi>
-                You can calcultate <InlineCode>someNumber + 1</InlineCode>…
+                You can calculate <InlineCode>someNumber + 1</InlineCode>…
               </UlLi>
               <UlLi>
                 By using a Church numeral function that can be converted to{' '}
@@ -1791,7 +1790,7 @@ const mul = sushi => sandwich => pizza =>
             <P>
               So emoji puzzles can calculate multiplications too.{' '}
               <InternalLink href="/10">In my course</InternalLink>, I also show
-              how we can do <Bold>subtractions</Bold> usinng emoji puzzles.
+              how we can do <Bold>subtractions</Bold> using emoji puzzles.
               Divisions are very complicated but possible.
             </P>
             <Subheading step={step++} coveredIn={12}>
@@ -1799,7 +1798,7 @@ const mul = sushi => sandwich => pizza =>
             </Subheading>
             <P>
               In addition to math expressions, we can also represent{' '}
-              <Bold>conditionals</Bold> like <InlineCode>if/else</InlineCode>{' '}
+              <Bold>conditionals</Bold> such as <InlineCode>if/else</InlineCode>{' '}
               statements using just functions/emoji puzzles.
             </P>
             <P>
@@ -1844,7 +1843,7 @@ const mul = sushi => sandwich => pizza =>
               <H args={{ name: 'pressRun' }} />
             </P>
             <R.Vdcr>
-              The bottom emoji puzzle (in yellow background)
+              The bottom emoji puzzle (in the yellow background)
               <br />
               can be converted to <EmojiNumber number={0} />
             </R.Vdcr>
@@ -1862,7 +1861,7 @@ const mul = sushi => sandwich => pizza =>
               <H args={{ name: 'pressRun' }} />
             </P>
             <R.Vyic>
-              The bottom emoji puzzle (in yellow background)
+              The bottom emoji puzzle (in the yellow background)
               <br />
               can be converted to <EmojiNumber number={1} />
             </R.Vyic>
@@ -1973,9 +1972,9 @@ const mul = sushi => sandwich => pizza =>
               article.
             </Alert>
             <P>
-              If we can express conditionals (like <InlineCode>if</InlineCode>)
+              If we can express conditionals (e.g. <InlineCode>if</InlineCode>)
               using functions/emoji puzzles, can we express{' '}
-              <Bold>control flow</Bold> (like loops) as well? The answer is yes.
+              <Bold>control flow</Bold> (e.g. loops) as well? The answer is yes.
               We can express control flow using{' '}
               <Highlight>
                 <Bold>Y combinator</Bold>
@@ -1991,7 +1990,7 @@ const mul = sushi => sandwich => pizza =>
             </P>
             <P>
               Y combinator is complex, so if we go into detail we’ll need
-              another article. In fact, I had to used two full pages (
+              another article. In fact, I used two full pages (
               <InternalLink href="/14">page 1</InternalLink>,{' '}
               <InternalLink href="/15">page 2</InternalLink>) in my course to
               explain Y combinator using emoji puzzles. So here I’ll explain
@@ -2153,7 +2152,7 @@ const mul = sushi => sandwich => pizza =>
             <P>
               In{' '}
               <InternalLink href="/15">
-                the final lesson of my couse
+                the final lesson of my course
               </InternalLink>
               , I show how to use the above emoji puzzle to calculate factorials
               (I won’t show it here because it’s pretty complex).
@@ -2194,14 +2193,13 @@ const mul = sushi => sandwich => pizza =>
               <UlLi>Must be doable on a smartphone in under 2-3 hours</UlLi>
             </Ul>
             <P>
-              And that’s how I came up with my course,{' '}
+              In the future, I plan to do something similar with other CS
+              topics. In the meantime, you can take a look at my course,{' '}
               <InternalLink href="/">
                 Y Combinator for Non-programmers
               </InternalLink>
-              , which uses emoji puzzles. In the future, I plan to do something
-              similar with other CS topics.
+              , here:
             </P>
-            <P>In a meantime, you can take a look at my course from here:</P>
             <div
               css={css`
                 text-align: center;
@@ -2242,7 +2240,7 @@ const mul = sushi => sandwich => pizza =>
                     display: block;
                   `}
                 >
-                  View the Course
+                  View My Course
                 </span>
                 <span
                   css={css`
