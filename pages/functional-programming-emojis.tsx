@@ -1362,12 +1362,38 @@ sushi => 'pizza'`}</CodeBlock>
             <Subheading step={step++} coveredIn={6}>
               Church numerals
             </Subheading>
+            <Alert backgroundColor="yellow">
+              <div
+                css={css`
+                  font-size: ${fontSizes(0.85)};
+                `}
+              >
+                <P>
+                  <Bold>You’re halfway there:</Bold> 5 steps down, 5 more to go!
+                </P>
+                <P
+                  css={css`
+                    margin-bottom: 0;
+                  `}
+                >
+                  If you’re thinking of taking a break, I’d appreciate it if you
+                  could{' '}
+                  <ExternalLink href={tweetUrl}>
+                    <CustomEmoji type="twitter" />{' '}
+                    <Bold>Share this article on Twitter</Bold>
+                  </ExternalLink>{' '}
+                  before you close this page.
+                </P>
+              </div>
+            </Alert>
             <P>
-              Let’s apply what we’ve learned and solve more interesting
-              problems. First, here’s a function called{' '}
-              <InlineCode>convert</InlineCode> that takes a function as an
-              argument. It then applies <InlineCode>(n => n + 1)(0)</InlineCode>{' '}
-              to it.
+              From now on, we’ll apply what we’ve learned so far to solve more
+              interesting problems.
+            </P>
+            <P>
+              Here’s a function called <InlineCode>convert</InlineCode> that
+              takes a function as an argument. It then applies{' '}
+              <InlineCode>(n => n + 1)(0)</InlineCode> to it.
             </P>
             <CodeBlock>{`function convert(f) {
   return f(n => n + 1)(0)
@@ -2008,8 +2034,14 @@ const mul = sushi => sandwich => pizza =>
               Control flow and Y combinator
             </Subheading>
             <Alert backgroundColor="yellow">
-              <Bold>You’re almost done:</Bold> This is the final step in this
-              article.
+              <div
+                css={css`
+                  font-size: ${fontSizes(0.85)};
+                `}
+              >
+                <Bold>You’re almost done:</Bold> This is the final step in this
+                article.
+              </div>
             </Alert>
             <P>
               If we can express conditionals (e.g. <InlineCode>if</InlineCode>)
