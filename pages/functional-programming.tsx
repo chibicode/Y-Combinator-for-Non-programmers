@@ -66,7 +66,7 @@ const dateSchemaString = date.setZone('America/Los_Angeles').toISO()
 const title = 'You Don’t Need Code to Explain Functional Programming'
 const description =
   'An emoji-based implementation of Lambda calculus, Church encoding, and Y combinator'
-const url = `${enBaseUrl}/emojis-functional-programming`
+const url = `${enBaseUrl}/functional-programming`
 const ogImageUrl = `${enBaseUrl}/static/images/blog-og.png`
 
 const tweetUrl = `https://twitter.com/intent/tweet?url=${encodeURIComponent(
@@ -617,11 +617,24 @@ export default () => {
                   article.
                 </HighlightBold>
               </ExternalLink>{' '}
+            </P>
+            <P>
               Also, the source code is{' '}
-              <ExternalLink href="https://github.com/chibicode/ycombinator/blob/master/pages/emojis-functional-programming.tsx">
+              <ExternalLink href="https://github.com/chibicode/ycombinator/blob/master/pages/functional-programming.tsx">
                 available on GitHub
               </ExternalLink>
-              .
+              :{' '}
+              <iframe
+                css={css`
+                  vertical-align: middle;
+                  transform: translateY(-0.1em);
+                `}
+                src="https://ghbtns.com/github-btn.html?user=chibicode&repo=ycombinator&type=star&count=true&size=large"
+                frameBorder="0"
+                scrolling="0"
+                width="160px"
+                height="30px"
+              ></iframe>
             </P>
             <Alert>
               <div
