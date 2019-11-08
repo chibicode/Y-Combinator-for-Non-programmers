@@ -3,7 +3,15 @@ import { css, jsx, Global } from '@emotion/core'
 import { useState, useContext } from 'react'
 import Page from 'src/components/Page'
 import Head from 'next/head'
-import { ns, radii, fontSizes, colors, spaces, maxWidths } from 'src/lib/theme'
+import {
+  ns,
+  radii,
+  fontSizes,
+  colors,
+  spaces,
+  maxWidths,
+  lineHeights
+} from 'src/lib/theme'
 import { lessonTitle } from 'src/lib/titles'
 import Container from 'src/components/Container'
 import ExpressionRunnerSeparator from 'src/components/ExpressionRunnerSeparator'
@@ -43,6 +51,7 @@ import theme from 'prism-react-renderer/themes/nightOwlLight'
 import BubbleQuoteContext from 'src/components/BubbleQuoteContext'
 import EmojiWithText from 'src/components/EmojiWithText'
 import ExpressionRunnerConfigContext from 'src/components/ExpressionRunnerConfigContext'
+import TwitterEmbed from 'src/components/TwitterEmbed'
 import {
   StepOne,
   StepTwo,
@@ -73,6 +82,38 @@ const ogImageUrl = `${enBaseUrl}/static/images/blog-og.png`
 const tweetUrl = `https://twitter.com/intent/tweet?url=${encodeURIComponent(
   url
 )}&via=chibicode&text=${encodeURIComponent(title)}`
+
+const Ads = ({ shareId }: { shareId?: string }) => (
+  <>
+    <P>
+      I’d love it if you could share this on Twitter.{' '}
+      <ExternalLink href={tweetUrl}>
+        <HighlightBold>
+          <CustomEmoji type="twitter" /> Click here to Tweet this article.
+        </HighlightBold>
+      </ExternalLink>{' '}
+    </P>
+    {shareId && <TwitterEmbed id={shareId} />}
+    <P>
+      Also, the source code is{' '}
+      <ExternalLink href="https://github.com/chibicode/ycombinator/blob/master/pages/functional-programming.tsx">
+        available on GitHub
+      </ExternalLink>
+      :{' '}
+      <iframe
+        css={css`
+          vertical-align: middle;
+          transform: translateY(-0.1em);
+        `}
+        src="https://ghbtns.com/github-btn.html?user=chibicode&repo=ycombinator&type=star&count=true&size=large"
+        frameBorder="0"
+        scrolling="0"
+        width="160px"
+        height="30px"
+      ></iframe>
+    </P>
+  </>
+)
 
 const Alert = (props: AlertProps) => (
   <BubbleQuoteContext.Provider value={{ inQuote: false }}>
@@ -109,7 +150,6 @@ const Subheading = ({
     {!noHrTop && (
       <Hr
         css={css`
-          border-bottom: 5px solid ${colors('codeBg')};
           margin-top: ${spaces(2.25)};
         `}
       />
@@ -610,33 +650,7 @@ export default () => {
                 combinator.
               </UlLi>
             </Ul>
-            <P>
-              I’d love it if you could share this on Twitter.{' '}
-              <ExternalLink href={tweetUrl}>
-                <HighlightBold>
-                  <CustomEmoji type="twitter" /> Click here to Tweet this
-                  article.
-                </HighlightBold>
-              </ExternalLink>{' '}
-            </P>
-            <P>
-              Also, the source code is{' '}
-              <ExternalLink href="https://github.com/chibicode/ycombinator/blob/master/pages/functional-programming.tsx">
-                available on GitHub
-              </ExternalLink>
-              :{' '}
-              <iframe
-                css={css`
-                  vertical-align: middle;
-                  transform: translateY(-0.1em);
-                `}
-                src="https://ghbtns.com/github-btn.html?user=chibicode&repo=ycombinator&type=star&count=true&size=large"
-                frameBorder="0"
-                scrolling="0"
-                width="160px"
-                height="30px"
-              ></iframe>
-            </P>
+            <Ads />
             <Alert>
               <div
                 css={css`
@@ -2154,6 +2168,98 @@ const mul = sushi => sandwich => pizza =>
             <Alert backgroundColor="brown">
               <JimsTalk />
             </Alert>
+            <Subheading step="none" coveredIn="none">
+              Conclusion
+            </Subheading>
+            <P>
+              <Bold>One-line summary:</Bold>{' '}
+              <Highlight>
+                By using emoji puzzles, you explain functional programming
+                concepts such as lambda calculus, Church encoding, and Y
+                combinator to non-programmers—without using any code.
+              </Highlight>
+            </P>
+            <P>
+              <Bold>Why did I make emoji puzzles?</Bold> As someone who is
+              passionate about teaching,{' '}
+              <Highlight>
+                I wanted to challenge myself to explain a{' '}
+                <Italic>difficult computer science concept</Italic> (like Y
+                combinator) to non-programmers under the following constraints:
+              </Highlight>
+            </P>
+            <Ul>
+              <UlLi>Don’t use any code</UlLi>
+              <UlLi>Don’t sacrifice rigor</UlLi>
+              <UlLi>Must be doable on a smartphone in under 2-3 hours</UlLi>
+            </Ul>
+            <P>
+              And that’s how I came up with my course,{' '}
+              <InternalLink href="/">
+                Y Combinator for Non-programmers
+              </InternalLink>
+              , which uses emoji puzzles. In the future, I plan to do something
+              similar with other CS topics.
+            </P>
+            <P>In a meantime, you can take a look at my course from here:</P>
+            <div
+              css={css`
+                text-align: center;
+                margin: ${spaces(2)} 0 ${spaces(2)};
+              `}
+            >
+              <InternalLink
+                href="/"
+                css={css`
+                  display: inline-block;
+                  padding: ${spaces(0.5)} ${spaces(1.5)} ${spaces(0.75)};
+                  border-radius: ${radii(0.5)};
+                  border: 2px solid ${colors('pink600')};
+                  background: ${colors('pink400')};
+                  color: #fff;
+                  text-decoration: none;
+                  line-height: ${lineHeights(1.3)};
+                  -webkit-user-select: none;
+
+                  &:focus {
+                    box-shadow: inset 0 0 0 1px ${colors('pink600')};
+                    outline: none;
+                  }
+
+                  &:hover {
+                    background: ${colors('pink500')};
+                  }
+
+                  &:active {
+                    background: ${colors('pink500')};
+                  }
+                `}
+              >
+                <span
+                  css={css`
+                    font-size: ${fontSizes(1.2)};
+                    font-weight: bold;
+                    display: block;
+                  `}
+                >
+                  View the Course
+                </span>
+                <span
+                  css={css`
+                    font-size: ${fontSizes(0.85)};
+                    display: block;
+                  `}
+                >
+                  Y Combinator for Non-programmers
+                </span>
+              </InternalLink>
+            </div>
+            <Subheading noHrTop step="none" coveredIn="none">
+              Thank you for reading!
+            </Subheading>
+            <Ads />
+            <Hr />
+            <H args={{ name: 'aboutMe', hideNextPageButton: true }} />
           </BubbleQuoteContext.Provider>
         </ExpressionRunnerConfigContext.Provider>
       </Container>
