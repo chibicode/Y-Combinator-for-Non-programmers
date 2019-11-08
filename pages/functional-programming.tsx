@@ -176,7 +176,7 @@ const InlineCode = ({
     css={css`
       font-weight: 400;
       font-family: ${codeFontFamily};
-      background-color: ${highlighted ? colors('yellow200') : colors('codeBg')};
+      background-color: ${highlighted ? colors('yellow300') : colors('codeBg')};
       display: inline-block;
       font-size: 0.85em;
       padding: 0.075em 0.2em;
@@ -280,8 +280,8 @@ const CodeBlock = ({
                         !!shouldHighlight &&
                           shouldHighlight(i, key) &&
                           css`
-                            background: ${colors('yellow200')};
-                            border-bottom: 2px solid ${colors('deepOrange200')};
+                            background: ${colors('yellow300')};
+                            border-bottom: 2px solid ${colors('deepOrange400')};
                           `
                       ]}
                     />
@@ -2015,6 +2015,76 @@ const mul = sushi => sandwich => pizza =>
               }
               result="120"
             >{`fact(5)`}</CodeBlock>
+            <P>
+              The above recursive function was a <Italic>named</Italic>{' '}
+              function. It had the name <InlineCode>fact</InlineCode>, which was
+              called from the function body to do recursion.
+            </P>
+            <CodeBlock
+              shouldHighlight={(lineNumber, tokenNumber) =>
+                (lineNumber === 0 && tokenNumber > 1 && tokenNumber < 3) ||
+                (lineNumber === 5 && tokenNumber > 4 && tokenNumber < 6)
+              }
+              caption={
+                <>
+                  This is a <Italic>named</Italic> function called{' '}
+                  <InlineCode>fact</InlineCode>
+                </>
+              }
+            >{`function fact(n) {
+  if (n === 0) {
+    return 1
+  }
+  else {
+    return n * fact(n - 1)
+  }
+}`}</CodeBlock>
+            <P>
+              You’d usually use a named function to do recursion. However,{' '}
+              <Highlight>
+                if you use Y combinator, you can do recursion without using a
+                named function.
+              </Highlight>{' '}
+              First, here’s the Y combinator function{' '}
+              <InlineCode>yc</InlineCode>:
+            </P>
+            <CodeBlock
+              caption={<>The Y combinator function</>}
+              shouldHighlight={(lineNumber, tokenNumber) =>
+                lineNumber === 0 && tokenNumber > 1 && tokenNumber < 3
+              }
+            >{`const yCombinator = sushi =>
+  (pizza =>
+    sushi(sandwich =>
+      pizza(pizza)(sandwich)
+    ))(pizza =>
+    sushi(sandwich =>
+      pizza(pizza)(sandwich)
+    )
+  )`}</CodeBlock>
+            <P>
+              Now, we’ll apply <InlineCode>yCombinator</InlineCode> on another
+              anonymous function. This time, <InlineCode>fact</InlineCode> is
+              NOT a function name, but it’s a <Italic>parameter</Italic> name.
+              We haven’t used any named function yet.
+            </P>
+            <CodeBlock
+              caption={
+                <>
+                  <InlineCode>fact</InlineCode> is now a parameter
+                </>
+              }
+              shouldHighlight={(lineNumber, tokenNumber) =>
+                (lineNumber === 0 && tokenNumber > 1 && tokenNumber < 3) ||
+                (lineNumber === 4 && tokenNumber > 4 && tokenNumber < 6)
+              }
+            >{`yCombinator(fact => n => {
+  if (n === 0) {
+    return 1
+  } else {
+    return n * fact(n - 1)
+  }
+})`}</CodeBlock>
           </BubbleQuoteContext.Provider>
         </ExpressionRunnerConfigContext.Provider>
       </Container>
