@@ -794,6 +794,13 @@ export const qyhn: ExpressionRunnerShorthandConfig = {
   applicativeOrder: true
 }
 
+export const weow: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  showPriorities: true,
+  initialExpressionContainer: initialExpressionContainers.qjod,
+  applicativeOrder: true
+}
+
 export const pmss: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   showPriorities: true,

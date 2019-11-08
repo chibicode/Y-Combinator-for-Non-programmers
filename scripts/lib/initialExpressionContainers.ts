@@ -380,6 +380,32 @@ const yCombinator: FunctionExpressionParams = {
   ]
 }
 
+const yCombinatorApplicative: FunctionExpressionParams = {
+  arg: 'a',
+  body: [
+    {
+      arg: 'f',
+      body: [
+        'a',
+        {
+          arg: 'b',
+          body: ['f', 'f', 'b']
+        }
+      ]
+    },
+    {
+      arg: 'f',
+      body: [
+        'a',
+        {
+          arg: 'b',
+          body: ['f', 'f', 'b']
+        }
+      ]
+    }
+  ]
+}
+
 const yCombinatorHighlighted: FunctionExpressionParams = {
   arg: highlighted('a'),
   body: [
@@ -395,6 +421,7 @@ const yCombinatorHighlighted: FunctionExpressionParams = {
 }
 
 export const vazr = initializeExpressionContainer(yCombinator)
+export const qjod = initializeExpressionContainer(yCombinatorApplicative)
 
 export const ekyd = initializeExpressionContainer({
   checkType: 'isZero',

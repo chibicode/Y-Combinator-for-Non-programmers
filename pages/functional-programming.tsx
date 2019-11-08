@@ -2085,6 +2085,71 @@ const mul = sushi => sandwich => pizza =>
     return n * fact(n - 1)
   }
 })`}</CodeBlock>
+            <P>
+              Finally, let’s run the above function on{' '}
+              <InlineCode>5</InlineCode> and see what happens:
+            </P>
+            <CodeBlock
+              caption={
+                <>
+                  Run it on <InlineCode>5</InlineCode>
+                </>
+              }
+              result="120"
+              shouldHighlight={(lineNumber, tokenNumber) =>
+                lineNumber === 6 && tokenNumber > 3 && tokenNumber < 5
+              }
+            >{`yCombinator(fact => n => {
+  if (n === 0) {
+    return 1
+  } else {
+    return n * fact(n - 1)
+  }
+})(5) // ← run it on 5`}</CodeBlock>
+            <P>
+              The result was <InlineCode>120</InlineCode>, so it successfully
+              calculated the factorial.
+            </P>
+            <P>
+              <Bold>So:</Bold>{' '}
+              <Highlight>
+                By using the <InlineCode>yCombinator</InlineCode> function, you
+                can create a recursive function using only anonymous functions.
+              </Highlight>{' '}
+              It allows you to implement control flow (loops) using anonymous
+              functions.
+            </P>
+            <P>
+              Of course, Y combinator can be represented using an emoji puzzle:
+            </P>
+            <CodeBlock
+              caption={<>The Y combinator function</>}
+            >{`const yCombinator = sushi =>
+  (pizza =>
+    sushi(sandwich =>
+      pizza(pizza)(sandwich)
+    ))(pizza =>
+    sushi(sandwich =>
+      pizza(pizza)(sandwich)
+    )
+  )`}</CodeBlock>
+            <ExpressionRunnerSeparator halfMarginTop />
+            <R.Weow>Y combinator using emojis</R.Weow>
+            <P>
+              In{' '}
+              <InternalLink href="/15">
+                the final lesson of my couse
+              </InternalLink>
+              , I show how to use the above emoji puzzle to calculate factorials
+              (I won’t show it here because it’s pretty complex).
+            </P>
+            <P>
+              <Bold>In any case,</Bold>{' '}
+              <Highlight>
+                you can teach Y combinator to non-programmers using emoji
+                puzzles.
+              </Highlight>
+            </P>
           </BubbleQuoteContext.Provider>
         </ExpressionRunnerConfigContext.Provider>
       </Container>
