@@ -193,7 +193,8 @@ const CodeBlock = ({
   result,
   pointToRunButton,
   defaultResultVisible,
-  caption
+  caption,
+  noHighlight
 }: {
   children: string
   shouldHighlight?: (lineNumber: number, tokenNumber: number) => boolean
@@ -201,6 +202,7 @@ const CodeBlock = ({
   pointToRunButton?: boolean
   defaultResultVisible: boolean
   caption?: React.ReactNode
+  noHighlight?: boolean
 }) => {
   const [resultVisible, setResultVisible] = useState(defaultResultVisible)
   const buttonOnClick = () => setResultVisible(true)
@@ -225,7 +227,7 @@ const CodeBlock = ({
         {...defaultProps}
         code={children}
         theme={theme}
-        language="javascript"
+        language={noHighlight ? 'diff' : 'javascript'}
       >
         {({ tokens, getLineProps, getTokenProps }) => (
           <pre
@@ -709,7 +711,7 @@ sushi => sushi`}</CodeBlock>
               <H args={{ name: 'run', lowerCase: true }} /> it.
             </P>
             <Alert backgroundColor="brown">
-              <Bold>Side Note:</Bold> To keep things simple, this puzzle doesn’t
+              <Bold>Note:</Bold> To keep things simple, this puzzle doesn’t
               distinguish between variable names (e.g.{' '}
               <InlineCode>sushi</InlineCode>) and strings (e.g.{' '}
               <InlineCode>'sushi'</InlineCode>). Therefore, both{' '}
@@ -1848,6 +1850,81 @@ const mul = sushi => sandwich => pizza =>
               represent <Bold>conditional</Bold> statements using just emoji
               puzzles.
             </P>
+            <Alert backgroundColor="brown">
+              <P>
+                <Bold>Column: Lambda calculus and Church encoding:</Bold>
+              </P>
+              <P>
+                There’s a programming language called{' '}
+                <Bold>Lambda calculus</Bold>, created by a mathematician Alonzo
+                Church (
+                <ExternalLink href="https://en.wikipedia.org/wiki/Lambda_calculus">
+                  Wikipedia
+                </ExternalLink>
+                ). It only has two features:{' '}
+                <Highlight>variables and anonymous functions</Highlight>. Here’s
+                a piece of lambda calculus code:
+              </P>
+              <CodeBlock
+                noHighlight
+                caption={
+                  <>
+                    <InlineCode>λ</InlineCode> is the greek alphabet “lambda”
+                  </>
+                }
+              >{`λsushi.sushi sandwich`}</CodeBlock>
+              <P>
+                The above code is equivalent to the following JS code. There are
+                no strings in lambda calculus—everything is a variable or a
+                function.
+              </P>
+              <CodeBlock>{`(sushi => sushi)(sandwich)`}</CodeBlock>
+              <P>
+                You might have realized that{' '}
+                <Highlight>
+                  all the functional JS code we represented using emoji puzzles
+                  can be expressed in lambda calculus.
+                </Highlight>{' '}
+                For example, the emoji puzzle that multiplies two Church
+                numerals…
+              </P>
+              <R.Nnzx>
+                Emoji puzzle that multiplies
+                <br />
+                two Church numerals
+              </R.Nnzx>
+              <P>…is equivalent to the following lambda calculus expression:</P>
+              <CodeBlock
+                noHighlight
+                caption={<>Equivalent lambda calculus code</>}
+              >{`λsushi.λsandwich.λpizza
+  sushi(sandwich pizza)`}</CodeBlock>
+              <P>
+                <Bold>So, here’s the secret:</Bold>{' '}
+                <Highlight>
+                  My emoji puzzles are actually a visual representation of
+                  lambda calculus.
+                </Highlight>{' '}
+                And by using emoji puzzles, lambda calculus can be explained
+                visually to non-programmers!
+              </P>
+              <Hr />
+              <P>
+                <Bold>Finally:</Bold> We saw that emoji puzzles, or lambda
+                calculus, can express not only numbers and arithmetic but also
+                conditionals. In fact,{' '}
+                <Highlight>
+                  lambda calculus can express pretty much anything any
+                  programming language can do—it’s Turing complete.
+                </Highlight>{' '}
+                And this method of encoding data and operators using lambda
+                calculus is called <Bold>Church encoding</Bold> (
+                <ExternalLink href="https://en.wikipedia.org/wiki/Church_encoding">
+                  Wikipedia
+                </ExternalLink>
+                ).
+              </P>
+            </Alert>
           </BubbleQuoteContext.Provider>
         </ExpressionRunnerConfigContext.Provider>
       </Container>
