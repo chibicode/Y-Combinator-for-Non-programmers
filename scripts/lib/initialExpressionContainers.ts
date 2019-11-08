@@ -380,6 +380,32 @@ const yCombinator: FunctionExpressionParams = {
   ]
 }
 
+const yCombinatorApplicative: FunctionExpressionParams = {
+  arg: 'a',
+  body: [
+    {
+      arg: 'f',
+      body: [
+        'a',
+        {
+          arg: 'b',
+          body: ['f', 'f', 'b']
+        }
+      ]
+    },
+    {
+      arg: 'f',
+      body: [
+        'a',
+        {
+          arg: 'b',
+          body: ['f', 'f', 'b']
+        }
+      ]
+    }
+  ]
+}
+
 const yCombinatorHighlighted: FunctionExpressionParams = {
   arg: highlighted('a'),
   body: [
@@ -395,6 +421,7 @@ const yCombinatorHighlighted: FunctionExpressionParams = {
 }
 
 export const vazr = initializeExpressionContainer(yCombinator)
+export const qjod = initializeExpressionContainer(yCombinatorApplicative)
 
 export const ekyd = initializeExpressionContainer({
   checkType: 'isZero',
@@ -1061,6 +1088,38 @@ export const cmay = initializeExpressionContainer(
     { shorthandNumberAfterConvert: 'trueCase' },
     { shorthandNumberAfterConvert: 'falseCase' },
     { shorthandNumberAfterConvert: 'condition' }
+  )
+)
+
+export const soer = initializeExpressionContainer(
+  isZeroParams('a', 'b', 'c', 'd', 'e', 'isZero', 'isNotZero', {
+    shorthandNumberAfterConvert: 'blank'
+  })
+)
+
+export const kmwe = initializeExpressionContainer(
+  isZeroParams(
+    'a',
+    'b',
+    'c',
+    'd',
+    'e',
+    'isZero',
+    'isNotZero',
+    numberParams(highlighted('f'), highlighted('g'), 0)
+  )
+)
+
+export const rryd = initializeExpressionContainer(
+  isZeroParams(
+    'a',
+    'b',
+    'c',
+    'd',
+    'e',
+    'isZero',
+    'isNotZero',
+    numberParams(highlighted('f'), highlighted('g'), 1)
   )
 )
 
@@ -2122,7 +2181,7 @@ export const ajfq = initializeExpressionContainer(
 )
 
 export const hnzs = initializeExpressionContainer(
-  numberParamsHighlightNumber('c', 'd', 6)
+  numberParamsHighlightNumber('c', 'h', 6)
 )
 
 export const ibfr = initializeExpressionContainer([
@@ -2151,9 +2210,11 @@ export const tjcx = initializeExpressionContainer({
   shorthandNumber: 6
 })
 
+export const acpu = initializeExpressionContainer(multParams('a', 'b', 'f'))
+
 export const yuov = initializeExpressionContainer([
   [
-    multParams('a', 'b', 'c', 'd'),
+    multParams('a', 'b', 'c'),
     {
       shorthandNumberAfterConvert: 'binarySecond'
     }
@@ -2164,14 +2225,14 @@ export const yuov = initializeExpressionContainer([
 ])
 
 export const ndtm = initializeExpressionContainer([
-  multParams('a', 'b', 'c', 'd'),
+  multParams('a', 'b', 'c'),
   numberParams(highlighted('g'), highlighted('h'), 3),
   numberParams(highlighted('e'), highlighted('f'), 2)
 ])
 
 export const rovo = initializeExpressionContainer([
   [
-    multParams('a', 'b', 'c', 'd'),
+    multParams('a', 'b', 'c'),
     {
       shorthandNumberAfterConvert: 'number',
       shorthandNumber: 3,
@@ -2187,7 +2248,7 @@ export const rovo = initializeExpressionContainer([
 
 export const wetc = initializeExpressionContainer([
   [
-    multParams('a', 'b', 'c', 'd'),
+    multParams('a', 'b', 'c'),
     {
       shorthandNumberAfterConvert: 'number',
       shorthandNumber: 3
@@ -2221,6 +2282,14 @@ export const tgxv = initializeExpressionContainer(numberParams('g', 'h', 3))
 
 export const nzne = initializeExpressionContainer(numberParams('b', 'f', 1))
 export const fkvc = initializeExpressionContainer(numberParams('b', 'f', 2))
+export const ncdj = initializeExpressionContainer(numberParams('d', 'h', 2))
+export const cdda = initializeExpressionContainer(numberParams('j', 'c', 3))
+export const rtum = initializeExpressionContainer(numberParams('f', 'c', 6))
+
+export const cteb = initializeExpressionContainer([
+  [multParams('a', 'b', 'f'), numberParams('j', 'c', 3)],
+  numberParams('d', 'h', 2)
+])
 
 export const hgjl = initializeExpressionContainer(succParams('a', 'b', 'f'))
 

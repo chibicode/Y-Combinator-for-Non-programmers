@@ -49,6 +49,8 @@ export type VariableNames =
   | 'mathBox'
   | 'blank'
   | 'ignoreForNow'
+  | 'isZero'
+  | 'isNotZero'
 
 export interface VariableNamesWithAlphaConvertCount {
   name: VariableNames

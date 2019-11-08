@@ -776,11 +776,54 @@ export const dvio: ExpressionRunnerShorthandConfig = {
   applicativeOrder: true
 }
 
+export const mili: ExpressionRunnerShorthandConfig = {
+  runner: 'predefined',
+  showPriorities: true,
+  initialExpressionContainers: [
+    initialExpressionContainers.rtum,
+    initialExpressionContainers.rjyq
+  ],
+  convert: 'toMathBox',
+  applicativeOrder: true
+}
+
 export const qyhn: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   showPriorities: true,
   initialExpressionContainer: initialExpressionContainers.hgjl,
   applicativeOrder: true
+}
+
+export const weow: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  showPriorities: true,
+  initialExpressionContainer: initialExpressionContainers.qjod,
+  applicativeOrder: true
+}
+
+export const pmss: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  showPriorities: true,
+  initialExpressionContainer: initialExpressionContainers.soer,
+  applicativeOrder: true
+}
+
+export const vdcr: ExpressionRunnerShorthandConfig = {
+  runner: 'runButtonOnly',
+  skipToTheEnd: false,
+  showPriorities: true,
+  initialExpressionContainer: initialExpressionContainers.kmwe,
+  applicativeOrder: true,
+  speed: 2
+}
+
+export const vyic: ExpressionRunnerShorthandConfig = {
+  runner: 'runButtonOnly',
+  skipToTheEnd: false,
+  showPriorities: true,
+  initialExpressionContainer: initialExpressionContainers.rryd,
+  applicativeOrder: true,
+  speed: 2
 }
 
 export const hfgh: ExpressionRunnerShorthandConfig = {
@@ -2664,6 +2707,36 @@ export const vqyl: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   initialExpressionContainer: initialExpressionContainers.yuov,
   showPriorities: true
+}
+
+export const njqi: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.ncdj,
+  showPriorities: true,
+  applicativeOrder: true
+}
+
+export const kdxf: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.cdda,
+  showPriorities: true,
+  applicativeOrder: true
+}
+
+export const anfx: ExpressionRunnerShorthandConfig = {
+  runner: 'runButtonOnly',
+  skipToTheEnd: false,
+  speed: 4,
+  initialExpressionContainer: initialExpressionContainers.cteb,
+  showPriorities: true,
+  applicativeOrder: true
+}
+
+export const nnzx: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.acpu,
+  showPriorities: true,
+  applicativeOrder: true
 }
 
 export const yiet: ExpressionRunnerShorthandConfig = {

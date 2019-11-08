@@ -3,10 +3,19 @@ import { css, jsx, Global } from '@emotion/core'
 import { useState, useContext } from 'react'
 import Page from 'src/components/Page'
 import Head from 'next/head'
-import { ns, radii, fontSizes, colors, spaces, maxWidths } from 'src/lib/theme'
+import {
+  ns,
+  radii,
+  fontSizes,
+  colors,
+  spaces,
+  maxWidths,
+  lineHeights
+} from 'src/lib/theme'
 import { lessonTitle } from 'src/lib/titles'
 import Container from 'src/components/Container'
 import ExpressionRunnerSeparator from 'src/components/ExpressionRunnerSeparator'
+import EmojiSeparator from 'src/components/EmojiSeparator'
 import ExpressionRunnerCaptionWrapper from 'src/components/ExpressionRunnerCaptionWrapper'
 import BottomRightBadge from 'src/components/BottomRightBadge'
 import Emoji from 'src/components/Emoji'
@@ -19,6 +28,7 @@ import EmojiNumber from 'src/components/EmojiNumber'
 import CustomEmoji from 'src/components/CustomEmoji'
 import ButtonWithTouchActiveStates from 'src/components/ButtonWithTouchActiveStates'
 import * as R from 'src/components/Runners'
+import { JimsTalk } from 'src/contents/0.en'
 import {
   ExternalLink,
   P,
@@ -41,6 +51,7 @@ import theme from 'prism-react-renderer/themes/nightOwlLight'
 import BubbleQuoteContext from 'src/components/BubbleQuoteContext'
 import EmojiWithText from 'src/components/EmojiWithText'
 import ExpressionRunnerConfigContext from 'src/components/ExpressionRunnerConfigContext'
+import TwitterEmbed from 'src/components/TwitterEmbed'
 import {
   StepOne,
   StepTwo,
@@ -51,26 +62,58 @@ import {
   StepFour
 } from 'src/contents/4.en'
 import VariableShadeContext from 'src/components/VariableShadeContext'
+import TwoColGrid from 'src/components/TwoColGrid'
 
 const numSteps = 10
 
 const date = DateTime.fromISO('2019-11-08T12:00:00Z')
-// const dateString = date
-//   .setLocale('en')
-//   .setZone('America/Los_Angeles')
-//   .toFormat('LLL d, yyyy')
+const dateString = date
+  .setLocale('en')
+  .setZone('America/Los_Angeles')
+  .toFormat('LLL d, yyyy')
 const dateSchemaString = date.setZone('America/Los_Angeles').toISO()
 
 const title = 'You Don’t Need Code to Explain Functional Programming'
-const titleWithEmoji = `🍣 ${title} 🥪`
 const description =
   'An emoji-based implementation of Lambda calculus, Church encoding, and Y combinator'
-const url = `${enBaseUrl}/emojis-functional-programming`
+const url = `${enBaseUrl}/functional-programming`
 const ogImageUrl = `${enBaseUrl}/static/images/blog-og.png`
 
 const tweetUrl = `https://twitter.com/intent/tweet?url=${encodeURIComponent(
   url
 )}&via=chibicode&text=${encodeURIComponent(title)}`
+
+const Ads = ({ shareId }: { shareId?: string }) => (
+  <>
+    <P>
+      I’d love it if you could share this on Twitter.{' '}
+      <ExternalLink href={tweetUrl}>
+        <HighlightBold>
+          <CustomEmoji type="twitter" /> Click here to Tweet this article.
+        </HighlightBold>
+      </ExternalLink>{' '}
+    </P>
+    {shareId && <TwitterEmbed id={shareId} />}
+    <P>
+      Also, the source code is{' '}
+      <ExternalLink href="https://github.com/chibicode/ycombinator/blob/master/pages/functional-programming.tsx">
+        available on GitHub
+      </ExternalLink>
+      :{' '}
+      <iframe
+        css={css`
+          vertical-align: middle;
+          transform: translateY(-0.1em);
+        `}
+        src="https://ghbtns.com/github-btn.html?user=chibicode&repo=ycombinator&type=star&count=true&size=large"
+        frameBorder="0"
+        scrolling="0"
+        width="160px"
+        height="30px"
+      ></iframe>
+    </P>
+  </>
+)
 
 const Alert = (props: AlertProps) => (
   <BubbleQuoteContext.Provider value={{ inQuote: false }}>
@@ -107,7 +150,6 @@ const Subheading = ({
     {!noHrTop && (
       <Hr
         css={css`
-          border-bottom: 5px solid ${colors('codeBg')};
           margin-top: ${spaces(2.25)};
         `}
       />
@@ -175,7 +217,7 @@ const InlineCode = ({
     css={css`
       font-weight: 400;
       font-family: ${codeFontFamily};
-      background-color: ${highlighted ? colors('yellow200') : colors('codeBg')};
+      background-color: ${highlighted ? colors('yellow300') : colors('codeBg')};
       display: inline-block;
       font-size: 0.85em;
       padding: 0.075em 0.2em;
@@ -192,7 +234,8 @@ const CodeBlock = ({
   result,
   pointToRunButton,
   defaultResultVisible,
-  caption
+  caption,
+  noHighlight
 }: {
   children: string
   shouldHighlight?: (lineNumber: number, tokenNumber: number) => boolean
@@ -200,6 +243,7 @@ const CodeBlock = ({
   pointToRunButton?: boolean
   defaultResultVisible: boolean
   caption?: React.ReactNode
+  noHighlight?: boolean
 }) => {
   const [resultVisible, setResultVisible] = useState(defaultResultVisible)
   const buttonOnClick = () => setResultVisible(true)
@@ -224,7 +268,7 @@ const CodeBlock = ({
         {...defaultProps}
         code={children}
         theme={theme}
-        language="javascript"
+        language={noHighlight ? 'diff' : 'javascript'}
       >
         {({ tokens, getLineProps, getTokenProps }) => (
           <pre
@@ -277,8 +321,8 @@ const CodeBlock = ({
                         !!shouldHighlight &&
                           shouldHighlight(i, key) &&
                           css`
-                            background: ${colors('yellow200')};
-                            border-bottom: 2px solid ${colors('deepOrange200')};
+                            background: ${colors('yellow300')};
+                            border-bottom: 2px solid ${colors('deepOrange400')};
                           `
                       ]}
                     />
@@ -479,8 +523,8 @@ export default () => {
         ]}
       />
       <Head>
-        <title key="title">{titleWithEmoji}</title>
-        <meta property="og:title" content={titleWithEmoji} />
+        <title key="title">{title}</title>
+        <meta property="og:title" content={title} />
         <meta property="og:site_name" content={lessonTitle} />
         <meta property="og:url" content={url} />
         <link rel="canonical" href={url} />
@@ -506,7 +550,7 @@ export default () => {
             font-size: ${fontSizes(1)};
             font-style: italic;
             font-weight: normal;
-            margin: 0;
+            margin: 0 0 ${spaces(0.5)};
 
             ${ns} {
               font-size: ${fontSizes(1.2)};
@@ -515,12 +559,27 @@ export default () => {
         >
           {description}
         </h2>
+        <div
+          css={css`
+            font-size: ${fontSizes(0.8)};
+            color: ${colors('grey600')};
+            text-align: center;
+            margin-bottom: ${spaces(2)};
+          `}
+        >
+          <time dateTime={dateSchemaString}>{dateString}</time> &middot; Shu
+          Uesugi (
+          <ExternalLink href="https://twitter.com/chibicode">
+            @chibicode
+          </ExternalLink>
+          )
+        </div>
         <img
           src="/static/images/animated@2x.gif"
           alt={title}
           css={css`
             width: 6rem;
-            margin: ${spaces(1.75)} auto ${spaces(2)};
+            margin: ${spaces(2)} auto ${spaces(2.25)};
             display: block;
             ${ns} {
               width: 7rem;
@@ -539,9 +598,9 @@ export default () => {
                 </InternalLink>
                 ”.
               </Highlight>{' '}
-              In this 17-page course, I teach computer science concepts such as
-              functional programming, lambda calculus, Church encoding, and Y
-              combinator in a way such that{' '}
+              In this 17-page course, I explain functional programming concepts
+              such as lambda calculus, Church encoding, and Y combinator in a
+              way such that{' '}
               <Italic>
                 people who have zero programming knowledge can understand
               </Italic>
@@ -550,7 +609,7 @@ export default () => {
             <P>
               I didn’t use any code to explain these concepts. Instead, I
               created <Bold>an emoji puzzle</Bold> that works as a runtime for
-              functional expressions. In this article, I’ll explain how my emoji
+              functional code. In this article, I’ll explain how my emoji
               puzzles can represent and execute functional code{' '}
               <Italic>visually</Italic>. Here’s a sneak peek—
               <Highlight>
@@ -579,32 +638,19 @@ export default () => {
             </P>
             <Ul>
               <UlLi>
-                <Bold>In steps 1 through 6,</Bold> I’ll show you how some simple
-                JavaScript code can be represented using my emoji puzzles. Even
-                if you’re not familiar with JS, you should still be able to
-                understand it.
+                <Bold>In the first half (steps 1 - 5):</Bold> I’ll show you how
+                simple JavaScript code can be represented using my emoji
+                puzzles. Even if you’re not familiar with JS, you should still
+                be able to understand it.
               </UlLi>
               <UlLi>
-                <Bold>In steps 7 through 10,</Bold> I’ll talk about how I used
-                my emoji puzzles to teach functional programming concepts such
-                as lambda calculus, Church encoding, and Y combinator.
+                <Bold>In the second half (steps 6 - 10):</Bold> I’ll talk about
+                how I used my emoji puzzles to explain functional programming
+                concepts such as lambda calculus, Church encoding, and Y
+                combinator.
               </UlLi>
             </Ul>
-            <P>
-              If you plan to read later, I’d love it if you could share on
-              Twitter before you go.{' '}
-              <ExternalLink href={tweetUrl}>
-                <HighlightBold>
-                  <CustomEmoji type="twitter" /> Click here to Tweet this
-                  article.
-                </HighlightBold>
-              </ExternalLink>{' '}
-              Also, the source code for this article is{' '}
-              <ExternalLink href="https://github.com/chibicode/ycombinator/blob/master/pages/emojis-functional-programming.tsx">
-                available on GitHub
-              </ExternalLink>
-              .
-            </P>
+            <Ads />
             <Alert>
               <div
                 css={css`
@@ -693,7 +739,7 @@ sushi => sushi`}</CodeBlock>
               <H args={{ name: 'run', lowerCase: true }} /> it.
             </P>
             <Alert backgroundColor="brown">
-              <Bold>Side Note:</Bold> To keep things simple, this puzzle doesn’t
+              <Bold>Note:</Bold> To keep things simple, this puzzle doesn’t
               distinguish between variable names (e.g.{' '}
               <InlineCode>sushi</InlineCode>) and strings (e.g.{' '}
               <InlineCode>'sushi'</InlineCode>). Therefore, both{' '}
@@ -733,22 +779,22 @@ sushi => sushi`}</CodeBlock>
             </P>
             <P>
               So, you can <H args={{ name: 'run', lowerCase: true }} /> an emoji
-              puzzle just as you can run a piece of JS code. Basically, this is
-              how I taught functional programming to non-programmers in my
-              course (
-              <InternalLink href="/">
-                Y Combinator for Non-programmers
-              </InternalLink>
-              )—without showing any code. I could have used letters instead of
-              emojis, but emojis are less scary-looking for non-programers.
+              puzzle just as you can run a piece of JS code.{' '}
+              <Highlight>
+                Basically, this is how I taught functional programming to
+                non-programmers in my course (
+                <InternalLink href="/">
+                  Y Combinator for Non-programmers
+                </InternalLink>
+                )—without showing any code.
+              </Highlight>{' '}
+              I could have used letters instead of emojis, but emojis are less
+              scary-looking for non-programers.
             </P>
-            <Subheading step={step++} coveredIn={4}>
-              Another example
-            </Subheading>
             <P>
-              Let’s take a look at another example. Here’s a piece of JS code
-              that’s slightly different from before. It’s a function that{' '}
-              <Italic>ignores the input</Italic> and always returns{' '}
+              <Bold>Let’s take a look at another example.</Bold> Here’s a piece
+              of JS code that’s slightly different from before. It’s a function
+              that <Italic>ignores the input</Italic> and always returns{' '}
               <InlineCode>'pizza'</InlineCode>.
             </P>
             <CodeBlock>{`// A function that ignores the input
@@ -1278,10 +1324,11 @@ sushi => 'pizza'`}</CodeBlock>
               Church numerals
             </Subheading>
             <P>
-              Let’s take a look at something more interesting. Here’s a function
-              called <InlineCode>convert</InlineCode> that takes a function as
-              an argument. It then applies{' '}
-              <InlineCode>(n => n + 1)(0)</InlineCode> to it.
+              Let’s apply what we’ve learned and solve more interesting
+              problems. First, here’s a function called{' '}
+              <InlineCode>convert</InlineCode> that takes a function as an
+              argument. It then applies <InlineCode>(n => n + 1)(0)</InlineCode>{' '}
+              to it.
             </P>
             <CodeBlock>{`function convert(f) {
   return f(n => n + 1)(0)
@@ -1627,8 +1674,9 @@ convert(f(two))`}</CodeBlock>
             <Alert backgroundColor="blue">
               <P>
                 <Bold>More examples (optional read):</Bold> Let’s see if we can
-                calculate 1 + 1 = 2 using the same method. Here’s an emoji
-                puzzle that can be converted to <EmojiNumber number={1} />:
+                calculate <InlineCode>1 + 1 = 2</InlineCode> using the same
+                method. Here’s an emoji puzzle that can be converted to{' '}
+                <EmojiNumber number={1} />:
               </P>
               <R.Yfwq>
                 <Bold>Represents:</Bold>
@@ -1650,16 +1698,571 @@ convert(f(two))`}</CodeBlock>
                 Church numeral <Bold>2</Bold>
               </R.Dvio>
               <P>
-                So, it successfully calculated 1 + 1 = 2! Again, this is what
-                just happened:
+                So, it successfully calculated{' '}
+                <InlineCode>1 + 1 = 2</InlineCode>! Again, this is what just
+                happened:
               </P>
               <R.Kqtz></R.Kqtz>
               <ExpressionRunnerSeparator />
               <R.Cawl></R.Cawl>
             </Alert>
-            <Subheading step={step++} coveredIn={11}>
-              More complicated computations
+            <Subheading step={step++} coveredIn={15}>
+              Multiplications
             </Subheading>
+            <P>
+              You can do pretty much any computation with Church numerals.
+              Consider <Bold>multiplication.</Bold> Here’s a JS function that{' '}
+              <Italic>multiplies two Church numerals</Italic>:
+            </P>
+            <CodeBlock>{`// Multiplies two Church numerals
+const mul = sushi => sandwich => pizza =>
+  sushi(sandwich(pizza))`}</CodeBlock>
+            <P>
+              Let’s compute <InlineCode>2 x 3</InlineCode> using the above{' '}
+              <InlineCode>mul</InlineCode> function. Take a look at the code
+              below and{' '}
+              <Highlight>
+                press <H args={{ name: 'run' }} />
+              </Highlight>
+              :
+            </P>
+            <CodeBlock result="6">{`// Church numeral two
+const two = chicken => salad =>
+  chicken(chicken(salad))
+
+// Church numeral three
+const three = curry => hamburger =>
+  curry(curry(curry(hamburger)))
+
+const result = mul(two)(three)
+
+convert(result)`}</CodeBlock>
+            <P>
+              The result was <InlineCode>6</InlineCode>, so it successfully
+              calculated <InlineCode>2 x 3</InlineCode>.
+            </P>
+            <P>
+              Now, let’s see if we can do the same using emoji puzzles. First,
+              here’s an emoji puzzle that’s equivalent to the{' '}
+              <InlineCode>mul</InlineCode> function.
+            </P>
+            <CodeBlock>{`// Multiplies two Church numerals
+const mul = sushi => sandwich => pizza =>
+  sushi(sandwich(pizza))`}</CodeBlock>
+            <ExpressionRunnerSeparator halfMarginTop />
+            <R.Nnzx>Equivalent emoji puzzle:</R.Nnzx>
+            <P>
+              Let’s combine it with emoji puzzles that can be converted to{' '}
+              <EmojiNumber number={2} /> and <EmojiNumber number={3} />:
+            </P>
+            <TwoColGrid
+              noBottomNegativeMargin
+              noTopNegativeMargin
+              maxVariableSize="sm"
+              left={
+                <>
+                  <R.Njqi>
+                    Converts to <EmojiNumber number={2} />
+                  </R.Njqi>
+                </>
+              }
+              right={
+                <>
+                  <R.Kdxf>
+                    Converts to <EmojiNumber number={3} />
+                  </R.Kdxf>
+                </>
+              }
+            />
+            <P>
+              Here’s the combined puzzle.{' '}
+              <Highlight>
+                Press <H args={{ name: 'run' }} />
+              </Highlight>{' '}
+              and see what happens. (Because it takes time, we’ll fast-forward
+              it at 4x the speed.)
+            </P>
+            <R.Anfx></R.Anfx>
+            <P>
+              The result is equivalent to Church numeral <Bold>6</Bold> and can
+              be converted to <EmojiNumber number={6} />.
+            </P>
+            <R.Mili>Church numeral 6</R.Mili>
+            <P>
+              So emoji puzzles can calculate multiplications too.{' '}
+              <InternalLink href="/10">In my course</InternalLink>, I also show
+              how we can do <Bold>subtractions</Bold> usinng emoji puzzles.
+              Divisions are very complicated but possible.
+            </P>
+            <Subheading step={step++} coveredIn={12}>
+              Conditionals
+            </Subheading>
+            <P>
+              In addition to math expressions, we can also represent{' '}
+              <Bold>conditionals</Bold> like <InlineCode>if/else</InlineCode>{' '}
+              statements using just functions/emoji puzzles.
+            </P>
+            <P>
+              Consider the following JS code. This is a simple{' '}
+              <InlineCode>if/else</InlineCode> statement that does different
+              things based on what <InlineCode>x</InlineCode> is.
+            </P>
+            <CodeBlock>{`if (x === 0) {
+  // is Zero
+} else {
+  // is NOT Zero
+}`}</CodeBlock>
+            <P>
+              It turns out that <InlineCode>if/else</InlineCode> statements like
+              the above can also be expressed using Church numerals. To save
+              time, I won’t show JS code this time and will only show the emoji
+              puzzle. Check out the following:
+            </P>
+            <R.Pmss>
+              An emoji puzzle that represents
+              <br />
+              <InlineCode>{`if (x === 0) { ... } else { ... }`}</InlineCode>
+            </R.Pmss>
+            <P>The above emoji puzzle will become:</P>
+            <Ul>
+              <UlLi>
+                <Highlight>
+                  <CustomEmoji type="isZero" size="mdlg" /> if you put an emoji
+                  puzzle that can be converted to <EmojiNumber number={0} /> on
+                  the bottom
+                </Highlight>
+              </UlLi>
+              <UlLi>
+                <Highlight>
+                  <CustomEmoji type="isNotZero" size="mdlg" /> otherwise
+                </Highlight>
+              </UlLi>
+            </Ul>
+            <P>
+              Let’s try it out. First, we’ll put an emoji puzzle that can be
+              converted to <EmojiNumber number={0} /> on the bottom.{' '}
+              <H args={{ name: 'pressRun' }} />
+            </P>
+            <R.Vdcr>
+              The bottom emoji puzzle (in yellow background)
+              <br />
+              can be converted to <EmojiNumber number={0} />
+            </R.Vdcr>
+            <P>
+              <Bold>What just happened:</Bold>{' '}
+              <Highlight>
+                We started out with <EmojiNumber number={0} />
+                , and it ended up with <CustomEmoji type="isZero" size="mdlg" />
+                .
+              </Highlight>
+            </P>
+            <P>
+              Now, what if we started out with an emoji puzzle that can be
+              converted to <EmojiNumber number={1} />?{' '}
+              <H args={{ name: 'pressRun' }} />
+            </P>
+            <R.Vyic>
+              The bottom emoji puzzle (in yellow background)
+              <br />
+              can be converted to <EmojiNumber number={1} />
+            </R.Vyic>
+            <P>
+              <Bold>What just happened:</Bold>{' '}
+              <Highlight>
+                We started out with <EmojiNumber number={1} />, and it ended up
+                with <CustomEmoji type="isNotZero" size="mdlg" />.
+              </Highlight>
+            </P>
+            <P>
+              As you just saw, in addition to math expressions, we can also
+              represent <Bold>conditional</Bold> statements using just emoji
+              puzzles.
+            </P>
+            <Alert backgroundColor="brown">
+              <P>
+                <Bold>Column: Lambda calculus and Church encoding:</Bold>
+              </P>
+              <P>
+                There’s a programming language called{' '}
+                <Bold>Lambda calculus</Bold> (
+                <ExternalLink href="https://en.wikipedia.org/wiki/Lambda_calculus">
+                  Wikipedia
+                </ExternalLink>
+                ), created by a mathematician Alonzo Church. It only has two
+                features:{' '}
+                <Highlight>variables and anonymous functions</Highlight>. Here’s
+                a piece of lambda calculus code:
+              </P>
+              <CodeBlock
+                noHighlight
+                caption={
+                  <>
+                    <InlineCode>λ</InlineCode> is the greek alphabet “lambda”
+                  </>
+                }
+              >{`λsushi.sushi sandwich`}</CodeBlock>
+              <P>
+                The above code is equivalent to the following JS code. There are
+                no strings in lambda calculus—everything is either a variable or
+                an anonymous function.
+              </P>
+              <CodeBlock>{`(sushi => sushi)(sandwich)`}</CodeBlock>
+              <P>
+                You might have realized that{' '}
+                <Highlight>
+                  all the functional JS code we represented using emoji puzzles
+                  can be expressed in lambda calculus.
+                </Highlight>{' '}
+                For example, the emoji puzzle that multiplies two Church
+                numerals…
+              </P>
+              <R.Nnzx>
+                Emoji puzzle that multiplies
+                <br />
+                two Church numerals
+              </R.Nnzx>
+              <P>…is equivalent to the following lambda calculus code:</P>
+              <CodeBlock
+                noHighlight
+                caption={<>Equivalent lambda calculus code</>}
+              >{`λsushi.λsandwich.λpizza
+  sushi(sandwich pizza)`}</CodeBlock>
+              <P>
+                <Bold>So, here’s the secret:</Bold>{' '}
+                <Highlight>
+                  My emoji puzzles are actually a visual representation of
+                  lambda calculus.
+                </Highlight>{' '}
+                And by using emoji puzzles, lambda calculus can be explained
+                visually to non-programmers!
+              </P>
+              <EmojiSeparator
+                nodes={[
+                  <Emoji>🍣</Emoji>,
+                  <CustomEmoji type="doubleArrow" />,
+                  <CustomEmoji type="lambda" />
+                ]}
+                description={
+                  <>
+                    My emoji puzzles are actually
+                    <br />a visual representation of lambda calculus
+                  </>
+                }
+              />
+              <P>
+                <Bold>Finally:</Bold> We saw that emoji puzzles, or lambda
+                calculus, can express not only numbers and arithmetic but also
+                conditionals. In fact,{' '}
+                <Highlight>
+                  lambda calculus can express pretty much anything any
+                  programming language can do—it’s Turing complete.
+                </Highlight>{' '}
+                And this method of encoding data and operators using lambda
+                calculus is called <Bold>Church encoding</Bold> (
+                <ExternalLink href="https://en.wikipedia.org/wiki/Church_encoding">
+                  Wikipedia
+                </ExternalLink>
+                ).
+              </P>
+            </Alert>
+            <Subheading step={step++} coveredIn={14}>
+              Control flow and Y combinator
+            </Subheading>
+            <Alert backgroundColor="yellow">
+              <Bold>You’re almost done:</Bold> This is the final step in this
+              article.
+            </Alert>
+            <P>
+              If we can express conditionals (like <InlineCode>if</InlineCode>)
+              using functions/emoji puzzles, can we express{' '}
+              <Bold>control flow</Bold> (like loops) as well? The answer is yes.
+              We can express control flow using{' '}
+              <Highlight>
+                <Bold>Y combinator</Bold>
+              </Highlight>
+              .
+            </P>
+            <P>
+              <Bold>Y combinator</Bold>{' '}
+              <Highlight>
+                is a function that allows you to create a recursive function
+                without using named functions.
+              </Highlight>{' '}
+            </P>
+            <P>
+              Y combinator is complex, so if we go into detail we’ll need
+              another article. In fact, I had to used two full pages (
+              <InternalLink href="/14">page 1</InternalLink>,{' '}
+              <InternalLink href="/15">page 2</InternalLink>) in my course to
+              explain Y combinator using emoji puzzles. So here I’ll explain
+              what Y combinator is briefly.
+            </P>
+            <P>
+              Take a look at this JS code. It calculates the{' '}
+              <Bold>factorial</Bold> of a number using recursion.
+            </P>
+            <CodeBlock
+              caption={
+                <>
+                  Calculates the factorial of a number:
+                  <br />
+                  <InlineCode>n * n-1 * ... * 1</InlineCode>
+                </>
+              }
+            >{`function fact(n) {
+  if (n === 0) {
+    return 1
+  }
+  else {
+    return n * fact(n - 1)
+  }
+}`}</CodeBlock>
+            <P>
+              If you run it on <InlineCode>5</InlineCode>, it calculates{' '}
+              <InlineCode>5 * 4 * 3 * 2 * 1</InlineCode>.{' '}
+              <H args={{ name: 'pressRun' }} />
+            </P>
+            <CodeBlock
+              caption={
+                <>
+                  <InlineCode>5 * 4 * 3 * 2 *1</InlineCode>
+                </>
+              }
+              result="120"
+            >{`fact(5)`}</CodeBlock>
+            <P>
+              The above recursive function was a <Italic>named</Italic>{' '}
+              function. It had the name <InlineCode>fact</InlineCode>, which was
+              called from the function body to do recursion.
+            </P>
+            <CodeBlock
+              shouldHighlight={(lineNumber, tokenNumber) =>
+                (lineNumber === 0 && tokenNumber > 1 && tokenNumber < 3) ||
+                (lineNumber === 5 && tokenNumber > 4 && tokenNumber < 6)
+              }
+              caption={
+                <>
+                  This is a <Italic>named</Italic> function called{' '}
+                  <InlineCode>fact</InlineCode>
+                </>
+              }
+            >{`function fact(n) {
+  if (n === 0) {
+    return 1
+  }
+  else {
+    return n * fact(n - 1)
+  }
+}`}</CodeBlock>
+            <P>
+              You’d usually use a named function to do recursion. However,{' '}
+              <Highlight>
+                if you use Y combinator, you can do recursion without using a
+                named function.
+              </Highlight>{' '}
+              First, here’s the Y combinator function{' '}
+              <InlineCode>yc</InlineCode>:
+            </P>
+            <CodeBlock
+              caption={<>The Y combinator function</>}
+              shouldHighlight={(lineNumber, tokenNumber) =>
+                lineNumber === 0 && tokenNumber > 1 && tokenNumber < 3
+              }
+            >{`const yCombinator = sushi =>
+  (pizza =>
+    sushi(sandwich =>
+      pizza(pizza)(sandwich)
+    ))(pizza =>
+    sushi(sandwich =>
+      pizza(pizza)(sandwich)
+    )
+  )`}</CodeBlock>
+            <P>
+              Now, we’ll apply <InlineCode>yCombinator</InlineCode> on another
+              anonymous function. This time, <InlineCode>fact</InlineCode> is
+              NOT a function name, but it’s a <Italic>parameter</Italic> name.
+              We haven’t used any named function yet.
+            </P>
+            <CodeBlock
+              caption={
+                <>
+                  <InlineCode>fact</InlineCode> is now a parameter
+                </>
+              }
+              shouldHighlight={(lineNumber, tokenNumber) =>
+                (lineNumber === 0 && tokenNumber > 1 && tokenNumber < 3) ||
+                (lineNumber === 4 && tokenNumber > 4 && tokenNumber < 6)
+              }
+            >{`yCombinator(fact => n => {
+  if (n === 0) {
+    return 1
+  } else {
+    return n * fact(n - 1)
+  }
+})`}</CodeBlock>
+            <P>
+              Finally, let’s run the above function on{' '}
+              <InlineCode>5</InlineCode> and see what happens:
+            </P>
+            <CodeBlock
+              caption={
+                <>
+                  Run it on <InlineCode>5</InlineCode>
+                </>
+              }
+              result="120"
+              shouldHighlight={(lineNumber, tokenNumber) =>
+                lineNumber === 6 && tokenNumber > 3 && tokenNumber < 5
+              }
+            >{`yCombinator(fact => n => {
+  if (n === 0) {
+    return 1
+  } else {
+    return n * fact(n - 1)
+  }
+})(5) // ← run it on 5`}</CodeBlock>
+            <P>
+              The result was <InlineCode>120</InlineCode>, so it successfully
+              calculated the factorial.
+            </P>
+            <P>
+              <Bold>So:</Bold>{' '}
+              <Highlight>
+                By using the <InlineCode>yCombinator</InlineCode> function, you
+                can create a recursive function using only anonymous functions.
+              </Highlight>{' '}
+              It allows you to implement control flow (loops) using anonymous
+              functions.
+            </P>
+            <P>
+              Of course, Y combinator can be represented using an emoji puzzle:
+            </P>
+            <CodeBlock
+              caption={<>The Y combinator function</>}
+            >{`const yCombinator = sushi =>
+  (pizza =>
+    sushi(sandwich =>
+      pizza(pizza)(sandwich)
+    ))(pizza =>
+    sushi(sandwich =>
+      pizza(pizza)(sandwich)
+    )
+  )`}</CodeBlock>
+            <ExpressionRunnerSeparator halfMarginTop />
+            <R.Weow>Y combinator using emojis</R.Weow>
+            <P>
+              In{' '}
+              <InternalLink href="/15">
+                the final lesson of my couse
+              </InternalLink>
+              , I show how to use the above emoji puzzle to calculate factorials
+              (I won’t show it here because it’s pretty complex).
+            </P>
+            <P>
+              <Bold>In any case,</Bold>{' '}
+              <Highlight>
+                you can teach Y combinator to non-programmers using emoji
+                puzzles.
+              </Highlight>
+            </P>
+            <Alert backgroundColor="brown">
+              <JimsTalk />
+            </Alert>
+            <Subheading step="none" coveredIn="none">
+              Conclusion
+            </Subheading>
+            <P>
+              <Bold>One-line summary:</Bold>{' '}
+              <Highlight>
+                By using emoji puzzles, you explain functional programming
+                concepts such as lambda calculus, Church encoding, and Y
+                combinator to non-programmers—without using any code.
+              </Highlight>
+            </P>
+            <P>
+              <Bold>Why did I make emoji puzzles?</Bold> As someone who is
+              passionate about teaching,{' '}
+              <Highlight>
+                I wanted to challenge myself to explain a{' '}
+                <Italic>difficult computer science concept</Italic> (like Y
+                combinator) to non-programmers under the following constraints:
+              </Highlight>
+            </P>
+            <Ul>
+              <UlLi>Don’t use any code</UlLi>
+              <UlLi>Don’t sacrifice rigor</UlLi>
+              <UlLi>Must be doable on a smartphone in under 2-3 hours</UlLi>
+            </Ul>
+            <P>
+              And that’s how I came up with my course,{' '}
+              <InternalLink href="/">
+                Y Combinator for Non-programmers
+              </InternalLink>
+              , which uses emoji puzzles. In the future, I plan to do something
+              similar with other CS topics.
+            </P>
+            <P>In a meantime, you can take a look at my course from here:</P>
+            <div
+              css={css`
+                text-align: center;
+                margin: ${spaces(2)} 0 ${spaces(2)};
+              `}
+            >
+              <InternalLink
+                href="/"
+                css={css`
+                  display: inline-block;
+                  padding: ${spaces(0.5)} ${spaces(1.5)} ${spaces(0.75)};
+                  border-radius: ${radii(0.5)};
+                  border: 2px solid ${colors('pink600')};
+                  background: ${colors('pink400')};
+                  color: #fff;
+                  text-decoration: none;
+                  line-height: ${lineHeights(1.3)};
+                  -webkit-user-select: none;
+
+                  &:focus {
+                    box-shadow: inset 0 0 0 1px ${colors('pink600')};
+                    outline: none;
+                  }
+
+                  &:hover {
+                    background: ${colors('pink500')};
+                  }
+
+                  &:active {
+                    background: ${colors('pink500')};
+                  }
+                `}
+              >
+                <span
+                  css={css`
+                    font-size: ${fontSizes(1.2)};
+                    font-weight: bold;
+                    display: block;
+                  `}
+                >
+                  View the Course
+                </span>
+                <span
+                  css={css`
+                    font-size: ${fontSizes(0.85)};
+                    display: block;
+                  `}
+                >
+                  Y Combinator for Non-programmers
+                </span>
+              </InternalLink>
+            </div>
+            <Subheading noHrTop step="none" coveredIn="none">
+              Thank you for reading!
+            </Subheading>
+            <Ads />
+            {/*<P>
+              You can also discuss this on <ExternalLink href="">Hacker News</ExternalLink>.
+            </P>*/}
+            <Hr />
+            <H args={{ name: 'aboutMe', hideNextPageButton: true }} />
           </BubbleQuoteContext.Provider>
         </ExpressionRunnerConfigContext.Provider>
       </Container>
