@@ -73,7 +73,7 @@ const dateString = date
   .toFormat('LLL d, yyyy')
 const dateSchemaString = date.setZone('America/Los_Angeles').toISO()
 
-const title = 'You Can Explain Functional Programming with Emojis'
+const title = 'You Can Explain Functional Programming Using Emojis'
 const description =
   'A visual representation of Lambda calculus, Church encoding, and Y combinator'
 const url = `${enBaseUrl}/functional-programming-emojis`
