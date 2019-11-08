@@ -1392,8 +1392,9 @@ sushi => 'pizza'`}</CodeBlock>
             </P>
             <P>
               Here’s a function called <InlineCode>convert</InlineCode> that
-              takes a function as an argument. It then applies{' '}
-              <InlineCode>(n => n + 1)(0)</InlineCode> to it.
+              takes a function <InlineCode>f</InlineCode> as an argument. It
+              then calls <InlineCode>f</InlineCode> with{' '}
+              <InlineCode>(n => n + 1)(0)</InlineCode>.
             </P>
             <CodeBlock>{`function convert(f) {
   return f(n => n + 1)(0)
@@ -1436,7 +1437,8 @@ convert(sushi => sandwich =>
               </UlLi>
             </Ul>
             <P>
-              <Bold>Now, what if the input changes as follows?</Bold>{' '}
+              <Bold>Next:</Bold> What if the input to{' '}
+              <InlineCode>convert</InlineCode> changes as follows?{' '}
               <Highlight>
                 Try pressing <H args={{ name: 'run' }} /> on each example.
               </Highlight>
@@ -1497,13 +1499,17 @@ convert(a => b => a(a(a(b)))) // 3
 // ...and so on...`}</CodeBlock>
             </Alert>
             <P>
-              These functions that can be converted to numbers using{' '}
-              <InlineCode>convert()</InlineCode> have a{' '}
-              <Italic>special name.</Italic> They are called{' '}
+              <Bold>Important:</Bold>{' '}
+              <Highlight>
+                These functions that can be converted to a number using{' '}
+                <InlineCode>convert()</InlineCode> have a{' '}
+                <Italic>special name.</Italic>
+              </Highlight>{' '}
+              They are called{' '}
               <ExternalLink href="https://en.wikipedia.org/wiki/Church_encoding">
                 <Bold>Church numerals</Bold>
               </ExternalLink>
-              . Each function represents a Church numeral.
+              . Each function represents a Church numeral, like this:
             </P>
             <CodeBlock>{`// Church numeral 0
 a => b => b
@@ -1520,8 +1526,11 @@ a => b => a(a(a(b))))
 // ...and so on...`}</CodeBlock>
             <P>
               <Bold>You might be wondering:</Bold> “What’s the point of this?”
-              I’ll explain it shortly, but before I do so, let me explain how my
-              emoji puzzles can express Church numerals.
+              Don’t worry—I’ll tell you why Church numerals are interesting
+              shortly. But before I do, let me explain{' '}
+              <Highlight>
+                how emoji puzzles can express Church numerals.
+              </Highlight>
             </P>
             <P>
               Here’s an emoji puzzle that represents{' '}
@@ -1538,22 +1547,21 @@ a => b => a(a(a(b))))
             <P>
               <Bold>Here’s what’s new:</Bold>{' '}
               <Highlight>
-                We now have a <H args={{ name: 'convertToChurchNumeral' }} />{' '}
-                button below the puzzle which converts it to the corresponding
+                We now have the “<H args={{ name: 'convertToChurchNumeral' }} />
+                ” button below the puzzle which converts it to the corresponding
                 Church number.
               </Highlight>{' '}
-              Try pressing it.
+              Try pressing it:
             </P>
             <PointToRunButton>
               <R.Jjjh></R.Jjjh>
             </PointToRunButton>
             <P>
               Other Church numeral functions can also be represented using emoji
-              puzzles, and they can be converted as well. Of course, the emojis
-              don’t need to be <EmojiWithText letter="a" /> and{' '}
-              <EmojiWithText letter="b" />
-              —they can be other emojis, as long as they follow the same
-              pattern.
+              puzzles, and they can be converted to a number. And we can use
+              emojis other than <EmojiForLetter letter="a" /> and{' '}
+              <EmojiForLetter letter="b" />
+              —as long as they follow the same pattern.
             </P>
             <R.Mifg>
               <Bold>Represents:</Bold>
