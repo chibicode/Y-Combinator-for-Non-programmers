@@ -163,6 +163,7 @@ const Subheading = ({
   <>
     {!noHrTop && (
       <Hr
+        id={step !== 'none' ? `${step}` : undefined}
         css={css`
           margin-top: ${spaces(2.25)};
         `}
