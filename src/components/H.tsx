@@ -944,6 +944,10 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
             <ExternalLink href="mailto:shu@chibicode.com">
               shu@chibicode.com
             </ExternalLink>
+            . You can also{' '}
+            <ExternalLink href="https://news.ycombinator.com/item?id=21399025">
+              discuss this on <Highlight>Hacker News</Highlight>
+            </ExternalLink>
             .
           </P>
           <P>
@@ -951,25 +955,20 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
           </P>
           <Ul>
             <UlLi>
-              You can also file an{' '}
-              <ExternalLink href="https://github.com/chibicode/ycombinator/issues">
-                issue on GitHub
+              You should check out this article of mine: “
+              <InternalLink href="/functional-programming-emojis">
+                <Highlight>
+                  You Can Explain Functional Programming Using Emojis
+                </Highlight>
+              </InternalLink>
+              ”.
+            </UlLi>
+            <UlLi>
+              This course is built using TypeScript and React.{' '}
+              <ExternalLink href="https://github.com/chibicode/ycombinator/">
+                Check out the source on GitHub
               </ExternalLink>
               .
-            </UlLi>
-            <UlLi>
-              I’d also appreciate it if you could{' '}
-              <ExternalLink href="https://github.com/chibicode/ycombinator/">
-                ★ star the repo
-              </ExternalLink>
-              . <Emoji>😉</Emoji>
-            </UlLi>
-            <UlLi>
-              You can{' '}
-              <ExternalLink href="https://news.ycombinator.com/item?id=21399025">
-                discuss this on <Bold>Hacker News</Bold>
-              </ExternalLink>
-              . <Emoji>😎</Emoji>
             </UlLi>
           </Ul>
           <Hr />

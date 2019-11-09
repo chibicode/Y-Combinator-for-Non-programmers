@@ -7,19 +7,32 @@ import {
   HighlightBold,
   Bold,
   Italic,
-  Hr
+  InternalLink
 } from 'src/components/ContentTags'
 import Emoji from 'src/components/Emoji'
 import CustomEmoji from 'src/components/CustomEmoji'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import BubbleQuotes from 'src/components/BubbleQuotes'
 import NextLessonButton from 'src/components/NextLessonButton'
-import CardContent from 'src/components/CardContent'
 import Toc from 'src/components/Toc'
 import H from 'src/components/H'
 import YoutubeEmbed from 'src/components/YoutubeEmbed'
-import { githubRepo } from 'src/lib/meta'
 import * as R from 'src/components/Runners'
+
+export const IfYouAreAProgrammer = () => (
+  <>
+    <P>
+      <Bold>If you’re a programmer,</Bold> you should check out this article of
+      mine instead: “
+      <InternalLink href="/functional-programming-emojis">
+        <Highlight>
+          You Can Explain Functional Programming Using Emojis
+        </Highlight>
+      </InternalLink>
+      ”.
+    </P>
+  </>
+)
 
 export const JimsTalk = ({ onBlog }: { onBlog?: boolean }) => (
   <>
@@ -88,7 +101,14 @@ export default () => (
               Try pressing <H args={{ name: 'run' }} />.
             </R.Wunw>
           </>
-        )
+        ),
+        footer: {
+          content: (
+            <>
+              <IfYouAreAProgrammer />
+            </>
+          )
+        }
       },
       {
         type: 'meta',
@@ -403,33 +423,9 @@ export default () => (
         ),
         footer: {
           content: (
-            <CardContent
-              preview={{
-                text: <>Continue reading</>,
-                content: (
-                  <>
-                    <P>
-                      <Bold>For programmers:</Bold> This course is optimized for
-                      non-programmers, so if you’re a programmer and want to
-                      learn about Y Combinator, there are other better
-                      resources. Press “Continue reading” below to learn more.
-                    </P>
-                  </>
-                )
-              }}
-            >
-              <Hr />
-              <JimsTalk />
-              <Hr />
-              <P>
-                <Bold>Also, for programmers:</Bold> This course is written in
-                TypeScript and React, and{' '}
-                <ExternalLink href={githubRepo}>
-                  the source is available on GitHub
-                </ExternalLink>
-                . I’d appreciate it if you could ★ star it.
-              </P>
-            </CardContent>
+            <>
+              <IfYouAreAProgrammer />
+            </>
           )
         }
       },
