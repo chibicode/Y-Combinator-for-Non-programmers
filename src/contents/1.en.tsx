@@ -49,8 +49,7 @@ export default () => (
           <>
             <P>
               Once upon a time, there was a rural village called{' '}
-              <HighlightBold>“Lambda Village”</HighlightBold>. The villagers
-              worked to earn just enough for a modest lifestyle.
+              <HighlightBold>“Lambda Village”</HighlightBold>.
             </P>
             <EmojiSeparator
               emojis={['🌲', '🙂', '🙂', '🌲']}
@@ -127,8 +126,8 @@ export default () => (
                 <H args={{ name: 'run' }} /> button
               </HighlightBold>
               . If you press it, the mathbox calculates the result.{' '}
-              <H args={{ name: 'deprecatedPressRun', capitalize: true }} /> on the
-              mathbox below.
+              <H args={{ name: 'deprecatedPressRun', capitalize: true }} /> on
+              the mathbox below.
             </P>
             <R.Mcug />
             <P>
@@ -139,7 +138,8 @@ export default () => (
             <Hr />
             <P>
               Let’s look at other mathboxes.{' '}
-              <H args={{ name: 'deprecatedPressRun', capitalize: true }} /> on this one:
+              <H args={{ name: 'deprecatedPressRun', capitalize: true }} /> on
+              this one:
             </P>
             <R.Aovj />
             <P>
@@ -234,7 +234,8 @@ export default () => (
           <>
             <P>
               Mathboxes can also <Italic>subtract 1</Italic> from a number.{' '}
-              <H args={{ name: 'deprecatedPressRun', capitalize: true }} /> below:
+              <H args={{ name: 'deprecatedPressRun', capitalize: true }} />{' '}
+              below:
             </P>
             <R.Xmqp />
             <P>
