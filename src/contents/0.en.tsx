@@ -373,10 +373,10 @@ export default () => (
                 many of my non-programmer friends want to{' '}
                 <Italic>actually understand</Italic> computer science concepts
               </Highlight>
-              , such as AI or blockchain. However, they can’t learn them because{' '}
-              they don’t have the necessary programming knowledge. Pretty much
-              all learning resources that teach computer science concepts{' '}
-              <Italic>assume</Italic> that you know programming.
+              , such as AI or blockchain. However, they can’t learn these ideas
+              because they don’t have the necessary programming knowledge.
+              Pretty much all learning resources that teach computer science
+              concepts <Italic>assume</Italic> that you know programming.
             </P>
             <P>
               So{' '}
