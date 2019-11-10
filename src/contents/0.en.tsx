@@ -70,8 +70,8 @@ export default () => (
         content: (
           <>
             <P>
-              <Emoji>🤗</Emoji> <Bold>Welcome!</Bold> This is an interactive
-              online course where{' '}
+              <Emoji>🤗</Emoji> <Bold>Welcome!</Bold> This is a free course
+              where{' '}
               <Highlight>
                 non-programmers can learn about{' '}
                 <HighlightBold>Y Combinator</HighlightBold>
@@ -79,36 +79,45 @@ export default () => (
               , one of the coolest ideas in computer science.
             </P>
             <P>
-              This course is <HighlightBold>free</HighlightBold> (no signup
-              required), and you can do it from your <Emoji>📱</Emoji>{' '}
-              smartphone or <Emoji>💻</Emoji> computer.
+              In this course, you’ll learn computer science concepts by solving{' '}
+              <Bold>emoji puzzles</Bold>.{' '}
+              <Highlight>No coding is required</Highlight> and you can do it
+              from your smartphone or computer.
             </P>
             <P>
-              <Emoji>🍱</Emoji> <Bold>Quick demo:</Bold> In this course, you’ll
-              learn computer science concepts by{' '}
-              <Highlight>
-                solving <Bold>puzzles</Bold>—no coding required
-              </Highlight>
-              . Here’s a quick demo. I’ll explain how this puzzle works later,
+              <Emoji>🍱</Emoji> <Bold>Quick demo:</Bold> Here’s an example of
+              the puzzles you’ll be solving. I’ll explain how it works later,
               but for now,{' '}
               <Highlight>
                 try pressing <H args={{ name: 'run' }} /> and see what happens:
               </Highlight>
             </P>
             <R.Wunw>
-              You’ll see puzzles like this:
-              <br />
-              Try pressing <H args={{ name: 'run' }} />.
+              Try pressing <H args={{ name: 'run' }} />
             </R.Wunw>
+            <P>
+              <Emoji>😁</Emoji> <Bold>To get started:</Bold>{' '}
+              <Highlight>
+                Press the button below to go to the next page!
+              </Highlight>
+            </P>
+            <NextLessonButton />
+            <P>
+              <Emoji>🤔</Emoji> <Bold>If you want to learn more</Bold> about the
+              course before you get started,{' '}
+              <Highlight>scroll down and keep reading.</Highlight> It should
+              take only a few minutes to read.
+            </P>
+            <EmojiSeparator
+              nodes={[
+                <CustomEmoji type="singleArrowDown" />,
+                <CustomEmoji type="singleArrowDown" />,
+                <CustomEmoji type="singleArrowDown" />
+              ]}
+              topDescription={<>Scroll down to learn more</>}
+            />
           </>
-        ),
-        footer: {
-          content: (
-            <>
-              <IfYouAreAProgrammer />
-            </>
-          )
-        }
+        )
       },
       {
         type: 'meta',
@@ -161,35 +170,6 @@ export default () => (
             </>
           )
         }
-      },
-      {
-        title: <>Start now or read the introduction</>,
-        content: (
-          <>
-            <P>
-              <Emoji>😁</Emoji>{' '}
-              <Bold>If you want to get started as soon as possible:</Bold>{' '}
-              <Highlight>
-                Press the button below to go to the next page.
-              </Highlight>
-            </P>
-            <NextLessonButton />
-            <P>
-              <Emoji>🤔</Emoji>{' '}
-              <Bold>If you want to read the introduction</Bold> before you get
-              started, <Highlight>scroll down and keep reading.</Highlight> The
-              introduction should take only a few minutes to read.
-            </P>
-            <EmojiSeparator
-              nodes={[
-                <CustomEmoji type="singleArrowDown" />,
-                <CustomEmoji type="singleArrowDown" />,
-                <CustomEmoji type="singleArrowDown" />
-              ]}
-              topDescription={<>Scroll down to read the introduction</>}
-            />
-          </>
-        )
       },
       {
         title: <>Introduction: Have you heard of “Y Combinator”?</>,
