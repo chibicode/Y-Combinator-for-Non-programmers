@@ -118,13 +118,13 @@ const EpisodeHero = ({
                   commonTitleClasses,
                   css`
                     color: ${colors('grey700')};
-                    padding-top: ${spaces(0.5)};
                     font-size: ${fontSizes(1)};
-                    margin: 0 auto ${spaces(0.5)};
-                    font-weight: ${fontWeights(700)};
+                    margin: 0 auto ${spaces(0.75)};
+                    font-weight: ${fontWeights(400)};
 
                     ${ns} {
-                      font-size: ${fontSizes(1.6)};
+                      padding-top: ${spaces(0.25)};
+                      font-size: ${fontSizes(1.2)};
                     }
                   `
                 ]}

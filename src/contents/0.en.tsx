@@ -403,8 +403,7 @@ export default () => (
                 this approach is not the best way to introduce computer science
                 to non-programmers
               </Highlight>
-              . That’s why I’m calling this course “a <Italic>wild</Italic>{' '}
-              introduction” to computer science.
+              .
             </P>
             <P>
               The ideal way to teach computer science would be to teach

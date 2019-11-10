@@ -3,7 +3,7 @@ import { css, jsx } from '@emotion/core'
 import { InternalLink } from 'src/components/ContentTags'
 import H from 'src/components/H'
 import { numEpisodesExceptFirstAndLast } from 'src/lib/episodeCategories'
-import { colors, spaces } from 'src/lib/theme'
+import { ns, colors, spaces } from 'src/lib/theme'
 import Container from 'src/components/Container'
 import Emoji from 'src/components/Emoji'
 import CustomEmoji from 'src/components/CustomEmoji'
@@ -31,8 +31,11 @@ const EpisodePageHeader = ({
               margin: ${spaces(4)} 0 ${spaces(2)};
             `
           : css`
-              margin: 0 0 ${spaces(2)};
+              margin: 0 0 ${spaces(0.5)};
               background: ${colors('grey100')};
+              ${ns} {
+                margin: 0 0 ${spaces(2)};
+              }
             `
       }
     >
