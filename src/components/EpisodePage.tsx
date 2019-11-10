@@ -34,7 +34,11 @@ const EpisodePage = ({
     episodeEmojis[episodeNumber as keyof typeof episodeEmojis][1]
   }${locale === 'jp' ? '' : ' '}${lessonTitle}${
     episodeTitleString
-      ? ` ${episodeEmojis[episodeNumber as keyof typeof episodeEmojis][0]} ${episodeTitleString} ${episodeEmojis[episodeNumber as keyof typeof episodeEmojis][2]}`
+      ? ` ${
+          episodeEmojis[episodeNumber as keyof typeof episodeEmojis][0]
+        } ${episodeTitleString} ${
+          episodeEmojis[episodeNumber as keyof typeof episodeEmojis][2]
+        }`
       : ''
   }`
   const [modalVisible, setModalVisible] = useState(false)
