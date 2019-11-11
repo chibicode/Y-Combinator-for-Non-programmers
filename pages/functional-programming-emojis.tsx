@@ -1017,11 +1017,9 @@ sushi => 'pizza'`}</CodeBlock>
               <P>
                 Furthermore, in the course itself, I slow down and spend a lot
                 more time covering the above rules—the explanations are spread
-                out in two full pages (
-                <InternalLink href="/3">here</InternalLink> and{' '}
-                <InternalLink href="/4">here</InternalLink>
+                out in a full page (<InternalLink href="/4">here</InternalLink>
                 ). And I don’t show any code in my course—I only show emoji
-                puzzles.
+                puzzles, so one less source of confusion.
               </P>
               <P
                 css={css`
