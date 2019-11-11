@@ -1002,6 +1002,44 @@ sushi => 'pizza'`}</CodeBlock>
               By learning these rules, non-programmers will be able to evaluate
               functions intuitively.
             </P>
+            <Alert>
+              <P>
+                <Bold>Note:</Bold> The above steps would look{' '}
+                <Italic>very</Italic> confusing to most programmers because we
+                already know how to evaluate functional expressions, and we
+                naturally try to map the above diagrams to code in our head.
+              </P>
+              <P>
+                But in my testing,{' '}
+                <Italic>
+                  it seems to be less confusing to non-programmers
+                </Italic>{' '}
+                who don’t already have a mental model of function evaluation. I
+                even heard from my readers that they’re easier to understand
+                than programming.
+              </P>
+              <P>
+                Furthermore, in the course itself, I slow down and spend a lot
+                more time covering the above rules—the explanations are spread
+                out in two full pages (
+                <InternalLink href="/3">here</InternalLink> and{' '}
+                <InternalLink href="/4">here</InternalLink>
+                ). Of course, I don’t show any code in my course—I only show
+                emoji puzzles.
+              </P>
+              <P
+                css={css`
+                  margin-bottom: 0;
+                `}
+              >
+                (One thing I learned from releasing{' '}
+                <InternalLink href="/">my course</InternalLink> is that the
+                feedback I get from programmers and non-programmers are complete
+                opposites—<Italic>generally negative from programmers</Italic>,{' '}
+                <Italic>generally positive from non-programmers</Italic>. I
+                thought it’s pretty interesting.)
+              </P>
+            </Alert>
             <Subheading step={step++} coveredIn={4}>
               If there’s no match
             </Subheading>
