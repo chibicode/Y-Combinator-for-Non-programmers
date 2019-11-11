@@ -1005,16 +1005,17 @@ sushi => 'pizza'`}</CodeBlock>
             <Alert>
               <P>
                 <Bold>Note:</Bold> The above steps would look{' '}
-                <Italic>very</Italic> confusing to most programmers because we
-                already know how to evaluate functional expressions, and we
-                naturally try to map the above diagrams to code in our head. But
-                in my testing,{' '}
+                <Italic>very</Italic> confusing to most programmers. As
+                programmers, we already know how to evaluate functional
+                expressions, and we instinctively try to map the above diagrams
+                to code in our head.
+              </P>
+              <P>
+                But in my testing,{' '}
                 <Italic>
                   it seems to be less confusing to non-programmers
                 </Italic>{' '}
                 who don’t already have a mental model of function evaluation.
-              </P>
-              <P>
                 Furthermore,{' '}
                 <InternalLink href="/">in the course itself</InternalLink>, I
                 slow down and spend a lot more time covering the above rules—the
@@ -1039,8 +1040,12 @@ sushi => 'pizza'`}</CodeBlock>
                   the above diagrams, but many non-programmers think the
                   opposite.
                 </Bold>{' '}
+              </P>
+              <P>
                 Some people have incredible difficulty understanding code or
-                math symbols, and sometimes visual alternatives help them.
+                math symbols, and sometimes visual alternatives help them. I
+                believe the more alternative teaching methods are offered in CS
+                education, the better.
               </P>
             </Alert>
             <Subheading step={step++} coveredIn={4}>
