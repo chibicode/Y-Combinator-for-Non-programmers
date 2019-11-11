@@ -1007,16 +1007,12 @@ sushi => 'pizza'`}</CodeBlock>
                 <Bold>Note:</Bold> The above steps would look{' '}
                 <Italic>very</Italic> confusing to most programmers because we
                 already know how to evaluate functional expressions, and we
-                naturally try to map the above diagrams to code in our head.
-              </P>
-              <P>
-                But in my testing,{' '}
+                naturally try to map the above diagrams to code in our head. But
+                in my testing,{' '}
                 <Italic>
                   it seems to be less confusing to non-programmers
                 </Italic>{' '}
-                who don’t already have a mental model of function evaluation. I
-                even heard from my readers that they’re easier to understand
-                than programming.
+                who don’t already have a mental model of function evaluation.
               </P>
               <P>
                 Furthermore, in the course itself, I slow down and spend a lot
@@ -1024,20 +1020,24 @@ sushi => 'pizza'`}</CodeBlock>
                 out in two full pages (
                 <InternalLink href="/3">here</InternalLink> and{' '}
                 <InternalLink href="/4">here</InternalLink>
-                ). Of course, I don’t show any code in my course—I only show
-                emoji puzzles.
+                ). And I don’t show any code in my course—I only show emoji
+                puzzles.
               </P>
               <P
                 css={css`
                   margin-bottom: 0;
                 `}
               >
-                (One thing I learned from releasing{' '}
-                <InternalLink href="/">my course</InternalLink> is that the
-                feedback I get from programmers and non-programmers are complete
-                opposites—<Italic>generally negative from programmers</Italic>,{' '}
+                One thing I learned is that the feedback on my course I get from
+                programmers and non-programmers are complete opposites—
+                <Italic>generally negative from programmers</Italic>,{' '}
                 <Italic>generally positive from non-programmers</Italic>. I
-                thought it’s pretty interesting.)
+                believe that’s because{' '}
+                <Bold>
+                  many programmers find that using code is simpler than using
+                  the above diagrams, but many non-programmers think the
+                  opposite.
+                </Bold>
               </P>
             </Alert>
             <Subheading step={step++} coveredIn={4}>
