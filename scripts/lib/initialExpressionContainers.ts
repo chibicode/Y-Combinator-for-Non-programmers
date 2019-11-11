@@ -944,7 +944,10 @@ export const uwoq = initializeExpressionContainer({
     arg: 'c',
     body: [
       'b',
-      [{ name: 'c', highlighted: true }, { name: 'c', highlighted: true }]
+      [
+        { name: 'c', highlighted: true },
+        { name: 'c', highlighted: true }
+      ]
     ]
   }
 })
