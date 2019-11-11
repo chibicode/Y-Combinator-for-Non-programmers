@@ -1015,18 +1015,21 @@ sushi => 'pizza'`}</CodeBlock>
                 who don’t already have a mental model of function evaluation.
               </P>
               <P>
-                Furthermore, in the course itself, I slow down and spend a lot
-                more time covering the above rules—the explanations are spread
-                out in a full page (<InternalLink href="/4">here</InternalLink>
+                Furthermore,{' '}
+                <InternalLink href="/">in the course itself</InternalLink>, I
+                slow down and spend a lot more time covering the above rules—the
+                explanations are spread out in a full page (
+                <InternalLink href="/4">here</InternalLink>
                 ). And I don’t show any code in my course—I only show emoji
-                puzzles, so one less source of confusion.
+                puzzles, so one less source of confusion compared to this
+                article.
               </P>
               <P
                 css={css`
                   margin-bottom: 0;
                 `}
               >
-                One thing I learned is that the feedback on my course I get from
+                One thing I learned is that the feedback on my course from
                 programmers and non-programmers are complete opposites—
                 <Italic>generally negative from programmers</Italic>,{' '}
                 <Italic>generally positive from non-programmers</Italic>. I
