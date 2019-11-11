@@ -1035,7 +1035,9 @@ sushi => 'pizza'`}</CodeBlock>
                   many programmers find that using code is simpler than using
                   the above diagrams, but many non-programmers think the
                   opposite.
-                </Bold>
+                </Bold>{' '}
+                Some people have incredible difficulty understanding code or
+                math symbols, and sometimes visual alternatives help them.
               </P>
             </Alert>
             <Subheading step={step++} coveredIn={4}>
