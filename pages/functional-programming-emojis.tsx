@@ -1025,9 +1025,9 @@ sushi => 'pizza'`}</CodeBlock>
                 —this is the same as before.
               </Highlight>
             </P>
-            <R.Zzxj>
+            <R.Gogn>
               <StepOne />
-            </R.Zzxj>
+            </R.Gogn>
             <P>
               <Bold>Step 2.</Bold>{' '}
               <Highlight>
