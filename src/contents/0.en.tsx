@@ -22,8 +22,8 @@ import * as R from 'src/components/Runners'
 export const IfYouAreAProgrammer = () => (
   <>
     <P>
-      <Bold>If you’re a programmer,</Bold> you should check out this article of
-      mine instead: “
+      <Bold>If you’re a programmer,</Bold> you should also check out this
+      article of mine: “
       <InternalLink href="/functional-programming-emojis">
         <Highlight>
           You Can Explain Functional Programming Using Emojis

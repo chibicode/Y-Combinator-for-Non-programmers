@@ -955,7 +955,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
           </P>
           <Ul>
             <UlLi>
-              You should check out this article of mine: “
+              You should also check out this article of mine: “
               <InternalLink href="/functional-programming-emojis">
                 <Highlight>
                   You Can Explain Functional Programming Using Emojis
