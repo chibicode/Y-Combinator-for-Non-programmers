@@ -44,7 +44,7 @@ import {
 } from 'src/components/ContentTags'
 import locale from 'src/lib/locale'
 import { DateTime } from 'luxon'
-import { enBaseUrl } from 'src/lib/meta'
+import { enBaseUrl, githubRepo } from 'src/lib/meta'
 import BaseAlert, { alertSpacing, AlertProps } from 'src/components/Alert'
 import PrismHighlight, { defaultProps } from 'prism-react-renderer'
 import theme from 'prism-react-renderer/themes/nightOwlLight'
@@ -96,10 +96,7 @@ const Ads = ({ shareId }: { shareId?: string }) => (
       </UlLi>
       <UlLi>
         Also, the source code is{' '}
-        <ExternalLink href="https://github.com/chibicode/ycombinator/">
-          available on GitHub
-        </ExternalLink>
-        :{' '}
+        <ExternalLink href={githubRepo}>available on GitHub</ExternalLink>:{' '}
         <iframe
           css={css`
             vertical-align: middle;

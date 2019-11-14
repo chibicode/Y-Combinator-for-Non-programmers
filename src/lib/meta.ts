@@ -4,7 +4,8 @@ export const jpBaseUrl = 'https://yj.chibicode.com'
 export const enBaseUrl = 'https://ycombinator.chibicode.com'
 export const baseUrl = locale === 'en' ? enBaseUrl : jpBaseUrl
 
-export const githubRepo = 'https://github.com/chibicode/ycombinator'
+export const githubRepo =
+  'https://github.com/chibicode/Y-Combinator-for-Non-programmers'
 
 export const ogImageUrl =
   locale === 'en'

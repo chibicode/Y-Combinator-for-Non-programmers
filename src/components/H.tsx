@@ -965,7 +965,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
             </UlLi>
             <UlLi>
               This course is built using TypeScript and React.{' '}
-              <ExternalLink href="https://github.com/chibicode/ycombinator/">
+              <ExternalLink href={githubRepo}>
                 Check out the source on GitHub
               </ExternalLink>
               .
@@ -1984,7 +1984,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
                 <Bold>Things I’m pretty good at:</Bold>{' '}
                 <Highlight>Expository writing</Highlight> (like this course),{' '}
                 <Highlight>React/TypeScript</Highlight> (
-                <ExternalLink href="https://github.com/chibicode/ycombinator">
+                <ExternalLink href={githubRepo}>
                   see the repo for this course
                 </ExternalLink>
                 ), and learning new things quickly. I’m okay at{' '}
