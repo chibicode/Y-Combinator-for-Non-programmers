@@ -1022,11 +1022,7 @@ sushi => 'pizza'`}</CodeBlock>
                 puzzles, so one less source of confusion compared to this
                 article.
               </P>
-              <P
-                css={css`
-                  margin-bottom: 0;
-                `}
-              >
+              <P>
                 One thing I learned is that the feedback on my course from
                 programmers and non-programmers are complete opposites—
                 <Italic>generally negative from programmers</Italic> but{' '}
@@ -1036,9 +1032,13 @@ sushi => 'pizza'`}</CodeBlock>
                   many programmers find that using code is simpler than using
                   the above diagrams, but many non-programmers think the
                   opposite.
-                </Bold>{' '}
+                </Bold>
               </P>
-              <P>
+              <P
+                css={css`
+                  margin-bottom: 0;
+                `}
+              >
                 Some people have incredible difficulty understanding code or
                 math symbols, and sometimes visual alternatives help them. I
                 believe the more alternative teaching methods are offered in CS
