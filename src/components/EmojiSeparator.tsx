@@ -9,12 +9,9 @@ import {
   spaces,
   fitWithinMobileWidth
 } from 'src/lib/theme'
-import { VariableNames } from 'src/types/VariableNames'
-import letterEmojiMapping from 'src/lib/letterEmojiMapping'
 
 interface EmojiSeparatorProps {
   emojis: string[]
-  letters?: VariableNames[]
   nodes?: React.ReactNode[]
   size: 'xs' | 'sm' | 'md' | 'lg' | 'mdsm'
   alignCenter: boolean
@@ -56,7 +53,6 @@ const SideSpace = ({ children }: { children: React.ReactNode }) => (
 )
 
 const EmojiSeparator = ({
-  letters,
   emojis,
   nodes,
   size,
@@ -105,13 +101,7 @@ const EmojiSeparator = ({
           justify-content: center;
         `}
       >
-        {letters
-          ? letters.map((letter, index) => (
-              <SideSpace key={`${letter}${index}`}>
-                <Emoji size="sm">{letterEmojiMapping[letter]}</Emoji>
-              </SideSpace>
-            ))
-          : nodes
+        {nodes
           ? nodes.map((node, index) => (
               <SideSpace key={`node-${index}`}>
                 <span

@@ -102,7 +102,7 @@ const Ads = ({ shareId }: { shareId?: string }) => (
             vertical-align: middle;
             transform: translateY(-0.1em);
           `}
-          src="https://ghbtns.com/github-btn.html?user=chibicode&repo=ycombinator&type=star&count=true&size=large"
+          src="https://ghbtns.com/github-btn.html?user=chibicode&repo=Y-Combinator-for-Non-programmers&type=star&count=true&size=large"
           frameBorder="0"
           scrolling="0"
           width="160px"
