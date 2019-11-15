@@ -1029,7 +1029,7 @@ sushi => 'pizza'`}</CodeBlock>
               >
                 One thing I learned is that the feedback on my course from
                 programmers and non-programmers are complete opposites—
-                <Italic>generally negative from programmers</Italic>,{' '}
+                <Italic>generally negative from programmers</Italic> but{' '}
                 <Italic>generally positive from non-programmers</Italic>. I
                 believe that’s because{' '}
                 <Bold>
