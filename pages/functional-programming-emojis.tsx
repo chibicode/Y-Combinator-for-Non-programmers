@@ -2364,6 +2364,39 @@ const mul = sushi => sandwich => pizza =>
                 puzzles.
               </Highlight>
             </P>
+            <Alert backgroundColor="blue">
+              <P>
+                The Y Combinator I showed above is for{' '}
+                <ExternalLink href="https://en.wikipedia.org/wiki/Evaluation_strategy#Applicative_order">
+                  applicative order
+                </ExternalLink>{' '}
+                languages like JavaScript. For{' '}
+                <ExternalLink href="https://en.wikipedia.org/wiki/Evaluation_strategy#Normal_order">
+                  normal order
+                </ExternalLink>{' '}
+                languages like Haskell, Y Combinator would look visually
+                simpler, like this:
+              </P>
+              <R.Xjzx>
+                Y Combinator for
+                <br />
+                normal order languages
+              </R.Xjzx>
+              <P>
+                The emoji puzzles on this page run in the applicative order
+                because I tried to compare it with JavaScript.{' '}
+                <Highlight>
+                  However, in my course, the emoji puzzles actually run in the
+                  normal order instead,
+                </Highlight>{' '}
+                simply because Y Combinator would be visually less complex.
+              </P>
+              <P>
+                The bottom line is that my emoji puzzles support both
+                applicative and normal orders of evaluation, which was
+                nontrivial to implement.
+              </P>
+            </Alert>
             <Alert backgroundColor="brown">
               <JimsTalk onBlog />
             </Alert>
