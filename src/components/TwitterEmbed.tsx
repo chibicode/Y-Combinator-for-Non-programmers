@@ -31,7 +31,8 @@ const TwitterEmbed = ({ id, showCard }: { id: string; showCard?: boolean }) => {
             dnt: true,
             cards: showCard ? undefined : 'hidden',
             lang,
-            align: 'center'
+            align: 'center',
+            conversation: 'none'
           })
           .then(() => {
             setTwitterLoaded(true)

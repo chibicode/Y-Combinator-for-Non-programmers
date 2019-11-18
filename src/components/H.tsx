@@ -1688,7 +1688,15 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
   }
   if (args.name === 'testimonialsContent') {
     if (locale === 'en') {
-      return <>?</>
+      return (
+        <>
+          <P>Here are some of the readers’ comments:</P>
+          {testimonials.map(id => (
+            <TwitterEmbed id={id} key={id} />
+          ))}
+          <P>Press the button below to continue to the course!</P>
+        </>
+      )
     } else {
       return (
         <>

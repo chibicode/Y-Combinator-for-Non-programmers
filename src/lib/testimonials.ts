@@ -2,7 +2,7 @@ import locale from 'src/lib/locale'
 
 const testimonials =
   locale === 'en'
-    ? []
+    ? ['1194295629578690566']
     : [
         '1170954942258958336',
         '1171440347441848321',
