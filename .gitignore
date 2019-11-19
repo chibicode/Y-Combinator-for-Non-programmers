@@ -1,4 +1,6 @@
 outDir
+jpOut
+enOut
 tsconfig.json
 
 .tsbuild
