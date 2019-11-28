@@ -26,3 +26,5 @@ jobs:
           PUBLISH_DIR: ./jpOut
       - run: git checkout en
       - run: ./node_modules/now/dist/index.js --prod --name y-combinator-for-non-programmers-en --token=${{ secrets.ZEIT_EN_TOKEN }}
+      - run: git checkout jp
+      - run: ./node_modules/now/dist/index.js --prod --name y-combinator-for-non-programmers-jp --token=${{ secrets.ZEIT_JP_TOKEN }}
