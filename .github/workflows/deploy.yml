@@ -7,20 +7,22 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v1
-    - uses: actions/setup-node@v1
-      with:
-        node-version: '13.x'
-    - run: yarn install
-    - run: yarn build:en
-    - uses: peaceiris/actions-gh-pages@v2.5.0
-      env:
-        ACTIONS_DEPLOY_KEY: ${{ secrets.ACTIONS_DEPLOY_KEY }}
-        PUBLISH_BRANCH: en
-        PUBLISH_DIR: ./enOut
-    - run: yarn build:jp
-    - uses: peaceiris/actions-gh-pages@v2.5.0
-      env:
-        ACTIONS_DEPLOY_KEY: ${{ secrets.ACTIONS_DEPLOY_KEY }}
-        PUBLISH_BRANCH: jp
-        PUBLISH_DIR: ./jpOut
+      - uses: actions/checkout@v1
+      - uses: actions/setup-node@v1
+        with:
+          node-version: '13.x'
+      - run: yarn install
+      - run: yarn build:en
+      - uses: peaceiris/actions-gh-pages@v2.5.0
+        env:
+          ACTIONS_DEPLOY_KEY: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+          PUBLISH_BRANCH: en
+          PUBLISH_DIR: ./enOut
+      - run: yarn build:jp
+      - uses: peaceiris/actions-gh-pages@v2.5.0
+        env:
+          ACTIONS_DEPLOY_KEY: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+          PUBLISH_BRANCH: jp
+          PUBLISH_DIR: ./jpOut
+      - run: git checkout gh-pages
+      - run: ./node_modules/now/dist/index.js --prod --token=${{ secrets.ZEIT_EN_TOKEN }}

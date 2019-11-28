@@ -70,6 +70,7 @@
     "fs-extra": "^8.1.0",
     "glob": "^7.1.6",
     "module-alias": "^2.2.2",
+    "now": "^16.6.0",
     "prettier": "^1.19.1",
     "typescript": "^3.7.2"
   }
