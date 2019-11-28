@@ -24,6 +24,7 @@ jobs:
           ACTIONS_DEPLOY_KEY: ${{ secrets.ACTIONS_DEPLOY_KEY }}
           PUBLISH_BRANCH: jp
           PUBLISH_DIR: ./jpOut
+      - run: git clean -f
       - run: git checkout en
       - run: ./node_modules/now/dist/index.js --prod --name y-combinator-for-non-programmers-en --token=${{ secrets.ZEIT_EN_TOKEN }}
       - run: git checkout jp
