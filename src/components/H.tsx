@@ -1847,19 +1847,15 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
               content: (
                 <>
                   <P>
-                    <Emoji>👨🏻‍💻</Emoji> <Bold>About me:</Bold>{' '}
-                    <Highlight>
-                      I’m <Bold>Shu Uesugi</Bold>, a full-stack developer based
-                      in San Francisco Bay Area, USA.
-                    </Highlight>
+                    <Emoji>👨🏻‍💻</Emoji> <Bold>About me:</Bold> I’m{' '}
+                    <Bold>Shu Uesugi</Bold>, a full-stack developer based in San
+                    Francisco Bay Area, USA.
                   </P>
                   <P>
-                    <Emoji>👋</Emoji> <Bold>Available for hire:</Bold>{' '}
-                    <Highlight>
-                      I’m looking for a{' '}
-                      <Bold>full-time senior engineering position</Bold>.
-                    </Highlight>{' '}
-                    Press “Continue reading” below to learn more about me!{' '}
+                    <Emoji>👋</Emoji> <Bold>Available for hire:</Bold> I’m
+                    looking for a{' '}
+                    <Bold>full-time senior engineering position</Bold>. Press
+                    “Continue reading” below to learn more about me!{' '}
                     <Emoji>😉</Emoji>
                   </P>
                 </>
@@ -1878,36 +1874,32 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
               Please read below and if you’re interested, contact me (
               <Bold>Shu Uesugi</Bold>) at{' '}
               <ExternalLink href="mailto:shu@chibicode.com">
-                <HighlightBold>shu@chibicode.com</HighlightBold>
+                <Bold>shu@chibicode.com</Bold>
               </ExternalLink>{' '}
               or on{' '}
               <ExternalLink href="https://twitter.com/chibicode">
-                <Highlight>
-                  Twitter: <Bold>@chibicode</Bold>
-                </Highlight>
+                Twitter: <Bold>@chibicode</Bold>
               </ExternalLink>
               .
             </P>
             <Ul>
               <UlLi>
-                <Bold>I’m mainly looking for</Bold>{' '}
-                <Highlight>a senior engineering position</Highlight>. But I’m
-                also interested in product-leaning positions (product design,
-                PM, DevRel, etc.) for developer-facing products. I’m better at
-                front-end than back-end, but can do both.
+                <Bold>I’m mainly looking for</Bold> a senior engineering
+                position. But I’m also interested in product-leaning positions
+                (product design, PM, DevRel, etc.) for developer-facing
+                products. I’m better at front-end than back-end, but can do
+                both.
               </UlLi>
               <UlLi>
-                <Bold>Location preference:</Bold>{' '}
-                <HighlightBold>Remote</HighlightBold> would be ideal. 2nd
-                preference is <Highlight>Los Angeles</Highlight>. I’m currently
-                in SF Bay Area (3rd preference), but my wife and I are looking
-                to relocate to LA or other more affordable places.
+                <Bold>Location preference:</Bold> Remote would be ideal. 2nd
+                preference is Los Angeles. I’m currently in SF Bay Area (3rd
+                preference), but my wife and I are looking to relocate to LA or
+                other more affordable places.
               </UlLi>
               <UlLi>
                 <Bold>Other preferences:</Bold> My last full-time job was in
-                edtech/media, but{' '}
-                <Highlight>I’m looking at a wide range of areas</Highlight>. I
-                like companies that think machine learning is the new SQL (see{' '}
+                edtech/media, but I’m looking at a wide range of areas. I like
+                companies that think machine learning is the new SQL (see{' '}
                 <ExternalLink href="https://www.ben-evans.com/benedictevans/2019/10/4/machine-learning-deployment">
                   this article
                 </ExternalLink>{' '}
@@ -1926,15 +1918,13 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
             <P>More about me:</P>
             <Ul>
               <UlLi>
-                <Bold>Work experience (pre-2017):</Bold>{' '}
-                <Highlight>
-                  I worked as a lead full-stack (Rails) developer at{' '}
-                  <ExternalLink href="https://www.edsurge.com/">
-                    EdSurge
-                  </ExternalLink>
-                  , an edtech media startup in Silicon Valley, from 2012 to 2017
-                </Highlight>
-                . I was the first engineering hire and was involved in
+                <Bold>Work experience (pre-2017):</Bold> I worked as a lead
+                full-stack (Rails) developer at{' '}
+                <ExternalLink href="https://www.edsurge.com/">
+                  EdSurge
+                </ExternalLink>
+                , an edtech media startup in Silicon Valley, from 2012 to 2017.
+                I was the first engineering hire and was involved in
                 architecting pretty much all of the projects. Before that, I was
                 a product designer at Quora (2011-2012) and an engineer at
                 Palantir (2010-2011). I studied Computer Science (undergrad) and
@@ -1951,16 +1941,13 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
               </UlLi>
               <UlLi>
                 <Bold>In 2018:</Bold> While working as a freelance engineer in
-                Silicon Valley,{' '}
-                <Highlight>
-                  I co-translated a book called{' '}
-                  <ExternalLink href="https://www.amazon.com/dp/B0756J1LLV/ref=cm_sw_r_tw_dp_U_x_256TDbEEVPQ98">
-                    <Bold>“Factfulness”</Bold>
-                  </ExternalLink>{' '}
-                  (by Hans Rosling and others) into Japanese.
-                </Highlight>{' '}
-                It went on sale in 2019 and became one of Japan’s top-selling
-                nonfiction books of the year. It’s a great book -{' '}
+                Silicon Valley, I co-translated a book called{' '}
+                <ExternalLink href="https://www.amazon.com/dp/B0756J1LLV/ref=cm_sw_r_tw_dp_U_x_256TDbEEVPQ98">
+                  <Bold>“Factfulness”</Bold>
+                </ExternalLink>{' '}
+                (by Hans Rosling and others) into Japanese. It went on sale in
+                2019 and became one of Japan’s top-selling nonfiction books of
+                the year. It’s a great book -{' '}
                 <ExternalLink href="https://www.gatesnotes.com/Books/Factfulness">
                   take Bill Gates’s word for it
                 </ExternalLink>
@@ -1989,20 +1976,17 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
                 I’m now looking for a full-time job.
               </UlLi>
               <UlLi>
-                <Bold>Things I’m pretty good at:</Bold>{' '}
-                <Highlight>Expository writing</Highlight> (like this course),{' '}
-                <Highlight>React/TypeScript</Highlight> (
+                <Bold>Things I’m pretty good at:</Bold> Expository writing (like
+                this course), React/TypeScript (
                 <ExternalLink href={githubRepo}>
                   see the repo for this course
                 </ExternalLink>
-                ), and learning new things quickly. I’m okay at{' '}
-                <Highlight>product design</Highlight>. I’ve also worked with{' '}
-                <Highlight>Rails</Highlight> from version 2 to version 6.
+                ), and learning new things quickly. I’m okay at product design.
+                I’ve also worked with Rails from version 2 to version 6.
               </UlLi>
               <UlLi>
                 <Bold>Current interests:</Bold> As a professional EN → JP
-                translator, I’m interested in{' '}
-                <Highlight>machine translation</Highlight> and{' '}
+                translator, I’m interested in machine translation and{' '}
                 <ExternalLink href="https://distill.pub/2017/aia/">
                   using AI to augment human intelligence
                 </ExternalLink>
@@ -2013,13 +1997,11 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
             <P>
               <Bold>If you’re interested:</Bold> Contact me at{' '}
               <ExternalLink href="mailto:shu@chibicode.com">
-                <Highlight>shu@chibicode.com</Highlight>
+                <Bold>shu@chibicode.com</Bold>
               </ExternalLink>{' '}
               or on{' '}
               <ExternalLink href="https://twitter.com/chibicode">
-                <Highlight>
-                  Twitter: <Bold>@chibicode</Bold>
-                </Highlight>
+                Twitter: <Bold>@chibicode</Bold>
               </ExternalLink>
               . I’m also on{' '}
               <ExternalLink href="https://www.linkedin.com/in/chibicode">
