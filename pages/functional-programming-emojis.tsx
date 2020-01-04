@@ -33,7 +33,6 @@ import {
   ExternalLink,
   P,
   Italic,
-  HighlightBold,
   Bold,
   InternalLink,
   Highlight,
@@ -89,9 +88,7 @@ const Ads = ({ shareId }: { shareId?: string }) => (
       <UlLi>
         I’d love it if you could share this on Twitter.{' '}
         <ExternalLink href={tweetUrl}>
-          <HighlightBold>
-            <CustomEmoji type="twitter" /> Click here to Tweet this article.
-          </HighlightBold>
+          <CustomEmoji type="twitter" /> Click here to Tweet this article.
         </ExternalLink>
       </UlLi>
       <UlLi>
@@ -108,13 +105,6 @@ const Ads = ({ shareId }: { shareId?: string }) => (
           width="160px"
           height="30px"
         ></iframe>
-      </UlLi>
-      <UlLi>
-        You can also discuss this on{' '}
-        <ExternalLink href="https://news.ycombinator.com/item?id=21484016">
-          Hacker News
-        </ExternalLink>
-        .
       </UlLi>
     </Ul>
     {shareId && (
@@ -602,27 +592,22 @@ export default () => {
         >
           <BubbleQuoteContext.Provider value={{ inQuote: true }}>
             <P>
-              <Highlight>
-                Last month, I published a free online course called “
-                <InternalLink href="/">
-                  <Bold>Y Combinator for Non-programmers</Bold>
-                </InternalLink>
-                ”.
-              </Highlight>{' '}
-              In this 17-page course, I explain functional programming concepts
-              such as lambda calculus, Church encoding, and Y combinator in a
-              way such that people{' '}
+              Last month, I published a free online course called “
+              <InternalLink href="/">
+                <Bold>Y Combinator for Non-programmers</Bold>
+              </InternalLink>
+              ”. In this 17-page course, I explain functional programming
+              concepts such as lambda calculus, Church encoding, and Y
+              combinator in a way such that people{' '}
               <Italic>who have zero programming knowledge</Italic> can
               understand.
             </P>
             <P>
-              I didn’t use any code to explain these concepts. Instead,{' '}
-              <Highlight>
-                I created something called “<Bold>emoji puzzles</Bold>” that can{' '}
-                <Italic>visualize</Italic> functional code.
-              </Highlight>{' '}
-              In this article, I’ll explain how my emoji puzzles can represent
-              and execute functional code visually.
+              I didn’t use any code to explain these concepts. Instead, I
+              created something called “<Bold>emoji puzzles</Bold>” that can{' '}
+              <Italic>visualize</Italic> functional code. In this article, I’ll
+              explain how my emoji puzzles can represent and execute functional
+              code visually.
             </P>
             <Subheading noHrTop step="none" coveredIn="none">
               Quick Demo
@@ -675,8 +660,6 @@ export default () => {
                 combinator.
               </UlLi>
             </Ul>
-            <P>Some announcements:</P>
-            <Ads />
             <Alert>
               <div
                 css={css`
@@ -789,8 +772,8 @@ sushi => sushi`}</CodeBlock>
             </Subheading>
             <P>
               I’ve added the <H args={{ name: 'run' }} /> button to the JS code
-              snippet below. <Highlight>If you press it,</Highlight> you’ll see
-              that the result is <InlineCode>'sandwich'</InlineCode>.
+              snippet below. If you press it, you’ll see that the result is{' '}
+              <InlineCode>'sandwich'</InlineCode>.
             </P>
             <CodeBlock
               result={`'sandwich'`}
@@ -816,15 +799,12 @@ sushi => sushi`}</CodeBlock>
             </P>
             <P>
               So, you can <H args={{ name: 'run', lowerCase: true }} /> an emoji
-              puzzle just as you can run a piece of JS code.{' '}
-              <Highlight>
-                This is how I taught functional programming to non-programmers
-                in my course (
-                <InternalLink href="/">
-                  Y Combinator for Non-programmers
-                </InternalLink>
-                )—without showing any code.
-              </Highlight>
+              puzzle just as you can run a piece of JS code. This is how I
+              taught functional programming to non-programmers in my course (
+              <InternalLink href="/">
+                Y Combinator for Non-programmers
+              </InternalLink>
+              )—without showing any code.
             </P>
             <P>
               <Bold>Let’s take a look at another example.</Bold> Here’s a piece
@@ -904,11 +884,8 @@ sushi => 'pizza'`}</CodeBlock>
             <P>
               On the other hand, most non-programmers don’t have a mental model
               of how function evaluation works. To help them develop the mental
-              model,{' '}
-              <Highlight>
-                I created a <Italic>step-by-step visualization</Italic> of
-                function evaluation rules using emoji puzzles.
-              </Highlight>
+              model, I created a <Italic>step-by-step visualization</Italic> of
+              function evaluation rules using emoji puzzles.
             </P>
             <P>Let’s reuse the earlier example again:</P>
             <CodeBlock
@@ -928,31 +905,22 @@ sushi => 'pizza'`}</CodeBlock>
             </PointToRunButton>
             <P>Here are the four steps it displayed:</P>
             <P>
-              <Bold>Step 1.</Bold>{' '}
-              <Highlight>
-                <StepOne />
-              </Highlight>
+              <Bold>Step 1.</Bold> <StepOne />
             </P>
             <P>
-              First, we label each emoji.{' '}
-              <Highlight>
-                The top item is labeled as{' '}
-                <BottomRightBadge inline bottomRightBadgeType="callArg" /> (for
-                “<Bold>T</Bold>op”), the left item is labeled as{' '}
-                <BottomRightBadge inline bottomRightBadgeType="funcArg" /> (for
-                “<Bold>L</Bold>eft”), and the right item is labeled as{' '}
-                <BottomRightBadge inline bottomRightBadgeType="funcBound" />{' '}
-                (for “<Bold>R</Bold>ight”).
-              </Highlight>
+              First, we label each emoji. The top item is labeled as{' '}
+              <BottomRightBadge inline bottomRightBadgeType="callArg" /> (for “
+              <Bold>T</Bold>op”), the left item is labeled as{' '}
+              <BottomRightBadge inline bottomRightBadgeType="funcArg" /> (for “
+              <Bold>L</Bold>eft”), and the right item is labeled as{' '}
+              <BottomRightBadge inline bottomRightBadgeType="funcBound" /> (for
+              “<Bold>R</Bold>ight”).
             </P>
             <R.Zzxj>
               <StepOne />
             </R.Zzxj>
             <P>
-              <Bold>Step 2.</Bold>{' '}
-              <Highlight>
-                <StepTwo />
-              </Highlight>
+              <Bold>Step 2.</Bold> <StepTwo />
             </P>
             <P>
               Second, <InstructionTwo lowerCase /> In this case, both the
@@ -963,10 +931,7 @@ sushi => 'pizza'`}</CodeBlock>
               <StepTwo />
             </R.Keck>
             <P>
-              <Bold>Step 3.</Bold>{' '}
-              <Highlight>
-                <StepThree />
-              </Highlight>
+              <Bold>Step 3.</Bold> <StepThree />
             </P>
             <P>
               Third, <InstructionThree lowerCase /> In this case, we copy the{' '}
@@ -976,10 +941,7 @@ sushi => 'pizza'`}</CodeBlock>
               <StepThree />
             </R.Qoms>
             <P>
-              <Bold>Step 4.</Bold>{' '}
-              <Highlight>
-                <StepFour />
-              </Highlight>
+              <Bold>Step 4.</Bold> <StepFour />
             </P>
             <P>
               Finally, <InstructionFour lowerCase /> We’re left with just the{' '}
@@ -1062,24 +1024,18 @@ sushi => 'pizza'`}</CodeBlock>
             <R.Gthd></R.Gthd>
             <P>Here are the three steps it displayed:</P>
             <P>
-              <Bold>Step 1.</Bold>{' '}
-              <Highlight>
-                <StepOne />
-                —this is the same as before.
-              </Highlight>
+              <Bold>Step 1.</Bold> <StepOne />
+              —this is the same as before.
             </P>
             <R.Gogn>
               <StepOne />
             </R.Gogn>
             <P>
-              <Bold>Step 2.</Bold>{' '}
-              <Highlight>
-                This time, there’s <Bold>no match</Bold> between{' '}
-                <BottomRightBadge inline bottomRightBadgeType="funcArg" /> and{' '}
-                <BottomRightBadge inline bottomRightBadgeType="funcBound" />.
-                The bottom-left is <EmojiWithText letter="a" />, but the
-                bottom-right is <EmojiWithText letter="f" />.
-              </Highlight>
+              <Bold>Step 2.</Bold> This time, there’s <Bold>no match</Bold>{' '}
+              between <BottomRightBadge inline bottomRightBadgeType="funcArg" />{' '}
+              and <BottomRightBadge inline bottomRightBadgeType="funcBound" />.
+              The bottom-left is <EmojiWithText letter="a" />, but the
+              bottom-right is <EmojiWithText letter="f" />.
             </P>
             <R.Zvpc>
               <Bold>No match:</Bold>{' '}
@@ -1088,16 +1044,11 @@ sushi => 'pizza'`}</CodeBlock>
               <Emoji>❌</Emoji>
             </R.Zvpc>
             <P>
-              If there’s no match,{' '}
-              <Highlight>
-                we skip step 3 (<StepThree />) and go directly to step 4.
-              </Highlight>
+              If there’s no match, we skip step 3 (<StepThree />) and go
+              directly to step 4.
             </P>
             <P>
-              <Bold>Step 4.</Bold>{' '}
-              <Highlight>
-                <StepFour />
-              </Highlight>
+              <Bold>Step 4.</Bold> <StepFour />
             </P>
             <R.Nsds></R.Nsds>
             <ExpressionRunnerSeparator />
@@ -1139,11 +1090,10 @@ sushi => 'pizza'`}</CodeBlock>
               and see if they can be represented using an emoji puzzle.
             </P>
             <P>
-              Check out the following JS expression, and
+              Check out the following JS expression, and try to guess what the
+              result would be before{' '}
               <Highlight>
-                {' '}
-                try to guess what the result would be before pressing the{' '}
-                <H args={{ name: 'run' }} /> button.
+                pressing the <H args={{ name: 'run' }} /> button.
               </Highlight>
             </P>
             <CodeBlock
@@ -1223,9 +1173,8 @@ sushi => 'pizza'`}</CodeBlock>
   'hamburger'
 )('chicken')`}</CodeBlock>
             <P>
-              Equivalently, in an emoji puzzle,{' '}
-              <Highlight>we evaluate the bottom two rows first.</Highlight> We
-              ignore the top row initially, which is shaded in blue.
+              Equivalently, in an emoji puzzle, we evaluate the bottom two rows
+              first. We ignore the top row initially, which is shaded in blue.
             </P>
             <R.Bcgp>
               <Bold>Focus</Bold> on <Italic>the bottom two rows</Italic>, and
@@ -1237,22 +1186,17 @@ sushi => 'pizza'`}</CodeBlock>
               two rows correspond to the pair of{' '}
               <InlinePrioritiesLabel revert>1</InlinePrioritiesLabel>
               ’s. That’s how you know that you must start with the bottom two
-              rows.{' '}
-              <Highlight>
-                In an emoji puzzle with 3 rows, you start with the pair of{' '}
-                <InlinePrioritiesLabel revert>1</InlinePrioritiesLabel>’s.
-              </Highlight>
+              rows. In an emoji puzzle with 3 rows, you start with the pair of{' '}
+              <InlinePrioritiesLabel revert>1</InlinePrioritiesLabel>’s.
             </P>
             <P>
               Next, let’s label each item on the bottom two rows. This time, in
               addition to{' '}
               <BottomRightBadge inline bottomRightBadgeType="callArg" />{' '}
               <BottomRightBadge inline bottomRightBadgeType="funcArg" />{' '}
-              <BottomRightBadge inline bottomRightBadgeType="funcBound" />,{' '}
-              <Highlight>
-                we now have a new label{' '}
-                <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />
-              </Highlight>{' '}
+              <BottomRightBadge inline bottomRightBadgeType="funcBound" />, we
+              now have a new label{' '}
+              <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />
               for the <EmojiWithText letter="b" />.
             </P>
             <R.Pbhg>
@@ -1262,12 +1206,10 @@ sushi => 'pizza'`}</CodeBlock>
               for the <EmojiWithText letter="b" />
             </R.Pbhg>
             <P>
-              <Bold>Here’s the rule:</Bold>{' '}
-              <Highlight>
-                The middle item on the bottom row is labeled as{' '}
-                <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />{' '}
-                (for “<Bold>M</Bold>iddle”), and you can <Bold>ignore it</Bold>.
-              </Highlight>{' '}
+              <Bold>Here’s the rule:</Bold> The middle item on the bottom row is
+              labeled as{' '}
+              <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />{' '}
+              (for “<Bold>M</Bold>iddle”), and you can <Bold>ignore it</Bold>.
               You can pretend that{' '}
               <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />
               ’s don’t exist.
@@ -1343,10 +1285,10 @@ sushi => 'pizza'`}</CodeBlock>
               <P>
                 <Bold>More examples (optional read):</Bold> Here’s another
                 example that might be helpful for your understanding. Check out
-                the following JS expression, and{' '}
+                the following JS expression, and try to guess what the result
+                would be before{' '}
                 <Highlight>
-                  try to guess what the result would be before pressing the{' '}
-                  <H args={{ name: 'run' }} /> button.
+                  pressing the <H args={{ name: 'run' }} /> button.
                 </Highlight>
               </P>
               <CodeBlock
@@ -1378,12 +1320,9 @@ sushi => 'pizza'`}</CodeBlock>
               <Hr />
               <P>
                 Next, here’s slightly different JS code. Compared to the last
-                time,{' '}
-                <Highlight>
-                  there’s an extra pair of parentheses around{' '}
-                  <InlineCode>(spaghetti => spaghetti)('salad')</InlineCode>,
-                  which changes the result.
-                </Highlight>
+                time, there’s an extra pair of parentheses around{' '}
+                <InlineCode>(spaghetti => spaghetti)('salad')</InlineCode>,
+                which changes the result.
               </P>
               <CodeBlock
                 result={`pizza => pizza`}
@@ -1394,12 +1333,10 @@ sushi => 'pizza'`}</CodeBlock>
   (spaghetti => spaghetti)("salad")
 )`}</CodeBlock>
               <P>
-                Let’s take a look at the equivalent emoji puzzle. This time,{' '}
-                <Highlight>
-                  the pair of <InlinePrioritiesLabel>1</InlinePrioritiesLabel>’s
-                  is on the top two rows
-                </Highlight>{' '}
-                instead. So we start with the top two rows this time.{' '}
+                Let’s take a look at the equivalent emoji puzzle. This time, the
+                pair of <InlinePrioritiesLabel>1</InlinePrioritiesLabel>’s is on
+                the top two rows instead. So we start with the top two rows this
+                time.{' '}
                 <Highlight>
                   Try pressing <H args={{ name: 'run' }} />
                 </Highlight>{' '}
@@ -1417,18 +1354,15 @@ sushi => 'pizza'`}</CodeBlock>
               <Ul>
                 <UlLi>
                   In <Bold>JavaScript</Bold>, you can change the evaluation
-                  order of an expression by placing{' '}
-                  <Highlight>parentheses</Highlight> on different locations.
+                  order of an expression by placing parentheses on different
+                  locations.
                 </UlLi>
                 <UlLi>
                   In <Bold>emoji puzzles</Bold>, you can change the evaluation
-                  order by placing{' '}
-                  <Highlight>
-                    the numbers (e.g.{' '}
-                    <InlinePrioritiesLabel>1</InlinePrioritiesLabel>’s and{' '}
-                    <InlinePrioritiesLabel>2</InlinePrioritiesLabel>’s)
-                  </Highlight>{' '}
-                  on different locations.
+                  order by placing the numbers (e.g.{' '}
+                  <InlinePrioritiesLabel>1</InlinePrioritiesLabel>’s and{' '}
+                  <InlinePrioritiesLabel>2</InlinePrioritiesLabel>’s) on
+                  different locations.
                 </UlLi>
               </Ul>
             </Alert>
@@ -1476,10 +1410,9 @@ sushi => 'pizza'`}</CodeBlock>
               Now, suppose that we apply <InlineCode>convert</InlineCode> on
               this function:{' '}
               <InlineCode>sushi => sandwich => sandwich</InlineCode>. What would
-              the result be?{' '}
+              the result be? Try to guess before{' '}
               <Highlight>
-                Try to guess before pressing the <H args={{ name: 'run' }} />{' '}
-                button.
+                pressing the <H args={{ name: 'run' }} /> button.
               </Highlight>
             </P>
             <CodeBlock
@@ -1558,11 +1491,9 @@ a => b => a(a(a(b)))
 // ...and so on...`}</CodeBlock>
               <P>
                 Then, when the function is passed to{' '}
-                <InlineCode>convert()</InlineCode>,{' '}
-                <Highlight>
-                  it returns the number of times <InlineCode>a</InlineCode> is
-                  applied to <InlineCode>b</InlineCode>
-                </Highlight>{' '}
+                <InlineCode>convert()</InlineCode>, it returns the number of
+                times <InlineCode>a</InlineCode> is applied to{' '}
+                <InlineCode>b</InlineCode>
                 in the function body.
               </P>
               <CodeBlock>{`convert(a => b => b)          // 0
@@ -1572,13 +1503,9 @@ convert(a => b => a(a(a(b)))) // 3
 // ...and so on...`}</CodeBlock>
             </Alert>
             <P>
-              <Bold>Important:</Bold>{' '}
-              <Highlight>
-                These functions that can be converted to a number using{' '}
-                <InlineCode>convert()</InlineCode> have a{' '}
-                <Italic>special name.</Italic>
-              </Highlight>{' '}
-              They are called{' '}
+              <Bold>Important:</Bold> These functions that can be converted to a
+              number using <InlineCode>convert()</InlineCode> have a{' '}
+              <Italic>special name.</Italic> They are called{' '}
               <ExternalLink href="https://en.wikipedia.org/wiki/Church_encoding">
                 <Bold>Church numerals</Bold>
               </ExternalLink>
@@ -1600,10 +1527,8 @@ a => b => a(a(a(b))))
             <P>
               <Bold>You might be wondering:</Bold> “What’s the point of this?”
               Don’t worry—I’ll tell you why Church numerals are interesting
-              shortly. But before I do, let me explain{' '}
-              <Highlight>
-                how emoji puzzles can express Church numerals.
-              </Highlight>
+              shortly. But before I do, let me explain how emoji puzzles can
+              express Church numerals.
             </P>
             <P>
               Here’s an emoji puzzle that represents{' '}
@@ -1618,13 +1543,10 @@ a => b => a(a(a(b))))
               (Church numeral <Bold>0</Bold>)
             </R.Jarm>
             <P>
-              <Bold>Here’s what’s new:</Bold>{' '}
-              <Highlight>
-                We now have the “<H args={{ name: 'convertToChurchNumeral' }} />
-                ” button below the puzzle which converts it to the corresponding
-                Church number.
-              </Highlight>{' '}
-              Try pressing it:
+              <Bold>Here’s what’s new:</Bold> We now have the “
+              <H args={{ name: 'convertToChurchNumeral' }} />” button below the
+              puzzle which converts it to the corresponding Church number. Try
+              pressing it:
             </P>
             <PointToRunButton>
               <R.Jjjh></R.Jjjh>
@@ -1682,10 +1604,9 @@ a => b => a(a(a(b))))
               <UlLi>What would the result be?</UlLi>
             </Ul>
             <P>
-              Let’s take a look.{' '}
+              Let’s take a look. Try to guess before{' '}
               <Highlight>
-                Try to guess before pressing the <H args={{ name: 'run' }} />{' '}
-                button.
+                pressing the <H args={{ name: 'run' }} /> button.
               </Highlight>
             </P>
             <CodeBlock result="1">{`// Function from the above
@@ -1719,14 +1640,11 @@ convert(f(zero))`}</CodeBlock>
               }
             />
             <P>
-              <Bold>Here’s the secret:</Bold>{' '}
-              <Highlight>
-                This function <InlineCode>f</InlineCode> we used actually{' '}
-                <Bold>adds 1</Bold> to the input Church numeral.
-              </Highlight>{' '}
-              When you apply <InlineCode>f</InlineCode> to a Church numeral, it
-              returns a <Italic>new Church numeral</Italic> that’s 1 greater
-              than before.
+              <Bold>Here’s the secret:</Bold> This function{' '}
+              <InlineCode>f</InlineCode> we used actually <Bold>adds 1</Bold> to
+              the input Church numeral. When you apply{' '}
+              <InlineCode>f</InlineCode> to a Church numeral, it returns a{' '}
+              <Italic>new Church numeral</Italic> that’s 1 greater than before.
             </P>
             <CodeBlock>{`// If we apply this function to a
 // Church numeral, it returns a new
@@ -1752,20 +1670,14 @@ convert(f(two))`}</CodeBlock>
             </P>
             <Ul>
               <UlLi>
-                <Highlight>
-                  By using a Church numeral function that can be converted to{' '}
-                  <InlineCode>someNumber</InlineCode>…
-                </Highlight>
+                By using a Church numeral function that can be converted to{' '}
+                <InlineCode>someNumber</InlineCode>…
               </UlLi>
               <UlLi>
-                <Highlight>
-                  …and the function <InlineCode>f</InlineCode> we saw earlier,
-                </Highlight>
+                …and the function <InlineCode>f</InlineCode> we saw earlier,
               </UlLi>
               <UlLi>
-                <Highlight>
-                  You can calculate <InlineCode>someNumber + 1</InlineCode>.
-                </Highlight>
+                You can calculate <InlineCode>someNumber + 1</InlineCode>.
               </UlLi>
             </Ul>
             <EmojiSeparator
@@ -1783,10 +1695,8 @@ convert(f(two))`}</CodeBlock>
               }
             />
             <P>
-              <Highlight>
-                Now, let’s see if we can explain this to non-programmers using
-                emoji puzzles.
-              </Highlight>
+              Now, let’s see if we can explain this to non-programmers using
+              emoji puzzles.
             </P>
             <P>
               First, here’s an emoji puzzle representation of the Church numeral{' '}
@@ -1842,11 +1752,8 @@ convert(f(two))`}</CodeBlock>
                   margin-bottom: 0;
                 `}
               >
-                <Bold>In other words:</Bold>{' '}
-                <Highlight>
-                  We can use an emoji puzzle to calculate{' '}
-                  <InlineCode>someNumber + 1</InlineCode>.
-                </Highlight>
+                <Bold>In other words:</Bold> We can use an emoji puzzle to
+                calculate <InlineCode>someNumber + 1</InlineCode>.
               </P>
             </Alert>
             <Alert backgroundColor="blue">
@@ -1995,12 +1902,8 @@ const mul = sushi => sandwich => pizza =>
             <P>
               It turns out that <InlineCode>if/else</InlineCode> statements like
               the above can also be expressed using Church numerals. To save
-              time,{' '}
-              <Highlight>
-                I won’t show JS code this time and will only show the emoji
-                puzzle.
-              </Highlight>{' '}
-              Check out the following:
+              time, I won’t show JS code this time and will only show the emoji
+              puzzle. Check out the following:
             </P>
             <R.Pmss>
               An emoji puzzle that represents
@@ -2010,16 +1913,12 @@ const mul = sushi => sandwich => pizza =>
             <P>The above emoji puzzle will become:</P>
             <Ul>
               <UlLi>
-                <Highlight>
-                  <CustomEmoji type="isZero" size="mdlg" /> if you put an emoji
-                  puzzle that can be converted to <EmojiNumber number={0} /> on
-                  the bottom
-                </Highlight>
+                <CustomEmoji type="isZero" size="mdlg" /> if you put an emoji
+                puzzle that can be converted to <EmojiNumber number={0} /> on
+                the bottom
               </UlLi>
               <UlLi>
-                <Highlight>
-                  <CustomEmoji type="isNotZero" size="mdlg" /> otherwise
-                </Highlight>
+                <CustomEmoji type="isNotZero" size="mdlg" /> otherwise
               </UlLi>
             </Ul>
             <P>
@@ -2033,12 +1932,9 @@ const mul = sushi => sandwich => pizza =>
               can be converted to <EmojiNumber number={0} />
             </R.Vdcr>
             <P>
-              <Bold>What just happened:</Bold>{' '}
-              <Highlight>
-                We started out with <EmojiNumber number={0} />
-                , and it ended up with <CustomEmoji type="isZero" size="mdlg" />
-                .
-              </Highlight>
+              <Bold>What just happened:</Bold> We started out with{' '}
+              <EmojiNumber number={0} />
+              , and it ended up with <CustomEmoji type="isZero" size="mdlg" />.
             </P>
             <P>
               Now, what if we started out with an emoji puzzle that can be
@@ -2051,11 +1947,9 @@ const mul = sushi => sandwich => pizza =>
               can be converted to <EmojiNumber number={1} />
             </R.Vyic>
             <P>
-              <Bold>What just happened:</Bold>{' '}
-              <Highlight>
-                We started out with <EmojiNumber number={1} />, and it ended up
-                with <CustomEmoji type="isNotZero" size="mdlg" />.
-              </Highlight>
+              <Bold>What just happened:</Bold> We started out with{' '}
+              <EmojiNumber number={1} />, and it ended up with{' '}
+              <CustomEmoji type="isNotZero" size="mdlg" />.
             </P>
             <P>
               As you just saw, in addition to math expressions, we can also
@@ -2072,9 +1966,8 @@ const mul = sushi => sandwich => pizza =>
                   Wikipedia
                 </ExternalLink>
                 ), created by a mathematician Alonzo Church in 1930s. It only
-                has two features:{' '}
-                <Highlight>variables and anonymous functions</Highlight>. Here’s
-                a piece of lambda calculus code:
+                has two features: variables and anonymous functions. Here’s a
+                piece of lambda calculus code:
               </P>
               <CodeBlock
                 noHighlight
@@ -2091,13 +1984,10 @@ const mul = sushi => sandwich => pizza =>
               </P>
               <CodeBlock>{`(sushi => sushi)(sandwich)`}</CodeBlock>
               <P>
-                You might have realized that{' '}
-                <Highlight>
-                  all the functional JS code we represented using emoji puzzles
-                  can be expressed in lambda calculus.
-                </Highlight>{' '}
-                For example, the emoji puzzle that multiplies two Church
-                numerals…
+                You might have realized that all the functional JS code we
+                represented using emoji puzzles can be expressed in lambda
+                calculus. For example, the emoji puzzle that multiplies two
+                Church numerals…
               </P>
               <R.Nnzx>
                 Emoji puzzle that multiplies
@@ -2111,13 +2001,10 @@ const mul = sushi => sandwich => pizza =>
               >{`λsushi.λsandwich.λpizza
   sushi (sandwich pizza)`}</CodeBlock>
               <P>
-                <Bold>So, here’s the secret:</Bold>{' '}
-                <Highlight>
-                  My emoji puzzles are actually a visual representation of
-                  lambda calculus.
-                </Highlight>{' '}
-                And by using emoji puzzles, lambda calculus can be explained
-                visually to non-programmers!
+                <Bold>So, here’s the secret:</Bold> My emoji puzzles are
+                actually a visual representation of lambda calculus. And by
+                using emoji puzzles, lambda calculus can be explained visually
+                to non-programmers!
               </P>
               <EmojiSeparator
                 nodes={[
@@ -2135,11 +2022,8 @@ const mul = sushi => sandwich => pizza =>
               <P>
                 <Bold>Finally:</Bold> We saw that emoji puzzles, or lambda
                 calculus, can express not only numbers and arithmetic but also
-                conditionals. In fact,{' '}
-                <Highlight>
-                  lambda calculus can express pretty much anything any
-                  programming language can do—it’s Turing complete.
-                </Highlight>{' '}
+                conditionals. In fact, lambda calculus can express pretty much
+                anything any programming language can do—it’s Turing complete.
                 And this method of encoding data and operators using lambda
                 calculus is called <Bold>Church encoding</Bold> (
                 <ExternalLink href="https://en.wikipedia.org/wiki/Church_encoding">
@@ -2168,17 +2052,11 @@ const mul = sushi => sandwich => pizza =>
             </P>
             <P>
               The answer is yes. We can express control flow using{' '}
-              <Highlight>
-                <Bold>Y combinator</Bold>
-              </Highlight>
-              .
+              <Bold>Y combinator</Bold>.
             </P>
             <P>
-              <Bold>Y combinator</Bold>{' '}
-              <Highlight>
-                is a function that allows you to create a recursive function
-                without using named functions.
-              </Highlight>{' '}
+              <Bold>Y combinator</Bold> is a function that allows you to create
+              a recursive function without using named functions.
             </P>
             <P>
               Y combinator is complex, so if we go into detail we’ll need
@@ -2247,11 +2125,9 @@ const mul = sushi => sandwich => pizza =>
   }
 }`}</CodeBlock>
             <P>
-              You’d usually use a named function to do recursion. However,{' '}
-              <Highlight>
-                if you use Y combinator, you can do recursion without using a
-                named function.
-              </Highlight>{' '}
+              You’d usually use a named function to do recursion. However, if
+              you use Y combinator, you can do recursion without using a named
+              function.
             </P>
             <P>
               Let me show you how. Here’s the Y combinator function{' '}
@@ -2273,11 +2149,8 @@ const mul = sushi => sandwich => pizza =>
   )`}</CodeBlock>
             <P>
               Now, we’ll apply <InlineCode>yCombinator</InlineCode> on another
-              anonymous function.{' '}
-              <Highlight>
-                This time, <InlineCode>fact</InlineCode> is NOT a function name,
-                but it’s a <Italic>parameter</Italic> name.
-              </Highlight>{' '}
+              anonymous function. This time, <InlineCode>fact</InlineCode> is
+              NOT a function name, but it’s a <Italic>parameter</Italic> name.
               We haven’t used any named function yet—we’ve only used anonymous
               functions.
             </P>
@@ -2325,13 +2198,10 @@ const mul = sushi => sandwich => pizza =>
               <InlineCode>5 * 4 * 3 * 2 * 1</InlineCode>.
             </P>
             <P>
-              <Bold>So:</Bold>{' '}
-              <Highlight>
-                By using the <InlineCode>yCombinator</InlineCode> function, you
-                can create a recursive function without using named functions.
-              </Highlight>{' '}
-              It allows you to implement control flow (loops) using anonymous
-              functions.
+              <Bold>So:</Bold> By using the <InlineCode>yCombinator</InlineCode>{' '}
+              function, you can create a recursive function without using named
+              functions. It allows you to implement control flow (loops) using
+              anonymous functions.
             </P>
             <P>
               Of course, Y combinator can be represented using an emoji puzzle:
@@ -2358,11 +2228,8 @@ const mul = sushi => sandwich => pizza =>
               factorials (I won’t show it here because it’s pretty complex).
             </P>
             <P>
-              <Bold>In any case,</Bold>{' '}
-              <Highlight>
-                you can teach Y combinator to non-programmers using emoji
-                puzzles.
-              </Highlight>
+              In any case, you can teach Y combinator to non-programmers using
+              emoji puzzles.
             </P>
             <Alert backgroundColor="blue">
               <P>
@@ -2384,12 +2251,10 @@ const mul = sushi => sandwich => pizza =>
               </R.Xjzx>
               <P>
                 The emoji puzzles on this page run in the applicative order
-                because I tried to compare it with JavaScript.{' '}
-                <Highlight>
-                  However, in my course, the emoji puzzles actually run in the
-                  normal order instead,
-                </Highlight>{' '}
-                simply because Y Combinator would be visually less complex.
+                because I tried to compare it with JavaScript. However, in my
+                course, the emoji puzzles actually run in the normal order
+                instead, simply because Y Combinator would be visually less
+                complex.
               </P>
               <P>
                 The bottom line is that my emoji puzzles support both
@@ -2404,22 +2269,17 @@ const mul = sushi => sandwich => pizza =>
               Conclusion
             </Subheading>
             <P>
-              <Bold>One-line summary:</Bold>{' '}
-              <Highlight>
-                By using emoji puzzles, you explain functional programming
-                concepts such as lambda calculus, Church encoding, and Y
-                combinator to non-programmers—without using any code.
-              </Highlight>
+              <Bold>One-line summary:</Bold> By using emoji puzzles, you explain
+              functional programming concepts such as lambda calculus, Church
+              encoding, and Y combinator to non-programmers—without using any
+              code.
             </P>
             <P>
               <Bold>Why did I make emoji puzzles?</Bold> As someone who is
-              passionate about teaching,{' '}
-              <Highlight>
-                I wanted to challenge myself to explain a{' '}
-                <Italic>difficult computer science concept</Italic> (like Y
-                combinator) to non-programmers
-              </Highlight>{' '}
-              while satisfying the following constraints:
+              passionate about teaching, I wanted to challenge myself to explain
+              a <Italic>difficult computer science concept</Italic> (like Y
+              combinator) to non-programmers while satisfying the following
+              constraints:
             </P>
             <Ul>
               <UlLi>Don’t use any code</UlLi>

@@ -134,42 +134,51 @@ export const Unmatched = () => (
   </>
 )
 
-export const InstructionTwo = ({ lowerCase }: { lowerCase?: boolean }) => (
-  <>
-    <Highlight>
-      {lowerCase ? 'w' : 'W'}e check to see if some of{' '}
-      <BottomRightBadge inline bottomRightBadgeType="funcArg" />
-      ’s and <BottomRightBadge inline bottomRightBadgeType="funcBound" />
-      ’s <Bold>match</Bold>.{' '}
-      <Italic>
-        If they match, add the <Emoji>✅</Emoji> sign.
-      </Italic>
-    </Highlight>
-  </>
-)
+export const InstructionTwo = ({ lowerCase }: { lowerCase?: boolean }) => {
+  const Wrapper = lowerCase ? React.Fragment : Highlight
+  return (
+    <>
+      <Wrapper>
+        {lowerCase ? 'w' : 'W'}e check to see if some of{' '}
+        <BottomRightBadge inline bottomRightBadgeType="funcArg" />
+        ’s and <BottomRightBadge inline bottomRightBadgeType="funcBound" />
+        ’s <Bold>match</Bold>.{' '}
+        <Italic>
+          If they match, add the <Emoji>✅</Emoji> sign.
+        </Italic>
+      </Wrapper>
+    </>
+  )
+}
 
-export const InstructionThree = ({ lowerCase }: { lowerCase?: boolean }) => (
-  <>
-    <Highlight>
-      {lowerCase ? 'w' : 'W'}e <Bold>copy</Bold>{' '}
-      <BottomRightBadge inline bottomRightBadgeType="callArg" />
-      ’s to where the <Italic>matched</Italic>{' '}
-      <BottomRightBadge inline bottomRightBadgeType="funcBound" />
-      ’s are.
-    </Highlight>
-  </>
-)
+export const InstructionThree = ({ lowerCase }: { lowerCase?: boolean }) => {
+  const Wrapper = lowerCase ? React.Fragment : Highlight
+  return (
+    <>
+      <Wrapper>
+        {lowerCase ? 'w' : 'W'}e <Bold>copy</Bold>{' '}
+        <BottomRightBadge inline bottomRightBadgeType="callArg" />
+        ’s to where the <Italic>matched</Italic>{' '}
+        <BottomRightBadge inline bottomRightBadgeType="funcBound" />
+        ’s are.
+      </Wrapper>
+    </>
+  )
+}
 
-export const InstructionFour = ({ lowerCase }: { lowerCase?: boolean }) => (
-  <>
-    <Highlight>
-      {lowerCase ? 'w' : 'W'}e <Bold>remove</Bold>{' '}
-      <BottomRightBadge inline bottomRightBadgeType="callArg" />
-      ’s and <BottomRightBadge inline bottomRightBadgeType="funcArg" />
-      ’s.
-    </Highlight>
-  </>
-)
+export const InstructionFour = ({ lowerCase }: { lowerCase?: boolean }) => {
+  const Wrapper = lowerCase ? React.Fragment : Highlight
+  return (
+    <>
+      <Wrapper>
+        {lowerCase ? 'w' : 'W'}e <Bold>remove</Bold>{' '}
+        <BottomRightBadge inline bottomRightBadgeType="callArg" />
+        ’s and <BottomRightBadge inline bottomRightBadgeType="funcArg" />
+        ’s.
+      </Wrapper>
+    </>
+  )
+}
 
 export default () => (
   <EpisodeCardList
