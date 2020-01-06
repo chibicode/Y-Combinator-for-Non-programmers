@@ -1196,8 +1196,8 @@ sushi => 'pizza'`}</CodeBlock>
               <BottomRightBadge inline bottomRightBadgeType="funcArg" />{' '}
               <BottomRightBadge inline bottomRightBadgeType="funcBound" />, we
               now have a new label{' '}
-              <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />
-              for the <EmojiWithText letter="b" />.
+              <BottomRightBadge inline bottomRightBadgeType="funcUnbound" /> for
+              the <EmojiWithText letter="b" />.
             </P>
             <R.Pbhg>
               There’s a new label{' '}
