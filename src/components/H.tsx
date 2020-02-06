@@ -18,7 +18,6 @@ import {
   UlLi
 } from 'src/components/ContentTags'
 import Emoji from 'src/components/Emoji'
-import CardContent from 'src/components/CardContent'
 import locale from 'src/lib/locale'
 import {
   lessonTitle,
@@ -34,7 +33,6 @@ import {
 } from 'src/lib/episodeCategories'
 import EmojiForLetter from 'src/components/EmojiForLetter'
 import EmojiSeparator from 'src/components/EmojiSeparator'
-import NextLessonButton from 'src/components/NextLessonButton'
 import EmojiNumber from 'src/components/EmojiNumber'
 import TwitterEmbed from 'src/components/TwitterEmbed'
 import { shareId, shareVisible } from 'src/lib/twitter'
