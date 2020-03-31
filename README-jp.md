@@ -3,7 +3,7 @@
 ## ライセンスについて
 
 - 絵文字のアイコンはTwitter社が作成した[Twemoji](https://github.com/twitter/twemoji)を利用しています(グラフィックのライセンスはCC-BY 4.0)
-- 当サイトの文章は[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)ライセンスです。
+- 当サイトの文章は[CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)ライセンスです。
 - 文章以外のソースコードは[MIT](docs/license-non-text.txt)ライセンスです。
 
 ## プライバシーポリシー
