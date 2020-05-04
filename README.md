@@ -27,7 +27,7 @@ yarn dev:en
 ## Stack
 
 - [TypeScript](https://www.typescriptlang.org/), [React](https://reactjs.org/), [Emotion](https://emotion.sh/) and [Next.js](https://nextjs.org/).
-- [Zeit Now](https://zeit.co/) for deployment
+- [Vercel](https://vercel.com/) for deployment
 
 ## License & Credits
 
