@@ -36,8 +36,8 @@ const GlobalStyles = ({ children }: { children: React.ReactNode }) => {
             select,
             button {
               font-family: ${locale === 'en' ? 'Lato,' : ''}-apple-system,
-                BlinkMacSystemFont, 'Helvetica Neue', 'Segoe UI',
-                'Hiragino Sans', 'Hiragino Kaku Gothic ProN', Meiryo, sans-serif;
+                'Helvetica Neue', 'Segoe UI', 'Hiragino Sans',
+                'Hiragino Kaku Gothic ProN', Meiryo, sans-serif;
             }
 
             ${ns} {
