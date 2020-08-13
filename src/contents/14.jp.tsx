@@ -140,7 +140,7 @@ export default () => (
                       <P>
                         そうすることで、
                         <Highlight>
-                          どいうった経緯で最終的に「
+                          どういった経緯で最終的に「
                           <H args={{ name: 'repeatFeature' }} />
                           」と同じになるのか
                         </Highlight>
