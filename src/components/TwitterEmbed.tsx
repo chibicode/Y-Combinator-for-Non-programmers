@@ -23,20 +23,18 @@ const TwitterEmbed = ({ id, showCard }: { id: string; showCard?: boolean }) => {
         window.twttr &&
         window.twttr.widgets &&
         window.twttr.widgets.createTweet &&
-        wrapperEl.current
+        wrapperEl.current &&
+        !twitterLoaded
       ) {
+        setTwitterLoaded(true)
         wrapperEl.current.innerHTML = ''
-        window.twttr.widgets
-          .createTweet(id, wrapperEl.current, {
-            dnt: true,
-            cards: showCard ? undefined : 'hidden',
-            lang,
-            align: 'center',
-            conversation: 'none'
-          })
-          .then(() => {
-            setTwitterLoaded(true)
-          })
+        window.twttr.widgets.createTweet(id, wrapperEl.current, {
+          dnt: true,
+          cards: showCard ? undefined : 'hidden',
+          lang,
+          align: 'center',
+          conversation: 'none'
+        })
       }
     },
     twitterLoaded ? null : EMBED_DELAY
