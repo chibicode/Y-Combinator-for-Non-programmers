@@ -41,4 +41,4 @@ yarn dev:en
 
 - Twitter: [@chibicode](https://twitter.com/chibicode)
 - [Website](https://chibicode.com)
-- Email: [shu@chibicode.com](mailto:shu@chibicode.com)
+- Email: [shu.chibicode@gmail.com](mailto:shu.chibicode@gmail.com)

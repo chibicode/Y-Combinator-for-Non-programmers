@@ -14,5 +14,5 @@
 
 **上杉周作**
 
-- [メール](mailto:shu@chibicode.com)
+- [メール](mailto:shu.chibicode@gmail.com)
 - [ブログ](https://jp.chibicode.com)

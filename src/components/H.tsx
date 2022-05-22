@@ -939,8 +939,8 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
           <P>
             <Bold>If you have a question or a comment:</Bold> Please reply to
             the above tweet with a screenshot, or email me at{' '}
-            <ExternalLink href="mailto:shu@chibicode.com">
-              shu@chibicode.com
+            <ExternalLink href="mailto:shu.chibicode@gmail.com">
+              shu.chibicode@gmail.com
             </ExternalLink>
             . You can also{' '}
             <ExternalLink href="https://news.ycombinator.com/item?id=21399025">
@@ -1015,8 +1015,8 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
             で返信
           </Highlight>
           してくだされば最優先で対応します。メール(
-          <ExternalLink href="mailto:shu@chibicode.com">
-            shu@chibicode.com
+          <ExternalLink href="mailto:shu.chibicode@gmail.com">
+            shu.chibicode@gmail.com
           </ExternalLink>
           )でもお答えできますが、返事が遅れる可能性が高いです。
         </P>
