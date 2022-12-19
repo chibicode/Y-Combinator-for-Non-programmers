@@ -1,7 +1,8 @@
 {
   "private": true,
   "engines": {
-    "node": "18.x"
+    "node": ">=18",
+    "pnpm": ">=7"
   },
   "dependencies": {
     "@emotion/core": "^10.0.22",
@@ -9,10 +10,10 @@
     "@material-ui/core": "^4.6.0",
     "color": "^3.1.2",
     "luxon": "^1.21.1",
-    "next": "9.1.7",
+    "next": "^12.3.4",
     "prism-react-renderer": "^1.0.2",
-    "react": "^16.11.0",
-    "react-dom": "^16.11.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
     "react-spring": "^8.0.27",
     "smoothscroll-polyfill": "^0.4.4",
     "twemoji": "^12.1.3"
@@ -28,8 +29,8 @@
     "jp:production": "PRODUCTION=jp next -p 9993",
     "en:production": "PRODUCTION=en next -p 9992",
     "dev:prepare": "cp tsconfig.dev.json tsconfig.json && rm -f report.*.json && rm -f *.log && rm -rf .next",
-    "dev": "yarn dev:prepare && concurrently \"yarn jp\" \"yarn en\"",
-    "dev:en": "yarn dev:prepare && yarn en",
+    "dev": "pnpm dev:prepare && concurrently \"pnpm jp\" \"pnpm en\"",
+    "dev:en": "pnpm dev:prepare && pnpm en",
     "ts-node": "tsc --project tsconfig.scripts.json && node -r module-alias/register",
     "precompute": "tsc --project tsconfig.scripts.json && node -r module-alias/register outDir/tsconfig.scripts.json/scripts/precomputeExpressionContainers.js",
     "tsc": "tsc",
@@ -38,8 +39,8 @@
     "build": "cp tsconfig.prod.json tsconfig.json && next build",
     "build:jp": "cp tsconfig.prod.json tsconfig.json && PRODUCTION_LOCALE=jp next build && PRODUCTION_LOCALE=jp next export --outdir jpOut",
     "build:en": "cp tsconfig.prod.json tsconfig.json && PRODUCTION_LOCALE=en next build && PRODUCTION_LOCALE=en next export --outdir enOut",
-    "twemoji": "mkdir -p .twemoji && rm -f src/components/Twemoji/* && rm -f .twemoji/* && cp `yarn --silent ts-node outDir/tsconfig.scripts.json/scripts/copyUsedEmojis.js` .twemoji && svgr --ext tsx --no-svgo --filename-case kebab --no-dimensions -d src/components/Twemoji .twemoji && eslint --ext .tsx --fix src/components/Twemoji && yarn twemoji:bundle",
-    "twemoji:bundle": "yarn ts-node outDir/tsconfig.scripts.json/scripts/generateEmojisBundle.js"
+    "twemoji": "mkdir -p .twemoji && rm -f src/components/Twemoji/* && rm -f .twemoji/* && cp `pnpm --silent ts-node outDir/tsconfig.scripts.json/scripts/copyUsedEmojis.js` .twemoji && svgr --ext tsx --no-svgo --filename-case kebab --no-dimensions -d src/components/Twemoji .twemoji && eslint --ext .tsx --fix src/components/Twemoji && pnpm twemoji:bundle",
+    "twemoji:bundle": "pnpm ts-node outDir/tsconfig.scripts.json/scripts/generateEmojisBundle.js"
   },
   "devDependencies": {
     "@svgr/cli": "^5.0.1",
@@ -50,8 +51,8 @@
     "@types/material-ui": "^0.21.7",
     "@types/node": "^13.1.6",
     "@types/prettier": "^1.18.3",
-    "@types/react": "^16.9.5",
-    "@types/react-dom": "^16.9.4",
+    "@types/react": "^17.0.39",
+    "@types/react-dom": "^17.0.11",
     "@types/smoothscroll-polyfill": "^0.3.1",
     "@typescript-eslint/eslint-plugin": "^2.6.1",
     "@typescript-eslint/parser": "^2.6.1",
