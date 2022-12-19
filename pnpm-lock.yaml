@@ -35,7 +35,6 @@ specifiers:
   luxon: ^1.21.1
   module-alias: ^2.2.2
   next: ^12.3.4
-  now: ^16.6.0
   prettier: ^1.19.1
   prism-react-renderer: ^1.0.2
   react: ^17.0.2
@@ -88,7 +87,6 @@ devDependencies:
   fs-extra: 8.1.0
   glob: 7.2.3
   module-alias: 2.2.2
-  now: 16.7.3
   prettier: 1.19.1
   typescript: 3.9.10
 
@@ -2609,14 +2607,6 @@ packages:
       resolve: 1.22.1
       semver: 5.7.1
       validate-npm-package-license: 3.0.4
-    dev: true
-
-  /now/16.7.3:
-    resolution: {integrity: sha512-8jtk6dRmrDd8gBJFWA41BNYV/U1YrSdI+PRJKHb/RLBAN6ZUb+AJeIn0moWwyhLSYhoP0X+nCydcHCKjiRSIsA==}
-    engines: {node: '>= 8'}
-    deprecated: '"now" is deprecated and will stop receiving updates on December 31, 2020. Please use "vercel" instead.'
-    hasBin: true
-    requiresBuild: true
     dev: true
 
   /nth-check/1.0.2:
