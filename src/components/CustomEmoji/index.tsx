@@ -1,4 +1,3 @@
-import React from 'react'
 import BlankNumberGreenSvg from 'src/components/CustomEmoji/BlankNumberGreenSvg'
 import BlankNumberRedSvg from 'src/components/CustomEmoji/BlankNumberRedSvg'
 import BlankNumberYellowSvg from 'src/components/CustomEmoji/BlankNumberYellowSvg'

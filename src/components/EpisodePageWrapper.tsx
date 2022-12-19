@@ -1,4 +1,3 @@
-import React from 'react'
 import EpisodePage, { EpisodePageProps } from 'src/components/EpisodePage'
 import { lessonTitle, episodeTitleWithPrefix } from 'src/lib/titles'
 import GlobalContextSetter from 'src/components/GlobalContextSetter'
