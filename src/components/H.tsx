@@ -1663,7 +1663,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
         <>
           <P>
             <Emoji>👨🏻‍💻</Emoji> <Bold>About me:</Bold> I’m <Bold>Shu Uesugi</Bold>
-            , a full-stack developer based in San Francisco Bay Area, USA.
+            , a full-stack developer based in California, USA.
           </P>
         </>
       )
