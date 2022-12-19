@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
 import distanceFromTop from 'src/lib/distanceFromTop'
 
-export default class ExpressionRunnerScrollAdjuster extends Component<{}> {
+export default class ExpressionRunnerScrollAdjuster extends Component<unknown> {
   private divRef: React.RefObject<HTMLDivElement>
 
-  public constructor(props: {}) {
+  public constructor(props: unknown) {
     super(props)
     this.divRef = React.createRef()
   }
@@ -14,7 +14,11 @@ export default class ExpressionRunnerScrollAdjuster extends Component<{}> {
     return distanceFromTop(this.divRef.current) - window.pageYOffset
   }
 
-  public componentDidUpdate(_prevProps: {}, _prevState: {}, snapshot: number) {
+  public componentDidUpdate(
+    _prevProps: unknown,
+    _prevState: unknown,
+    snapshot: number
+  ) {
     window.scroll(0, distanceFromTop(this.divRef.current) - snapshot)
   }
 
