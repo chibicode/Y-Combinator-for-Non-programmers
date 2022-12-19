@@ -49,7 +49,6 @@ import theme from 'prism-react-renderer/themes/nightOwlLight'
 import BubbleQuoteContext from 'src/components/BubbleQuoteContext'
 import EmojiWithText from 'src/components/EmojiWithText'
 import ExpressionRunnerConfigContext from 'src/components/ExpressionRunnerConfigContext'
-import TwitterEmbed from 'src/components/TwitterEmbed'
 import {
   StepOne,
   StepTwo,
@@ -81,7 +80,7 @@ const tweetUrl = `https://twitter.com/intent/tweet?url=${encodeURIComponent(
   url
 )}&via=chibicode&text=${encodeURIComponent(title)}`
 
-const Ads = ({ shareId }: { shareId?: string }) => (
+const Ads = () => (
   <>
     <Ul>
       <UlLi>
@@ -106,12 +105,6 @@ const Ads = ({ shareId }: { shareId?: string }) => (
         ></iframe>
       </UlLi>
     </Ul>
-    {shareId && (
-      <>
-        <P>Here’s my Twitter:</P>
-        <TwitterEmbed showCard id={shareId} />
-      </>
-    )}
   </>
 )
 
@@ -2351,7 +2344,7 @@ const mul = sushi => sandwich => pizza =>
             <Subheading noHrTop step="none" coveredIn="none">
               Thank you for reading!
             </Subheading>
-            <Ads shareId="1192843729565962241" />
+            <Ads />
             <P
               css={css`
                 color: ${colors('grey600')};
