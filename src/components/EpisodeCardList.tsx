@@ -8,7 +8,6 @@ import { CardProps } from 'src/components/Card'
 import useConditionalCards from 'src/hooks/useConditionalCards'
 import H from 'src/components/H'
 import { P } from 'src/components/ContentTags'
-import NextLessonButton from 'src/components/NextLessonButton'
 import { spaces, fontSizes } from 'src/lib/theme'
 import EpisodeContext from 'src/components/EpisodeContext'
 import PrevNextLinks from 'src/components/PrevNextLinks'
@@ -90,62 +89,56 @@ const EpisodeCardList = ({ cards }: { cards: EpisodeCardListType }) => {
             </CardWrapper>
           ) : null
         )}
-        {cards.length - 1 === lastVisibleCardIndex && (
-          <div
-            css={css`
-              padding: ${spaces(
-                  episodeNumber <= numEpisodesExceptFirstAndLast ? 8 : 2
-                )}
-                0 ${spaces(1)};
-            `}
-          >
-            <CardWrapper
-              type="meta"
-              isLast={
-                episodeNumber > 0 &&
-                episodeNumber <= numEpisodesExceptFirstAndLast
-              }
-              title={<H args={{ name: 'shareTitle' }} />}
-              footer={
-                locale === 'jp'
-                  ? {
-                      color: 'indigo',
-                      content: (
-                        <>
-                          <H
-                            args={{
-                              name: 'dateAndSource',
-                              includeAboutMe: true
-                            }}
-                          />
-                        </>
-                      )
-                    }
-                  : episodeNumber > 0
-                  ? {
-                      content: (
-                        <>
-                          <H
-                            args={{
-                              name: 'aboutMe',
-                              hideNextPageButton:
-                                episodeNumber > numEpisodesExceptFirstAndLast
-                            }}
-                          />
-                        </>
-                      )
-                    }
-                  : undefined
-              }
+        {cards.length - 1 === lastVisibleCardIndex &&
+          episodeNumber > numEpisodesExceptFirstAndLast && (
+            <div
+              css={css`
+                padding: ${spaces(
+                    episodeNumber <= numEpisodesExceptFirstAndLast ? 8 : 2
+                  )}
+                  0 ${spaces(1)};
+              `}
             >
-              {episodeNumber <= numEpisodesExceptFirstAndLast ? (
-                <NextLessonButton halfMargin={locale === 'jp'} />
-              ) : (
+              <CardWrapper
+                type="meta"
+                isLast
+                title={<H args={{ name: 'shareTitle' }} />}
+                footer={
+                  locale === 'jp'
+                    ? {
+                        color: 'indigo',
+                        content: (
+                          <>
+                            <H
+                              args={{
+                                name: 'dateAndSource',
+                                includeAboutMe: true
+                              }}
+                            />
+                          </>
+                        )
+                      }
+                    : episodeNumber > 0
+                    ? {
+                        content: (
+                          <>
+                            <H
+                              args={{
+                                name: 'aboutMe',
+                                hideNextPageButton:
+                                  episodeNumber > numEpisodesExceptFirstAndLast
+                              }}
+                            />
+                          </>
+                        )
+                      }
+                    : undefined
+                }
+              >
                 <H args={{ name: 'shareContent' }} />
-              )}
-            </CardWrapper>
-          </div>
-        )}
+              </CardWrapper>
+            </div>
+          )}
       </>
     </>
   )
