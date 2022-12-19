@@ -3,7 +3,7 @@
     "target": "esnext",
     "module": "esnext",
     "resolveJsonModule": true,
-    "jsx": "react-jsx",
+    "jsx": "preserve",
     "jsxImportSource": "@emotion/react",
     "allowJs": true,
     "moduleResolution": "node",
