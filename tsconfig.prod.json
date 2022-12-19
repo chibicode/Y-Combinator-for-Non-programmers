@@ -24,7 +24,8 @@
     },
     "forceConsistentCasingInFileNames": true,
     "isolatedModules": true,
-    "noEmit": true
+    "noEmit": true,
+    "incremental": true
   },
   "include": ["./src", "./pages"],
   "exclude": ["node_modules"]

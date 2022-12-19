@@ -15,7 +15,7 @@ const config = {
     productionLocale: process.env.PRODUCTION_LOCALE,
     isDevelopment: process.env.IS_DEVELOPMENT
   },
-  exportTrailingSlash: true
+  trailingSlash: true
 }
 
 // For locale, if running 2 servers (JP and EN) locally, if you use build-time config
