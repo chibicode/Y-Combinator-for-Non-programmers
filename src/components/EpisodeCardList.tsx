@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { css, jsx } from '@emotion/core'
+import { css, jsx } from '@emotion/react'
 import { useContext } from 'react'
 import CardWrapper from 'src/components/CardWrapper'
 import EpisodePageInitialRenderWarning from 'src/components/EpisodePageInitialRenderWarning'

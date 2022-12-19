@@ -5,7 +5,7 @@
     "react-app",
     "plugin:prettier/recommended"
   ],
-  "plugins": ["@typescript-eslint", "react", "react-hooks"],
+  "plugins": ["@typescript-eslint", "react", "react-hooks", "@emotion"],
   "rules": {
     "@typescript-eslint/explicit-function-return-type": "off",
     "@typescript-eslint/no-explicit-any": "off",
@@ -22,7 +22,8 @@
     "@typescript-eslint/prefer-as-const": "off",
     "@typescript-eslint/ban-ts-comment": "off",
     "import/no-anonymous-default-export": "off",
-    "@typescript-eslint/no-empty-function": "off"
+    "@typescript-eslint/no-empty-function": "off",
+    "@emotion/pkg-renaming": "error"
   },
   "overrides": [
     {

@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { css, jsx } from '@emotion/core'
+import { css, jsx } from '@emotion/react'
 import Page from 'src/components/Page'
 import Head from 'next/head'
 import H from 'src/components/H'

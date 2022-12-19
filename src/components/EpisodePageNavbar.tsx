@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { css, jsx } from '@emotion/core'
+import { css, jsx } from '@emotion/react'
 import { colors, fontSizes, spaces, radii } from 'src/lib/theme'
 import locale from 'src/lib/locale'
 

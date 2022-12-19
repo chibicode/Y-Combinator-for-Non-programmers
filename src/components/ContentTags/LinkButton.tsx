@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { css, jsx } from '@emotion/core'
+import { css, jsx } from '@emotion/react'
 import { commonLinkClass } from 'src/components/ContentTags/Links'
 
 export const LinkButton = (props: JSX.IntrinsicElements['button']) => (

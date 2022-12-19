@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { css, jsx } from '@emotion/core'
+import { css, jsx } from '@emotion/react'
 import { colors } from 'src/lib/theme'
 import { allColors } from 'src/lib/theme/colors'
 

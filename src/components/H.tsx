@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { css, jsx } from '@emotion/core'
+import { css, jsx } from '@emotion/react'
 import { Fragment } from 'react'
 import { InlineHighlightType } from 'src/components/ContentTags/Inline'
 import InlineBorder from 'src/components/InlineBorder'

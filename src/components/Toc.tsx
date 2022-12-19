@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, css } from '@emotion/core'
+import { jsx, css } from '@emotion/react'
 import { numEpisodesExceptFirstAndLast } from 'src/lib/episodeCategories'
 import { spaces, colors } from 'src/lib/theme'
 import { InternalLink } from 'src/components/ContentTags/Links'

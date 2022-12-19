@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { css, jsx } from '@emotion/core'
+import { css, jsx } from '@emotion/react'
 import React, { useContext } from 'react'
 import { Highlight, P, Bold } from 'src/components/ContentTags'
 import H from 'src/components/H'

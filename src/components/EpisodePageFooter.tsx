@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { css, jsx } from '@emotion/core'
+import { css, jsx } from '@emotion/react'
 import { ExternalLink } from 'src/components/ContentTags'
 import H from 'src/components/H'
 import Emoji from 'src/components/Emoji'

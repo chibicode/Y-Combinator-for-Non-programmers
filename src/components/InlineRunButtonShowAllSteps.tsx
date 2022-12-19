@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { css, jsx } from '@emotion/core'
+import { css, jsx } from '@emotion/react'
 import { colors, spaces, fontSizes, fitWithinMobileWidth } from 'src/lib/theme'
 import H from 'src/components/H'
 import { P } from 'src/components/ContentTags'

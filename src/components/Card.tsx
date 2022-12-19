@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { css, jsx } from '@emotion/core'
+import { css, jsx } from '@emotion/react'
 import React from 'react'
 import H from 'src/components/H'
 import { colors, fontSizes, ns, radii, spaces } from 'src/lib/theme'

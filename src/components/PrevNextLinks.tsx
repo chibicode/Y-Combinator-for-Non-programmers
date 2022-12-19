@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { css, jsx } from '@emotion/core'
+import { css, jsx } from '@emotion/react'
 import { useContext } from 'react'
 import { InternalLink, Bold, LinkButton } from 'src/components/ContentTags'
 import EpisodeContext from 'src/components/EpisodeContext'

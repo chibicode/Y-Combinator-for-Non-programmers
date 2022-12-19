@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { css, jsx } from '@emotion/core'
+import { css, jsx } from '@emotion/react'
 import { useState, useContext } from 'react'
 import Container from 'src/components/Container'
 import ExpressionBox from 'src/components/ExpressionBox'

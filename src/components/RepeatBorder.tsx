@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { css, jsx } from '@emotion/core'
+import { css, jsx } from '@emotion/react'
 import { useContext } from 'react'
 import { zIndices, colors, fontSizes } from 'src/lib/theme'
 import ExpressionRunnerContext from 'src/components/ExpressionRunnerContext'

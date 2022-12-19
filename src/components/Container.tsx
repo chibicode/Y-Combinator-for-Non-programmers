@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { css, jsx, SerializedStyles } from '@emotion/core'
+import { css, jsx, SerializedStyles } from '@emotion/react'
 import React from 'react'
 import maxWidths, { allMaxWidths } from 'src/lib/theme/maxWidths'
 import spaces, { allSpaces } from 'src/lib/theme/spaces'
