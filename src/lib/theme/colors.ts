@@ -11,7 +11,7 @@ import {
   cyan,
   red,
   orange
-} from '@material-ui/core/colors'
+} from '@mui/material/colors'
 import Color from 'color'
 
 // https://material.io/design/color/the-color-system.html
