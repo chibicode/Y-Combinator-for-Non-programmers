@@ -1240,9 +1240,8 @@ export default () => (
               <br />
               If we don’t do anything, it won’t be
               <br />
-              able to calculate <EmojiNumber
-                number={1}
-              /> <Emoji>➕</Emoji> <EmojiNumber number={1} />
+              able to calculate <EmojiNumber number={1} /> <Emoji>➕</Emoji>{' '}
+              <EmojiNumber number={1} />
             </ExpressionRunnerCaptionOnly>
             <P>
               However, the <HighlightBold>special rule</HighlightBold> applies

@@ -12,9 +12,8 @@ const linkContextDefault: LinkContextProps = {
   inLink: false
 }
 
-export const LinkContext = React.createContext<LinkContextProps>(
-  linkContextDefault
-)
+export const LinkContext =
+  React.createContext<LinkContextProps>(linkContextDefault)
 
 export const commonLinkClass = css`
   &:hover,

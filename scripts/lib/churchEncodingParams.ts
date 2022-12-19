@@ -98,7 +98,10 @@ export const addParams = (
         arg: c,
         body: {
           arg: d,
-          body: [[a, c], [[b, c], d]]
+          body: [
+            [a, c],
+            [[b, c], d]
+          ]
         }
       }
     }

@@ -2,11 +2,10 @@
 import { css, jsx } from '@emotion/core'
 import { useState } from 'react'
 
-type ButtonWithTouchActiveStatesProps<
-  T = JSX.IntrinsicElements['button']
-> = T & {
-  activeBackgroundColor: string
-}
+type ButtonWithTouchActiveStatesProps<T = JSX.IntrinsicElements['button']> =
+  T & {
+    activeBackgroundColor: string
+  }
 
 const ButtonWithTouchActiveStates = ({
   activeBackgroundColor,

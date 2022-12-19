@@ -5,7 +5,7 @@ const locale = (process.env.productionLocale ||
   // Support for ts-node that doesn't go through next.config.js
   process.env.DEV_LOCALE ||
   process.env.PRODUCTION_LOCALE ||
-  'en') as ('en' | 'jp')
+  'en') as 'en' | 'jp'
 
 export default locale
 

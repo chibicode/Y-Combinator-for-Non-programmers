@@ -30,14 +30,8 @@ export const allColors = {
   indigo100: indigo[100],
   indigo200: indigo[200],
   indigo300: indigo[300],
-  grey50033: Color(grey[500])
-    .alpha(0.33)
-    .hsl()
-    .string(),
-  indigo30090: Color(indigo[300])
-    .alpha(0.9)
-    .hsl()
-    .string(),
+  grey50033: Color(grey[500]).alpha(0.33).hsl().string(),
+  indigo30090: Color(indigo[300]).alpha(0.9).hsl().string(),
   indigo400: indigo[400],
   indigo500: indigo[500],
   brown50: brown[50],
@@ -50,10 +44,7 @@ export const allColors = {
   pink700: pink[700],
   transparent: 'transparent',
   white: 'white',
-  white75: Color('#fff')
-    .alpha(0.75)
-    .hsl()
-    .string(),
+  white75: Color('#fff').alpha(0.75).hsl().string(),
   green50: green[50],
   green300: green[300],
   green400: green[400],

@@ -50,8 +50,8 @@ const ExpressionBox = ({ expression, topLevel }: ExpressionBoxProps) => {
   if (
     highlightOverridesCallArgAndFuncUnboundOnly &&
     isVariable(expression) &&
-    (expression.bottomRightBadgeType !== 'callArg' &&
-      expression.bottomRightBadgeType !== 'funcUnbound')
+    expression.bottomRightBadgeType !== 'callArg' &&
+    expression.bottomRightBadgeType !== 'funcUnbound'
   ) {
     highlightOverridden = false
     highlightType = expression.highlightType

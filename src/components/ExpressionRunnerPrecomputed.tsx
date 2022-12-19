@@ -81,12 +81,11 @@ const ExpressionRunnerPrecomputed = ({
   crossed,
   showBottomProgressBar
 }: ExpressionRunnerPrecomputedProps) => {
-  const [{ isHighSpeed, isRunning }, setPlaybackStatus] = useState<
-    PlaybackState
-  >({
-    isHighSpeed: false,
-    isRunning: false
-  })
+  const [{ isHighSpeed, isRunning }, setPlaybackStatus] =
+    useState<PlaybackState>({
+      isHighSpeed: false,
+      isRunning: false
+    })
 
   const [currentIndex, setCurrentIndex] = useState<number>(0)
   const [resetClicked, setResetClicked] = useState<boolean>(false)
@@ -173,9 +172,8 @@ const ExpressionRunnerPrecomputed = ({
     expressionContainers[currentIndex].numLeafNodes
   )
 
-  const { maxVariableSize, forceVariableSize, leftVerticalIndent } = useContext(
-    TwoColContext
-  )
+  const { maxVariableSize, forceVariableSize, leftVerticalIndent } =
+    useContext(TwoColContext)
 
   if (maxVariableSize) {
     if (maxVariableSize === 'md' && variableSize === 'lg') {

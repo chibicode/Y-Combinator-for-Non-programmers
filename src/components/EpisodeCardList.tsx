@@ -31,9 +31,8 @@ export type EpisodeCardListType = readonly EpisodeCardType[]
 
 const EpisodeCardList = ({ cards }: { cards: EpisodeCardListType }) => {
   const { episodeTitle, episodeNumber } = useContext(EpisodeContext)
-  const { lastVisibleCardIndex, setLastVisibleCardIndex } = useConditionalCards(
-    cards
-  )
+  const { lastVisibleCardIndex, setLastVisibleCardIndex } =
+    useConditionalCards(cards)
   return (
     <>
       <EpisodePageInitialRenderWarning />

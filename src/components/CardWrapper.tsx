@@ -53,9 +53,8 @@ const CardWrapper = ({
   footer
 }: CardWrapperProps) => {
   const [cardActionTaken, setCardActionTaken] = useState<CardAction>('default')
-  const [cardActionResult, setCardActionResult] = useState<CardActionResult>(
-    'default'
-  )
+  const [cardActionResult, setCardActionResult] =
+    useState<CardActionResult>('default')
   const takeCardAction = (cardAction: CardAction) => {
     setCardActionTaken(cardAction)
     setLastVisibleCardIndex()

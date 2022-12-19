@@ -18,9 +18,7 @@ const EpisodePageWrapper = ({ episodeNumber }: EpisodePageWrapperProps) => (
       episodeTitle={
         episodeNumber > 0 ? (
           <H args={{ name: 'titleWithPrefixColored' }} />
-        ) : (
-          undefined
-        )
+        ) : undefined
       }
       episodeNumber={episodeNumber}
       contentName={`${episodeNumber}` as EpisodePageProps['contentName']}

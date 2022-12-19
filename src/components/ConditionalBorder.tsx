@@ -75,11 +75,8 @@ const ConditionalBorder = ({
     falseCase: falseCaseColor,
     condition: conditionColor
   }[type]
-  const {
-    shadeNonNumbers,
-    shadeNonHighlightedFunc,
-    shadeNonFactorial
-  } = useContext(VariableShadeContext)
+  const { shadeNonNumbers, shadeNonHighlightedFunc, shadeNonFactorial } =
+    useContext(VariableShadeContext)
   return (
     <>
       {shaded && <Shade />}
