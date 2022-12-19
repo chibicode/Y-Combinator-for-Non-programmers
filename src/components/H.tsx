@@ -31,16 +31,12 @@ import {
   numEpisodesExceptFirstAndLast
 } from 'src/lib/episodeCategories'
 import EmojiForLetter from 'src/components/EmojiForLetter'
-import EmojiSeparator from 'src/components/EmojiSeparator'
 import EmojiNumber from 'src/components/EmojiNumber'
-import TwitterEmbed from 'src/components/TwitterEmbed'
-import { shareId, shareVisible } from 'src/lib/twitter'
 import { dateString, dateSchemaString } from 'src/lib/date'
 import { githubRepo, jpBaseUrl, enBaseUrl } from 'src/lib/meta'
 import CustomEmoji from 'src/components/CustomEmoji'
 import InlinePrioritiesLabel from 'src/components/InlinePrioritiesLabel'
 import { VariableNames } from 'src/types/VariableNames'
-import testimonials from 'src/lib/testimonials'
 
 const prefixColors = {
   intro: colors('grey600'),
@@ -161,8 +157,6 @@ interface HProps {
     | { name: 'runSkippableToTheEnd' }
     | { name: 'runSkippableToTheStoppingPoint' }
     | { name: 'slide' }
-    | { name: 'testimonialsTitle' }
-    | { name: 'testimonialsContent' }
     | { name: 'goToOtherPage' }
     | { name: 'whatTheNumberIsCaption' }
     | { name: 'runAndShowAllSteps' }
@@ -933,17 +927,12 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
   }
   if (args.name === 'shareContent') {
     if (locale === 'en') {
-      const question = (
+      return (
         <>
           <P>
-            <Bold>If you have a question or a comment:</Bold> Please reply to
-            the above tweet with a screenshot, or email me at{' '}
+            <Bold>If you have a question or a comment:</Bold> Please email me at{' '}
             <ExternalLink href="mailto:shu.chibicode@gmail.com">
               shu.chibicode@gmail.com
-            </ExternalLink>
-            . You can also{' '}
-            <ExternalLink href="https://news.ycombinator.com/item?id=21399025">
-              discuss this on <Highlight>Hacker News</Highlight>
             </ExternalLink>
             .
           </P>
@@ -969,176 +958,43 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
             </UlLi>
           </Ul>
           <Hr />
+          <P>Once again, thank you for reading! </P>
         </>
       )
-
-      if (episodeNumber <= numEpisodesExceptFirstAndLast) {
-        return (
-          <>
-            <P>
-              <Bold>Before you go:</Bold> I’d really appreciate it if you could{' '}
-              <Highlight>
-                retweet the following tweet before closing this page.
-              </Highlight>{' '}
-              <Emoji>😉</Emoji>
-            </P>
-            <TwitterEmbed id={shareId} />
-            {question}
-            <P>
-              <Bold>To keep reading this course:</Bold> Press the button below!
-            </P>
-          </>
-        )
-      } else {
-        return (
-          <>
-            <P>
-              <Bold>Thank you for reading!</Bold> I’d appreciate it if you could{' '}
-              <Highlight>
-                share your thoughts by quote-retweeting the following tweet
-              </Highlight>
-              :
-            </P>
-            <TwitterEmbed id={shareId} />
-            {question}
-            <P>Once again, thank you for reading! </P>
-          </>
-        )
-      }
     } else {
-      const question = (
-        <P>
-          また、本稿の内容について質問がございましたら、
-          <Highlight>
-            上のツイートに<HighlightBold>スクリーンショット付き</HighlightBold>
-            で返信
-          </Highlight>
-          してくだされば最優先で対応します。メール(
-          <ExternalLink href="mailto:shu.chibicode@gmail.com">
-            shu.chibicode@gmail.com
-          </ExternalLink>
-          )でもお答えできますが、返事が遅れる可能性が高いです。
-        </P>
+      return (
+        <>
+          <P>
+            お疲れ様でした！本稿の内容について質問がございましたら、メール(
+            <ExternalLink href="mailto:shu.chibicode@gmail.com">
+              shu.chibicode@gmail.com
+            </ExternalLink>
+            )にお寄せください。
+          </P>
+          <Hr />
+          <P>
+            <Bold>宣伝:</Bold> もしご興味があれば、わたしが共訳した書籍『
+            <ExternalLink href="https://www.amazon.co.jp/dp/4822289605/ref=cm_sw_em_r_mt_dp_U_h20QDbG5PNQK4">
+              <HighlightBold>ファクトフルネス</HighlightBold>
+            </ExternalLink>
+            』や、
+            <ExternalLink href="https://jp.chibicode.com/">
+              わたしのブログ
+            </ExternalLink>
+            もご覧ください。
+          </P>
+          <P>
+            <ExternalLink href="https://www.amazon.co.jp/dp/4822289605/ref=cm_sw_em_r_mt_dp_U_h20QDbG5PNQK4">
+              <Img
+                size="small"
+                src="/static/images/factfulness.jpg"
+                alt="ファクトフルネス"
+              />
+            </ExternalLink>
+          </P>
+          <P>重ね重ね、本稿をお読みになってくださりありがとうございました！</P>
+        </>
       )
-
-      if (episodeNumber <= numEpisodesExceptFirstAndLast) {
-        let quitReason: React.ReactNode
-        if (episodeNumber === 0) {
-          quitReason = <Highlight>時間がないからあとで読もう</Highlight>
-        } else {
-          quitReason = <Highlight>長いのでひと休みしよう</Highlight>
-        }
-
-        return (
-          <>
-            <P>
-              <Bold>お願い:</Bold>「{quitReason}
-              」とお考えの方にお願いがあります。
-            </P>
-            <P>
-              差し支えなければ、このページを閉じる前に
-              <Highlight>
-                <HighlightBold>下のツイートをリツイート</HighlightBold>
-                してくださると、宣伝になるので非常に助かります。
-              </Highlight>
-              {episodeNumber > 0 && (
-                <>
-                  もしくは、「
-                  <HighlightBold>
-                    <H args={{ name: 'titlePrefixColored' }} />
-                    までは読み終えた
-                  </HighlightBold>
-                  」と引用リツイートしてくださると、さらに励みになります。
-                </>
-              )}
-              図々しいお願いで恐縮です。
-            </P>
-            <TwitterEmbed id={shareId} />
-            {question}
-          </>
-        )
-      } else {
-        return (
-          <>
-            <P>
-              お疲れ様でした！本稿に対するご意見・ご感想を、ぜひ
-              <HighlightBold>下のツイートを引用リツイートして</HighlightBold>
-              ご共有ください。
-            </P>
-            <TwitterEmbed id={shareId} />
-            {question}
-            <Hr />
-            <P>
-              <Bold>
-                本稿を読んで、「
-                <Highlight>
-                  プログラミング未経験者だけど、コンピュータサイエンスを学びたくなった。次は何を読めばいい？
-                </Highlight>
-                」と思ってくださった方へ:
-              </Bold>
-            </P>
-            <EmojiSeparator
-              emojis={['❓', '🤔', '❓']}
-              description={<>次は何を読めばいい？</>}
-            />
-            <P>
-              プログラミング抜きに、コンピュータサイエンスを学べる教材が他にもあればご紹介したいのですが、現時点では筆者がおすすめできるものが見つかっておりません。
-            </P>
-            <P>
-              というわけで、
-              <HighlightBold>
-                一定数の方がリクエストしてくださったら、続編を書こう
-              </HighlightBold>
-              かなと思っています。続編を書くとしたら、
-              <HighlightBold>人工知能</HighlightBold>
-              についてプログラミング抜きに学べる教材を作りたいと考えています。
-            </P>
-            <EmojiSeparator
-              emojis={['🤖', '🧠', '🤖']}
-              description={<>続編を書くとしたら人工知能について</>}
-            />
-            <P>
-              続編をリクエストしたい方は、
-              <Highlight>
-                以下のツイートの引用リツイートで「
-                <HighlightBold>続編が読みたい</HighlightBold>
-                」と書いてくださると嬉しいです。
-              </Highlight>
-            </P>
-            <TwitterEmbed id={shareId} />
-            <Hr />
-            <P>
-              <Bold>読みやすくする工夫:</Bold>{' '}
-              難しい内容の教材でも最後まで読んでもらう工夫についてもまとめました。本稿で多用した工夫ばかりです。よければご覧ください！
-            </P>
-            <TwitterEmbed id="1172700114630172672" showCard />
-            <Hr />
-            <P>
-              <Bold>宣伝:</Bold> もしご興味があれば、わたしが共訳した書籍『
-              <ExternalLink href="https://www.amazon.co.jp/dp/4822289605/ref=cm_sw_em_r_mt_dp_U_h20QDbG5PNQK4">
-                <HighlightBold>ファクトフルネス</HighlightBold>
-              </ExternalLink>
-              』や、
-              <ExternalLink href="https://jp.chibicode.com/">
-                わたしのブログ
-              </ExternalLink>
-              もご覧ください。
-            </P>
-            <P>
-              <ExternalLink href="https://www.amazon.co.jp/dp/4822289605/ref=cm_sw_em_r_mt_dp_U_h20QDbG5PNQK4">
-                <Img
-                  size="small"
-                  src="/static/images/factfulness.jpg"
-                  alt="ファクトフルネス"
-                />
-              </ExternalLink>
-            </P>
-            <P>
-              重ね重ね、本稿をお読みになってくださりありがとうございました！
-            </P>
-          </>
-        )
-      }
     }
   }
   if (args.name === 'shareTitle') {
@@ -1226,7 +1082,6 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
               </>
             )}
           </P>
-          {args.includeTwitter && shareVisible && <TwitterEmbed id={shareId} />}
         </>
       )
     }
@@ -1674,38 +1529,6 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
       return <>Next</>
     } else {
       return <>次へ</>
-    }
-  }
-  if (args.name === 'testimonialsTitle') {
-    if (locale === 'en') {
-      return <>Testimonials</>
-    } else {
-      return <>読者の声 (抜粋)</>
-    }
-  }
-  if (args.name === 'testimonialsContent') {
-    if (locale === 'en') {
-      return (
-        <>
-          <P>Here are some of the readers’ comments:</P>
-          {testimonials.map(id => (
-            <TwitterEmbed id={id} key={id} />
-          ))}
-          <P>Press the button below to continue to the course!</P>
-        </>
-      )
-    } else {
-      return (
-        <>
-          <P>みなさまコメントありがとうございます！</P>
-          {testimonials.map(id => (
-            <TwitterEmbed id={id} key={id} />
-          ))}
-          <P>
-            「読んでみたいかも」と思ってくださった方は、下のボタンを押してみてください！
-          </P>
-        </>
-      )
     }
   }
   if (args.name === 'goToOtherPage') {

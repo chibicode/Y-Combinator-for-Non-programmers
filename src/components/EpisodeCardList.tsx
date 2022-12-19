@@ -8,7 +8,6 @@ import { CardProps } from 'src/components/Card'
 import useConditionalCards from 'src/hooks/useConditionalCards'
 import H from 'src/components/H'
 import { P } from 'src/components/ContentTags'
-import { shareVisible } from 'src/lib/twitter'
 import NextLessonButton from 'src/components/NextLessonButton'
 import { spaces, fontSizes } from 'src/lib/theme'
 import EpisodeContext from 'src/components/EpisodeContext'
@@ -91,7 +90,7 @@ const EpisodeCardList = ({ cards }: { cards: EpisodeCardListType }) => {
             </CardWrapper>
           ) : null
         )}
-        {shareVisible && cards.length - 1 === lastVisibleCardIndex && (
+        {cards.length - 1 === lastVisibleCardIndex && (
           <div
             css={css`
               padding: ${spaces(
@@ -139,22 +138,12 @@ const EpisodeCardList = ({ cards }: { cards: EpisodeCardListType }) => {
                   : undefined
               }
             >
-              <H args={{ name: 'shareContent' }} />
-              {episodeNumber <= numEpisodesExceptFirstAndLast && (
+              {episodeNumber <= numEpisodesExceptFirstAndLast ? (
                 <NextLessonButton halfMargin={locale === 'jp'} />
+              ) : (
+                <H args={{ name: 'shareContent' }} />
               )}
             </CardWrapper>
-            {(episodeNumber === 0 ||
-              episodeNumber > numEpisodesExceptFirstAndLast) && (
-              <CardWrapper
-                type="meta"
-                isLast
-                title={<H args={{ name: 'testimonialsTitle' }} />}
-              >
-                <H args={{ name: 'testimonialsContent' }} />
-                {episodeNumber === 0 && <NextLessonButton halfMargin />}
-              </CardWrapper>
-            )}
           </div>
         )}
       </>
