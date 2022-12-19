@@ -1,5 +1,4 @@
-/** @jsx jsx */
-import { jsx, css } from '@emotion/react'
+import { css } from '@emotion/react'
 
 const ratioToPercent = (width: number, height: number) => (height / width) * 100
 

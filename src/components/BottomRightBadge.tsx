@@ -1,5 +1,4 @@
-/** @jsx jsx */
-import { css, jsx, SerializedStyles } from '@emotion/react'
+import { css, SerializedStyles } from '@emotion/react'
 import locale from 'src/lib/locale'
 import { colors } from 'src/lib/theme'
 import { VariableExpression } from 'src/types/ExpressionTypes'

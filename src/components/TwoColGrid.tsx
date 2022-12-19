@@ -1,5 +1,4 @@
-/** @jsx jsx */
-import { css, jsx } from '@emotion/react'
+import { css } from '@emotion/react'
 import Flex from 'src/components/Flex'
 import { spaces } from 'src/lib/theme'
 import TwoColContext, { TwoColContextProps } from 'src/components/TwoColContext'

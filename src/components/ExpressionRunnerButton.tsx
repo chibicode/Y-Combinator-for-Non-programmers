@@ -1,5 +1,4 @@
-/** @jsx jsx */
-import { css, jsx } from '@emotion/react'
+import { css } from '@emotion/react'
 import ButtonWithTouchActiveStates from 'src/components/ButtonWithTouchActiveStates'
 import { colors, fontSizes, radii, spaces } from 'src/lib/theme'
 

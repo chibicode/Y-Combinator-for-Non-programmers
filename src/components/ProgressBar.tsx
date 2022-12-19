@@ -1,5 +1,4 @@
-/** @jsx jsx */
-import { css, jsx } from '@emotion/react'
+import { css } from '@emotion/react'
 import { colors, spaces, radii, maxWidths } from 'src/lib/theme'
 import { useSpring, animated } from 'react-spring'
 

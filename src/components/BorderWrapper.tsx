@@ -1,5 +1,4 @@
-/** @jsx jsx */
-import { css, jsx, SerializedStyles } from '@emotion/react'
+import { css, SerializedStyles } from '@emotion/react'
 import React, { useContext } from 'react'
 import Flex from 'src/components/Flex'
 import ExpressionRunnerContext from 'src/components/ExpressionRunnerContext'

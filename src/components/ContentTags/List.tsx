@@ -1,5 +1,4 @@
-/** @jsx jsx */
-import { css, jsx } from '@emotion/react'
+import { css } from '@emotion/react'
 import { spaces } from 'src/lib/theme'
 
 const commonListCss = css`

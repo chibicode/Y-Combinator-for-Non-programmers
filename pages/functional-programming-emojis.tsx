@@ -1,5 +1,4 @@
-/** @jsx jsx */
-import { css, jsx, Global } from '@emotion/react'
+import { css, Global } from '@emotion/react'
 import { useState, useContext } from 'react'
 import Page from 'src/components/Page'
 import Head from 'next/head'

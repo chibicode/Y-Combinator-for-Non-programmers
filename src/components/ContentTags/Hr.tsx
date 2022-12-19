@@ -1,5 +1,4 @@
-/** @jsx jsx */
-import { css, jsx } from '@emotion/react'
+import { css } from '@emotion/react'
 import { useContext } from 'react'
 import { maxWidths, spaces, colors } from 'src/lib/theme'
 import BubbleQuoteContext from 'src/components/BubbleQuoteContext'

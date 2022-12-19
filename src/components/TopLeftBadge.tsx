@@ -1,5 +1,4 @@
-/** @jsx jsx */
-import { css, jsx } from '@emotion/react'
+import { css } from '@emotion/react'
 import Emoji from 'src/components/Emoji'
 import { VariableExpression } from 'src/types/ExpressionTypes'
 

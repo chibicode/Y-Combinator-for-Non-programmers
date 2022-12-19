@@ -1,5 +1,4 @@
-/** @jsx jsx */
-import { css, jsx } from '@emotion/react'
+import { css } from '@emotion/react'
 import Link from 'next/link'
 import { useContext } from 'react'
 import H from 'src/components/H'

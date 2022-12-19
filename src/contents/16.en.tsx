@@ -1,5 +1,4 @@
-/** @jsx jsx */
-import { css, jsx } from '@emotion/react'
+import { css } from '@emotion/react'
 import EpisodeCardList from 'src/components/EpisodeCardList'
 import {
   P,

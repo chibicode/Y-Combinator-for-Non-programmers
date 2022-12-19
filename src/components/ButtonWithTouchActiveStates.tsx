@@ -1,5 +1,4 @@
-/** @jsx jsx */
-import { css, jsx } from '@emotion/react'
+import { css } from '@emotion/react'
 import { useState } from 'react'
 
 type ButtonWithTouchActiveStatesProps<T = JSX.IntrinsicElements['button']> =
