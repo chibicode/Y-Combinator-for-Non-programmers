@@ -19,8 +19,8 @@ I wrote about this repo on [this blog post](https://ycombinator.chibicode.com/fu
 ## Running it locally (English version)
 
 ```
-yarn install
-yarn dev:en
+pnpm install
+pnpm dev:en
 # Go to http://localhost:9990
 ```
 
