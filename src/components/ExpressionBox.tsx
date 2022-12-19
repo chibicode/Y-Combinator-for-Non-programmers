@@ -1,5 +1,4 @@
-/** @jsx jsx */
-import { css, jsx } from '@emotion/core'
+import { css } from '@emotion/react'
 import { useContext } from 'react'
 import Flex from 'src/components/Flex'
 import BorderWrapper, { BorderWrapperProps } from 'src/components/BorderWrapper'
@@ -50,8 +49,8 @@ const ExpressionBox = ({ expression, topLevel }: ExpressionBoxProps) => {
   if (
     highlightOverridesCallArgAndFuncUnboundOnly &&
     isVariable(expression) &&
-    (expression.bottomRightBadgeType !== 'callArg' &&
-      expression.bottomRightBadgeType !== 'funcUnbound')
+    expression.bottomRightBadgeType !== 'callArg' &&
+    expression.bottomRightBadgeType !== 'funcUnbound'
   ) {
     highlightOverridden = false
     highlightType = expression.highlightType

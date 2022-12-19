@@ -1,5 +1,4 @@
-/** @jsx jsx */
-import { jsx, css, Global } from '@emotion/core'
+import { css, Global } from '@emotion/react'
 import { zIndices, colors, spaces, ns } from 'src/lib/theme'
 import Container from 'src/components/Container'
 import { useRef } from 'react'

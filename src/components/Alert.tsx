@@ -1,5 +1,4 @@
-/** @jsx jsx */
-import { css, jsx } from '@emotion/core'
+import { css } from '@emotion/react'
 import { ns, radii, colors, spaces } from 'src/lib/theme'
 import { CardColorContext } from 'src/components/Card'
 

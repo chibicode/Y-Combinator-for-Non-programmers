@@ -1,5 +1,4 @@
-/** @jsx jsx */
-import { css, jsx } from '@emotion/core'
+import { css } from '@emotion/react'
 import ExpressionPriorityContext from 'src/components/ExpressionPriorityContext'
 import Flex from 'src/components/Flex'
 import FlexCenter from 'src/components/FlexCenter'

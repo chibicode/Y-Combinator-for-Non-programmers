@@ -1,5 +1,4 @@
-/** @jsx jsx */
-import { css, jsx } from '@emotion/core'
+import { css } from '@emotion/react'
 import Flex from 'src/components/Flex'
 import Emoji from 'src/components/Emoji'
 import { colors, spaces, radii, ns } from 'src/lib/theme'

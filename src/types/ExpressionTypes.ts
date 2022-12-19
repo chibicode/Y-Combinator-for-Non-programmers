@@ -36,13 +36,11 @@ export interface VariableShorthandFunc extends VariableExpression {
   readonly shorthandFunc: NonNullable<VariableExpression['shorthandFunc']>
 }
 
-export type VariableWithState<
-  S extends keyof VariableStates
-> = VariableExpression & VariableStates[S]
+export type VariableWithState<S extends keyof VariableStates> =
+  VariableExpression & VariableStates[S]
 
-export type VariableWithStateShorthandNumber<
-  S extends keyof VariableStates
-> = VariableShorthandNumber & VariableStates[S]
+export type VariableWithStateShorthandNumber<S extends keyof VariableStates> =
+  VariableShorthandNumber & VariableStates[S]
 
 export type VariableWithEmphasizePriorityAndState<
   S extends keyof VariableStates
@@ -51,9 +49,8 @@ export type VariableWithEmphasizePriorityAndState<
     readonly emphasizePriority: true
   }
 
-export type VariableWithStateShorthandFunc<
-  S extends keyof VariableStates
-> = VariableShorthandFunc & VariableStates[S]
+export type VariableWithStateShorthandFunc<S extends keyof VariableStates> =
+  VariableShorthandFunc & VariableStates[S]
 
 interface VariableStates {
   default: {
@@ -365,57 +362,51 @@ type ExecutableRegular<
   S extends CallStates,
   F extends FunctionExpression,
   E extends Expression
-> = CallExpression &
-  ({
-    readonly state: S
-    readonly arg: E
-    readonly func: F
-  })
+> = CallExpression & {
+  readonly state: S
+  readonly arg: E
+  readonly func: F
+}
 
 type ExecutableShorthand<
   S extends CallStates,
   F extends VariableShorthandFunc,
   N extends VariableShorthandNumber
-> = CallExpression &
-  ({
-    readonly state: S
-    readonly arg: N
-    readonly func: F
-  })
+> = CallExpression & {
+  readonly state: S
+  readonly arg: N
+  readonly func: F
+}
 
 type ExecutableConditionalNumber<
   C extends VariableShorthandNumber,
   T extends Expression,
   F extends Expression,
   S extends ConditionalStates
-> = ConditionalExpression &
-  ({
-    readonly condition: C
-    readonly trueCase: T
-    readonly falseCase: F
-    readonly state: S
-  })
+> = ConditionalExpression & {
+  readonly condition: C
+  readonly trueCase: T
+  readonly falseCase: F
+  readonly state: S
+}
 
 type ExecutableBinaryNumber<
   A extends VariableShorthandNumber,
   B extends VariableShorthandNumber,
   S extends BinaryStates
-> = BinaryExpression &
-  ({
-    readonly first: A
-    readonly second: B
-    readonly state: S
-  })
+> = BinaryExpression & {
+  readonly first: A
+  readonly second: B
+  readonly state: S
+}
 
 export type StepVariable<C extends CallStates = 'default'> = VariableWithState<
   CallStateToVariableState<C>
 >
-export type StepVariableShorthandNumber<
-  C extends CallStates = 'default'
-> = VariableWithStateShorthandNumber<CallStateToVariableState<C>>
-export type StepVariableShorthandFunc<
-  C extends CallStates = 'default'
-> = VariableWithStateShorthandFunc<CallStateToVariableState<C>>
+export type StepVariableShorthandNumber<C extends CallStates = 'default'> =
+  VariableWithStateShorthandNumber<CallStateToVariableState<C>>
+export type StepVariableShorthandFunc<C extends CallStates = 'default'> =
+  VariableWithStateShorthandFunc<CallStateToVariableState<C>>
 export interface StepConditional<C extends CallStates = 'default'>
   extends NonExecutableConditional<StepChild<C>, StepChild<C>, StepChild<C>> {}
 export interface StepBinary<C extends CallStates = 'default'>
@@ -436,8 +427,7 @@ export interface ExecutableStepCallShorthand<C extends CallStates = 'default'>
 export interface ExecutableStepConditional<
   C extends CallStates = 'default',
   S extends ConditionalStates = 'default'
->
-  extends ExecutableConditionalNumber<
+> extends ExecutableConditionalNumber<
     VariableWithStateShorthandNumber<CallStateToVariableState<C>>,
     StepChild<C>,
     StepChild<C>,
@@ -446,8 +436,7 @@ export interface ExecutableStepConditional<
 export interface ExecutableStepBinary<
   C extends CallStates = 'default',
   S extends BinaryStates = 'default'
->
-  extends ExecutableBinaryNumber<
+> extends ExecutableBinaryNumber<
     VariableWithStateShorthandNumber<CallStateToVariableState<C>>,
     VariableWithStateShorthandNumber<CallStateToVariableState<C>>,
     S
@@ -479,30 +468,26 @@ type DistributeStepConditional<
   S extends ConditionalStates
 > = U extends CallStates ? ExecutableStepConditional<U, S> : never
 
-export type ExecutableConditional<
-  S extends ConditionalStates = 'default'
-> = DistributeStepConditional<CallStates, S>
+export type ExecutableConditional<S extends ConditionalStates = 'default'> =
+  DistributeStepConditional<CallStates, S>
 
 type DistributeExecutableConditionalStates<S> = S extends ConditionalStates
   ? ExecutableConditional<S>
   : never
 
-export type ExecutableConditionalStatesDistributed = DistributeExecutableConditionalStates<
-  ConditionalStates
->
+export type ExecutableConditionalStatesDistributed =
+  DistributeExecutableConditionalStates<ConditionalStates>
 
 type DistributeStepBinary<U, S extends BinaryStates> = U extends CallStates
   ? ExecutableStepBinary<U, S>
   : never
 
-export type ExecutableBinary<
-  S extends BinaryStates = 'default'
-> = DistributeStepBinary<CallStates, S>
+export type ExecutableBinary<S extends BinaryStates = 'default'> =
+  DistributeStepBinary<CallStates, S>
 
 type DistributeExecutableBinaryStates<S> = S extends BinaryStates
   ? ExecutableBinary<S>
   : never
 
-export type ExecutableBinaryStatesDistributed = DistributeExecutableBinaryStates<
-  BinaryStates
->
+export type ExecutableBinaryStatesDistributed =
+  DistributeExecutableBinaryStates<BinaryStates>

@@ -5,7 +5,8 @@ export interface ExpressionRunnerConfigContextProps {
   churchNumerals?: true
 }
 
-export const ExpressionRunnerConfigContextDefault: ExpressionRunnerConfigContextProps = {}
+export const ExpressionRunnerConfigContextDefault: ExpressionRunnerConfigContextProps =
+  {}
 
 export default React.createContext<ExpressionRunnerConfigContextProps>(
   ExpressionRunnerConfigContextDefault

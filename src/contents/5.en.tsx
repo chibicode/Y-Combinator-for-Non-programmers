@@ -1,4 +1,3 @@
-import React from 'react'
 import BottomRightBadge from 'src/components/BottomRightBadge'
 import BubbleQuotes from 'src/components/BubbleQuotes'
 import {

@@ -1,5 +1,4 @@
-/** @jsx jsx */
-import { css, jsx } from '@emotion/core'
+import { css } from '@emotion/react'
 import EpisodeCardList from 'src/components/EpisodeCardList'
 import { P, Highlight, Bold, Italic } from 'src/components/ContentTags'
 import CustomEmoji from 'src/components/CustomEmoji'

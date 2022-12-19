@@ -4,6 +4,7 @@
     "module": "esnext",
     "resolveJsonModule": true,
     "jsx": "preserve",
+    "jsxImportSource": "@emotion/react",
     "allowJs": true,
     "moduleResolution": "node",
     "esModuleInterop": true,
@@ -24,7 +25,8 @@
     },
     "forceConsistentCasingInFileNames": true,
     "isolatedModules": true,
-    "noEmit": true
+    "noEmit": true,
+    "incremental": true
   },
   "include": ["./src", "./pages"],
   "exclude": ["node_modules"]

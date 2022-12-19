@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import { useContext } from 'react'
 import { Bold } from 'src/components/ContentTags'
 import EmojiNumber from 'src/components/EmojiNumber'
 import Emoji from 'src/components/Emoji'

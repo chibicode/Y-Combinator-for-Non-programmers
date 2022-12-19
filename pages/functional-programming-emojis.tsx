@@ -1,5 +1,4 @@
-/** @jsx jsx */
-import { css, jsx, Global } from '@emotion/core'
+import { css, Global } from '@emotion/react'
 import { useState, useContext } from 'react'
 import Page from 'src/components/Page'
 import Head from 'next/head'
@@ -50,7 +49,6 @@ import theme from 'prism-react-renderer/themes/nightOwlLight'
 import BubbleQuoteContext from 'src/components/BubbleQuoteContext'
 import EmojiWithText from 'src/components/EmojiWithText'
 import ExpressionRunnerConfigContext from 'src/components/ExpressionRunnerConfigContext'
-import TwitterEmbed from 'src/components/TwitterEmbed'
 import {
   StepOne,
   StepTwo,
@@ -82,7 +80,7 @@ const tweetUrl = `https://twitter.com/intent/tweet?url=${encodeURIComponent(
   url
 )}&via=chibicode&text=${encodeURIComponent(title)}`
 
-const Ads = ({ shareId }: { shareId?: string }) => (
+const Ads = () => (
   <>
     <Ul>
       <UlLi>
@@ -107,12 +105,6 @@ const Ads = ({ shareId }: { shareId?: string }) => (
         ></iframe>
       </UlLi>
     </Ul>
-    {shareId && (
-      <>
-        <P>Here’s my Twitter:</P>
-        <TwitterEmbed showCard id={shareId} />
-      </>
-    )}
   </>
 )
 
@@ -699,12 +691,12 @@ sushi => sushi`}</CodeBlock>
             <R.Ilpo>
               An “<Bold>emoji puzzle</Bold>” that visually describes
               <br />
-              <InlineCode>(sushi => sushi)('sandwich')</InlineCode>
+              <InlineCode>{`(sushi => sushi)('sandwich')`}</InlineCode>
             </R.Ilpo>
             <P>
               The above emoji puzzle is equivalent to the earlier JS code.
               First, the identity function{' '}
-              <InlineCode>sushi => sushi</InlineCode>…
+              <InlineCode>{`sushi => sushi`}</InlineCode>…
             </P>
             <CodeBlock
               shouldHighlight={(lineNumber, tokenNumber) =>
@@ -717,7 +709,7 @@ sushi => sushi`}</CodeBlock>
             </P>
             <DimUnhighlighted>
               <R.Elku>
-                <InlineCode>sushi => sushi</InlineCode> is represented
+                <InlineCode>{`sushi => sushi`}</InlineCode> is represented
                 <br />
                 by the bottom two items
               </R.Elku>
@@ -790,7 +782,7 @@ sushi => sushi`}</CodeBlock>
               <R.Itbm>
                 An emoji puzzle that’s equivalent to
                 <br />
-                <InlineCode>(sushi => sushi)('sandwich')</InlineCode>
+                <InlineCode>{`(sushi => sushi)('sandwich')`}</InlineCode>
               </R.Itbm>
             </PointToRunButton>
             <P>
@@ -830,7 +822,7 @@ sushi => 'pizza'`}</CodeBlock>
             <R.Qcme>
               An emoji puzzle that’s equivalent to
               <br />
-              <InlineCode>(sushi => 'pizza')('sandwich')</InlineCode>
+              <InlineCode>{`(sushi => 'pizza')('sandwich')`}</InlineCode>
             </R.Qcme>
             <P>
               Just like the JS code, the emoji puzzle ended up with a{' '}
@@ -868,13 +860,14 @@ sushi => 'pizza'`}</CodeBlock>
             </P>
             <Ul>
               <UlLi>
-                If you see <InlineCode>(sushi => sushi)('sandwich')</InlineCode>
-                , you can quickly figure out that the result would be{' '}
+                If you see{' '}
+                <InlineCode>{`(sushi => sushi)('sandwich')`}</InlineCode>, you
+                can quickly figure out that the result would be{' '}
                 <InlineCode>'sandwich'</InlineCode>.
               </UlLi>
               <UlLi>
                 If you see{' '}
-                <InlineCode>(sushi => 'pizza')('sandwich')</InlineCode>, you
+                <InlineCode>{`(sushi => 'pizza')('sandwich')`}</InlineCode>, you
                 know that the result would be <InlineCode>'pizza'</InlineCode>.
               </UlLi>
               <UlLi>
@@ -955,7 +948,7 @@ sushi => 'pizza'`}</CodeBlock>
             <P>
               The above steps are a visual representation of how functions are
               evaluated. They are equivalent to how JavaScript evaluates{' '}
-              <InlineCode>(sushi => sushi)('sandwich')</InlineCode>.
+              <InlineCode>{`(sushi => sushi)('sandwich')`}</InlineCode>.
             </P>
             <P>
               By learning these rules, non-programmers will be able to evaluate
@@ -1139,7 +1132,7 @@ sushi => 'pizza'`}</CodeBlock>
             <P>…is represented by the bottom row:</P>
             <DimUnhighlighted>
               <R.Lxzn>
-                <InlineCode>sushi => sandwich => sushi</InlineCode>
+                <InlineCode>{`sushi => sandwich => sushi`}</InlineCode>
               </R.Lxzn>
             </DimUnhighlighted>
             <P>And the two arguments…</P>
@@ -1321,7 +1314,7 @@ sushi => 'pizza'`}</CodeBlock>
               <P>
                 Next, here’s slightly different JS code. Compared to the last
                 time, there’s an extra pair of parentheses around{' '}
-                <InlineCode>(spaghetti => spaghetti)('salad')</InlineCode>,
+                <InlineCode>{`(spaghetti => spaghetti)('salad')`}</InlineCode>,
                 which changes the result.
               </P>
               <CodeBlock
@@ -1401,7 +1394,7 @@ sushi => 'pizza'`}</CodeBlock>
               Here’s a function called <InlineCode>convert</InlineCode> that
               takes a function <InlineCode>f</InlineCode> as an argument. It
               then calls <InlineCode>f</InlineCode> with{' '}
-              <InlineCode>(n => n + 1)(0)</InlineCode>.
+              <InlineCode>{`(n => n + 1)(0)`}</InlineCode>.
             </P>
             <CodeBlock>{`function convert(f) {
   return f(n => n + 1)(0)
@@ -1409,8 +1402,8 @@ sushi => 'pizza'`}</CodeBlock>
             <P>
               Now, suppose that we apply <InlineCode>convert</InlineCode> on
               this function:{' '}
-              <InlineCode>sushi => sandwich => sandwich</InlineCode>. What would
-              the result be? Try to guess before{' '}
+              <InlineCode>{`sushi => sandwich => sandwich`}</InlineCode>. What
+              would the result be? Try to guess before{' '}
               <Highlight>
                 pressing the <H args={{ name: 'run' }} /> button.
               </Highlight>
@@ -1431,7 +1424,7 @@ convert(sushi => sandwich =>
             <Ul>
               <UlLi>
                 <InlineCode>sushi</InlineCode> is bound to{' '}
-                <InlineCode>n => n + 1</InlineCode>
+                <InlineCode>{`n => n + 1`}</InlineCode>
               </UlLi>
               <UlLi>
                 <InlineCode>sandwich</InlineCode> is bound to{' '}
@@ -1466,14 +1459,14 @@ convert(sushi => sandwich =>
             <Ul>
               <UlLi>
                 <InlineCode>sushi</InlineCode> is bound to{' '}
-                <InlineCode>n => n + 1</InlineCode>
+                <InlineCode>{`n => n + 1`}</InlineCode>
               </UlLi>
               <UlLi>
                 <InlineCode>sandwich</InlineCode> is bound to{' '}
                 <InlineCode>0</InlineCode>
               </UlLi>
               <UlLi>
-                So it applies <InlineCode>n => n + 1</InlineCode> to{' '}
+                So it applies <InlineCode>{`n => n + 1`}</InlineCode> to{' '}
                 <InlineCode>0</InlineCode> for the number of times{' '}
                 <InlineCode>sushi</InlineCode> is used in the function body.
               </UlLi>
@@ -1532,13 +1525,13 @@ a => b => a(a(a(b))))
             </P>
             <P>
               Here’s an emoji puzzle that represents{' '}
-              <InlineCode>sushi => sandwich => sandwich</InlineCode>, which is{' '}
-              Church numeral <Bold>0</Bold>.
+              <InlineCode>{`sushi => sandwich => sandwich`}</InlineCode>, which
+              is Church numeral <Bold>0</Bold>.
             </P>
             <R.Jarm>
               <Bold>Represents:</Bold>
               <br />
-              <InlineCode>sushi => sandwich => sandwich</InlineCode>
+              <InlineCode>{`sushi => sandwich => sandwich`}</InlineCode>
               <br />
               (Church numeral <Bold>0</Bold>)
             </R.Jarm>
@@ -1562,7 +1555,7 @@ a => b => a(a(a(b))))
               <Bold>Represents:</Bold>
               <br />
               <InlineCode>
-                hamburger => chicken => hamburger(chicken)
+                {`hamburger => chicken => hamburger(chicken)`}
               </InlineCode>
               <br />
               (Church numeral <Bold>1</Bold>)
@@ -1596,7 +1589,7 @@ a => b => a(a(a(b))))
             <Ul>
               <UlLi>
                 We apply the above function to the Church numeral zero (has the
-                pattern <InlineCode>a => b => b</InlineCode>), and
+                pattern <InlineCode>{`a => b => b`}</InlineCode>), and
               </UlLi>
               <UlLi>
                 Run <InlineCode>convert()</InlineCode> (from earlier) on it.
@@ -1706,7 +1699,7 @@ convert(f(two))`}</CodeBlock>
             <R.Hfgh>
               <Bold>Represents:</Bold>
               <br />
-              <InlineCode>chicken => salad => salad</InlineCode>
+              <InlineCode>{`chicken => salad => salad`}</InlineCode>
               <br />
               (Church numeral <Bold>0</Bold>)
             </R.Hfgh>
@@ -1728,13 +1721,13 @@ convert(f(two))`}</CodeBlock>
             <R.Afxj>Combined the above two emoji puzzles</R.Afxj>
             <P>
               The result is equivalent to{' '}
-              <InlineCode>sandwich => pizza => sandwich(pizza)</InlineCode>,
+              <InlineCode>{`sandwich => pizza => sandwich(pizza)`}</InlineCode>,
               which is Church numeral <Bold>1</Bold>.
             </P>
             <R.Uxno>
               <Bold>Represents:</Bold>
               <br />
-              <InlineCode>sandwich => pizza => sandwich(pizza)</InlineCode>
+              <InlineCode>{`sandwich => pizza => sandwich(pizza)`}</InlineCode>
               <br />
               (Church numeral <Bold>1</Bold>)
             </R.Uxno>
@@ -1766,7 +1759,7 @@ convert(f(two))`}</CodeBlock>
               <R.Yfwq>
                 <Bold>Represents:</Bold>
                 <br />
-                <InlineCode>chicken => salad => chicken(salad)</InlineCode>
+                <InlineCode>{`chicken => salad => chicken(salad)`}</InlineCode>
                 <br />
                 (Church numeral <Bold>1</Bold>)
               </R.Yfwq>
@@ -2351,7 +2344,7 @@ const mul = sushi => sandwich => pizza =>
             <Subheading noHrTop step="none" coveredIn="none">
               Thank you for reading!
             </Subheading>
-            <Ads shareId="1192843729565962241" />
+            <Ads />
             <P
               css={css`
                 color: ${colors('grey600')};

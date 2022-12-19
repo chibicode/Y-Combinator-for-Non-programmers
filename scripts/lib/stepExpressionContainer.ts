@@ -326,17 +326,14 @@ const runStep = (
   }
   const activePriority = expression.priority
 
-  const {
-    nextExpression,
-    matchExists,
-    previouslyChangedExpressionState
-  } = isCall(expression)
-    ? isExecutableCallRegular(expression)
-      ? stepRegular(expression, stepOptions, e.matchExists)
-      : stepShorthand(expression)
-    : isConditional(expression)
-    ? stepConditional(expression)
-    : stepBinary(expression)
+  const { nextExpression, matchExists, previouslyChangedExpressionState } =
+    isCall(expression)
+      ? isExecutableCallRegular(expression)
+        ? stepRegular(expression, stepOptions, e.matchExists)
+        : stepShorthand(expression)
+      : isConditional(expression)
+      ? stepConditional(expression)
+      : stepBinary(expression)
 
   if (
     !callParent &&

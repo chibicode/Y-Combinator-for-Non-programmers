@@ -1,5 +1,4 @@
-/** @jsx jsx */
-import { css, jsx } from '@emotion/core'
+import { css } from '@emotion/react'
 import { colors, fontSizes, spaces } from 'src/lib/theme'
 import EmbedResponsive from 'src/components/EmbedResponsive'
 

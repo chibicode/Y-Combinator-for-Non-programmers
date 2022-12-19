@@ -1,4 +1,3 @@
-import React from 'react'
 import EpisodeCardList from 'src/components/EpisodeCardList'
 import {
   P,
@@ -650,9 +649,8 @@ export default () => (
                         <H args={{ name: 'run' }} /> したとき、
                         <Highlight>
                           先ほど同じく結果が <EmojiNumber number={1} /> になれば
-                          <HighlightBold>
-                            成功
-                          </HighlightBold> <Emoji>🎉</Emoji> というわけだよね。
+                          <HighlightBold>成功</HighlightBold> <Emoji>🎉</Emoji>{' '}
+                          というわけだよね。
                         </Highlight>
                       </P>
                     </>
@@ -779,9 +777,8 @@ export default () => (
                       <P>
                         だから、
                         <EmojiNumber number={1} /> が残ったので、
-                        <HighlightBold>
-                          成功
-                        </HighlightBold> <Emoji>🎉</Emoji> だよ！
+                        <HighlightBold>成功</HighlightBold> <Emoji>🎉</Emoji>{' '}
+                        だよ！
                       </P>
                     </>
                   )

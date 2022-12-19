@@ -1,5 +1,4 @@
-/** @jsx jsx */
-import { css, jsx } from '@emotion/core'
+import { css } from '@emotion/react'
 import { colors, spaces, fitWithinMobileWidth } from 'src/lib/theme'
 
 const ExpressionRunnerCaptionOnly = (props: JSX.IntrinsicElements['div']) => (

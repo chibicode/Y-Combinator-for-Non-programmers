@@ -1,5 +1,4 @@
-/** @jsx jsx */
-import { css, jsx } from '@emotion/core'
+import { css } from '@emotion/react'
 import { InternalLink } from 'src/components/ContentTags'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import CustomEmoji from 'src/components/CustomEmoji'

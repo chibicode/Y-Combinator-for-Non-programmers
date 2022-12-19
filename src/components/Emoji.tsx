@@ -1,5 +1,4 @@
-/** @jsx jsx */
-import { css, jsx, SerializedStyles } from '@emotion/core'
+import { css, SerializedStyles } from '@emotion/react'
 import twemoji from 'twemoji'
 import emojisBundle from 'src/lib/emojisBundle'
 

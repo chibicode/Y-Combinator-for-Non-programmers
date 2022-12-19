@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import { useContext } from 'react'
 import locale from 'src/lib/locale'
 import { VariableNames } from 'src/types/VariableNames'
 import Emoji, { EmojiProps } from 'src/components/Emoji'

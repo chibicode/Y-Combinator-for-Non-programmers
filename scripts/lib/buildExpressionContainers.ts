@@ -23,7 +23,8 @@ const buildExpressionContainers = ({
   hideRunButton
 }: ExpressionRunnerConfig): readonly ExpressionContainer[] => {
   if (initialExpressionContainer) {
-    let currentExpressionContainer: SteppedExpressionContainer = initialExpressionContainer
+    let currentExpressionContainer: SteppedExpressionContainer =
+      initialExpressionContainer
 
     if (applicativeOrder) {
       currentExpressionContainer = prioritizeExpressionContainer(

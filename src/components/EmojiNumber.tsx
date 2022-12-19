@@ -1,5 +1,4 @@
-/** @jsx jsx */
-import { css, jsx } from '@emotion/core'
+import { css } from '@emotion/react'
 import Emoji, { EmojiProps } from 'src/components/Emoji'
 import CustomEmoji from 'src/components/CustomEmoji'
 import numberEmojiMapping from 'src/lib/numberEmojiMapping'

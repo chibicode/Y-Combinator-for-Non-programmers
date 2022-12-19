@@ -1,5 +1,4 @@
-/** @jsx jsx */
-import { css, jsx } from '@emotion/core'
+import { css } from '@emotion/react'
 import { zIndices } from 'src/lib/theme'
 import TopLeftBadge, { TopLeftBadgeProps } from 'src/components/TopLeftBadge'
 

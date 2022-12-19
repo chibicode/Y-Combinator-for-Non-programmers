@@ -1,5 +1,4 @@
-/** @jsx jsx */
-import { css, jsx } from '@emotion/core'
+import { css } from '@emotion/react'
 import { maxWidths, fontSizes, colors, spaces } from 'src/lib/theme'
 
 export const Img = ({

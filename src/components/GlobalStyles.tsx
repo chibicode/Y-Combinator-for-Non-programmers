@@ -1,5 +1,4 @@
-/** @jsx jsx */
-import { css, Global, jsx } from '@emotion/core'
+import { css, Global } from '@emotion/react'
 import { useEffect } from 'react'
 import smoothscroll from 'smoothscroll-polyfill'
 import React from 'react'

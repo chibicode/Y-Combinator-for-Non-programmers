@@ -1,5 +1,4 @@
-/** @jsx jsx */
-import { css, jsx } from '@emotion/core'
+import { css } from '@emotion/react'
 import { useContext } from 'react'
 import Emoji from 'src/components/Emoji'
 import EmojiNumber from 'src/components/EmojiNumber'
@@ -49,11 +48,8 @@ export const variableExpressionBoxFontSize = (
   }[size])
 
 const VariableEmoji = ({ expression }: VariableExpressionBoxProps) => {
-  const {
-    hideBottomRightBadges,
-    bottomRightBadgeOverrides,
-    variableSize
-  } = useContext(ExpressionRunnerContext)
+  const { hideBottomRightBadges, bottomRightBadgeOverrides, variableSize } =
+    useContext(ExpressionRunnerContext)
   const { churchNumerals } = useContext(ExpressionRunnerConfigContext)
 
   if (expression.shorthandNumberAfterConvert) {
@@ -371,20 +367,21 @@ const VariableEmoji = ({ expression }: VariableExpressionBoxProps) => {
             </span>
           </span>
         )}
-        {!hideBottomRightBadges && expression.bottomRightBadgeType !== 'none' && (
-          <span
-            css={css`
-              position: absolute;
-              right: -0.2em;
-              bottom: 0;
-              z-index: ${zIndices('badge')};
-            `}
-          >
-            <BottomRightBadge
-              bottomRightBadgeType={expression.bottomRightBadgeType}
-            />
-          </span>
-        )}
+        {!hideBottomRightBadges &&
+          expression.bottomRightBadgeType !== 'none' && (
+            <span
+              css={css`
+                position: absolute;
+                right: -0.2em;
+                bottom: 0;
+                z-index: ${zIndices('badge')};
+              `}
+            >
+              <BottomRightBadge
+                bottomRightBadgeType={expression.bottomRightBadgeType}
+              />
+            </span>
+          )}
         {expression.topLeftBadgeType !== 'none' && (
           <span
             css={[
@@ -420,9 +417,9 @@ const VariableExpressionBox = ({ expression }: VariableExpressionBoxProps) => {
   return (
     <>
       {((shadeNonNumbers &&
-        (expression.shorthandNumber === undefined &&
-          expression.name !== 'A' &&
-          expression.name !== 'B')) ||
+        expression.shorthandNumber === undefined &&
+        expression.name !== 'A' &&
+        expression.name !== 'B') ||
         (shadeNonHighlightedFunc &&
           (expression.shorthandFunc === undefined ||
             expression.highlightType !== 'initialHighlighted')) ||

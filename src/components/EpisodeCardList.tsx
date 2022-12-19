@@ -1,5 +1,4 @@
-/** @jsx jsx */
-import { css, jsx } from '@emotion/core'
+import { css } from '@emotion/react'
 import { useContext } from 'react'
 import CardWrapper from 'src/components/CardWrapper'
 import EpisodePageInitialRenderWarning from 'src/components/EpisodePageInitialRenderWarning'
@@ -9,8 +8,6 @@ import { CardProps } from 'src/components/Card'
 import useConditionalCards from 'src/hooks/useConditionalCards'
 import H from 'src/components/H'
 import { P } from 'src/components/ContentTags'
-import { shareVisible } from 'src/lib/twitter'
-import NextLessonButton from 'src/components/NextLessonButton'
 import { spaces, fontSizes } from 'src/lib/theme'
 import EpisodeContext from 'src/components/EpisodeContext'
 import PrevNextLinks from 'src/components/PrevNextLinks'
@@ -31,9 +28,8 @@ export type EpisodeCardListType = readonly EpisodeCardType[]
 
 const EpisodeCardList = ({ cards }: { cards: EpisodeCardListType }) => {
   const { episodeTitle, episodeNumber } = useContext(EpisodeContext)
-  const { lastVisibleCardIndex, setLastVisibleCardIndex } = useConditionalCards(
-    cards
-  )
+  const { lastVisibleCardIndex, setLastVisibleCardIndex } =
+    useConditionalCards(cards)
   return (
     <>
       <EpisodePageInitialRenderWarning />
@@ -93,72 +89,56 @@ const EpisodeCardList = ({ cards }: { cards: EpisodeCardListType }) => {
             </CardWrapper>
           ) : null
         )}
-        {shareVisible && cards.length - 1 === lastVisibleCardIndex && (
-          <div
-            css={css`
-              padding: ${spaces(
-                  episodeNumber <= numEpisodesExceptFirstAndLast ? 8 : 2
-                )}
-                0 ${spaces(1)};
-            `}
-          >
-            <CardWrapper
-              type="meta"
-              isLast={
-                episodeNumber > 0 &&
-                episodeNumber <= numEpisodesExceptFirstAndLast
-              }
-              title={<H args={{ name: 'shareTitle' }} />}
-              footer={
-                locale === 'jp'
-                  ? {
-                      color: 'indigo',
-                      content: (
-                        <>
-                          <H
-                            args={{
-                              name: 'dateAndSource',
-                              includeAboutMe: true
-                            }}
-                          />
-                        </>
-                      )
-                    }
-                  : episodeNumber > 0
-                  ? {
-                      content: (
-                        <>
-                          <H
-                            args={{
-                              name: 'aboutMe',
-                              hideNextPageButton:
-                                episodeNumber > numEpisodesExceptFirstAndLast
-                            }}
-                          />
-                        </>
-                      )
-                    }
-                  : undefined
-              }
+        {cards.length - 1 === lastVisibleCardIndex &&
+          episodeNumber > numEpisodesExceptFirstAndLast && (
+            <div
+              css={css`
+                padding: ${spaces(
+                    episodeNumber <= numEpisodesExceptFirstAndLast ? 8 : 2
+                  )}
+                  0 ${spaces(1)};
+              `}
             >
-              <H args={{ name: 'shareContent' }} />
-              {episodeNumber <= numEpisodesExceptFirstAndLast && (
-                <NextLessonButton halfMargin={locale === 'jp'} />
-              )}
-            </CardWrapper>
-            {(episodeNumber === 0 ||
-              episodeNumber > numEpisodesExceptFirstAndLast) && (
               <CardWrapper
                 type="meta"
                 isLast
-                title={<H args={{ name: 'testimonialsTitle' }} />}
+                title={<H args={{ name: 'shareTitle' }} />}
+                footer={
+                  locale === 'jp'
+                    ? {
+                        color: 'indigo',
+                        content: (
+                          <>
+                            <H
+                              args={{
+                                name: 'dateAndSource',
+                                includeAboutMe: true
+                              }}
+                            />
+                          </>
+                        )
+                      }
+                    : episodeNumber > 0
+                    ? {
+                        content: (
+                          <>
+                            <H
+                              args={{
+                                name: 'aboutMe',
+                                hideNextPageButton:
+                                  episodeNumber > numEpisodesExceptFirstAndLast
+                              }}
+                            />
+                          </>
+                        )
+                      }
+                    : undefined
+                }
               >
-                <H args={{ name: 'testimonialsContent' }} />
-                {episodeNumber === 0 && <NextLessonButton halfMargin />}
+                <H args={{ name: 'shareContent' }} />
               </CardWrapper>
-            )}
-          </div>
-        )}
+            </div>
+          )}
       </>
     </>
   )

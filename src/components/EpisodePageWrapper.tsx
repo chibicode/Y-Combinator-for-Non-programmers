@@ -1,4 +1,3 @@
-import React from 'react'
 import EpisodePage, { EpisodePageProps } from 'src/components/EpisodePage'
 import { lessonTitle, episodeTitleWithPrefix } from 'src/lib/titles'
 import GlobalContextSetter from 'src/components/GlobalContextSetter'
@@ -18,9 +17,7 @@ const EpisodePageWrapper = ({ episodeNumber }: EpisodePageWrapperProps) => (
       episodeTitle={
         episodeNumber > 0 ? (
           <H args={{ name: 'titleWithPrefixColored' }} />
-        ) : (
-          undefined
-        )
+        ) : undefined
       }
       episodeNumber={episodeNumber}
       contentName={`${episodeNumber}` as EpisodePageProps['contentName']}

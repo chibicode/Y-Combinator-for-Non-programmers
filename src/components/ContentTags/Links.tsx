@@ -1,5 +1,4 @@
-/** @jsx jsx */
-import { css, jsx } from '@emotion/core'
+import { css } from '@emotion/react'
 import Link from 'next/link'
 import React from 'react'
 import { colors } from 'src/lib/theme'
@@ -12,9 +11,8 @@ const linkContextDefault: LinkContextProps = {
   inLink: false
 }
 
-export const LinkContext = React.createContext<LinkContextProps>(
-  linkContextDefault
-)
+export const LinkContext =
+  React.createContext<LinkContextProps>(linkContextDefault)
 
 export const commonLinkClass = css`
   &:hover,

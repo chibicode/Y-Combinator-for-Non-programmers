@@ -1,4 +1,4 @@
-import { css } from '@emotion/core'
+import { css } from '@emotion/react'
 
 // https://github.com/sindresorhus/modern-normalize/blob/c7b6afcd43028c964cd0b7a2254919f97df03bf4/modern-normalize.css
 export default css`

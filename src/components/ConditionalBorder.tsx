@@ -1,5 +1,4 @@
-/** @jsx jsx */
-import { css, jsx } from '@emotion/core'
+import { css } from '@emotion/react'
 import { useContext } from 'react'
 import Emoji from 'src/components/Emoji'
 import { zIndices, colors, fontSizes } from 'src/lib/theme'
@@ -75,11 +74,8 @@ const ConditionalBorder = ({
     falseCase: falseCaseColor,
     condition: conditionColor
   }[type]
-  const {
-    shadeNonNumbers,
-    shadeNonHighlightedFunc,
-    shadeNonFactorial
-  } = useContext(VariableShadeContext)
+  const { shadeNonNumbers, shadeNonHighlightedFunc, shadeNonFactorial } =
+    useContext(VariableShadeContext)
   return (
     <>
       {shaded && <Shade />}

@@ -1,5 +1,4 @@
-/** @jsx jsx */
-import { jsx, css } from '@emotion/core'
+import { css } from '@emotion/react'
 import Modal from 'src/components/Modal'
 import Card from 'src/components/Card'
 import H from 'src/components/H'

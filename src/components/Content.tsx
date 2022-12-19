@@ -1,4 +1,3 @@
-import React from 'react'
 import bundle from 'src/lib/contentsBundle'
 import locale from 'src/lib/locale'
 

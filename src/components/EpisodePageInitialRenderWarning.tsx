@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import { useContext } from 'react'
 import EpisodeContext from 'src/components/EpisodeContext'
 import GlobalContext from 'src/components/GlobalContext'
 import H from 'src/components/H'

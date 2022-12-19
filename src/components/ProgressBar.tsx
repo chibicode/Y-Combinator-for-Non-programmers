@@ -1,7 +1,6 @@
-/** @jsx jsx */
-import { css, jsx } from '@emotion/core'
+import { css } from '@emotion/react'
 import { colors, spaces, radii, maxWidths } from 'src/lib/theme'
-import { useSpring, animated } from 'react-spring'
+import { useSpring, animated } from '@react-spring/web'
 
 const ProgressBar = ({
   percent,

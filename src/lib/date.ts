@@ -7,10 +7,7 @@ export const date = {
 }[locale]
 
 export const dateString = {
-  jp: date
-    .setLocale('ja')
-    .setZone('Asia/Tokyo')
-    .toFormat('yyyy年LL月dd日'),
+  jp: date.setLocale('ja').setZone('Asia/Tokyo').toFormat('yyyy年LL月dd日'),
   en: date
     .setLocale('en')
     .setZone('America/Los_Angeles')
